@@ -1,52 +1,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.moncat.parent</groupId>
-    <artifactId>package</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+  <!-- spring boot 不推荐使用jsp在1.5.3以上版本将无法使用此方法整合jsp，本项目单独打包，不以package为父项目 -->
+   <parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>1.5.2.RELEASE</version>
+	<relativePath/> 
   </parent>
-  <artifactId>mjsp</artifactId>
- <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-  
-  <dependency>
-    <groupId>com.moncat.parent</groupId>
-    <artifactId>mserver</artifactId>
+   <groupId>com.co.example</groupId>
+    <artifactId>mjsp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-  </dependency>
+    <packaging>war</packaging>
+   
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-    </dependency>
-    	
-	<dependency>
-		<groupId>taglibs</groupId>
-		<artifactId>standard</artifactId>
-	</dependency>
-    
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+    <dependencies>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.tomcat.embed</groupId>
-      <artifactId>tomcat-embed-jasper</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-  </dependencies>
-
-  <build>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- tomcat 打包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- jsp 支持 -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>jstl-api</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
+   <build>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -91,4 +93,5 @@
       <url>http://repo.spring.io/milestone</url>
     </pluginRepository>
   </pluginRepositories>
+
 </project>

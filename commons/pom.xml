@@ -101,16 +101,6 @@
 		    <artifactId>poi-scratchpad</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-		</dependency>
-		
-		
 		<!-- 解析json -->
 		<dependency>
         	<groupId>com.google.code.gson</groupId>

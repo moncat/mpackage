@@ -9,14 +9,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication(scanBasePackages = { "com.co" })
-public class SampleApp extends SpringBootServletInitializer{
+public class SampleJspApp extends SpringBootServletInitializer{
 	
     @Override  
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {  
-        return application.sources(SampleApp.class);  
+        return application.sources(SampleJspApp.class);  
     }  
 	
     public static void main(String[] args) throws Exception {
-    	SpringApplication.run(SampleApp.class, args);
+    	SpringApplication.run(SampleJspApp.class, args);
     }
 }

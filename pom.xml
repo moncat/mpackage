@@ -471,5 +471,6 @@
   	<module>mgenerator</module>
   	<module>schedule</module>
   	<module>mjsp</module>
+  	<module>mjersey</module>
   </modules>
 </project>

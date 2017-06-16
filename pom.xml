@@ -474,5 +474,7 @@
   	<module>mserver</module>
   	<module>mweb</module>
   	<module>mgenerator</module>
+  	<module>mjsp</module>
+  	<module>schedule</module>
   </modules>
 </project>

@@ -1,0 +1,19 @@
+server:
+  port: 8088
+security:
+#  oauth2:
+#    client:
+#      client-id: acme
+#      client-secret: acmesecret
+#      scope: read,write,openid
+#      auto-approve-scopes: '.*'
+#      客户端数据将从数据库获取
+  user:
+    name: u1
+    password: aaa
+    authorities: ROLE_USER
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    com.example: DEBUG

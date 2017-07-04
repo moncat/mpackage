@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.jws.WebService;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 

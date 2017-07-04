@@ -13,6 +13,7 @@
 * mserver  业务处理层
 * mweb    web展现层
 * mjsp  web展现层，jsp版
+* ssoServer  单点登录服务
 
 ##说明
 * spring boot 不推荐使用jsp在1.5.3以上版本将无法使用此方法整合jsp

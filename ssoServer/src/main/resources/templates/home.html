@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<title>Oauth Server Home</title>
+</head>
+<body>
+
+	<div th:if="${username}">
+		username: <span th:text="${username}"></span>
+	</div>
+
+
+	<div>
+		<h2>logout post</h2>
+		<form action="/logout" method="POST">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+			<input type="submit" value="post 登出" />
+		</form>
+		<br /> <a href="/logout">get登出</a>
+	</div>
+	<br />
+	
+</body>
+</html>

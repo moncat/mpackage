@@ -1,0 +1,40 @@
+server:
+  port: 9999
+myOauthServer: 
+  hostUrl: http://localhost:8088
+  logoutUrl: ${myOauthServer.hostUrl}/logout
+
+security:
+  oauth2:
+    sso:
+        loginPath: /login
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      accessTokenUri: ${myOauthServer.hostUrl}/oauth/token
+      userAuthorizationUri: ${myOauthServer.hostUrl}/oauth/authorize
+      clientAuthenticationScheme: form
+    resource:
+      jwt:
+          keyUri: ${myOauthServer.hostUrl}/oauth/token_key
+securityconfig:
+  permitall: /rest/**,/logout
+  deniedpage: /deny
+  
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+
+management:
+    context-path=/actuator
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    com.example: DEBUG
+
+    

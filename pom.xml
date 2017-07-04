@@ -471,6 +471,9 @@
   	<module>mgenerator</module>
   	<module>schedule</module>
   	<module>mjsp</module>
-  	<module>mjersey</module>
+
+
+  	<module>ssoServer</module>
+  	<module>ssoClient</module>
   </modules>
 </project>

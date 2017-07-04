@@ -475,5 +475,6 @@
 
   	<module>ssoServer</module>
   	<module>ssoClient</module>
+  	<module>security</module>
   </modules>
 </project>

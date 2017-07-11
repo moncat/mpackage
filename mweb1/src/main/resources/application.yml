@@ -1,0 +1,38 @@
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+
+security:
+  ignored: /favicon.ico,/scripts/**,/styles/**,/images/**
+  sessions: ALWAYS
+  oauth2:
+      sso:
+        loginPath: /login
+      client:
+        clientId: ssoclient
+        clientSecret: ssosecret
+        accessTokenUri: http://localhost/oauth/token
+        userAuthorizationUri: http://localhost/oauth/authorize
+        clientAuthenticationScheme: form
+      resource:
+        jwt:
+          keyUri: http://localhost/oauth/token_key
+
+securityconfig:
+  logoutsuccssurl: /tosignout
+  permitall: /rest/**,/bb**
+  deniedpage: /deny
+  urlroles: /**/new/** = admin;
+            /**/edit/** = admin,editor;
+            /**/delete/** = admin
+            
+log4j:
+ logger:
+  org.mybatis: ERROR
+  org.apache.ibatis: ERROR
+  java.sql.Connection: ERROR  
+  java.sql.Statement: ERROR  
+  java.sql.PreparedStatement: ERROR   
+  java.sql.ResultSet: ERROR             
+          

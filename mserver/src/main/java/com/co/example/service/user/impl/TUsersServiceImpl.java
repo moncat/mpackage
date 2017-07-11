@@ -1,5 +1,7 @@
 package com.co.example.service.user.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -7,10 +9,12 @@ import org.springframework.stereotype.Service;
 import com.co.example.common.dao.BaseDao;
 import com.co.example.common.service.BaseServiceImpl;
 import com.co.example.dao.user.TUsersDao;
-import com.co.example.entity.user.TUserLogin;
+import com.co.example.entity.user.TRole;
 import com.co.example.entity.user.TUsers;
+import com.co.example.entity.user.aide.TRoleQuery;
 import com.co.example.entity.user.aide.TUsersQuery;
-import com.co.example.service.user.TUserLoginService;
+import com.co.example.entity.user.aide.TUsersVo;
+import com.co.example.service.user.TRoleService;
 import com.co.example.service.user.TUsersService;
 
 @Service
@@ -18,9 +22,8 @@ public class TUsersServiceImpl extends BaseServiceImpl<TUsers, Integer> implemen
     @Resource
     private TUsersDao tUsersDao;
     
-
-	@Resource
-	TUserLoginService tUserLoginService;
+    @Resource
+    private TRoleService tRoleService;
     
 
     @Override
@@ -29,9 +32,17 @@ public class TUsersServiceImpl extends BaseServiceImpl<TUsers, Integer> implemen
     }
 
 	public TUsers queryByLoginName(String username) {
+		TUsersVo userVo = new TUsersVo();
 		TUsersQuery query = new TUsersQuery();
 		query.setUserName(username);
-		return queryOne(query);
+		userVo = queryOne(query);
+		if(userVo !=null){
+			TRoleQuery tRoleQuery = new TRoleQuery();
+			tRoleQuery.setUserId(userVo.getUserId());
+			List<TRole> roles= tRoleService.queryList(tRoleQuery);
+			userVo.setRoles(roles);
+		}
+		return userVo;
 	}
 
 	@Override
@@ -39,11 +50,7 @@ public class TUsersServiceImpl extends BaseServiceImpl<TUsers, Integer> implemen
 		TUsers user = new TUsers();
 		user.setUserName("lisi");
 		user.setUserPassword("4");
-		TUserLogin tUserLogin = new TUserLogin();
-		tUserLogin.setUserId(1);
-		tUserLogin.setLoginIp("1.1.1.2");
 		add(user);
-		tUserLoginService.add(tUserLogin);
 		System.out.println("yes");
 	}
 

@@ -76,7 +76,7 @@
         <!-- 指定列的java数据类型  -->  
         <!-- <columnOverride column="XXX" jdbcType="VARCHAR" />  --> 
         <!-- </table>  -->
-        <table tableName="t_user_login" modelType="flat" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false"/>  
+        <table tableName="t_org" modelType="flat" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false"/>  
 		<!-- 使用命令：mvn mybatis-generator:generate -->
 	</context>
 </generatorConfiguration>

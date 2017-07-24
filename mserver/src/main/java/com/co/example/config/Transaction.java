@@ -52,7 +52,7 @@ public class Transaction {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
         sessionFactory.setFailFast(true);
-        new PageInterceptor();
+        //new PageInterceptor();
         sessionFactory.setPlugins(new Interceptor[] { pageHelper });
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
         sessionFactory.setConfigLocation(new ClassPathResource("mybatis-config.xml"));

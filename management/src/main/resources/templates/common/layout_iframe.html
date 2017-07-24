@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 头部，包含meta，公共css -->
+<head th:replace="common/layout_head :: head"></head>
+<body>
+<!-- 右侧主页面 -->	
+<section  layout:fragment="main">
+	这里是main
+</section>
+<!-- 公共js -->
+<div th:replace="common/layout_js :: js"></div>
+<!-- 自定义js -->
+<section  layout:fragment="my">
+</section>
+<!-- 页脚 -->
+<section th:replace="common/layout_footer :: footer"></section>
+</body>
+</html>

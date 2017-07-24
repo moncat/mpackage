@@ -1,0 +1,59 @@
+﻿<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 系统管理 
+		<span class="c-gray en">&gt;</span> 菜单管理 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<p class="f-20 text-success">列表页面</p>
+		<div class="line mb-10"></div>
+		<button  class="btn btn-success radius mb-10 add">&nbsp;新增&nbsp;</button>
+		<table class="table table-border table-bordered table-bg">
+			<thead>
+				<tr>
+					<th colspan="7" scope="col">信息统计</th>
+				</tr>
+				<tr class="text-c ">
+					<th></th>
+					<th>名称</th>
+					<th>链接</th>
+					<th>图标</th>
+					<th>层级</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one:${list}" >
+					<tr  class="text-c main" bgcolor="#eee">
+						<td class="f-24" >+</td>
+						<td th:text="${one.name}" class="f-14" ></td>
+						<td th:text="${one.url}"></td>
+						<td th:utext="${one.icon}" class="Hui-iconfont"></td>
+						<td th:text="${one.level}"></td>
+						<td>
+							<button th:attr="data-id=${one.id}" class='btn btn-primary radius edit'>编辑</button>
+							<button th:attr="data-id=${one.id}" class='btn btn-danger radius delete'>删除</button>
+						</td>
+					</tr>	
+					<tr  th:each="sub:${one.menus}"  class="text-c" style="display:none">
+						<td></td>
+						<td th:text="${sub.name}"></td>
+						<td th:text="${sub.url}"></td>
+						<td th:utext="${sub.icon}" class="Hui-iconfont"></td>
+						<td th:text="${sub.level}"></td>
+						<td>
+							<button th:attr="data-id=${sub.id}" class='btn btn-primary radius edit'>编辑</button>
+							<button th:attr="data-id=${sub.id}" class='btn btn-danger radius delete'>删除</button>
+						</td>
+					</tr>
+				</section>
+			</tbody>
+		</table>
+	</div>
+</section>
+<section  layout:fragment="my">
+	<script type="text/javascript" src="/js/system/list.js"></script>
+</section>
+</html>

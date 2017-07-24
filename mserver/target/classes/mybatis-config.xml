@@ -19,6 +19,9 @@
 			<property name="databaseType" value="mysql"/>
 		</plugin>
 	</plugins>
+	 <typeAliases>  
+	      <typeAlias type="com.co.example.entity.NextId" alias="NextId"/>  
+	  </typeAliases>
 
  -->	
 </configuration> 

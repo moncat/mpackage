@@ -21,13 +21,13 @@
 		<!-- 自定义插件给mapper文件添加其他方法  -->
 		<plugin type="com.co.mybatis.generator.plugins.SelectPlugin"/>
 		
-		<!-- 自定义插件给添加service类  -->
+<!-- 		自定义插件给添加service类  -->
 		<plugin type="com.co.mybatis.generator.plugins.ServicePlugin"/>
-		<!-- 自定义插件给添加dao类  -->
+<!-- 		自定义插件给添加dao类  -->
  		<plugin type="com.co.mybatis.generator.plugins.DaoPlugin"/>
-		<!-- 自定义插件给添加aide类  -->
+<!-- 		自定义插件给添加aide类  -->
  		<plugin type="com.co.mybatis.generator.plugins.AidePlugin"/> 
-		
+ 		
 		<commentGenerator>
 			<!-- java文件编码，防止乱码  -->
 			<property name="javaFileEncoding" value="UTF-8"/>
@@ -47,24 +47,24 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成实体类地址  -->
-		<javaModelGenerator targetPackage="com.co.example.entity.user"
+		<javaModelGenerator targetPackage="com.co.example.entity.contact"
 		
 			targetProject="src\main\java">
-			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.bairun.wxServer.entity， true:com.bairun.wxServer.entity.[schemaName]  -->
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.co.example.entity， true:com.co.example.entity.[schemaName]  -->
 			<property name="enableSubPackages" value="false" />
 			<!-- 是否针对string类型的字段在set的时候进行trim调用  -->
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
-		<sqlMapGenerator targetPackage="com.co.example.sqlmaps.user"
+		<sqlMapGenerator targetPackage="com.co.example.sqlmaps.contact"
 			targetProject="src\main\java">
-			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.bairun.wxServer.sqlmaps， true:com.bairun.wxServer.sqlmaps.[schemaName]  -->
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.co.example.sqlmaps， true:com.co.example.sqlmaps.[schemaName]  -->
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		
 		<!-- 生成mapxml对应client，也就是接口dao  -->      
-        <!-- <javaClientGenerator targetPackage="com.bairun.wxServer.dao"  
+        <!-- <javaClientGenerator targetPackage="com.co.example.dao"  
             targetProject="src\main\java" type="XMLMAPPER" >  -->  
-            <!-- 是否在当前路径下新加一层schema,eg：fase路径com.bairun.wxServer.dao， true:com.bairun.wxServer.dao.[schemaName]  -->  
+            <!-- 是否在当前路径下新加一层schema,eg：fase路径com.co.example.dao， true:com.co.example.dao.[schemaName]  -->  
         	<!-- <property name="enableSubPackages" value="false" />  -->  
         <!--</javaClientGenerator>  -->  
 
@@ -76,7 +76,7 @@
         <!-- 指定列的java数据类型  -->  
         <!-- <columnOverride column="XXX" jdbcType="VARCHAR" />  --> 
         <!-- </table>  -->
-        <table tableName="t_org" modelType="flat" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false"/>  
+        <table tableName="t_contact" modelType="flat" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false"/>  
 		<!-- 使用命令：mvn mybatis-generator:generate -->
 	</context>
 </generatorConfiguration>

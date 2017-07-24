@@ -27,12 +27,7 @@ securityconfig:
             /**/edit/** = admin,editor;
             /**/delete/** = admin
             
-log4j:
- logger:
-  org.mybatis: ERROR
-  org.apache.ibatis: ERROR
-  java.sql.Connection: ERROR  
-  java.sql.Statement: ERROR  
-  java.sql.PreparedStatement: ERROR   
-  java.sql.ResultSet: ERROR             
+spring:
+ thymeleaf:
+  cache: false           
           

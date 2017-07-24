@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<section th:fragment="left">
+		<!-- 左侧导航树 -->
+		<aside class="Hui-aside">
+			 <div class="menu_dropdown bk_2" th:each="menu : ${list}">
+				 <dl >
+				   <dt > 
+					   <i class="Hui-iconfont" th:utext="${menu.icon}"></i>
+					   <span th:text="${menu.name}"></span>
+					   <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+				   </dt>
+				   <dd>
+					   <ul th:each="subMenu : ${menu.menus}" >
+					   		<li>
+						   		<a th:attr="data-href=${subMenu.url} , data-title=${subMenu.name}" href="javascript:void(0)" >
+							   		<i class="Hui-iconfont" th:utext="${subMenu.icon}"></i>
+							   		<span th:text="${subMenu.name}"></span>
+						   		</a>
+					   		</li>
+					   </ul>
+				   </dd>
+				 </dl>
+			 </div>
+		</aside>
+		<!-- 关闭展开左侧导航 -->
+		<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+			
+	</section>
+</html>
+

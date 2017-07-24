@@ -20,36 +20,22 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-
-  		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<!-- 连接池 -->
 		<druid.version>1.0.25</druid.version> 
-		<c3p0.version>0.9.1.2</c3p0.version>
-		<!-- sql解析 -->
-		<jsqlparser.version>0.9.1</jsqlparser.version>
   		<!-- webservices -->
   		<cxf.version>2.2.3</cxf.version>
-		<!-- 日志 -->
-		<log4j.version>1.2.14</log4j.version>
-		<slf4j.version>1.7.7</slf4j.version>
-
 		<!-- jstl -->
 		<jstl.version>1.2</jstl.version>
 		<taglibs.version>1.1.2</taglibs.version>
 		<!-- servlet -->
 		<servlet-api.version>2.5</servlet-api.version>
-		<!-- 第三方ajax标签 -->
-		<ajaxtags.version>1.3-beta-rc7</ajaxtags.version>
-		<!-- redis缓存 -->
-		<jedis.version>2.7.2</jedis.version>
 		<!-- solr搜索 -->
 		<solrj.version>4.10.3</solrj.version>
 		<!-- apache commons -->
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-collections4.version>4.0</commons-collections4.version>
 		<commons-io.version>2.4</commons-io.version>
-		<commons-net.version>3.3</commons-net.version>
+		<commons-net.version>3.6</commons-net.version>
 		<commons-beanutils.version>1.9.1</commons-beanutils.version>
 		<commons-fileupload.version>1.3.1</commons-fileupload.version>
 		<commons-email.version>1.4</commons-email.version>
@@ -68,12 +54,9 @@
 		<dom4j.version>1.6.1</dom4j.version>
 		<jaxen-version>1.1.6</jaxen-version>
 		<!-- date 工具类 -->
-		<joda-time.version>2.5</joda-time.version>
-		<date4j.version>1.5.0</date4j.version>
+		<joda-time.version>2.9.9</joda-time.version>
 		<!-- office 操作 -->
 		<poi.version>3.13</poi.version>
-		<!-- google 工具类 -->
-		<guava.version>13.0.1</guava.version>
 		<!-- 二维码 -->
 		<zxing.version>3.0.0</zxing.version>
 		<!-- uuid -->
@@ -106,11 +89,6 @@
 				<artifactId>druid</artifactId>
 				<version>${druid.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>c3p0</groupId>
-				<artifactId>c3p0</artifactId>
-				<version>${c3p0.version}</version>
-			</dependency>
 			 <!-- cxf webservices -->
 	        <dependency>
 		        <groupId>org.apache.cxf</groupId>
@@ -122,17 +100,6 @@
 		        <artifactId>cxf-rt-transports-http</artifactId>
 		        <version>${cxf.version}</version>
 		    </dependency>
-			<!-- 日志处理 -->
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>${log4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
 			<!-- JSP相关 -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -151,18 +118,6 @@
 	            <artifactId>standard</artifactId>
 	            <version>${taglibs.version}</version>
 	        </dependency>
-	        <!-- 在jsp中使用ajax标签 -->
-			<dependency>
-			    <groupId>org.ajaxtags</groupId>
-			    <artifactId>ajaxtags</artifactId>
-			    <version>${ajaxtags.version}</version>
-			</dependency>
-			<!-- Redis客户端 -->
-			<dependency>
-				<groupId>redis.clients</groupId>
-				<artifactId>jedis</artifactId>
-				<version>${jedis.version}</version>
-			</dependency>
 			<!-- solr客户端 -->
 			<dependency>
 				<groupId>org.apache.solr</groupId>
@@ -227,8 +182,6 @@
 				<artifactId>httpmime</artifactId>
 				<version>${httpcomponents.version}</version>
 			</dependency>
-			
-			
 			 <dependency>
 	        	<groupId>org.apache.commons</groupId>
 	        	<artifactId>commons-email</artifactId>
@@ -310,23 +263,12 @@
 				<artifactId>joda-time</artifactId>
 				<version>${joda-time.version}</version>
 			</dependency>
-			<dependency>
-			    <groupId>com.darwinsys</groupId>
-			    <artifactId>hirondelle-date4j</artifactId>
-			    <version>${date4j.version}</version>
-			</dependency>
 			<!-- office 操作 -->
 			 <dependency>
 			    <groupId>org.apache.poi</groupId>
 			    <artifactId>poi-scratchpad</artifactId>
 			    <version>${poi.version}</version>
 			</dependency>
-	       <!-- google 工具类 -->
-			<dependency>
-	            <groupId>com.google.guava</groupId>
-	            <artifactId>guava</artifactId>
-	            <version>${guava.version}</version>
-	        </dependency>
 	        <!-- 二维码 -->
 			<dependency>
 				<groupId>com.google.zxing</groupId>
@@ -471,8 +413,6 @@
   	<module>mgenerator</module>
   	<module>schedule</module>
   	<module>mjsp</module>
-
-
   	<module>ssoServer</module>
   	<module>ssoClient</module>
   	<module>security</module>
@@ -480,5 +420,6 @@
   	<module>login</module>
   	<module>mweb1</module>
   	<module>mweb2</module>
+  	<module>management</module>
   </modules>
 </project>

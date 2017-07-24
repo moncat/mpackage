@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 头部，包含meta，公共css -->
+<head th:replace="common/layout_head :: head"></head>
+<body>
+<!-- 页眉导航  -->
+<header th:replace="common/layout_header :: header"></header>
+<!-- 左侧导航 -->
+<section th:replace="common/layout_left :: left"></section>
+<!-- 右侧主页面 -->	
+<section  layout:fragment="main">
+	这里是main
+</section>
+<!-- 右键公共关闭功能 -->
+<div class="contextMenu" id="Huiadminmenu">
+	<ul>
+		<li id="closethis">关闭当前 </li>
+		<li id="closeall">关闭全部 </li>
+	</ul>
+</div>
+<!-- 公共js -->
+<section th:replace="common/layout_js :: js"></section>
+</body>
+</html>

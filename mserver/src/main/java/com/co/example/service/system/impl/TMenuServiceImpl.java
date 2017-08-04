@@ -17,22 +17,22 @@ import com.co.example.entity.system.aide.TMenuVo;
 import com.co.example.service.system.TMenuService;
 
 @Service
-public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Integer> implements TMenuService {
+public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Long> implements TMenuService {
     @Resource
     private TMenuDao tMenuDao;
 
     @Override
-    protected BaseDao<TMenu, Integer> getBaseDao() {
+    protected BaseDao<TMenu, Long> getBaseDao() {
         return tMenuDao;
     }
 
 	@Override
 	public List<TMenu> getMenuTree() {
 		//根id为0
-		return getMenuTree(0);
+		return getMenuTree(0l);
 	}
 	
-	public List<TMenu> getMenuTree(Integer parentId) {
+	public List<TMenu> getMenuTree(Long parentId) {
 		TMenuQuery tMenuQuery = new TMenuQuery();
 		tMenuQuery.setParentId(parentId);
 		tMenuQuery.setDelFlg(Constant.NO);
@@ -40,7 +40,7 @@ public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Integer> implements
 		if(CollectionUtils.isNotEmpty(list)){
 			for(int i=0;i<list.size();i++){
 				TMenuVo menuVo = (TMenuVo) list.get(i);
-				Integer id = menuVo.getId();
+				Long id = menuVo.getId();
 				if(id!=null){
 					//递归遍历
 					List<TMenu> subList= getMenuTree(id);
@@ -52,7 +52,7 @@ public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Integer> implements
 	}
 
 	@Override
-	public void deleteAll(Integer id) {
+	public void deleteAll(Long id) {
 		TMenuQuery tMenuQuery = new TMenuQuery();
 		tMenuQuery.setParentId(id);
 		delete(tMenuQuery);

@@ -141,11 +141,55 @@ function l2(url,width,height){
 		title: title,
 		content: url
 	});
+	return index;
 	//layer.full(index);
 }
+function lf2(url,width,height){
+	var index = l2(url,width,height);
+	layer.full(index);
+}
+
 
 function lc(){
 	parent.location.reload();
 	var index = parent.layer.getFrameIndex(window.name);
     parent.layer.close(index);
 }
+
+function getJSONP(url, callback) {
+    if (!url) {
+        return;
+    }
+    var a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']; //定义一个数组以便产生随机函数名
+    var r1 = Math.floor(Math.random() * 10);
+    var r2 = Math.floor(Math.random() * 10);
+    var r3 = Math.floor(Math.random() * 10);
+    var name = 'getJSONP' + a[r1] + a[r2] + a[r3];
+    var cbname = 'getJSONP.' + name; //作为jsonp函数的属性
+    if (url.indexOf('?') === -1) {
+        url += '?jsonp=' + cbname;
+    } else {
+        url += '&jsonp=' + cbname;
+    }
+    var script = document.createElement('script');
+    //定义被脚本执行的回调函数
+    getJSONP[name] = function (e) {
+        try {
+            //alert(e.name);
+　　　　　　　　callback && callback(e);
+        } catch (e) {
+            //
+        }
+        finally {
+            //最后删除该函数与script元素
+            delete getJSOP[name];
+            script.parentNode.removeChild(script);
+        }
+
+    }
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+}
+/*getJSONP('http://localhost:8888/',function(response){
+　　alert(response.name);
+});*/

@@ -1,5 +1,6 @@
 package com.co.example.base.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,12 +21,26 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.co.example.base.constant.HttpStatusCode;
+import com.co.example.common.constant.Constant;
+import com.co.example.common.entity.BaseEntity;
 import com.co.example.common.service.BaseService;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.user.TUsers;
+import com.google.common.collect.Maps;
+
+import lombok.SneakyThrows;
 
 
-public abstract class  BaseController<T> {
+public abstract class  BaseController<T extends BaseEntity> {
+	
+	//返回一个对象时用one
+	public static final String ONE = "one";
+	
+	//返回多个对象时用List
+	public static final String LIST = "list";
+	
+	//返回分页对象时用page
+	public static final String PAGE = "page";
 	
 	//请求路径
 	private String returnPath;
@@ -33,75 +48,201 @@ public abstract class  BaseController<T> {
 	protected TUsers tUser; 
 	//用户id
 	protected Integer userId; 
-
+	//异步返回
+	protected Map<String, Object> result = Maps.newHashMap();
+	
+	@SneakyThrows(Exception.class)
 	@RequestMapping(value = "/list", method = { RequestMethod.GET, RequestMethod.POST })
 	public String list( Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,PageReq pageReq,T query) throws Exception{
-		pageReq.setSort(new Sort(Direction.DESC,"t.create_time"));
-		BaseService<T, Integer> service = getService(request, query);
-		Page<T> page = service.queryPageList(query, pageReq);
-		model.addAttribute("page", page);
+		pageReq.setSort(new Sort(Direction.DESC,"t.item_order").and(new Sort(Direction.DESC,"t.create_time")));
+		query.setDelFlg(Constant.NO);
+		BaseService<T,Long> service = getService(request, query);
+		Boolean flg = listExt(model, session, request, response, pageReq,query);
+		if(!flg){
+			Page<T> page = service.queryPageList(query, pageReq);
+			model.addAttribute(PAGE, page);
+		}
 		return returnPath+"/list";
 	}
+	/**
+	 * 扩展列表查询，返回特殊业务的查询结果,并确定是否更改默认查询结果
+	 * @return  false 不更改当前查询  ；  true 改变当前查询
+	 */
+	abstract public Boolean listExt( Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,PageReq pageReq,T query);
 	
+	
+	
+	
+	@SneakyThrows(Exception.class)
 	@RequestMapping(value = "/addInit", method = { RequestMethod.GET,RequestMethod.POST })
 	public String addInit(Model model, HttpSession session,	HttpServletRequest request, HttpServletResponse response) throws Exception{
+		addInitExt(model, session, request, response);
 		return returnPath+"/addInit";
 	}
-
+	/**
+	 * 或许还有更多的初始化数据
+	 */
+	abstract public void addInitExt(Model model, HttpSession session,	HttpServletRequest request, HttpServletResponse response);
+	
+	
+	
+	
+	@SneakyThrows(Exception.class)
 	@RequestMapping(value = "/editInit/{id}/{pageNumber}", method = { RequestMethod.GET,RequestMethod.POST })
-	public String editInit( Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Integer id, @PathVariable Integer pageNumber)throws Exception {
-		BaseService<T, Integer> service = getService(request, t);
-		t = (T) service.queryById(id);
-		model.addAttribute("tOne", t);
+	public String editInit( Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id, @PathVariable Integer pageNumber)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		t =  service.queryById(id);
+		editInitExt(model, session, request, response, t,id);
+		model.addAttribute(ONE, t);
 		model.addAttribute("pageNumber", pageNumber);
 		return returnPath+"/editInit";
 	}
+	/**
+	 * 或许还有更多的初始化数据
+	 */
+	abstract public void editInitExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,Long id);
 
+		
+	
+	
+	@SneakyThrows(Exception.class)
 	@RequestMapping(value = "/add", method = { RequestMethod.GET,RequestMethod.POST })
-	public String add(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
-		BaseService<T, Integer> service = getService(request, t);
-		service.add(t);
-		redirectAttributes.addAttribute("pageNumber", pageReq.getPageNumber());
-		return "redirect:"+returnPath+"/list";
-	}
-	
-	@RequestMapping(value = "/edit", method = { RequestMethod.GET,RequestMethod.POST })
-	public String edit(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
-		BaseService<T, Integer> service = getService(request, t);
-		service.updateByIdSelective(t);
-		redirectAttributes.addAttribute("pageNumber", pageReq.getPageNumber());
-		return returnPath+"/show";
-	}
-	
-	@RequestMapping(value = "/show/{id}", method = { RequestMethod.GET,RequestMethod.POST })
-	public String show(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Integer id)throws Exception {
-		BaseService<T, Integer> service = getService(request, t);
-		t = service.queryById(id);
-		model.addAttribute("tOne", t);
-		return returnPath+"/show";
-	}
-
-	@ResponseBody
-	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.GET,RequestMethod.POST })
-	public Map<String, Object> delete(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Integer id)throws Exception {
-		BaseService<T, Integer> service = getService(request, t);
-		service.deleteById(id);
+	public Map<String,Object> add(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		t.setDelFlg(Constant.NO);
+		t.setCreateTime(new Date());
+		Boolean flg = addExt(model, session, request, response, t,pageReq);
+		if(!flg){
+			service.add(t);
+		}
 		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("pageNumber", pageReq.getPageNumber());
 		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 
+	/**
+	 * 扩展新增,在新增前改变一下数据,并确定是否更改默认数据
+	 */
+	abstract public Boolean addExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq);
 	
+	
+	
+	
+	@SneakyThrows(Exception.class)
+	@RequestMapping(value = "/edit", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> edit(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		t.setUpdateTime(new Date());
+		Boolean flg = editExt(model, session, request, response, t, pageReq);
+		if(!flg){
+			service.updateByIdSelective(t);			
+		}
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("pageNumber", pageReq.getPageNumber());
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+	/**
+	 * 扩展编辑,在编辑前改变一下数据,并确定是否更改默认数据
+	 */
+	abstract public Boolean editExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq);
+	
+	
+	
+	
+
+	@SneakyThrows(Exception.class)
+	@ResponseBody
+	@RequestMapping(value = "/show4Json/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> show4Json(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		Boolean flg = show4JsonExt(model, session, request, response, t, id);
+		if(!flg){
+			t = service.queryById(id);
+			result.put("show4Json", t);
+		}
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+	/**
+	 * 扩展show的数据，返回特殊show数据,并确定是否更改默认数据
+	 * false 不更改 ；  true 更改
+	 */
+	abstract public Boolean show4JsonExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+
+	
+	@SneakyThrows(Exception.class)
+	@RequestMapping(value = "/show/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public String show(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		Boolean flg = showExt(model, session, request, response, t, id);
+		if(!flg){
+			t = service.queryById(id);
+			model.addAttribute(ONE, t);			
+		}
+		return returnPath+"/show";
+	}
+	/**
+	 * 扩展show的数据，返回特殊show数据,并确定是否更改默认数据
+	 * false 不更改 ；  true 更改
+	 */
+	abstract public Boolean showExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+
+	@SneakyThrows(Exception.class)
+	@ResponseBody
+	@RequestMapping(value = "/deletel/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> deleteLogic(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Integer id)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		t.setDelFlg(Constant.YES);
+		Boolean flg = deleteLogicExt(session, request, response, t, id);
+		if(!flg){
+			service.updateByIdSelective(t);			
+		}
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+	/**
+	 * 逻辑删除，扩展过滤条件,并确定是否更改默认删除操作
+	 */
+	abstract public Boolean deleteLogicExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Integer id);
+	
+	
+	@SneakyThrows(Exception.class)
+	@ResponseBody
+	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> deletePhysics(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		BaseService<T,Long> service = getService(request, t);
+		Boolean flg = deletePhysicsExt(session, request, response, t, id);
+		if(!flg){
+			service.deleteById(id);
+		}
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+	/**
+	 * 物理删除，扩展过滤条件,并确定是否更改默认删除操作
+	 */
+	abstract public Boolean deletePhysicsExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+
+	@SneakyThrows(Exception.class)
 	@SuppressWarnings("unchecked")
-	private BaseService<T, Integer> getService(HttpServletRequest request,T query) throws Exception{
+	private BaseService<T, Long> getService(HttpServletRequest request,T query) throws Exception{
 		ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
-		BaseService<T,Integer> service = (BaseService<T,Integer>) ac.getBean(query.getClass().getSimpleName()+"ServiceImpl");
+		BaseService<T,Long> service = (BaseService<T,Long>) ac.getBean(query.getClass().getSimpleName()+"ServiceImpl");
 		return service;
 	}
-
+	
+	@SneakyThrows(Exception.class)
 	public void setReturnPath(String returnPath)throws Exception {
 		this.returnPath = returnPath;
 	}
+
+	
+
+	
 
 	
 }

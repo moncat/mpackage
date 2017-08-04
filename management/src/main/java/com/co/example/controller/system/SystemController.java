@@ -1,9 +1,6 @@
 package com.co.example.controller.system;
 
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -12,14 +9,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.co.example.base.constant.HttpStatusCode;
-import com.co.example.base.controller.BaseController;
-import com.co.example.common.constant.Constant;
+import com.co.example.base.controller.BaseControllerHandler;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.system.TMenu;
 import com.co.example.entity.system.aide.TMenuQuery;
@@ -33,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("system")
 //可以将某个属性放到session中
 //@SessionAttributes(value={"names"},types={Integer.class})
-public class SystemController extends BaseController<TMenu>{
+public class SystemController extends BaseControllerHandler<TMenu>{
 
 	@Inject
 	TMenuService tMenuService;
@@ -44,74 +36,69 @@ public class SystemController extends BaseController<TMenu>{
 //	    log.debug("Test Pre-Run");
 //	 }
 	
+	
 	@Override
-    @RequestMapping("list")
-    public String list(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			PageReq pageReq, TMenu query) throws Exception{
-    	log.debug("列表展示");
+	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			PageReq pageReq, TMenu query) {
+		log.debug("列表展示");
     	List<TMenu> list = tMenuService.getMenuTree();
     	model.addAttribute("list", list);
-        return "system/list";
-    }
-
+		return true;
+	}
+	
 	@Override
-	public String addInit(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
+	public void addInitExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
 		TMenuQuery tMenuQuery = new TMenuQuery();
-		tMenuQuery.setParentId(0);
+		tMenuQuery.setParentId(0l);
 		List<TMenu> list = tMenuService.queryList(tMenuQuery);
 		model.addAttribute("list", list);
-		return super.addInit(model, session, request, response);
 	}
-    
+
 	@RequestMapping("icon")
     public String icon() throws Exception{
         return "system/icon";
     }
+	
 
 	@Override
-	public String add(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t, PageReq pageReq, RedirectAttributes redirectAttributes) throws Exception {
-		t.setCreateTime(new Date());
-		t.setDelFlg(Constant.NO);
+	public Boolean addExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			TMenu t, PageReq pageReq) {
 		setInfo(t);
-		return super.add(model, session, request, response, t, pageReq, redirectAttributes);
-	}
-
-	@Override
-	public String editInit(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t,@PathVariable  Integer id,@PathVariable  Integer pageNumber) throws Exception {
-		TMenuQuery tMenuQuery = new TMenuQuery();
-		tMenuQuery.setParentId(0);
-		List<TMenu> list = tMenuService.queryList(tMenuQuery);
-		model.addAttribute("list", list);
-		return super.editInit(model, session, request, response, t, id, pageNumber);
-	}
-
-	@Override
-	public String edit(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t, PageReq pageReq, RedirectAttributes redirectAttributes) throws Exception {
-		Integer parentId = t.getParentId();
-		if(parentId ==t.getId()){
-			return "system/list";
-		}
-		setInfo(t);
-		tMenuService.updateByIdSelective(t);
-		return "system/list";
-	}
-
-	@Override
-	public Map<String, Object> delete(HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t, @PathVariable Integer id) throws Exception {
-		tMenuService.deleteAll(id);
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
-		return result;
+		return false;
 	}
 	
+
+	@Override
+	public void editInitExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			TMenu t, Long id) {
+		TMenuQuery tMenuQuery = new TMenuQuery();
+		tMenuQuery.setParentId(0l);
+		List<TMenu> list = tMenuService.queryList(tMenuQuery);
+		model.addAttribute("list", list);
+	}
+
+	
+	@Override
+	public Boolean editExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			TMenu t, PageReq pageReq) {
+		Long parentId = t.getParentId();
+		if(parentId !=t.getId()){
+			setInfo(t);
+			tMenuService.updateByIdSelective(t);
+		}
+		return false;
+	}
+
+	@Override
+	public Boolean deletePhysicsExt(HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			TMenu t, Long id) {
+		tMenuService.deleteAll(id);
+		return true;
+	}
+
 	private void setInfo(TMenu t) {
-		Integer parentId = t.getParentId();
-		if(parentId != null && parentId == 0){
+		Long parentId = t.getParentId();
+		if(parentId != null && parentId == 0l){
 			Integer flg = 1;
 			t.setIsRoot(flg.byteValue());
 			t.setLevel(1);
@@ -121,6 +108,8 @@ public class SystemController extends BaseController<TMenu>{
 			t.setLevel(2);
 		}
 	}
+
+	
 }
 
 

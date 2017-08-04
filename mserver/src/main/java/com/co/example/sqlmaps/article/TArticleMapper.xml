@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.co.example.sqlmaps.article.TArticleMapper" >
   <resultMap id="BaseResultMap" type="com.co.example.entity.article.TArticle" >
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="BIGINT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="content" property="content" jdbcType="VARCHAR" />
     <result column="author" property="author" jdbcType="VARCHAR" />
@@ -10,36 +10,39 @@
     <result column="category_id" property="categoryId" jdbcType="INTEGER" />
     <result column="pv" property="pv" jdbcType="INTEGER" />
     <result column="is_top" property="isTop" jdbcType="TINYINT" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_by" property="updateBy" jdbcType="INTEGER" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, title, content, author, key_word, category_id, pv, is_top, create_time, create_by, 
-    update_time, update_by, del_flg
+    id, title, content, author, key_word, category_id, pv, is_top, item_order, create_time, 
+    create_by, update_time, update_by, del_flg
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from t_article
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_article
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.article.TArticle"   keyColumn="id" keyProperty="id" >
-    insert into t_article (id,title, content, author, 
-      key_word, category_id, pv, 
-      is_top, create_time, create_by, 
+  <insert id="insert" parameterType="com.co.example.entity.article.TArticle" >
+    insert into t_article (id, title, 
+      content, author, key_word, 
+      category_id, pv, is_top, 
+      item_order, create_time, create_by, 
       update_time, update_by, del_flg
       )
-    values (${@com.co.example.base.generator.NextId@getId()},#{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
-      #{keyWord,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER}, #{pv,jdbcType=INTEGER}, 
-      #{isTop,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{delFlg,jdbcType=TINYINT}
+    values (${@com.co.example.base.generator.NextId@getId()}, #{title,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{keyWord,jdbcType=VARCHAR}, 
+      #{categoryId,jdbcType=INTEGER}, #{pv,jdbcType=INTEGER}, #{isTop,jdbcType=TINYINT}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT}
       )
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.article.TArticle" >
@@ -66,23 +69,26 @@
       <if test="isTop != null" >
         is_top = #{isTop,jdbcType=TINYINT},
       </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=INTEGER},
+        create_by = #{createBy,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=INTEGER},
+        update_by = #{updateBy,jdbcType=BIGINT},
       </if>
       <if test="delFlg != null" >
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.co.example.entity.article.TArticle" >
     update t_article
@@ -93,24 +99,25 @@
       category_id = #{categoryId,jdbcType=INTEGER},
       pv = #{pv,jdbcType=INTEGER},
       is_top = #{isTop,jdbcType=TINYINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      create_by = #{createBy,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      update_by = #{updateBy,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=BIGINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
     select 
     <include refid="Vo_Column_List" />
     from t_article t
     <include refid="Table_Join_Clause" />
-    where t.id = #{id,jdbcType=INTEGER}
+    where t.id = #{id,jdbcType=BIGINT}
   </select>
   <sql id="Query_Where_Clause" >
     <where >
       <if test="id != null" >
-          and t.id = #{id,jdbcType=INTEGER}
+          and t.id = #{id,jdbcType=BIGINT}
       </if>
       <if test="title != null" >
           and t.title = #{title,jdbcType=VARCHAR}
@@ -133,17 +140,20 @@
       <if test="isTop != null" >
           and t.is_top = #{isTop,jdbcType=TINYINT}
       </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
       <if test="createTime != null" >
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
       <if test="createBy != null" >
-          and t.create_by = #{createBy,jdbcType=INTEGER}
+          and t.create_by = #{createBy,jdbcType=BIGINT}
       </if>
       <if test="updateTime != null" >
           and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
       <if test="updateBy != null" >
-          and t.update_by = #{updateBy,jdbcType=INTEGER}
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
       <if test="delFlg != null" >
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
@@ -188,6 +198,7 @@
     t.category_id, 
     t.pv, 
     t.is_top, 
+    t.item_order, 
     t.create_time, 
     t.create_by, 
     t.update_time, 

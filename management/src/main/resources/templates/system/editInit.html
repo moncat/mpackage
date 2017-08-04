@@ -5,23 +5,23 @@
 
 	<div class="page-container" >
 		<form class="form form-horizontal" id="curForm">
-			<input type="hidden" th:value="${tOne.id}" name="id"></input>
+			<input type="hidden" th:value="${one.id}" name="id"></input>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>菜单名：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" th:value="${tOne.name}" class="input-text" value="" placeholder="菜单名" name="name"></input>
+					<input type="text" th:value="${one.name}" class="input-text" value="" placeholder="菜单名" name="name"></input>
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>菜单链接：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" th:value="${tOne.url}" class="input-text" value="" placeholder="菜单链接" name="url"></input>
+					<input type="text" th:value="${one.url}" class="input-text" value="" placeholder="菜单链接" name="url"></input>
 				</div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图标：</label>
 				<div class="formControls col-xs-8 col-sm-9">
-					<input type="text" th:value="${tOne.icon}" class="input-text" value="" placeholder="图标" name="icon"></input>
+					<input type="text" th:value="${one.icon}" class="input-text" value="" placeholder="图标" name="icon"></input>
 					<a class=" Hui-iconfont Hui-iconfont-help" target="_blank" href="/system/icon" ></a>
 				</div>
 			</div>
@@ -30,9 +30,9 @@
 				<div class="formControls col-xs-8 col-sm-9">
 					 <span class="select-box" style="width:150px;">
 						<select class="select" name="parentId" size="1">
-							<option th:selected="0 == ${tOne.id}"  value="0" >根目录</option>
-							<option th:selected="${one.id} == ${tOne.parentId}"
-							 th:each="one : ${list}" th:disabled="${one.id} == ${tOne.id}"    th:text="${one.name}" th:value="${one.id}" ></option>
+							<option th:selected="0 == ${one.id}"  value="0" >根目录</option>
+							<option th:selected="${o.id} == ${one.parentId}"
+							 th:each="o : ${list}" th:disabled="${o.id} == ${one.id}"    th:text="${o.name}" th:value="${o.id}" ></option>
 						</select>
 					</span> 
 				</div>

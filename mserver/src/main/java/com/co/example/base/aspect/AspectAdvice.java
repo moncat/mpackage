@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author zyl
- *
+ * 根据实际需要开放注解使用
  */
 @Slf4j
 //@Aspect
@@ -105,11 +105,6 @@ public class AspectAdvice {
         pjp.proceed();
         log.debug("@Around 方法执行后");
     }
-    
-    
-    
-    
-    
     
     
     

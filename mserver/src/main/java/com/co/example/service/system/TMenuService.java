@@ -5,12 +5,12 @@ import java.util.List;
 import com.co.example.common.service.BaseService;
 import com.co.example.entity.system.TMenu;
 
-public interface TMenuService extends BaseService<TMenu, Integer> {
+public interface TMenuService extends BaseService<TMenu, Long> {
 	/**
 	 * 获得菜单树
 	 * @return
 	 */
 	List<TMenu> getMenuTree();
 	
-	void deleteAll(Integer id);
+	void deleteAll(Long id);
 }

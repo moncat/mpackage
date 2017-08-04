@@ -2,45 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.co.example.sqlmaps.system.TMenuMapper" >
   <resultMap id="BaseResultMap" type="com.co.example.entity.system.TMenu" >
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="icon" property="icon" jdbcType="VARCHAR" />
     <result column="level" property="level" jdbcType="INTEGER" />
-    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
     <result column="is_root" property="isRoot" jdbcType="TINYINT" />
-    <result column="item_order" property="itemOrder" jdbcType="TINYINT" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_by" property="updateBy" jdbcType="INTEGER" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, url, icon, level, parent_id, is_root, item_order, create_time, create_by, 
     update_time, update_by, del_flg
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from t_menu
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from t_menu
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.system.TMenu" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
-    insert into t_menu (name, url, icon, 
-      level, parent_id, is_root, 
-      item_order, create_time, create_by, 
-      update_time, update_by, del_flg
-      )
-    values (#{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
-      #{level,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{isRoot,jdbcType=TINYINT}, 
-      #{itemOrder,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{delFlg,jdbcType=TINYINT}
-      )
+  <insert id="insert" parameterType="com.co.example.entity.system.TMenu" >
+    insert into t_menu (id, name, 
+      url, icon, level, parent_id, 
+      is_root, item_order, create_time, 
+      create_by, update_time, update_by, 
+      del_flg)
+    values (${@com.co.example.base.generator.NextId@getId()}, #{name,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, 
+      #{isRoot,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.system.TMenu" >
     update t_menu
@@ -58,31 +58,31 @@
         level = #{level,jdbcType=INTEGER},
       </if>
       <if test="parentId != null" >
-        parent_id = #{parentId,jdbcType=INTEGER},
+        parent_id = #{parentId,jdbcType=BIGINT},
       </if>
       <if test="isRoot != null" >
         is_root = #{isRoot,jdbcType=TINYINT},
       </if>
       <if test="itemOrder != null" >
-        item_order = #{itemOrder,jdbcType=TINYINT},
+        item_order = #{itemOrder,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=INTEGER},
+        create_by = #{createBy,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=INTEGER},
+        update_by = #{updateBy,jdbcType=BIGINT},
       </if>
       <if test="delFlg != null" >
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.co.example.entity.system.TMenu" >
     update t_menu
@@ -90,27 +90,27 @@
       url = #{url,jdbcType=VARCHAR},
       icon = #{icon,jdbcType=VARCHAR},
       level = #{level,jdbcType=INTEGER},
-      parent_id = #{parentId,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=BIGINT},
       is_root = #{isRoot,jdbcType=TINYINT},
-      item_order = #{itemOrder,jdbcType=TINYINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      create_by = #{createBy,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      update_by = #{updateBy,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=BIGINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
     select 
     <include refid="Vo_Column_List" />
     from t_menu t
     <include refid="Table_Join_Clause" />
-    where t.id = #{id,jdbcType=INTEGER}
+    where t.id = #{id,jdbcType=BIGINT}
   </select>
   <sql id="Query_Where_Clause" >
     <where >
       <if test="id != null" >
-          and t.id = #{id,jdbcType=INTEGER}
+          and t.id = #{id,jdbcType=BIGINT}
       </if>
       <if test="name != null" >
           and t.name = #{name,jdbcType=VARCHAR}
@@ -125,25 +125,25 @@
           and t.level = #{level,jdbcType=INTEGER}
       </if>
       <if test="parentId != null" >
-          and t.parent_id = #{parentId,jdbcType=INTEGER}
+          and t.parent_id = #{parentId,jdbcType=BIGINT}
       </if>
       <if test="isRoot != null" >
           and t.is_root = #{isRoot,jdbcType=TINYINT}
       </if>
       <if test="itemOrder != null" >
-          and t.item_order = #{itemOrder,jdbcType=TINYINT}
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
       </if>
       <if test="createTime != null" >
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
       <if test="createBy != null" >
-          and t.create_by = #{createBy,jdbcType=INTEGER}
+          and t.create_by = #{createBy,jdbcType=BIGINT}
       </if>
       <if test="updateTime != null" >
           and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
       <if test="updateBy != null" >
-          and t.update_by = #{updateBy,jdbcType=INTEGER}
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
       <if test="delFlg != null" >
           and t.del_flg = #{delFlg,jdbcType=TINYINT}

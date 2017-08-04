@@ -12,11 +12,11 @@
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="fax" property="fax" jdbcType="VARCHAR" />
     <result column="postcode" property="postcode" jdbcType="INTEGER" />
-    <result column="item_order" property="itemOrder" jdbcType="TINYINT" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_by" property="updateBy" jdbcType="INTEGER" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -43,9 +43,9 @@
     values (${@com.co.example.base.generator.NextId@getId()}, #{companyName,jdbcType=VARCHAR}, 
       #{companyUrl,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{map,jdbcType=VARCHAR}, 
       #{linkman,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{fax,jdbcType=VARCHAR}, #{postcode,jdbcType=INTEGER}, #{itemOrder,jdbcType=TINYINT}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{updateBy,jdbcType=INTEGER}, #{delFlg,jdbcType=TINYINT})
+      #{fax,jdbcType=VARCHAR}, #{postcode,jdbcType=INTEGER}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.contact.TContact" >
     update t_contact
@@ -78,19 +78,19 @@
         postcode = #{postcode,jdbcType=INTEGER},
       </if>
       <if test="itemOrder != null" >
-        item_order = #{itemOrder,jdbcType=TINYINT},
+        item_order = #{itemOrder,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null" >
-        create_by = #{createBy,jdbcType=INTEGER},
+        create_by = #{createBy,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateBy != null" >
-        update_by = #{updateBy,jdbcType=INTEGER},
+        update_by = #{updateBy,jdbcType=BIGINT},
       </if>
       <if test="delFlg != null" >
         del_flg = #{delFlg,jdbcType=TINYINT},
@@ -109,11 +109,11 @@
       email = #{email,jdbcType=VARCHAR},
       fax = #{fax,jdbcType=VARCHAR},
       postcode = #{postcode,jdbcType=INTEGER},
-      item_order = #{itemOrder,jdbcType=TINYINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      create_by = #{createBy,jdbcType=INTEGER},
+      create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      update_by = #{updateBy,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=BIGINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -157,19 +157,19 @@
           and t.postcode = #{postcode,jdbcType=INTEGER}
       </if>
       <if test="itemOrder != null" >
-          and t.item_order = #{itemOrder,jdbcType=TINYINT}
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
       </if>
       <if test="createTime != null" >
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
       <if test="createBy != null" >
-          and t.create_by = #{createBy,jdbcType=INTEGER}
+          and t.create_by = #{createBy,jdbcType=BIGINT}
       </if>
       <if test="updateTime != null" >
           and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
       <if test="updateBy != null" >
-          and t.update_by = #{updateBy,jdbcType=INTEGER}
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
       <if test="delFlg != null" >
           and t.del_flg = #{delFlg,jdbcType=TINYINT}

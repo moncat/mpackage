@@ -8,7 +8,5 @@ public class SessionConstant {
 	
 	public static final String SESSION_IDENTITY_CODE = "identifycode";
 	
-	public static final String SESSION_ADMIN_MODEL = "adminmodel";
-	
 	public static final String SESSION_BACK_URL = "backurl";
 }

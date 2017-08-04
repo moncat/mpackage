@@ -47,7 +47,7 @@ public class DaoImplModelGenerator extends AbstractJavaGenerator {
 			IntrospectedColumn primaryKeyColumn = introspectedTable.getPrimaryKeyColumns().get(0);
 			rootInterface.append(primaryKeyColumn.getFullyQualifiedJavaType().getShortName());
         }else{
-        	rootInterface.append("Integer");
+        	rootInterface.append(GenerateConstant.KET_TYPE);
         }
         rootInterface.append(">");
         

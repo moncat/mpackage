@@ -2,11 +2,20 @@
 <html>
 	<footer class="footer mt-10" th:fragment="footer">
 		<div class="container">
-			xx公司　版权所有 <br/>
-			Copyright ©2017 
-			<a href="http://www.zylweb.com" target="_blank" title="www.zylweb.com">www.zylweb.com</a> 
-			All Rights Reserved<a id="showErr">.</a>.
+			<span way-data="appInfo.name">灵智迅工作室</span>　版权所有 <br/>
+			Copyright ©<span way-data="appInfo.copyRight">2017</span> 
+			<span way-data="appInfo.url">www.zylweb.com</span> All Rights Reserved<a id="showErr">.</a>.
 		</div>
+		<script th:inline="javascript">
+				$(function(){
+					$.post('/app/show4Json/1',function(data){
+						var appInfo=data.show4Json;
+						way.set("appInfo", appInfo );
+						console.log(appInfo);
+					});
+				});
+		
+		</script>
 	</footer>
 </html>
 

@@ -9,3 +9,8 @@ server:
 logging:
   level:
     org.springframework.web: DEBUG
+
+ueditor:
+ savePath: "D:/111/"
+ readpath: ""     
+    

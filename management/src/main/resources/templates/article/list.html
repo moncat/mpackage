@@ -18,10 +18,9 @@
 		</div>
 		<div class="cl pd-5 bg-1 bk-gray mt-10">
 			 <span class="l">
-				 <a href="javascript:void(0);" class="btn btn-danger radius all"><i class="Hui-iconfont">&#xe631;</i> 批量停用 </a> 
 				 <a href="javascript:void(0);" class="btn btn-success  radius add"><i class="Hui-iconfont">&#xe600;</i> 添加</a>
 			 </span> 
-			 <span class="r">共有数据：<strong>54</strong> 条</span> 
+			 <span class="r"></span> 
 		 </div>
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg">
@@ -51,11 +50,11 @@
 						<td th:text="${page.number*page.size+status.index+1}">1</td>
 						<td th:text="${one.title}"></td>
 						<td th:text="${one.author}"></td>
-						<td><span th:text="${one.isTop eq 1 ? '置顶':'未置顶'}" class="label radius" th:classappend="${one.isTop eq 1 ? 'label-success':'label-warning'}"></span></td>
+						<td class="td_setTop"><span th:text="${one.isTop eq 1 ? '已置顶':'未置顶'}" class="label radius" th:classappend="${one.isTop eq 1 ? 'label-success':'label-warning'}"></span></td>
 						<td th:text="${one.keyWord}"></td>
 						<td th:text="${one.pv}"></td>
 						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
-						<td class="td-status"><span th:text="${one.delFlg eq 1 ? '已停用':'未停用'}" class="label radius status" th:classappend="${one.delFlg ne 1 ? 'label-success':'label-warning'}"></span></td>
+						<td class="td-status"><span th:text="${one.delFlg eq 1 ? '已停用':'已开启'}" class="label radius status" th:classappend="${one.delFlg ne 1 ? 'label-success':'label-warning'}"></span></td>
 						<td class="td-manage">
 							<a th:hidden="${one.delFlg eq 1}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="停用" class="stop" >
 								<i class="Hui-iconfont">&#xe631;</i>

@@ -3,14 +3,17 @@ package com.co.example.controller.home;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.system.TMenu;
 import com.co.example.service.system.TMenuService;
+import com.co.example.utils.SessionUtil;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -41,8 +44,10 @@ public class HomeController {
 	
 	public String index(
     		@ApiParam(required = true, name = "model", value= "本次用来封装左侧导航菜单") Model model
-    		) throws Exception{
+    		,HttpSession session) throws Exception{
     	List<TMenu> list = tMenuService.getMenuTree();
+    	TAdmin admin = SessionUtil.getAdmin(session);
+    	model.addAttribute("admin", admin);
     	model.addAttribute("list", list);
         return "common/index";
     }

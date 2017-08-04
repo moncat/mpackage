@@ -8080,6 +8080,7 @@ UE.Editor.defaultOptions = function(editor){
                         }
                     },
                     'onerror':function(){
+                    	showErrorMsg(configUrl);
                         showErrorMsg(me.getLang('loadconfigHttpError'));
                     }
                 });

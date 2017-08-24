@@ -1,0 +1,39 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 日志详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">
+		                            <div class="col-md-12">
+       					                <h4>数据来源： <span th:text="${one.source eq 1? '药监局':'美丽修行'}"></span></h4>
+         			                    <h4>访问信息： <span th:text="${one.url}"></span></h4>
+         			                    <h4>操作信息： <span th:text="${one.params}"></span></h4>
+         			                    <h4>操作状态： <span th:text="${one.status}"></span></h4>
+         			                    <h4>返回数量： <span th:text="${one.count}"></span></h4>
+         			                    <h4>错误轨迹： <span th:text="${one.trace}"></span></h4>
+         		                    </div>
+	                            </div> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/log/show.js"></script>
+</section>
+</html>

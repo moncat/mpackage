@@ -6,18 +6,14 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>management</artifactId>
+  <packaging>war</packaging>
   <name>managerment</name>
   <description>management  the platform</description>
      <dependencies>
    		<dependency>
 		    <groupId>com.moncat.parent</groupId>
-		    <artifactId>mserver</artifactId>
+		    <artifactId>mWebConfig</artifactId>
 		    <version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.fusesource</groupId>
-		    <artifactId>sigar</artifactId>
-		    <version>1.6.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -29,6 +25,31 @@
             <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
             <optional>true</optional>
         </dependency>
+       <!--  
+        <dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		    移除嵌入式tomcat插件
+		    <exclusions>
+		        <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-tomcat</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tomcat</groupId>
+		    <artifactId>tomcat-servlet-api</artifactId>
+		    <version>8.0.36</version>
+		    <scope>provided</scope>
+		</dependency>
+ -->
    	</dependencies>
 	<build>
 		<plugins>

@@ -10,7 +10,7 @@
 		<p class="f-20 text-success">列表页面</p>
 		<div class="line mb-10"></div>
 		<button  class="btn btn-success radius mb-10 add">&nbsp;新增&nbsp;</button>
-		<table class="table table-border table-bordered table-bg">
+		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>
 				<tr>
 					<th colspan="7" scope="col">信息统计</th>
@@ -21,6 +21,7 @@
 					<th>链接</th>
 					<th>图标</th>
 					<th>层级</th>
+					<th>排序</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -32,6 +33,7 @@
 						<td th:text="${one.url}"></td>
 						<td th:utext="${one.icon}" class="Hui-iconfont"></td>
 						<td th:text="${one.level}"></td>
+						<td th:text="${one.itemOrder}"></td>
 						<td>
 							<button th:attr="data-id=${one.id}" class='btn btn-primary radius edit'>编辑</button>
 							<button th:attr="data-id=${one.id}" class='btn btn-danger radius delete'>删除</button>
@@ -43,6 +45,7 @@
 						<td th:text="${sub.url}"></td>
 						<td th:utext="${sub.icon}" class="Hui-iconfont"></td>
 						<td th:text="${sub.level}"></td>
+						<td th:text="${sub.itemOrder}"></td>
 						<td>
 							<button th:attr="data-id=${sub.id}" class='btn btn-primary radius edit'>编辑</button>
 							<button th:attr="data-id=${sub.id}" class='btn btn-danger radius delete'>删除</button>

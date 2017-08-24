@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.springframework.data.domain.Page;
 
-import com.co.example.common.service.BaseService;
+import com.github.moncat.common.service.BaseService;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.TAdminActive;

@@ -9,15 +9,17 @@
     <result column="description" property="description" jdbcType="VARCHAR" />
     <result column="copy_right" property="copyRight" jdbcType="VARCHAR" />
     <result column="pv" property="pv" jdbcType="INTEGER" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_by" property="createBy" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, app_id, name, url, description, copy_right, pv, create_time, create_by, update_time, 
-    update_by, del_flg
+    id, app_id, name, url, description, copy_right, pv, item_order, create_time, create_by, 
+    update_time, update_by, is_active, del_flg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -29,17 +31,20 @@
     delete from t_application
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.system.TApplication" >
-    insert into t_application (id, app_id, 
-      name, url, description, 
-      copy_right, pv, create_time, 
+  <insert id="insert" parameterType="com.co.example.entity.system.TApplication" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_application (id, app_id, name, 
+      url, description, copy_right, 
+      pv, item_order, create_time, 
       create_by, update_time, update_by, 
-      del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{appId,jdbcType=INTEGER}, 
-      #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{copyRight,jdbcType=VARCHAR}, #{pv,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      is_active, del_flg)
+    values (#{id,jdbcType=BIGINT}, #{appId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{copyRight,jdbcType=VARCHAR}, 
+      #{pv,jdbcType=INTEGER}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
-      #{delFlg,jdbcType=TINYINT})
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.system.TApplication" >
     update t_application
@@ -62,6 +67,9 @@
       <if test="pv != null" >
         pv = #{pv,jdbcType=INTEGER},
       </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -73,6 +81,9 @@
       </if>
       <if test="updateBy != null" >
         update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
       </if>
       <if test="delFlg != null" >
         del_flg = #{delFlg,jdbcType=TINYINT},
@@ -88,10 +99,12 @@
       description = #{description,jdbcType=VARCHAR},
       copy_right = #{copyRight,jdbcType=VARCHAR},
       pv = #{pv,jdbcType=INTEGER},
+      item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -125,6 +138,9 @@
       <if test="pv != null" >
           and t.pv = #{pv,jdbcType=INTEGER}
       </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
       <if test="createTime != null" >
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
@@ -136,6 +152,9 @@
       </if>
       <if test="updateBy != null" >
           and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
       </if>
       <if test="delFlg != null" >
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
@@ -179,10 +198,12 @@
     t.description, 
     t.copy_right, 
     t.pv, 
+    t.item_order, 
     t.create_time, 
     t.create_by, 
     t.update_time, 
     t.update_by, 
+    t.is_active, 
     t.del_flg
      <!-- ,alias.field -->
   </sql>

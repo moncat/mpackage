@@ -27,6 +27,7 @@ public class FileUtil {
     if (!file.exists()) {
       System.err.println("file not found:" + file.getName());
       System.err.println("Create a new file:" + file.getName());
+      makeDirectory(file);
       try {
         if (file.createNewFile()) {
           System.out.println("Succeeded!");

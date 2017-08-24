@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.product.TBrLogMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrLog" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="source" property="source" jdbcType="TINYINT" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="params" property="params" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="trace" property="trace" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, source, url, params, count, status, trace, item_order, create_time, create_by, 
+    update_time, update_by, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.product.TBrLog" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_log (id, source, url, 
+      params, count, status, 
+      trace, item_order, create_time, 
+      create_by, update_time, update_by, 
+      del_flg)
+    values (#{id,jdbcType=BIGINT}, #{source,jdbcType=TINYINT}, #{url,jdbcType=VARCHAR}, 
+      #{params,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{trace,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{delFlg,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrLog" >
+    update t_br_log
+    <set >
+      <if test="source != null" >
+        source = #{source,jdbcType=TINYINT},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null" >
+        params = #{params,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="trace != null" >
+        trace = #{trace,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrLog" >
+    update t_br_log
+    set source = #{source,jdbcType=TINYINT},
+      url = #{url,jdbcType=VARCHAR},
+      params = #{params,jdbcType=VARCHAR},
+      count = #{count,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      trace = #{trace,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_log t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="source != null" >
+          and t.source = #{source,jdbcType=TINYINT}
+      </if>
+      <if test="url != null" >
+          and t.url = #{url,jdbcType=VARCHAR}
+      </if>
+      <if test="params != null" >
+          and t.params = #{params,jdbcType=VARCHAR}
+      </if>
+      <if test="count != null" >
+          and t.count = #{count,jdbcType=INTEGER}
+      </if>
+      <if test="status != null" >
+          and t.status = #{status,jdbcType=INTEGER}
+      </if>
+      <if test="trace != null" >
+          and t.trace = #{trace,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_log t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_log t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_log where id in (
+    select t.id from (select * from t_br_log) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.product.aide.TBrLogVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.source, 
+    t.url, 
+    t.params, 
+    t.count, 
+    t.status, 
+    t.trace, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <if test="paramsLike != null" >
+    and params like concat('%',#{paramsLike,jdbcType=VARCHAR},'%') 
+    </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

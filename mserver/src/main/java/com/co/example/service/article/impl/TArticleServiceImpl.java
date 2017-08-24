@@ -7,8 +7,8 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.co.example.common.constant.Constant;
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import com.co.example.dao.article.TArticleDao;
 import com.co.example.entity.article.TArticle;
 import com.co.example.entity.article.aide.TArticleQuery;

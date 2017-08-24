@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.co.example.common.utils.PageReq;
-import com.co.example.entity.user.TRole;
-import com.co.example.entity.user.aide.TRoleQuery;
-import com.co.example.service.user.TRoleService;
+import com.co.example.entity.system.TRole;
+import com.co.example.entity.system.aide.TRoleQuery;
+import com.co.example.service.system.TRoleService;
 
 @Controller
 @RequestMapping("/role")
@@ -34,7 +34,7 @@ public class RoleController {
     }
 
     @RequestMapping(value="/{id}")
-    public String show(ModelMap model,@PathVariable Integer id) {
+    public String show(ModelMap model,@PathVariable Long id) {
         TRole role = tRoleService.queryById(id);
         model.addAttribute("role",role);
         return "role/show";
@@ -62,7 +62,7 @@ public class RoleController {
     }
 
     @RequestMapping(value="/edit/{id}")
-    public String update(ModelMap model,@PathVariable Integer id){
+    public String update(ModelMap model,@PathVariable Long id){
     	TRole role = tRoleService.queryById(id);
         model.addAttribute("role",role);
         return "role/edit";
@@ -78,7 +78,7 @@ public class RoleController {
 
     @RequestMapping(value="/delete/{id}",method = RequestMethod.GET)
     @ResponseBody
-    public String delete(@PathVariable Integer id) throws Exception{
+    public String delete(@PathVariable Long id) throws Exception{
     	tRoleService.deleteById(id);
         logger.info("删除->ID="+id);
         return "1";

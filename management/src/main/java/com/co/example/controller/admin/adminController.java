@@ -13,10 +13,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.co.example.base.constant.HttpStatusCode;
+import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.TAdminRole;
@@ -40,13 +43,12 @@ public class adminController {
 	private TAdminLoginService tAdminLoginService;
 	@Resource
 	private TAdminRoleService tAdminRoleService;
-
-	
 	
 	
 	@RequestMapping(value="/list",method = { RequestMethod.GET,RequestMethod.POST})
 	public String list(Model model ,PageReq pageReq ,TAdminQuery query){
 		//所有用户
+		query.setDelFlg(Constant.NO);
 		pageReq.setSort(new Sort(Direction.DESC,"t.create_time"));
 		Page<TAdmin> page = tAdminService.queryAllInfoList(query, pageReq);
 		model.addAttribute("page", page);
@@ -71,8 +73,8 @@ public class adminController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/editInit",method = { RequestMethod.GET,RequestMethod.POST})
-	public String editInit(Model model,Long id){
+	@RequestMapping(value="/editInit/{id}/{p}",method = { RequestMethod.GET,RequestMethod.POST})
+	public String editInit(Model model, @PathVariable Long id, @PathVariable Long p){
 		TAdmin admin = tAdminService.queryById(id);
 		TAdminRoleQuery query = new TAdminRoleQuery();
 		query.setAdminId(admin.getId());
@@ -83,7 +85,7 @@ public class adminController {
 			curRoles.add(tAdminRole.getRoleId().byteValue());
 		}
 		
-		model.addAttribute("admin", admin);
+		model.addAttribute("one", admin);
 		model.addAttribute("curRoles", curRoles);
 
 
@@ -107,6 +109,27 @@ public class adminController {
 		return mapResult;
 	}
 
-
+	@ResponseBody
+	@RequestMapping(value="/show",method = { RequestMethod.GET,RequestMethod.POST})
+	public Map<String,Object> show(HttpSession session,TAdminQuery query){
+		Map<String,Object> mapResult = new HashMap<String,Object>();
+		Long adminId = SessionUtil.getAdminId(session);
+		TAdmin admin = tAdminService.queryById(adminId);
+		admin.setPassword(null);
+		mapResult.put("admin", admin);
+		return mapResult;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/deletel/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> deleteLogic(HttpSession session,@PathVariable Long id)throws Exception {
+		TAdminQuery tAdminQuery = new TAdminQuery();
+		tAdminQuery.setId(id);
+		tAdminQuery.setDelFlg(Constant.YES);
+		tAdminService.updateByIdSelective(tAdminQuery);			
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
 	
 }

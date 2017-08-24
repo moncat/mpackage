@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="$ {one.id}" name="id"></input>
+		#foreach( $elem in $dataList)
+    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				#if($elem.required == 'true')
+					<span class="c-red">*</span>
+				#end
+				$elem.label：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				#if($elem.type == '1')
+<input type="text" class="input-text" th:value="$ {one.$elem.field}" value="" placeholder="$elem.label" name="$elem.field"/>
+				#end
+				#if($elem.type == '4')
+<div class="skin-minimal">
+					  <div class="check-box">
+					    <input type="checkbox" id="checkbox-1" name="$elem.field"/>
+					    <label for="checkbox-1" th:text="$elem.label" >复选框</label>
+					  </div>
+				   </div>
+				#end
+				#if($elem.type == '5')
+<textarea class="textarea" th:utext="$ {one.$elem.field}" value="" placeholder="$elem.label" name="$elem.field"/>
+				#end
+				
+				</div>
+			</div>
+		#end
+					
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/$!{foo}/edit.js"></script>
+	</section>
+</body>
+</html>

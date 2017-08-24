@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.co.example.entity.user.TRole;
+import com.co.example.entity.system.TRole;
 import com.co.example.entity.user.TUsers;
 import com.co.example.entity.user.aide.TUsersVo;
 
@@ -36,7 +36,7 @@ public class SecurityUser extends TUsersVo implements UserDetails
         if(roles != null)
         {
             for (TRole role : roles) {
-                SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getName());
+                SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getRoleName());
                 authorities.add(authority);
             }
         }

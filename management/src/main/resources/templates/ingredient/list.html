@@ -1,0 +1,94 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 成分列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			<form action="/ingredient/list" >
+				<div class="text-c"> 
+					成分名称：
+					<input type="text" class="input-text" style="width:200px" placeholder="成分名称" id="" th:value="${query.nameLike}" name="nameLike"/> 
+					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				</div>
+			</form>
+		</div>
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						成分列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+					<!-- 
+					<th><input type="checkbox" /></th>
+					 -->
+					<th>序号</th>
+					<th>成分名称</th>
+					<th>安全风险</th>
+					<th>活性成分</th>
+					<th>致痘风险</th>
+					<!-- 
+					<th>创建时间</th>
+					<th>状态</th>
+					<th>操作</th>
+					 -->
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr  class="text-c">
+					<!-- 
+						<td><input type="checkbox" /></td>
+					 -->
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td >
+							<a th:href="@{'/ingredient/showMore/'+${one.id}}"   target="_blank">
+								<span th:utext="${one.name}"></span>
+							</a>
+						</td>
+						<td><span  th:text="${one.securityRisks}" class="badge radius" th:classappend="${one.safeColour}" >4</span></td>
+						<td th:if="${one.activeIngredient eq 1}"><img src="/img/hxcf.png" alt="活性成分"/></td>
+						<td th:if="${one.activeIngredient ne 1}"></td>
+						<td th:if="${one.blainRisk eq 1}"><img src="/img/zdfx.png" alt="致痘风险"/></td>
+						<td th:if="${one.blainRisk ne 1}"></td>
+						
+						<!-- 
+						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td class="td-status"><span th:text="${one.isActive ne 0 ? '已开启':'已停用'}" class="label radius status" th:classappend="${one.isActive ne 0 ? 'label-success':'label-warning'}"></span></td>
+						<td class="td-manage">
+							<a th:hidden="${one.isActive eq 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="停用" class="stop" >
+								<i class="Hui-iconfont">&#xe631;</i>
+							</a>
+							
+							<a th:hidden="${one.isActive ne 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="启用" class="ml-5 start" >
+								<i class="Hui-iconfont">&#xe615;</i>
+							</a>
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
+								<i class="Hui-iconfont">&#xe6e2;</i>
+							</a>
+							
+						 	<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
+								<i class="Hui-iconfont">&#xe6df;</i>
+							</a> 
+						 </td>
+						 -->
+						 
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/ingredient/list.js"></script>
+</section>
+</html>

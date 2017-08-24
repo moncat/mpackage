@@ -1,146 +1,149 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.co.example.sqlmaps.system.TRoleMapper" >
-  <resultMap id="BaseResultMap" type="com.co.example.entity.system.TRole" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="describe" property="describe" jdbcType="VARCHAR" />
-    <result column="is_admin" property="isAdmin" jdbcType="TINYINT" />
-    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="create_by" property="createBy" jdbcType="BIGINT" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
-    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.system.TRoleMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.system.TRole">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="is_active" jdbcType="TINYINT" property="isActive" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    id, name, describe, is_admin, item_order, create_time, create_by, update_time, update_by, 
-    del_flg
+  <sql id="Base_Column_List">
+    id, role_name, remark, item_order, create_time, create_by, update_time, update_by, 
+    is_active, del_flg
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_role
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.system.TRole" >
-    insert into t_role (id, name, 
-      describe, is_admin, item_order, 
-      create_time, create_by, update_time, 
-      update_by, del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{name,jdbcType=VARCHAR}, 
-      #{describe,jdbcType=VARCHAR}, #{isAdmin,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT})
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.system.TRole">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_role (id, role_name, remark, 
+      item_order, create_time, create_by, 
+      update_time, update_by, is_active, 
+      del_flg)
+    values (#{id,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
+      #{delFlg,jdbcType=TINYINT})
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.system.TRole" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.system.TRole">
     update t_role
-    <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+    <set>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
       </if>
-      <if test="describe != null" >
-        describe = #{describe,jdbcType=VARCHAR},
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="isAdmin != null" >
-        is_admin = #{isAdmin,jdbcType=TINYINT},
-      </if>
-      <if test="itemOrder != null" >
+      <if test="itemOrder != null">
         item_order = #{itemOrder,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
         create_by = #{createBy,jdbcType=BIGINT},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null">
         update_by = #{updateBy,jdbcType=BIGINT},
       </if>
-      <if test="delFlg != null" >
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null">
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.system.TRole" >
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.system.TRole">
     update t_role
-    set name = #{name,jdbcType=VARCHAR},
-      describe = #{describe,jdbcType=VARCHAR},
-      is_admin = #{isAdmin,jdbcType=TINYINT},
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
     select 
     <include refid="Vo_Column_List" />
     from t_role t
     <include refid="Table_Join_Clause" />
     where t.id = #{id,jdbcType=BIGINT}
   </select>
-  <sql id="Query_Where_Clause" >
-    <where >
-      <if test="id != null" >
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
           and t.id = #{id,jdbcType=BIGINT}
       </if>
-      <if test="name != null" >
-          and t.name = #{name,jdbcType=VARCHAR}
+      <if test="roleName != null">
+          and t.role_name = #{roleName,jdbcType=VARCHAR}
       </if>
-      <if test="describe != null" >
-          and t.describe = #{describe,jdbcType=VARCHAR}
+      <if test="remark != null">
+          and t.remark = #{remark,jdbcType=VARCHAR}
       </if>
-      <if test="isAdmin != null" >
-          and t.is_admin = #{isAdmin,jdbcType=TINYINT}
-      </if>
-      <if test="itemOrder != null" >
+      <if test="itemOrder != null">
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
           and t.create_by = #{createBy,jdbcType=BIGINT}
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
           and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null">
           and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
-      <if test="delFlg != null" >
+      <if test="isActive != null">
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null">
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
       </if>
       <include refid="Vo_Where_Clause" />
     </where>
-    <if test="sorting != null" >
+    <if test="sorting != null">
       order by ${sorting},t.id desc
     </if>
   </sql>
-  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
     select count(t.id) from t_role t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
     select 
     <include refid="Vo_Column_List" />
     from t_role t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  <delete id="delete" parameterType="java.util.Map" >
+  <delete id="delete" parameterType="java.util.Map">
     delete from t_role where id in (
     select t.id from (select * from t_role) t
     <include refid="Table_Join_Clause" />
@@ -148,30 +151,30 @@
     )
   </delete>
   <!--  ************************expand your SQL below the line***********************  -->
-  <resultMap id="VoResultMap" type="com.co.example.entity.system.aide.TRoleVo" extends="BaseResultMap" >
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.system.aide.TRoleVo">
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
   </resultMap>
-  <sql id="Vo_Column_List" >
+  <sql id="Vo_Column_List">
     t.id, 
-    t.name, 
-    t.describe, 
-    t.is_admin, 
+    t.role_name, 
+    t.remark, 
     t.item_order, 
     t.create_time, 
     t.create_by, 
     t.update_time, 
     t.update_by, 
+    t.is_active, 
     t.del_flg
      <!-- ,alias.field -->
   </sql>
-  <sql id="Vo_Where_Clause" >
+  <sql id="Vo_Where_Clause">
     <!-- <if test="queryBeanField != null" > -->
     <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
     <!-- </if> -->
   </sql>
-  <sql id="Table_Join_Clause" >
+  <sql id="Table_Join_Clause">
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
   </sql>
 </mapper>

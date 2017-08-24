@@ -1,0 +1,86 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 日志列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			 <form id="form1" method="post">
+				<div class="text-c"> 
+					 开始值：
+					<input type="number" class="input-text" style="width:100px" value="" placeholder="开始值" name="startPage1" /> 
+					 结束值：
+					<input type="number" class="input-text" style="width:100px" value="" placeholder="结束值" name="endPage1"  /> 
+					<button type="button" class="btn btn-success radius" id="cfdaBtn" name=""><i class="Hui-iconfont">&#xe606;</i> 同步药监局</button>
+					<span id="result1"></span>
+				</div>
+			</form>
+		 </div>
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			 <form id="form2" method="post">
+				<div class="text-c"> 
+					 开始值：
+					<input type="number" class="input-text" style="width:100px" value="1" placeholder="开始值"  name="startPage2" /> 
+					 结束值：
+					<input type="number" class="input-text" style="width:100px" value="250" placeholder="结束值" name="endPage2" /> 
+					 类别：
+					<input type="number" class="input-text" style="width:100px" value="6" placeholder="类目" name="category" /> 
+					<button type="button" class="btn btn-success radius" id="bevolBtn" name=""><i class="Hui-iconfont">&#xe606;</i> 同步美丽修行</button>
+					<span id="result2"></span>
+				</div>
+			</form>
+		 </div>
+		 <div class="cl pd-5 bg-1 bk-gray mt-10">
+			<form action="/log/list">
+				<div class="text-c"> 
+					状态：
+					<input type="number" class="input-text" style="width:100px" placeholder="状态" id="" th:value="${query.status}" name="status"/> 
+					操作信息：
+					<input type="text" class="input-text" style="width:200px" placeholder="params" id="" th:value="${query.paramsLike}" name="paramsLike"/> 
+					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				</div>
+			</form>
+		</div>
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						日志列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+					<th>序号</th>
+					<th>数据来源</th>
+					<th>访问信息</th>
+					<th>状态</th>
+					<th>创建时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr  class="text-c">
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td th:text="${one.source eq 1? '药监局':'美丽修行'}"></td>
+						<td >
+							<a th:href="@{'/log/show/'+${one.id}}"   target="_blank">
+								<span  th:text="${one.url}"></span>
+							</a>
+						</td>
+						<td th:text="${one.status}"></td>
+						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r"  th:attr="data-totalPages=${page.totalPages},data-number=${page.number}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/log/list.js"></script>
+</section>
+</html>

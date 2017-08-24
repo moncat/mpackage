@@ -43,7 +43,7 @@
       status, item_order, create_time, 
       create_by, update_time, update_by, 
       del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{type,jdbcType=INTEGER}, 
+    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{type,jdbcType=INTEGER}, 
       #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{userIp,jdbcType=VARCHAR}, 
       #{vcode,jdbcType=VARCHAR}, #{isUse,jdbcType=TINYINT}, #{isSend,jdbcType=TINYINT}, 
       #{usetime,jdbcType=TIMESTAMP}, #{expireTime,jdbcType=TIMESTAMP}, #{url,jdbcType=VARCHAR}, 

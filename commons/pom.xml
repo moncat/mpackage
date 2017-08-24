@@ -6,9 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>commons</artifactId>
-  
   	<dependencies>
-	 	
 		<dependency>
 	        <groupId>org.springframework.integration</groupId>
 	        <artifactId>spring-integration-core</artifactId>
@@ -31,7 +29,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>		
-	
 		 <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -222,12 +219,7 @@
 		    <groupId>org.springframework</groupId>
 		     <artifactId>spring-context-support</artifactId>
 		</dependency>
-		
-		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		</dependency>
-
+	
 		  <dependency>
         	<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -242,9 +234,33 @@
 		    <groupId>com.lmax</groupId>
 		    <artifactId>disruptor</artifactId>
 		</dependency>
-         
 
-
+		<dependency>
+		    <groupId>net.sourceforge.htmlunit</groupId>
+		    <artifactId>htmlunit</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.10.3</version>
+		</dependency>
+		<dependency>
+		     <groupId>com.github.moncat</groupId>
+   			 <artifactId>MyMyBatisGenerator</artifactId>
+   			 <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- hibernate validate 必须 -->
+		<dependency>  
+           <groupId>javax.el</groupId>  
+           <artifactId>javax.el-api</artifactId>  
+           <version>2.2.4</version>  
+       </dependency>  
+		<dependency>  
+           <groupId>org.glassfish.web</groupId>  
+           <artifactId>javax.el</artifactId>  
+           <version>2.2.4</version>  
+       </dependency> 
+       
 	</dependencies>
   
   

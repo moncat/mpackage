@@ -4,8 +4,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import com.co.example.dao.admin.TAdminLoginDao;
 import com.co.example.entity.admin.TAdminLogin;
 import com.co.example.entity.admin.aide.TAdminLoginQuery;

@@ -29,5 +29,16 @@ public class DataTest {
 		log.debug("******debug");
 	}
 	
+	public static void main(String[] args) throws InterruptedException {
+//		String a="123";
+//		System.out.println(a.replace("1", "5").replace("2", "6"));
+		System.out.println(1);
+		Thread.sleep(2000);
+		System.out.println(2);
+		Thread.sleep(4000);
+		System.out.println(3);
+	}
+	
+	
 }
 

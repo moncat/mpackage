@@ -1,6 +1,6 @@
 package com.co.example.entity.contact;
 
-import com.co.example.common.entity.BaseEntity;
+import com.github.moncat.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -38,4 +38,7 @@ public class TContact extends BaseEntity {
 
     /** 邮编 */
     private Integer postcode;
+
+    /** 是否有效  1有效 0无效 */
+    private Byte isActive;
 }

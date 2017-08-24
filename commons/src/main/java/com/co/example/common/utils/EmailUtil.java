@@ -22,14 +22,14 @@ public class EmailUtil {
 	public static void sendEmail(String toEmail, String toName, String title,
 			String content) {
 		HtmlEmail email = new HtmlEmail();
-		String fromEmail = "";
-		String fromEmailPwd= "";
-		String server = "";
+		String fromEmail = "moncat@126.com";
+		String fromEmailPwd= "***";
+		String server = "smtp.126.com";
 		email.setHostName(server);// 发信邮件服务器
 		email.setAuthentication(fromEmail, fromEmailPwd);// smtp认证的用户名和密码
 		try {
 			email.addTo(toEmail, toName);// 收件人地址和收件人名字
-			email.setFrom(fromEmail, "【大众投票】");// 发信者
+			email.setFrom(fromEmail, "【管理员】");// 发信者
 			email.setSubject(title);// 标题
 			email.setCharset("UTF-8");// 编码格式
 			email.setHtmlMsg(content);// 内容

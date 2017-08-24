@@ -73,11 +73,6 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>      
-			    <groupId>net.sf.json-lib</groupId>     
-			    <artifactId>json-lib</artifactId>      
-			    <classifier>jdk15</classifier> 
-		</dependency> 
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>

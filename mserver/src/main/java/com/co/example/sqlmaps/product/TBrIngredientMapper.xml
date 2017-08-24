@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.product.TBrIngredientMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrIngredient">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="data_id" jdbcType="VARCHAR" property="dataId" />
+    <result column="security_risks" jdbcType="VARCHAR" property="securityRisks" />
+    <result column="active_ingredient" jdbcType="TINYINT" property="activeIngredient" />
+    <result column="blain_risk" jdbcType="TINYINT" property="blainRisk" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+    <result column="name_en" jdbcType="VARCHAR" property="nameEn" />
+    <result column="cas_num" jdbcType="VARCHAR" property="casNum" />
+    <result column="resource" jdbcType="TINYINT" property="resource" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="is_active" jdbcType="TINYINT" property="isActive" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, data_id, security_risks, active_ingredient, blain_risk, alias, name_en, 
+    cas_num, resource, description, item_order, create_time, create_by, update_time, 
+    update_by, is_active, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_ingredient
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_br_ingredient
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.product.TBrIngredient">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_ingredient (id, name, data_id, 
+      security_risks, active_ingredient, blain_risk, 
+      alias, name_en, cas_num, 
+      resource, description, item_order, 
+      create_time, create_by, update_time, 
+      update_by, is_active, del_flg
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{dataId,jdbcType=VARCHAR}, 
+      #{securityRisks,jdbcType=VARCHAR}, #{activeIngredient,jdbcType=TINYINT}, #{blainRisk,jdbcType=TINYINT}, 
+      #{alias,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, #{casNum,jdbcType=VARCHAR}, 
+      #{resource,jdbcType=TINYINT}, #{description,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrIngredient">
+    update t_br_ingredient
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dataId != null">
+        data_id = #{dataId,jdbcType=VARCHAR},
+      </if>
+      <if test="securityRisks != null">
+        security_risks = #{securityRisks,jdbcType=VARCHAR},
+      </if>
+      <if test="activeIngredient != null">
+        active_ingredient = #{activeIngredient,jdbcType=TINYINT},
+      </if>
+      <if test="blainRisk != null">
+        blain_risk = #{blainRisk,jdbcType=TINYINT},
+      </if>
+      <if test="alias != null">
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEn != null">
+        name_en = #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="casNum != null">
+        cas_num = #{casNum,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null">
+        resource = #{resource,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null">
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null">
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrIngredient">
+    update t_br_ingredient
+    set name = #{name,jdbcType=VARCHAR},
+      data_id = #{dataId,jdbcType=VARCHAR},
+      security_risks = #{securityRisks,jdbcType=VARCHAR},
+      active_ingredient = #{activeIngredient,jdbcType=TINYINT},
+      blain_risk = #{blainRisk,jdbcType=TINYINT},
+      alias = #{alias,jdbcType=VARCHAR},
+      name_en = #{nameEn,jdbcType=VARCHAR},
+      cas_num = #{casNum,jdbcType=VARCHAR},
+      resource = #{resource,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_ingredient t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="name != null">
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="dataId != null">
+          and t.data_id = #{dataId,jdbcType=VARCHAR}
+      </if>
+      <if test="securityRisks != null">
+          and t.security_risks = #{securityRisks,jdbcType=VARCHAR}
+      </if>
+      <if test="activeIngredient != null">
+          and t.active_ingredient = #{activeIngredient,jdbcType=TINYINT}
+      </if>
+      <if test="blainRisk != null">
+          and t.blain_risk = #{blainRisk,jdbcType=TINYINT}
+      </if>
+      <if test="alias != null">
+          and t.alias = #{alias,jdbcType=VARCHAR}
+      </if>
+      <if test="nameEn != null">
+          and t.name_en = #{nameEn,jdbcType=VARCHAR}
+      </if>
+      <if test="casNum != null">
+          and t.cas_num = #{casNum,jdbcType=VARCHAR}
+      </if>
+      <if test="resource != null">
+          and t.resource = #{resource,jdbcType=TINYINT}
+      </if>
+      <if test="description != null">
+          and t.description = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null">
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null">
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null">
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null">
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null">
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null">
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null">
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.id) from t_br_ingredient t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_ingredient t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from t_br_ingredient where id in (
+    select t.id from (select * from t_br_ingredient) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.product.aide.TBrIngredientVo">
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.id, 
+    t.name, 
+    t.data_id, 
+    t.security_risks, 
+    t.active_ingredient, 
+    t.blain_risk, 
+    t.alias, 
+    t.name_en, 
+    t.cas_num, 
+    t.resource, 
+    t.description, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause">
+    <if test="productId != null">
+  		  and tpi.product_id = #{productId,jdbcType=BIGINT}
+    </if>
+     <if test="nameLike != null">
+          and t.name like concat ('%',#{nameLike,jdbcType=VARCHAR},'%')
+      </if>
+  </sql>
+  <sql id="Table_Join_Clause">
+	  <if test="joinFlg">
+	      LEFT JOIN t_br_product_ingredient tpi ON t.id = tpi.ingredient_id
+      </if>
+  </sql>
+</mapper>

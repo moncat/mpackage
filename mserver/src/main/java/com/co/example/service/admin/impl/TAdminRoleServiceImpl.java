@@ -1,7 +1,7 @@
 package com.co.example.service.admin.impl;
 
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import com.co.example.dao.admin.TAdminRoleDao;
 import com.co.example.entity.admin.TAdminRole;
 import com.co.example.service.admin.TAdminRoleService;

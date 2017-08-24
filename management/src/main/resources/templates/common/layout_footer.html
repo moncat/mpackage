@@ -10,8 +10,12 @@
 				$(function(){
 					$.post('/app/show4Json/1',function(data){
 						var appInfo=data.show4Json;
+						var d = new Date();
+						var year = d.getFullYear();
+						if(year != appInfo.copyRight){
+							appInfo.copyRight = appInfo.copyRight+"-"+year
+						}
 						way.set("appInfo", appInfo );
-						console.log(appInfo);
 					});
 				});
 		

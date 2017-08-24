@@ -39,7 +39,7 @@
       last_ip, item_order, create_time, 
       create_by, update_time, update_by, 
       del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{loginName,jdbcType=VARCHAR}, 
+    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{loginName,jdbcType=VARCHAR}, 
       #{displayName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{mobilePhone,jdbcType=VARCHAR}, #{visitCount,jdbcType=SMALLINT}, #{lastTime,jdbcType=TIMESTAMP}, 
       #{lastIp,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 

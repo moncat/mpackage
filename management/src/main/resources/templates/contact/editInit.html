@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="${one.id}" name="id"></input>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								公司名：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.companyName}" value="" placeholder="公司名" name="companyName"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								公司地址：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.address}" value="" placeholder="公司地址" name="address"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								联系人：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.linkman}" value="" placeholder="联系人" name="linkman"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								电话：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.telephone}" value="" placeholder="电话" name="telephone"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								公司主页：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.companyUrl}" value="" placeholder="公司主页" name="companyUrl"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								邮箱：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.email}" value="" placeholder="邮箱" name="email"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								传真：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.fax}" value="" placeholder="传真" name="fax"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								邮编：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.postcode}" value="" placeholder="邮编" name="postcode"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								地图：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.map}" value="" placeholder="地图" name="map"/>
+				</div>
+			</div>
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/contact/edit.js"></script>
+	</section>
+</body>
+</html>

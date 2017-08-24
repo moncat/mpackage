@@ -1,10 +1,11 @@
 package com.co.example.base.interceptor;
 
-import javax.annotation.Resource;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.co.example.base.constant.CookieConstant;
@@ -21,9 +22,9 @@ import com.co.example.utils.CookieUtil;
 
 public class RemembermeInterceptor extends HandlerInterceptorAdapter{
 	
-	@Resource
+	@Autowired
 	private TAdminService tAdminService;
-	@Resource
+	@Inject
 	private TAdminLoginService tAdminLoginService;
 
 	@Override

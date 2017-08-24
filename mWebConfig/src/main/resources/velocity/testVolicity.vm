@@ -1,0 +1,43 @@
+
+##**************set******************
+#set($i=5)
+i= $i
+
+##**************if******************
+#if($ifTest)
+	<img src="newPhoto.jpg" border=0>
+#else
+	<img src="noPhoto.jpg">
+#end
+
+##**************for******************
+	#foreach( $elem in $dataList)
+		$!{velocityCount} --$elem
+	 #end 
+   		dataList size $!{dataList.size()}
+   		
+#foreach($foo in [1..9])
+ $foo
+#end   		
+##**************different1******************
+ 1:  $username
+ 2:  $!username 
+   		
+##**************different2******************
+#set($pram="helo")
+ $pram
+"$pram"
+'$pram'
+
+##****************************************
+#macro(d)
+<tr><td>1</td><td>2</td></tr>
+#end
+
+get it--#d()
+
+##****************************************
+##load other vm  #parse("src/main/resources/volicity/controller.vm")
+##load 2 txt   #inclue("src/main/resources/volicity/controller.vm")
+
+

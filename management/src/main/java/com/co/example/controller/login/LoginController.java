@@ -75,7 +75,7 @@ public class LoginController {
 			if (StringUtils.isBlank(identifyCode) || !identifyCodeSession.equals(identifyCode.toUpperCase())) {
 				final int CODE_ERROR_IDENTITY = 401;
 				mapResult.put("code",CODE_ERROR_IDENTITY);
-				mapResult.put("desc", "验证码错误!");
+				mapResult.put("desc", "验证码错误或超时!");
 				return mapResult;
 			} else {
 				session.removeAttribute(SessionConstant.SESSION_IDENTITY_CODE);
@@ -147,13 +147,13 @@ public class LoginController {
 		adminSession.setAdmin(null);
 		session.setAttribute(SessionConstant.SESSION_ADMIN, adminSession);
 		CookieUtil.removeCookie(response, CookieConstant.COOKIE_ADMIN_KEY);
-		return "admin/loginInit";
+		return "redirect:/login/loginInit";
 	}
 	
 	
 	@RequestMapping(value="/findPwd",method = { RequestMethod.GET})
 	public String findPwd(){
-		return "admin/findPwd";
+		return "findPwd";
 	}
 	
 	//保存新密码 

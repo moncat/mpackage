@@ -6,12 +6,9 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @Title: UrlMapUtil.java
- * @Package com.kjj.pc.util
  * @Description: Url2Map Map2Url
- * @author ZYLORG
+ * @author ZYL
  * @date 2016年10月11日 上午10:42:04
- * @copyright Beijing KJJ Electronic commerce Co., LTD
  * @version V1.0   
  */
 public class UrlMapUtil {

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.product.TBrProductAppendixMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrProductAppendix" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.co.example.entity.product.TBrProductAppendix" extends="BaseResultMap" >
+    <result column="jsonData1" property="jsondata1" jdbcType="LONGVARCHAR" />
+    <result column="jsonData2" property="jsondata2" jdbcType="LONGVARCHAR" />
+    <result column="jsonData3" property="jsondata3" jdbcType="LONGVARCHAR" />
+    <result column="jsonData4" property="jsondata4" jdbcType="LONGVARCHAR" />
+    <result column="jsonData5" property="jsondata5" jdbcType="LONGVARCHAR" />
+    <result column="jsonData6" property="jsondata6" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, product_id, item_order, create_time, create_by, update_time, update_by, del_flg
+  </sql>
+  <sql id="Blob_Column_List" >
+    jsonData1, jsonData2, jsonData3, jsonData4, jsonData5, jsonData6
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_br_product_appendix
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_product_appendix
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.product.TBrProductAppendix" keyColumn="id" keyProperty="id">
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE">  
+		SELECT ${@com.github.moncat.common.generator.id.NextId@getId()} 
+	  </selectKey>
+    insert into t_br_product_appendix (id, product_id, 
+      item_order, create_time, create_by, 
+      update_time, update_by, del_flg, 
+      jsonData1, jsonData2, jsonData3, 
+      jsonData4, jsonData5, jsonData6
+      )
+    values (#{id,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT}, 
+      #{jsondata1,jdbcType=LONGVARCHAR}, #{jsondata2,jdbcType=LONGVARCHAR}, #{jsondata3,jdbcType=LONGVARCHAR}, 
+      #{jsondata4,jdbcType=LONGVARCHAR}, #{jsondata5,jdbcType=LONGVARCHAR}, #{jsondata6,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrProductAppendix" >
+    update t_br_product_appendix
+    <set >
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+      <if test="jsondata1 != null" >
+        jsonData1 = #{jsondata1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="jsondata2 != null" >
+        jsonData2 = #{jsondata2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="jsondata3 != null" >
+        jsonData3 = #{jsondata3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="jsondata4 != null" >
+        jsonData4 = #{jsondata4,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="jsondata5 != null" >
+        jsonData5 = #{jsondata5,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="jsondata6 != null" >
+        jsonData6 = #{jsondata6,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.co.example.entity.product.TBrProductAppendix" >
+    update t_br_product_appendix
+    set product_id = #{productId,jdbcType=BIGINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      del_flg = #{delFlg,jdbcType=TINYINT},
+      jsonData1 = #{jsondata1,jdbcType=LONGVARCHAR},
+      jsonData2 = #{jsondata2,jdbcType=LONGVARCHAR},
+      jsonData3 = #{jsondata3,jdbcType=LONGVARCHAR},
+      jsonData4 = #{jsondata4,jdbcType=LONGVARCHAR},
+      jsonData5 = #{jsondata5,jdbcType=LONGVARCHAR},
+      jsonData6 = #{jsondata6,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrProductAppendix" >
+    update t_br_product_appendix
+    set product_id = #{productId,jdbcType=BIGINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product_appendix t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="productId != null" >
+          and t.product_id = #{productId,jdbcType=BIGINT}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <if test="jsondata1 != null" >
+          and t.jsonData1 = #{jsondata1,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="jsondata2 != null" >
+          and t.jsonData2 = #{jsondata2,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="jsondata3 != null" >
+          and t.jsonData3 = #{jsondata3,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="jsondata4 != null" >
+          and t.jsonData4 = #{jsondata4,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="jsondata5 != null" >
+          and t.jsonData5 = #{jsondata5,jdbcType=LONGVARCHAR}
+      </if>
+      <if test="jsondata6 != null" >
+          and t.jsonData6 = #{jsondata6,jdbcType=LONGVARCHAR}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_product_appendix t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product_appendix t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_product_appendix where id in (
+    select t.id from (select * from t_br_product_appendix) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.product.aide.TBrProductAppendixVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.product_id, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

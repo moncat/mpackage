@@ -1,0 +1,131 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 产品详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                            <h2 class="text-c"  th:utext="${one.productName}">无名称</h2>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">
+		                            <div class="col-md-9">
+			                            <h4>产品别名： <span th:text="${one.productAlias}">无别名</span></h4>
+			                            <h4>企业名称： <span th:text="${one.enterpriseName}">无企业名称</span></h4>
+			                            <h4>企业英文： <span th:text="${one.enterpriseNameEn}">无企业名称</span></h4>
+			                            <h4>企业地址： <span th:text="${one.producingArea}">浙江省杭州市杭州经济技术开发区xx号</span></h4>
+			                            <h4>备案编号： <span th:text="${one.applySn}">闽G妆网备字2018002654</span></h4>
+			                            <h4>备案类型： <span th:text="${one.applyType  eq '1' ? '国产备案':'进口备案'}"></span></h4>
+			                            <h4>备案日期： <span th:text="${one.confirmDate}">2017-02-12</span></h4>
+			                            <!-- <h4>数据来源： <span th:text="${one.source eq 1 ? '药监局':'美丽修行'}"></span></h4> -->
+		                            </div>
+		                            <div class="col-md-3">
+		                           		 <img th:if="${one.source ne 1}" style="height: 300px;" th:src="${productImageList[0].bevolUrl}" alt=""/>
+		                          		 <div th:if="${one.source eq 1}">
+		                          		 	<div th:each="image:${productImageList}" class="text-c mt-10 f-18">
+		                          		 	   <div th:if="${image.imageType eq 1}" >
+		                          		 	   	   <a th:href="${image.imageUrl}" target="_blank" >查看平面图</a><br/>
+		                          		 	   	   <a th:href="${image.downloadUrl}" target="_blank">下载平面图</a><br/>
+		                          		 	   </div>
+		                          		 	   <div th:if="${image.imageType eq 2}" >
+		                          		 	   	   <a th:href="${image.imageUrl}" target="_blank" >查看立体图</a><br/>
+		                          		 	   	   <a th:href="${image.downloadUrl}" target="_blank">下载立体图</a><br/>
+		                          		 	   </div>
+		                          		 	   <div th:if="${image.imageType eq 3}" >
+		                          		 	 	   <a th:href="${image.imageUrl}" target="_blank" >查看商标证、授权书 </a><br/>
+		                          		 	   	   <a th:href="${image.downloadUrl}" target="_blank">下载商标证、授权书 </a><br/>
+		                          		 	   </div>
+		                          		    </div>
+		                          		 </div>
+		                            </div>
+	                            </div> 
+	                            <section th:if="${enterpriseList.size()>0}">
+		                            <div class="line mb-10"></div>
+									<table class="table table-border table-bordered table-bg">
+										<thead>
+											<tr>
+												<th colspan="10" scope="col">
+													实际生产企业列表
+												</th>
+											</tr>
+											<tr class="text-c ">
+												<th>序号</th>
+												<th>企业名称</th>
+												<th>企业备案</th>
+												<th>企业地址</th>
+												<th>备注</th>
+											</tr>
+										</thead>
+										<tbody>
+											<section th:each="itemE,statusE:${enterpriseList}" >
+												<tr class="text-c">
+													<td th:text="${statusE.index+1}">1</td>
+													<td th:utext="${itemE.enterpriseName}"></td>
+													<td th:utext="${itemE.applySn}"></td>
+													<td th:utext="${itemE.producingArea}"></td>
+													<td th:utext="${itemE.remark}"></td>
+												</tr>					
+											</section>
+										</tbody>
+									</table>
+	                            </section>
+								
+	                            <div class="line mb-10"></div>
+								<table class="table table-border table-bordered table-bg">
+									<thead>
+										<tr>
+											<th colspan="10" scope="col">
+												成分列表
+											</th>
+										</tr>
+										<tr class="text-c ">
+											<th>序号</th>
+											<th>成分名称</th>
+											<th>安全风险</th>
+											<th>活性成分</th>
+											<th>致痘风险</th>
+											<th>使用目的</th>
+										</tr>
+									</thead>
+									<tbody>
+										<section th:each="item,status:${ingredientList}" >
+											<tr class="text-c">
+												<td th:text="${status.index+1}">1</td>
+												<td>
+													<a th:href="@{'/ingredient/showMore/'+${item.id}}" title="查看详情" target="_blank">
+														<span th:utext="${item.name}"></span>
+													</a>
+												</td>
+												<td><span  th:text="${item.securityRisks}" class="badge radius" th:classappend="${item.safeColour}" >4</span></td>
+												<td th:if="${item.activeIngredient eq 1}"><img src="/img/hxcf.png" alt="活性成分"/></td>
+												<td th:if="${item.activeIngredient ne 1}"></td>
+												<td th:if="${item.blainRisk eq 1}"><img src="/img/zdfx.png" alt="致痘风险"/></td>
+												<td th:if="${item.blainRisk ne 1}"></td>
+												<td>
+												   <span th:each="aim:${item.tBrAims}" th:text="${aim.name}">溶剂</span> 
+												</td>
+												
+											</tr>					
+										</section>
+									</tbody>
+								</table>
+								<h5>备注： <span  th:text="${one.remark}">remark</span></h5>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+</section>
+</html>

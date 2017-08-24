@@ -1,6 +1,6 @@
 package com.co.example.entity.system;
 
-import com.co.example.common.entity.BaseEntity;
+import com.github.moncat.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -29,4 +29,7 @@ public class TApplication extends BaseEntity {
 
     /** 浏览次数 */
     private Integer pv;
+
+    /** 是否有效 1有效 0无效 */
+    private Byte isActive;
 }

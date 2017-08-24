@@ -69,7 +69,6 @@ public class ArticleController extends BaseControllerHandler<TArticle> {
 		tArticleService.updateByIdSelective(tArticleQuery);
 		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
-		
 	}
 	
 }

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.product.TBrProductImageMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrProductImage">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="product_id" jdbcType="BIGINT" property="productId" />
+    <result column="cfda_image_id" jdbcType="VARCHAR" property="cfdaImageId" />
+    <result column="cfda_ssid" jdbcType="VARCHAR" property="cfdaSsid" />
+    <result column="bevol_url" jdbcType="VARCHAR" property="bevolUrl" />
+    <result column="file_type" jdbcType="VARCHAR" property="fileType" />
+    <result column="image_type" jdbcType="TINYINT" property="imageType" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="is_active" jdbcType="TINYINT" property="isActive" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, product_id, cfda_image_id, cfda_ssid, bevol_url, file_type, image_type, 
+    item_order, create_time, create_by, update_time, update_by, is_active, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_product_image
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_br_product_image
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.product.TBrProductImage">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_product_image (id, name, product_id, 
+      cfda_image_id, cfda_ssid, bevol_url, 
+      file_type, image_type, item_order, 
+      create_time, create_by, update_time, 
+      update_by, is_active, del_flg
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{productId,jdbcType=BIGINT}, 
+      #{cfdaImageId,jdbcType=VARCHAR}, #{cfdaSsid,jdbcType=VARCHAR}, #{bevolUrl,jdbcType=VARCHAR}, 
+      #{fileType,jdbcType=VARCHAR}, #{imageType,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrProductImage">
+    update t_br_product_image
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="cfdaImageId != null">
+        cfda_image_id = #{cfdaImageId,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdaSsid != null">
+        cfda_ssid = #{cfdaSsid,jdbcType=VARCHAR},
+      </if>
+      <if test="bevolUrl != null">
+        bevol_url = #{bevolUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fileType != null">
+        file_type = #{fileType,jdbcType=VARCHAR},
+      </if>
+      <if test="imageType != null">
+        image_type = #{imageType,jdbcType=TINYINT},
+      </if>
+      <if test="itemOrder != null">
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null">
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrProductImage">
+    update t_br_product_image
+    set name = #{name,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=BIGINT},
+      cfda_image_id = #{cfdaImageId,jdbcType=VARCHAR},
+      cfda_ssid = #{cfdaSsid,jdbcType=VARCHAR},
+      bevol_url = #{bevolUrl,jdbcType=VARCHAR},
+      file_type = #{fileType,jdbcType=VARCHAR},
+      image_type = #{imageType,jdbcType=TINYINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product_image t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="name != null">
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="productId != null">
+          and t.product_id = #{productId,jdbcType=BIGINT}
+      </if>
+      <if test="cfdaImageId != null">
+          and t.cfda_image_id = #{cfdaImageId,jdbcType=VARCHAR}
+      </if>
+      <if test="cfdaSsid != null">
+          and t.cfda_ssid = #{cfdaSsid,jdbcType=VARCHAR}
+      </if>
+      <if test="bevolUrl != null">
+          and t.bevol_url = #{bevolUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="fileType != null">
+          and t.file_type = #{fileType,jdbcType=VARCHAR}
+      </if>
+      <if test="imageType != null">
+          and t.image_type = #{imageType,jdbcType=TINYINT}
+      </if>
+      <if test="itemOrder != null">
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null">
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null">
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null">
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null">
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null">
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null">
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.id) from t_br_product_image t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product_image t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from t_br_product_image where id in (
+    select t.id from (select * from t_br_product_image) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.product.aide.TBrProductImageVo">
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.id, 
+    t.name, 
+    t.product_id, 
+    t.cfda_image_id, 
+    t.cfda_ssid, 
+    t.bevol_url, 
+    t.file_type, 
+    t.image_type, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause">
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause">
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

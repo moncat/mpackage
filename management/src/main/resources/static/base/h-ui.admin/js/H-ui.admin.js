@@ -115,6 +115,14 @@ function creatIframe(href,titleName){
 						$t.find("i").trigger("click");
 					}
 				},
+				'closeleft': function(t) {
+					var $t = $(t);				
+					$t.prevAll('li').find("i").trigger("click");
+				},
+				'closeright': function(t) {
+					var $t = $(t);				
+						$t.nextAll('li').find("i").trigger("click");
+				 },
 				'closeall': function(t) {
 					$("#min_title_list li i").trigger("click");
 				},

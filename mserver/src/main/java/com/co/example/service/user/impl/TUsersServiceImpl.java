@@ -6,16 +6,16 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
 import com.co.example.dao.user.TUsersDao;
-import com.co.example.entity.user.TRole;
+import com.co.example.entity.system.TRole;
+import com.co.example.entity.system.aide.TRoleQuery;
 import com.co.example.entity.user.TUsers;
-import com.co.example.entity.user.aide.TRoleQuery;
 import com.co.example.entity.user.aide.TUsersQuery;
 import com.co.example.entity.user.aide.TUsersVo;
-import com.co.example.service.user.TRoleService;
+import com.co.example.service.system.TRoleService;
 import com.co.example.service.user.TUsersService;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 
 @Service
 public class TUsersServiceImpl extends BaseServiceImpl<TUsers, Integer> implements TUsersService {
@@ -38,7 +38,7 @@ public class TUsersServiceImpl extends BaseServiceImpl<TUsers, Integer> implemen
 		userVo = queryOne(query);
 		if(userVo !=null){
 			TRoleQuery tRoleQuery = new TRoleQuery();
-			tRoleQuery.setUserId(userVo.getUserId());
+			tRoleQuery.setUserId(userVo.getUserId().longValue());
 			List<TRole> roles= tRoleService.queryList(tRoleQuery);
 			userVo.setRoles(roles);
 		}

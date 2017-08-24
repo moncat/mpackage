@@ -1,6 +1,6 @@
 package com.co.example.entity.system;
 
-import com.co.example.common.entity.BaseEntity;
+import com.github.moncat.common.entity.BaseEntity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

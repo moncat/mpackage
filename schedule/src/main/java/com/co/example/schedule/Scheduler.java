@@ -9,17 +9,27 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class Scheduler {
 	
+//	@Scheduled(cron="0 0/1 * * * ?") //每分钟执行一次
+//	public void statusCheck() {    
+//		log.info("每分钟执行一次。开始……");
+//		//statusTask.healthCheck();
+//		log.info("每分钟执行一次。结束。");
+//	}  
+//
+//	@Scheduled(fixedRate=20000)
+//	public void testTasks() {    
+//		log.info("每20秒执行一次。开始……");
+//		//statusTask.healthCheck();
+//		log.info("每20秒执行一次。结束。");
+//	}  
+	
 	@Scheduled(cron="0 0/1 * * * ?") //每分钟执行一次
-	public void statusCheck() {    
-		log.info("每分钟执行一次。开始……");
-		//statusTask.healthCheck();
-		log.info("每分钟执行一次。结束。");
-	}  
-
-	@Scheduled(fixedRate=20000)
 	public void testTasks() {    
 		log.info("每20秒执行一次。开始……");
 		//statusTask.healthCheck();
 		log.info("每20秒执行一次。结束。");
 	}  
+	
+	
+	
 }

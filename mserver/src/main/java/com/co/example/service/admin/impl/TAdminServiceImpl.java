@@ -7,12 +7,13 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.co.example.common.constant.Constant;
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import com.co.example.common.utils.MD5;
 import com.co.example.common.utils.PageReq;
 import com.co.example.common.utils.ValidateUtil;
@@ -126,15 +127,17 @@ public class TAdminServiceImpl extends BaseServiceImpl<TAdmin, Long> implements 
 		}
 		//添加角色
 		List<Long> roleIds = admin.getRoleIds();
-		List<TAdminRole> TAdminRoles = Lists.newArrayList();
-		TAdminRole tAdminRole = null;
-		for (Long roleId : roleIds) {
-			tAdminRole = new TAdminRole();
-			tAdminRole.setRoleId(roleId);
-			tAdminRole.setAdminId(admin.getId());
-			TAdminRoles.add(tAdminRole);
+		if(CollectionUtils.isNotEmpty(roleIds)){
+			List<TAdminRole> TAdminRoles = Lists.newArrayList();
+			TAdminRole tAdminRole = null;
+			for (Long roleId : roleIds) {
+				tAdminRole = new TAdminRole();
+				tAdminRole.setRoleId(roleId);
+				tAdminRole.setAdminId(admin.getId());
+				TAdminRoles.add(tAdminRole);
+			}
+			tAdminRoleService.addInBatch(TAdminRoles);
 		}
-		tAdminRoleService.addInBatch(TAdminRoles);
 		
 		mapResult.put("code",200);
 		mapResult.put("desc", "新增成功！");

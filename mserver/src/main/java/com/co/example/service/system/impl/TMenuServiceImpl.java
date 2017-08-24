@@ -5,16 +5,18 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.co.example.common.constant.Constant;
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
 import com.co.example.dao.system.TMenuDao;
 import com.co.example.entity.system.TMenu;
 import com.co.example.entity.system.aide.TMenuQuery;
 import com.co.example.entity.system.aide.TMenuVo;
 import com.co.example.service.system.TMenuService;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 
 @Service
 public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Long> implements TMenuService {
@@ -36,7 +38,7 @@ public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Long> implements TM
 		TMenuQuery tMenuQuery = new TMenuQuery();
 		tMenuQuery.setParentId(parentId);
 		tMenuQuery.setDelFlg(Constant.NO);
-		List<TMenu> list = queryList(tMenuQuery);
+		List<TMenu> list = queryList(tMenuQuery ,new Sort(Direction.DESC ,"t.item_order"));
 		if(CollectionUtils.isNotEmpty(list)){
 			for(int i=0;i<list.size();i++){
 				TMenuVo menuVo = (TMenuVo) list.get(i);

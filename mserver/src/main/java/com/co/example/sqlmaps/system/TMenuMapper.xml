@@ -36,7 +36,7 @@
       is_root, item_order, create_time, 
       create_by, update_time, update_by, 
       del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{name,jdbcType=VARCHAR}, 
+    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{name,jdbcType=VARCHAR}, 
       #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, 
       #{isRoot,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 

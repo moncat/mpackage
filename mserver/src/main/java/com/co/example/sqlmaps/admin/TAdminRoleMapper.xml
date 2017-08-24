@@ -31,7 +31,7 @@
       role_id, item_order, create_time, 
       create_by, update_time, update_by, 
       del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{adminId,jdbcType=BIGINT}, 
+    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{adminId,jdbcType=BIGINT}, 
       #{roleId,jdbcType=BIGINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
       #{delFlg,jdbcType=TINYINT})

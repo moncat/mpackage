@@ -2,7 +2,7 @@ package com.co.example.entity.user.aide;
 
 import java.util.List;
 
-import com.co.example.entity.user.TRole;
+import com.co.example.entity.system.TRole;
 import com.co.example.entity.user.TUsers;
 
 public class TUsersVo extends TUsers {

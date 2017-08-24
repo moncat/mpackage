@@ -17,11 +17,12 @@
     <result column="create_by" property="createBy" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, company_name, company_url, address, map, linkman, telephone, email, fax, postcode, 
-    item_order, create_time, create_by, update_time, update_by, del_flg
+    item_order, create_time, create_by, update_time, update_by, is_active, del_flg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -33,19 +34,22 @@
     delete from t_contact
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.contact.TContact" >
-    insert into t_contact (id, company_name, 
-      company_url, address, map, 
-      linkman, telephone, email, 
-      fax, postcode, item_order, 
-      create_time, create_by, update_time, 
-      update_by, del_flg)
-    values (${@com.co.example.base.generator.NextId@getId()}, #{companyName,jdbcType=VARCHAR}, 
-      #{companyUrl,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{map,jdbcType=VARCHAR}, 
-      #{linkman,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{fax,jdbcType=VARCHAR}, #{postcode,jdbcType=INTEGER}, #{itemOrder,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT})
+  <insert id="insert" parameterType="com.co.example.entity.contact.TContact" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_contact (id, company_name, company_url, 
+      address, map, linkman, 
+      telephone, email, fax, 
+      postcode, item_order, create_time, 
+      create_by, update_time, update_by, 
+      is_active, del_flg)
+    values (#{id,jdbcType=BIGINT}, #{companyName,jdbcType=VARCHAR}, #{companyUrl,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{map,jdbcType=VARCHAR}, #{linkman,jdbcType=VARCHAR}, 
+      #{telephone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=INTEGER}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.contact.TContact" >
     update t_contact
@@ -92,6 +96,9 @@
       <if test="updateBy != null" >
         update_by = #{updateBy,jdbcType=BIGINT},
       </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
       <if test="delFlg != null" >
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
@@ -114,6 +121,7 @@
       create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -171,6 +179,9 @@
       <if test="updateBy != null" >
           and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
       <if test="delFlg != null" >
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
       </if>
@@ -221,6 +232,7 @@
     t.create_by, 
     t.update_time, 
     t.update_by, 
+    t.is_active, 
     t.del_flg
      <!-- ,alias.field -->
   </sql>

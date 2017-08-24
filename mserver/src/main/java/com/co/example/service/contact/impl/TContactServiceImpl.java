@@ -1,10 +1,10 @@
 package com.co.example.service.contact.impl;
 
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
 import com.co.example.dao.contact.TContactDao;
 import com.co.example.entity.contact.TContact;
 import com.co.example.service.contact.TContactService;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 

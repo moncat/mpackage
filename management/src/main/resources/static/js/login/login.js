@@ -1,5 +1,10 @@
 $(function(){
 	
+	//存在父页面
+	 if(window.top!=window.self){
+		 parent.location.reload();
+	 }
+	
 	//切换验证码
 	$('#changeCode').on('click',function(){
 		var timestamp = (new Date()).valueOf();
@@ -14,19 +19,13 @@ $(function(){
 	$("#curForm").validate({
 		rules:{
 			name:{
-				required:true,
-				minlength:4,
-				maxlength:255
+				required:true
 			},
 			password:{
-				required:true,
-				minlength:4,
-				maxlength:255
+				required:true
 			},
 			identifyCode:{
-				required:true,
-				minlength:4,
-				maxlength:4
+				required:true
 			},
 		},
 		onkeyup:false,

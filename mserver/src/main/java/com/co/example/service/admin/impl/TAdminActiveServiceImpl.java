@@ -1,8 +1,8 @@
 package com.co.example.service.admin.impl;
 
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import com.co.example.common.constant.Constant;
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
 import com.co.example.common.utils.EmailUtil;
 import com.co.example.dao.admin.TAdminActiveDao;
 import com.co.example.entity.admin.TAdminActive;

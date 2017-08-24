@@ -38,7 +38,7 @@
       item_order, create_time, create_by, 
       update_time, update_by, del_flg
       )
-    values (${@com.co.example.base.generator.NextId@getId()}, #{title,jdbcType=VARCHAR}, 
+    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{title,jdbcType=VARCHAR}, 
       #{content,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{keyWord,jdbcType=VARCHAR}, 
       #{categoryId,jdbcType=INTEGER}, #{pv,jdbcType=INTEGER}, #{isTop,jdbcType=TINYINT}, 
       #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 

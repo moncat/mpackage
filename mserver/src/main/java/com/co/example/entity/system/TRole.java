@@ -1,6 +1,6 @@
 package com.co.example.entity.system;
 
-import com.co.example.common.entity.BaseEntity;
+import com.github.moncat.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -13,11 +13,8 @@ public class TRole extends BaseEntity {
     private Long id;
 
     /** 角色名称 */
-    private String name;
+    private String roleName;
 
     /** 角色描述 */
-    private String describe;
-
-    /** 是否是管理员 1是 0不是 */
-    private Byte isAdmin;
+    private String remark;
 }

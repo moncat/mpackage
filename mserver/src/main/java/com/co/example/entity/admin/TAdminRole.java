@@ -1,6 +1,6 @@
 package com.co.example.entity.admin;
 
-import com.co.example.common.entity.BaseEntity;
+import com.github.moncat.common.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

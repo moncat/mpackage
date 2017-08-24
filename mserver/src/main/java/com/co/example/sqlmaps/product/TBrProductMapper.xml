@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.product.TBrProductMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrProduct" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="product_alias" property="productAlias" jdbcType="VARCHAR" />
+    <result column="apply_type" property="applyType" jdbcType="VARCHAR" />
+    <result column="apply_sn" property="applySn" jdbcType="VARCHAR" />
+    <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <result column="enterprise_name_en" property="enterpriseNameEn" jdbcType="VARCHAR" />
+    <result column="producing_area" property="producingArea" jdbcType="VARCHAR" />
+    <result column="confirm_date" property="confirmDate" jdbcType="VARCHAR" />
+    <result column="is_off" property="isOff" jdbcType="VARCHAR" />
+    <result column="cfda_processid" property="cfdaProcessid" jdbcType="VARCHAR" />
+    <result column="cfda_new_processid" property="cfdaNewProcessid" jdbcType="VARCHAR" />
+    <result column="bevol_mid" property="bevolMid" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="TINYINT" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, product_name, product_alias, apply_type, apply_sn, enterprise_name, enterprise_name_en, 
+    producing_area, confirm_date, is_off, cfda_processid, cfda_new_processid, bevol_mid, 
+    remark, source, item_order, create_time, create_by, update_time, update_by, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_product
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.product.TBrProduct" >
+	  <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE">  
+		SELECT ${@com.github.moncat.common.generator.id.NextId@getId()} 
+	  </selectKey>  
+    insert into t_br_product (id,product_name, 
+      product_alias, apply_type, apply_sn, 
+      enterprise_name, enterprise_name_en, producing_area, 
+      confirm_date, is_off, cfda_processid, 
+      cfda_new_processid, bevol_mid, remark, 
+      source, item_order, create_time, 
+      create_by, update_time, update_by, 
+      del_flg)
+    values (#{id},#{productName,jdbcType=VARCHAR}, 
+      #{productAlias,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, #{applySn,jdbcType=VARCHAR}, 
+      #{enterpriseName,jdbcType=VARCHAR}, #{enterpriseNameEn,jdbcType=VARCHAR}, #{producingArea,jdbcType=VARCHAR}, 
+      #{confirmDate,jdbcType=VARCHAR}, #{isOff,jdbcType=VARCHAR}, #{cfdaProcessid,jdbcType=VARCHAR}, 
+      #{cfdaNewProcessid,jdbcType=VARCHAR}, #{bevolMid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{source,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{delFlg,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrProduct" >
+    update t_br_product
+    <set >
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productAlias != null" >
+        product_alias = #{productAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null" >
+        apply_type = #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="applySn != null" >
+        apply_sn = #{applySn,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseName != null" >
+        enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseNameEn != null" >
+        enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="producingArea != null" >
+        producing_area = #{producingArea,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmDate != null" >
+        confirm_date = #{confirmDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isOff != null" >
+        is_off = #{isOff,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdaProcessid != null" >
+        cfda_processid = #{cfdaProcessid,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdaNewProcessid != null" >
+        cfda_new_processid = #{cfdaNewProcessid,jdbcType=VARCHAR},
+      </if>
+      <if test="bevolMid != null" >
+        bevol_mid = #{bevolMid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=TINYINT},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrProduct" >
+    update t_br_product
+    set product_name = #{productName,jdbcType=VARCHAR},
+      product_alias = #{productAlias,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      apply_sn = #{applySn,jdbcType=VARCHAR},
+      enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
+      producing_area = #{producingArea,jdbcType=VARCHAR},
+      confirm_date = #{confirmDate,jdbcType=VARCHAR},
+      is_off = #{isOff,jdbcType=VARCHAR},
+      cfda_processid = #{cfdaProcessid,jdbcType=VARCHAR},
+      cfda_new_processid = #{cfdaNewProcessid,jdbcType=VARCHAR},
+      bevol_mid = #{bevolMid,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      source = #{source,jdbcType=TINYINT},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="productName != null" >
+          and t.product_name = #{productName,jdbcType=VARCHAR}
+      </if>
+      <if test="productAlias != null" >
+          and t.product_alias = #{productAlias,jdbcType=VARCHAR}
+      </if>
+      <if test="applyType != null" >
+          and t.apply_type = #{applyType,jdbcType=VARCHAR}
+      </if>
+      <if test="applySn != null" >
+          and t.apply_sn like concat('%',#{applySn,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="enterpriseName != null" >
+          and t.enterprise_name like concat('%',#{enterpriseName,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="enterpriseNameEn != null" >
+          and t.enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR}
+      </if>
+      <if test="producingArea != null" >
+          and t.producing_area = #{producingArea,jdbcType=VARCHAR}
+      </if>
+      <if test="confirmDate != null" >
+          and t.confirm_date = #{confirmDate,jdbcType=VARCHAR}
+      </if>
+      <if test="isOff != null" >
+          and t.is_off = #{isOff,jdbcType=VARCHAR}
+      </if>
+      <if test="cfdaProcessid != null" >
+          and t.cfda_processid = #{cfdaProcessid,jdbcType=VARCHAR}
+      </if>
+      <if test="cfdaNewProcessid != null" >
+          and t.cfda_new_processid = #{cfdaNewProcessid,jdbcType=VARCHAR}
+      </if>
+      <if test="bevolMid != null" >
+          and t.bevol_mid = #{bevolMid,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="source != null" >
+          and t.source = #{source,jdbcType=TINYINT}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_product t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_product where id in (
+    select t.id from (select * from t_br_product) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.product.aide.TBrProductVo" extends="BaseResultMap" >
+  <!-- 
+    <collection property="tBrProductIngredients" resultMap="aaaaa">
+    </collection>
+     -->
+  </resultMap>
+  <!-- 
+   <resultMap id="aaaaa" type="com.co.example.entity.product.TBrProductIngredient" >
+    <result column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="ingredient_id" property="ingredientId" jdbcType="BIGINT" />
+  </resultMap>
+   -->
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.product_name, 
+    t.product_alias, 
+    t.apply_type, 
+    t.apply_sn, 
+    t.enterprise_name, 
+    t.enterprise_name_en, 
+    t.producing_area, 
+    t.confirm_date, 
+    t.is_off, 
+    t.cfda_processid, 
+    t.cfda_new_processid, 
+    t.bevol_mid, 
+    t.remark, 
+    t.source, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.del_flg
+    <!-- 
+    ,
+    tpi.product_id product_id,
+    tpi.ingredient_id ingredient_id
+     -->
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+     <if test="ingredientId != null" >
+  		  and tbpi.ingredient_id = #{ingredientId,jdbcType=BIGINT}
+     </if>
+      <if test="productNameLike != null" >
+          and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
+      </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+	  <if test="joinFlg" >
+	      LEFT JOIN t_br_product_ingredient tbpi on t.id =  tbpi.product_id
+      </if>
+  </sql>
+</mapper>

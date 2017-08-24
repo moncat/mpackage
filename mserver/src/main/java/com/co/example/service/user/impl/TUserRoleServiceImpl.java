@@ -1,7 +1,7 @@
 package com.co.example.service.user.impl;
 
-import com.co.example.common.dao.BaseDao;
-import com.co.example.common.service.BaseServiceImpl;
+import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.service.BaseServiceImpl;
 import com.co.example.dao.user.TUserRoleDao;
 import com.co.example.entity.user.TUserRole;
 import com.co.example.service.user.TUserRoleService;

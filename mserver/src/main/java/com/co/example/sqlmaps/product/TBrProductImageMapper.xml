@@ -34,8 +34,10 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.product.TBrProductImage">
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+    
       SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
     </selectKey>
+    
     insert into t_br_product_image (id, name, product_id, 
       cfda_image_id, cfda_ssid, bevol_url, 
       file_type, image_type, item_order, 

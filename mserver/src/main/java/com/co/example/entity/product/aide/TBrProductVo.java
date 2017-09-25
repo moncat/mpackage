@@ -12,6 +12,37 @@ import lombok.Setter;
 @Setter
 public class TBrProductVo extends TBrProduct {
 	
+	/**
+	 * 成分列表
+	 */
 	private List<TBrIngredient> tBrIngredients;
+	
+	/**
+	 * 香精成分
+	 */
+	private List<String> essenceList;
+	
+	/**
+	 * 防腐剂成分
+	 */
+	private List<String> corrosionList;
+	
+	/**
+	 * 风险成分
+	 */
+	private List<String> riskList;
+	
+	/**
+	 *  清洁成分 
+	 */
+	private List<String> cleanList;
+	
+	/**
+	 *  表面活性成分 
+	 */
+	private List<String> activeList;
+	
+	
+	
 	
 }

@@ -1,0 +1,54 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 产品实际生产企业列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		 <div class="cl pd-5 bg-1 bk-gray mt-10">
+			<form action="/enterprise/list">
+				<div class="text-c"> 
+					企业名称：<input type="text" class="input-text" style="width:200px" placeholder="企业名称" id="" th:value="${query.enterpriseNameLike}" name="enterpriseNameLike"/> 
+					备案号：<input type="text" class="input-text" style="width:200px" placeholder="备案号" id="" th:value="${query.applySnLike}" name="applySnLike"/> 
+										<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				</div>
+			</form>
+		</div>
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+					<th>序号</th>
+					<th>企业名称</th>
+					<th>备案号</th>
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr  class="text-c">
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td >
+							<a th:href="@{'/enterprise/show/'+${one.id}}"   target="_blank">
+								<span th:utext="${one.enterpriseName}"></span>
+							</a>
+						</td>
+						<td th:text="${one.applySn}"></td>
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/enterprise/list.js"></script>
+</section>
+</html>

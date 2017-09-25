@@ -15,7 +15,7 @@ public class CsrfSecurityRequestMatcher implements RequestMatcher {
 
     @Override
     public boolean matches(HttpServletRequest request) {
-
+    	//此处添加了 一些可以不拦截的请求路径
         if (execludeUrls != null && execludeUrls.size() > 0) {
             String servletPath = request.getServletPath();
             for (String url : execludeUrls) {
@@ -25,6 +25,7 @@ public class CsrfSecurityRequestMatcher implements RequestMatcher {
                 }
             }
         }
+        //默认 拦截模式和本设置一致，GET|HEAD|TRACE|OPTIONS 等都需要拦截
         return !allowedMethods.matcher(request.getMethod()).matches();
     }
 

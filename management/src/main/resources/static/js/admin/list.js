@@ -40,7 +40,7 @@ $(function(){
 		layer.confirm('确定删除吗？', {
 			  btn: ['确定','取消'] //按钮
 			}, function(){
-				$.post("/admin/deletel/"+id,function(){
+				$.post("/admin/delete/"+id,function(){
 					layer.alert('删除成功！');
 					location.replace(location.href);
 				});

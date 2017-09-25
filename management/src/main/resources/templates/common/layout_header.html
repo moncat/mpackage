@@ -28,9 +28,17 @@
 					<li class="dropDown dropDown_hover">
 						<a href="javascript:void(0);" class="dropDown_A"  >欢迎，<span th:text="${admin.displayName}" >name</span><i class="Hui-iconfont">&#xe6d5;</i></a>
 						<ul class="dropDown-menu menu radius box-shadow">
-							<li><a href="javascript:void(0);" onClick="myselfinfo()">个人信息</a></li>
-							<li><a href="javascript:void(0);">模块设置</a></li>
-							<li><a href="/logout">退出</a></li>
+						    <!-- 
+								<li><a href="javascript:void(0);" onClick="myselfinfo()">个人信息</a></li>
+								<li><a href="javascript:void(0);">模块设置</a></li>
+							 -->
+							<li>
+								<form th:action="@{/logout}" method="post" id="logoutForm">
+									<a href="javascript:document.getElementById('logoutForm').submit();" 
+										style=" display: block;border-bottom: solid 1px #f2f2f2; padding: 5px 20px;line-height: 1.8;
+									    text-align: left;font-weight: normal; white-space: nowrap;vertical-align: top;">登出</a>
+						        </form>
+							</li>
 						</ul>
 					</li>
 				<!-- 

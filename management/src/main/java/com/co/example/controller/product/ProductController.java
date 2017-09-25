@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.co.example.base.controller.BaseControllerHandler;
 import com.co.example.common.utils.PageReq;
+import com.co.example.controller.BaseControllerHandler;
+import com.co.example.entity.brand.TBrBrand;
+import com.co.example.entity.brand.TBrProductBrand;
+import com.co.example.entity.brand.aide.TBrProductBrandQuery;
 import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
@@ -23,6 +27,8 @@ import com.co.example.entity.product.aide.TBrIngredientQuery;
 import com.co.example.entity.product.aide.TBrProductImageQuery;
 import com.co.example.entity.product.aide.TBrProductImageVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
+import com.co.example.service.brand.TBrBrandService;
+import com.co.example.service.brand.TBrProductBrandService;
 import com.co.example.service.product.TBrAimService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrIngredientService;
@@ -48,6 +54,12 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@Inject
 	TBrEnterpriseService tBrEnterpriseService;
 	
+	@Inject
+	TBrProductBrandService tBrProductBrandService;
+	
+	@Inject
+	TBrBrandService tBrBrandService;
+	
 	
 	@Override
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
@@ -60,7 +72,9 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@Override
 	public Boolean showExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			TBrProductQuery t, Long id) {
-		TBrProduct one = tBrProductService.queryById(id);
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setId(id);
+		TBrProduct one = tBrProductService.queryOne(tBrProductQuery);
 		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
 		tBrIngredientQuery.setProductId(id);
 		tBrIngredientQuery.setJoinFlg(true);
@@ -79,8 +93,22 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 				TBrProductImageVo itemVo = (TBrProductImageVo)item;
 				itemVo.setDownloadUrl(ProductConstant.CFDA_PRODUCT_IMAGE_DOWNLOAD.replace("@1", cfdaImageId).replace("@2", cfdaSsid));
 				itemVo.setImageUrl(ProductConstant.CFDA_PRODUCT_IMAGE_SHOW.replace("@1",cfdaImageId));
+				
 			});
 		}
+		one = tBrProductService.getStatisticsInfo(one, ingredientList);
+		
+		//企业名称，到实际生产企业表查询，如果企业为实际生产企业，则加上链接
+		String enterpriseName = one.getEnterpriseName();
+		
+		TBrEnterpriseQuery tBrEnterpriseQuery1 = new TBrEnterpriseQuery();
+		tBrEnterpriseQuery1.setEnterpriseName(enterpriseName);
+		List<TBrEnterprise> enterpriseList1 = tBrEnterpriseService.queryList(tBrEnterpriseQuery1);
+		if(CollectionUtils.isNotEmpty(enterpriseList1)){
+			TBrEnterprise oneEnterprise = enterpriseList1.get(0);
+			model.addAttribute("oneEnterprise", oneEnterprise);
+		}
+		
 		
 		//实际生产企业
 		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
@@ -88,10 +116,22 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		tBrEnterpriseQuery.setJoinFlg(true);
 		List<TBrEnterprise> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
 		
+		
+		
+		
+		TBrProductBrandQuery tBrProductBrandQuery = new TBrProductBrandQuery();
+		tBrProductBrandQuery.setProductId(id);
+		TBrProductBrand tBrProductBrand = tBrProductBrandService.queryOne(tBrProductBrandQuery);
+		TBrBrand brand = null;
+		if(tBrProductBrand !=null){
+			brand = tBrBrandService.queryById(tBrProductBrand.getBrandId());
+		}
+		
 		model.addAttribute(ONE, one);
 		model.addAttribute("ingredientList", ingredientList);
 		model.addAttribute("productImageList", productImageList);
 		model.addAttribute("enterpriseList", enterpriseList);
+		model.addAttribute("brand", brand);
 		return true;
 	}
 	

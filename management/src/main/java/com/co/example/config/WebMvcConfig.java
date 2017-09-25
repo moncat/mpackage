@@ -14,4 +14,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/icon").setViewName("icon");
 	}
+	
+	
 }

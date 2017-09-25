@@ -170,11 +170,19 @@
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause">
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+    <if test="userId != null">
+          and ur.user_id = #{userId,jdbcType=VARCHAR}
+     </if>
+     <if test="adminId != null">
+          and ar.admin_id = #{adminId,jdbcType=VARCHAR}
+     </if>
   </sql>
   <sql id="Table_Join_Clause">
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+    <if test="userId != null">
+        LEFT JOIN t_user_role ur on t.id = ur.role_id
+      </if>
+    <if test="adminId != null">
+        LEFT JOIN t_admin_role ar on t.id = ar.role_id
+      </if>
   </sql>
 </mapper>

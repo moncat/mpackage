@@ -6,7 +6,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>management</artifactId>
-  <packaging>war</packaging>
   <name>managerment</name>
   <description>management  the platform</description>
      <dependencies>
@@ -25,12 +24,12 @@
             <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
             <optional>true</optional>
         </dependency>
-       <!--  
         <dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-web</artifactId>
-		    移除嵌入式tomcat插件
-		    <exclusions>
+		    
+		<!--  
+		   <exclusions>
 		        <exclusion>
 		            <groupId>org.springframework.boot</groupId>
 		            <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -48,8 +47,15 @@
 		    <artifactId>tomcat-servlet-api</artifactId>
 		    <version>8.0.36</version>
 		    <scope>provided</scope>
+		     -->
 		</dependency>
- -->
+		
+		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4 -->
+		<dependency>
+		    <groupId>org.thymeleaf.extras</groupId>
+		    <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+		</dependency>
+    
    	</dependencies>
 	<build>
 		<plugins>

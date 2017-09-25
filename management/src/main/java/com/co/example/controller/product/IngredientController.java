@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.co.example.base.controller.BaseControllerHandler;
+import com.co.example.controller.BaseControllerHandler;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;

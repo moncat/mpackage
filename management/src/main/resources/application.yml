@@ -1,5 +1,6 @@
 server:
   port: 8083
+  session-timeout: 1
   error:
     whitelabel.enabled: false
     path: /error
@@ -7,6 +8,8 @@ server:
     uri-encoding: UTF-8   
 
 ueditor:
- savePath: "D:/111/"
+ savePath: "/home/ue/"
  readpath: ""     
+image:
+ imageSavePath: "/home/images/"
     

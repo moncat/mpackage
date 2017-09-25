@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.co.example.base.constant.HttpStatusCode;
-import com.co.example.base.controller.BaseControllerHandler;
+import com.co.example.constant.HttpStatusCode;
+import com.co.example.controller.BaseControllerHandler;
 import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.article.TArticle;

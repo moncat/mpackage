@@ -16,4 +16,6 @@ public class TBrIngredientVo extends TBrIngredient {
 	private List<TBrAim> tBrAims;
 	
 	private String  safeColour;
+	
+	
 }

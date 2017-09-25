@@ -3,6 +3,18 @@
 <div class="page-container" layout:fragment="main">
 	<p class="f-20 text-success">欢迎使用后台管理系统 <span class="f-14">v1.0</span></p>
 	<p>登录次数：<span way-data="loginInfo.visitCount"></span> 登录IP：<span way-data="loginInfo.lastIp"></span> 登录时间：<span way-data="loginInfo.lastTime"></span></p>
+	<div sec:authorize="isAuthenticated()">
+	  	登录成功
+	</div>
+	<div sec:authorize="hasRole('ROLE_sa')">
+	         超级管理员
+	</div>
+	<div sec:authorize="hasRole('ROLE_admin')">
+	         普通管理员
+	</div>
+	<div sec:authorize="hasRole('ROLE_user')">
+	      普通用户
+	</div>
 	
 	<!--  
 	<table class="table table-border table-bordered table-bg mt-20">

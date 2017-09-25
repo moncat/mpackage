@@ -1,0 +1,44 @@
+{
+    "status": "0",
+    "msg": "ok",
+    "result": {
+        "list": [
+            {
+                "ip": "182.90.43.166:80",
+                "area": "广西壮族自治区梧州市 联通",
+                "anonymity": "高匿名",
+                "protocol": "HTTPS",
+                "speed": ""
+            },
+            {
+                "ip": "182.90.3.179:80",
+                "area": "广西壮族自治区梧州市 联通",
+                "anonymity": "高匿名",
+                "protocol": "HTTPS",
+                "speed": ""
+            },
+            {
+                "ip": "117.40.6.142:8080",
+                "area": "江西省南昌市 电信",
+                "anonymity": "高匿名",
+                "protocol": "HTTP",
+                "speed": ""
+            },
+            {
+                "ip": "60.211.208.203:80",
+                "area": "山东省济宁市 联通",
+                "anonymity": "高匿名",
+                "protocol": "HTTP",
+                "speed": "0.3"
+            },
+            {
+                "ip": "117.177.250.155:81",
+                "area": "中国 四川省 内江市 移动",
+                "anonymity": "高匿名",
+                "protocol": "HTTP",
+                "speed": "0.3"
+            }
+        ],
+        "count": "200"
+    }
+}

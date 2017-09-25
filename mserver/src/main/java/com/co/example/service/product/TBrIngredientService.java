@@ -14,4 +14,6 @@ public interface TBrIngredientService extends BaseService<TBrIngredient, Long> {
 	void decorateColour(List<TBrIngredient> ingredientList);
 	
 	void  getAims(TBrIngredientVo ingredientVo);
+	
+	
 }

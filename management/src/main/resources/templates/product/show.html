@@ -19,37 +19,64 @@
 	                            <div class="row cl">
 		                            <div class="col-md-9">
 			                            <h4>产品别名： <span th:text="${one.productAlias}">无别名</span></h4>
-			                            <h4>企业名称： <span th:text="${one.enterpriseName}">无企业名称</span></h4>
+			                            <h4>企业名称：	<span th:if="${oneEnterprise eq null}" th:text="${one.enterpriseName}"></span>
+			                            		<a class="btn-link" th:if="${oneEnterprise ne null}" th:href="@{'/enterprise/show/'+${oneEnterprise.id}}" target="_blank">
+			                          	  		   <span th:text="${one.enterpriseName}"></span>
+			                            		</a>
+			                            </h4>
 			                            <h4>企业英文： <span th:text="${one.enterpriseNameEn}">无企业名称</span></h4>
 			                            <h4>企业地址： <span th:text="${one.producingArea}">浙江省杭州市杭州经济技术开发区xx号</span></h4>
 			                            <h4>备案编号： <span th:text="${one.applySn}">闽G妆网备字2018002654</span></h4>
 			                            <h4>备案类型： <span th:text="${one.applyType  eq '1' ? '国产备案':'进口备案'}"></span></h4>
 			                            <h4>备案日期： <span th:text="${one.confirmDate}">2017-02-12</span></h4>
+			                            <h4>成分分析</h4>
+			                            <div class="ml-10 f-16">
+				                        	  本产品含有香精:<span class="mt-10" th:text="${#lists.size(one.essenceList)}"></span>种(<span th:each="essence: ${one.essenceList}" th:text="${essence}+' '"></span>)<br/>
+				                        	  本产品含有防腐剂:<span class="mt-10" th:text="${#lists.size(one.corrosionList)}"></span>种(<span th:each="corrosion: ${one.corrosionList}" th:text="${corrosion}+' '"></span>)<br/>
+				                        	  本产品含有风险成分:<span class="mt-10" th:text="${#lists.size(one.riskList)}"></span>种(<span th:each="risk: ${one.riskList}" th:text="${risk}+' '"></span>)<br/>
+				                        	  本产品含有清洁成分:<span class="mt-10" th:text="${#lists.size(one.cleanList)}"></span>种(<span th:each="clean: ${one.cleanList}" th:text="${clean}+' '"></span>)<br/>
+				                        	  本产品含有表活成分:<span class="mt-10" th:text="${#lists.size(one.activeList)}"></span>种(<span th:each="active: ${one.activeList}" th:text="${active}+' '"></span>)<br/>
+			                            </div>
+			                            
 			                            <!-- <h4>数据来源： <span th:text="${one.source eq 1 ? '药监局':'美丽修行'}"></span></h4> -->
 		                            </div>
 		                            <div class="col-md-3">
-		                           		 <img th:if="${one.source ne 1}" style="height: 300px;" th:src="${productImageList[0].bevolUrl}" alt=""/>
-		                          		 <div th:if="${one.source eq 1}">
-		                          		 	<div th:each="image:${productImageList}" class="text-c mt-10 f-18">
-		                          		 	   <div th:if="${image.imageType eq 1}" >
-		                          		 	   	   <a th:href="${image.imageUrl}" target="_blank" >查看平面图</a><br/>
-		                          		 	   	   <a th:href="${image.downloadUrl}" target="_blank">下载平面图</a><br/>
-		                          		 	   </div>
-		                          		 	   <div th:if="${image.imageType eq 2}" >
-		                          		 	   	   <a th:href="${image.imageUrl}" target="_blank" >查看立体图</a><br/>
-		                          		 	   	   <a th:href="${image.downloadUrl}" target="_blank">下载立体图</a><br/>
-		                          		 	   </div>
-		                          		 	   <div th:if="${image.imageType eq 3}" >
-		                          		 	 	   <a th:href="${image.imageUrl}" target="_blank" >查看商标证、授权书 </a><br/>
-		                          		 	   	   <a th:href="${image.downloadUrl}" target="_blank">下载商标证、授权书 </a><br/>
-		                          		 	   </div>
-		                          		    </div>
-		                          		 </div>
+			                            <div class="row cl">
+				                             <div class="col-md-12">
+				                           		 <img th:if="${one.source ne 1 and #lists.size(productImageList) >0} " style="height: 300px;" th:src="${productImageList[0].bevolUrl}" alt=""/>
+				                          		 <div th:if="${one.source eq 1}">
+				                          		 	<div th:each="image:${productImageList}" class="text-c mt-10 f-18">
+				                          		 	   <div th:if="${image.imageType eq 1}" >
+				                          		 	   	   <a class="btn-link" th:href="${image.imageUrl}" target="_blank" >查看平面图</a><br/>
+				                          		 	   	   <a class="btn-link" th:href="${image.downloadUrl}" target="_blank">下载平面图</a><br/>
+				                          		 	   </div>
+				                          		 	   <div th:if="${image.imageType eq 2}" >
+				                          		 	   	   <a class="btn-link" th:href="${image.imageUrl}" target="_blank" >查看立体图</a><br/>
+				                          		 	   	   <a class="btn-link" th:href="${image.downloadUrl}" target="_blank">下载立体图</a><br/>
+				                          		 	   </div>
+				                          		 	   <div th:if="${image.imageType eq 3}" >
+				                          		 	 	   <a class="btn-link" th:href="${image.imageUrl}" target="_blank" >查看商标证、授权书 </a><br/>
+				                          		 	   	   <a class="btn-link" th:href="${image.downloadUrl}" target="_blank">下载商标证、授权书 </a><br/>
+				                          		 	   </div>
+				                          		    </div>
+				                          		 </div>
+				                             </div>
+			                                 <div class="col-md-12">
+			                                 	<div class="text-c mt-30">
+					                          		 <a th:if="${brand ne null}" th:href="@{'/brand/show/'+${brand.id}}" target="_blank">
+						                          		 <img   
+						                          		   th:src="@{'/brand/'+${brand.imgUrl}}" th:alt="${brand.name}"/>
+		  			                                 	 <p>【<span th:text="${brand.name}"></span>】查看品牌→</p>
+					                          		 </a>
+			                                 	</div>
+			                                 </div>
+			                            </div>
 		                            </div>
-	                            </div> 
-	                            <section th:if="${enterpriseList.size()>0}">
+	                            </div> 	                                                   
+	                            
+	                            <section th:if="${#lists.size(enterpriseList) >0 }">
 		                            <div class="line mb-10"></div>
-									<table class="table table-border table-bordered table-bg">
+									<table class="table table-border table-bordered table-bg table-hover">
 										<thead>
 											<tr>
 												<th colspan="10" scope="col">
@@ -68,7 +95,11 @@
 											<section th:each="itemE,statusE:${enterpriseList}" >
 												<tr class="text-c">
 													<td th:text="${statusE.index+1}">1</td>
-													<td th:utext="${itemE.enterpriseName}"></td>
+													<td>
+														<a class="btn-link" th:href="@{'/enterprise/show/'+${itemE.id}}" title="查看企业信息" target="_blank">
+															<span th:utext="${itemE.enterpriseName}"></span>
+														</a>
+													</td>
 													<td th:utext="${itemE.applySn}"></td>
 													<td th:utext="${itemE.producingArea}"></td>
 													<td th:utext="${itemE.remark}"></td>
@@ -79,7 +110,7 @@
 	                            </section>
 								
 	                            <div class="line mb-10"></div>
-								<table class="table table-border table-bordered table-bg">
+								<table class="table table-border table-bordered table-bg table-hover">
 									<thead>
 										<tr>
 											<th colspan="10" scope="col">
@@ -100,7 +131,7 @@
 											<tr class="text-c">
 												<td th:text="${status.index+1}">1</td>
 												<td>
-													<a th:href="@{'/ingredient/showMore/'+${item.id}}" title="查看详情" target="_blank">
+													<a class="btn-link" th:href="@{'/ingredient/showMore/'+${item.id}}" title="查看详情" target="_blank">
 														<span th:utext="${item.name}"></span>
 													</a>
 												</td>

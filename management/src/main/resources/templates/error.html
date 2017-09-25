@@ -12,7 +12,7 @@
 		<a href="/" class="c-primary ml-20">去首页 &gt;</a>
 	</p>
 	<div class="error-info" th:hidden="${param.show eq null}">
-	    timestamp:<span th:text="${#dates.format(timestamp, 'yyyy-MM-dd HH:mm:ss')}"/>
+	    timestamp:<span th:if="${timestamp ne null}" th:text="${#dates.format(timestamp, 'yyyy-MM-dd HH:mm:ss')}"/>
 		status:<span th:text="${status}"/>
 	    path:<span th:text="${path}"/>
    		errmsg:<span th:text="${errmsg}"/>

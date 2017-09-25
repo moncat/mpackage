@@ -248,6 +248,13 @@
     )
   </delete>
   <!--  ************************expand your SQL below the line***********************  -->
+  <select id="simpleSelect" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    t.id,t.product_name,t.create_time,t.update_time
+    from t_br_product t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
   <resultMap id="VoResultMap" type="com.co.example.entity.product.aide.TBrProductVo" extends="BaseResultMap" >
   <!-- 
     <collection property="tBrProductIngredients" resultMap="aaaaa">
@@ -296,10 +303,16 @@
       <if test="productNameLike != null" >
           and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
       </if>
+	  <if test="joinBrandFlg" >
+	      and tbpb.brand_id is null
+      </if>
   </sql>
   <sql id="Table_Join_Clause" >
 	  <if test="joinFlg" >
 	      LEFT JOIN t_br_product_ingredient tbpi on t.id =  tbpi.product_id
+      </if>
+	  <if test="joinBrandFlg" >
+	      left JOIN t_br_product_brand tbpb on t.id = tbpb.product_id
       </if>
   </sql>
 </mapper>

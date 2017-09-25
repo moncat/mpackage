@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.co.example.base.constant.SessionConstant;
+import com.co.example.constant.SessionConstant;
 import com.co.example.constant.RoleConstant;
 import com.co.example.entity.admin.aide.AdminSession;
 import com.co.example.service.admin.TAdminService;

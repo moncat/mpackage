@@ -13,4 +13,13 @@ public class TBrEnterpriseQuery extends TBrEnterprise {
 	
 	/** 连接开关 */
 	private Boolean joinFlg = false;
+	
+	/** 备案号模糊查询 */
+    private String applySnLike;
+
+    /** 企业名称模糊查询 */
+    private String enterpriseNameLike;
+	
+	
+	
 }

@@ -17,4 +17,5 @@ public class TBrProductImageVo extends TBrProductImage {
 	 * 图片链接
 	 */
 	private String imageUrl;
+	
 }

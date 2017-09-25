@@ -147,6 +147,37 @@
         return text.replace(/&/g, '&').replace(/\"/g, '"').replace(/</g, '<').replace(/>/g, '>')  
     }  
       
+    //可以获得本周起始和结束时间
+    function showWeek()  {  
+	 var now=new Date();  
+	 var start=new Date(); 
+	 var end=new Date(); 
+	 var n=now.getDay(); 
+	 start.setDate(now.getDate()-n+1); 
+	 end.setDate(now.getDate()-n+7);
+	 start = start.getFullYear() + "-" + (start.getMonth()+1) + "-" + start.getDate(); 
+	 end = end.getFullYear() + "-" + (end.getMonth()+1) + "-" + end.getDate();  
+	 alert("本周开始于:"+start+",结束于"+end); 
+	 } 
+    
+    //js倒计时
+    var interval = 1000; 
+    function ShowCountDown(year,month,day,divname) 
+    { 
+    var now = new Date(); 
+    var endDate = new Date(year, month-1, day); 
+    var leftTime=endDate.getTime()-now.getTime(); 
+    var leftsecond = parseInt(leftTime/1000); 
+    //var day1=parseInt(leftsecond/(24*60*60*6)); 
+    var day1=Math.floor(leftsecond/(60*60*24)); 
+    var hour=Math.floor((leftsecond-day1*24*60*60)/3600); 
+    var minute=Math.floor((leftsecond-day1*24*60*60-hour*3600)/60); 
+    var second=Math.floor(leftsecond-day1*24*60*60-hour*3600-minute*60); 
+    var cc = document.getElementById(divname); 
+    cc.innerHTML = "脚本之家提示距离"+year+"年"+month+"月"+day+"日还有："+day1+"天"+hour+"小时"+minute+"分"+second+"秒"; 
+    } 
+    window.setInterval(function(){ShowCountDown(2018,5,20,'divdown1');}, interval);
+    
     //格式化日期 DateFormat('yyyy_MM_dd hh:mm:ss:SS 星期w 第q季度')  
     function DateFormat(format, date) {  
         if (!date) {  

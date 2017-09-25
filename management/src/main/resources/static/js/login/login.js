@@ -13,12 +13,18 @@ $(function(){
 	
 	$('[id$="error"').css({right: '67px',top: '10px'});
 	
-    
-	
+	//表单验证
+//	$("#curForm").Validform({
+//		tiptype:function(msg,o,cssctl){
+//			var objtip=$("#errInfo");
+//			cssctl(objtip,o.type);
+//			objtip.text(msg);
+//		},
+//	});
 	
 	$("#curForm").validate({
 		rules:{
-			name:{
+			username:{
 				required:true
 			},
 			password:{
@@ -28,26 +34,32 @@ $(function(){
 				required:true
 			},
 		},
+		messages: { 
+			username: { 
+				required: "账户不能为空。", 
+			}, 
+			password: { 
+				required: "密码不能为空。", 
+			}, 
+			identifyCode: { 
+				required: "验证码不能为空。", 
+			}, 
+		},
 		onkeyup:false,
 		focusCleanup:true,
 		success:"valid",
 		submitHandler:function(form){
-			$(form).ajaxSubmit({
-				type: 'post',
-				url: "/login" ,
-				success: function(data){
-					if(data.code =='200'){
-					//	layer.msg('success!',{icon:1,time:2000});	
-						location.href='/';
-					}else{
-						layer.msg(data.desc,{icon:2,time:2000});						
-					}
-					
-				},
-                error: function(XmlHttpRequest, textStatus, errorThrown){
-					layer.msg('error!',{icon:1,time:3000});
-				}
-			});
+			document.getElementById('curForm').submit();
+//			$(form).ajaxSubmit({
+//				type: 'post',
+//				url: "/login" ,
+//				success: function(data){
+//					location.href='/';
+//				},
+//                error: function(XmlHttpRequest, textStatus, errorThrown){
+//					layer.msg('error!',{icon:1,time:3000});
+//				}
+//			});
 		}
 	});
 	

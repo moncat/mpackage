@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.enterprise.TBrEnterpriseRegisterMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.enterprise.TBrEnterpriseRegister" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="eid" property="eid" jdbcType="BIGINT" />
+    <result column="legal_person" property="legalPerson" jdbcType="VARCHAR" />
+    <result column="register_capital" property="registerCapital" jdbcType="VARCHAR" />
+    <result column="enterprise_status" property="enterpriseStatus" jdbcType="VARCHAR" />
+    <result column="register_id" property="registerId" jdbcType="VARCHAR" />
+    <result column="org_id" property="orgId" jdbcType="VARCHAR" />
+    <result column="credit_id" property="creditId" jdbcType="VARCHAR" />
+    <result column="enterprise_type" property="enterpriseType" jdbcType="VARCHAR" />
+    <result column="revenue_id" property="revenueId" jdbcType="VARCHAR" />
+    <result column="industry_type" property="industryType" jdbcType="VARCHAR" />
+    <result column="business_term" property="businessTerm" jdbcType="VARCHAR" />
+    <result column="register_date" property="registerDate" jdbcType="TIMESTAMP" />
+    <result column="approve_date" property="approveDate" jdbcType="TIMESTAMP" />
+    <result column="register_authority" property="registerAuthority" jdbcType="VARCHAR" />
+    <result column="register_address" property="registerAddress" jdbcType="VARCHAR" />
+    <result column="name_en" property="nameEn" jdbcType="VARCHAR" />
+    <result column="business_scope" property="businessScope" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+    <result column="app_id" property="appId" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, eid, legal_person, register_capital, enterprise_status, register_id, org_id, 
+    credit_id, enterprise_type, revenue_id, industry_type, business_term, register_date, 
+    approve_date, register_authority, register_address, name_en, business_scope, remark, 
+    item_order, create_time, create_by, update_time, update_by, is_active, del_flg, app_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_enterprise_register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_enterprise_register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.enterprise.TBrEnterpriseRegister" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_enterprise_register (id, eid, legal_person, 
+      register_capital, enterprise_status, register_id, 
+      org_id, credit_id, enterprise_type, 
+      revenue_id, industry_type, business_term, 
+      register_date, approve_date, register_authority, 
+      register_address, name_en, business_scope, 
+      remark, item_order, create_time, 
+      create_by, update_time, update_by, 
+      is_active, del_flg, app_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{eid,jdbcType=BIGINT}, #{legalPerson,jdbcType=VARCHAR}, 
+      #{registerCapital,jdbcType=VARCHAR}, #{enterpriseStatus,jdbcType=VARCHAR}, #{registerId,jdbcType=VARCHAR}, 
+      #{orgId,jdbcType=VARCHAR}, #{creditId,jdbcType=VARCHAR}, #{enterpriseType,jdbcType=VARCHAR}, 
+      #{revenueId,jdbcType=VARCHAR}, #{industryType,jdbcType=VARCHAR}, #{businessTerm,jdbcType=VARCHAR}, 
+      #{registerDate,jdbcType=TIMESTAMP}, #{approveDate,jdbcType=TIMESTAMP}, #{registerAuthority,jdbcType=VARCHAR}, 
+      #{registerAddress,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, #{businessScope,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.enterprise.TBrEnterpriseRegister" >
+    update t_br_enterprise_register
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=BIGINT},
+      </if>
+      <if test="legalPerson != null" >
+        legal_person = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="registerCapital != null" >
+        register_capital = #{registerCapital,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseStatus != null" >
+        enterprise_status = #{enterpriseStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="registerId != null" >
+        register_id = #{registerId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="creditId != null" >
+        credit_id = #{creditId,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseType != null" >
+        enterprise_type = #{enterpriseType,jdbcType=VARCHAR},
+      </if>
+      <if test="revenueId != null" >
+        revenue_id = #{revenueId,jdbcType=VARCHAR},
+      </if>
+      <if test="industryType != null" >
+        industry_type = #{industryType,jdbcType=VARCHAR},
+      </if>
+      <if test="businessTerm != null" >
+        business_term = #{businessTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDate != null" >
+        register_date = #{registerDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="approveDate != null" >
+        approve_date = #{approveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerAuthority != null" >
+        register_authority = #{registerAuthority,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddress != null" >
+        register_address = #{registerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        name_en = #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="businessScope != null" >
+        business_scope = #{businessScope,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+      <if test="appId != null" >
+        app_id = #{appId,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.enterprise.TBrEnterpriseRegister" >
+    update t_br_enterprise_register
+    set eid = #{eid,jdbcType=BIGINT},
+      legal_person = #{legalPerson,jdbcType=VARCHAR},
+      register_capital = #{registerCapital,jdbcType=VARCHAR},
+      enterprise_status = #{enterpriseStatus,jdbcType=VARCHAR},
+      register_id = #{registerId,jdbcType=VARCHAR},
+      org_id = #{orgId,jdbcType=VARCHAR},
+      credit_id = #{creditId,jdbcType=VARCHAR},
+      enterprise_type = #{enterpriseType,jdbcType=VARCHAR},
+      revenue_id = #{revenueId,jdbcType=VARCHAR},
+      industry_type = #{industryType,jdbcType=VARCHAR},
+      business_term = #{businessTerm,jdbcType=VARCHAR},
+      register_date = #{registerDate,jdbcType=TIMESTAMP},
+      approve_date = #{approveDate,jdbcType=TIMESTAMP},
+      register_authority = #{registerAuthority,jdbcType=VARCHAR},
+      register_address = #{registerAddress,jdbcType=VARCHAR},
+      name_en = #{nameEn,jdbcType=VARCHAR},
+      business_scope = #{businessScope,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT},
+      app_id = #{appId,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise_register t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="eid != null" >
+          and t.eid = #{eid,jdbcType=BIGINT}
+      </if>
+      <if test="legalPerson != null" >
+          and t.legal_person = #{legalPerson,jdbcType=VARCHAR}
+      </if>
+      <if test="registerCapital != null" >
+          and t.register_capital = #{registerCapital,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseStatus != null" >
+          and t.enterprise_status = #{enterpriseStatus,jdbcType=VARCHAR}
+      </if>
+      <if test="registerId != null" >
+          and t.register_id = #{registerId,jdbcType=VARCHAR}
+      </if>
+      <if test="orgId != null" >
+          and t.org_id = #{orgId,jdbcType=VARCHAR}
+      </if>
+      <if test="creditId != null" >
+          and t.credit_id = #{creditId,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseType != null" >
+          and t.enterprise_type = #{enterpriseType,jdbcType=VARCHAR}
+      </if>
+      <if test="revenueId != null" >
+          and t.revenue_id = #{revenueId,jdbcType=VARCHAR}
+      </if>
+      <if test="industryType != null" >
+          and t.industry_type = #{industryType,jdbcType=VARCHAR}
+      </if>
+      <if test="businessTerm != null" >
+          and t.business_term = #{businessTerm,jdbcType=VARCHAR}
+      </if>
+      <if test="registerDate != null" >
+          and t.register_date = #{registerDate,jdbcType=TIMESTAMP}
+      </if>
+      <if test="approveDate != null" >
+          and t.approve_date = #{approveDate,jdbcType=TIMESTAMP}
+      </if>
+      <if test="registerAuthority != null" >
+          and t.register_authority = #{registerAuthority,jdbcType=VARCHAR}
+      </if>
+      <if test="registerAddress != null" >
+          and t.register_address = #{registerAddress,jdbcType=VARCHAR}
+      </if>
+      <if test="nameEn != null" >
+          and t.name_en = #{nameEn,jdbcType=VARCHAR}
+      </if>
+      <if test="businessScope != null" >
+          and t.business_scope = #{businessScope,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <if test="appId != null" >
+          and t.app_id = #{appId,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_enterprise_register t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise_register t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_enterprise_register where id in (
+    select t.id from (select * from t_br_enterprise_register) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.enterprise.aide.TBrEnterpriseRegisterVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.eid, 
+    t.legal_person, 
+    t.register_capital, 
+    t.enterprise_status, 
+    t.register_id, 
+    t.org_id, 
+    t.credit_id, 
+    t.enterprise_type, 
+    t.revenue_id, 
+    t.industry_type, 
+    t.business_term, 
+    t.register_date, 
+    t.approve_date, 
+    t.register_authority, 
+    t.register_address, 
+    t.name_en, 
+    t.business_scope, 
+    t.remark, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

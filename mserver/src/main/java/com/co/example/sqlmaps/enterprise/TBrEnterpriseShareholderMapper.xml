@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.enterprise.TBrEnterpriseShareholderMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.enterprise.TBrEnterpriseShareholder" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="eid" property="eid" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="money_percent" property="moneyPercent" jdbcType="VARCHAR" />
+    <result column="money_plan" property="moneyPlan" jdbcType="VARCHAR" />
+    <result column="money_actual" property="moneyActual" jdbcType="VARCHAR" />
+    <result column="oper_date" property="operDate" jdbcType="VARCHAR" />
+    <result column="more_data1" property="moreData1" jdbcType="VARCHAR" />
+    <result column="more_data2" property="moreData2" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+    <result column="app_id" property="appId" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, eid, name, type, money_percent, money_plan, money_actual, oper_date, more_data1, 
+    more_data2, item_order, create_time, create_by, update_time, update_by, is_active, 
+    del_flg, app_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_enterprise_shareholder
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_enterprise_shareholder
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.enterprise.TBrEnterpriseShareholder" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_enterprise_shareholder (id, eid, name, 
+      type, money_percent, money_plan, 
+      money_actual, oper_date, more_data1, 
+      more_data2, item_order, create_time, 
+      create_by, update_time, update_by, 
+      is_active, del_flg, app_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{eid,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
+      #{type,jdbcType=TINYINT}, #{moneyPercent,jdbcType=VARCHAR}, #{moneyPlan,jdbcType=VARCHAR}, 
+      #{moneyActual,jdbcType=VARCHAR}, #{operDate,jdbcType=VARCHAR}, #{moreData1,jdbcType=VARCHAR}, 
+      #{moreData2,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.enterprise.TBrEnterpriseShareholder" >
+    update t_br_enterprise_shareholder
+    <set >
+      <if test="eid != null" >
+        eid = #{eid,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="moneyPercent != null" >
+        money_percent = #{moneyPercent,jdbcType=VARCHAR},
+      </if>
+      <if test="moneyPlan != null" >
+        money_plan = #{moneyPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="moneyActual != null" >
+        money_actual = #{moneyActual,jdbcType=VARCHAR},
+      </if>
+      <if test="operDate != null" >
+        oper_date = #{operDate,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData1 != null" >
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null" >
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+      <if test="appId != null" >
+        app_id = #{appId,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.enterprise.TBrEnterpriseShareholder" >
+    update t_br_enterprise_shareholder
+    set eid = #{eid,jdbcType=BIGINT},
+      name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      money_percent = #{moneyPercent,jdbcType=VARCHAR},
+      money_plan = #{moneyPlan,jdbcType=VARCHAR},
+      money_actual = #{moneyActual,jdbcType=VARCHAR},
+      oper_date = #{operDate,jdbcType=VARCHAR},
+      more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT},
+      app_id = #{appId,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise_shareholder t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="eid != null" >
+          and t.eid = #{eid,jdbcType=BIGINT}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="type != null" >
+          and t.type = #{type,jdbcType=TINYINT}
+      </if>
+      <if test="moneyPercent != null" >
+          and t.money_percent = #{moneyPercent,jdbcType=VARCHAR}
+      </if>
+      <if test="moneyPlan != null" >
+          and t.money_plan = #{moneyPlan,jdbcType=VARCHAR}
+      </if>
+      <if test="moneyActual != null" >
+          and t.money_actual = #{moneyActual,jdbcType=VARCHAR}
+      </if>
+      <if test="operDate != null" >
+          and t.oper_date = #{operDate,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData1 != null" >
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null" >
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <if test="appId != null" >
+          and t.app_id = #{appId,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_enterprise_shareholder t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise_shareholder t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_enterprise_shareholder where id in (
+    select t.id from (select * from t_br_enterprise_shareholder) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.enterprise.aide.TBrEnterpriseShareholderVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.eid, 
+    t.name, 
+    t.type, 
+    t.money_percent, 
+    t.money_plan, 
+    t.money_actual, 
+    t.oper_date, 
+    t.more_data1, 
+    t.more_data2, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

@@ -163,7 +163,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient-cache</artifactId>
@@ -175,7 +175,8 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpmime</artifactId>
-		</dependency>	
+		</dependency>
+			
 		<!-- 解析xml -->
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -238,12 +239,41 @@
 		<dependency>
 		    <groupId>net.sourceforge.htmlunit</groupId>
 		    <artifactId>htmlunit</artifactId>
+		    <version>2.27</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.jsoup</groupId>
 		    <artifactId>jsoup</artifactId>
 		    <version>1.10.3</version>
 		</dependency>
+		
+		 <!-- selenium -->  
+        <dependency>  
+            <groupId>org.seleniumhq.selenium</groupId>  
+            <artifactId>selenium-java</artifactId>  
+            <version>2.41.0</version>  
+        </dependency>  
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-remote-driver</artifactId>
+		    <version>2.41.0</version>
+		</dependency>
+        
+        <!-- phantomjsdriver(selenium webdriver 第三方支持) -->  
+        <dependency>  
+            <groupId>com.github.detro</groupId>  
+            <artifactId>phantomjsdriver</artifactId>  
+            <version>1.2.0</version>  
+        </dependency>  
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-api</artifactId>
+		    <version>2.41.0</version>
+		</dependency>
+		
 		<dependency>
 		     <groupId>com.github.moncat</groupId>
    			 <artifactId>MyMyBatisGenerator</artifactId>
@@ -261,6 +291,28 @@
            <version>2.2.4</version>  
        </dependency> 
        
+       <dependency>
+		    <groupId>us.codecraft</groupId>
+		    <artifactId>webmagic-core</artifactId>
+		    <version>0.7.3</version>
+		    <exclusions>  
+	            <exclusion>  
+	            <groupId>org.slf4j</groupId>
+	                <artifactId>slf4j-log4j12</artifactId>  
+	            </exclusion>  
+      	  </exclusions>  
+		</dependency>
+		<dependency>
+		    <groupId>us.codecraft</groupId>
+		    <artifactId>webmagic-extension</artifactId>
+		    <version>0.7.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		    <version>2.2.1</version>
+		</dependency>
 	</dependencies>
   
   

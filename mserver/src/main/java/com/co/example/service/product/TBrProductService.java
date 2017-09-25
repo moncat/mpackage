@@ -1,5 +1,11 @@
 package com.co.example.service.product;
 
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
 import com.github.moncat.common.service.BaseService;
 
@@ -22,5 +28,9 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	
 	void doSomeThing();
 	
+	TBrProduct getStatisticsInfo(TBrProduct tBrProduct,List<TBrIngredient> ingredientList);
+	
+	
+	Page<TBrProduct> querySimplePageList(TBrProduct query, Pageable pageable);
 	
 }

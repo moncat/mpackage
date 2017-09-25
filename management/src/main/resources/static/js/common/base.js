@@ -63,6 +63,13 @@ $(function(){
     	$('.error-info').show();
     });
     
+    //处理 spring security post请求不了的问题
+	var token = $('meta[name="_csrf"]').attr("content");
+    var header = $('meta[name="_csrf_header"]').attr("content");
+    $(document).ajaxSend(function(e,xhr,opt){
+        xhr.setRequestHeader(header,token);
+    });
+    
     
 }); 
 

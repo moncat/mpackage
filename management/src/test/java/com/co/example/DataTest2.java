@@ -1,6 +1,7 @@
 package com.co.example;
 
 import java.util.Calendar;
+import java.util.HashMap;
 
 import javax.annotation.Resource;
 
@@ -11,9 +12,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.co.example.common.utils.HttpUtils;
 import com.co.example.entity.product.aide.ProductConstant;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.product.TBrProductService;
+import com.google.common.collect.Maps;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -62,7 +65,6 @@ public class DataTest2 {
 
 //	}
 	
-	//67133
 	@Test
 	public void test2() throws InterruptedException {
 		for (int i = 1009; i <= 1020; i++) {
@@ -73,11 +75,21 @@ public class DataTest2 {
 	}
 	
 	
-//	@Test
-//	public void test3() throws InterruptedException {
-//		service.addProductFromBEVOL(1,6);
-//		
-//	}
+	public static void main(String[] args) {
+		HashMap<String, String> params = Maps.newHashMap();
+		params.put("on", "true");
+		params.put("page", "1"); //67133
+		params.put("pageSize", "15");
+		String text = HttpUtils.postData(ProductConstant.CFDA_PRODUCT_URL, params);
+		System.out.println(text);
+	}
+	
+	
+	@Test
+	public void test3() throws InterruptedException {
+		service.addProductFromBEVOL(6,8);
+		
+	}
 	
 //	@Test
 //	public void test4() throws InterruptedException {

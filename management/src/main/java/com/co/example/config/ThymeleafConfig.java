@@ -2,6 +2,7 @@ package com.co.example.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
@@ -26,16 +27,19 @@ public class ThymeleafConfig {
         return templateResolver;
     }
 
-
     @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(templateResolver());
         //布局方言，根据策略分类（可以将js，css分开）
         engine.addDialect(new LayoutDialect(new GroupingStrategy()));
+        /*
+ 			SpringSecurity 方言，注意版本一致性
+        	详细参见https://github.com/thymeleaf/thymeleaf-extras-springsecurity
+         */
+        engine.addDialect(new SpringSecurityDialect());
         return engine;
     }
-
 
     @Bean
     public ThymeleafViewResolver thymeleafViewResolver() {
@@ -44,5 +48,8 @@ public class ThymeleafConfig {
         viewResolver.setCharacterEncoding("utf-8");
         return viewResolver;
     }
+    
+    
+    
     
 }

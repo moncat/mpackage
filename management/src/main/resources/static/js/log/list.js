@@ -2,14 +2,23 @@ $(function(){
 	
 	
 	$('#cfdaBtn').on('click',function(){
+		$('#result1').text("");
 		$.post('/log/cfda',$("#form1").serialize(),function(data){
 			$('#result1').text(data.desc);
 		});
 	});
 	
 	$('#bevolBtn').on('click',function(){
+		$('#result2').text("");
 		$.post('/log/bevol',$("#form2").serialize(),function(data){
 			$('#result2').text(data.desc);
+		});
+	});
+	
+	$('#brandBtn').on('click',function(){
+		$('#result3').text("");
+		$.post('/log/brand',$("#form3").serialize(),function(data){
+			$('#result3').text(data.desc);
 		});
 	});
 	

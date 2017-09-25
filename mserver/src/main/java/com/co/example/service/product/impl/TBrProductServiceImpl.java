@@ -13,14 +13,14 @@ import org.eclipse.jetty.util.StringUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.co.example.common.constant.Constant;
-import com.co.example.common.utils.DateFormatUtil;
-import com.co.example.common.utils.EmailUtil;
 import com.co.example.common.utils.HttpUtils;
 import com.co.example.dao.product.TBrProductDao;
 import com.co.example.entity.product.TBrAim;
@@ -29,7 +29,6 @@ import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrIngredientAim;
 import com.co.example.entity.product.TBrLog;
 import com.co.example.entity.product.TBrProduct;
-import com.co.example.entity.product.TBrProductAppendix;
 import com.co.example.entity.product.TBrProductEnterprise;
 import com.co.example.entity.product.TBrProductImage;
 import com.co.example.entity.product.TBrProductIngredient;
@@ -37,19 +36,21 @@ import com.co.example.entity.product.aide.ProductConstant;
 import com.co.example.entity.product.aide.TBrAimQuery;
 import com.co.example.entity.product.aide.TBrEnterpriseQuery;
 import com.co.example.entity.product.aide.TBrIngredientQuery;
+import com.co.example.entity.product.aide.TBrIngredientVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
+import com.co.example.entity.product.aide.TBrProductVo;
 import com.co.example.service.product.TBrAimService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrIngredientAimService;
 import com.co.example.service.product.TBrIngredientService;
 import com.co.example.service.product.TBrLogService;
-import com.co.example.service.product.TBrProductAppendixService;
 import com.co.example.service.product.TBrProductEnterpriseService;
 import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductIngredientService;
 import com.co.example.service.product.TBrProductService;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.service.BaseServiceImpl;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import lombok.extern.slf4j.Slf4j;
@@ -68,9 +69,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
     
     @Resource
     private TBrLogService tBrLogService;
-    
-    @Resource
-    private TBrProductAppendixService tBrProductAppendixService;
     
     @Resource
     private TBrProductImageService tBrProductImageService;
@@ -97,7 +95,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	@Override
 	public int addProductFromCFDA(String page,String dateStr)  {
 		//记录json数据
-		TBrProductAppendix tBrProductAppendix = new TBrProductAppendix();
 		HashMap<String, String> params = Maps.newHashMap();
 		params.put("on", "true");
 		params.put("page", page); //67133
@@ -108,7 +105,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 			log.info("***该页无数据*** "+page);
 			return 2;
 		}
-		tBrProductAppendix.setJsondata1(text);
 		Integer index = 0;
 		try {
 			TBrProduct tBrProduct = null;
@@ -164,17 +160,8 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					tBrProduct.setSource(ProductConstant.PRODUCT_SOURCE_CFDA);
 					tBrProduct.setCreateTime(new Date());
 					tBrProduct.setDelFlg(Constant.NO);
-					tBrProduct = addIngredientFromCFDA(tBrProduct,processid,tBrProductAppendix);
-					addImageFromCFDA(tBrProduct, processid,tBrProductAppendix);
-					//保存冗余表
-					tBrProductAppendix.setCreateTime(new Date());
-					tBrProductAppendix.setDelFlg(Constant.NO);
-					Long id = tBrProduct.getId();
-					if(id == null){
-						id=pId;
-					}
-					tBrProductAppendix.setProductId(id);
-					tBrProductAppendixService.add(tBrProductAppendix);
+					tBrProduct = addIngredientFromCFDA(tBrProduct,processid);
+					addImageFromCFDA(tBrProduct, processid);	
 				}
 			}
 			saveLog(ProductConstant.PRODUCT_SOURCE_CFDA, ProductConstant.CFDA_PRODUCT_URL, productList.size(), HttpUtils.getRequestData(params).toString(),null);
@@ -188,9 +175,8 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	
 	
 	//保存成分   药监局
-	private TBrProduct addIngredientFromCFDA(TBrProduct tBrProduct ,String processid,TBrProductAppendix tBrProductAppendix){
+	private TBrProduct addIngredientFromCFDA(TBrProduct tBrProduct ,String processid){
 		String text = HttpUtils.postData(ProductConstant.CFDA_INGREDIENT_URL, "processid="+processid);
-		tBrProductAppendix.setJsondata2(text);
 		int index =0;
 		try {
 			//处理部分产品信息
@@ -228,6 +214,9 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 							tBrEnterprise.setEnterpriseName(enterpriseName);
 							tBrEnterprise.setProducingArea(enterprise.getString("enterprise_address"));
 							tBrEnterprise.setRemark(enterprise.getString("remark"));
+							tBrEnterprise.setCreateBy(0l);
+							tBrEnterprise.setIsActive(Constant.STATUS_ACTIVE);
+							tBrEnterprise.setDelFlg(Constant.YES);
 							tBrEnterpriseService.add(tBrEnterprise);
 						}else{
 							tBrEnterprise = tBrEnterpriseList.get(0);
@@ -237,7 +226,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 				}
 			}
 			//处理成分信息
-			tBrProductAppendix.setProductId(tBrProductId);
 			JSONArray ingredientList = base.getJSONArray("pfList");
 			TBrIngredient tBrIngredient = null;
 			JSONObject ingredient = null;
@@ -248,6 +236,8 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					index = i;
 					ingredient = ingredientList.getJSONObject(i);
 					cname = ingredient.getString("cname");
+					cname = cname.replace("？", " ");
+					cname = cname.trim();
 					if(StringUtils.isNoneBlank(cname)){
 						tBrIngredientQuery = new TBrIngredientQuery();
 						tBrIngredientQuery.setName(cname);
@@ -281,13 +271,12 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	/**
 	 * 保存药监局图片
 	 */
-	private void addImageFromCFDA(TBrProduct tBrProduct ,String processid,TBrProductAppendix tBrProductAppendix){
+	private void addImageFromCFDA(TBrProduct tBrProduct ,String processid){
 		//这里processId的I为大写
 		String text = HttpUtils.postData(ProductConstant.CFDA_PRODUCT_IMAGE_URL, "processId="+processid);
 		if(StringUtil.isBlank(text)){
 			return;
 		}
-		tBrProductAppendix.setJsondata3(text);
 		int index = 0;
 		try {
 			JSONObject  base =  JSON.parseObject(text);
@@ -333,7 +322,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	//保存产品   美丽修行
 	@Override
 	public void addProductFromBEVOL(int page , int category) {
-		TBrProductAppendix tBrProductAppendix = new TBrProductAppendix();
 		String params="p="+page+"&category="+category;
 		String text = HttpUtils.getData(ProductConstant.BEVOL_PRODUCT_URL+"?"+params);
 		int index = 0;
@@ -368,12 +356,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					tBrProduct = addIngredientFromBEVOL(tBrProduct);
 					if(goon){
 						addImageFromBEVOL(tBrProduct,product.getString("imageSrc"));
-						//保存冗余表
-						tBrProductAppendix.setProductId(tBrProduct.getId());
-						tBrProductAppendix.setJsondata4(text);
-						tBrProductAppendix.setCreateTime(new Date());
-						tBrProductAppendix.setDelFlg(Constant.NO);
-						tBrProductAppendixService.add(tBrProductAppendix);
 					}
 				}
 			}
@@ -392,13 +374,13 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		Document doc=Jsoup.parse(html);
 		Elements approvals=doc.select(".approval_box p");
 		int approvalsSize = approvals.size();
-		
+		String productName = tBrProduct.getProductName();
 		
 		Elements elements;
 		int index = 0;
 		try {
 			TBrProductQuery tBrProductQuery = new TBrProductQuery();
-			tBrProductQuery.setProductName(tBrProduct.getProductName());
+			tBrProductQuery.setProductName(productName);
 			List<TBrProduct> oldList = queryList(tBrProductQuery);
 			boolean flg = false;
 			if(CollectionUtils.isEmpty(oldList)){
@@ -429,6 +411,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 				pId = tBrProduct.getId();
 				goon = true;
 			}else{
+				log.info("***已包含此产品***"+productName);
 				tBrProduct = oldList.get(0);
 				goon = false;
 			}
@@ -440,6 +423,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 			elements = doc.select(".chengfenbiao .table tr");
 			Elements href = null;
 			String hrefAttr = null;
+			List<TBrIngredient> tBrIngredientList = null;
 			if(CollectionUtils.isNotEmpty(elements)){
 				for (int i = 1; i < elements.size(); i++) {
 					index = i;
@@ -449,8 +433,10 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					cname = href.text();
 					tBrIngredientQuery = new TBrIngredientQuery();
 					tBrIngredientQuery.setName(cname);
-					tBrIngredient = tBrIngredientService.queryOne(tBrIngredientQuery);
-					
+					tBrIngredientList = tBrIngredientService.queryList(tBrIngredientQuery);
+					if(tBrIngredientList.size()>0){
+						tBrIngredient = tBrIngredientList.get(0);
+					}
 					//没有查询到该成分，则说明这是新成分，保存到数据库
 					if(tBrIngredient == null){
 						tBrIngredient = new TBrIngredient();
@@ -569,9 +555,11 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		}
 		tBrProductImage.setProductId(id);
 		tBrProductImage.setName(tBrProduct.getProductName());
-		tBrProductImage.setBevolUrl(imageSrc);
-		imageSrc = imageSrc.substring(imageSrc.lastIndexOf("."));
-		tBrProductImage.setFileType(imageSrc);
+		if(StringUtils.isNotBlank(imageSrc)){
+			tBrProductImage.setBevolUrl(imageSrc);
+			imageSrc = imageSrc.substring(imageSrc.lastIndexOf("."));
+			tBrProductImage.setFileType(imageSrc);
+		}
 		tBrProductImage.setImageType(ProductConstant.IMAGETYPE_PLANE);
 		tBrProductImage.setCreateTime(new Date());
 		tBrProductImage.setDelFlg(Constant.NO);
@@ -646,41 +634,80 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 
 	@Override
 	public void doSomeThing() {	
-		String fdt = DateFormatUtil.formatDateTime(new Date());
-		log.info("定时更新测试！"+fdt);
-		HashMap<String, String> params = Maps.newHashMap();
-		params.put("on", "true");
-		//修改此处的页数，确定数据从何处开始补传
-		String page ="1";
-		params.put("page", page); //67133
-		params.put("pageSize", "15");
-		String text = HttpUtils.postData(ProductConstant.CFDA_PRODUCT_URL, params);
-		JSONObject  base =  JSON.parseObject(text);
-		JSONArray productList =  base.getJSONArray("list");
-		JSONObject product = null;
-		String date = null;
-		String dateOld = null;
-		if(CollectionUtils.isNotEmpty(productList)){
-			product = productList.getJSONObject(0);
-			date = product.getString("provinceConfirm");
-			if(StringUtil.isNotBlank(date)){
-				if(StringUtil.isBlank(dateOld)){
-					//第一次运行，两次都是一样时间，其后的运行，dateOld不再为null，不会再被赋值，这样date和dateOld就可能出现不同
-					dateOld = date;
-				}
-				if(!StringUtils.equals(dateOld, date)){
-					//如果出现不同，则说明药监局数据发生了同步更新，发邮件提醒
-					log.info("发送邮件！"+fdt);
-					EmailUtil.sendEmail("moncat@126.com", "zyl", "更新提示", "药监局数据出现了新的同步，上次一次同步日期为 "+dateOld+" 本次同步时间为 "+ date+" 操作时间为 "+fdt);
-					//将旧的时间更新为新时间，以期待药监局下一次同步的更新时间。
-					dateOld = date;
-				}
-			}
-		}
+		
 	}
 	
 	
 	public static void main(String[] args) {
+	}
+
+	private static final String essence = "香精";
+	private static final String corrosion = "防腐";
+	private static final String clean = "清洁";
+	private static final String active = "表面活性";
+	
+
+	@Override
+	public TBrProduct getStatisticsInfo(TBrProduct tBrProduct, List<TBrIngredient> ingredientList) {
+		TBrProductVo vo = (TBrProductVo)tBrProduct;
+		List<String> essenceList = Lists.newArrayList();
+		List<String> corrosionList = Lists.newArrayList();
+		List<String> riskList = Lists.newArrayList();
+		List<String> cleanList = Lists.newArrayList();
+		List<String> activeList = Lists.newArrayList();
+		ingredientList.forEach(ing ->{
+			String ingName = ing.getName();
+			//安全风险
+			String securityRisks = ing.getSecurityRisks();
+			if(StringUtils.isNoneBlank(securityRisks)){
+				if(securityRisks.indexOf("-")>0){
+					securityRisks = securityRisks.substring(0,securityRisks.lastIndexOf("-"));
+				}
+				int safeInt = Integer.parseInt(securityRisks);
+				if(safeInt > 6){
+					riskList.add(ingName);
+				}
+			}
+			TBrIngredientVo ingVo = (TBrIngredientVo)ing;
+			List<TBrAim> tBrAims = ingVo.getTBrAims();
+			if(CollectionUtils.isNotEmpty(tBrAims)){
+				tBrAims.forEach(aim ->{
+					String name = aim.getName();
+					if(name.contains(essence)){
+						essenceList.add(ingName);
+					}
+					if(name.contains(corrosion)){
+						corrosionList.add(ingName);
+					}
+					if(name.contains(clean)){
+						cleanList.add(ingName);
+					}
+					if(name.contains(active)){
+						activeList.add(ingName);
+					}
+					
+				});
+				
+			}
+			
+			
+		});
+		
+		vo.setEssenceList(essenceList);
+		vo.setCorrosionList(corrosionList);
+		vo.setRiskList(riskList);
+		vo.setCleanList(cleanList);
+		vo.setActiveList(activeList);
+		return vo;
+	}
+
+	
+
+	@Override
+	public Page<TBrProduct> querySimplePageList(TBrProduct query, Pageable pageable) {
+		String sqlId = "simpleSelect";
+		String sqlIdCount ="selectCount";
+		return tBrProductDao.selectPageList(query, pageable, sqlId, sqlIdCount);
 	}
 	
 //	public static void main(String[] args) {

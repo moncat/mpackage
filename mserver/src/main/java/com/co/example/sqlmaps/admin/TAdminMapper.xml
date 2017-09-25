@@ -1,100 +1,107 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.co.example.sqlmaps.admin.TAdminMapper" >
-  <resultMap id="BaseResultMap" type="com.co.example.entity.admin.TAdmin" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="login_name" property="loginName" jdbcType="VARCHAR" />
-    <result column="display_name" property="displayName" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="mobile_phone" property="mobilePhone" jdbcType="VARCHAR" />
-    <result column="visit_count" property="visitCount" jdbcType="SMALLINT" />
-    <result column="last_time" property="lastTime" jdbcType="TIMESTAMP" />
-    <result column="last_ip" property="lastIp" jdbcType="VARCHAR" />
-    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="create_by" property="createBy" jdbcType="BIGINT" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
-    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.admin.TAdminMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.admin.TAdmin">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="display_name" jdbcType="VARCHAR" property="displayName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="visit_count" jdbcType="SMALLINT" property="visitCount" />
+    <result column="last_time" jdbcType="TIMESTAMP" property="lastTime" />
+    <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="is_active" jdbcType="TINYINT" property="isActive" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, login_name, display_name, password, email, mobile_phone, visit_count, last_time, 
-    last_ip, item_order, create_time, create_by, update_time, update_by, del_flg
+    last_ip, item_order, create_time, create_by, update_time, update_by, is_active, del_flg
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_admin
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_admin
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.admin.TAdmin" >
-    insert into t_admin (id, login_name, 
-      display_name, password, email, 
-      mobile_phone, visit_count, last_time, 
-      last_ip, item_order, create_time, 
-      create_by, update_time, update_by, 
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.admin.TAdmin">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_admin (id, login_name, display_name, 
+      password, email, mobile_phone, 
+      visit_count, last_time, last_ip, 
+      item_order, create_time, create_by, 
+      update_time, update_by, is_active, 
       del_flg)
-    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{loginName,jdbcType=VARCHAR}, 
-      #{displayName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{mobilePhone,jdbcType=VARCHAR}, #{visitCount,jdbcType=SMALLINT}, #{lastTime,jdbcType=TIMESTAMP}, 
-      #{lastIp,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=BIGINT}, #{loginName,jdbcType=VARCHAR}, #{displayName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
+      #{visitCount,jdbcType=SMALLINT}, #{lastTime,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
       #{delFlg,jdbcType=TINYINT})
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.admin.TAdmin" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.admin.TAdmin">
     update t_admin
-    <set >
-      <if test="loginName != null" >
+    <set>
+      <if test="loginName != null">
         login_name = #{loginName,jdbcType=VARCHAR},
       </if>
-      <if test="displayName != null" >
+      <if test="displayName != null">
         display_name = #{displayName,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
+      <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
+      <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="mobilePhone != null" >
+      <if test="mobilePhone != null">
         mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
       </if>
-      <if test="visitCount != null" >
+      <if test="visitCount != null">
         visit_count = #{visitCount,jdbcType=SMALLINT},
       </if>
-      <if test="lastTime != null" >
+      <if test="lastTime != null">
         last_time = #{lastTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="lastIp != null" >
+      <if test="lastIp != null">
         last_ip = #{lastIp,jdbcType=VARCHAR},
       </if>
-      <if test="itemOrder != null" >
+      <if test="itemOrder != null">
         item_order = #{itemOrder,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
         create_by = #{createBy,jdbcType=BIGINT},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null">
         update_by = #{updateBy,jdbcType=BIGINT},
       </if>
-      <if test="delFlg != null" >
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null">
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.admin.TAdmin" >
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.admin.TAdmin">
     update t_admin
     set login_name = #{loginName,jdbcType=VARCHAR},
       display_name = #{displayName,jdbcType=VARCHAR},
@@ -109,82 +116,86 @@
       create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
     select 
     <include refid="Vo_Column_List" />
     from t_admin t
     <include refid="Table_Join_Clause" />
     where t.id = #{id,jdbcType=BIGINT}
   </select>
-  <sql id="Query_Where_Clause" >
-    <where >
-      <if test="id != null" >
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
           and t.id = #{id,jdbcType=BIGINT}
       </if>
-      <if test="loginName != null" >
+      <if test="loginName != null">
           and t.login_name = #{loginName,jdbcType=VARCHAR}
       </if>
-      <if test="displayName != null" >
+      <if test="displayName != null">
           and t.display_name = #{displayName,jdbcType=VARCHAR}
       </if>
-      <if test="password != null" >
+      <if test="password != null">
           and t.password = #{password,jdbcType=VARCHAR}
       </if>
-      <if test="email != null" >
+      <if test="email != null">
           and t.email = #{email,jdbcType=VARCHAR}
       </if>
-      <if test="mobilePhone != null" >
+      <if test="mobilePhone != null">
           and t.mobile_phone = #{mobilePhone,jdbcType=VARCHAR}
       </if>
-      <if test="visitCount != null" >
+      <if test="visitCount != null">
           and t.visit_count = #{visitCount,jdbcType=SMALLINT}
       </if>
-      <if test="lastTime != null" >
+      <if test="lastTime != null">
           and t.last_time = #{lastTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="lastIp != null" >
+      <if test="lastIp != null">
           and t.last_ip = #{lastIp,jdbcType=VARCHAR}
       </if>
-      <if test="itemOrder != null" >
+      <if test="itemOrder != null">
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
           and t.create_by = #{createBy,jdbcType=BIGINT}
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
           and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null">
           and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
-      <if test="delFlg != null" >
+      <if test="isActive != null">
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null">
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
       </if>
       <include refid="Vo_Where_Clause" />
     </where>
-    <if test="sorting != null" >
+    <if test="sorting != null">
       order by ${sorting},t.id desc
     </if>
   </sql>
-  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
     select count(t.id) from t_admin t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
     select 
     <include refid="Vo_Column_List" />
     from t_admin t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  <delete id="delete" parameterType="java.util.Map" >
+  <delete id="delete" parameterType="java.util.Map">
     delete from t_admin where id in (
     select t.id from (select * from t_admin) t
     <include refid="Table_Join_Clause" />
@@ -192,12 +203,12 @@
     )
   </delete>
   <!--  ************************expand your SQL below the line***********************  -->
-  <resultMap id="VoResultMap" type="com.co.example.entity.admin.aide.TAdminVo" extends="BaseResultMap" >
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.admin.aide.TAdminVo">
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
   </resultMap>
-  <sql id="Vo_Column_List" >
+  <sql id="Vo_Column_List">
     t.id, 
     t.login_name, 
     t.display_name, 
@@ -212,15 +223,16 @@
     t.create_by, 
     t.update_time, 
     t.update_by, 
+    t.is_active, 
     t.del_flg
      <!-- ,alias.field -->
   </sql>
-  <sql id="Vo_Where_Clause" >
+  <sql id="Vo_Where_Clause">
     <!-- <if test="queryBeanField != null" > -->
     <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
     <!-- </if> -->
   </sql>
-  <sql id="Table_Join_Clause" >
+  <sql id="Table_Join_Clause">
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
   </sql>
 </mapper>

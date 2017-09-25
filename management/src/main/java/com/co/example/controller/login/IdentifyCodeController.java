@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.co.example.base.constant.SessionConstant;
+import com.co.example.constant.SessionConstant;
 
 
 

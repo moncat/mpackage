@@ -10,4 +10,6 @@ import lombok.Setter;
 public class TRoleQuery extends TRole {
 	
 	private Long userId;
+	
+	private Long adminId;
 }

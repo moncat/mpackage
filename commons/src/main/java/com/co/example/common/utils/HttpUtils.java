@@ -7,9 +7,11 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.collections.MapUtils;
+import org.apache.commons.io.IOUtils;
 
 import com.google.common.collect.Maps;
 
@@ -52,7 +54,11 @@ public class HttpUtils {
             //如下一行也是必须
             httpURLConnection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
             //设置请求体的类型是文本类型
-            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;");
+            httpURLConnection.setRequestProperty("Accept-Charset", encode);
+            httpURLConnection.setRequestProperty("contentType", encode);
+            httpURLConnection.setRequestProperty("charset", encode);
+            
             //设置请求体的长度
             httpURLConnection.setRequestProperty("Content-Length", String.valueOf(data.length));
             //获得输出流，向服务器写入数据
@@ -62,7 +68,7 @@ public class HttpUtils {
             int response = httpURLConnection.getResponseCode();            //获得服务器的响应码
             if(response == HttpURLConnection.HTTP_OK) {
                 InputStream inptStream = httpURLConnection.getInputStream();
-                return dealResponseResult(inptStream);                     //处理服务器的响应结果
+                return dealResponseResult(inptStream,encode);                     //处理服务器的响应结果
             }
         } catch (IOException e) {
             //e.printStackTrace();
@@ -96,33 +102,59 @@ public class HttpUtils {
     
 
     //处理返回
-    public static String dealResponseResult(InputStream inputStream) {
-        String resultData = null;      //存储处理结果
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        byte[] data = new byte[1024];
-        int len = 0;
-        try {
-            while((len = inputStream.read(data)) != -1) {
-                byteArrayOutputStream.write(data, 0, len);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        resultData = new String(byteArrayOutputStream.toByteArray());
-        return resultData;
+    public static String dealResponseResult(InputStream inputStream, String encode) {
+    	 StringBuffer sb = new StringBuffer();
+    	 List<String> lines = null;
+		 try {
+			lines = IOUtils.readLines(inputStream, encode);
+		 } catch (IOException e) {
+			e.printStackTrace();
+		 }
+    	 for (int i = 0; i < lines.size(); i++) {
+    		 sb.append(lines.get(i));
+		 }
+    	 return sb.toString();
+    	
+//        String resultData = null;      //存储处理结果
+//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//        byte[] data = new byte[1024];
+//        int len = 0;
+//        try {
+//            while((len = inputStream.read(data)) != -1) {
+//                byteArrayOutputStream.write(data, 0, len);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        resultData = new String(byteArrayOutputStream.toByteArray());
+//        return resultData;
     }
 
     
     public static String getData(String path){
+    	ByteArrayOutputStream baos  =null;
+    	InputStream is = null;
         try {
             URL url = new URL(path.trim());
             //打开连接
-            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-            if(200 == urlConnection.getResponseCode()){
+            conn.setRequestMethod("GET");
+            //Get请求不需要DoOutPut
+            conn.setDoOutput(false);
+            conn.setDoInput(true);
+            //设置连接超时时间和读取超时时间
+            conn.setConnectTimeout(10000);
+            conn.setReadTimeout(10000);
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            //连接服务器  
+            conn.connect();
+            
+            
+            if(200 == conn.getResponseCode()){
                 //得到输入流
-                InputStream is =urlConnection.getInputStream();
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                is = conn.getInputStream();
+                baos = new ByteArrayOutputStream();
                 byte[] buffer = new byte[1024];
                 int len = 0;
                 while(-1 != (len = is.read(buffer))){
@@ -134,17 +166,32 @@ public class HttpUtils {
         }  catch (IOException e) {
             e.printStackTrace();
         }
+      //关闭输入流
+        finally{
+            try{
+            	if(is!=null){
+            		is.close();
+            	}
+                if(baos!=null){
+                	baos.close();
+                }
+            }
+            catch(IOException ex){
+                ex.printStackTrace();
+            }
+        }
         return null;
     }
     
     
     public static void main(String[] args) {   	
-		String url="http://125.35.6.80:8080/ftba/itownet/fwAction.do?method=getBaNewInfoPage";
+		String url="https://www.qixin.com/auth/login?return_url=%2F";
 		Map<String, String> map = Maps.newHashMap();
-		map.put("on", "true");
-		map.put("page", "3021");
-		map.put("pageSize", "15");
-    	String data = postData(url,map);
+//		map.put("on", "true");
+//		map.put("page", "3021");
+//		map.put("pageSize", "15");
+//    	String data = postData(url,map);
+    	String data = getData(url);
     	System.out.println(data);
 	}
     

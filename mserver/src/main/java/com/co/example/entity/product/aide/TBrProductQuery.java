@@ -15,6 +15,11 @@ public class TBrProductQuery extends TBrProduct {
 	/** 连接开关 */
 	private Boolean joinFlg = false;
 	
+	/** 连接开关 */
+	private Boolean joinBrandFlg = false;
+	
 	private String productNameLike;
+	
+	
 	
 }

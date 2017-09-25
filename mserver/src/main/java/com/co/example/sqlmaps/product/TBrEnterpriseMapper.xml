@@ -202,6 +202,12 @@
      <if test="productId != null" >
   		  and tbpe.product_id = #{productId,jdbcType=BIGINT}
      </if>
+     <if test="enterpriseNameLike != null" >
+          and t.enterprise_name like concat('%',#{enterpriseNameLike,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="applySnLike != null" >
+          and t.apply_sn like concat('%',#{applySnLike,jdbcType=VARCHAR},'%')
+      </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <if test="joinFlg" >

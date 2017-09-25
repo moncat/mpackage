@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.data.domain.Page;
@@ -18,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.co.example.base.constant.HttpStatusCode;
 import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.PageReq;
+import com.co.example.constant.HttpStatusCode;
 import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.TAdminRole;
 import com.co.example.entity.admin.aide.TAdminQuery;
@@ -113,23 +115,43 @@ public class adminController {
 	@RequestMapping(value="/show",method = { RequestMethod.GET,RequestMethod.POST})
 	public Map<String,Object> show(HttpSession session,TAdminQuery query){
 		Map<String,Object> mapResult = new HashMap<String,Object>();
-		Long adminId = SessionUtil.getAdminId(session);
-		TAdmin admin = tAdminService.queryById(adminId);
+		TAdmin admin = SessionUtil.getAdmin(session);
 		admin.setPassword(null);
 		mapResult.put("admin", admin);
 		return mapResult;
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/deletel/{id}", method = { RequestMethod.GET,RequestMethod.POST })
-	public Map<String, Object> deleteLogic(HttpSession session,@PathVariable Long id)throws Exception {
-		TAdminQuery tAdminQuery = new TAdminQuery();
-		tAdminQuery.setId(id);
-		tAdminQuery.setDelFlg(Constant.YES);
-		tAdminService.updateByIdSelective(tAdminQuery);			
+	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> delete(HttpSession session,@PathVariable Long id)throws Exception {
+		tAdminService.deleteById(id);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/active/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> active(HttpSession session,@PathVariable Long id)throws Exception {
+		TAdminQuery query = new TAdminQuery();
+		query.setIsActive(Constant.YES);
+		query.setId(id);
+		tAdminService.updateByIdSelective(query);			
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/negative/{id}", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> negative(HttpSession session,@PathVariable Long id)throws Exception {
+		TAdminQuery query = new TAdminQuery();
+		query.setIsActive(Constant.NO);
+		query.setId(id);
+		tAdminService.updateByIdSelective(query);			
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
 }

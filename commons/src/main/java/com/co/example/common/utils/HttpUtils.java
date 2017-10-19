@@ -12,10 +12,14 @@ import java.util.Map;
 
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Maps;
 
+import lombok.extern.slf4j.Slf4j;
 
+
+@Slf4j
 public class HttpUtils {
 	
 	public static String postData(String strUrlPath) {
@@ -34,13 +38,15 @@ public class HttpUtils {
 		 String result = postData(strUrlPath,paramsStr,encode);
 		 return result;
 	} 
+	static int errCount = 0;
     public static String postData(String strUrlPath,String paramsStr, String encode) {
 
         byte[] data = paramsStr.getBytes();
+        HttpURLConnection httpURLConnection = null;
+        int response = 400;
         try {
-
             URL url = new URL(strUrlPath);
-            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+            httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setRequestProperty("accept", "*/*");
             httpURLConnection.setRequestProperty("connection", "Keep-Alive");
             // 发送POST请求必须设置如下两行
@@ -48,8 +54,8 @@ public class HttpUtils {
             httpURLConnection.setDoInput(true);
             
             //设置请求超时时间
-            httpURLConnection.setReadTimeout(20000);
-            httpURLConnection.setConnectTimeout(20000);
+            httpURLConnection.setReadTimeout(30000);
+            httpURLConnection.setConnectTimeout(30000);
             
             //如下一行也是必须
             httpURLConnection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
@@ -61,21 +67,59 @@ public class HttpUtils {
             
             //设置请求体的长度
             httpURLConnection.setRequestProperty("Content-Length", String.valueOf(data.length));
+            
             //获得输出流，向服务器写入数据
-            OutputStream outputStream = httpURLConnection.getOutputStream();
-            outputStream.write(data);
-
-            int response = httpURLConnection.getResponseCode();            //获得服务器的响应码
-            if(response == HttpURLConnection.HTTP_OK) {
-                InputStream inptStream = httpURLConnection.getInputStream();
-                return dealResponseResult(inptStream,encode);                     //处理服务器的响应结果
-            }
+            int ms =300;
+            String result = null;
+            for (int i = 1; i < 4; i++) {
+            	if(response == HttpURLConnection.HTTP_OK) {
+            		 InputStream inptStream = httpURLConnection.getInputStream();
+                     result = dealResponseResult(inptStream,encode); 
+                     if(StringUtils.isBlank(result)){
+                    	 log.info("***httpPost请求结果为空***");
+                     }
+                     return result ;
+            	}else{
+            		if(i >1){
+            			log.info("正在发起第***"+i+"***次请求");
+            			ms = ms+600;
+            		}
+            		try {
+            			Thread.sleep(ms);
+            		} catch (InterruptedException e) {
+            			e.printStackTrace();
+            		}
+            		response = startRequest(data, httpURLConnection);
+            	}
+            	
+			}
+            
         } catch (IOException e) {
             //e.printStackTrace();
-            return "err: " + e.getMessage().toString();
+//        	log.info("***httppost请求超时***");
+        	errCount++;
+        	if(errCount>3){
+        		errCount = 0;
+        		 return "-1";
+        	}else{
+        		log.info("***httppost请求超时,再次请求***"+errCount);
+        		postData(strUrlPath,paramsStr,  encode);
+        	}
+        	
+//        	StackTraceElement[] stackTrace = e.getStackTrace();
+//        	for (int i = 0; i < stackTrace.length; i++) {
+//        		log.info("***"+stackTrace[i].toString());
+//			}
+//            return "err: " + e.getMessage().toString();
         }
         return "-1";
     }
+	private static int startRequest(byte[] data, HttpURLConnection httpURLConnection) throws IOException {
+		OutputStream outputStream = httpURLConnection.getOutputStream();
+		outputStream.write(data);
+		int response = httpURLConnection.getResponseCode();            //获得服务器的响应码
+		return response;
+	}
 
     //处理发送
     public static StringBuffer getRequestData(Map<String, String> params) {
@@ -132,13 +176,15 @@ public class HttpUtils {
 
     
     public static String getData(String path){
+    	return getData(path, "utf-8");
+    }
+    public static String getData(String path,String encode){
     	ByteArrayOutputStream baos  =null;
     	InputStream is = null;
         try {
             URL url = new URL(path.trim());
             //打开连接
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
             conn.setRequestMethod("GET");
             //Get请求不需要DoOutPut
             conn.setDoOutput(false);
@@ -147,6 +193,11 @@ public class HttpUtils {
             conn.setConnectTimeout(10000);
             conn.setReadTimeout(10000);
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            
+            conn.setRequestProperty("Accept-Charset", encode);
+            conn.setRequestProperty("contentType", encode);
+            conn.setRequestProperty("charset", encode);
+            
             //连接服务器  
             conn.connect();
             
@@ -161,7 +212,7 @@ public class HttpUtils {
                     baos.write(buffer,0,len);
                     baos.flush();
                 }
-                return baos.toString("utf-8");
+                return baos.toString(encode);
             }
         }  catch (IOException e) {
             e.printStackTrace();
@@ -183,16 +234,36 @@ public class HttpUtils {
         return null;
     }
     
-    
+    static int a =1;
     public static void main(String[] args) {   	
-		String url="https://www.qixin.com/auth/login?return_url=%2F";
-		Map<String, String> map = Maps.newHashMap();
-//		map.put("on", "true");
-//		map.put("page", "3021");
-//		map.put("pageSize", "15");
-//    	String data = postData(url,map);
-    	String data = getData(url);
+//		String url="http://club.jd.com/comment/skuProductPageComments.action";
+		
+//		String paramsStr = "productId=3126016&page=1&pageSize=10&fold=1";
+		
+//         score: n.type,
+//         sortType: n.sortType,
+//         isShadowSku: n.isShadowSku,
+//         rid: s,
+		
+//    	String data = postData(url,paramsStr,"utf-8");
+    	
+    	
+    	
+//    	String data = getData(url);
+//    	for (int i = 0; i < 3; i++) {
+//			a++;
+//			System.out.println(a);
+//			
+//		}
+    	
+    	String data = getData("https://club.jd.com/comment/productCommentSummaries.action?referenceIds=3126016","gbk");
     	System.out.println(data);
+    	
+    	
+    	
+    	
+    	
+    	
 	}
     
 

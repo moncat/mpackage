@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.co.example.controller.BaseControllerHandler;
 import com.co.example.common.utils.PageReq;
+import com.co.example.entity.admin.TAdmin;
+import com.co.example.entity.admin.aide.TAdminVo;
 import com.co.example.entity.system.TMenu;
 import com.co.example.entity.system.aide.TMenuQuery;
 import com.co.example.service.system.TMenuService;
+import com.co.example.utils.SessionUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -41,7 +44,9 @@ public class SystemController extends BaseControllerHandler<TMenu>{
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			PageReq pageReq, TMenu query) {
 		log.debug("列表展示");
-    	List<TMenu> list = tMenuService.getMenuTree();
+		TAdmin admin = SessionUtil.getAdmin(session);
+    	TAdminVo adminVo = (TAdminVo) admin; 
+    	List<TMenu> list = tMenuService.getMenuTree(adminVo.getRoles());
     	model.addAttribute("list", list);
 		return true;
 	}

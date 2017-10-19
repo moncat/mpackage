@@ -12,9 +12,6 @@ public class TBrEnterprise extends BaseEntity {
     /** id */
     private Long id;
 
-    /** 产品id */
-    private Long productId;
-
     /** 备案号 */
     private String applySn;
 

@@ -1,6 +1,7 @@
 package com.co.example.entity.product;
 
 import com.github.moncat.common.entity.BaseEntity;
+import java.math.BigDecimal;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -17,6 +18,21 @@ public class TBrProduct extends BaseEntity {
 
     /** 产品别名 */
     private String productAlias;
+
+    /** 京东价格 */
+    private BigDecimal jdPrice;
+
+    /** 天猫价格 */
+    private BigDecimal tmallPrice;
+
+    /** 从天猫获得销量，京东获取不到销量 */
+    private Integer sales;
+
+    /** 天猫的url地址 */
+    private String tmallUrl;
+
+    /** 京东的url地址 */
+    private String jdUrl;
 
     /** 备案类型 1国产备案 2进口备案 */
     private String applyType;
@@ -53,4 +69,10 @@ public class TBrProduct extends BaseEntity {
 
     /** 来源  1 药监局 ； 2美丽修行 */
     private Byte source;
+
+    /**  */
+    private String moreData1;
+
+    /**  */
+    private String moreData2;
 }

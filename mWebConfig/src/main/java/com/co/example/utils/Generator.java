@@ -15,7 +15,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
 import com.co.example.bean.GeInfo;
-import com.co.example.entity.product.TBrEnterprise;
+import com.co.example.entity.spec.TBrSpecKey;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 
@@ -24,9 +24,9 @@ import com.google.common.io.Files;
  */
 public class Generator {
 
-	static String model = "enterprise";
+	static String model = "spec";
 	
-	static Class<TBrEnterprise> entity = TBrEnterprise.class;
+	static Class<TBrSpecKey> entity = TBrSpecKey.class;
 	
 	static String basePath="D:/Workspaces2/package/management/src/main/resources/";
 
@@ -35,7 +35,7 @@ public class Generator {
 		// 修改配置文件
 //		ge(Type.add);
 //		ge(Type.edit);		
-//		ge(Type.list);		
+		ge(Type.list);		
 		ge(Type.show);
 	}
 

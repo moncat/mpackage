@@ -189,6 +189,12 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 			JSONObject unitInfo = base.getJSONObject("scqyUnitinfo");
 			tBrProduct.setProducingArea(unitInfo.getString("enterprise_address"));
 			//将产品保存方法重构到成分保存方法中，用于保存备注等信息，也可以保存冗余信息
+			tBrProduct.setCreateBy(0l);
+			//天大的坑 
+			String eNameStr = unitInfo.getString("enterprise_name");
+			if(StringUtils.isNotBlank(eNameStr)){
+				tBrProduct.setEnterpriseName(eNameStr);
+			}
 			add(tBrProduct);
 			Long tBrProductId = tBrProduct.getId();
 			pId = tBrProductId;
@@ -209,7 +215,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 						//如果实际生产企业在库中不存在
 						if(CollectionUtils.isEmpty(tBrEnterpriseList)){
 							tBrEnterprise= new TBrEnterprise();
-							tBrEnterprise.setProductId(tBrProductId);
 							tBrEnterprise.setApplySn(enterprise.getString("enterprise_healthpermits"));
 							tBrEnterprise.setEnterpriseName(enterpriseName);
 							tBrEnterprise.setProducingArea(enterprise.getString("enterprise_address"));
@@ -217,6 +222,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 							tBrEnterprise.setCreateBy(0l);
 							tBrEnterprise.setIsActive(Constant.STATUS_ACTIVE);
 							tBrEnterprise.setDelFlg(Constant.YES);
+							tBrEnterprise.setCreateTime(new Date());
 							tBrEnterpriseService.add(tBrEnterprise);
 						}else{
 							tBrEnterprise = tBrEnterpriseList.get(0);
@@ -267,6 +273,8 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		return tBrProduct;
 	}
 	
+	Byte oldImage =12;
+	
 	
 	/**
 	 * 保存药监局图片
@@ -297,6 +305,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					tBrProductImage.setProductId(id);
 					//tBrProductImage.setBevolUrl(null);
 					tBrProductImage.setCfdaSsid(base.getString("ssid"));
+					tBrProductImage.setSource(oldImage);
 					tBrProductImage.setFileType(image.getString("fileType"));
 					zltype = image.getString("zltype");
 					if(StringUtils.equalsIgnoreCase(zltype, "babacpbzpm")){
@@ -306,6 +315,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					}else if(StringUtils.equalsIgnoreCase(zltype, "babaqtcl")){
 						tBrProductImage.setImageType(ProductConstant.IMAGETYPE_BRAND);
 					}
+					tBrProductImage.setSource(ProductConstant.PRODUCT_SOURCE_CFDA);
 					tBrProductImage.setCreateTime(new Date());
 					tBrProductImage.setDelFlg(Constant.NO);
 					tBrProductImageService.add(tBrProductImage);
@@ -407,6 +417,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 				tBrProduct.setEnterpriseName(enterpriseName);
 				tBrProduct.setEnterpriseNameEn(enterpriseNameEn);
 				tBrProduct.setConfirmDate(cDate);
+				tBrProduct.setCreateBy(0l);
 				add(tBrProduct);
 				pId = tBrProduct.getId();
 				goon = true;
@@ -557,10 +568,12 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		tBrProductImage.setName(tBrProduct.getProductName());
 		if(StringUtils.isNotBlank(imageSrc)){
 			tBrProductImage.setBevolUrl(imageSrc);
+			tBrProductImage.setSource(oldImage);
 			imageSrc = imageSrc.substring(imageSrc.lastIndexOf("."));
 			tBrProductImage.setFileType(imageSrc);
 		}
 		tBrProductImage.setImageType(ProductConstant.IMAGETYPE_PLANE);
+		tBrProductImage.setSource(ProductConstant.PRODUCT_SOURCE_BEVOL);
 		tBrProductImage.setCreateTime(new Date());
 		tBrProductImage.setDelFlg(Constant.NO);
 		tBrProductImageService.add(tBrProductImage);
@@ -708,6 +721,17 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		String sqlId = "simpleSelect";
 		String sqlIdCount ="selectCount";
 		return tBrProductDao.selectPageList(query, pageable, sqlId, sqlIdCount);
+	}
+
+
+	@Override
+	public List<String> queryOperEnterpriseFromProduct() {
+		return tBrProductDao.selectOperEnterpriseFromProduct();
+	}
+
+	@Override
+	public int updateByArea(TBrProductQuery query) {
+		return tBrProductDao.updateByArea(query);
 	}
 	
 //	public static void main(String[] args) {

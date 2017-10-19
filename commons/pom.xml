@@ -251,21 +251,21 @@
         <dependency>  
             <groupId>org.seleniumhq.selenium</groupId>  
             <artifactId>selenium-java</artifactId>  
-            <version>2.41.0</version>  
         </dependency>  
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
 		    <artifactId>selenium-remote-driver</artifactId>
-		    <version>2.41.0</version>
 		</dependency>
         
         <!-- phantomjsdriver(selenium webdriver 第三方支持) -->  
-        <dependency>  
-            <groupId>com.github.detro</groupId>  
-            <artifactId>phantomjsdriver</artifactId>  
-            <version>1.2.0</version>  
-        </dependency>  
+        <!-- https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver -->
+		<dependency>
+		    <groupId>com.codeborne</groupId>
+		    <artifactId>phantomjsdriver</artifactId>
+		    <version>1.2.1</version>
+		</dependency>
+		 
 		
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
 		<dependency>

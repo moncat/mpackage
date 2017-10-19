@@ -1,12 +1,8 @@
 package com.co.example.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,7 +14,6 @@ import com.github.moncat.common.generator.id.NextId;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @ControllerAdvice
 public class BaseControllerAdvice {
 	
@@ -38,32 +33,24 @@ public class BaseControllerAdvice {
 	//处理公共exception
 	@ExceptionHandler  
     public String exceptionProcess(Model model,HttpServletRequest request, HttpServletResponse response, RuntimeException ex) {  
-		StackTraceElement stackTraceElement= ex.getStackTrace()[0];// 得到异常棧的首个元素
+		StackTraceElement[] stackTrace = ex.getStackTrace();
+		String info = "" ;
+		for (StackTraceElement element : stackTrace) {
+			info += element.toString()+"<br/>";
+		}
 		JSONObject json  = new JSONObject();
 		Long code = NextId.getId();
         json.put("code", code);  
-        json.put("url", request.getRequestURL());  
-        json.put("file", stackTraceElement.getFileName());
-        json.put("line", stackTraceElement.getLineNumber());
-        json.put("method", stackTraceElement.getMethodName());
+        json.put("url", request.getRequestURL()); 
         json.put("msg", ex.getMessage()); 
-        model.addAttribute("errInfo", json.toString());
-        
-        log.info("code:"+code);  
-        log.info("url:"+request.getRequestURL());  
-        log.info("file:"+stackTraceElement.getFileName());
-        log.info("line:"+stackTraceElement.getLineNumber());
-        log.info("method:"+stackTraceElement.getMethodName());
-        log.info("msg:"+ ex.getMessage()); 
+        json.put("info", info); 
+        String str = json.toString();      
+        model.addAttribute("errInfo", str);              
         ex.printStackTrace(); 
-        
-//        if(log.isDebugEnabled()){
-//        	 ex.printStackTrace();
-//        }
         return "error";  
     } 
 	
-
+	
 	
 	
 }

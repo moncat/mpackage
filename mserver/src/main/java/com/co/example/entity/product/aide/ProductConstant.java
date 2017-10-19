@@ -25,13 +25,24 @@ public class ProductConstant {
 	//美丽修行产品成分url
 	public static final String BEVOL_INGREDIENT_URL = BEVOL_PRODUCT+"/product/";
 	/**
-	 * 数据来源 1 药监局 ； 2美丽修行
+	 * 数据来源 1 药监局 ， 2美丽修行  ，3京东 ，4天猫
 	 */
 	public static final Byte PRODUCT_SOURCE_CFDA = 1;
+	
 	/**
-	 * 数据来源 1 药监局 ； 2美丽修行
+	 * 数据来源 1 药监局 ， 2美丽修行  ，3京东 ，4天猫
 	 */
 	public static final Byte PRODUCT_SOURCE_BEVOL = 2;
+	
+	/**
+	 * 数据来源 1 药监局 ， 2美丽修行  ，3京东 ，4天猫
+	 */
+	public static final Byte PRODUCT_SOURCE_JD = 3;
+	
+	/**
+	 * 数据来源 1 药监局 ， 2美丽修行  ，3京东 ，4天猫
+	 */
+	public static final Byte PRODUCT_SOURCE_TMALL = 4;
 	
 	/**
 	 * 产品来源  1 国产  2进口
@@ -60,11 +71,21 @@ public class ProductConstant {
 	
 	
 	/**
-	 * 图片类型 1平面图 2立体图 3商标证，授权书 
+	 * 图片类型 1平面图 2立体图 3商标证，授权书  4其他未确定
 	 */
 	public static final Byte IMAGETYPE_PLANE = 1;
 	public static final Byte IMAGETYPE_CUBE = 2;
 	public static final Byte IMAGETYPE_BRAND = 3;
+	public static final Byte IMAGETYPE_OTHER = 4;
 	
+	/**
+	 * 京东产品查询url
+	 */
+	public static final String JD_PRODUCT_SEARCH_URL = "https://search.jd.com/Search?enc=utf-8&keyword=";
+	
+	/**
+	 * 天猫产品查询url
+	 */
+	public static final String TMALL_PRODUCT_SEARCH_URL = "https://list.tmall.com/search_product.htm?q=";
 	
 }

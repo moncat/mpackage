@@ -23,7 +23,7 @@ public class EmailUtil {
 			String content) {
 		HtmlEmail email = new HtmlEmail();
 		String fromEmail = "moncat@126.com";
-		String fromEmailPwd= "*";
+		String fromEmailPwd= "95000736";
 		String server = "smtp.126.com";
 		email.setHostName(server);// 发信邮件服务器
 		email.setAuthentication(fromEmail, fromEmailPwd);// smtp认证的用户名和密码

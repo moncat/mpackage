@@ -40,10 +40,10 @@ public class ArticleController extends BaseControllerHandler<TArticle> {
 	@ResponseBody
 	@PostMapping("setTop")
 	public Map<String, Object> setTop(@RequestParam Long id){
+		Map<String, Object> result = result();
 		TArticleQuery tArticleQuery = new TArticleQuery();
 		tArticleQuery.setId(id);
 		tArticleService.setTop(tArticleQuery);
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 		
 	}
@@ -51,11 +51,11 @@ public class ArticleController extends BaseControllerHandler<TArticle> {
 	@ResponseBody
 	@PostMapping("start")
 	public Map<String, Object> start(@RequestParam Long id){
+		Map<String, Object> result = result();
 		TArticleQuery tArticleQuery = new TArticleQuery();
 		tArticleQuery.setId(id);
 		tArticleQuery.setDelFlg(Constant.NO);
 		tArticleService.updateByIdSelective(tArticleQuery);
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 		
 	}
@@ -63,11 +63,11 @@ public class ArticleController extends BaseControllerHandler<TArticle> {
 	@ResponseBody
 	@PostMapping("stop")
 	public Map<String, Object> stop(@RequestParam Long id){
+		Map<String, Object> result = result();
 		TArticleQuery tArticleQuery = new TArticleQuery();
 		tArticleQuery.setId(id);
 		tArticleQuery.setDelFlg(Constant.YES);
 		tArticleService.updateByIdSelective(tArticleQuery);
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	

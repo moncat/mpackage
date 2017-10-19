@@ -46,8 +46,8 @@
 		        					        <div>纳税人识别号： <span th:text="${register.revenueId}"></span></div>
 		        					        <div>行业类型： <span th:text="${register.industryType}"></span></div>
 		        					        <div>营业期限： <span th:text="${register.businessTerm}"></span></div>
-		        					        <div>注册日期： <span th:if="${register.registerDate eq true}" th:text="${#dates.format(register.registerDate, 'yyyy-MM-dd')}"></span></div>
-		        					        <div>核准日期： <span th:if="${register.approveDate eq true}" th:text="${#dates.format(register.approveDate, 'yyyy-MM-dd')}"></span></div>
+		        					        <div>注册日期： <span th:if="${register.registerDate != null }" th:text="${#dates.format(register.registerDate, 'yyyy-MM-dd')}"></span></div>
+		        					        <div>核准日期： <span th:if="${register.approveDate != null }" th:text="${#dates.format(register.approveDate, 'yyyy-MM-dd')}"></span></div>
 		        					        <div>登记机关： <span th:text="${register.registerAuthority}"></span></div>
 		        					        <div>注册地址： <span th:text="${register.registerAddress}"></span></div>
 		        					        <div>英文名称： <span th:text="${register.nameEn}"></span></div>
@@ -169,12 +169,7 @@
 										</table>
 		                            </div> 
 	                            </div> 
-	                            
-	                            
-	                            
-	                            
-	                            
-	                            
+	                            <h5><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></h5>
 	                        </div>
 	                    </div>
 	                </div>

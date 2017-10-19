@@ -27,9 +27,8 @@
         <dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-web</artifactId>
-		    
-		<!--  
-		   <exclusions>
+		   
+		  <exclusions>
 		        <exclusion>
 		            <groupId>org.springframework.boot</groupId>
 		            <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -47,7 +46,7 @@
 		    <artifactId>tomcat-servlet-api</artifactId>
 		    <version>8.0.36</version>
 		    <scope>provided</scope>
-		     -->
+		    
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4 -->
@@ -65,4 +64,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<packaging>war</packaging>
 </project>

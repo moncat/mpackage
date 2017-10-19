@@ -5,6 +5,11 @@
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="product_name" property="productName" jdbcType="VARCHAR" />
     <result column="product_alias" property="productAlias" jdbcType="VARCHAR" />
+    <result column="jd_price" property="jdPrice" jdbcType="DECIMAL" />
+    <result column="tmall_price" property="tmallPrice" jdbcType="DECIMAL" />
+    <result column="sales" property="sales" jdbcType="INTEGER" />
+    <result column="tmall_url" property="tmallUrl" jdbcType="VARCHAR" />
+    <result column="jd_url" property="jdUrl" jdbcType="VARCHAR" />
     <result column="apply_type" property="applyType" jdbcType="VARCHAR" />
     <result column="apply_sn" property="applySn" jdbcType="VARCHAR" />
     <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
@@ -17,6 +22,8 @@
     <result column="bevol_mid" property="bevolMid" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="source" property="source" jdbcType="TINYINT" />
+    <result column="more_data1" property="moreData1" jdbcType="VARCHAR" />
+    <result column="more_data2" property="moreData2" jdbcType="VARCHAR" />
     <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_by" property="createBy" jdbcType="BIGINT" />
@@ -25,9 +32,10 @@
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, product_name, product_alias, apply_type, apply_sn, enterprise_name, enterprise_name_en, 
-    producing_area, confirm_date, is_off, cfda_processid, cfda_new_processid, bevol_mid, 
-    remark, source, item_order, create_time, create_by, update_time, update_by, del_flg
+    id, product_name, product_alias, jd_price, tmall_price, sales, tmall_url, jd_url, 
+    apply_type, apply_sn, enterprise_name, enterprise_name_en, producing_area, confirm_date, 
+    is_off, cfda_processid, cfda_new_processid, bevol_mid, remark, source, more_data1, 
+    more_data2, item_order, create_time, create_by, update_time, update_by, del_flg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -39,24 +47,28 @@
     delete from t_br_product
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.product.TBrProduct" >
-	  <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE">  
-		SELECT ${@com.github.moncat.common.generator.id.NextId@getId()} 
-	  </selectKey>  
-    insert into t_br_product (id,product_name, 
-      product_alias, apply_type, apply_sn, 
-      enterprise_name, enterprise_name_en, producing_area, 
-      confirm_date, is_off, cfda_processid, 
-      cfda_new_processid, bevol_mid, remark, 
-      source, item_order, create_time, 
+  <insert id="insert" parameterType="com.co.example.entity.product.TBrProduct" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_product (id, product_name, product_alias, 
+      jd_price, tmall_price, sales, 
+      tmall_url, jd_url, apply_type, 
+      apply_sn, enterprise_name, enterprise_name_en, 
+      producing_area, confirm_date, is_off, 
+      cfda_processid, cfda_new_processid, bevol_mid, 
+      remark, source, more_data1, 
+      more_data2, item_order, create_time, 
       create_by, update_time, update_by, 
       del_flg)
-    values (#{id},#{productName,jdbcType=VARCHAR}, 
-      #{productAlias,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, #{applySn,jdbcType=VARCHAR}, 
-      #{enterpriseName,jdbcType=VARCHAR}, #{enterpriseNameEn,jdbcType=VARCHAR}, #{producingArea,jdbcType=VARCHAR}, 
-      #{confirmDate,jdbcType=VARCHAR}, #{isOff,jdbcType=VARCHAR}, #{cfdaProcessid,jdbcType=VARCHAR}, 
-      #{cfdaNewProcessid,jdbcType=VARCHAR}, #{bevolMid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{source,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=BIGINT}, #{productName,jdbcType=VARCHAR}, #{productAlias,jdbcType=VARCHAR}, 
+      #{jdPrice,jdbcType=DECIMAL}, #{tmallPrice,jdbcType=DECIMAL}, #{sales,jdbcType=INTEGER}, 
+      #{tmallUrl,jdbcType=VARCHAR}, #{jdUrl,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{applySn,jdbcType=VARCHAR}, #{enterpriseName,jdbcType=VARCHAR}, #{enterpriseNameEn,jdbcType=VARCHAR}, 
+      #{producingArea,jdbcType=VARCHAR}, #{confirmDate,jdbcType=VARCHAR}, #{isOff,jdbcType=VARCHAR}, 
+      #{cfdaProcessid,jdbcType=VARCHAR}, #{cfdaNewProcessid,jdbcType=VARCHAR}, #{bevolMid,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{source,jdbcType=TINYINT}, #{moreData1,jdbcType=VARCHAR}, 
+      #{moreData2,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
       #{delFlg,jdbcType=TINYINT})
   </insert>
@@ -68,6 +80,21 @@
       </if>
       <if test="productAlias != null" >
         product_alias = #{productAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="jdPrice != null" >
+        jd_price = #{jdPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tmallPrice != null" >
+        tmall_price = #{tmallPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="sales != null" >
+        sales = #{sales,jdbcType=INTEGER},
+      </if>
+      <if test="tmallUrl != null" >
+        tmall_url = #{tmallUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="jdUrl != null" >
+        jd_url = #{jdUrl,jdbcType=VARCHAR},
       </if>
       <if test="applyType != null" >
         apply_type = #{applyType,jdbcType=VARCHAR},
@@ -105,6 +132,12 @@
       <if test="source != null" >
         source = #{source,jdbcType=TINYINT},
       </if>
+      <if test="moreData1 != null" >
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null" >
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
       <if test="itemOrder != null" >
         item_order = #{itemOrder,jdbcType=INTEGER},
       </if>
@@ -130,6 +163,11 @@
     update t_br_product
     set product_name = #{productName,jdbcType=VARCHAR},
       product_alias = #{productAlias,jdbcType=VARCHAR},
+      jd_price = #{jdPrice,jdbcType=DECIMAL},
+      tmall_price = #{tmallPrice,jdbcType=DECIMAL},
+      sales = #{sales,jdbcType=INTEGER},
+      tmall_url = #{tmallUrl,jdbcType=VARCHAR},
+      jd_url = #{jdUrl,jdbcType=VARCHAR},
       apply_type = #{applyType,jdbcType=VARCHAR},
       apply_sn = #{applySn,jdbcType=VARCHAR},
       enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
@@ -142,6 +180,8 @@
       bevol_mid = #{bevolMid,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       source = #{source,jdbcType=TINYINT},
+      more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
@@ -168,14 +208,29 @@
       <if test="productAlias != null" >
           and t.product_alias = #{productAlias,jdbcType=VARCHAR}
       </if>
+      <if test="jdPrice != null" >
+          and t.jd_price = #{jdPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="tmallPrice != null" >
+          and t.tmall_price = #{tmallPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="sales != null" >
+          and t.sales = #{sales,jdbcType=INTEGER}
+      </if>
+      <if test="tmallUrl != null" >
+          and t.tmall_url = #{tmallUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="jdUrl != null" >
+          and t.jd_url = #{jdUrl,jdbcType=VARCHAR}
+      </if>
       <if test="applyType != null" >
           and t.apply_type = #{applyType,jdbcType=VARCHAR}
       </if>
       <if test="applySn != null" >
-          and t.apply_sn like concat('%',#{applySn,jdbcType=VARCHAR},'%')
+          and t.apply_sn = #{applySn,jdbcType=VARCHAR}
       </if>
       <if test="enterpriseName != null" >
-          and t.enterprise_name like concat('%',#{enterpriseName,jdbcType=VARCHAR},'%')
+          and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
       </if>
       <if test="enterpriseNameEn != null" >
           and t.enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR}
@@ -203,6 +258,12 @@
       </if>
       <if test="source != null" >
           and t.source = #{source,jdbcType=TINYINT}
+      </if>
+      <if test="moreData1 != null" >
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null" >
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
       </if>
       <if test="itemOrder != null" >
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
@@ -247,72 +308,4 @@
     <include refid="Query_Where_Clause" />
     )
   </delete>
-  <!--  ************************expand your SQL below the line***********************  -->
-  <select id="simpleSelect" parameterType="java.util.Map" resultMap="VoResultMap" >
-    select 
-    t.id,t.product_name,t.create_time,t.update_time
-    from t_br_product t
-    <include refid="Table_Join_Clause" />
-    <include refid="Query_Where_Clause" />
-  </select>
-  <resultMap id="VoResultMap" type="com.co.example.entity.product.aide.TBrProductVo" extends="BaseResultMap" >
-  <!-- 
-    <collection property="tBrProductIngredients" resultMap="aaaaa">
-    </collection>
-     -->
-  </resultMap>
-  <!-- 
-   <resultMap id="aaaaa" type="com.co.example.entity.product.TBrProductIngredient" >
-    <result column="product_id" property="productId" jdbcType="BIGINT" />
-    <result column="ingredient_id" property="ingredientId" jdbcType="BIGINT" />
-  </resultMap>
-   -->
-  <sql id="Vo_Column_List" >
-    t.id, 
-    t.product_name, 
-    t.product_alias, 
-    t.apply_type, 
-    t.apply_sn, 
-    t.enterprise_name, 
-    t.enterprise_name_en, 
-    t.producing_area, 
-    t.confirm_date, 
-    t.is_off, 
-    t.cfda_processid, 
-    t.cfda_new_processid, 
-    t.bevol_mid, 
-    t.remark, 
-    t.source, 
-    t.item_order, 
-    t.create_time, 
-    t.create_by, 
-    t.update_time, 
-    t.update_by, 
-    t.del_flg
-    <!-- 
-    ,
-    tpi.product_id product_id,
-    tpi.ingredient_id ingredient_id
-     -->
-     <!-- ,alias.field -->
-  </sql>
-  <sql id="Vo_Where_Clause" >
-     <if test="ingredientId != null" >
-  		  and tbpi.ingredient_id = #{ingredientId,jdbcType=BIGINT}
-     </if>
-      <if test="productNameLike != null" >
-          and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
-      </if>
-	  <if test="joinBrandFlg" >
-	      and tbpb.brand_id is null
-      </if>
-  </sql>
-  <sql id="Table_Join_Clause" >
-	  <if test="joinFlg" >
-	      LEFT JOIN t_br_product_ingredient tbpi on t.id =  tbpi.product_id
-      </if>
-	  <if test="joinBrandFlg" >
-	      left JOIN t_br_product_brand tbpb on t.id = tbpb.product_id
-      </if>
-  </sql>
 </mapper>

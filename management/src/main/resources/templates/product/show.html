@@ -18,17 +18,23 @@
 	                            <div class="line mt-10"></div>
 	                            <div class="row cl">
 		                            <div class="col-md-9">
+		                            	<input type="hidden" th:value="${one.id}" id="id"/>
 			                            <h4>产品别名： <span th:text="${one.productAlias}">无别名</span></h4>
 			                            <h4>企业名称：	<span th:if="${oneEnterprise eq null}" th:text="${one.enterpriseName}"></span>
 			                            		<a class="btn-link" th:if="${oneEnterprise ne null}" th:href="@{'/enterprise/show/'+${oneEnterprise.id}}" target="_blank">
 			                          	  		   <span th:text="${one.enterpriseName}"></span>
 			                            		</a>
 			                            </h4>
+			                            
+			                            <h4>京东价格： <span th:text="${one.jdPrice}"></span></h4>
+			                            <h4>天猫价格： <span th:text="${one.tmallPrice}"></span></h4>
+			                            <h4>天猫销量： <span th:text="${one.sales}"></span></h4>
 			                            <h4>企业英文： <span th:text="${one.enterpriseNameEn}">无企业名称</span></h4>
 			                            <h4>企业地址： <span th:text="${one.producingArea}">浙江省杭州市杭州经济技术开发区xx号</span></h4>
 			                            <h4>备案编号： <span th:text="${one.applySn}">闽G妆网备字2018002654</span></h4>
 			                            <h4>备案类型： <span th:text="${one.applyType  eq '1' ? '国产备案':'进口备案'}"></span></h4>
 			                            <h4>备案日期： <span th:text="${one.confirmDate}">2017-02-12</span></h4>
+			                            <h5>备注：         <span  th:text="${one.remark}">remark</span></h5>
 			                            <h4>成分分析</h4>
 			                            <div class="ml-10 f-16">
 				                        	  本产品含有香精:<span class="mt-10" th:text="${#lists.size(one.essenceList)}"></span>种(<span th:each="essence: ${one.essenceList}" th:text="${essence}+' '"></span>)<br/>
@@ -64,8 +70,7 @@
 			                                 <div class="col-md-12">
 			                                 	<div class="text-c mt-30">
 					                          		 <a th:if="${brand ne null}" th:href="@{'/brand/show/'+${brand.id}}" target="_blank">
-						                          		 <img   
-						                          		   th:src="@{'/brand/'+${brand.imgUrl}}" th:alt="${brand.name}"/>
+						                          		 <img th:src="@{'/brand/'+${brand.imgUrl}}" th:alt="${brand.name}"/>
 		  			                                 	 <p>【<span th:text="${brand.name}"></span>】查看品牌→</p>
 					                          		 </a>
 			                                 	</div>
@@ -148,7 +153,130 @@
 										</section>
 									</tbody>
 								</table>
-								<h5>备注： <span  th:text="${one.remark}">remark</span></h5>
+								<!-- 规格参数  start-->
+								<h3>规格参数</h3>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl f-18 mt-10">
+		                            <div way-repeat="specList" >
+			                            <div class="col-md-4 mt-5">
+				                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+					                            <span way-data="keyName"></span>:
+					                            <span way-data="specValueNames"></span>
+				                            </div>
+	           		                    </div>
+		                            </div> 
+	                            </div> 
+	                            <!-- 规格参数  end-->
+	                            
+								<!-- 京东图片  start-->
+								<h3>京东图片</h3>
+	                            <div class="line mt-10"></div>
+								<div th:if="${#lists.size(jdImageList)>0}" >
+		                            <div class="row cl f-18 mt-10">
+			                            <div th:each="jdImage:${jdImageList}"  >
+				                            <div class="col-md-2 mt-5">
+					                            <img th:src="@{'https://img12.360buyimg.com/n4/'+${jdImage.jdUrl}}" />
+		           		                    </div>
+			                            </div> 
+		                            </div> 
+	                            </div>
+	                            <div th:if="${#lists.size(jdImageList)==0}" >
+									<span>暂无京东图片</span>
+	                            </div> 
+	                            <!-- 京东图片  end-->
+	                            
+								<!-- 天猫图片  start-->
+								<h3>天猫图片</h3>
+	                            <div class="line mt-10"></div>
+								<div th:if="${#lists.size(tmallImageList)>0}" >
+		                            <div class="row cl f-18 mt-10">
+			                            <div th:each="tmallImage:${tmallImageList}"  >
+				                            <div class="col-md-2 mt-5">
+					                            <img th:src="@{''+${tmallImage.tmallUrl}}" />
+		           		                    </div>
+			                            </div> 
+		                            </div> 
+	                            </div>
+	                            <div th:if="${#lists.size(tmallImageList)==0}" >
+									<span>暂无天猫图片</span>
+	                            </div> 
+	                            <!-- 天猫图片  end-->
+	                            
+	                            
+	                            <!-- 评论  start-->
+								 <h3>评论信息</h3>
+                           		 <div class="line mt-10"></div>
+                           		 
+                           		 <div class="row cl f-18 mt-10">
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+				                            <div>天猫全部(<span way-data="cs.tmallNumAll" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>天猫配图(<span way-data="cs.tmallNumImg" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>天猫追评(<span way-data="cs.tmallNumMore" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>京东全部(<span way-data="cs.jdNumAll" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>京东配图(<span way-data="cs.jdNumImg" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>京东追评(<span way-data="cs.jdNumMore" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>京东好评(<span way-data="cs.jdNumGood" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>京东中评(<span way-data="cs.jdNumMiddle" ></span>)</div>
+			                            </div>
+           		                    </div>
+		                            <div class="col-md-4 mt-5">
+			                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+		                           		 	<div>京东差评(<span way-data="cs.jdNumBad" ></span>)</div>
+			                            </div>
+           		                    </div>
+	                            </div> 
+                           		 <div class="line mt-10"></div>
+                           		 <div class="row cl f-18 mt-10 ml-10 mr-10">
+	                            	<table class="table table-border table-bordered table-bg table-hover">
+										<thead>
+											<tr>
+												<th colspan="10" scope="col">
+													评价列表
+												</th>
+											</tr>
+											<tr class="text-c ">
+												<th width="5%">来源</th>
+												<th width="15%">评论时间</th>
+												<th width="10%">用户昵称</th>
+												<th width="70%">评论详情</th>
+											</tr>
+										</thead>
+										<tbody id="commentList" >
+										</tbody>
+									</table>
+	                            </div> 
+	                            <!-- 评论  end-->
+	                            <h5><a class="ml-10" th:href="${one.tmallUrl}" target="_blank" >更多天猫商品信息>></a></h5>
+	                            <h5><a class="ml-10" th:href="${one.jdUrl}" target="_blank" >更多京东商品信息>></a></h5>
 	                        </div>
 	                    </div>
 	                </div>
@@ -158,5 +286,6 @@
 	</div>
 </section>
 <section layout:fragment="my">
+	<script type="text/javascript" src="/js/product/show.js"></script>
 </section>
 </html>

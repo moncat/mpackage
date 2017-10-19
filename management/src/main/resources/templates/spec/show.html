@@ -1,0 +1,40 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 管理 
+		<span class="c-gray en">&gt;</span> 详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                            <h2 class="text-c"  th:utext="${one.keyName}">无名称</h2>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">
+		                            <div class="col-md-12">
+              					       <h4>规格名称： <span th:utext="${one.keyName}"></span></h4>
+              					       <div class="f-16">规格值：
+	              					       	<div th:each="specValue:${specValueList}" style="margin-left:50px">
+	              					       		<span th:utext="${specValue.valueName}">无</span>
+	              					       	</div>
+              					       </div>
+                		            </div>
+	                            </div> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/spec/show.js"></script>
+</section>
+</html>

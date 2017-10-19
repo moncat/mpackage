@@ -51,8 +51,6 @@ public abstract class  BaseController<T extends BaseEntity> {
 	protected TUsers tUser; 
 	//用户id
 	protected Long userId; 
-	//异步返回
-	protected Map<String, Object> result = Maps.newHashMap();
 	
 	@SneakyThrows(Exception.class)
 	@RequestMapping(value = "/list", method = { RequestMethod.GET, RequestMethod.POST })
@@ -163,6 +161,7 @@ public abstract class  BaseController<T extends BaseEntity> {
 	public Map<String,Object> show4Json(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
 		BaseService<T,Long> service = getService(request, t);
 		Boolean flg = show4JsonExt(model, session, request, response, t, id);
+		Map<String, Object> result = result();
 		if(!flg){
 			t = service.queryById(id);
 			result.put("show4Json", t);
@@ -291,5 +290,12 @@ public abstract class  BaseController<T extends BaseEntity> {
 		this.returnPath = returnPath;
 	}
 
+	protected Map<String, Object> result(){
+		Map<String, Object> result =  new HashMap<String, Object>();
+		result.put("code", HttpStatusCode.CODE_SUCCESS);
+		return result;
+	}
+	
+	
 
 }

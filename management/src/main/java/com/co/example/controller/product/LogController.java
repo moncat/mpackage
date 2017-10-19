@@ -4,9 +4,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,30 +52,27 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	
 	
 	//定时
-	
 //	@Scheduled(fixedRate=10000)   //每隔10秒执行一次
 //	@Scheduled(cron="0 12 16 * * ? ")  //每天16:12分执行一次
+//	@Scheduled(cron="0 0/10 * * * ? ")  //每10秒执行一次
 	public void testTasks() {    
-		System.out.println("******************start****************");
-		log.info("每10秒执行一次。开始……");
 		tBrProductService.doSomeThing();
-		log.info("每10秒执行一次。结束。");
-		System.out.println("******************end*******************");
 	}
 	
+	/**
+	 * 运维工作
+	 * 1.检查同步药监局数据情况            正常运行
+	 * 2.检查药监局数据品牌匹配情况   正常运行
+	 * 3.获得新的实际生产企业（手动）  create_by  4 已匹配    2 未匹配     0 新数据
+	 * 4.获得运营企业数据（手动）       尚未获得，待处理
+	 * 5.全量维护企业法律诉讼，行政处罚的数据（手动）、
+	 * 6.抓取天猫，淘宝等数据
+	 */
 	
-//	@Scheduled(cron="0 0/10 * * * ? ") 
-	public void testUpdateTasks() {    
-		log.info("每10分钟执行一次。开始……");
-		tBrProductService.doSomeThing();
-		log.info("每10分钟执行一次。结束。");
-	}
 	
 	
-	
-	//定时爬取CFDA数据，定时爬取昨天的500条数据，如果有数据则爬取， 每天早上1点开始执行，并记录日志
-	//@Scheduled(cron="0 0 1 * * ? ")
-	@Scheduled(cron="0 45 10 * * ? ")  //每天10:45分执行一次
+	//定时爬取CFDA数据，定时爬取昨天的500条数据，如果有数据则爬取， 并记录日志
+	@Scheduled(cron="0 00 16 * * ? ")  //每天16:00分执行一次
 	public void testOne() throws InterruptedException {
 		//模拟定时执行
 		//查询到了最新数据开始获取
@@ -105,9 +99,11 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 					log.info("***爬取结束***"+i+"***用时(分钟)***"+minute);
 					System.out.println("***爬取结束***"+i+"***用时(分钟)***"+minute);
 					tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA,  "***爬取结束***"+i+"***用时(分钟)***"+minute, 0 ,"有",  null);
-					EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
-					log.info("***开始执行品牌匹配***"+dateStr);
-					brand(dateStr);
+					if(i>1){
+						EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
+						log.info("***开始执行品牌匹配***"+dateStr);
+						brand(dateStr);
+					}
 					break;
 				}
 				log.info("***继续爬取***"+i);
@@ -149,6 +145,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 									tBrProductBrandService.add(tBrProductBrand);
 									log.info("定时品牌匹配成功！ "+productName+"["+brandName+"]");
 									tBrProductService.saveLog(Constant.YES, brandName, i, productName, null);
+									break;
 								}
 							}
 						}
@@ -176,6 +173,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		if(startPage1 != null && endPage1 != null){
 			long startMs = System.currentTimeMillis();
 			for (int i = startPage1; i <= endPage1; i++) {
+				Thread.sleep(1200);
 				int dataFlg = tBrProductService.addProductFromCFDA(i+"","");
 				if(dataFlg == 1){
 					long endMs = System.currentTimeMillis();
@@ -215,102 +213,63 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	
 	@ResponseBody
 	@RequestMapping(value="brand",method = { RequestMethod.GET, RequestMethod.POST })
-	public Map<String,String> brand(Integer startPage3) throws InterruptedException {
+	public Map<String,String> brand( String startDateStr, Integer startPage3) throws InterruptedException {
 		Map<String,String> map = Maps.newHashMap();
 		if(startPage3 != null){
-//			@SuppressWarnings("unchecked")
-//			List<TBrBrand> brands = (List<TBrBrand>) EhcacheManagerUtil.get("demo", "brand");
-//			if(brands == null){
-//				brands = tBrBrandService.queryByNameLength();
-//				EhcacheManagerUtil.put("demo", "brand",brands);
-//			}
-			List<TBrBrand> brands = tBrBrandService.queryByNameEnLength();
+			List<TBrBrand> brands = tBrBrandService.queryByNameLength();
 			TBrProductQuery tBrProductQuery = new TBrProductQuery();
+			if(StringUtils.isNoneBlank(startDateStr)){
+				tBrProductQuery.setGreaterThanConfirmDate(startDateStr);
+			}
 			tBrProductQuery.setJoinBrandFlg(true);
 			Page<TBrProduct> productPageList  = null;
-			int pageSize = 10;
-			long pageCount = 0l;
 			int k = startPage3;
-			ExecutorService  executor = null;
+			PageReq pageReq = new PageReq();
+			pageReq.setPageSize(1000);
+			pageReq.setPage(1);
+			String productName = null;
 			for (; k < brands.size(); k++) {
 				Thread.sleep(2000);
 				log.info("程序运行中k..."+k);
-				int m = k; 
-				executor = Executors.newCachedThreadPool();// 启用多线程
 				long productCount = tBrProductService.queryCount(tBrProductQuery);
 				log.info("当前还有未匹配的产品个数"+productCount);
-				if(productCount>=1000000){
-					pageSize = 500000;
-				}else if(productCount<1000000){
-					pageSize = 50000;
-				}else if(productCount<100000){
-					pageSize = 10000;
-				}else if(productCount<10000){
-					pageSize = 1000;
-				}else if(productCount<1000){
-					pageSize = 100;
-				}else if(productCount<100){
-					pageSize = 10;
-				}
-				pageCount = productCount/pageSize+1l;
-				PageReq pageReq = new PageReq();
-				pageReq.setPageSize(pageSize);
-				TBrBrand brand = brands.get(m);
-				String brandName  = brand.getNameEn();
+				TBrBrand brand = brands.get(k);
+				String brandName  = brand.getName();
 				Long brandId = brand.getId();
+				Long tmp = 0l;
 				if(StringUtils.isNotBlank(brandName)){
-					String realbrandName = getRealEn(brandName);
-					if(StringUtils.isNotBlank(realbrandName)){
-						for (int i = 0; i < pageCount; i++) {
-							log.info("程序分页匹配中..."+i);
-							pageReq.setPage(i);
-							productPageList = tBrProductService.querySimplePageList(tBrProductQuery, pageReq);
-							Page<TBrProduct> productPageListTmp = productPageList;
-							executor.execute(new Runnable() {
-								@Override
-								public void run() {
-									String productName = null;
-									try {
-										List<TBrProduct> content = productPageListTmp.getContent();
-										if(CollectionUtils.isNotEmpty(content)){
-											for (TBrProduct tBrProduct : content) {
-												productName = tBrProduct.getProductName();
-												if(StringUtils.isNotBlank(productName)){
-													productName = getRealEn(productName);
-													if(productName.contains(realbrandName)){
-														TBrProductBrand tBrProductBrand = new TBrProductBrand();
-														tBrProductBrand.setBrandId(brandId);
-														tBrProductBrand.setProductId(tBrProduct.getId());
-														tBrProductBrand.setCreateTime(new Date());
-														tBrProductBrandService.add(tBrProductBrand);
-														log.info("匹配成功！ "+productName+"["+realbrandName+"]");
-														tBrProductService.saveLog(Constant.YES, realbrandName, m, productName, null);
-													}
-												}
-											}
-										}
-									} catch (Exception e) {
-										tBrProductService.saveLog(Constant.NO, realbrandName, m, productName, e);
-										e.printStackTrace();
+					while (productCount>0) {
+						productPageList = tBrProductService.querySimplePageList(tBrProductQuery, pageReq);
+						if(productCount<1000){
+							productCount = tBrProductService.queryCount(tBrProductQuery);
+							if(productCount == tmp){
+							}else{
+								tmp = productCount;
+							}
+						}
+						List<TBrProduct> content = productPageList.getContent();
+						if(CollectionUtils.isNotEmpty(content)){
+							for (TBrProduct tBrProduct : content) {
+								productName = tBrProduct.getProductName();
+								if(StringUtils.isNotBlank(productName)){
+									if(productName.contains(brandName)){
+										TBrProductBrand tBrProductBrand = new TBrProductBrand();
+										tBrProductBrand.setBrandId(brandId);
+										tBrProductBrand.setProductId(tBrProduct.getId());
+										tBrProductBrand.setCreateTime(new Date());
+										tBrProductBrandService.add(tBrProductBrand);
+										log.info("匹配成功！ "+productName+"["+brandName+"]");
+										tBrProductService.saveLog(Constant.YES, brandName, k, productName, null);
+										break;
 									}
 								}
-							});
+								productCount--;	
+							}
 						}
 					}
 				}else{
 					log.info("品牌名为空");
 				}
-				// 启动一次顺序关闭，执行以前提交的任务，但不接受新任务。  
-				executor.shutdown();  
-			    try {  
-			      // 请求关闭、发生超时或者当前线程中断，无论哪一个首先发生之后，都将导致阻塞，直到所有任务完成执行  
-			      // 设置最长等待10秒  
-			    	executor.awaitTermination(10, TimeUnit.SECONDS);  
-			    } catch (InterruptedException e) {  
-			      tBrProductService.saveLog(Constant.NO, brandName, m, "", e);
-			      e.printStackTrace();  
-			    }  
-				
 			}
 			map.put("desc", "***brand***success!!!");
 		}else{

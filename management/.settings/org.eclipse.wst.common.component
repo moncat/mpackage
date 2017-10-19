@@ -16,6 +16,9 @@
         <dependent-module archiveName="commons-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commons/commons">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="MyMyBatisGenerator-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MyMyBatisGenerator/MyMyBatisGenerator">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="management"/>
         <property name="java-output-path" value="/management/target/classes"/>
     </wb-module>

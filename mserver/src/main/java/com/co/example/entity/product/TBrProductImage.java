@@ -27,10 +27,18 @@ public class TBrProductImage extends BaseEntity {
     /** 美丽修行 图片url */
     private String bevolUrl;
 
+    /** 天猫的图片url */
+    private String tmallUrl;
+
+    /** 京东的图片url */
+    private String jdUrl;
+
     /** 文件类型 jpg、png */
     private String fileType;
 
-    /** 图片类型 1平面图 2立体图 3商标证，授权书 */
+    /** 图片类型 1平面图 2立体图 3商标证，授权书 4其他未确定类型 */
     private Byte imageType;
 
+    /** 数据来源 1药监局 2美丽修行 3京东 4天猫 */
+    private Byte source;
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.product.TBrProductMapper" >  
+  <!--  ************************expand your SQL below the line***********************  -->
+  <select id="simpleSelect" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    t.id,t.product_name,t.create_time,t.update_time
+    from t_br_product t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <resultMap id="VoResultMap" type="com.co.example.entity.product.aide.TBrProductVo" extends="BaseResultMap" >
+  <!-- 
+    <collection property="tBrProductIngredients" resultMap="aaaaa">
+    </collection>
+     -->
+  </resultMap>
+  <!-- 
+   <resultMap id="aaaaa" type="com.co.example.entity.product.TBrProductIngredient" >
+    <result column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="ingredient_id" property="ingredientId" jdbcType="BIGINT" />
+  </resultMap>
+   -->
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.product_name, 
+    t.product_alias, 
+    t.jd_price, 
+    t.tmall_price, 
+    t.sales, 
+    t.tmall_url, 
+    t.jd_url, 
+    t.apply_type, 
+    t.apply_sn, 
+    t.enterprise_name, 
+    t.enterprise_name_en, 
+    t.producing_area, 
+    t.confirm_date, 
+    t.is_off, 
+    t.cfda_processid, 
+    t.cfda_new_processid, 
+    t.bevol_mid, 
+    t.remark, 
+    t.source, 
+    t.more_data1, 
+    t.more_data2, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.del_flg
+    <!-- 
+    ,
+    tpi.product_id product_id,
+    tpi.ingredient_id ingredient_id
+     -->
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+     <if test="greaterThanConfirmDate != null" >
+   		  and t.confirm_date > #{greaterThanConfirmDate,jdbcType=TIMESTAMP}
+     </if>
+     <if test="greaterThanCreateTime != null" >
+   		  and t.create_time > #{greaterThanCreateTime,jdbcType=TIMESTAMP}
+     </if>
+     <if test="ingredientId != null" >
+  		  and tbpi.ingredient_id = #{ingredientId,jdbcType=BIGINT}
+     </if>
+      <if test="productNameLike != null" >
+          and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
+      </if>
+	  <if test="joinBrandFlg" >
+	      and tbpb.brand_id is null
+      </if>
+	  <if test="joinOperEnterpriseFlg" >
+	      and tbpoe.enterprise_id is null
+      </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+	  <if test="joinFlg" >
+	      LEFT JOIN t_br_product_ingredient tbpi on t.id =  tbpi.product_id
+      </if>
+	  <if test="joinBrandFlg" >
+	      left JOIN t_br_product_brand tbpb on t.id = tbpb.product_id
+      </if>
+	  <if test="joinOperEnterpriseFlg" >
+	      left JOIN t_br_product_oper_enterprise tbpoe on t.id = tbpoe.product_id
+      </if>
+  </sql>
+  <select id="selectOperEnterprise" parameterType="java.util.Map" resultType="java.lang.String" >
+      select distinct  t.enterprise_name from t_br_product t where t.create_by = 0 
+  </select>
+   <update id="updateByArea" parameterType="com.co.example.entity.product.TBrProduct" >
+     update t_br_product t
+     set update_by = 1
+     where  t.producing_area = #{producingArea,jdbcType=VARCHAR} and t.update_by =0
+  </update>
+</mapper>

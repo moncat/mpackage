@@ -120,10 +120,10 @@ public class PictureZoom {
 
 		
 		
-		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"350x350"+filename.substring(index_), 0.9f, 350, 350);
-		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"180x180"+filename.substring(index_), 0.9f, 180, 180);
-		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"50x50"+filename.substring(index_), 0.9f, 50, 50);
-		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"25x25"+filename.substring(index_), 0.9f, 25, 25);
+//		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"350x350"+filename.substring(index_), 0.9f, 350, 350);
+//		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"180x180"+filename.substring(index_), 0.9f, 180, 180);
+//		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"50x50"+filename.substring(index_), 0.9f, 50, 50);
+//		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"25x25"+filename.substring(index_), 0.9f, 25, 25);
 		
 		/*
 		//String srcName = srcImgFileName.substring(0, ind);
@@ -208,7 +208,7 @@ public class PictureZoom {
 		String filename  = srcImgFileName.substring(index+1);
 		
 		int index_= filename.lastIndexOf(".");
-		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"_mobile"+filename.substring(index_), 0.9f, 400, 240);
+//		ImagePress.imageCompress(path, filename, filename.substring(0,index_)+"_mobile"+filename.substring(index_), 0.9f, 400, 240);
 		
 
 	}

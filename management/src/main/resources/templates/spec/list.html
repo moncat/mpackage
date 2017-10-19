@@ -1,0 +1,62 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 规格管理 
+		<span class="c-gray en">&gt;</span> 规格列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		 <!-- 
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			 <span class="l">
+				 <a href="javascript:void(0);" class="btn btn-success  radius add"><i class="Hui-iconfont">&#xe600;</i> 添加</a>
+			 </span> 
+			 <span class="r"></span> 
+		 </div>
+		 <div class="cl pd-5 bg-1 bk-gray mt-10">
+			<form action="/spec/list">
+				<div class="text-c"> 
+					规格名称：<input type="text" class="input-text" style="width:200px" placeholder="规格名称" id="" th:value="${query.keyName}" name="keyName"/> 
+										<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				</div>
+			</form>
+		</div>
+		 -->
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+					<th>序号</th>
+					<th>规格名称</th>
+					<th>创建时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr class="text-c">
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td>
+							<a th:href="@{'/spec/show/'+${one.id}}"   target="_blank">
+								<span th:utext="${one.keyName}"></span>
+							</a>
+						</td>
+						
+						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/spec/list.js"></script>
+</section>
+</html>

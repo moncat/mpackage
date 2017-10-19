@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.co.example.common.constant.Constant;
 import com.co.example.dao.system.TMenuDao;
 import com.co.example.entity.system.TMenu;
+import com.co.example.entity.system.TRole;
 import com.co.example.entity.system.aide.TMenuQuery;
 import com.co.example.entity.system.aide.TMenuVo;
 import com.co.example.service.system.TMenuService;
@@ -29,12 +30,13 @@ public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Long> implements TM
     }
 
 	@Override
-	public List<TMenu> getMenuTree() {
+	public List<TMenu> getMenuTree(List<TRole> roles) {
 		//根id为0
-		return getMenuTree(0l);
+		return getMenuTree(0l,roles);
 	}
 	
-	public List<TMenu> getMenuTree(Long parentId) {
+	//////////////TODO 权限
+	public List<TMenu> getMenuTree(Long parentId ,List<TRole> roles) {
 		TMenuQuery tMenuQuery = new TMenuQuery();
 		tMenuQuery.setParentId(parentId);
 		tMenuQuery.setDelFlg(Constant.NO);
@@ -45,7 +47,7 @@ public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Long> implements TM
 				Long id = menuVo.getId();
 				if(id!=null){
 					//递归遍历
-					List<TMenu> subList= getMenuTree(id);
+					List<TMenu> subList= getMenuTree(id,roles);
 					menuVo.setMenus(subList);
 				}
 			}

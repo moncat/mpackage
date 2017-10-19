@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.co.example.entity.admin.TAdmin;
+import com.co.example.entity.admin.aide.TAdminVo;
 import com.co.example.entity.system.TMenu;
 import com.co.example.service.system.TMenuService;
 import com.co.example.utils.SessionUtil;
@@ -45,8 +46,9 @@ public class HomeController {
 	public String index(
     		@ApiParam(required = true, name = "model", value= "本次用来封装左侧导航菜单") Model model
     		,HttpSession session) throws Exception{
-    	List<TMenu> list = tMenuService.getMenuTree();
     	TAdmin admin = SessionUtil.getAdmin(session);
+    	TAdminVo adminVo = (TAdminVo) admin; 
+    	List<TMenu> list = tMenuService.getMenuTree(adminVo.getRoles());
     	model.addAttribute("admin", admin);
     	model.addAttribute("list", list);
         return "common/index";

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.comment.TBrProductCommentStatisticsMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.comment.TBrProductCommentStatistics" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="pid" property="pid" jdbcType="BIGINT" />
+    <result column="tmall_num_all" property="tmallNumAll" jdbcType="VARCHAR" />
+    <result column="tmall_num_img" property="tmallNumImg" jdbcType="VARCHAR" />
+    <result column="tmall_num_more" property="tmallNumMore" jdbcType="VARCHAR" />
+    <result column="jd_num_all" property="jdNumAll" jdbcType="VARCHAR" />
+    <result column="jd_num_img" property="jdNumImg" jdbcType="VARCHAR" />
+    <result column="jd_num_more" property="jdNumMore" jdbcType="VARCHAR" />
+    <result column="jd_num_good" property="jdNumGood" jdbcType="VARCHAR" />
+    <result column="jd_num_middle" property="jdNumMiddle" jdbcType="VARCHAR" />
+    <result column="jd_num_bad" property="jdNumBad" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="more_data1" property="moreData1" jdbcType="VARCHAR" />
+    <result column="more_data2" property="moreData2" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pid, tmall_num_all, tmall_num_img, tmall_num_more, jd_num_all, jd_num_img, jd_num_more, 
+    jd_num_good, jd_num_middle, jd_num_bad, remark, more_data1, more_data2, item_order, 
+    create_time, create_by, update_time, update_by, is_active, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_product_comment_statistics
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_product_comment_statistics
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.comment.TBrProductCommentStatistics" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_product_comment_statistics (id, pid, tmall_num_all, 
+      tmall_num_img, tmall_num_more, jd_num_all, 
+      jd_num_img, jd_num_more, jd_num_good, 
+      jd_num_middle, jd_num_bad, remark, 
+      more_data1, more_data2, item_order, 
+      create_time, create_by, update_time, 
+      update_by, is_active, del_flg
+      )
+    values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{tmallNumAll,jdbcType=VARCHAR}, 
+      #{tmallNumImg,jdbcType=VARCHAR}, #{tmallNumMore,jdbcType=VARCHAR}, #{jdNumAll,jdbcType=VARCHAR}, 
+      #{jdNumImg,jdbcType=VARCHAR}, #{jdNumMore,jdbcType=VARCHAR}, #{jdNumGood,jdbcType=VARCHAR}, 
+      #{jdNumMiddle,jdbcType=VARCHAR}, #{jdNumBad,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{moreData1,jdbcType=VARCHAR}, #{moreData2,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.comment.TBrProductCommentStatistics" >
+    update t_br_product_comment_statistics
+    <set >
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=BIGINT},
+      </if>
+      <if test="tmallNumAll != null" >
+        tmall_num_all = #{tmallNumAll,jdbcType=VARCHAR},
+      </if>
+      <if test="tmallNumImg != null" >
+        tmall_num_img = #{tmallNumImg,jdbcType=VARCHAR},
+      </if>
+      <if test="tmallNumMore != null" >
+        tmall_num_more = #{tmallNumMore,jdbcType=VARCHAR},
+      </if>
+      <if test="jdNumAll != null" >
+        jd_num_all = #{jdNumAll,jdbcType=VARCHAR},
+      </if>
+      <if test="jdNumImg != null" >
+        jd_num_img = #{jdNumImg,jdbcType=VARCHAR},
+      </if>
+      <if test="jdNumMore != null" >
+        jd_num_more = #{jdNumMore,jdbcType=VARCHAR},
+      </if>
+      <if test="jdNumGood != null" >
+        jd_num_good = #{jdNumGood,jdbcType=VARCHAR},
+      </if>
+      <if test="jdNumMiddle != null" >
+        jd_num_middle = #{jdNumMiddle,jdbcType=VARCHAR},
+      </if>
+      <if test="jdNumBad != null" >
+        jd_num_bad = #{jdNumBad,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData1 != null" >
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null" >
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.comment.TBrProductCommentStatistics" >
+    update t_br_product_comment_statistics
+    set pid = #{pid,jdbcType=BIGINT},
+      tmall_num_all = #{tmallNumAll,jdbcType=VARCHAR},
+      tmall_num_img = #{tmallNumImg,jdbcType=VARCHAR},
+      tmall_num_more = #{tmallNumMore,jdbcType=VARCHAR},
+      jd_num_all = #{jdNumAll,jdbcType=VARCHAR},
+      jd_num_img = #{jdNumImg,jdbcType=VARCHAR},
+      jd_num_more = #{jdNumMore,jdbcType=VARCHAR},
+      jd_num_good = #{jdNumGood,jdbcType=VARCHAR},
+      jd_num_middle = #{jdNumMiddle,jdbcType=VARCHAR},
+      jd_num_bad = #{jdNumBad,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product_comment_statistics t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="pid != null" >
+          and t.pid = #{pid,jdbcType=BIGINT}
+      </if>
+      <if test="tmallNumAll != null" >
+          and t.tmall_num_all = #{tmallNumAll,jdbcType=VARCHAR}
+      </if>
+      <if test="tmallNumImg != null" >
+          and t.tmall_num_img = #{tmallNumImg,jdbcType=VARCHAR}
+      </if>
+      <if test="tmallNumMore != null" >
+          and t.tmall_num_more = #{tmallNumMore,jdbcType=VARCHAR}
+      </if>
+      <if test="jdNumAll != null" >
+          and t.jd_num_all = #{jdNumAll,jdbcType=VARCHAR}
+      </if>
+      <if test="jdNumImg != null" >
+          and t.jd_num_img = #{jdNumImg,jdbcType=VARCHAR}
+      </if>
+      <if test="jdNumMore != null" >
+          and t.jd_num_more = #{jdNumMore,jdbcType=VARCHAR}
+      </if>
+      <if test="jdNumGood != null" >
+          and t.jd_num_good = #{jdNumGood,jdbcType=VARCHAR}
+      </if>
+      <if test="jdNumMiddle != null" >
+          and t.jd_num_middle = #{jdNumMiddle,jdbcType=VARCHAR}
+      </if>
+      <if test="jdNumBad != null" >
+          and t.jd_num_bad = #{jdNumBad,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData1 != null" >
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null" >
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_product_comment_statistics t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_product_comment_statistics t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_product_comment_statistics where id in (
+    select t.id from (select * from t_br_product_comment_statistics) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.comment.aide.TBrProductCommentStatisticsVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.pid, 
+    t.tmall_num_all, 
+    t.tmall_num_img, 
+    t.tmall_num_more, 
+    t.jd_num_all, 
+    t.jd_num_img, 
+    t.jd_num_more, 
+    t.jd_num_good, 
+    t.jd_num_middle, 
+    t.jd_num_bad, 
+    t.remark, 
+    t.more_data1, 
+    t.more_data2, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

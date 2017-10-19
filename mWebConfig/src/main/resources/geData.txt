@@ -1,7 +1,7 @@
 #***标签***字段名***类型***是否必填***最小长度***最大长度***
-#--productId--1--true--1--100
-企业名称--enterpriseName--1--true--1--100
-备案号--applySn--1--true--1--100
-生产地址--producingArea--1--true--1--100
-备注--remark--1--true--1--100
+#--moreData2--1--true--1--100
+#--moreData1--1--true--1--100
+规格名称--keyName--1--true--1--100
+#--remark--1--true--1--100
+#--source--1--true--1--100
 #1、文本框 2、下拉框 3、单选 4、复选 5、多行文本 6、日期 7、上传

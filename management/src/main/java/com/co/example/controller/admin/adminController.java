@@ -124,7 +124,10 @@ public class adminController {
 	@ResponseBody
 	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String, Object> delete(HttpSession session,@PathVariable Long id)throws Exception {
-		tAdminService.deleteById(id);
+		TAdminQuery query = new TAdminQuery();
+		query.setDelFlg(Constant.YES);
+		query.setId(id);
+		tAdminService.updateByIdSelective(query);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;

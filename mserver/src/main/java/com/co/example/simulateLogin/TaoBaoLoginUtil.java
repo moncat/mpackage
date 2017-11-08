@@ -31,8 +31,8 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 public class TaoBaoLoginUtil {
-	public static WebDriver login() throws InterruptedException {
-		WebDriver chrome = BrowserFactory.getChrome();
+	public static WebDriver login(String ipPort) throws InterruptedException {
+		WebDriver chrome = BrowserFactory.getChrome(ipPort);
 		chrome.get("https://login.taobao.com/member/login.jhtml");
 		Thread.sleep(5000);
 		String tbuserNmae="18254133367";
@@ -49,7 +49,7 @@ public class TaoBaoLoginUtil {
 		chrome.findElement(By.id("TPL_password_1")).sendKeys(tbpassWord);
 		chrome.findElement(By.id("J_SubmitStatic")).click();
 		
-		Thread.sleep(10000L);
+		Thread.sleep(30000L);
 		String url = "https://www.tmall.com";
 		chrome.get(url);
 		String html = chrome.getPageSource();

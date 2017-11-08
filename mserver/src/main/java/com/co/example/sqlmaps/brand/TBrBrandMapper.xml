@@ -256,6 +256,9 @@
       <if test="nameEnLike != null" >
           and t.name_en like concat ('%', #{nameEnLike,jdbcType=VARCHAR},'%')
       </if>
+      <if test="idNotEqual != null" >
+          and t.id != #{id,jdbcType=BIGINT}
+      </if>
   
     <!-- <if test="queryBeanField != null" > -->
     <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->

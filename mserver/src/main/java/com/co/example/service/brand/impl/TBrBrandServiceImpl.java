@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,11 +21,18 @@ import org.springframework.stereotype.Service;
 import com.co.example.common.constant.Constant;
 import com.co.example.dao.brand.TBrBrandDao;
 import com.co.example.entity.brand.TBrBrand;
+import com.co.example.entity.brand.TBrProductBrand;
 import com.co.example.entity.brand.aide.TBrBrandQuery;
+import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.brand.TBrBrandService;
+import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.product.TBrProductService;
 import com.github.moncat.common.dao.BaseDao;
+import com.github.moncat.common.entity.BaseEntity;
 import com.github.moncat.common.generator.id.NextId;
 import com.github.moncat.common.service.BaseServiceImpl;
+import com.google.common.collect.Lists;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,6 +41,12 @@ import lombok.extern.slf4j.Slf4j;
 public class TBrBrandServiceImpl extends BaseServiceImpl<TBrBrand, Long> implements TBrBrandService {
     @Resource
     private TBrBrandDao tBrBrandDao;
+    
+    @Resource
+    TBrProductService tBrProductService;
+    
+    @Resource
+    TBrProductBrandService tBrProductBrandService;
     
     
 
@@ -383,5 +397,46 @@ public class TBrBrandServiceImpl extends BaseServiceImpl<TBrBrand, Long> impleme
 	public List<TBrBrand> queryByNameEnLength() {
 		return tBrBrandDao.selectByNameEnLength();
 	}
+
+	@Override
+	public int addConnect2Product(TBrBrand tBrBrand) {
+		List<TBrProductBrand> tBrProductBrandList = Lists.newArrayList();
+		TBrProductBrand tBrProductBrand = null;
+		String name = tBrBrand.getName();
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setJoinBrandFlg(true);
+		tBrProductQuery.setBrandIsNullFlg(true);
+		tBrProductQuery.setProductNameLike(name);
+		List<TBrProduct> list = tBrProductService.queryList(tBrProductQuery);
+		int size = list.size();
+		if(size >0){
+			for (TBrProduct tBrProduct : list) {
+				tBrProductBrand = new TBrProductBrand();
+				tBrProductBrand.setBrandId(tBrBrand.getId());
+				tBrProductBrand.setProductId(tBrProduct.getId());
+				setDefaultData((BaseEntity)tBrProductBrand);
+				tBrProductBrandList.add(tBrProductBrand);
+			}
+			tBrProductBrandService.addInBatch(tBrProductBrandList);
+		}
+		return size;
+	}
+	
+	
+	private void setDefaultData(BaseEntity be) {
+		be.setCreateTime(new Date());
+		be.setDelFlg(Constant.NO);
+		be.setIsActive(Constant.STATUS_ACTIVE);
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+

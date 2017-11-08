@@ -52,45 +52,43 @@ public class DataTest3GetEnterpriseInfo {
 	private Site site = Site.me().setDomain("www.tianyancha.com").setSleepTime(300).setUserAgent(
 			"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31")
 			// 【重要】：以下信息可以模拟登陆，信息全部来自于浏览器
-			.addCookie("Hm_lpvt_e92c8d65d92d534b0fc290df538b4758", "1506751485")
-			.addCookie("Hm_lvt_e92c8d65d92d534b0fc290df538b4758", "1506393380,1506506743,1506674704,1506738504")
-			.addCookie("OA", "VxQaJA9v3KJPRRjJE47Mc7frXsvHH8g2VGs7ZzHltKjxHyzQ9CrsNBv+fXYNcfZr")//
-			.addCookie("RTYCID", "f4b9d56478a84d39a5b703ce3e1d0d69")
-			.addCookie("TYCID", "97a93400a26311e7aec7f9f91b57c269")
-			.addCookie("_csrf", "bqGIXXK/6L4oawQE7H9eng==")//
-			.addCookie("_csrf_bk", "824b4216325edb756099d86c561d04f2")//
-			.addCookie("aliyungf_tc", "AQAAAGBCTEJpPwAAon3QPAGOjrNUNT2L")//
+			.addCookie("Hm_lpvt_e92c8d65d92d534b0fc290df538b4758", "1509758097")
+			.addCookie("Hm_lvt_e92c8d65d92d534b0fc290df538b4758", "1508738490,1508982995,1509700252,1509758095")
+			.addCookie("OA", "HuYx+NCtVRzx+nf9EXwoY8yiDETGct3sUaThPQXCoTXdQvFqDdfCfxW804C4uf6i")//
+			.addCookie("RTYCID", "ea18316aa1b449c4830c52cf48e60ff9")
+			.addCookie("TYCID", "e2f2c7a0b31b11e79cd44b77fbc8ef1e")
+			.addCookie("_csrf", "v2OvD7IKS/oHToKBvWlmVw==")//
+			.addCookie("_csrf_bk", "d3998fa5c5c424f91bc06eec4f752758")//
+			.addCookie("aliyungf_tc", "AQAAAJkt3AJGbQgA+hHQPP69LsrHV142")//
 			.addCookie("auth_token",
-					"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwNjczODU4OSwiZXhwIjoxNTIyMjkwNTg5fQ.ektX4B6bN8rMVkFfxnFW9bp7PXVJgc60Yr19bLBBgAJrCAGTTqZSuz-x54gJ0Tr8oUjoPQ2nVRXTW3zRfhFFIg")
+					"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw")
 			.addCookie("bannerFlag", "true")
-			.addCookie("csrfToken", "7K_eev7pLkaxp3BHdixeBp7q")//
-			.addCookie("ssuid", "2882060535")
+			.addCookie("csrfToken", "OfvOqaw6c4sR0yJyggl14Xoq")//
+			.addCookie("ssuid", "136256036")
 			.addCookie("tyc-user-info",
-					"%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwNjczODU4OSwiZXhwIjoxNTIyMjkwNTg5fQ.ektX4B6bN8rMVkFfxnFW9bp7PXVJgc60Yr19bLBBgAJrCAGTTqZSuz-x54gJ0Tr8oUjoPQ2nVRXTW3zRfhFFIg%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D")
-			.addCookie("uccid", "4697cd5309e0efff9ef11629e94649b4")//
+					"%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D")
+			.addCookie("uccid", "868866fdf6ec3c40fb6943dc1dccff80")//
 	;
 
 
-//	Hm_lpvt_e92c8d65d92d534b0fc290df538b4758	1506751485	.tianyancha.com	/	Session	50				
-//	Hm_lvt_e92c8d65d92d534b0fc290df538b4758	1506393380,1506506743,1506674704,1506738504	.tianyancha.com	/	2018-09-30T06:04:45.000Z	82				
-//	OA	VxQaJA9v3KJPRRjJE47Mc7frXsvHH8g2VGs7ZzHltKjxHyzQ9CrsNBv+fXYNcfZr	.tianyancha.com	/	Session	66		✓		
-//	RTYCID	f4b9d56478a84d39a5b703ce3e1d0d69	.tianyancha.com	/	2017-10-01T08:45:12.854Z	38				
-//	TYCID	97a93400a26311e7aec7f9f91b57c269	.tianyancha.com	/	2019-09-26T02:36:18.949Z	37	✓			
-//	_csrf	bqGIXXK/6L4oawQE7H9eng==	.tianyancha.com	/	Session	29		✓		
-//	_csrf_bk	824b4216325edb756099d86c561d04f2	.tianyancha.com	/	Session	40		✓		
-//	_utm	450a1028f7cb4995949cb433345dc00e	www.tianyancha.com	/	Session	36				
-//	aliyungf_tc	AQAAAGBCTEJpPwAAon3QPAGOjrNUNT2L	www.tianyancha.com	/	Session	43	✓			
-//	auth_token	eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwNjczODU4OSwiZXhwIjoxNTIyMjkwNTg5fQ.ektX4B6bN8rMVkFfxnFW9bp7PXVJgc60Yr19bLBBgAJrCAGTTqZSuz-x54gJ0Tr8oUjoPQ2nVRXTW3zRfhFFIg	.tianyancha.com	/	2017-10-07T02:28:59.000Z	192				
-//	bannerFlag	true	www.tianyancha.com	/	Session	14				
-//	csrfToken	7K_eev7pLkaxp3BHdixeBp7q	www.tianyancha.com	/	Session	33		✓		
-//	ssuid	2882060535	.tianyancha.com	/	2038-01-01T02:36:20.000Z	15				
-//	token	e7f7ad9f53cc49bc9f0686ceb0c4f2da	www.tianyancha.com	/	Session	37				
-//	tyc-user-info	%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwNjczODU4OSwiZXhwIjoxNTIyMjkwNTg5fQ.ektX4B6bN8rMVkFfxnFW9bp7PXVJgc60Yr19bLBBgAJrCAGTTqZSuz-x54gJ0Tr8oUjoPQ2nVRXTW3zRfhFFIg%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D	.tianyancha.com	/	2017-10-07T02:28:59.000Z	433				
-//	uccid	4697cd5309e0efff9ef11629e94649b4	.tianyancha.com	/	2019-09-26T02:36:18.950Z	37	✓			
+//	Hm_lpvt_e92c8d65d92d534b0fc290df538b4758	1509758097	.tianyancha.com	/	Session	50				
+//	Hm_lvt_e92c8d65d92d534b0fc290df538b4758	1508738490,1508982995,1509700252,1509758095	.tianyancha.com	/	2018-11-04T01:14:56.000Z	82				
+//	OA	HuYx+NCtVRzx+nf9EXwoY8yiDETGct3sUaThPQXCoTXdQvFqDdfCfxW804C4uf6i	.tianyancha.com	/	Session	66		✓		
+//	RTYCID	ea18316aa1b449c4830c52cf48e60ff9	.tianyancha.com	/	2017-11-05T09:33:55.351Z	38				
+//	TYCID	e2f2c7a0b31b11e79cd44b77fbc8ef1e	.tianyancha.com	/	2019-10-17T09:15:48.251Z	37	✓			
+//	_csrf	v2OvD7IKS/oHToKBvWlmVw==	.tianyancha.com	/	Session	29		✓		
+//	_csrf_bk	d3998fa5c5c424f91bc06eec4f752758	.tianyancha.com	/	Session	40		✓		
+//	aliyungf_tc	AQAAAJkt3AJGbQgA+hHQPP69LsrHV142	www.tianyancha.com	/	Session	43	✓			
+//	auth_token	eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw	.tianyancha.com	/	2017-11-10T09:11:24.000Z	192				
+//	csrfToken	OfvOqaw6c4sR0yJyggl14Xoq	www.tianyancha.com	/	Session	33		✓		
+//	ssuid	136256036	.tianyancha.com	/	2038-01-01T09:15:49.000Z	14				
+//	tyc-user-info	%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D	.tianyancha.com	/	2017-11-10T09:11:24.000Z	433				
+//	uccid	868866fdf6ec3c40fb6943dc1dccff80	.tianyancha.com	/	2019-10-17T09:15:48.251Z	37	✓			
+	
 
 	
 	
-	
+	@Test
 	public void test2() {
 		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
 		tBrEnterpriseQuery.setCreateBy(0l);
@@ -136,7 +134,6 @@ public class DataTest3GetEnterpriseInfo {
 	}
 	
 	//从企业base表找到企业详情url直接请求数据  ，可以用于法律诉讼，行政处罚等数据的增量处理
-	@Test
 	public void test1() {
 		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
 		tBrEnterpriseQuery.setCreateBy(0l);

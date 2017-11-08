@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="${one.id}" name="id"></input>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								中文名：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.name}" value="" placeholder="中文名" name="name"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								英文名：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.nameEn}" value="" placeholder="英文名" name="nameEn"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								链接地址：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.imgUrl}" value="" placeholder="链接地址" name="imgUrl"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								创始人：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.founder}" value="" placeholder="创始人" name="founder"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								发源地：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.originate}" value="" placeholder="发源地" name="originate"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								创始日期：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.foundDate}" value="" placeholder="创始日期" name="foundDate"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								网址：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.website}" value="" placeholder="网址" name="website"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								故事：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+												<textarea class="textarea" th:utext="${one.story}" value="" placeholder="故事" name="story"/>
+								
+				</div>
+			</div>
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/brand/edit.js"></script>
+	</section>
+</body>
+</html>

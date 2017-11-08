@@ -27,6 +27,8 @@ public class TBrProductQuery extends TBrProduct {
 	/** 连接开关  是否关联品牌*/
 	private Boolean joinBrandFlg = false;
 	
+	private Boolean brandIsNullFlg = false;
+	
 	
 	/** 连接开关 是否关联  产品与运营企业关联表*/
 	private Boolean joinOperEnterpriseFlg = false;
@@ -40,9 +42,18 @@ public class TBrProductQuery extends TBrProduct {
 	 /** 备案日期 */
     private String greaterThanConfirmDate;
     
+    /** 使用天猫不为空过滤 */
+    private Boolean useTmallUrlNotNullFlg = false;
+
+    /** 使用京东不为空过滤  */
+    private Boolean useJdUrlNotNullFlg = false;
     
+    /** 1天猫 2京东 */
+    private Integer ecType = 0;
     
-    
-    
-	
+    /** 品牌id */
+	private Long brandId;
 }
+
+
+

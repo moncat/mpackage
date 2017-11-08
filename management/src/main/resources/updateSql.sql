@@ -141,3 +141,10 @@ update t_br_product set tmall_url ="0" ,jd_url = "0";
 update t_br_product_image set source =12
 
 
+-- 2017年10月26日
+UPDATE `t_br_product` set jd_url ='0'  where jd_url is null;
+UPDATE `t_br_product` set  tmall_url ='0' where tmall_url is null;
+
+
+
+

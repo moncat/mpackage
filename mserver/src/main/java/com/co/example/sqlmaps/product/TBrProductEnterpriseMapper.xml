@@ -155,6 +155,7 @@
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Vo_Column_List" >
     t.id, 
@@ -167,6 +168,9 @@
     t.update_by, 
     t.is_active, 
     t.del_flg
+    <if test="joinProductFlg" >
+    	 ,tp.product_name
+     </if>
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause" >
@@ -175,6 +179,8 @@
     <!-- </if> -->
   </sql>
   <sql id="Table_Join_Clause" >
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  	 <if test="joinProductFlg" >
+    	 left join t_br_product tp on t.product_id =tp.id
+     </if>
   </sql>
 </mapper>

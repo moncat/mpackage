@@ -21,6 +21,7 @@ package com.co.example.simulateLogin;
 import java.io.IOException;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.client.CookieStore;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.cookie.BasicClientCookie;
@@ -30,6 +31,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 /**   
 * @date 2016年9月14日 下午9:26:00 
 * @version   
@@ -37,10 +39,6 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 */
 public class BrowserFactory {
 	
-	public static void main(String[] args) {
-		WebDriver fireFox = BrowserFactory.getChrome();
-		fireFox.close();
-	}
 	
 	public static WebDriver getIE() {
 		try {
@@ -72,7 +70,19 @@ public class BrowserFactory {
 		return browser;
 	}
 	
+	/**
+	 * chrome 浏览器使用代理
+	 * @return
+	 */
 	public static WebDriver getChrome() {
+		WebDriver chrome = getChrome(null);
+		return chrome;
+	}
+	/**
+	 * chrome 浏览器不使用代理
+	 * @return
+	 */
+	public static WebDriver getChrome(String ipPort) {
 		try {
 			DriverInitter.init();
 		} catch (IOException e) {
@@ -81,7 +91,11 @@ public class BrowserFactory {
 		}
 		WebDriver browser = null;
 		try {
-			browser = new ChromeDriver();
+			if(StringUtils.isNoneBlank(ipPort)){
+				browser = new ChromeDriver(DriverInitter.SetProxy(ipPort));
+			}else{
+				browser = new ChromeDriver();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

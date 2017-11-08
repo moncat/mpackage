@@ -14,6 +14,14 @@
 				产品名称：<input type="text" class="input-text" style="width:200px" placeholder="产品名称" id="" th:value="${query.productNameLike}" name="productNameLike"/> 
 				备案编号：<input type="text" class="input-text" style="width:200px" placeholder="备案编号" id="" th:value="${query.applySn}" name="applySn"/> 
 				企业名称：<input type="text" class="input-text" style="width:200px" placeholder="企业名称" id="" th:value="${query.enterpriseName}" name="enterpriseName"/> 
+					
+				电商数据：<span class="select-box" style="width:200px">
+						  <select class="select" size="1" name="ecType" >
+						    <option value="0" th:selected ="${query.ecType} == 0">无</option>
+						    <option value="1" th:selected ="${query.ecType} == 1">天猫</option>
+						    <option value="2" th:selected ="${query.ecType} == 2">京东</option>
+						  </select>
+					   </span>
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>

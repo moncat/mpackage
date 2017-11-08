@@ -13,5 +13,8 @@ public class TBrBrandQuery extends TBrBrand {
 
     /** 英文名Like */
     private String nameEnLike;
+    
+    private Long  idNotEqual;
+    
 	
 }

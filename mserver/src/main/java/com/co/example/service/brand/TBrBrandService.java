@@ -61,6 +61,10 @@ public interface TBrBrandService extends BaseService<TBrBrand, Long> {
 	 */
 	List<TBrBrand> queryByNameEnLength();
 	
+	
+	int addConnect2Product(TBrBrand tBrBrand);
+	
+	
 }
 
 

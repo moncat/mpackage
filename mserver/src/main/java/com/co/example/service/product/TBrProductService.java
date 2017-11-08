@@ -29,6 +29,12 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	
 	void doSomeThing();
 	
+	/**
+	 * 对成分进行统计分析
+	 * @param tBrProduct
+	 * @param ingredientList
+	 * @return
+	 */
 	TBrProduct getStatisticsInfo(TBrProduct tBrProduct,List<TBrIngredient> ingredientList);
 	
 	
@@ -47,4 +53,7 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	List<String> queryOperEnterpriseFromProduct();
 	
 	int updateByArea(TBrProductQuery query);
+	
+	
+	
 }

@@ -48,31 +48,10 @@
 		                            </div>
 		                            <div class="col-md-3">
 			                            <div class="row cl">
-				                             <div class="col-md-12">
-				                           		 <img th:if="${one.source ne 1 and #lists.size(productImageList) >0} " style="height: 300px;" th:src="${productImageList[0].bevolUrl}" alt=""/>
-				                          		 <div th:if="${one.source eq 1}">
-				                          		 	<div th:each="image:${productImageList}" class="text-c mt-10 f-18">
-				                          		 	   <div th:if="${image.imageType eq 1}" >
-				                          		 	   	   <a class="btn-link" th:href="${image.imageUrl}" target="_blank" >查看平面图</a><br/>
-				                          		 	   	   <a class="btn-link" th:href="${image.downloadUrl}" target="_blank">下载平面图</a><br/>
-				                          		 	   </div>
-				                          		 	   <div th:if="${image.imageType eq 2}" >
-				                          		 	   	   <a class="btn-link" th:href="${image.imageUrl}" target="_blank" >查看立体图</a><br/>
-				                          		 	   	   <a class="btn-link" th:href="${image.downloadUrl}" target="_blank">下载立体图</a><br/>
-				                          		 	   </div>
-				                          		 	   <div th:if="${image.imageType eq 3}" >
-				                          		 	 	   <a class="btn-link" th:href="${image.imageUrl}" target="_blank" >查看商标证、授权书 </a><br/>
-				                          		 	   	   <a class="btn-link" th:href="${image.downloadUrl}" target="_blank">下载商标证、授权书 </a><br/>
-				                          		 	   </div>
-				                          		    </div>
-				                          		 </div>
+				                             <div class="col-md-12 defaultImg" >
 				                             </div>
 			                                 <div class="col-md-12">
-			                                 	<div class="text-c mt-30">
-					                          		 <a th:if="${brand ne null}" th:href="@{'/brand/show/'+${brand.id}}" target="_blank">
-						                          		 <img th:src="@{'/brand/'+${brand.imgUrl}}" th:alt="${brand.name}"/>
-		  			                                 	 <p>【<span th:text="${brand.name}"></span>】查看品牌→</p>
-					                          		 </a>
+			                                 	<div class="text-c mt-30 brand" >
 			                                 	</div>
 			                                 </div>
 			                            </div>
@@ -169,37 +148,17 @@
 	                            <!-- 规格参数  end-->
 	                            
 								<!-- 京东图片  start-->
-								<h3>京东图片</h3>
-	                            <div class="line mt-10"></div>
-								<div th:if="${#lists.size(jdImageList)>0}" >
-		                            <div class="row cl f-18 mt-10">
-			                            <div th:each="jdImage:${jdImageList}"  >
-				                            <div class="col-md-2 mt-5">
-					                            <img th:src="@{'https://img12.360buyimg.com/n4/'+${jdImage.jdUrl}}" />
-		           		                    </div>
-			                            </div> 
+									<div><span class="f-24">京东图片</span><span class="c-999">（点击查看大图）</span></div>
+		                            <div class="line mt-10"></div>
+		                            <div class="row cl f-18 mt-10 jdImg" >
 		                            </div> 
-	                            </div>
-	                            <div th:if="${#lists.size(jdImageList)==0}" >
-									<span>暂无京东图片</span>
-	                            </div> 
 	                            <!-- 京东图片  end-->
 	                            
 								<!-- 天猫图片  start-->
-								<h3>天猫图片</h3>
+								<div ><span class="f-24">天猫图片</span><span class="c-999">（点击查看大图）</span></div>
 	                            <div class="line mt-10"></div>
-								<div th:if="${#lists.size(tmallImageList)>0}" >
-		                            <div class="row cl f-18 mt-10">
-			                            <div th:each="tmallImage:${tmallImageList}"  >
-				                            <div class="col-md-2 mt-5">
-					                            <img th:src="@{''+${tmallImage.tmallUrl}}" />
-		           		                    </div>
-			                            </div> 
+		                            <div class="row cl f-18 mt-10 tmallImg">
 		                            </div> 
-	                            </div>
-	                            <div th:if="${#lists.size(tmallImageList)==0}" >
-									<span>暂无天猫图片</span>
-	                            </div> 
 	                            <!-- 天猫图片  end-->
 	                            
 	                            
@@ -275,8 +234,12 @@
 									</table>
 	                            </div> 
 	                            <!-- 评论  end-->
-	                            <h5><a class="ml-10" th:href="${one.tmallUrl}" target="_blank" >更多天猫商品信息>></a></h5>
-	                            <h5><a class="ml-10" th:href="${one.jdUrl}" target="_blank" >更多京东商品信息>></a></h5>
+	                            <h5 th:if="${one.tmallUrl} !='0' and ${one.tmallUrl} !=''">
+	                            	<a class="ml-10" th:href="${one.tmallUrl}" target="_blank" >更多天猫商品信息>></a>
+	                            </h5>
+	                            <h5 th:if="${one.jdUrl} !='0' and ${one.jdUrl} !='' ">
+	                            	<a class="ml-10" th:href="${one.jdUrl}" target="_blank" >更多京东商品信息>></a>
+	                            </h5>
 	                        </div>
 	                    </div>
 	                </div>
@@ -287,5 +250,16 @@
 </section>
 <section layout:fragment="my">
 	<script type="text/javascript" src="/js/product/show.js"></script>
+	<script id="brandTmp" type="text/html">
+	   <a href="/brand/showMore/{{id}}" target="_blank">
+		  {{if imgUrl.indexOf('http')==-1}}
+         	 <img alt="{{name}}" src="/brand/{{imgUrl}}" />
+		  {{else}}
+          	<img alt="{{name}}" src="{{imgUrl}}" />
+		  {{/if}}
+      	  <p>【<span>{{name}}</span>】查看品牌→</p>
+	   </a>
+	   <p id="relieve"  data-id="{{id}}" ><a>解除关联</a></p>
+	</script>
 </section>
 </html>

@@ -15,7 +15,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
 import com.co.example.bean.GeInfo;
-import com.co.example.entity.spec.TBrSpecKey;
+import com.co.example.entity.product.TBrAim;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 
@@ -24,9 +24,9 @@ import com.google.common.io.Files;
  */
 public class Generator {
 
-	static String model = "spec";
+	static String model = "aim";
 	
-	static Class<TBrSpecKey> entity = TBrSpecKey.class;
+	static Class<TBrAim> entity = TBrAim.class;
 	
 	static String basePath="D:/Workspaces2/package/management/src/main/resources/";
 

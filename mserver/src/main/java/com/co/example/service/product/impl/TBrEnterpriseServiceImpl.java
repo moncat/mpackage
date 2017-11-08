@@ -136,11 +136,8 @@ public class TBrEnterpriseServiceImpl extends BaseServiceImpl<TBrEnterprise, Lon
 				return;
 			}
 		}else{
-			System.out.println("**************************机器人检测**************************");
-			System.out.println("**************************机器人检测**************************");
-			System.out.println("**************************机器人检测**************************"+new Date());
-			System.out.println("**************************机器人检测**************************");
-			System.out.println("**************************机器人检测**************************");
+			System.out.println("**************************机器人检测1**************************");
+			System.out.println("**************************机器人检测1**************************"+new Date());
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
@@ -153,12 +150,8 @@ public class TBrEnterpriseServiceImpl extends BaseServiceImpl<TBrEnterprise, Lon
 	private void addInfos2Table(Long id, String url, Document docInfo) {
 		Elements baseInfo = docInfo.select("#company_web_top .company_header_width .f14 div.in-block");
 		if(CollectionUtils.isEmpty(baseInfo)){
-			System.out.println("**************************机器人检测*******");
-			System.out.println("**************************机器人检测*******");
-			System.out.println("**************************机器人检测*******"+new Date());
-			System.out.println("**************************机器人检测*******");
-			System.out.println("**************************机器人检测*******");
-			System.out.println("**************************机器人检测*******");
+			System.out.println("***机器人检测2*******");
+			System.out.println("***机器人检测2*******"+new Date());
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
@@ -168,14 +161,14 @@ public class TBrEnterpriseServiceImpl extends BaseServiceImpl<TBrEnterprise, Lon
 			return ;
 		}
 		
-//		getBaseInfo(id, url, docInfo, baseInfo);		
-//		getRegisterInfo(id, docInfo);
-//		getManagers(id, docInfo);
-//		getShareholders(id, docInfo);
+		getBaseInfo(id, url, docInfo, baseInfo);		
+		getRegisterInfo(id, docInfo);
+		getManagers(id, docInfo);
+		getShareholders(id, docInfo);
 		//惩罚信息
-//		getLawsuits(id, docInfo);   //需求更改，本代码作废，可于2018年9月25日删除
-//		getPunish(id, docInfo);    // 需求更改，本代码作废，可于2018年9月25日删除
-//		updateStatus(id);
+		getLawsuits(id, docInfo);   //需求更改，本代码作废，可于2018年9月25日删除
+		getPunish(id, docInfo);    // 需求更改，本代码作废，可于2018年9月25日删除
+		updateStatus(id);
 		//增量维护 （手动执行一次）
 		try {
 			getLawsuitsMore(id, docInfo);
@@ -521,22 +514,22 @@ public class TBrEnterpriseServiceImpl extends BaseServiceImpl<TBrEnterprise, Lon
 	private Site site = Site.me().setDomain("www.tianyancha.com").setSleepTime(300).setUserAgent(
 			"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31")
 			// 【重要】：以下信息可以模拟登陆，信息全部来自于浏览器
-			.addCookie("Hm_lpvt_e92c8d65d92d534b0fc290df538b4758", "1506751485")
-			.addCookie("Hm_lvt_e92c8d65d92d534b0fc290df538b4758", "1506393380,1506506743,1506674704,1506738504")
-			.addCookie("OA", "VxQaJA9v3KJPRRjJE47Mc7frXsvHH8g2VGs7ZzHltKjxHyzQ9CrsNBv+fXYNcfZr")//
-			.addCookie("RTYCID", "f4b9d56478a84d39a5b703ce3e1d0d69")
-			.addCookie("TYCID", "97a93400a26311e7aec7f9f91b57c269")
-			.addCookie("_csrf", "bqGIXXK/6L4oawQE7H9eng==")//
-			.addCookie("_csrf_bk", "824b4216325edb756099d86c561d04f2")//
-			.addCookie("aliyungf_tc", "AQAAAGBCTEJpPwAAon3QPAGOjrNUNT2L")//
+			.addCookie("Hm_lpvt_e92c8d65d92d534b0fc290df538b4758", "1509758097")
+			.addCookie("Hm_lvt_e92c8d65d92d534b0fc290df538b4758", "1508738490,1508982995,1509700252,1509758095")
+			.addCookie("OA", "HuYx+NCtVRzx+nf9EXwoY8yiDETGct3sUaThPQXCoTXdQvFqDdfCfxW804C4uf6i")//
+			.addCookie("RTYCID", "ea18316aa1b449c4830c52cf48e60ff9")
+			.addCookie("TYCID", "e2f2c7a0b31b11e79cd44b77fbc8ef1e")
+			.addCookie("_csrf", "v2OvD7IKS/oHToKBvWlmVw==")//
+			.addCookie("_csrf_bk", "d3998fa5c5c424f91bc06eec4f752758")//
+			.addCookie("aliyungf_tc", "AQAAAJkt3AJGbQgA+hHQPP69LsrHV142")//
 			.addCookie("auth_token",
-					"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwNjczODU4OSwiZXhwIjoxNTIyMjkwNTg5fQ.ektX4B6bN8rMVkFfxnFW9bp7PXVJgc60Yr19bLBBgAJrCAGTTqZSuz-x54gJ0Tr8oUjoPQ2nVRXTW3zRfhFFIg")
+					"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw")
 			.addCookie("bannerFlag", "true")
-			.addCookie("csrfToken", "7K_eev7pLkaxp3BHdixeBp7q")//
-			.addCookie("ssuid", "2882060535")
+			.addCookie("csrfToken", "OfvOqaw6c4sR0yJyggl14Xoq")//
+			.addCookie("ssuid", "136256036")
 			.addCookie("tyc-user-info",
-					"%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwNjczODU4OSwiZXhwIjoxNTIyMjkwNTg5fQ.ektX4B6bN8rMVkFfxnFW9bp7PXVJgc60Yr19bLBBgAJrCAGTTqZSuz-x54gJ0Tr8oUjoPQ2nVRXTW3zRfhFFIg%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D")
-			.addCookie("uccid", "4697cd5309e0efff9ef11629e94649b4")//
+					"%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D")
+			.addCookie("uccid", "868866fdf6ec3c40fb6943dc1dccff80")//
 	;
 	
 }

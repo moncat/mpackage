@@ -91,6 +91,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
     }
     
 	private Long pId = null;
+	
     
 	@Override
 	public int addProductFromCFDA(String page,String dateStr)  {
@@ -158,6 +159,8 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					tBrProduct.setCfdaNewProcessid(product.getString("newProcessid"));
 					tBrProduct.setBevolMid(null);
 					tBrProduct.setSource(ProductConstant.PRODUCT_SOURCE_CFDA);
+					tBrProduct.setJdUrl("0");
+					tBrProduct.setTmallUrl("0");
 					tBrProduct.setCreateTime(new Date());
 					tBrProduct.setDelFlg(Constant.NO);
 					tBrProduct = addIngredientFromCFDA(tBrProduct,processid);
@@ -190,7 +193,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 			tBrProduct.setProducingArea(unitInfo.getString("enterprise_address"));
 			//将产品保存方法重构到成分保存方法中，用于保存备注等信息，也可以保存冗余信息
 			tBrProduct.setCreateBy(0l);
-			//天大的坑 
+			//天大的坑 已经填上
 			String eNameStr = unitInfo.getString("enterprise_name");
 			if(StringUtils.isNotBlank(eNameStr)){
 				tBrProduct.setEnterpriseName(eNameStr);
@@ -221,7 +224,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 							tBrEnterprise.setRemark(enterprise.getString("remark"));
 							tBrEnterprise.setCreateBy(0l);
 							tBrEnterprise.setIsActive(Constant.STATUS_ACTIVE);
-							tBrEnterprise.setDelFlg(Constant.YES);
+							tBrEnterprise.setDelFlg(Constant.NO);
 							tBrEnterprise.setCreateTime(new Date());
 							tBrEnterpriseService.add(tBrEnterprise);
 						}else{
@@ -361,6 +364,8 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					tBrProduct.setBevolMid(product.getString("mid"));
 					tBrProduct.setRemark(product.getString("remark")+" "+product.getString("remark3"));
 					tBrProduct.setSource(ProductConstant.PRODUCT_SOURCE_BEVOL);
+					tBrProduct.setJdUrl("0");
+					tBrProduct.setTmallUrl("0");
 					tBrProduct.setCreateTime(new Date());
 					tBrProduct.setDelFlg(Constant.NO);
 					tBrProduct = addIngredientFromBEVOL(tBrProduct);

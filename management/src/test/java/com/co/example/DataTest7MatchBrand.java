@@ -48,6 +48,7 @@ public class DataTest7MatchBrand {
 		List<TBrBrand> brands = tBrBrandService.queryByNameLength();
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		tBrProductQuery.setJoinBrandFlg(true);
+		tBrProductQuery.setBrandIsNullFlg(true);
 		Page<TBrProduct> productPageList  = null;
 		PageReq pageReq = new PageReq();
 		pageReq.setPageSize(2000);

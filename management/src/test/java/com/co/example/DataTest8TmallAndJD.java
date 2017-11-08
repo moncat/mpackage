@@ -21,6 +21,8 @@ import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
 import com.co.example.service.spec.TBrSpecKeyService;
 import com.co.example.service.spec.TBrSpecValueService;
+import com.co.example.simulateLogin.BrowserFactory;
+import com.co.example.simulateLogin.ProxyUtil;
 import com.co.example.simulateLogin.TaoBaoLoginUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -59,22 +61,27 @@ public class DataTest8TmallAndJD {
 	
 	WebDriver chrome = null;
 	
-	 {
-		
-//		try {
-//			chrome =  TaoBaoLoginUtil.login();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+	{
+		//切换代理
+//		String ipPort = ProxyUtil.getInfo();
+//		chrome = initBrowser(ipPort);
+		chrome = initBrowser(null);
 	}
-	
+	 
+	 WebDriver initBrowser(String ipPort){
+		try {
+			chrome =  TaoBaoLoginUtil.login(ipPort);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return chrome;
+	 }
 	
 	@Test
 	public void getData() throws InterruptedException {
 		
-		Byte k = ProductConstant.PRODUCT_SOURCE_JD;
-//		Byte k = ProductConstant.PRODUCT_SOURCE_TMALL;
+//		Byte k = ProductConstant.PRODUCT_SOURCE_JD;
+		Byte k = ProductConstant.PRODUCT_SOURCE_TMALL;
 		//查询未匹配的数据
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		PageReq pageReq = new PageReq();
@@ -100,7 +107,15 @@ public class DataTest8TmallAndJD {
 			for (TBrProduct tBrProduct : content) {
 				Thread.sleep(1000);
 				//该抓取业务将在TBrProductSpecService编写
-				tBrProductSpecService.addData(tBrProduct, k,tbrSpecKeyList,chrome);
+				int addData = tBrProductSpecService.addData(tBrProduct, k,tbrSpecKeyList,chrome);
+				if(addData == 5){
+					//切换代理 TODO
+					String ipPort = ProxyUtil.getInfo();
+//					chrome = initBrowser(null);
+//					chrome = initBrowser(ipPort);
+//					chrome = BrowserFactory.getChrome(ipPort);
+					log.info("***切换代理ip***"+ipPort);
+				}
 			}
 			queryCount = tBrProductService.queryCount(tBrProductQuery);
 			log.info("***剩余待抓取***"+queryCount);

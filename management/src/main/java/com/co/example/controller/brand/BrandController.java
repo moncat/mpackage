@@ -3,19 +3,37 @@ package com.co.example.controller.brand;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.co.example.common.utils.PageReq;
 import com.co.example.controller.BaseControllerHandler;
+import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.brand.aide.TBrBrandQuery;
+import com.co.example.entity.brand.aide.TBrProductBrandQuery;
+import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.brand.TBrBrandService;
+import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.product.TBrProductService;
+
+import lombok.SneakyThrows;
 
 @Controller
 @RequestMapping("brand")
@@ -23,6 +41,12 @@ public class BrandController extends BaseControllerHandler<TBrBrandQuery>{
 	
 	@Autowired
 	TBrBrandService service;
+	
+	@Autowired
+	TBrProductBrandService tBrProductBrandService;
+	
+	@Autowired
+	TBrProductService tBrProductService;
 
 	//太平洋女性
 	public static String  BRAND_LIST_PCLADY_URL = "http://cosme.pclady.com.cn/brand_list.html";
@@ -84,6 +108,90 @@ public class BrandController extends BaseControllerHandler<TBrBrandQuery>{
 			service.addBrandFrom163LADY(element);
 		}
 	}
-	
 
+
+
+	@Override
+	public Boolean addExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			TBrBrandQuery t, PageReq pageReq,Map<String, Object> result) {
+		TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+		tBrBrandQuery.setName(t.getName());
+		long queryCount = service.queryCount(tBrBrandQuery);
+		if(queryCount>0){
+			result.put("desc", "添加失败，已有该品牌.");
+			result.put("code", "400");
+			return true;
+		}else{
+			result.put("desc", "添加成功!");
+			return false;
+		}
+	}
+
+	@Override
+	public Boolean editExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			TBrBrandQuery t, PageReq pageReq,Map<String, Object> result) {
+		TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+		tBrBrandQuery.setName(t.getName());
+		tBrBrandQuery.setIdNotEqual(t.getId());
+		long queryCount = service.queryCount(tBrBrandQuery);
+		if(queryCount>0){
+			result.put("code", "400");
+			result.put("desc", "更新失败，已有该品牌.");
+			return true;
+		}else{
+			result.put("desc", "更新成功!");
+			return false;
+		}
+	}
+
+	
+	
+	/**
+	 * 批量添加关联（产品与品牌）
+	 */
+	@SneakyThrows(Exception.class)
+	@ResponseBody
+	@RequestMapping(value = "/conn", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> conn(Model model,HttpSession session,Long id)throws Exception {
+		Map<String, Object> result = result();
+		TBrBrand one = service.queryById(id);
+		int count = service.addConnect2Product(one);
+		result.put("count",count);
+		return result;
+	}
+	
+	/**
+	 * 解除关联（单个产品和品牌）
+	 */
+	@SneakyThrows(Exception.class)
+	@ResponseBody
+	@RequestMapping(value = "/relieve", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> relieve(Model model,HttpSession session,Long id,Long pid)throws Exception {
+		Map<String, Object> result = result();
+		TBrProductBrandQuery tBrProductBrandQuery = new TBrProductBrandQuery();
+		tBrProductBrandQuery.setProductId(pid);
+		tBrProductBrandQuery.setBrandId(id);
+		tBrProductBrandService.delete(tBrProductBrandQuery);
+		result.put("desc", "已解除关联。");
+		return result;
+	}
+	
+	
+	
+	@RequestMapping(value = "/showMore/{id}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String showMore(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
+			PageReq pageReq, @PathVariable Long id) {
+		TBrBrand one = service.queryById(id);
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setJoinBrandFlg(true);
+		tBrProductQuery.setBrandId(one.getId());
+		pageReq.setPageSize(10);
+		Page<TBrProduct> page = tBrProductService.queryPageList(tBrProductQuery, pageReq);
+		model.addAttribute(PAGE, page);
+		model.addAttribute(ONE, one);
+		return "brand/show";
+	}
+	
+	
+	
 }

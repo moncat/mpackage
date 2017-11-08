@@ -111,45 +111,43 @@ public abstract class  BaseController<T extends BaseEntity> {
 	@ResponseBody
 	@RequestMapping(value = "/add", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String,Object> add(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
+		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
 		t.setDelFlg(Constant.NO);
 		t.setCreateTime(new Date());
 		t.setUpdateTime(t.getCreateTime());
-		Boolean flg = addExt(model, session, request, response, t,pageReq);
+		Boolean flg = addExt(model, session, request, response, t,pageReq,result);
 		if(!flg){
 			service.add(t);
 		}
-		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("pageNumber", pageReq.getPageNumber());
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 
 	/**
 	 * 扩展新增,在新增前改变一下数据,并确定是否更改默认数据
 	 */
-	abstract public Boolean addExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq);
+	abstract public Boolean addExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,Map<String, Object> result);
 	
 	
 	@SneakyThrows(Exception.class)
 	@ResponseBody
 	@RequestMapping(value = "/edit", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String,Object> edit(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
+		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
 		t.setUpdateTime(new Date());
-		Boolean flg = editExt(model, session, request, response, t, pageReq);
+		Boolean flg = editExt(model, session, request, response, t, pageReq,result);
 		if(!flg){
 			service.updateByIdSelective(t);			
 		}
-		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("pageNumber", pageReq.getPageNumber());
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	/**
 	 * 扩展编辑,在编辑前改变一下数据,并确定是否更改默认数据
 	 */
-	abstract public Boolean editExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq);
+	abstract public Boolean editExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,Map<String, Object> result);
 	
 	
 	
@@ -160,20 +158,19 @@ public abstract class  BaseController<T extends BaseEntity> {
 	@RequestMapping(value = "/show4Json/{id}", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String,Object> show4Json(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
 		BaseService<T,Long> service = getService(request, t);
-		Boolean flg = show4JsonExt(model, session, request, response, t, id);
 		Map<String, Object> result = result();
+		Boolean flg = show4JsonExt(model, session, request, response, t, id,result);
 		if(!flg){
 			t = service.queryById(id);
 			result.put("show4Json", t);
 		}
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	/**
 	 * 扩展show的数据，返回特殊show数据,并确定是否更改默认数据
 	 * false 不更改 ；  true 更改
 	 */
-	abstract public Boolean show4JsonExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+	abstract public Boolean show4JsonExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id,Map<String, Object> result);
 
 	
 	@SneakyThrows(Exception.class)
@@ -201,20 +198,19 @@ public abstract class  BaseController<T extends BaseEntity> {
 	@ResponseBody
 	@RequestMapping(value = "/active/{id}", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String, Object> active(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
 		t.setIsActive(Constant.YES);
-		Boolean flg = activeExt(session, request, response, t, id);
+		Boolean flg = activeExt(session, request, response, t, id, result);
 		if(!flg){
 			service.updateByIdSelective(t);			
 		}
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	/**
 	 * 恢复，扩展过滤条件
 	 */
-	abstract public Boolean activeExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+	abstract public Boolean activeExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id,Map<String, Object> result);
 	
 	/**
 	 * 失效
@@ -223,59 +219,56 @@ public abstract class  BaseController<T extends BaseEntity> {
 	@ResponseBody
 	@RequestMapping(value = "/negative/{id}", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String, Object> negative(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
 		t.setIsActive(Constant.NO);
-		Boolean flg = negativeExt(session, request, response, t, id);
+		Boolean flg = negativeExt(session, request, response, t, id, result);
 		if(!flg){
 			service.updateByIdSelective(t);			
 		}
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	/**
 	 * 失效，扩展过滤条件
 	 */
-	abstract public Boolean negativeExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+	abstract public Boolean negativeExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id,Map<String, Object> result);
 	
 	
 	@SneakyThrows(Exception.class)
 	@ResponseBody
 	@RequestMapping(value = "/deletel/{id}", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String, Object> deleteLogic(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
 		t.setDelFlg(Constant.YES);
-		Boolean flg = deleteLogicExt(session, request, response, t, id);
+		Boolean flg = deleteLogicExt(session, request, response, t, id, result);
 		if(!flg){
 			service.updateByIdSelective(t);			
 		}
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	/**
 	 * 逻辑删除，扩展过滤条件,并确定是否更改默认删除操作
 	 */
-	abstract public Boolean deleteLogicExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+	abstract public Boolean deleteLogicExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id,Map<String, Object> result);
 	
 	
 	@SneakyThrows(Exception.class)
 	@ResponseBody
 	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String, Object> deletePhysics(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id)throws Exception {
+		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
-		Boolean flg = deletePhysicsExt(session, request, response, t, id);
+		Boolean flg = deletePhysicsExt(session, request, response, t, id, result);
 		if(!flg){
 			service.deleteById(id);
 		}
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
 	/**
 	 * 物理删除，扩展过滤条件,并确定是否更改默认删除操作
 	 */
-	abstract public Boolean deletePhysicsExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id);
+	abstract public Boolean deletePhysicsExt(HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,@PathVariable Long id,Map<String, Object> result);
 
 	@SneakyThrows(Exception.class)
 	@SuppressWarnings("unchecked")

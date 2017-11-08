@@ -27,6 +27,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 /**
@@ -56,4 +59,18 @@ public class DriverInitter {
 			}
 		}
 	}
+	
+	public static DesiredCapabilities SetProxy(String ipPort) {
+		String proxyIpAndPort= ipPort;
+		DesiredCapabilities cap = new DesiredCapabilities();
+		Proxy proxy=new Proxy();
+		proxy.setHttpProxy(proxyIpAndPort).setFtpProxy(proxyIpAndPort).setSslProxy(proxyIpAndPort);
+		cap.setCapability(CapabilityType.ForSeleniumServer.AVOIDING_PROXY, true);
+		cap.setCapability(CapabilityType.ForSeleniumServer.ONLY_PROXYING_SELENIUM_TRAFFIC, true);
+		System.setProperty("http.nonProxyHosts", "localhost");
+		cap.setCapability(CapabilityType.PROXY, proxy);
+		return cap;
+	}
+	
+	
 }

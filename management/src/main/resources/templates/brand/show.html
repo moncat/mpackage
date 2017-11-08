@@ -27,8 +27,43 @@
          			                     <h4>品牌故事： <span th:utext="${one.story}"></span></h4>
          		                     </div>
 		                            <div class="col-md-4">
-		                            	<img class="mt-10" th:alt="${one.name}" th:src="@{'/brand/'+${one.imgUrl}}" />
+			                            <div th:if="${#strings.contains(one.imgUrl,'http')}">
+				                            <img class="mt-10" th:alt="${one.name}" th:src="@{${one.imgUrl}}" />
+			                            </div>
+			                            <div th:if="${not #strings.contains(one.imgUrl,'http')}">
+				                            <img class="mt-10" th:alt="${one.name}" th:src="@{'/brand/'+${one.imgUrl}}" />
+			                            </div>
          		                    </div>
+	                            </div> 
+	                            <div class="row cl">
+		                            <div class="col-md-12">
+		                            <table class="table table-border table-bordered table-bg table-hover mt-10">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														归属该品牌的产品列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>产品名称</th>
+												</tr>
+											</thead>
+											<tbody>
+												<section th:each="item,status:${page.content}" >
+													<tr class="text-c">
+														<td th:text="${page.number*page.size+status.index+1}">1</td>
+														<td>
+															<a class="btn-link" th:href="@{'/product/show/'+${item.id}}" title="查看详情" target="_blank">
+																<span th:utext="${item.productName}"></span>
+															</a>
+														</td>
+													</tr>					
+												</section>
+											</tbody>
+										</table>
+										<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+         		                     </div>
 	                            </div> 
 	                        </div>
 	                    </div>

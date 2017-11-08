@@ -1,6 +1,7 @@
 package com.co.example.controller.product;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -13,13 +14,13 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.eclipse.jetty.util.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.co.example.common.utils.DateFormatUtil;
 import com.co.example.common.utils.PageReq;
 import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.brand.TBrBrand;
@@ -53,6 +54,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 @RequestMapping("product")
 public class ProductController extends BaseControllerHandler<TBrProductQuery> {
@@ -90,6 +94,15 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@Override
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			PageReq pageReq, TBrProductQuery query) {
+		Integer ecType = query.getEcType();
+		if(ecType == 1){
+			query.setUseTmallUrlNotNullFlg(true);
+		}else if(ecType == 2){
+			query.setUseJdUrlNotNullFlg(true);
+		}
+		
+//		query.setJoinBrandFlg(joinBrandFlg);
+		
 		pageReq.setPageSize(15);
 		return super.listExt(model, session, request, response, pageReq, query);
 	}
@@ -98,45 +111,23 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@Override
 	public Boolean showExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			TBrProductQuery t, Long id) {
+		
+		//产品
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		tBrProductQuery.setId(id);
 		TBrProduct one = tBrProductService.queryOne(tBrProductQuery);
+		
+		//成分
 		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
 		tBrIngredientQuery.setProductId(id);
 		tBrIngredientQuery.setJoinFlg(true);
 		List<TBrIngredient> ingredientList = tBrIngredientService.queryList(tBrIngredientQuery);
 		//装饰成分信息
 		tBrIngredientService.decorateColour(ingredientList);
-		Byte oldImage = 12;
-		Byte jdImage = 3;
-		Byte tmallImage = 4;
-		//图片信息
-		TBrProductImageQuery tBrProductImageQuery = new TBrProductImageQuery();
-		tBrProductImageQuery.setProductId(id);
-		tBrProductImageQuery.setSource(oldImage);
-		List<TBrProductImage> productImageList = tBrProductImageService.queryList(tBrProductImageQuery);
-		if(ProductConstant.PRODUCT_SOURCE_CFDA.equals(one.getSource())){
-			productImageList.forEach(item->{
-				String cfdaImageId = item.getCfdaImageId();
-				String cfdaSsid = item.getCfdaSsid();
-				TBrProductImageVo itemVo = (TBrProductImageVo)item;
-				itemVo.setDownloadUrl(ProductConstant.CFDA_PRODUCT_IMAGE_DOWNLOAD.replace("@1", cfdaImageId).replace("@2", cfdaSsid));
-				itemVo.setImageUrl(ProductConstant.CFDA_PRODUCT_IMAGE_SHOW.replace("@1",cfdaImageId));
-			});
-		}
-		
-		tBrProductImageQuery.setSource(jdImage);
-		List<TBrProductImage> jdImageList = tBrProductImageService.queryList(tBrProductImageQuery);
-		
-		tBrProductImageQuery.setSource(tmallImage);
-		List<TBrProductImage> tmallImageList = tBrProductImageService.queryList(tBrProductImageQuery);
-		
-		
 		one = tBrProductService.getStatisticsInfo(one, ingredientList);
 		
 		//企业名称，到实际生产企业表查询，如果企业为实际生产企业，则加上链接
 		String enterpriseName = one.getEnterpriseName();
-		
 		TBrEnterpriseQuery tBrEnterpriseQuery1 = new TBrEnterpriseQuery();
 		tBrEnterpriseQuery1.setEnterpriseName(enterpriseName);
 		List<TBrEnterprise> enterpriseList1 = tBrEnterpriseService.queryList(tBrEnterpriseQuery1);
@@ -145,13 +136,25 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 			model.addAttribute("oneEnterprise", oneEnterprise);
 		}
 		
-		
 		//实际生产企业
 		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
 		tBrEnterpriseQuery.setProductId(id);
 		tBrEnterpriseQuery.setJoinFlg(true);
 		List<TBrEnterprise> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
-		
+		model.addAttribute(ONE, one);
+		model.addAttribute("ingredientList", ingredientList);
+		model.addAttribute("enterpriseList", enterpriseList);
+		return true;
+	}
+	
+	
+	
+	
+	//品牌
+	@ResponseBody
+	@RequestMapping(value = "/brand", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> brand(HttpSession session,Long id)throws Exception {
+		Map<String, Object> result = result();
 		TBrProductBrandQuery tBrProductBrandQuery = new TBrProductBrandQuery();
 		tBrProductBrandQuery.setProductId(id);
 		TBrProductBrand tBrProductBrand = tBrProductBrandService.queryOne(tBrProductBrandQuery);
@@ -159,17 +162,11 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		if(tBrProductBrand !=null){
 			brand = tBrBrandService.queryById(tBrProductBrand.getBrandId());
 		}
-		
-		
-		model.addAttribute(ONE, one);
-		model.addAttribute("ingredientList", ingredientList);
-		model.addAttribute("productImageList", productImageList);
-		model.addAttribute("jdImageList", jdImageList);
-		model.addAttribute("tmallImageList", tmallImageList);
-		model.addAttribute("enterpriseList", enterpriseList);
-		model.addAttribute("brand", brand);
-		return true;
+		result.put("brand", brand);
+		return result;
 	}
+	
+	
 	
 
 	//JD Tmall 产品规格
@@ -202,8 +199,6 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 			specValueNames = "";
 			specList.add(kvMap);
 		}
-		
-		
 		result.put("specList", specList);
 		return result;
 	}
@@ -212,7 +207,6 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@ResponseBody
 	@RequestMapping(value = "/comment", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String,Object> comment(Model model,HttpSession session,Long id)throws Exception {
-		
 		//评论统计信息
 		Map<String, Object> result = result();
 		TBrProductCommentStatisticsQuery tBrProductCommentStatisticsQuery = new TBrProductCommentStatisticsQuery();
@@ -222,6 +216,44 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		List<Comment> commentList = tBrProductSpecService.getComment(id);
 		result.put("cs", cs);
 		result.put("commentList", commentList);
+		return result;
+	}
+	
+	//图片信息
+	@ResponseBody
+	@RequestMapping(value = "/pic", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> pic(HttpSession session,Long id)throws Exception {
+		Map<String, Object> result = result();
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setId(id);
+		TBrProduct one = tBrProductService.queryOne(tBrProductQuery);
+		Byte oldImage = 12;
+		Byte jdImage = 3;
+		Byte tmallImage = 4;
+		//图片信息
+		TBrProductImageQuery tBrProductImageQuery = new TBrProductImageQuery();
+		tBrProductImageQuery.setProductId(id);
+		tBrProductImageQuery.setSource(oldImage);
+		List<TBrProductImage> productImageList = tBrProductImageService.queryList(tBrProductImageQuery);
+		if(ProductConstant.PRODUCT_SOURCE_CFDA.equals(one.getSource())){
+			productImageList.forEach(item->{
+				String cfdaImageId = item.getCfdaImageId();
+				String cfdaSsid = item.getCfdaSsid();
+				TBrProductImageVo itemVo = (TBrProductImageVo)item;
+				itemVo.setDownloadUrl(ProductConstant.CFDA_PRODUCT_IMAGE_DOWNLOAD.replace("@1", cfdaImageId).replace("@2", cfdaSsid));
+				itemVo.setImageUrl(ProductConstant.CFDA_PRODUCT_IMAGE_SHOW.replace("@1",cfdaImageId));
+			});
+		}
+		
+		tBrProductImageQuery.setSource(jdImage);
+		List<TBrProductImage> jdImageList = tBrProductImageService.queryList(tBrProductImageQuery);
+		tBrProductImageQuery.setSource(tmallImage);
+		List<TBrProductImage> tmallImageList = tBrProductImageService.queryList(tBrProductImageQuery);
+		
+		result.put("one", one);
+		result.put("productImageList", productImageList);
+		result.put("jdImageList", jdImageList);
+		result.put("tmallImageList", tmallImageList);
 		return result;
 	}
 	

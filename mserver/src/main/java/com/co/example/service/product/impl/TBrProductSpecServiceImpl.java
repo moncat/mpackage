@@ -112,6 +112,9 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 			searchUrl = ProductConstant.JD_PRODUCT_SEARCH_URL+productName;
 			try {
 				Document doc = JsoupUtil.getDoc(searchUrl, encode);
+				if(doc == null){
+					return 0;
+				};
 				Elements ns = doc.select(".notice-search");
 				if(CollectionUtils.isNotEmpty(ns)){
 					//并未找到该产品数据
@@ -127,7 +130,11 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 						Elements good = goodsList.select("ul").eq(0).select("li").eq(0);
 						this.skuId = good.attr("data-sku");
 						this.skuUrl = "http://item.jd.com/"+skuId+".html";
-						this.skuDoc = JsoupUtil.getDoc(skuUrl, GBK);
+						this.skuDoc = JsoupUtil.getDoc(skuUrl, GBK);						
+						if(skuDoc == null){
+							return 0;
+						};
+						
 						//获得图片
 						getJDImages();
 						//获得规格参数
@@ -135,7 +142,7 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 						//获得聊天统计
 						getJDCommentStatisticsData();
 						//获得价格，无销量,url
-						getJDBaseData();
+						getJDBaseData(doc);
 						log.info("抓取京东完毕："+productName+"***"+productId);
 					}else{
 						log.info("未抓取到京东数据!!!："+productName);
@@ -165,11 +172,11 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 				
 //				doc = JsoupUtil.getDoc(searchUrl, encode);
 				String title = doc.select("title").text();
-				if(StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found")){
+				if(StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found") || StringUtils.equals(title, "SecurityMatrix") ){
 					log.info("未抓取到天猫数据!!!："+productName);
 					return 5;
 				}
-				Elements ns = doc.select(".searchTip-kw");
+				Elements ns = doc.select(".searchTip");
 				if(CollectionUtils.isNotEmpty(ns)){
 					//并未找到该产品数据
 					log.info("***未查询到该商品***"+productName);
@@ -190,7 +197,9 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 						
 						this.skuUrl = "https://detail.tmall.com/item.htm?id="+skuId;
 						this.skuDoc = JsoupUtil.getDoc(skuUrl, encode);
-						
+						if(skuDoc == null){
+							return 0;
+						};
 						String skuStr = skuDoc.toString();
 						skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
 						skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
@@ -204,9 +213,10 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 						getTmallCommentStatisticsData();
 						//获得价格，无销量,url
 						getTmallBaseData();
-						log.info("抓取天猫完毕："+productName);
+						log.info("抓取天猫完毕："+productName+"***"+productId);
 					}else{
-						log.info("未抓取到天猫数据!!!："+productName);
+						log.info("未抓取到天猫数据!!!2："+productName);
+						return 5;
 					}
 				}
 				
@@ -259,15 +269,12 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 				}
 			}
 			
-			
 		}
 		
 	}
 
 
 	private void saveProductSpec(Long keyId, String keyName, String valueNames,Byte source) {
-		// TODO 对valueName 进行分割  
-		
 		TBrProductSpecQuery tBrProductSpecQuery = new TBrProductSpecQuery();
 		tBrProductSpecQuery.setPid(productId);
 		long queryCount = queryCount(tBrProductSpecQuery);
@@ -322,6 +329,9 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		tBrProductCommentStatistics.setPid(productId);
 		TBrProductCommentStatistics queryOne = tBrProductCommentStatisticsService.queryOne(tBrProductCommentStatistics);
 		TBrProductCommentStatistics commentSummary = TmallData.getCommentSummary(skuId, sellerId);
+		if(commentSummary == null){
+			return ;
+		}
 		if(queryOne == null){
 			commentSummary.setPid(productId);
 			setDefaultData((BaseEntity) commentSummary);
@@ -339,7 +349,6 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	
 	private void getTmallBaseData() {
 		//售价 销量
-		System.out.println("1");
 		String jsonStr = TmallData.httpRequest(skuId);
 		String priceStr = TmallData.getPriceFromJson(jsonStr, tmallSkuId);
 		String saleStr = TmallData.getsellCountFromJson(jsonStr);
@@ -435,50 +444,54 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 
 	private void getJDCommentStatisticsData()throws InterruptedException {
 		
-		//异步返回评论统计数据的action
-		String data = HttpUtils.getData("https://club.jd.com/comment/productCommentSummaries.action?referenceIds="+skuId,GBK);
-		JSONObject jsonObj = JSON.parseObject(data);
-		JSONArray jsonArray = jsonObj.getJSONArray("CommentsCount");
-		JSONObject jsonObj2 = jsonArray.getJSONObject(0);
 		
-		String data2 = HttpUtils.getData("http://club.jd.com/discussion/getProductPageImageCommentList.action?productId="+skuId,GBK);
-		JSONObject jsonObj3 = JSON.parseObject(data2);
-		JSONObject jsonObj4 = jsonObj3.getJSONObject("imgComments");
-		String jdNumImg = jsonObj4.getString("imgCommentCount");
-		
-		
-		TBrProductCommentStatistics one = new TBrProductCommentStatistics();
-		one.setPid(productId);
-		TBrProductCommentStatistics queryOne = tBrProductCommentStatisticsService.queryOne(one);
-		if(queryOne  == null){
-			one.setJdNumAll(jsonObj2.getString("CommentCountStr"));
-			one.setJdNumImg(jdNumImg);
-			one.setJdNumMore(jsonObj2.getString("AfterCountStr"));
-			one.setJdNumGood(jsonObj2.getString("GoodCountStr"));
-			one.setJdNumMiddle(jsonObj2.getString("GeneralCountStr"));
-			one.setJdNumBad(jsonObj2.getString("PoorCountStr"));
-			setDefaultData((BaseEntity) one);
-			tBrProductCommentStatisticsService.add(one);
-		}else{
-			queryOne.setJdNumAll(jsonObj2.getString("CommentCountStr"));
-			queryOne.setJdNumImg(jdNumImg);
-			queryOne.setJdNumMore(jsonObj2.getString("AfterCountStr"));
-			queryOne.setJdNumGood(jsonObj2.getString("GoodCountStr"));
-			queryOne.setJdNumMiddle(jsonObj2.getString("GeneralCountStr"));
-			queryOne.setJdNumBad(jsonObj2.getString("PoorCountStr"));
-			tBrProductCommentStatisticsService.updateByIdSelective(queryOne);
+		try {
+			//异步返回评论统计数据的action
+			String data = HttpUtils.getData("https://club.jd.com/comment/productCommentSummaries.action?referenceIds="+skuId,GBK);
+			JSONObject jsonObj = JSON.parseObject(data);
+			JSONArray jsonArray = jsonObj.getJSONArray("CommentsCount");
+			JSONObject jsonObj2 = jsonArray.getJSONObject(0);
+			
+			String data2 = HttpUtils.getData("http://club.jd.com/discussion/getProductPageImageCommentList.action?productId="+skuId,GBK);
+			JSONObject jsonObj3 = JSON.parseObject(data2);
+			JSONObject jsonObj4 = jsonObj3.getJSONObject("imgComments");
+			String jdNumImg = jsonObj4.getString("imgCommentCount");
+			
+			
+			TBrProductCommentStatistics one = new TBrProductCommentStatistics();
+			one.setPid(productId);
+			TBrProductCommentStatistics queryOne = tBrProductCommentStatisticsService.queryOne(one);
+			if(queryOne  == null){
+				one.setJdNumAll(jsonObj2.getString("CommentCountStr"));
+				one.setJdNumImg(jdNumImg);
+				one.setJdNumMore(jsonObj2.getString("AfterCountStr"));
+				one.setJdNumGood(jsonObj2.getString("GoodCountStr"));
+				one.setJdNumMiddle(jsonObj2.getString("GeneralCountStr"));
+				one.setJdNumBad(jsonObj2.getString("PoorCountStr"));
+				setDefaultData((BaseEntity) one);
+				tBrProductCommentStatisticsService.add(one);
+			}else{
+				queryOne.setJdNumAll(jsonObj2.getString("CommentCountStr"));
+				queryOne.setJdNumImg(jdNumImg);
+				queryOne.setJdNumMore(jsonObj2.getString("AfterCountStr"));
+				queryOne.setJdNumGood(jsonObj2.getString("GoodCountStr"));
+				queryOne.setJdNumMiddle(jsonObj2.getString("GeneralCountStr"));
+				queryOne.setJdNumBad(jsonObj2.getString("PoorCountStr"));
+				tBrProductCommentStatisticsService.updateByIdSelective(queryOne);
+			}
+		} catch (Exception e) {
+			log.info("***获得京东评论统计信息，json解析异常***");
+//			e.printStackTrace();
 		}
+		
 		
 	}
 	
 	//获得价格，无销量
-	private void getJDBaseData()throws InterruptedException {
-		
-		//异步返回价格数据的action
-		String data = HttpUtils.getData("https://p.3.cn/prices/mgets?skuIds=J_"+skuId,GBK);
-		JSONArray parseArray = JSON.parseArray(data);
-		JSONObject jsonObject = parseArray.getJSONObject(0);	
-		String priceStr = jsonObject.getString("p");
+	private void getJDBaseData(Document doc)throws InterruptedException {			
+		Elements goodsList = doc.select("#J_goodsList");
+		String priceStr = goodsList.select("ul").eq(0).select("li").eq(0).select(".p-price").select("i").text();
+			
 		TBrProduct product = new TBrProduct();
 		product.setId(productId);
 		product.setJdUrl(skuUrl);
@@ -541,6 +554,16 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
 
+	
+	public static String getTmallId(String tmallUrl) {
+		int index = tmallUrl.indexOf("id=");
+		String id = "";
+		if(index>0){
+			id =tmallUrl.substring(tmallUrl.lastIndexOf("id=")+3);
+		}
+		return id;
+	}
+	
 
 	public static String getJdSkuId(String jdUrl) {
 		int index = jdUrl.indexOf(".html");
@@ -554,11 +577,6 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	
 	@Override
 	public List<Comment> getComment(Long id) {
-//		Element one = null;
-//		Comment comment = null;
-//		String  detail = null;
-//		String datetime = null;
-//		String userNickName = null;
 		List<Comment> commentList = Lists.newArrayList();
 		TBrProduct tBrProduct = tBrProductService.queryById(id);
 		String jdUrl = tBrProduct.getJdUrl();
@@ -569,29 +587,22 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		}
 		
 		
-//		String tmallUrl = tBrProduct.getTmallUrl();
-//		try {
-//			Document tmallDdoc = JsoupUtil.getDoc(tmallUrl, GBK);
-//			Elements info = tmallDdoc.select("#J_Reviews .rate-grid tbody tr");
-//			for (int i = 0; i < info.size(); i++) {
-//				one = info.get(i);
-//				detail = one.select(".tm-rate-fulltxt").text();
-//				datetime = one.select(".tm-rate-date").text();
-//				userNickName = one.select(".rate-user-info").text();
-//				comment = new Comment();
-//				comment.setSource("天猫");
-//				comment.setUserNickName(userNickName);
-//				comment.setDatetime(datetime);
-//				comment.setDetail(detail);
-//				commentList.add(comment);
-//			}
-//			
-//		} catch (InterruptedException e) {
-//			log.info("***抓取天猫数据失败***");
+		String tmallUrl = tBrProduct.getTmallUrl();
+		try {
+			this.skuDoc = JsoupUtil.getDoc(tmallUrl, "GBK");
+			this.skuId = getTmallId(tmallUrl);
+		} catch (InterruptedException e) {
+			log.info("***天猫url不正确，无法获得评论***");
 //			e.printStackTrace();
-//		}
-		
-		
+		}
+		if(skuDoc != null && StringUtils.isNoneBlank(skuId)){
+			String skuStr = skuDoc.toString();
+			skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
+			skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
+			this.sellerId = skuStr.replace(":", "").replace("\"", "");
+			List<Comment> tmallCommentDetails = TmallData.getCommentDetails(skuId,sellerId);
+			commentList.addAll(tmallCommentDetails);
+		};
 		
 		return commentList;
 	}

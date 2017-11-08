@@ -19,6 +19,7 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\spec\impl\TBrSpe
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\admin\impl\TAdminLoginServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\admin\TAdmin.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\spec\aide\TBrSpecKeyVo.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\statistics\TBrStatisticsService.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\product\impl\TBrProductIngredientDaoImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\enterprise\impl\TBrEnterpriseBaseDaoImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\admin\TAdminActive.java
@@ -30,6 +31,7 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\product\impl\TBr
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\admin\aide\TAdminVo.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\comment\aide\Comment.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\contact\impl\TContactDaoImpl.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\statistics\aide\TBrStatisticsVo.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\system\impl\TApplicationServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\enterprise\impl\TBrEnterpriseBrandServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\product\impl\TBrIngredientServiceImpl.java
@@ -74,6 +76,7 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\brand\impl\TBrPr
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\article\aide\TArticleVo.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\system\impl\TRoleRightDaoImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\enterprise\impl\TBrEnterpriseLawsuitDaoImpl.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\statistics\aide\TBrStatisticsQuery.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\product\TBrLogService.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\brand\TBrBrandService.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\product\aide\TBrAimVo.java
@@ -87,6 +90,7 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\enterprise\TB
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\product\TBrIngredientService.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\user\TUsersDao.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\admin\impl\TAdminDaoImpl.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\statistics\impl\TBrStatisticsDaoImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\product\TBrIngredientDao.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\enterprise\aide\TBrEnterprisePunishQuery.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\admin\aide\TAdminActiveConstant.java
@@ -137,6 +141,7 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\product\TBrLogDa
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\system\impl\TRoleServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\admin\impl\TAdminRoleServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\product\aide\TBrProductSpecQuery.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\statistics\TBrStatisticsDao.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\product\TBrProductIngredientService.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\product\TBrIngredientAimDao.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\brand\impl\TBrBrandServiceImpl.java
@@ -150,8 +155,10 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\simulateLogin\Driver
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\admin\aide\TAdminRoleQuery.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\admin\aide\AdminSession.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\user\impl\TOrgServiceImpl.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\statistics\impl\TBrStatisticsServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\brand\TBrProductBrandDao.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\user\TUserRoleDao.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\simulateLogin\ProxyUtil.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\user\aide\TUsersConstant.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\user\TUserRole.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\spec\TBrSpecValueService.java
@@ -197,6 +204,7 @@ D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\enterprise\i
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\user\impl\TUsersDaoImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\dao\product\impl\TBrProductSpecDaoImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\enterprise\aide\TBrEnterpriseLawsuitQuery.java
+D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\statistics\TBrStatistics.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\admin\TAdminService.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\service\product\impl\TBrProductImageServiceImpl.java
 D:\Workspaces2\package\mserver\src\main\java\com\co\example\entity\spec\TBrSpecValue.java

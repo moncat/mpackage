@@ -17,11 +17,11 @@ public class JsoupUtil {
 		try {
 			doc = Jsoup.parse(new URL(url).openStream(), encode, url);
 		} catch (MalformedURLException e1) {
-			e1.printStackTrace();
+//			e1.printStackTrace();
 			log.info("***url错误***");
 		} catch (IOException e1) {
 			log.info("***网络错误***");
-			e1.printStackTrace();
+//			e1.printStackTrace();
 		}
 		return doc;
 	}

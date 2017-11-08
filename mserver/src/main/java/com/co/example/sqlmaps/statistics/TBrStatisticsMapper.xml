@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.statistics.TBrStatisticsMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.statistics.TBrStatistics">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="more_data1" jdbcType="VARCHAR" property="moreData1" />
+    <result column="more_data2" jdbcType="VARCHAR" property="moreData2" />
+    <result column="more_data3" jdbcType="VARCHAR" property="moreData3" />
+    <result column="more_data4" jdbcType="VARCHAR" property="moreData4" />
+    <result column="more_data5" jdbcType="VARCHAR" property="moreData5" />
+    <result column="more_data6" jdbcType="VARCHAR" property="moreData6" />
+    <result column="more_data7" jdbcType="VARCHAR" property="moreData7" />
+    <result column="more_data8" jdbcType="VARCHAR" property="moreData8" />
+    <result column="more_data9" jdbcType="VARCHAR" property="moreData9" />
+    <result column="more_data10" jdbcType="VARCHAR" property="moreData10" />
+    <result column="more_data11" jdbcType="VARCHAR" property="moreData11" />
+    <result column="more_data12" jdbcType="VARCHAR" property="moreData12" />
+    <result column="more_data13" jdbcType="VARCHAR" property="moreData13" />
+    <result column="more_data14" jdbcType="VARCHAR" property="moreData14" />
+    <result column="more_data15" jdbcType="VARCHAR" property="moreData15" />
+    <result column="more_data16" jdbcType="VARCHAR" property="moreData16" />
+    <result column="more_data17" jdbcType="VARCHAR" property="moreData17" />
+    <result column="more_data18" jdbcType="VARCHAR" property="moreData18" />
+    <result column="more_data19" jdbcType="VARCHAR" property="moreData19" />
+    <result column="more_data20" jdbcType="VARCHAR" property="moreData20" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="is_active" jdbcType="TINYINT" property="isActive" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
+    <result column="app_id" jdbcType="TINYINT" property="appId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, more_data1, more_data2, more_data3, more_data4, more_data5, more_data6, more_data7, 
+    more_data8, more_data9, more_data10, more_data11, more_data12, more_data13, more_data14, 
+    more_data15, more_data16, more_data17, more_data18, more_data19, more_data20, item_order, 
+    create_time, create_by, update_time, update_by, is_active, del_flg, app_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_statistics
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_br_statistics
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.statistics.TBrStatistics">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_statistics (id, more_data1, more_data2, 
+      more_data3, more_data4, more_data5, 
+      more_data6, more_data7, more_data8, 
+      more_data9, more_data10, more_data11, 
+      more_data12, more_data13, more_data14, 
+      more_data15, more_data16, more_data17, 
+      more_data18, more_data19, more_data20, 
+      item_order, create_time, create_by, 
+      update_time, update_by, is_active, 
+      del_flg, app_id)
+    values (#{id,jdbcType=BIGINT}, #{moreData1,jdbcType=VARCHAR}, #{moreData2,jdbcType=VARCHAR}, 
+      #{moreData3,jdbcType=VARCHAR}, #{moreData4,jdbcType=VARCHAR}, #{moreData5,jdbcType=VARCHAR}, 
+      #{moreData6,jdbcType=VARCHAR}, #{moreData7,jdbcType=VARCHAR}, #{moreData8,jdbcType=VARCHAR}, 
+      #{moreData9,jdbcType=VARCHAR}, #{moreData10,jdbcType=VARCHAR}, #{moreData11,jdbcType=VARCHAR}, 
+      #{moreData12,jdbcType=VARCHAR}, #{moreData13,jdbcType=VARCHAR}, #{moreData14,jdbcType=VARCHAR}, 
+      #{moreData15,jdbcType=VARCHAR}, #{moreData16,jdbcType=VARCHAR}, #{moreData17,jdbcType=VARCHAR}, 
+      #{moreData18,jdbcType=VARCHAR}, #{moreData19,jdbcType=VARCHAR}, #{moreData20,jdbcType=VARCHAR}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
+      #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.statistics.TBrStatistics">
+    update t_br_statistics
+    <set>
+      <if test="moreData1 != null">
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null">
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData3 != null">
+        more_data3 = #{moreData3,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData4 != null">
+        more_data4 = #{moreData4,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData5 != null">
+        more_data5 = #{moreData5,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData6 != null">
+        more_data6 = #{moreData6,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData7 != null">
+        more_data7 = #{moreData7,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData8 != null">
+        more_data8 = #{moreData8,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData9 != null">
+        more_data9 = #{moreData9,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData10 != null">
+        more_data10 = #{moreData10,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData11 != null">
+        more_data11 = #{moreData11,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData12 != null">
+        more_data12 = #{moreData12,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData13 != null">
+        more_data13 = #{moreData13,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData14 != null">
+        more_data14 = #{moreData14,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData15 != null">
+        more_data15 = #{moreData15,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData16 != null">
+        more_data16 = #{moreData16,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData17 != null">
+        more_data17 = #{moreData17,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData18 != null">
+        more_data18 = #{moreData18,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData19 != null">
+        more_data19 = #{moreData19,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData20 != null">
+        more_data20 = #{moreData20,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null">
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null">
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+      <if test="appId != null">
+        app_id = #{appId,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.statistics.TBrStatistics">
+    update t_br_statistics
+    set more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
+      more_data3 = #{moreData3,jdbcType=VARCHAR},
+      more_data4 = #{moreData4,jdbcType=VARCHAR},
+      more_data5 = #{moreData5,jdbcType=VARCHAR},
+      more_data6 = #{moreData6,jdbcType=VARCHAR},
+      more_data7 = #{moreData7,jdbcType=VARCHAR},
+      more_data8 = #{moreData8,jdbcType=VARCHAR},
+      more_data9 = #{moreData9,jdbcType=VARCHAR},
+      more_data10 = #{moreData10,jdbcType=VARCHAR},
+      more_data11 = #{moreData11,jdbcType=VARCHAR},
+      more_data12 = #{moreData12,jdbcType=VARCHAR},
+      more_data13 = #{moreData13,jdbcType=VARCHAR},
+      more_data14 = #{moreData14,jdbcType=VARCHAR},
+      more_data15 = #{moreData15,jdbcType=VARCHAR},
+      more_data16 = #{moreData16,jdbcType=VARCHAR},
+      more_data17 = #{moreData17,jdbcType=VARCHAR},
+      more_data18 = #{moreData18,jdbcType=VARCHAR},
+      more_data19 = #{moreData19,jdbcType=VARCHAR},
+      more_data20 = #{moreData20,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT},
+      app_id = #{appId,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_statistics t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="moreData1 != null">
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null">
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData3 != null">
+          and t.more_data3 = #{moreData3,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData4 != null">
+          and t.more_data4 = #{moreData4,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData5 != null">
+          and t.more_data5 = #{moreData5,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData6 != null">
+          and t.more_data6 = #{moreData6,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData7 != null">
+          and t.more_data7 = #{moreData7,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData8 != null">
+          and t.more_data8 = #{moreData8,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData9 != null">
+          and t.more_data9 = #{moreData9,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData10 != null">
+          and t.more_data10 = #{moreData10,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData11 != null">
+          and t.more_data11 = #{moreData11,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData12 != null">
+          and t.more_data12 = #{moreData12,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData13 != null">
+          and t.more_data13 = #{moreData13,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData14 != null">
+          and t.more_data14 = #{moreData14,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData15 != null">
+          and t.more_data15 = #{moreData15,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData16 != null">
+          and t.more_data16 = #{moreData16,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData17 != null">
+          and t.more_data17 = #{moreData17,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData18 != null">
+          and t.more_data18 = #{moreData18,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData19 != null">
+          and t.more_data19 = #{moreData19,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData20 != null">
+          and t.more_data20 = #{moreData20,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null">
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null">
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null">
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null">
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null">
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null">
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null">
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <if test="appId != null">
+          and t.app_id = #{appId,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.id) from t_br_statistics t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_statistics t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from t_br_statistics where id in (
+    select t.id from (select * from t_br_statistics) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.statistics.aide.TBrStatisticsVo">
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.id, 
+    t.more_data1, 
+    t.more_data2, 
+    t.more_data3, 
+    t.more_data4, 
+    t.more_data5, 
+    t.more_data6, 
+    t.more_data7, 
+    t.more_data8, 
+    t.more_data9, 
+    t.more_data10, 
+    t.more_data11, 
+    t.more_data12, 
+    t.more_data13, 
+    t.more_data14, 
+    t.more_data15, 
+    t.more_data16, 
+    t.more_data17, 
+    t.more_data18, 
+    t.more_data19, 
+    t.more_data20, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause">
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause">
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+  </mapper>

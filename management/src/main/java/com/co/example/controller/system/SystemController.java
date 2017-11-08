@@ -1,6 +1,7 @@
 package com.co.example.controller.system;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -67,7 +68,7 @@ public class SystemController extends BaseControllerHandler<TMenu>{
 
 	@Override
 	public Boolean addExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t, PageReq pageReq) {
+			TMenu t, PageReq pageReq,Map<String, Object> result) {
 		setInfo(t);
 		return false;
 	}
@@ -85,7 +86,7 @@ public class SystemController extends BaseControllerHandler<TMenu>{
 	
 	@Override
 	public Boolean editExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t, PageReq pageReq) {
+			TMenu t, PageReq pageReq,Map<String, Object> result) {
 		Long parentId = t.getParentId();
 		if(parentId !=t.getId()){
 			setInfo(t);
@@ -96,7 +97,7 @@ public class SystemController extends BaseControllerHandler<TMenu>{
 
 	@Override
 	public Boolean deletePhysicsExt(HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			TMenu t, Long id) {
+			TMenu t, Long id ,Map<String, Object> result) {
 		tMenuService.deleteAll(id);
 		return true;
 	}

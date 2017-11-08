@@ -48,7 +48,7 @@
 					 -->
 						<td th:text="${page.number*page.size+status.index+1}">1</td>
 						<td >
-							<a th:href="@{'/ingredient/showMore/'+${one.id}}"   target="_blank">
+							<a class="btn-link"  th:href="@{'/ingredient/showMore/'+${one.id}}"   target="_blank">
 								<span th:utext="${one.name}"></span>
 							</a>
 						</td>

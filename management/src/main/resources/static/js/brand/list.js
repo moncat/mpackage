@@ -10,6 +10,18 @@ $(function(){
 		event.stopPropagation(); 
 	});
 	
+	$('.conn').on('click',function(){
+		var conn = $(this);
+		conn.hide();
+		$('.connInfo').text('关联中...');
+		var id = conn.attr('data-id')
+		$.post("/brand/conn/?id="+id,function(data){
+			$('.connInfo').text("关联完成，已关联"+data.count+"条数据。");
+//			layer.msg("已关联"+data.count+"条数据。",{icon:1,time:1000});
+		});
+	});
+	
+	
 	$('.start').on('click',function(){
 		var btn = $(this);
 		var id = $(this).attr('data-id');

@@ -121,6 +121,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		List<TBrBrand> brands = tBrBrandService.queryByNameLength();
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		tBrProductQuery.setJoinBrandFlg(true);
+		tBrProductQuery.setBrandIsNullFlg(true);
 		tBrProductQuery.setConfirmDate(dateStr);
 		List<TBrProduct> tBrProductList = tBrProductService.queryList(tBrProductQuery);
 		String productName = null;
@@ -211,8 +212,37 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		return map;
 	}
 	
+	
+	
+	
+	
+	/**
+	 * 全量匹配
+	 * @param startDateStr  保留参数
+	 * @param startPage3     品牌起始匹配号 
+	 * @throws InterruptedException
+	 */
 	@ResponseBody
 	@RequestMapping(value="brand",method = { RequestMethod.GET, RequestMethod.POST })
+	public void brandNew(String startDateStr, Integer startPage3) throws InterruptedException {
+		List<TBrBrand> brands = tBrBrandService.queryByNameLength();
+		TBrBrand tBrBrand = null;
+		int count =  0;
+		//选用5200 作为结束点，剩下的不再匹配 （共5369）
+		for (int j = startPage3; j < 5200; j++) {
+			tBrBrand = brands.get(j);
+			count = tBrBrandService.addConnect2Product(tBrBrand);
+			log.info("匹配第"+j+"个："+tBrBrand.getName()+"("+tBrBrand.getId()+") 成功数量："+count);
+		};
+		
+	}
+	
+	/**
+	 * 弃用，请参见 brandNew 方法
+	 */
+	@Deprecated
+//	@ResponseBody
+//	@RequestMapping(value="brand",method = { RequestMethod.GET, RequestMethod.POST })
 	public Map<String,String> brand( String startDateStr, Integer startPage3) throws InterruptedException {
 		Map<String,String> map = Maps.newHashMap();
 		if(startPage3 != null){
@@ -222,6 +252,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 				tBrProductQuery.setGreaterThanConfirmDate(startDateStr);
 			}
 			tBrProductQuery.setJoinBrandFlg(true);
+			tBrProductQuery.setBrandIsNullFlg(true);
 			Page<TBrProduct> productPageList  = null;
 			int k = startPage3;
 			PageReq pageReq = new PageReq();
@@ -229,7 +260,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			pageReq.setPage(1);
 			String productName = null;
 			for (; k < brands.size(); k++) {
-				Thread.sleep(2000);
+//				Thread.sleep(1000);
 				log.info("程序运行中k..."+k);
 				long productCount = tBrProductService.queryCount(tBrProductQuery);
 				log.info("当前还有未匹配的产品个数"+productCount);

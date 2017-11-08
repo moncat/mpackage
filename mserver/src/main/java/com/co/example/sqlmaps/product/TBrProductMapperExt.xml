@@ -70,11 +70,20 @@
       <if test="productNameLike != null" >
           and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
       </if>
-	  <if test="joinBrandFlg" >
+	  <if test="brandIsNullFlg" >
 	      and tbpb.brand_id is null
       </if>
 	  <if test="joinOperEnterpriseFlg" >
 	      and tbpoe.enterprise_id is null
+      </if>
+ 	  <if test="useTmallUrlNotNullFlg" >
+         and tmall_url like '%detail%' 
+      </if>
+      <if test="useJdUrlNotNullFlg" >
+        and jd_url like '%item%' 
+      </if>
+      <if test="brandId != null" >
+        and tbpb.brand_id =  #{brandId,jdbcType=VARCHAR}
       </if>
   </sql>
   <sql id="Table_Join_Clause" >

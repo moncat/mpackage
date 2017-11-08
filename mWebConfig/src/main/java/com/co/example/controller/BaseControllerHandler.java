@@ -1,5 +1,7 @@
 package com.co.example.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -35,14 +37,14 @@ public  class BaseControllerHandler<T extends BaseEntity> extends BaseController
 
 	@Override
 	public Boolean addExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response, T t,
-			PageReq pageReq) {
+			PageReq pageReq,Map<String, Object> result) {
 		return false;
 		
 	}
 
 	@Override
 	public Boolean editExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response, T t,
-			PageReq pageReq) {
+			PageReq pageReq,Map<String, Object> result) {
 		return false;
 	}
 
@@ -54,32 +56,32 @@ public  class BaseControllerHandler<T extends BaseEntity> extends BaseController
 
 	@Override
 	public Boolean activeExt(HttpSession session, HttpServletRequest request, HttpServletResponse response, T t,
-			Long id) {
+			Long id ,Map<String, Object> result) {
 		return false;
 	}
 
 	@Override
 	public Boolean negativeExt(HttpSession session, HttpServletRequest request, HttpServletResponse response, T t,
-			Long id) {
+			Long id ,Map<String, Object> result) {
 		return false;
 	}
 	
 	@Override
 	public Boolean deleteLogicExt(HttpSession session, HttpServletRequest request, HttpServletResponse response, T t,
-			Long id) {
+			Long id ,Map<String, Object> result) {
 		return false;
 	}
 
 
 	@Override
 	public Boolean deletePhysicsExt(HttpSession session, HttpServletRequest request, HttpServletResponse response, T t,
-			Long id) {
+			Long id ,Map<String, Object> result) {
 		return false;
 	}
 
 	@Override
 	public Boolean show4JsonExt(Model model, HttpSession session, HttpServletRequest request,
-			HttpServletResponse response, T t, Long id) {
+			HttpServletResponse response, T t, Long id ,Map<String, Object> result) {
 		return false;
 	}
 

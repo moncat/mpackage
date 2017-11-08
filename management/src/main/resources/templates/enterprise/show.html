@@ -14,6 +14,7 @@
 	                <div class="col-md-12">
 	                    <div class="panel shadow panel-default radius mt-20">
 	                        <div class="panel-body">
+	                        	<span class='hide' id="eid"  th:utext="${one.id}"></span>
 	                            <h2 class="text-c"  th:utext="${one.enterpriseName}">无名称</h2>
 	                            <h3>基本信息</h3>
 	                            <div class="line mt-10"></div>
@@ -169,7 +170,29 @@
 										</table>
 		                            </div> 
 	                            </div> 
-	                            <h5><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></h5>
+	                            
+	                            <h3>公司产品</h3>
+	                            <div class="line mt-10"></div>
+                           		 <div class="row cl f-18 mt-10 ml-10 mr-10">
+	                            	<table class="table table-border table-bordered table-bg table-hover">
+										<thead>
+											<tr>
+												<th colspan="10" scope="col">
+													公司产品列表
+												</th>
+											</tr>
+											<tr class="text-c ">
+												<th width="30%">序号</th>
+												<th width="70%">产品名称</th>
+											</tr>
+										</thead>
+										<tbody id="productList" >
+										</tbody>
+									</table>
+	                            </div>
+	                            
+	                            <h5 th:if="${base} !=null"><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></h5>
+	                            
 	                        </div>
 	                    </div>
 	                </div>

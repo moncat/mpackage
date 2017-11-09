@@ -1,9 +1,12 @@
 package com.co.example;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -63,9 +66,9 @@ public class DataTest8TmallAndJD {
 	
 	{
 		//切换代理
-//		String ipPort = ProxyUtil.getInfo();
-//		chrome = initBrowser(ipPort);
-		chrome = initBrowser(null);
+		String ipPort = ProxyUtil.getInfo();
+		chrome = initBrowser(ipPort);
+//		chrome = initBrowser(null);
 	}
 	 
 	 WebDriver initBrowser(String ipPort){
@@ -110,11 +113,16 @@ public class DataTest8TmallAndJD {
 				int addData = tBrProductSpecService.addData(tBrProduct, k,tbrSpecKeyList,chrome);
 				if(addData == 5){
 					//切换代理 TODO
-					String ipPort = ProxyUtil.getInfo();
-//					chrome = initBrowser(null);
-//					chrome = initBrowser(ipPort);
+					chrome.quit();
+					log.info("***睡眠等待***");
+					Thread.sleep(180000);
+					chrome = initBrowser(null);
+					//暂无代理
+//					String ipPort = ProxyUtil.getInfo();
 //					chrome = BrowserFactory.getChrome(ipPort);
-					log.info("***切换代理ip***"+ipPort);
+//					log.info("***切换代理ip***"+ipPort);
+					//webmagic
+//					tBrProductSpecService.addDataWM(tBrProduct, k, tbrSpecKeyList,chrome);
 				}
 			}
 			queryCount = tBrProductService.queryCount(tBrProductQuery);
@@ -125,13 +133,7 @@ public class DataTest8TmallAndJD {
 	}
 	
 	
-//	public static void main(String[] args) {
-//		for (int i = 0; i < 15; i++) {
-//			System.out.println(NextId.getId());
-//			
-//		}
-//	}
-//	
+	
 }
 
 

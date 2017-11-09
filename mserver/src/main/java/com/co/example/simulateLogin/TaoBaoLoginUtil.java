@@ -33,23 +33,27 @@ import lombok.extern.slf4j.Slf4j;
 public class TaoBaoLoginUtil {
 	public static WebDriver login(String ipPort) throws InterruptedException {
 		WebDriver chrome = BrowserFactory.getChrome(ipPort);
-		chrome.get("https://login.taobao.com/member/login.jhtml");
-		Thread.sleep(5000);
-		String tbuserNmae="18254133367";
-		String tbpassWord="13579zyl";
 		
-		WebElement btn = chrome.findElement(By.id("J_Quick2Static"));
-		if(btn!=null && btn.isDisplayed()){
-			btn.click();
-		}
+//		chrome.get("https://login.taobao.com/member/login.jhtml");
+//		Thread.sleep(5000);
+//		String tbuserNmae="18254133367";
+//		String tbpassWord="13579zyl";
+//		
+//		WebElement btn = chrome.findElement(By.id("J_Quick2Static"));
+//		if(btn!=null && btn.isDisplayed()){
+//			btn.click();
+//		}
+//		
+//		chrome.findElement(By.id("TPL_username_1")).clear();
+//		chrome.findElement(By.id("TPL_username_1")).sendKeys(tbuserNmae);
+//		chrome.findElement(By.id("TPL_password_1")).clear();
+//		chrome.findElement(By.id("TPL_password_1")).sendKeys(tbpassWord);
+//		chrome.findElement(By.id("J_SubmitStatic")).click();
+//		
 		
-		chrome.findElement(By.id("TPL_username_1")).clear();
-		chrome.findElement(By.id("TPL_username_1")).sendKeys(tbuserNmae);
-		chrome.findElement(By.id("TPL_password_1")).clear();
-		chrome.findElement(By.id("TPL_password_1")).sendKeys(tbpassWord);
-		chrome.findElement(By.id("J_SubmitStatic")).click();
+		multipleLogin.loginByQQWeibo(chrome);
 		
-		Thread.sleep(30000L);
+		Thread.sleep(4000L);
 		String url = "https://www.tmall.com";
 		chrome.get(url);
 		String html = chrome.getPageSource();

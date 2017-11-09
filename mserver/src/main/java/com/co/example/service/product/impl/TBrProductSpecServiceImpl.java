@@ -2,12 +2,15 @@ package com.co.example.service.product.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -20,6 +23,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,12 +55,19 @@ import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
 import com.co.example.service.spec.TBrSpecKeyService;
 import com.co.example.service.spec.TBrSpecValueService;
+import com.co.example.simulateLogin.ProxyUtil;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.entity.BaseEntity;
 import com.github.moncat.common.service.BaseServiceImpl;
 import com.google.common.collect.Lists;
 
 import lombok.extern.slf4j.Slf4j;
+import us.codecraft.webmagic.Site;
+import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.downloader.HttpClientDownloader;
+import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.proxy.Proxy;
+import us.codecraft.webmagic.proxy.SimpleProxyProvider;
 
 @Slf4j
 @Service
@@ -104,7 +115,8 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		this.tBrProduct = tBrProduct;
 		this.productId = tBrProduct.getId();
 		this.sourceType = sourceType;
-		this.productName = tBrProduct.getProductName().replace(" ", "");
+		this.productName = 
+				StringEscapeUtils.unescapeHtml4(tBrProduct.getProductName().replace(" ", ""));
 		this.tbrSpecKeyList =tbrSpecKeyList;
 		String searchUrl = null;
 		//抓取京东数据
@@ -232,6 +244,37 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	}
 
 
+	
+	@Override
+	public int addDataWM(TBrProduct tBrProduct, Byte sourceType, List<TBrSpecKey> tbrSpecKeyList,WebDriver chrome) {
+		
+		this.tBrProduct = tBrProduct;
+		this.productId = tBrProduct.getId();
+		this.sourceType = sourceType;
+		this.productName = StringEscapeUtils.unescapeHtml4(tBrProduct.getProductName().replace(" ", ""));
+		this.tbrSpecKeyList =tbrSpecKeyList;
+		
+		String ipPort = ProxyUtil.getInfo();
+		Set<Cookie> cookies = chrome.manage().getCookies();
+		for (Iterator iterator = cookies.iterator(); iterator.hasNext();) {
+			Cookie cookie = (Cookie) iterator.next();
+			//使用webmagic框架继续爬取
+			site.addCookie(cookie.getName(), cookie.getValue());
+		}
+		String productName = tBrProduct.getProductName();
+		productName.replace(" ", "");
+		String newurl = ProductConstant.TMALL_PRODUCT_SEARCH_URL+productName;
+		HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
+		ipPort = ProxyUtil.getInfo();
+		String[] split = ipPort.split(":");
+		Proxy proxyStr = new Proxy(split[0],Integer.parseInt(split[1]));
+		httpClientDownloader.setProxyProvider(SimpleProxyProvider.from(proxyStr));
+		Spider spider = Spider.create(new TmallProxy());
+		spider.addUrl(newurl).run();
+		return 0;
+	}
+	
+	
 	private void getTmallImages() {
 		Elements images = skuDoc.select("#J_UlThumb li img");
 		saveImages(images);
@@ -606,6 +649,79 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		
 		return commentList;
 	}
+
+	
+	
+	//tmall使用
+	//webmagic 爬虫
+		private Site site = Site.me().setDomain("www.tmall.com").setCharset("gbk").setSleepTime(300).setUserAgent(
+				"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31");
+		class TmallProxy implements PageProcessor {
+			@Override
+			public void process(us.codecraft.webmagic.Page page) {
+				Document doc = Jsoup.parse(page.getHtml().toString());
+				try {
+					String searchUrl = ProductConstant.TMALL_PRODUCT_SEARCH_URL+productName;
+					
+					String title = doc.select("title").text();
+					if(StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found") || StringUtils.equals(title, "SecurityMatrix") ){
+						log.info("未抓取到天猫数据!!!："+productName);
+						return ;
+					}
+					Elements ns = doc.select(".searchTip");
+					if(CollectionUtils.isNotEmpty(ns)){
+						//并未找到该产品数据
+						log.info("***未查询到该商品***"+productName);
+						TBrProduct product = new TBrProduct();
+						product.setId(productId);
+						product.setTmallUrl(searchUrl);
+						tBrProductService.updateByIdSelective(product);
+						return ;
+					}else{
+						Elements goodsList = doc.select("#J_ItemList");
+						
+						if(goodsList.size()>0){
+							Elements good = goodsList.select("div.product").eq(0);
+							skuId = good.attr("data-id");
+							String tmallSkuUrl = good.select(".productImg-wrap a").attr("href");
+							Map<String, String> urlSplit = UrlUtil.urlSplit(tmallSkuUrl);
+							tmallSkuId = urlSplit.get("skuid");
+							
+							skuUrl = "https://detail.tmall.com/item.htm?id="+skuId;
+							skuDoc = JsoupUtil.getDoc(skuUrl, encode);
+							if(skuDoc == null){
+								return ;
+							};
+							String skuStr = skuDoc.toString();
+							skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
+							skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
+							sellerId = skuStr.replace(":", "").replace("\"", "");
+							
+							//获得图片
+							getTmallImages();
+							//获得规格参数
+							getTmallSpecData();
+							//获得聊天统计
+							getTmallCommentStatisticsData();
+							//获得价格，无销量,url
+							getTmallBaseData();
+							log.info("抓取天猫完毕："+productName+"***"+productId);
+						}else{
+							log.info("未抓取到天猫数据!!!2："+productName);
+							return ;
+						}
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					return ;
+				}
+			}
+			@Override
+			public Site getSite() {
+				return site;
+			}
+		}
+	
 }
 
 

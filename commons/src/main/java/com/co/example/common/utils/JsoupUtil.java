@@ -12,6 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JsoupUtil {
 	
+	public static Document getDoc(String url) throws InterruptedException {
+		return getDoc(url,"utf-8");
+	}
+	
 	public static Document getDoc(String url,String encode) throws InterruptedException {
 		Document doc = null;
 		try {

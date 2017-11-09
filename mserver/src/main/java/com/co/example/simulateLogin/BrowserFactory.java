@@ -95,6 +95,7 @@ public class BrowserFactory {
 				browser = new ChromeDriver(DriverInitter.SetProxy(ipPort));
 			}else{
 				browser = new ChromeDriver();
+			
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

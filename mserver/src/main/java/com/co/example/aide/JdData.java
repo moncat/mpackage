@@ -11,8 +11,6 @@ import com.google.common.collect.Lists;
 
 public class JdData {
 	public static List<Comment> getCommentDetails(String id){
-		
-		
 		List<Comment> commentList = Lists.newArrayList();
 		Comment comment = null;
 		String url="http://club.jd.com/comment/productPageComments.action?callback=&productId="+id+"&score=0&sortType=5&page=0&pageSize=10";

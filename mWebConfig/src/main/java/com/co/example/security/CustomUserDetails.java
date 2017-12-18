@@ -55,8 +55,6 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 	}
 	
 	
-	
-	
 
 	@Override
 	public String getPassword() {
@@ -75,12 +73,12 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 
 	@Override
 	public boolean isAccountNonLocked() {
-//		Byte isActive = super.getIsActive();
-//		if(Constant.STATUS_ACTIVE == isActive){
-//			return true;
-//		}
-//		return false;
-		return true;
+		Byte isActive = super.getIsActive();
+		if(Constant.STATUS_ACTIVE == isActive){
+			return true;
+		}
+		return false;
+//		return true;
 	}
 
 	@Override

@@ -4,6 +4,12 @@ $(function(){
 		lf2('/$!{foo}/addInit','900px','500px');
 	});
 	
+	$('.show').on('click',function(){
+		var id = $(this).attr('data-id')
+		lf2('/$!{foo}/show/'+id,'900px','500px');
+		event.stopPropagation(); 
+	});
+	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
 		lf2('/$!{foo}/editInit/'+id+'/0','900px','500px');

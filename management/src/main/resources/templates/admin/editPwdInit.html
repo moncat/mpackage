@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_iframe">
+<body>
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 个人中心 
+		<span class="c-gray en">&gt;</span> 修改密码 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>原密码：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="password" class="input-text"   value="" placeholder="原密码" name="oldPwd"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>新密码：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="password" class="input-text"   value="" placeholder="新密码" name="newPwd1" id="newPwd1"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>确认密码：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="password" class="input-text"   value="" placeholder="确认密码" name="newPwd2"/>
+				</div>
+			</div>
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<!-- 
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+					 -->
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/admin/editPwd.js"></script>
+	</section>
+</body>
+</html>

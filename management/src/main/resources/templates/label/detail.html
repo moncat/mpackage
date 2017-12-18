@@ -1,0 +1,59 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 标签详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                            <h2 class="text-c"  th:utext="${one.name}">无名称</h2>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">		                           
+		                            <div class="col-md-12">
+										<table class="table table-border table-bordered table-bg table-hover mt-10">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														本标签下的产品列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>产品名称</th>
+												</tr>
+											</thead>
+											<tbody>
+												<section th:each="item,status:${page.content}" >
+													<tr class="text-c">
+														<td th:text="${page.number*page.size+status.index+1}">1</td>
+														<td>
+															<a class="btn-link" th:href="@{'/product/show/'+${item.id}}" title="查看详情" target="_blank">
+																<span th:utext="${item.productName}"></span>
+															</a>
+														</td>
+													</tr>					
+												</section>
+											</tbody>
+										</table>
+										<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+		                            </div>
+	                            </div> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+</section>
+</html>

@@ -1,0 +1,930 @@
+2017-11-03 17:28:43.187 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 17:28:44.741 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 10072 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 17:28:44.742 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 17:28:49.090 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 17:28:49.267 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 17:28:50.468 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 17:28:50.485 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 17:29:00.001 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 17:29:00.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 17:29:00.470 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c93e69, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a013b23, org.springframework.security.web.header.HeaderWriterFilter@3ff3275b, org.springframework.security.web.csrf.CsrfFilter@6cb417fc, org.springframework.security.web.authentication.logout.LogoutFilter@79aba813, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b364f47, org.springframework.security.web.session.ConcurrentSessionFilter@4e4c05a0, org.springframework.security.web.session.ConcurrentSessionFilter@611a91df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d6027be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c8afba, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3d42b756, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d763b06, org.springframework.security.web.session.SessionManagementFilter@5b76b891, org.springframework.security.web.access.ExceptionTranslationFilter@2a525f88, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7fb02606]
+2017-11-03 17:29:02.187 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 17:29:03.017 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 17:29:03.017 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 17:29:03.017 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 17:29:05.547 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 21.424 seconds (JVM running for 25.505)
+2017-11-03 17:29:26.077 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:27.123 [pool-1-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/80223669
+2017-11-03 17:29:27.124 [pool-1-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/80223669 , code: 401
+2017-11-03 17:29:27.515 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:27.562 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 17:29:27.867 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***21
+2017-11-03 17:29:28.205 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***21
+2017-11-03 17:29:28.206 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:28.576 [pool-2-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州金圣业生物科技有限公司
+2017-11-03 17:29:35.969 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:36.594 [pool-3-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014034594
+2017-11-03 17:29:36.594 [pool-3-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014034594 , code: 401
+2017-11-03 17:29:36.895 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:37.222 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:37.222 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:37.808 [pool-4-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南金昌生物技术有限公司
+2017-11-03 17:29:37.861 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:38.184 [pool-5-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/789588571
+2017-11-03 17:29:38.184 [pool-5-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/789588571 , code: 401
+2017-11-03 17:29:38.485 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:38.844 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:38.844 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:39.260 [pool-6-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东博然堂生物科技有限公司
+2017-11-03 17:29:39.298 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:39.705 [pool-7-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014556957
+2017-11-03 17:29:39.705 [pool-7-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014556957 , code: 401
+2017-11-03 17:29:40.014 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:40.339 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:40.344 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:40.762 [pool-8-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=珠海宝德润生健康产品制造有限公司
+2017-11-03 17:29:40.793 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:41.147 [pool-9-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2320452636
+2017-11-03 17:29:41.148 [pool-9-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2320452636 , code: 401
+2017-11-03 17:29:41.448 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:41.777 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:41.779 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:42.143 [pool-10-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东康绿宝科技实业有限公司
+2017-11-03 17:29:42.193 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:42.482 [pool-11-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1367840777
+2017-11-03 17:29:42.483 [pool-11-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/1367840777 , code: 401
+2017-11-03 17:29:42.783 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:43.116 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:43.117 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:43.784 [pool-12-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=深圳市壹芳化妆品有限公司
+2017-11-03 17:29:43.814 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:44.604 [pool-13-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063526758
+2017-11-03 17:29:44.605 [pool-13-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3063526758 , code: 401
+2017-11-03 17:29:44.905 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:45.236 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:45.237 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:45.562 [pool-14-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州和佳润颜医药有限公司
+2017-11-03 17:29:45.596 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:46.016 [pool-15-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3052516068
+2017-11-03 17:29:46.016 [pool-15-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3052516068 , code: 401
+2017-11-03 17:29:46.317 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:46.640 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:46.641 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:47.565 [pool-16-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=盘锦鸿海钻采技术发展有限公司洗化分公司
+2017-11-03 17:29:47.610 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:47.920 [pool-17-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2314951605
+2017-11-03 17:29:47.920 [pool-17-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2314951605 , code: 401
+2017-11-03 17:29:48.220 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:48.547 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:48.549 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:48.901 [pool-18-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南省花信云日用品有限公司
+2017-11-03 17:29:48.935 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:49.495 [pool-19-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2964836744
+2017-11-03 17:29:49.495 [pool-19-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2964836744 , code: 401
+2017-11-03 17:29:49.795 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:50.119 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:50.121 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:50.464 [pool-20-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=济南惠农玫瑰花精油有限公司
+2017-11-03 17:29:50.512 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:50.851 [pool-21-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1160621440
+2017-11-03 17:29:50.851 [pool-21-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/1160621440 , code: 401
+2017-11-03 17:29:51.154 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:51.480 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:51.481 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:52.035 [pool-22-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=西安百媚美容美发有限责任公司日化厂
+2017-11-03 17:29:52.063 [pool-22-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:53.568 [pool-23-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/752168844
+2017-11-03 17:29:53.569 [pool-23-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/752168844 , code: 401
+2017-11-03 17:29:53.870 [pool-22-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:54.203 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:54.205 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:54.496 [pool-24-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州百家灸生物科技有限公司
+2017-11-03 17:29:54.517 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:54.855 [pool-25-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2827533360
+2017-11-03 17:29:54.856 [pool-25-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2827533360 , code: 401
+2017-11-03 17:29:55.156 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:55.482 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:55.482 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:56.255 [pool-26-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=江西肤宝生物科技有限公司
+2017-11-03 17:29:56.294 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:56.651 [pool-27-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/496052482
+2017-11-03 17:29:56.652 [pool-27-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/496052482 , code: 401
+2017-11-03 17:29:56.952 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:57.282 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:57.284 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:57.962 [pool-28-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东旭睿美医疗科技有限公司
+2017-11-03 17:29:58.005 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:58.585 [pool-29-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063901887
+2017-11-03 17:29:58.586 [pool-29-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3063901887 , code: 401
+2017-11-03 17:29:58.887 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:59.211 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:29:59.212 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:29:59.543 [pool-30-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州捷通日化制造有限公司
+2017-11-03 17:29:59.579 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:00.289 [pool-31-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3064010140
+2017-11-03 17:30:00.290 [pool-31-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3064010140 , code: 401
+2017-11-03 17:30:00.590 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:00.915 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:00.916 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:01.216 [pool-32-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻赛生物科技有限公司
+2017-11-03 17:30:01.238 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:01.579 [pool-33-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3047255615
+2017-11-03 17:30:01.579 [pool-33-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3047255615 , code: 401
+2017-11-03 17:30:01.879 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:02.210 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:02.211 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:02.523 [pool-34-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=上海维尔雅化妆品有限公司
+2017-11-03 17:30:02.556 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:02.889 [pool-35-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/381387524
+2017-11-03 17:30:02.889 [pool-35-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/381387524 , code: 401
+2017-11-03 17:30:03.190 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:03.519 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:03.528 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:04.448 [pool-36-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻美化妆品科技有限公司
+2017-11-03 17:30:04.469 [pool-36-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:04.781 [pool-37-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2353477918
+2017-11-03 17:30:04.781 [pool-37-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2353477918 , code: 401
+2017-11-03 17:30:05.082 [pool-36-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:05.405 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:05.408 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:06.881 [pool-38-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州恒澜生物科技有限公司
+2017-11-03 17:30:06.902 [pool-38-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:12.025 [pool-39-thread-1] WARN  u.c.webmagic.downloader.HttpClientDownloader - download page https://www.tianyancha.com/company/2989235024 error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-03 17:30:12.327 [pool-38-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:12.653 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:12.663 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:16.433 [pool-40-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州市艾琦润生物科技有限公司
+2017-11-03 17:30:16.465 [pool-40-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:18.118 [pool-41-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2962713491
+2017-11-03 17:30:18.119 [pool-41-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2962713491 , code: 401
+2017-11-03 17:30:18.419 [pool-40-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:18.744 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:18.744 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:30:22.639 [pool-42-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州旖美化妆品有限公司
+2017-11-03 17:30:27.982 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:30:27.983 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 17:30:28.051 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 17:30:28.051 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2017-11-03 17:30:28.051 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2017-11-03 17:30:28.055 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2017-11-03 17:32:50.113 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 17:32:51.168 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 8184 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 17:32:51.168 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 17:32:54.468 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 17:32:54.619 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 17:32:55.501 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 17:32:55.507 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 17:33:02.887 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 17:33:02.888 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 17:33:03.349 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57abe94d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3962b216, org.springframework.security.web.header.HeaderWriterFilter@7b43f95c, org.springframework.security.web.csrf.CsrfFilter@384b3fe7, org.springframework.security.web.authentication.logout.LogoutFilter@61d527ac, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51eafec0, org.springframework.security.web.session.ConcurrentSessionFilter@51b11186, org.springframework.security.web.session.ConcurrentSessionFilter@2dd4a7a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31a80c88, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41f61188, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@135a8808, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d957cf0, org.springframework.security.web.session.SessionManagementFilter@7ef3aa21, org.springframework.security.web.access.ExceptionTranslationFilter@72d7afff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64f49b3]
+2017-11-03 17:33:04.828 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 17:33:05.594 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 17:33:05.594 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 17:33:05.594 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 17:33:08.696 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 18.001 seconds (JVM running for 19.701)
+2017-11-03 17:33:11.044 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:16.392 [pool-1-thread-1] WARN  u.c.webmagic.downloader.HttpClientDownloader - download page https://www.tianyancha.com/company/80223669 error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-03 17:33:16.701 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:16.724 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 17:33:16.949 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***21
+2017-11-03 17:33:16.954 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:18.420 [pool-2-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州金圣业生物科技有限公司
+2017-11-03 17:33:18.721 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:19.115 [pool-3-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014034594
+2017-11-03 17:33:19.116 [pool-3-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014034594 , code: 401
+2017-11-03 17:33:19.417 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:19.744 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:19.746 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:21.107 [pool-4-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南金昌生物技术有限公司
+2017-11-03 17:33:21.150 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:26.207 [pool-5-thread-1] WARN  u.c.webmagic.downloader.HttpClientDownloader - download page https://www.tianyancha.com/company/789588571 error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:282)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-03 17:33:26.508 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:26.840 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:26.841 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:27.332 [pool-6-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东博然堂生物科技有限公司
+2017-11-03 17:33:27.369 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:27.870 [pool-7-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014556957
+2017-11-03 17:33:27.870 [pool-7-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014556957 , code: 401
+2017-11-03 17:33:28.170 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:28.499 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:28.500 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:28.903 [pool-8-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=珠海宝德润生健康产品制造有限公司
+2017-11-03 17:33:28.934 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:32.417 [pool-9-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2320452636
+2017-11-03 17:33:32.417 [pool-9-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2320452636 , code: 401
+2017-11-03 17:33:32.717 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:33.043 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:33.044 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:33.409 [pool-10-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东康绿宝科技实业有限公司
+2017-11-03 17:33:33.437 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:33.830 [pool-11-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1367840777
+2017-11-03 17:33:33.830 [pool-11-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/1367840777 , code: 401
+2017-11-03 17:33:34.132 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:34.471 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:34.473 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:37.755 [pool-12-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=深圳市壹芳化妆品有限公司
+2017-11-03 17:33:37.784 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:38.685 [pool-13-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063526758
+2017-11-03 17:33:38.686 [pool-13-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3063526758 , code: 401
+2017-11-03 17:33:38.987 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:39.309 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:39.309 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:40.984 [pool-14-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州和佳润颜医药有限公司
+2017-11-03 17:33:41.016 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:42.009 [pool-15-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3052516068
+2017-11-03 17:33:42.009 [pool-15-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3052516068 , code: 401
+2017-11-03 17:33:42.309 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:42.632 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:42.633 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:42.941 [pool-16-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=盘锦鸿海钻采技术发展有限公司洗化分公司
+2017-11-03 17:33:42.978 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:43.534 [pool-17-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2314951605
+2017-11-03 17:33:43.535 [pool-17-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2314951605 , code: 401
+2017-11-03 17:33:43.838 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:44.184 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:44.185 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:44.576 [pool-18-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南省花信云日用品有限公司
+2017-11-03 17:33:44.621 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:44.987 [pool-19-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2964836744
+2017-11-03 17:33:44.988 [pool-19-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2964836744 , code: 401
+2017-11-03 17:33:45.288 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:45.614 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:45.615 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:45.960 [pool-20-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=济南惠农玫瑰花精油有限公司
+2017-11-03 17:33:45.991 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:46.570 [pool-21-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1160621440
+2017-11-03 17:33:46.570 [pool-21-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/1160621440 , code: 401
+2017-11-03 17:33:46.870 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:47.194 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:47.194 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:47.545 [pool-22-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=西安百媚美容美发有限责任公司日化厂
+2017-11-03 17:33:47.590 [pool-22-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:47.992 [pool-23-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/752168844
+2017-11-03 17:33:47.992 [pool-23-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/752168844 , code: 401
+2017-11-03 17:33:48.293 [pool-22-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:48.620 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:48.621 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:49.075 [pool-24-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州百家灸生物科技有限公司
+2017-11-03 17:33:49.121 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:49.429 [pool-25-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2827533360
+2017-11-03 17:33:49.429 [pool-25-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2827533360 , code: 401
+2017-11-03 17:33:49.729 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:50.058 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:50.059 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:50.363 [pool-26-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=江西肤宝生物科技有限公司
+2017-11-03 17:33:50.390 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:50.765 [pool-27-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/496052482
+2017-11-03 17:33:50.765 [pool-27-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/496052482 , code: 401
+2017-11-03 17:33:51.075 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:51.415 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:51.415 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:51.793 [pool-28-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东旭睿美医疗科技有限公司
+2017-11-03 17:33:51.819 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:52.138 [pool-29-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063901887
+2017-11-03 17:33:52.139 [pool-29-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3063901887 , code: 401
+2017-11-03 17:33:52.440 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:52.774 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:52.777 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:53.135 [pool-30-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州捷通日化制造有限公司
+2017-11-03 17:33:53.156 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:53.526 [pool-31-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3064010140
+2017-11-03 17:33:53.526 [pool-31-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3064010140 , code: 401
+2017-11-03 17:33:53.826 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:54.148 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:54.150 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:54.658 [pool-32-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻赛生物科技有限公司
+2017-11-03 17:33:54.696 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:55.622 [pool-33-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3047255615
+2017-11-03 17:33:55.623 [pool-33-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3047255615 , code: 401
+2017-11-03 17:33:55.923 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:56.244 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:56.245 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:56.665 [pool-34-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=上海维尔雅化妆品有限公司
+2017-11-03 17:33:56.683 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:57.497 [pool-35-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/381387524
+2017-11-03 17:33:57.498 [pool-35-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/381387524 , code: 401
+2017-11-03 17:33:57.798 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:58.124 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:58.124 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:58.482 [pool-36-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻美化妆品科技有限公司
+2017-11-03 17:33:58.501 [pool-36-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:58.836 [pool-37-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2353477918
+2017-11-03 17:33:58.837 [pool-37-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2353477918 , code: 401
+2017-11-03 17:33:59.137 [pool-36-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:59.459 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:33:59.459 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:33:59.814 [pool-38-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州恒澜生物科技有限公司
+2017-11-03 17:33:59.845 [pool-38-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:34:00.276 [pool-39-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2989235024
+2017-11-03 17:34:00.277 [pool-39-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2989235024 , code: 401
+2017-11-03 17:34:00.577 [pool-38-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:34:00.906 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:34:00.908 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:34:01.219 [pool-40-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州市艾琦润生物科技有限公司
+2017-11-03 17:34:01.260 [pool-40-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:34:01.597 [pool-41-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2962713491
+2017-11-03 17:34:01.597 [pool-41-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2962713491 , code: 401
+2017-11-03 17:34:01.897 [pool-40-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:34:02.222 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:34:02.224 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:34:02.730 [pool-42-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州旖美化妆品有限公司
+2017-11-03 17:34:02.759 [pool-42-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:34:03.100 [pool-43-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2318432983
+2017-11-03 17:34:03.101 [pool-43-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2318432983 , code: 401
+2017-11-03 17:34:03.401 [pool-42-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:34:03.723 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:34:03.723 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 17:34:03.747 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 17:34:03.749 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2017-11-03 17:34:03.749 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2017-11-03 17:34:03.756 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2017-11-03 17:38:00.338 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 17:38:01.346 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 9856 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 17:38:01.347 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 17:38:04.509 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 17:38:04.642 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 17:38:05.452 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 17:38:05.457 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 17:38:12.996 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 17:38:12.997 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 17:38:13.267 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e8e02a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@24d73c51, org.springframework.security.web.header.HeaderWriterFilter@4e553d60, org.springframework.security.web.csrf.CsrfFilter@6097f225, org.springframework.security.web.authentication.logout.LogoutFilter@30a6984c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@14580edc, org.springframework.security.web.session.ConcurrentSessionFilter@a74c940, org.springframework.security.web.session.ConcurrentSessionFilter@19d0d1ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f26cd76, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9a16af1, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@23e297d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66576bd2, org.springframework.security.web.session.SessionManagementFilter@45f6181a, org.springframework.security.web.access.ExceptionTranslationFilter@28b7646, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3113595e]
+2017-11-03 17:38:14.762 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 17:38:15.574 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 17:38:15.575 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 17:38:15.575 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 17:38:18.012 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 17.359 seconds (JVM running for 19.287)
+2017-11-03 17:38:20.242 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:38:24.065 [pool-1-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/80223669
+2017-11-03 17:38:24.066 [pool-1-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/80223669 , code: 401
+2017-11-03 17:38:24.392 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:38:24.429 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 17:38:24.622 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***21
+2017-11-03 17:38:24.641 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:38:25.280 [pool-2-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州金圣业生物科技有限公司
+2017-11-03 17:39:57.371 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:39:57.760 [pool-3-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014034594
+2017-11-03 17:39:57.760 [pool-3-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014034594 , code: 401
+2017-11-03 17:39:58.061 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:39:58.395 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:39:58.401 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:39:58.754 [pool-4-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南金昌生物技术有限公司
+2017-11-03 17:40:38.265 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:40:39.575 [pool-5-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/789588571
+2017-11-03 17:40:39.576 [pool-5-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/789588571 , code: 401
+2017-11-03 17:40:39.876 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:40:40.202 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:40:40.204 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:40:40.572 [pool-6-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东博然堂生物科技有限公司
+2017-11-03 17:41:13.538 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:41:13.843 [pool-7-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014556957
+2017-11-03 17:41:13.843 [pool-7-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014556957 , code: 401
+2017-11-03 17:41:14.143 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:41:35.818 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:41:35.818 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:41:36.125 [pool-8-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=珠海宝德润生健康产品制造有限公司
+2017-11-03 17:41:46.799 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:41:47.229 [pool-9-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2320452636
+2017-11-03 17:41:47.229 [pool-9-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2320452636 , code: 401
+2017-11-03 17:41:47.529 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:41:47.852 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:41:47.854 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:41:48.258 [pool-10-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东康绿宝科技实业有限公司
+2017-11-03 17:42:13.894 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:42:14.353 [pool-11-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1367840777
+2017-11-03 17:42:14.354 [pool-11-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/1367840777 , code: 401
+2017-11-03 17:42:14.654 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:42:14.979 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:42:14.980 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:42:15.433 [pool-12-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=深圳市壹芳化妆品有限公司
+2017-11-03 17:43:06.782 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:43:07.231 [pool-13-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063526758
+2017-11-03 17:43:07.233 [pool-13-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3063526758 , code: 401
+2017-11-03 17:43:07.534 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:43:07.856 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:43:07.871 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:43:08.421 [pool-14-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州和佳润颜医药有限公司
+2017-11-03 17:44:01.791 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:44:02.304 [pool-15-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3052516068
+2017-11-03 17:44:02.304 [pool-15-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3052516068 , code: 401
+2017-11-03 17:44:02.604 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:44:02.928 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:44:02.930 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:44:03.241 [pool-16-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=盘锦鸿海钻采技术发展有限公司洗化分公司
+2017-11-03 17:44:25.673 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:44:26.150 [pool-17-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2314951605
+2017-11-03 17:44:26.150 [pool-17-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2314951605 , code: 401
+2017-11-03 17:44:26.454 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:44:26.783 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:44:26.784 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:44:27.088 [pool-18-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南省花信云日用品有限公司
+2017-11-03 17:45:50.526 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:50.820 [pool-19-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2964836744
+2017-11-03 17:45:50.820 [pool-19-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2964836744 , code: 401
+2017-11-03 17:45:51.193 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:51.518 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:51.518 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:51.900 [pool-20-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=济南惠农玫瑰花精油有限公司
+2017-11-03 17:45:54.963 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:55.270 [pool-21-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1160621440
+2017-11-03 17:45:55.270 [pool-21-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/1160621440 , code: 401
+2017-11-03 17:45:55.571 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:55.896 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:55.899 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:57.206 [pool-22-thread-1] WARN  u.c.webmagic.downloader.HttpClientDownloader - download page https://www.tianyancha.com/search?key=西安百媚美容美发有限责任公司日化厂 error
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.read(SessionInputBufferImpl.java:206)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:189)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at java.util.zip.InflaterInputStream.fill(InflaterInputStream.java:238)
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:158)
+	at java.util.zip.GZIPInputStream.read(GZIPInputStream.java:117)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.apache.http.client.entity.LazyDecompressingInputStream.read(LazyDecompressingInputStream.java:64)
+	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:2146)
+	at org.apache.commons.io.IOUtils.copy(IOUtils.java:2102)
+	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:2123)
+	at org.apache.commons.io.IOUtils.copy(IOUtils.java:2078)
+	at org.apache.commons.io.IOUtils.toByteArray(IOUtils.java:721)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.handleResponse(HttpClientDownloader.java:111)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:86)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-03 17:45:57.507 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:57.508 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:57.790 [pool-23-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州百家灸生物科技有限公司
+2017-11-03 17:45:57.823 [pool-23-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:58.215 [pool-24-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2827533360
+2017-11-03 17:45:58.216 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2827533360 , code: 401
+2017-11-03 17:45:58.516 [pool-23-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:58.838 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:45:58.840 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:59.269 [pool-25-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=江西肤宝生物科技有限公司
+2017-11-03 17:45:59.291 [pool-25-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:45:59.649 [pool-26-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/496052482
+2017-11-03 17:45:59.649 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/496052482 , code: 401
+2017-11-03 17:45:59.950 [pool-25-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:00.276 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:00.279 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:01.619 [pool-27-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东旭睿美医疗科技有限公司
+2017-11-03 17:46:01.640 [pool-27-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:01.951 [pool-28-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063901887
+2017-11-03 17:46:01.951 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3063901887 , code: 401
+2017-11-03 17:46:02.254 [pool-27-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:02.591 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:02.593 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:03.005 [pool-29-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州捷通日化制造有限公司
+2017-11-03 17:46:03.037 [pool-29-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:03.321 [pool-30-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3064010140
+2017-11-03 17:46:03.322 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3064010140 , code: 401
+2017-11-03 17:46:03.623 [pool-29-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:03.948 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:03.949 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:04.534 [pool-31-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻赛生物科技有限公司
+2017-11-03 17:46:04.563 [pool-31-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:04.883 [pool-32-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3047255615
+2017-11-03 17:46:04.884 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3047255615 , code: 401
+2017-11-03 17:46:05.184 [pool-31-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:05.508 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:05.509 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:05.838 [pool-33-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=上海维尔雅化妆品有限公司
+2017-11-03 17:46:05.868 [pool-33-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:06.370 [pool-34-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/381387524
+2017-11-03 17:46:06.370 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/381387524 , code: 401
+2017-11-03 17:46:06.670 [pool-33-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:06.994 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:06.996 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:07.345 [pool-35-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻美化妆品科技有限公司
+2017-11-03 17:46:07.388 [pool-35-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:07.708 [pool-36-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2353477918
+2017-11-03 17:46:07.709 [pool-36-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2353477918 , code: 401
+2017-11-03 17:46:08.009 [pool-35-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:08.333 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:08.333 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:09.683 [pool-37-thread-1] WARN  u.c.webmagic.downloader.HttpClientDownloader - download page https://www.tianyancha.com/search?key=广州恒澜生物科技有限公司 error
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.read(SessionInputBufferImpl.java:206)
+	at org.apache.http.impl.io.ChunkedInputStream.read(ChunkedInputStream.java:189)
+	at org.apache.http.conn.EofSensorInputStream.read(EofSensorInputStream.java:135)
+	at java.util.zip.InflaterInputStream.fill(InflaterInputStream.java:238)
+	at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:158)
+	at java.util.zip.GZIPInputStream.read(GZIPInputStream.java:117)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.apache.http.client.entity.LazyDecompressingInputStream.read(LazyDecompressingInputStream.java:64)
+	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:2146)
+	at org.apache.commons.io.IOUtils.copy(IOUtils.java:2102)
+	at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:2123)
+	at org.apache.commons.io.IOUtils.copy(IOUtils.java:2078)
+	at org.apache.commons.io.IOUtils.toByteArray(IOUtils.java:721)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.handleResponse(HttpClientDownloader.java:111)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:86)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-03 17:46:09.984 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:09.985 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:10.535 [pool-38-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州市艾琦润生物科技有限公司
+2017-11-03 17:46:10.575 [pool-38-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:10.932 [pool-39-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2962713491
+2017-11-03 17:46:10.932 [pool-39-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2962713491 , code: 401
+2017-11-03 17:46:11.232 [pool-38-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:11.555 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:11.555 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:12.049 [pool-40-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州旖美化妆品有限公司
+2017-11-03 17:46:12.072 [pool-40-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 17:46:12.339 [pool-41-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2318432983
+2017-11-03 17:46:12.340 [pool-41-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/2318432983 , code: 401
+2017-11-03 17:46:12.640 [pool-40-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:12.964 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 17:46:12.964 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 17:46:12.990 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 17:46:12.991 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2017-11-03 17:46:12.991 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2017-11-03 17:46:12.993 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2017-11-03 17:59:47.858 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 17:59:48.970 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 7624 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 17:59:48.971 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 17:59:52.140 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 17:59:52.302 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 17:59:52.957 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 17:59:52.962 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 18:00:00.193 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 18:00:00.194 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 18:00:00.727 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@796e2187, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ab3f611, org.springframework.security.web.header.HeaderWriterFilter@122ea8dc, org.springframework.security.web.csrf.CsrfFilter@3c2f310c, org.springframework.security.web.authentication.logout.LogoutFilter@60f1f95b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62ff14cd, org.springframework.security.web.session.ConcurrentSessionFilter@632d1b1b, org.springframework.security.web.session.ConcurrentSessionFilter@c3ca482, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44aa5585, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51a69e8f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@32e9c3af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c2fa57a, org.springframework.security.web.session.SessionManagementFilter@239bc43f, org.springframework.security.web.access.ExceptionTranslationFilter@74d776fb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10230657]
+2017-11-03 18:00:02.086 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 18:00:03.013 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 18:00:03.013 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 18:00:03.013 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 18:00:05.003 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 16.874 seconds (JVM running for 18.338)
+2017-11-03 18:01:02.787 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:01:03.420 [pool-1-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/80223669
+2017-11-03 18:01:03.421 [pool-1-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/80223669 , code: 401
+2017-11-03 18:01:03.726 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:01:03.752 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 18:01:03.939 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***21
+2017-11-03 18:01:03.946 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:01:04.291 [pool-2-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州金圣业生物科技有限公司
+2017-11-03 18:01:18.075 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:01:18.503 [pool-3-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014034594
+2017-11-03 18:01:18.504 [pool-3-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/3014034594 , code: 401
+2017-11-03 18:01:18.806 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:01:19.132 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:01:19.136 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:01:19.529 [pool-4-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南金昌生物技术有限公司
+2017-11-03 18:02:52.798 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:02:53.192 [pool-5-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/789588571
+2017-11-03 18:02:53.193 [pool-5-thread-1] INFO  us.codecraft.webmagic.Spider - page status code error, page https://www.tianyancha.com/company/789588571 , code: 401
+2017-11-03 18:02:53.493 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:02:53.815 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:02:53.818 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:02:54.176 [pool-6-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东博然堂生物科技有限公司
+2017-11-03 18:04:01.074 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 18:04:02.030 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 2408 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 18:04:02.031 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 18:04:05.281 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 18:04:05.459 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 18:04:06.055 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 18:04:06.061 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 18:04:13.226 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 18:04:13.226 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 18:04:13.226 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 18:04:13.226 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 18:04:13.226 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 18:04:13.227 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 18:04:13.227 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 18:04:13.227 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 18:04:13.614 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1631dbbc, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a34772e, org.springframework.security.web.header.HeaderWriterFilter@6c3a7b84, org.springframework.security.web.csrf.CsrfFilter@498f5728, org.springframework.security.web.authentication.logout.LogoutFilter@2823b7c5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43edd2ea, org.springframework.security.web.session.ConcurrentSessionFilter@3b663112, org.springframework.security.web.session.ConcurrentSessionFilter@1bb78ae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6870a76f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12aa2cca, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4cd9ee2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a1858a, org.springframework.security.web.session.SessionManagementFilter@1f6ba47b, org.springframework.security.web.access.ExceptionTranslationFilter@5b2ade46, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75312c94]
+2017-11-03 18:04:15.050 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 18:04:15.883 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 18:04:15.884 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 18:04:15.884 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 18:04:18.308 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 16.947 seconds (JVM running for 18.194)
+2017-11-03 18:04:20.208 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:04:24.115 [pool-1-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/80223669
+2017-11-03 18:06:37.915 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:37.944 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 18:06:38.021 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***21
+2017-11-03 18:06:38.039 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:38.394 [pool-2-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州金圣业生物科技有限公司
+2017-11-03 18:06:38.449 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:39.163 [pool-3-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014034594
+2017-11-03 18:06:40.218 [pool-2-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:40.542 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:40.545 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:40.869 [pool-4-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南金昌生物技术有限公司
+2017-11-03 18:06:40.911 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:42.575 [pool-5-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/789588571
+2017-11-03 18:06:43.523 [pool-4-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:43.850 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:43.852 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:44.255 [pool-6-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东博然堂生物科技有限公司
+2017-11-03 18:06:44.295 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:44.906 [pool-7-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3014556957
+2017-11-03 18:06:46.307 [pool-6-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:46.631 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:46.632 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:46.991 [pool-8-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=珠海宝德润生健康产品制造有限公司
+2017-11-03 18:06:47.023 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:48.774 [pool-9-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2320452636
+2017-11-03 18:06:49.607 [pool-8-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:49.932 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:49.932 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:50.468 [pool-10-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东康绿宝科技实业有限公司
+2017-11-03 18:06:50.495 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:51.768 [pool-11-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1367840777
+2017-11-03 18:06:53.633 [pool-11-thread-1] INFO  c.c.e.s.product.impl.TBrEnterpriseServiceImpl - ***无法律诉讼更新数据***
+2017-11-03 18:06:53.933 [pool-10-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:54.257 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:54.257 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:55.094 [pool-12-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=深圳市壹芳化妆品有限公司
+2017-11-03 18:06:55.116 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:55.724 [pool-13-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063526758
+2017-11-03 18:06:56.751 [pool-12-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:57.075 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:57.076 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:57.560 [pool-14-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州和佳润颜医药有限公司
+2017-11-03 18:06:57.580 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:58.324 [pool-15-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3052516068
+2017-11-03 18:06:58.969 [pool-14-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:59.294 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:06:59.295 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:06:59.616 [pool-16-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=盘锦鸿海钻采技术发展有限公司洗化分公司
+2017-11-03 18:06:59.641 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:00.153 [pool-17-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2314951605
+2017-11-03 18:07:00.682 [pool-16-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:01.020 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:01.021 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:01.349 [pool-18-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=湖南省花信云日用品有限公司
+2017-11-03 18:07:01.368 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:02.362 [pool-19-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2964836744
+2017-11-03 18:07:03.150 [pool-18-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:03.471 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:03.471 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:04.177 [pool-20-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=济南惠农玫瑰花精油有限公司
+2017-11-03 18:07:04.212 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:06.261 [pool-21-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/1160621440
+2017-11-03 18:07:06.965 [pool-21-thread-1] INFO  c.c.e.s.product.impl.TBrEnterpriseServiceImpl - ***无法律诉讼更新数据***
+2017-11-03 18:07:07.268 [pool-20-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:07.590 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:07.591 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:08.452 [pool-22-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=西安百媚美容美发有限责任公司日化厂
+2017-11-03 18:07:08.489 [pool-22-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:09.172 [pool-23-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/752168844
+2017-11-03 18:07:09.693 [pool-22-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:10.021 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:10.023 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:10.415 [pool-24-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州百家灸生物科技有限公司
+2017-11-03 18:07:10.436 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:12.059 [pool-25-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/2827533360
+2017-11-03 18:07:12.841 [pool-24-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:13.164 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:13.165 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:13.769 [pool-26-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=江西肤宝生物科技有限公司
+2017-11-03 18:07:13.797 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:15.939 [pool-27-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/496052482
+2017-11-03 18:07:16.666 [pool-26-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:16.989 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:16.989 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:17.255 [pool-28-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广东旭睿美医疗科技有限公司
+2017-11-03 18:07:17.311 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:17.921 [pool-29-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3063901887
+2017-11-03 18:07:18.764 [pool-28-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:19.088 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:19.090 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:19.384 [pool-30-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州捷通日化制造有限公司
+2017-11-03 18:07:19.417 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:21.347 [pool-31-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3064010140
+2017-11-03 18:07:22.119 [pool-30-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:22.442 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:22.442 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:22.771 [pool-32-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻赛生物科技有限公司
+2017-11-03 18:07:22.815 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:23.536 [pool-33-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/3047255615
+2017-11-03 18:07:24.266 [pool-32-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:24.590 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:24.591 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:24.870 [pool-34-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=上海维尔雅化妆品有限公司
+2017-11-03 18:07:24.910 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:26.110 [pool-35-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/381387524
+2017-11-03 18:07:26.884 [pool-34-thread-1] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:27.208 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:27.216 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:27.593 [pool-36-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻美化妆品科技有限公司
+2017-11-03 18:07:32.929 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:32.930 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:33.144 [pool-37-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州恒澜生物科技有限公司
+2017-11-03 18:07:38.479 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:38.480 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:38.696 [pool-38-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州市艾琦润生物科技有限公司
+2017-11-03 18:07:44.029 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:44.032 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:07:44.254 [pool-39-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州旖美化妆品有限公司
+2017-11-03 18:07:49.588 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:07:49.588 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 18:07:49.618 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 18:07:49.620 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2017-11-03 18:07:49.620 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2017-11-03 18:07:49.621 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2017-11-03 18:12:29.423 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 18:12:30.554 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 8512 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 18:12:30.554 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 18:12:33.573 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 18:12:33.777 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 18:12:34.292 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 18:12:34.297 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 18:12:41.978 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 18:12:41.979 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 18:12:42.628 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49ee3b8d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a013b23, org.springframework.security.web.header.HeaderWriterFilter@3ff3275b, org.springframework.security.web.csrf.CsrfFilter@6cb417fc, org.springframework.security.web.authentication.logout.LogoutFilter@426940f9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@528c4353, org.springframework.security.web.session.ConcurrentSessionFilter@79486f38, org.springframework.security.web.session.ConcurrentSessionFilter@611a91df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15651402, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cb376a3, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7fb02606, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b364f47, org.springframework.security.web.session.SessionManagementFilter@5b76b891, org.springframework.security.web.access.ExceptionTranslationFilter@2a525f88, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f958d4a]
+2017-11-03 18:12:43.879 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 18:12:44.710 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 18:12:44.710 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 18:12:44.710 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 18:12:47.112 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 17.383 seconds (JVM running for 18.796)
+2017-11-03 18:12:49.476 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:12:50.146 [pool-1-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/80223669
+2017-11-03 18:12:55.623 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com closed! 1 pages downloaded.
+2017-11-03 18:12:55.653 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - 全部抓取完毕
+2017-11-03 18:12:56.112 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - ***需要获取的企业数据数量***4
+2017-11-03 18:12:56.117 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:12:56.592 [pool-2-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/search?key=广州蔻美化妆品科技有限公司
+2017-11-03 18:15:32.990 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest3GetEnterpriseInfo]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-11-03 18:15:34.350 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Starting DataTest3GetEnterpriseInfo on SKY-20160518SVB with PID 9064 (started by Administrator in D:\Workspaces2\package\management)
+2017-11-03 18:15:34.350 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - No active profile set, falling back to default profiles: default
+2017-11-03 18:15:37.448 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2017-11-03 18:15:37.613 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-11-03 18:15:38.619 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-11-03 18:15:38.626 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-11-03 18:15:46.445 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2017-11-03 18:15:46.445 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2017-11-03 18:15:46.446 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2017-11-03 18:15:46.446 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2017-11-03 18:15:46.446 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2017-11-03 18:15:46.446 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2017-11-03 18:15:46.446 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-11-03 18:15:46.446 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2017-11-03 18:15:46.764 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70940cb8, org.springframework.security.web.context.SecurityContextPersistenceFilter@37fd496a, org.springframework.security.web.header.HeaderWriterFilter@49f9758, org.springframework.security.web.csrf.CsrfFilter@6c3a7b84, org.springframework.security.web.authentication.logout.LogoutFilter@659ac28c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1ee52741, org.springframework.security.web.session.ConcurrentSessionFilter@47fce2c4, org.springframework.security.web.session.ConcurrentSessionFilter@77acc95a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27ac3b6d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13cae908, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1640a6b5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3810806c, org.springframework.security.web.session.SessionManagementFilter@209b4b35, org.springframework.security.web.access.ExceptionTranslationFilter@6bcfb561, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10f192d8]
+2017-11-03 18:15:48.090 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-11-03 18:15:48.906 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2017-11-03 18:15:48.908 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2017-11-03 18:15:48.909 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2017-11-03 18:15:51.365 [main] INFO  com.co.example.DataTest3GetEnterpriseInfo - Started DataTest3GetEnterpriseInfo in 17.7 seconds (JVM running for 19.821)
+2017-11-03 18:15:53.638 [main] INFO  us.codecraft.webmagic.Spider - Spider www.tianyancha.com started!
+2017-11-03 18:15:58.312 [pool-1-thread-1] INFO  u.c.webmagic.downloader.HttpClientDownloader - downloading page success https://www.tianyancha.com/company/80223669

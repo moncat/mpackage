@@ -60,6 +60,11 @@ public class HomeController {
         return "home/welcome";
     }
     
+	@RequestMapping(value = {"/error403"},method = { RequestMethod.GET, RequestMethod.POST })
+	public String error403(Model model) throws Exception{
+		return "error403";
+	}
+	
 	
 
 }

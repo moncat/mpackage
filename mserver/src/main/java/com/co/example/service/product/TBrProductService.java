@@ -53,6 +53,12 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	List<String> queryOperEnterpriseFromProduct();
 	
 	int updateByArea(TBrProductQuery query);
+	/**
+	 * 显示一条商品记录（移动端）
+	 * @param id
+	 * @return
+	 */
+	TBrProduct showOneProduct4Mobile(Long id);
 	
 	
 	

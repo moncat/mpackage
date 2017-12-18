@@ -6906,6 +6906,9 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                     'p{margin:5px 0;}</style>' +
                     ( options.iframeCssUrl ? '<link rel=\'stylesheet\' type=\'text/css\' href=\'' + utils.unhtml(options.iframeCssUrl) + '\'/>' : '' ) +
                     (options.initialStyle ? '<style>' + options.initialStyle + '</style>' : '') +
+                    
+                    
+                    
                     '</head><body class=\'view\' ></body>' +
                     '<script type=\'text/javascript\' ' + (ie ? 'defer=\'defer\'' : '' ) +' id=\'_initialScript\'>' +
                     'setTimeout(function(){editor = window.parent.UE.instants[\'ueditorInstant' + me.uid + '\'];editor._setup(document);},0);' +
@@ -10787,6 +10790,8 @@ UE.plugin.register('autosubmit',function(){
                             return;
                         }
                         me.sync();
+                        var token = $('meta[name="_csrf"]').attr("content");
+                        form.action+='&_csrf='+token;
                         form.submit();
                     }
                 }
@@ -24511,6 +24516,10 @@ UE.plugin.register('simpleupload', function (){
 
                 domUtils.on(iframe, 'load', callback);
                 form.action = utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
+                //2017年12月8日添加，处理spring security 拦截 多部件上传   by zyl
+                var token = $('meta[name="_csrf"]').attr("content");
+                form.action+='&_csrf='+token;
+                
                 form.submit();
             });
 

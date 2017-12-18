@@ -2,10 +2,7 @@ package com.co.example.service.product.impl;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -23,7 +20,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +32,6 @@ import com.co.example.aide.TmallData;
 import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.HttpUtils;
 import com.co.example.common.utils.JsoupUtil;
-import com.co.example.common.utils.UrlUtil;
 import com.co.example.dao.product.TBrProductSpecDao;
 import com.co.example.entity.comment.TBrProductCommentStatistics;
 import com.co.example.entity.comment.aide.Comment;
@@ -55,19 +50,12 @@ import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
 import com.co.example.service.spec.TBrSpecKeyService;
 import com.co.example.service.spec.TBrSpecValueService;
-import com.co.example.simulateLogin.ProxyUtil;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.entity.BaseEntity;
 import com.github.moncat.common.service.BaseServiceImpl;
 import com.google.common.collect.Lists;
 
 import lombok.extern.slf4j.Slf4j;
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.downloader.HttpClientDownloader;
-import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.proxy.Proxy;
-import us.codecraft.webmagic.proxy.SimpleProxyProvider;
 
 @Slf4j
 @Service
@@ -107,9 +95,8 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	TBrProduct tBrProduct;
 	Byte sourceType;
 	List<TBrSpecKey> tbrSpecKeyList ;
-	String tmallSkuId;
 	String sellerId;
-	
+	int count = 0;
 	@Override
 	public int addData(TBrProduct tBrProduct,Byte sourceType,List<TBrSpecKey> tbrSpecKeyList,WebDriver chrome) {
 		this.tBrProduct = tBrProduct;
@@ -171,20 +158,18 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 			this.encode = "gbk";
 			Document doc = null;
 			try {
-//				String data = HttpUtils.getData(searchUrl,encode);
-//				if(StringUtils.isBlank(data)){
-//					log.info("未抓取到天猫数据："+productName);
-//					return 6;
-//				}
-//				doc = Jsoup.parse(data);
-				
-				chrome.get(searchUrl);
+				try {
+					chrome.get(searchUrl);
+				} catch (Exception e1) {
+					log.info("请求超时");
+					return 5;
+				}
 				String data = chrome.getPageSource();
 				doc = Jsoup.parse(data);
 				
-//				doc = JsoupUtil.getDoc(searchUrl, encode);
 				String title = doc.select("title").text();
 				if(StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found") || StringUtils.equals(title, "SecurityMatrix") ){
+					Thread.sleep(5000);
 					log.info("未抓取到天猫数据!!!："+productName);
 					return 5;
 				}
@@ -199,40 +184,66 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 					return 4;
 				}else{
 					Elements goodsList = doc.select("#J_ItemList");
-					
 					if(goodsList.size()>0){
 						Elements good = goodsList.select("div.product").eq(0);
 						this.skuId = good.attr("data-id");
 						String tmallSkuUrl = good.select(".productImg-wrap a").attr("href");
-						Map<String, String> urlSplit = UrlUtil.urlSplit(tmallSkuUrl);
-						this.tmallSkuId = urlSplit.get("skuid");
-						
-						this.skuUrl = "https://detail.tmall.com/item.htm?id="+skuId;
-						this.skuDoc = JsoupUtil.getDoc(skuUrl, encode);
+						this.skuUrl="https://detail.tmall.com/item.htm?id="+skuId;
+						chrome.get("https:"+tmallSkuUrl);
+//						Thread.sleep(1000);
+						String pageSource = chrome.getPageSource();
+						this.skuDoc = Jsoup.parse(pageSource);
 						if(skuDoc == null){
 							return 0;
 						};
-						String skuStr = skuDoc.toString();
-						skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
-						skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
-						this.sellerId = skuStr.replace(":", "").replace("\"", "");
-						
+						try{
+							String skuStr = skuDoc.toString();
+							skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
+							skuStr = skuStr.substring(skuStr.indexOf("=")+1,skuStr.indexOf("&amp;"));
+							this.sellerId = skuStr.replace(":", "").replace("\"", "");							
+						}catch(Exception e){
+							log.info("***获取sellerId失败***");
+						}
 						//获得图片
 						getTmallImages();
 						//获得规格参数
 						getTmallSpecData();
 						//获得聊天统计
 						getTmallCommentStatisticsData();
-						//获得价格，无销量,url
-						getTmallBaseData();
+						//获得价格,url
+						int status = getTmallBaseData(chrome);
+						if(status == 5){
+							log.info("***获取价格，销量，请求超时***"+productName);
+							return 0;
+						}
+						
 						log.info("抓取天猫完毕："+productName+"***"+productId);
 					}else{
 						log.info("未抓取到天猫数据!!!2："+productName);
-						return 5;
+						String currentUrl = chrome.getCurrentUrl();
+						if(currentUrl.indexOf("login.tmall")>-1){
+							log.info("需要重新登录***"+productName);
+							return 5;
+						}
+						if(currentUrl.indexOf("error")>-1){
+							TBrProduct product = new TBrProduct();
+							product.setId(productId);
+							product.setTmallUrl(searchUrl);
+							tBrProductService.updateByIdSelective(product);
+							log.info("出现错误页面***"+productName);
+							return 0;
+						}
+						count++;
+						if(count>10){
+							count =0;
+							log.info("***请求被拒绝"+count+"***"+productName);
+							return 5;
+						}
+						return 0;
 					}
 				}
 				
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 				return 0;
 			}
@@ -243,43 +254,11 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		return 0;
 	}
 
-
-	
-	@Override
-	public int addDataWM(TBrProduct tBrProduct, Byte sourceType, List<TBrSpecKey> tbrSpecKeyList,WebDriver chrome) {
-		
-		this.tBrProduct = tBrProduct;
-		this.productId = tBrProduct.getId();
-		this.sourceType = sourceType;
-		this.productName = StringEscapeUtils.unescapeHtml4(tBrProduct.getProductName().replace(" ", ""));
-		this.tbrSpecKeyList =tbrSpecKeyList;
-		
-		String ipPort = ProxyUtil.getInfo();
-		Set<Cookie> cookies = chrome.manage().getCookies();
-		for (Iterator iterator = cookies.iterator(); iterator.hasNext();) {
-			Cookie cookie = (Cookie) iterator.next();
-			//使用webmagic框架继续爬取
-			site.addCookie(cookie.getName(), cookie.getValue());
-		}
-		String productName = tBrProduct.getProductName();
-		productName.replace(" ", "");
-		String newurl = ProductConstant.TMALL_PRODUCT_SEARCH_URL+productName;
-		HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
-		ipPort = ProxyUtil.getInfo();
-		String[] split = ipPort.split(":");
-		Proxy proxyStr = new Proxy(split[0],Integer.parseInt(split[1]));
-		httpClientDownloader.setProxyProvider(SimpleProxyProvider.from(proxyStr));
-		Spider spider = Spider.create(new TmallProxy());
-		spider.addUrl(newurl).run();
-		return 0;
-	}
-	
 	
 	private void getTmallImages() {
 		Elements images = skuDoc.select("#J_UlThumb li img");
 		saveImages(images);
 	}
-
 
 	private void getTmallSpecData() {
 		Elements specs = skuDoc.select("#J_AttrUL li");
@@ -330,6 +309,7 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		TBrSpecValueQuery tBrSpecValueQuery  = null;
 		valueNames = valueNames.replace(";", "；");
 		valueNames = valueNames.replace(" ", "；");
+		valueNames = valueNames.replace(" ","；");
 		String[] valueNameArr = valueNames.split("；");
 		for (String valueName : valueNameArr) {
 			if(StringUtils.isNoneBlank(valueName)){
@@ -390,24 +370,37 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	}
 
 	
-	private void getTmallBaseData() {
-		//售价 销量
-		String jsonStr = TmallData.httpRequest(skuId);
-		String priceStr = TmallData.getPriceFromJson(jsonStr, tmallSkuId);
-		String saleStr = TmallData.getsellCountFromJson(jsonStr);
+	private int getTmallBaseData(WebDriver chrome) {				
 		
-		TBrProduct product = new TBrProduct();
-		product.setId(productId);
-		product.setTmallUrl(skuUrl);
-		product.setSales(Integer.parseInt(saleStr));
-		product.setTmallPrice(transformPrice(priceStr));
-		tBrProductService.updateByIdSelective(product);
-		
+		try {
+			String saleStr = skuDoc.select(".tm-ind-sellCount .tm-count").text();
+			String priceStr = skuDoc.select("#J_StrPriceModBox .tm-price").text();
+			if(priceStr.indexOf("-")>0){
+				priceStr = priceStr.split("-")[0];
+			}
+			TBrProduct product = new TBrProduct();
+			int saleInt = 0;
+			product.setTmallPrice(transformPrice(priceStr));
+			try {
+				saleInt = Integer.parseInt(saleStr);
+			} catch (NumberFormatException e) {
+				log.info("销量格式化错误");
+				product.setTmallPrice(BigDecimal.ZERO);
+			}							
+			product.setId(productId);
+			product.setTmallUrl(skuUrl);
+			product.setSales(saleInt);
+			tBrProductService.updateByIdSelective(product);
+		} catch (Exception e1) {
+			log.info("请求超时");
+			return 5;
+		}			
+		return 0;
 	}
 
 	
 	//
-	public static void main1(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 		String url = "https://mdskip.taobao.com/core/initItemDetail.htm?"
 				+ "tryBeforeBuy=false&isApparel=false&isPurchaseMallPage=false"
 				+ "&isForbidBuyItem=false"
@@ -621,106 +614,58 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	@Override
 	public List<Comment> getComment(Long id) {
 		List<Comment> commentList = Lists.newArrayList();
-		TBrProduct tBrProduct = tBrProductService.queryById(id);
-		String jdUrl = tBrProduct.getJdUrl();
-		String JdSkuId =getJdSkuId(jdUrl);
-		if(StringUtils.isNoneBlank(JdSkuId)){
-			List<Comment> jdCommentDetails = JdData.getCommentDetails(JdSkuId);	
-			commentList.addAll(jdCommentDetails);
+		List<Comment> jdComments = getJdComments(id);
+		if(jdComments!=null){
+			commentList.addAll(jdComments);
 		}
+		List<Comment> tmallComments = getTmallComments(id);
+		if(jdComments!=null){
+			commentList.addAll(tmallComments);
+		}
+		return commentList;
+	}
+
 		
-		
+	@Override
+	public List<Comment> getTmallComments(Long id) {
+		TBrProduct tBrProduct = tBrProductService.queryById(id);
 		String tmallUrl = tBrProduct.getTmallUrl();
 		try {
 			this.skuDoc = JsoupUtil.getDoc(tmallUrl, "GBK");
 			this.skuId = getTmallId(tmallUrl);
 		} catch (InterruptedException e) {
 			log.info("***天猫url不正确，无法获得评论***");
-//			e.printStackTrace();
 		}
 		if(skuDoc != null && StringUtils.isNoneBlank(skuId)){
 			String skuStr = skuDoc.toString();
 			skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
 			skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
 			this.sellerId = skuStr.replace(":", "").replace("\"", "");
-			List<Comment> tmallCommentDetails = TmallData.getCommentDetails(skuId,sellerId);
-			commentList.addAll(tmallCommentDetails);
+			List<Comment> tmallComments = TmallData.getCommentDetails(skuId,sellerId);
+			return tmallComments;
 		};
-		
-		return commentList;
+		return null;
 	}
+
+
+	@Override
+	public List<Comment> getJdComments(Long id) {
+		TBrProduct tBrProduct = tBrProductService.queryById(id);
+		String jdUrl = tBrProduct.getJdUrl();
+		String JdSkuId =getJdSkuId(jdUrl);
+		if(StringUtils.isNoneBlank(JdSkuId)){
+			List<Comment> jdCommentDetails = JdData.getCommentDetails(JdSkuId);	
+			return jdCommentDetails;
+		}
+		return null;
+	}
+
+
+
+
 
 	
 	
-	//tmall使用
-	//webmagic 爬虫
-		private Site site = Site.me().setDomain("www.tmall.com").setCharset("gbk").setSleepTime(300).setUserAgent(
-				"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31");
-		class TmallProxy implements PageProcessor {
-			@Override
-			public void process(us.codecraft.webmagic.Page page) {
-				Document doc = Jsoup.parse(page.getHtml().toString());
-				try {
-					String searchUrl = ProductConstant.TMALL_PRODUCT_SEARCH_URL+productName;
-					
-					String title = doc.select("title").text();
-					if(StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found") || StringUtils.equals(title, "SecurityMatrix") ){
-						log.info("未抓取到天猫数据!!!："+productName);
-						return ;
-					}
-					Elements ns = doc.select(".searchTip");
-					if(CollectionUtils.isNotEmpty(ns)){
-						//并未找到该产品数据
-						log.info("***未查询到该商品***"+productName);
-						TBrProduct product = new TBrProduct();
-						product.setId(productId);
-						product.setTmallUrl(searchUrl);
-						tBrProductService.updateByIdSelective(product);
-						return ;
-					}else{
-						Elements goodsList = doc.select("#J_ItemList");
-						
-						if(goodsList.size()>0){
-							Elements good = goodsList.select("div.product").eq(0);
-							skuId = good.attr("data-id");
-							String tmallSkuUrl = good.select(".productImg-wrap a").attr("href");
-							Map<String, String> urlSplit = UrlUtil.urlSplit(tmallSkuUrl);
-							tmallSkuId = urlSplit.get("skuid");
-							
-							skuUrl = "https://detail.tmall.com/item.htm?id="+skuId;
-							skuDoc = JsoupUtil.getDoc(skuUrl, encode);
-							if(skuDoc == null){
-								return ;
-							};
-							String skuStr = skuDoc.toString();
-							skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
-							skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
-							sellerId = skuStr.replace(":", "").replace("\"", "");
-							
-							//获得图片
-							getTmallImages();
-							//获得规格参数
-							getTmallSpecData();
-							//获得聊天统计
-							getTmallCommentStatisticsData();
-							//获得价格，无销量,url
-							getTmallBaseData();
-							log.info("抓取天猫完毕："+productName+"***"+productId);
-						}else{
-							log.info("未抓取到天猫数据!!!2："+productName);
-							return ;
-						}
-					}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					return ;
-				}
-			}
-			@Override
-			public Site getSite() {
-				return site;
-			}
-		}
 	
 }
 

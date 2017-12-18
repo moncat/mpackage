@@ -20,25 +20,21 @@ public class CustomUserDetailsService implements UserDetailsService {
     
 	@Autowired 
     private TAdminService tAdminService;
-
+	
     @Override
     public UserDetails loadUserByUsername(String userName) throws AuthenticationException {
     	if (StringUtils.isBlank(userName)) {
         	throw new BadCredentialsException("账户不能为空！！");
         }
         TAdmin admin = tAdminService.queryByLoginName(userName);
-        
         if (admin == null) {
             throw new UsernameNotFoundException("该账户不存在！");
         }
         if(admin.getIsActive() == Constant.STATUS_NOT_ACTIVE){
         	throw new BadCredentialsException("该账户已被锁定，请联系管理员！");
         }
-        
         CustomUserDetails customUserDetails = new CustomUserDetails((TAdminVo) admin);
         return customUserDetails; 
-
     }
-    
 
 }

@@ -249,9 +249,12 @@
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+     <if test="tmallUrlIsNotNull" >
+	      and t.tmall_url is not null
+      </if>
+     <if test="jdUrlIsNotNull" >
+	      and t.jd_url is not null
+      </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->

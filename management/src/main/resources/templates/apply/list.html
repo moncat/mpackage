@@ -1,0 +1,106 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 活动管理 
+		<span class="c-gray en">&gt;</span> 申请列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<!-- 
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			<form action="/apply/list">
+				<div class="text-c"> 
+					活动名称：<input type="text" class="input-text" style="width:200px" placeholder="活动名称" id="" th:value="${query.activityId}" name="activityId"/> 
+					申请人：<input type="text" class="input-text" style="width:200px" placeholder="申请人" id="" th:value="${query.createBy}" name="createBy"/> 
+					申请时间：<input type="text" class="input-text" style="width:200px" placeholder="申请时间" id="" th:value="${query.createTime}" name="createTime"/> 
+					审批人：<input type="text" class="input-text" style="width:200px" placeholder="审批人" id="" th:value="${query.operBy}" name="operBy"/> 
+					审批：<input type="text" class="input-text" style="width:200px" placeholder="审批" id="" th:value="${query.operTime}" name="operTime"/> 
+					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				</div>
+			</form>
+		</div>
+		 -->
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+					<th><input type="checkbox" /></th>
+					<th>序号</th>
+					<th>活动名称</th>
+					<th>申请人</th>
+					<th>申请时间</th>
+					<th>审批人</th>
+					<th>审批时间</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr  class="text-c">
+						<td><input type="checkbox" /></td>
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td >
+							<a class="btn-link" th:href="@{'/activity/show/'+${one.activityId}}" title="查看活动详情" target="_blank">
+								<span th:utext="${one.title}"></span>
+							</a>
+						</td>
+						<td th:text="${one.userDisplayName}"></td>
+						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td th:text="${one.adminDisplayName}"></td>
+						<td th:text="${#dates.format(one.operTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td class="td-status" th:switch="${one.isActive}" >
+							<span th:case="0" >已拒绝</span>
+							<span th:case="1" >待审批</span>
+							<span th:case="2" >已通过，待用户填写报告</span>
+							<span th:case="3" >用户报告已提交</span>
+						</td>
+						<td class="td-manage">
+						
+							<a th:hidden="${one.isActive ne 1}" th:attr="data-id=${one.id}"  href="javascript:void(0);" data-flg="2" class="btn-link oper">
+								通过
+							</a>
+							
+							<a th:hidden="${one.isActive ne 1}" th:attr="data-id=${one.id}"   href="javascript:void(0);"  data-flg="0" class="btn-link ml-5 oper" >
+								拒绝
+							</a>
+													
+							<!-- 
+							<a th:hidden="${one.isActive eq 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="停用" class="stop" >
+								<i class="Hui-iconfont">&#xe631;</i>
+							</a>
+							
+							<a th:hidden="${one.isActive ne 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="启用" class="ml-5 start" >
+								<i class="Hui-iconfont">&#xe615;</i>
+							</a>
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
+								<i class="Hui-iconfont">&#xe6e2;</i>
+							</a>
+							 
+						 	<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
+								<i class="Hui-iconfont">&#xe6df;</i>
+							</a> 
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="查看" class="ml-5 show" >
+								<i class="Hui-iconfont">&#xe709;</i>
+							</a> 
+							 -->
+						 </td>
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/apply/list.js"></script>
+</section>
+</html>

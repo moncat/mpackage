@@ -1,0 +1,15 @@
+server:
+  port: 8084
+  session-timeout: 1
+  error:
+    whitelabel.enabled: false
+    path: /error
+  tomcat:
+    uri-encoding: UTF-8   
+
+ueditor:
+ savePath: "/home/ue/"
+ readpath: ""     
+image:
+ imageSavePath: "/home/images/"
+    

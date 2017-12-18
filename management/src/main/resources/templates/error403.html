@@ -1,0 +1,20 @@
+﻿<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main" class="container-fluid page-404 minWP text-c">
+	<p class="error-title">
+		<!-- <i class="Hui-iconfont va-m" style="font-size:80px">&#xe688;</i> -->
+		<span class="va-m">/(ㄒoㄒ)/~~403</span>
+		<span th:text="${status}"></span>
+	</p>
+	<p class="error-description">对不起，您没有访问权限，请联系管理员。</p>
+	<div class="error-info" th:hidden="${param.show eq null}">
+	    timestamp:<span th:if="${timestamp ne null}" th:text="${#dates.format(timestamp, 'yyyy-MM-dd HH:mm:ss')}"/>
+		status:<span th:text="${status}"/>
+	    path:<span th:text="${path}"/>
+   		errmsg:<span th:text="${errmsg}"/>
+    	message:<span th:text="${message}"/>
+	    error:<span th:text="${error}"/>
+	    <br/>
+	    <span class ="text-l" th:utext="${errInfo}"></span><br/>
+	</div>
+</section>
+</html>

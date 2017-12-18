@@ -17,8 +17,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.co.example.common.utils.DateFormatUtil;
-import com.co.example.common.utils.DateParseUtil;
-import com.co.example.common.utils.DateUtil;
 import com.co.example.common.utils.HttpUtils;
 import com.co.example.entity.comment.TBrProductCommentStatistics;
 import com.co.example.entity.comment.aide.Comment;
@@ -35,8 +33,8 @@ import lombok.extern.slf4j.Slf4j;
 public class TmallData {
 	
 		public static void main(String[] args) {
-//			String str = getCommentDetails("553922643276");
-//			System.out.println(str);
+			String str = httpRequest("557787878107", null);
+			System.out.println(str);
 		}
 		
 		
@@ -116,9 +114,18 @@ public class TmallData {
 		 * @return
 		 */
 		public static String getPriceFromJson(String jsonStr,String skuId){
-			String str = jsonStr.substring(jsonStr.indexOf("\"price\""));
-			str = str.substring(str.indexOf(":"),str.indexOf(","));
-			str = str.replace(":", "").replace("\"", "");
+			String str = "";
+			
+			 try {
+				str = jsonStr.substring(jsonStr.indexOf("\"price\""));
+				str = str.substring(str.indexOf(":"),str.indexOf(","));
+				str = str.replace(":", "").replace("\"", "");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+//				e.printStackTrace();
+				log.info("价格解析失败");
+				log.info("***jsonStr***"+jsonStr);
+			}
 			
 //			jsonStr = "{\""+jsonStr+"}";
 //			JSONObject parseObject = JSON.parseObject(jsonStr);
@@ -136,31 +143,40 @@ public class TmallData {
 		 * @param jsonStr
 		 */
 		public static String getsellCountFromJson(String jsonStr){
-			jsonStr = "{\""+jsonStr+"}";
-			JSONObject parseObject = JSON.parseObject(jsonStr);
-			JSONObject jsonObject = parseObject.getJSONObject("Model");
-			JSONObject jsonObject2 = jsonObject.getJSONObject("sellCountDO");
-			String string = jsonObject2.getString("sellCount");
-			return string;
+//			jsonStr = "{\""+jsonStr+"}";
+			String str = "";
+			try {
+//				JSONObject parseObject = JSON.parseObject(jsonStr);
+//				JSONObject jsonObject = parseObject.getJSONObject("Model");
+//				JSONObject jsonObject2 = jsonObject.getJSONObject("sellCountDO");
+//				string = jsonObject2.getString("sellCount");
+				str = jsonStr.substring(jsonStr.indexOf("\"sellCount\""));
+				str = str.substring(str.indexOf(":"),str.indexOf(","));
+				str = str.replace(":", "").replace("\"", "");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return str;
 		}
 		
 	
-		public static String httpRequest(String itemId) {
-			String url = "https://mdskip.taobao.com/core/initItemDetail.htm?"
-					+ "tryBeforeBuy=false&isApparel=false&isPurchaseMallPage=false"
-					+ "&isForbidBuyItem=false"
-					+ "&household=false&offlineShop=false&isRegionLevel=true"
-					+ "&isAreaSell=true&queryMemberRight=true&itemId="+itemId;
-//					+ "&addressLevel=3&isUseInventoryCenter=true&sellerPreview=false"
-//					+ "&cartEnable=true&service3C=false"
-//					+ "&tmallBuySupport=true&showShopProm=false&isSecKill=false";
+		public static String httpRequest(String itemId,String tmallSkuUrl) {
 			
+//			String url="https://mdskip.taobao.com/core/initItemDetail.htm?itemId="+itemId;
+			String url="https://mdskip.taobao.com/core/initItemDetail.htm?addressLevel=2&showShopProm=false&cartEnable=true"
+					+ "&isSecKill=false&queryMemberRight=true&isPurchaseMallPage=false&tmallBuySupport=true"
+					+ "&household=false&isApparel=false&sellerPreview=false&cachedTimestamp=1511759634285"
+					+ "&isUseInventoryCenter=false&isForbidBuyItem=false&service3C=false&itemId="+itemId;
+//					+ "&offlineShop=false&isAreaSell=false&tryBeforeBuy=false&isRegionLevel=false"
+//					+ "&callback=setMdskip&timestamp=1511760176974&isg=null&isg2=AhcXOsEjAXUUUIX5-Tv6lJRipouh9OsE8mfsyGlEFeZNmDfacSx7DtX4jA59";
+
 			HttpClientBuilder builder = HttpClients.custom();
-			builder.setUserAgent("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:0.9.4)");
+			
+			builder.setUserAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36");
 			CloseableHttpClient httpClient = builder.build();
 			final HttpGet httpGet = new HttpGet(url);
-			httpGet.addHeader("Referer", "https://detail.tmall.com/item.htm?"
-					+ "&id="+itemId
+			httpGet.addHeader("Referer", ""+tmallSkuUrl
 					);
 			CloseableHttpResponse response = null;
 			String result = null;

@@ -35,7 +35,7 @@ $elem.label：<input type="text" class="input-text" style="width:200px" placehol
 					<th><input type="checkbox" /></th>
 					<th>序号</th>
 					#foreach( $elem in $dataList)
-					<th>$elem.label</th>
+<th>$elem.label</th>
 					#end
 					<th>创建时间</th>
 					<th>状态</th>
@@ -68,6 +68,10 @@ $elem.label：<input type="text" class="input-text" style="width:200px" placehol
 						 	<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
 								<i class="Hui-iconfont">&#xe6df;</i>
 							</a> 
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="查看" class="ml-5 show" >
+								<i class="Hui-iconfont">&#xe709;</i>
+							</a> 
 						 </td>
 					</tr>					
 				</section>
@@ -77,7 +81,6 @@ $elem.label：<input type="text" class="input-text" style="width:200px" placehol
 	</div>
 </section>
 <section layout:fragment="my">
-	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 	<script type="text/javascript" src="/js/$!{foo}/list.js"></script>
 </section>
 </html>

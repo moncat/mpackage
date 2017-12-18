@@ -1,0 +1,46 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+<style type="text/css">
+
+	#tagsList {
+		position: relative;
+		width: 650px;
+		height: 650px;
+		margin: 0 auto 0;
+	}
+	
+	#tagsList a {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		font-family: Microsoft YaHei;
+		color: #000;
+		font-weight: bold;
+		text-decoration: none;
+		padding: 3px 6px;
+	}
+	
+	#tagsList a:hover {
+		color: #FF0000;
+		letter-spacing: 2px;
+		font-size: 20px;
+  		border: 3px solid blue;
+	}
+</style>
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 标签云 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="line"></div>
+	<a href="javascript:void(0);" class=" mt-20 ml-20 btn btn-success  radius add"><i class="Hui-iconfont">&#xe600;</i> 添加</a>
+	<div id="tagsList"  > 
+  			 <a th:each="one,status:${list}" th:href="@{'/label/detail/'+${one.id}}" target="_blank" th:utext="${one.name}"></a> 
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/label/list.js"></script>
+	<script type="text/javascript" src="/js/label/tags.js"></script>
+</section>
+</html>

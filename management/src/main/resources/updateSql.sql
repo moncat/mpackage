@@ -146,5 +146,13 @@ UPDATE `t_br_product` set jd_url ='0'  where jd_url is null;
 UPDATE `t_br_product` set  tmall_url ='0' where tmall_url is null;
 
 
+-- 2017年11月27日
+新增用户表
+用户验证表
+
+
+
+
+
 
 

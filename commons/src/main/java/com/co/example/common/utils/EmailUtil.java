@@ -10,7 +10,7 @@ import org.apache.commons.mail.HtmlEmail;
 public class EmailUtil {
 
 	/** 日志记录 */
-	protected static final Log logger = LogFactory.getLog(SmsUtil.class);
+	protected static final Log logger = LogFactory.getLog(EmailUtil.class);
 
 	/**
 	 * 发送email

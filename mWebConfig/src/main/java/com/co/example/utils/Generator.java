@@ -15,7 +15,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
 import com.co.example.bean.GeInfo;
-import com.co.example.entity.product.TBrAim;
+import com.co.example.entity.log.TBrLogAdmin;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 
@@ -24,19 +24,21 @@ import com.google.common.io.Files;
  */
 public class Generator {
 
-	static String model = "aim";
+	static String model = "logadmin";
 	
-	static Class<TBrAim> entity = TBrAim.class;
+	static Class<TBrLogAdmin> entity = TBrLogAdmin.class;
 	
 	static String basePath="D:/Workspaces2/package/management/src/main/resources/";
 
-	public static void main(String[] args) {
-//		initData();
+	public static void main(String[] args) {  //geData
 		// 修改配置文件
+//		initData();
+		
+		ge(Type.list);	
+		
 //		ge(Type.add);
 //		ge(Type.edit);		
-		ge(Type.list);		
-		ge(Type.show);
+//		ge(Type.show);
 	}
 
 	public static void initData() {
@@ -49,7 +51,7 @@ public class Generator {
 				sb.append("--"+displayName + "--1--true--1--100\n");
 			}
 		}
-		sb.append("#1、文本框 2、下拉框 3、单选 4、复选 5、多行文本 6、日期 7、上传\n");
+		sb.append("#1、文本框 2、下拉框 3、单选 4、复选 5、多行文本 6、日期 7、上传 8、百度UE编辑器\n");
 		
 		File file = new File("src/main/resources/geData.txt");
 		try {

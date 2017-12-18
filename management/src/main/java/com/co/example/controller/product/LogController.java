@@ -25,13 +25,18 @@ import com.co.example.common.utils.PageReq;
 import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.brand.TBrProductBrand;
+import com.co.example.entity.label.TBrLabel;
+import com.co.example.entity.label.TBrProductLabel;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.ProductConstant;
 import com.co.example.entity.product.aide.TBrLogQuery;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.label.TBrLabelService;
+import com.co.example.service.label.TBrProductLabelService;
 import com.co.example.service.product.TBrProductService;
+import com.github.moncat.common.entity.BaseEntity;
 import com.google.common.collect.Maps;
 
 import lombok.extern.slf4j.Slf4j;
@@ -42,6 +47,9 @@ import lombok.extern.slf4j.Slf4j;
 public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	
 	@Resource
+	TBrLabelService tBrLabelService;
+	
+	@Resource
     TBrBrandService tBrBrandService;
 	
 	@Resource
@@ -49,6 +57,9 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	
 	@Resource
 	TBrProductBrandService tBrProductBrandService;
+	
+	@Resource
+	TBrProductLabelService tBrProductLabelService;
 	
 	
 	//定时
@@ -103,6 +114,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 						EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
 						log.info("***开始执行品牌匹配***"+dateStr);
 						brand(dateStr);
+						label(dateStr);
 					}
 					break;
 				}
@@ -159,6 +171,50 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		}
 		log.info("***定时品牌匹配完毕***"+i);
 	}
+	
+	
+	
+	//定时抓取cfda数据后，定时匹配标签
+	public void label(String dateStr) throws InterruptedException {
+		List<TBrLabel> labels = tBrLabelService.queryList();
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setConfirmDate(dateStr);
+		List<TBrProduct> tBrProductList = tBrProductService.queryList(tBrProductQuery);
+		String productName = null;
+		String labelName = null;
+		Long labelId = 0l;
+		int i = 0;
+		try {
+			if(CollectionUtils.isNotEmpty(tBrProductList)){
+				for (TBrProduct tBrProduct : tBrProductList) {
+					productName = tBrProduct.getProductName();
+					i++;
+					if(StringUtils.isNoneBlank(productName)){
+						for (TBrLabel label : labels) {
+							labelName = label.getName();
+							labelId = label.getId();
+							if(StringUtils.isNoneBlank(labelName)){
+								if(productName.contains(labelName)){
+									TBrProductLabel tBrProductLabel = new TBrProductLabel();
+									tBrProductLabel.setLabelId(labelId);
+									tBrProductLabel.setProductId(tBrProduct.getId());
+									setDefaultData(tBrProductLabel);
+									tBrProductLabelService.add(tBrProductLabel);
+									log.info("定时标签匹配成功！ "+productName+"["+labelName+"]");
+									tBrProductService.saveLog(Constant.YES, labelName, i, productName, null);
+								}
+							}
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			tBrProductService.saveLog(Constant.NO, labelName, i, productName, e);
+			e.printStackTrace();
+		}
+		log.info("***定时标签匹配完毕***"+i);
+	}
+	
 	
     //定时爬取bevol数据 ，如果有数据则爬取， 每天早上3点开始执行，并记录日志
 	//暂时不开起
@@ -236,6 +292,28 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		};
 		
 	}
+	
+	/**
+	 * 全量匹配  暂时不做进一步修改，需求再确定
+	 * @param startDateStr  保留参数
+	 * @param startPage  标签起始匹配号 
+	 * @throws InterruptedException
+	 */
+	@ResponseBody
+	@RequestMapping(value="label",method = { RequestMethod.GET, RequestMethod.POST })
+	public void label(String startDateStr4, Integer startPage4) throws InterruptedException {
+		List<TBrLabel> labels = tBrLabelService.queryList();
+		TBrLabel label = null;
+		int count =  0;
+		int size = labels.size();
+		for (int j = startPage4; j < size; j++) {
+			label = labels.get(j);
+			count = tBrLabelService.addConnect2Product(label);
+			log.info("匹配第"+j+"个："+label.getName()+"("+label.getId()+") 成功数量："+count);
+		};
+	}
+	
+	
 	
 	/**
 	 * 弃用，请参见 brandNew 方法
@@ -331,7 +409,11 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	}
 	
 	
-	
+	private void setDefaultData(BaseEntity be) {
+		be.setCreateTime(new Date());
+		be.setDelFlg(Constant.NO);
+		be.setIsActive(Constant.STATUS_ACTIVE);
+	}
 }
 
 

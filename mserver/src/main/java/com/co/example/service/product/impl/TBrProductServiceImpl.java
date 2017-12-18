@@ -37,6 +37,7 @@ import com.co.example.entity.product.aide.TBrAimQuery;
 import com.co.example.entity.product.aide.TBrEnterpriseQuery;
 import com.co.example.entity.product.aide.TBrIngredientQuery;
 import com.co.example.entity.product.aide.TBrIngredientVo;
+import com.co.example.entity.product.aide.TBrProductImageQuery;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.entity.product.aide.TBrProductVo;
 import com.co.example.service.product.TBrAimService;
@@ -738,6 +739,23 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	public int updateByArea(TBrProductQuery query) {
 		return tBrProductDao.updateByArea(query);
 	}
+
+
+	@Override
+	public TBrProduct showOneProduct4Mobile(Long id) {
+		
+		TBrProductVo one = queryVoById(id);
+		Byte source = 4; //取天猫的图片
+		TBrProductImageQuery tBrProductImageQuery = new TBrProductImageQuery();
+		tBrProductImageQuery.setProductId(id);
+		tBrProductImageQuery.setSource(source);
+		List<TBrProductImage> list = tBrProductImageService.queryList(tBrProductImageQuery);
+		TBrProductImage image = list.get(0);
+		one.setImage(image);
+		return one;
+	}
+	
+	
 	
 //	public static void main(String[] args) {
 //		HashMap<String, String> params = Maps.newHashMap();

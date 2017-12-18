@@ -1,12 +1,9 @@
 package com.co.example;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -67,8 +64,10 @@ public class DataTest8TmallAndJD {
 	{
 		//切换代理
 		String ipPort = ProxyUtil.getInfo();
-		chrome = initBrowser(ipPort);
+//		chrome = initBrowser(ipPort);
 //		chrome = initBrowser(null);
+		chrome = BrowserFactory.getChrome(ipPort);
+//		chrome = BrowserFactory.getChrome(null);
 	}
 	 
 	 WebDriver initBrowser(String ipPort){
@@ -88,13 +87,15 @@ public class DataTest8TmallAndJD {
 		//查询未匹配的数据
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		PageReq pageReq = new PageReq();
-		pageReq.setPage(1);
-		pageReq.setPageSize(500);
+		pageReq.setPage(30);
+		pageReq.setPageSize(2000);
 		if(k == ProductConstant.PRODUCT_SOURCE_JD){
 			tBrProductQuery.setJdUrl("0");
 			log.info("***抓取京东数据***");
 		}else if(k == ProductConstant.PRODUCT_SOURCE_TMALL){
 			tBrProductQuery.setTmallUrl("0");
+//			tBrProductQuery.setUseTmallUrlNotNullFlg(true);
+//			tBrProductQuery.setTmp(true);
 			log.info("***抓取天猫数据***");
 		}else{
 			log.info("***数据来源设置错误***");
@@ -104,25 +105,24 @@ public class DataTest8TmallAndJD {
 		long queryCount = tBrProductService.queryCount(tBrProductQuery);
 		log.info("***剩余待抓取***"+queryCount);
 		while(queryCount>0){
-			Page<TBrProduct> pageList = tBrProductService.querySimplePageList(tBrProductQuery , pageReq);
+			Long tmp = queryCount;
+			Page<TBrProduct> pageList = tBrProductService.queryPageList(tBrProductQuery , pageReq);
 			List<TBrProduct> content = pageList.getContent();
 			List<TBrSpecKey> tbrSpecKeyList = tBrSpecKeyService.queryList();
 			for (TBrProduct tBrProduct : content) {
-				Thread.sleep(1000);
-				//该抓取业务将在TBrProductSpecService编写
+//				Thread.sleep(500);
+				tmp--;
+				log.info("***tmpNum***"+tmp);
 				int addData = tBrProductSpecService.addData(tBrProduct, k,tbrSpecKeyList,chrome);
 				if(addData == 5){
-					//切换代理 TODO
 					chrome.quit();
-					log.info("***睡眠等待***");
-					Thread.sleep(180000);
-					chrome = initBrowser(null);
-					//暂无代理
-//					String ipPort = ProxyUtil.getInfo();
-//					chrome = BrowserFactory.getChrome(ipPort);
-//					log.info("***切换代理ip***"+ipPort);
-					//webmagic
-//					tBrProductSpecService.addDataWM(tBrProduct, k, tbrSpecKeyList,chrome);
+					log.info("***睡眠一会***");
+					Thread.sleep(15000);
+//					chrome = initBrowser(null);
+					String ipPort = ProxyUtil.getInfo();
+					chrome = BrowserFactory.getChrome(ipPort);
+//					chrome = initBrowser(ipPort);
+					log.info("***切换代理ip***"+ipPort);
 				}
 			}
 			queryCount = tBrProductService.queryCount(tBrProductQuery);

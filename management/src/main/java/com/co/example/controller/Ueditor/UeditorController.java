@@ -27,7 +27,7 @@ public class UeditorController {
 	
 	
 	@RequestMapping(value = "/add", method = { RequestMethod.GET,RequestMethod.POST })
-	public void add(Model model,HttpServletRequest request, HttpServletResponse response  )throws Exception {
+	public void add(Model model,HttpServletRequest request, HttpServletResponse response )throws Exception {
 		request.setCharacterEncoding( "utf-8" );
 		response.setHeader("Content-Type" , "text/html");
         try {  

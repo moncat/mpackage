@@ -319,6 +319,14 @@
             <artifactId>tess4j</artifactId>
             <version>3.1.0</version>
         </dependency>
+		<!-- 用于数据特殊处理 -->
+		<!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
+		<dependency>
+		    <groupId>commons-dbutils</groupId>
+		    <artifactId>commons-dbutils</artifactId>
+		    <version>1.7</version>
+		</dependency>
+		
 		
 	</dependencies>
   

@@ -1,7 +1,5 @@
 package com.co.example.controller.product;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.co.example.common.utils.DateFormatUtil;
 import com.co.example.common.utils.PageReq;
 import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.brand.TBrBrand;
@@ -54,9 +51,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Controller
 @RequestMapping("product")
 public class ProductController extends BaseControllerHandler<TBrProductQuery> {
@@ -88,23 +82,22 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@Inject
 	TBrProductCommentStatisticsService tBrProductCommentStatisticsService;
 	
-	
+	static final String PRODUCT_TOTAIL = "productTotail";
 	
 	
 	@Override
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			PageReq pageReq, TBrProductQuery query) {
+		
+		
 		Integer ecType = query.getEcType();
 		if(ecType == 1){
 			query.setUseTmallUrlNotNullFlg(true);
 		}else if(ecType == 2){
 			query.setUseJdUrlNotNullFlg(true);
 		}
-		
-//		query.setJoinBrandFlg(joinBrandFlg);
-		
 		pageReq.setPageSize(15);
-		return super.listExt(model, session, request, response, pageReq, query);
+		return false;
 	}
 
 
@@ -146,8 +139,6 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		model.addAttribute("enterpriseList", enterpriseList);
 		return true;
 	}
-	
-	
 	
 	
 	//品牌

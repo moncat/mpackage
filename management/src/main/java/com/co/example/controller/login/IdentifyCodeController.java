@@ -34,8 +34,9 @@ public class IdentifyCodeController {
     private int xx = 15; 
     private int fontHeight = 18; 
     private int codeY = 25; 
-    char[] codeSequence = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W','X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; 
- 
+//    char[] codeSequence = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W','X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }; 
+    // 去掉   i j l o 1 0  
+    char[] codeSequence = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'K','M', 'N','P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W','X', 'Y', 'Z', '2', '3', '4', '5', '6', '7', '8', '9' }; 
     @RequestMapping("/identifyCode") 
     public void getCode(HttpSession session, HttpServletResponse resp)throws IOException { 
     	createCode(session, resp, SessionConstant.SESSION_IDENTITY_CODE);
@@ -80,7 +81,7 @@ public class IdentifyCodeController {
         // 随机产生codeCount数字的验证码。  
         for (int i = 0; i < codeCount; i++) { 
             // 得到随机产生的验证码数字。  
-            String code = String.valueOf(codeSequence[random.nextInt(36)]); 
+            String code = String.valueOf(codeSequence[random.nextInt(30)]); 
             // 产生随机的颜色分量来构造颜色值，这样输出的每位数字的颜色值都将不同。  
             red = random.nextInt(255); 
             green = random.nextInt(255); 

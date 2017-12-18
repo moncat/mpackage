@@ -4,6 +4,7 @@ package com.co.example.security;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,6 +22,8 @@ import org.springframework.security.web.authentication.rememberme.JdbcTokenRepos
 import org.springframework.security.web.session.ConcurrentSessionFilter;
 import org.springframework.security.web.session.SessionInformationExpiredStrategy;
 import org.springframework.security.web.session.SimpleRedirectSessionInformationExpiredStrategy;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.MultipartFilter;
 
 import com.co.example.constant.CookieConstant;
 
@@ -34,6 +37,7 @@ import com.co.example.constant.CookieConstant;
 @EnableGlobalMethodSecurity(prePostEnabled = true)//开启security注解
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+
 	@Autowired
 	private DataSource dataSource;
 	
@@ -46,7 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-    
+
+	
 	@Autowired
     private SessionRegistry sessionRegistry;
 
@@ -60,8 +65,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        .addFilter(new CaptchaAuthenticationFilter())
 //        .addFilterAfter(filter, afterFilter)
 //        .addFilterAt(filter, atFilter)
-//        .addFilterBefore(filter, beforeFilter)
+//          .addFilter(new MultipartFilter())
 	      .addFilterAt(new ConcurrentSessionFilter(sessionRegistry,sessionInformationExpiredStrategy()),ConcurrentSessionFilter.class)
+//	      .addFilterBefore(new MultipartFilter(), ConcurrentSessionFilter.class)
 		  
 //			应用配置        
 //        .apply(configurer)
@@ -100,9 +106,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .authenticationDetailsSource(authenticationDetailsSource)
                 
-                //session
+                //session              
                 .and()
-               
 				.sessionManagement()
 				.sessionAuthenticationErrorUrl("/login")
                 .invalidSessionUrl("/login")
@@ -126,12 +131,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
 //                .addLogoutHandler(logoutHandler)
                 .deleteCookies(CookieConstant.COOKIE_ADMIN_KEY)
+                .deleteCookies(CookieConstant.COOKIE_REMEMBER_ME)
                 .logoutSuccessUrl("/login")
                 .permitAll()
                 //成功退出后的操作
 //                .logoutSuccessHandler(logoutSuccessHandler())
                 //销毁session
                 .invalidateHttpSession(true)
+                .and().csrf().requireCsrfProtectionMatcher(new CsrfSecurityRequestMatcher())
                 ;
         
 		

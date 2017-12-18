@@ -38,11 +38,11 @@ public class PhantomjsUtil {
 		
 //		WebElement name = driver.findElement(By.xpath("//input[@class='input-flat-user']"));
 //		name.clear();
-//		name.sendKeys("18254133367");
+//		name.sendKeys("182*");
 
 //		WebElement pass = driver.findElement(By.xpath("//input[@class='input-flat-lock']"));
 //		pass.clear();
-//		pass.sendKeys("07360736");
+//		pass.sendKeys("**");
 		WebElement btn = driver.findElement(By.xpath("//a[@href='/auth/login?return_url=%2F']"));
 		btn.click();
 		String loginUrl =driver.getCurrentUrl();

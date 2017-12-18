@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="${one.id}" name="id"></input>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>问题名称：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.name}" value="" placeholder="问题名称" name="name"/>
+				</div>
+			</div>
+			
+			<div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				   选项1（1分）：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.optionA}" placeholder="选项内容" name="optionA"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				   选项2（2分）：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.optionB}" placeholder="选项内容" name="optionB"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				   选项3（3分）：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.optionC}" placeholder="选项内容" name="optionC"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				   选项4（4分）：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.optionD}" placeholder="选项内容" name="optionD"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				   选项5（2.5分）：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.optionE}" placeholder="选项内容" name="optionE"/>
+				</div>
+			</div>
+			
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				   选项6（5分）：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.optionF}" placeholder="选项内容" name="optionF"/>
+				</div>
+			</div>
+			
+			
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>问题类型：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<span class="select-box">
+					  <select class="select" size="1" name="type">
+					    <option th:selected="${one.type == 1}" value="1" >干油性试题</option>
+					    <option th:selected="${one.type == 2}" value="2">敏感耐受性试题</option>
+					    <option th:selected="${one.type == 3}" value="3">色素沉着性试题</option>
+					    <option th:selected="${one.type == 4}" value="4">皮肤紧致性试题</option>
+					  </select>
+					</span>										
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								问题描述：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+												<textarea class="textarea" th:utext="${one.detail}" value="" placeholder="问题描述" name="detail"/>
+								
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								问题备注：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+												<textarea class="textarea" th:utext="${one.remark}" value="" placeholder="问题备注" name="remark"/>
+								
+				</div>
+			</div>
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/question/edit.js"></script>
+	</section>
+</body>
+</html>

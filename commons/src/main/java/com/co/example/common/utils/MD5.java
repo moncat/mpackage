@@ -358,7 +358,7 @@ public class MD5 {
 	//md5加密
 	public static String encodeStr(String str){
 		MD5 md5 = new MD5();
-		return md5.getMD5ofStr(str);
+		return md5.getMD5ofStr(str).toLowerCase();
 	}
 	
 	public static void main(String[] args) {

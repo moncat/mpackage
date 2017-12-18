@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import com.co.example.interceptor.BaseInterceptor;
+import com.co.example.interceptor.SessionInterceptor;
 /**
  * 拦截器配置
  * @author zyl
@@ -44,10 +45,16 @@ public class ServletContextConfig extends WebMvcConfigurationSupport {
     	return new BaseInterceptor();
     }
     
+    @Bean
+    public SessionInterceptor sessionInterceptor(){
+    	return new SessionInterceptor();
+    }
+    
 
     //添加拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+    	registry.addInterceptor(sessionInterceptor()).addPathPatterns("/**").excludePathPatterns("/identifyCode","/login");
     	registry.addInterceptor(baseInterceptor()).addPathPatterns("/**");
     	addMoreInterceptors(registry);
         super.addInterceptors(registry);

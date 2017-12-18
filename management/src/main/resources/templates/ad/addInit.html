@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				 <span class="c-red">*</span>  广告名称：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" value="" placeholder="广告名称" name="name"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				 <span class="c-red">*</span>  类型：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<div class="formControls col-xs-9 col-sm-10">
+						<div class="skin-minimal">
+						  <div class="radio-box">
+						    <input id="radio-1" type="radio" value="1" name="type"/>
+						    <label for="radio-1">文字</label>
+						  </div>
+						  <div class="radio-box">
+						    <input id="radio-2" type="radio" value="2" name="type"/>
+						    <label for="radio-2">图片</label>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		    <div class="row cl hideDiv">
+				<label class="form-label col-xs-3 col-sm-2">
+				 广告图：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input   type="file"  id="file"  class="input-text" value="" placeholder="广告图" name="file"/>
+					<input type="hidden" class="input-text" value="" placeholder="广告图" name="image" id="image"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				 <span class="c-red">*</span>  链接：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" value="" placeholder="链接" name="url"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				 <span class="c-red">*</span>  开始时间：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" class="input-text Wdate" value="" placeholder="开始时间" name="startTime"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				 <span class="c-red">*</span>  结束时间：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" class="input-text Wdate" value="" placeholder="结束时间" name="endTime"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+				 备注：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<textarea  class="textarea" value="" placeholder="备注" name="remark"/>
+				</div>
+			</div>
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="/base/lib/upload/pekeUpload.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/ad/add.js"></script>
+	</section>
+</body>
+</html>

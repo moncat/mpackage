@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.TBrProductImage;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -42,7 +43,9 @@ public class TBrProductVo extends TBrProduct {
 	 */
 	private List<String> activeList;
 	
-	
-	
+	/**
+	 * 为移动端展示一张天猫图片
+	 */
+	private TBrProductImage image;
 	
 }

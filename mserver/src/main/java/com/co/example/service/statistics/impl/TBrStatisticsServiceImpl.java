@@ -1,5 +1,6 @@
 package com.co.example.service.statistics.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.annotation.Resource;
@@ -10,6 +11,9 @@ import com.co.example.common.constant.Constant;
 import com.co.example.dao.statistics.TBrStatisticsDao;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.entity.statistics.TBrStatistics;
+import com.co.example.entity.user.TBrUserStatisticsMonth;
+import com.co.example.entity.user.aide.TBrUserStatisticsConstant;
+import com.co.example.entity.user.aide.TBrUserStatisticsQuery;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
 import com.co.example.service.enterprise.TBrEnterpriseBaseService;
@@ -19,6 +23,8 @@ import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductIngredientService;
 import com.co.example.service.product.TBrProductService;
 import com.co.example.service.statistics.TBrStatisticsService;
+import com.co.example.service.user.TBrUserStatisticsMonthService;
+import com.co.example.service.user.TBrUserStatisticsService;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.service.BaseServiceImpl;
 
@@ -55,6 +61,12 @@ public class TBrStatisticsServiceImpl extends BaseServiceImpl<TBrStatistics, Lon
     
     @Resource
     TBrProductImageService tBrProductImageService;
+    
+	@Resource
+	TBrUserStatisticsService uss;
+	
+	@Resource
+	TBrUserStatisticsMonthService usms;
     
     
 	@Override
@@ -116,6 +128,63 @@ public class TBrStatisticsServiceImpl extends BaseServiceImpl<TBrStatistics, Lon
 	    tBrStatistics.setIsActive(Constant.STATUS_ACTIVE);
 		
 		add(tBrStatistics);
+	}
+
+
+	@Override
+	public void addUserData() {
+		TBrUserStatisticsQuery tBrUserStatisticsQuery = new TBrUserStatisticsQuery();
+		tBrUserStatisticsQuery.setDelFlg(Constant.NO);
+		tBrUserStatisticsQuery.setIsActive(Constant.YES);
+		//上个月第一天00:00:00 
+		tBrUserStatisticsQuery.setSmallTime(getSmallTime());
+		//上个月最后一天23:59:59 
+		tBrUserStatisticsQuery.setBigTime(getBigTime());
+		
+		tBrUserStatisticsQuery.setType(TBrUserStatisticsConstant.REGISTER);
+		addUserDataNow(tBrUserStatisticsQuery);
+		tBrUserStatisticsQuery.setType(TBrUserStatisticsConstant.EXAM);
+		addUserDataNow(tBrUserStatisticsQuery);
+		tBrUserStatisticsQuery.setType(TBrUserStatisticsConstant.CONSULT);
+		addUserDataNow(tBrUserStatisticsQuery);
+		
+	}
+
+
+	private void addUserDataNow(TBrUserStatisticsQuery tBrUserStatisticsQuery) {
+		long registerCount = uss.queryCount(tBrUserStatisticsQuery);
+		TBrUserStatisticsMonth tBrUserStatisticsMonth = new TBrUserStatisticsMonth();
+		tBrUserStatisticsMonth.setCount(Integer.parseInt(registerCount+""));
+		usms.add(tBrUserStatisticsMonth);
+	}
+	
+	
+	static Date getBigTime(){
+		Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.set(Calendar.DAY_OF_MONTH,0);
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        Date date = calendar.getTime();
+        return date;
+	}
+	
+	static Date getSmallTime(){
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		calendar.add(Calendar.MONTH, -1);
+		calendar.set(Calendar.DAY_OF_MONTH,1);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		Date date = calendar.getTime();
+		return date;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(getBigTime());
+		System.out.println(getSmallTime());
 	}
 }
 

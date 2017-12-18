@@ -22,6 +22,13 @@ $(function(){
 		});
 	});
 	
+	$('#labelBtn').on('click',function(){
+		$('#result3').text("");
+		$.post('/log/label',$("#form4").serialize(),function(data){
+			$('#result3').text(data.desc);
+		});
+	});
+	
 	
 	
 	$('.add').on('click',function(){

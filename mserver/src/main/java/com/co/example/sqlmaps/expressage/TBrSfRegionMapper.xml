@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.expressage.TBrSfRegionMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.expressage.TBrSfRegion" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="sf_id" property="sfId" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="rate_code" property="rateCode" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="TINYINT" />
+    <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="reach_type" property="reachType" jdbcType="TINYINT" />
+    <result column="lang" property="lang" jdbcType="VARCHAR" />
+    <result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+    <result column="opening" property="opening" jdbcType="TINYINT" />
+    <result column="self_send" property="selfSend" jdbcType="TINYINT" />
+    <result column="self_pickup" property="selfPickup" jdbcType="TINYINT" />
+    <result column="available_as_destination" property="availableAsDestination" jdbcType="TINYINT" />
+    <result column="available_as_origin" property="availableAsOrigin" jdbcType="TINYINT" />
+    <result column="work_add_days" property="workAddDays" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+    <result column="app_id" property="appId" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sf_id, code, rate_code, level, parent_code, name, reach_type, lang, country_code, 
+    opening, self_send, self_pickup, available_as_destination, available_as_origin, work_add_days, 
+    remark, item_order, create_time, create_by, update_time, update_by, is_active, del_flg, 
+    app_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_sf_region
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_sf_region
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.expressage.TBrSfRegion" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_sf_region (id, sf_id, code, 
+      rate_code, level, parent_code, 
+      name, reach_type, lang, 
+      country_code, opening, self_send, 
+      self_pickup, available_as_destination, available_as_origin, 
+      work_add_days, remark, item_order, 
+      create_time, create_by, update_time, 
+      update_by, is_active, del_flg, 
+      app_id)
+    values (#{id,jdbcType=BIGINT}, #{sfId,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{rateCode,jdbcType=INTEGER}, #{level,jdbcType=TINYINT}, #{parentCode,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{reachType,jdbcType=TINYINT}, #{lang,jdbcType=VARCHAR}, 
+      #{countryCode,jdbcType=VARCHAR}, #{opening,jdbcType=TINYINT}, #{selfSend,jdbcType=TINYINT}, 
+      #{selfPickup,jdbcType=TINYINT}, #{availableAsDestination,jdbcType=TINYINT}, #{availableAsOrigin,jdbcType=TINYINT}, 
+      #{workAddDays,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, 
+      #{appId,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.expressage.TBrSfRegion" >
+    update t_br_sf_region
+    <set >
+      <if test="sfId != null" >
+        sf_id = #{sfId,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="rateCode != null" >
+        rate_code = #{rateCode,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=TINYINT},
+      </if>
+      <if test="parentCode != null" >
+        parent_code = #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="reachType != null" >
+        reach_type = #{reachType,jdbcType=TINYINT},
+      </if>
+      <if test="lang != null" >
+        lang = #{lang,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        country_code = #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="opening != null" >
+        opening = #{opening,jdbcType=TINYINT},
+      </if>
+      <if test="selfSend != null" >
+        self_send = #{selfSend,jdbcType=TINYINT},
+      </if>
+      <if test="selfPickup != null" >
+        self_pickup = #{selfPickup,jdbcType=TINYINT},
+      </if>
+      <if test="availableAsDestination != null" >
+        available_as_destination = #{availableAsDestination,jdbcType=TINYINT},
+      </if>
+      <if test="availableAsOrigin != null" >
+        available_as_origin = #{availableAsOrigin,jdbcType=TINYINT},
+      </if>
+      <if test="workAddDays != null" >
+        work_add_days = #{workAddDays,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+      <if test="appId != null" >
+        app_id = #{appId,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.expressage.TBrSfRegion" >
+    update t_br_sf_region
+    set sf_id = #{sfId,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      rate_code = #{rateCode,jdbcType=INTEGER},
+      level = #{level,jdbcType=TINYINT},
+      parent_code = #{parentCode,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      reach_type = #{reachType,jdbcType=TINYINT},
+      lang = #{lang,jdbcType=VARCHAR},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      opening = #{opening,jdbcType=TINYINT},
+      self_send = #{selfSend,jdbcType=TINYINT},
+      self_pickup = #{selfPickup,jdbcType=TINYINT},
+      available_as_destination = #{availableAsDestination,jdbcType=TINYINT},
+      available_as_origin = #{availableAsOrigin,jdbcType=TINYINT},
+      work_add_days = #{workAddDays,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT},
+      app_id = #{appId,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_sf_region t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="sfId != null" >
+          and t.sf_id = #{sfId,jdbcType=VARCHAR}
+      </if>
+      <if test="code != null" >
+          and t.code = #{code,jdbcType=VARCHAR}
+      </if>
+      <if test="rateCode != null" >
+          and t.rate_code = #{rateCode,jdbcType=INTEGER}
+      </if>
+      <if test="level != null" >
+          and t.level = #{level,jdbcType=TINYINT}
+      </if>
+      <if test="parentCode != null" >
+          and t.parent_code = #{parentCode,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null" >
+          and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="reachType != null" >
+          and t.reach_type = #{reachType,jdbcType=TINYINT}
+      </if>
+      <if test="lang != null" >
+          and t.lang = #{lang,jdbcType=VARCHAR}
+      </if>
+      <if test="countryCode != null" >
+          and t.country_code = #{countryCode,jdbcType=VARCHAR}
+      </if>
+      <if test="opening != null" >
+          and t.opening = #{opening,jdbcType=TINYINT}
+      </if>
+      <if test="selfSend != null" >
+          and t.self_send = #{selfSend,jdbcType=TINYINT}
+      </if>
+      <if test="selfPickup != null" >
+          and t.self_pickup = #{selfPickup,jdbcType=TINYINT}
+      </if>
+      <if test="availableAsDestination != null" >
+          and t.available_as_destination = #{availableAsDestination,jdbcType=TINYINT}
+      </if>
+      <if test="availableAsOrigin != null" >
+          and t.available_as_origin = #{availableAsOrigin,jdbcType=TINYINT}
+      </if>
+      <if test="workAddDays != null" >
+          and t.work_add_days = #{workAddDays,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <if test="appId != null" >
+          and t.app_id = #{appId,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_sf_region t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_sf_region t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_sf_region where id in (
+    select t.id from (select * from t_br_sf_region) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.expressage.aide.TBrSfRegionVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.sf_id, 
+    t.code, 
+    t.rate_code, 
+    t.level, 
+    t.parent_code, 
+    t.name, 
+    t.reach_type, 
+    t.lang, 
+    t.country_code, 
+    t.opening, 
+    t.self_send, 
+    t.self_pickup, 
+    t.available_as_destination, 
+    t.available_as_origin, 
+    t.work_add_days, 
+    t.remark, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

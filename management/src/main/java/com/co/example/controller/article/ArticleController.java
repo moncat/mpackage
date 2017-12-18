@@ -14,25 +14,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.co.example.constant.HttpStatusCode;
-import com.co.example.controller.BaseControllerHandler;
 import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.PageReq;
-import com.co.example.entity.article.TArticle;
+import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.article.aide.TArticleQuery;
 import com.co.example.service.article.TArticleService;
 
 @Controller
 @RequestMapping("article")
-public class ArticleController extends BaseControllerHandler<TArticle> {
+public class ArticleController extends BaseControllerHandler<TArticleQuery> {
 	
 	@Inject
 	TArticleService tArticleService;
 	
 	
+
+	
 	@Override
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
-			PageReq pageReq, TArticle query) {
+			PageReq pageReq, TArticleQuery query) {
 		query.setDelFlg(null);
 		return super.listExt(model, session, request, response, pageReq, query);
 	}

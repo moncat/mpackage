@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="${one.id}" name="id"></input>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+						<span class="c-red">*</span>模板标题：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.title}"  placeholder="模板标题" name="title"/>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>模板类型：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<span class="select-box">
+					  <select class="select" size="1" name="typeId" >
+					    <option  th:each="item,status:${types}" th:selected="${item.id == one.typeId }" th:text="${item.name}" th:value="${item.id}" ></option>
+					  </select>
+					</span>
+				 </div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+						模板详情：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<textarea class="textarea" th:utext="${one.detail}" value="" placeholder="模板详情" name="detail"/>
+				</div>
+			</div>
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/messagetmp/edit.js"></script>
+	</section>
+</body>
+</html>

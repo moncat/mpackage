@@ -173,6 +173,9 @@
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
+     <result column="role_name" property="roleName"  jdbcType="VARCHAR" />
+     <result column="name" property="name" jdbcType="VARCHAR" />
+   	 <result column="url" property="url" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Vo_Column_List" >
     t.id, 
@@ -187,14 +190,19 @@
     t.is_active, 
     t.del_flg, 
     t.app_id
+    <if test="joinFlg" >
+	    ,tr.role_name
+	    ,tm.name
+	    ,tm.url
+    </if>
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
   </sql>
   <sql id="Table_Join_Clause" >
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  	  <if test="joinFlg" >
+ 		   left join t_role tr on t.role_id=tr.id
+ 		   left join t_menu tm on t.right_id=tm.id
+      </if>
   </sql>
 </mapper>

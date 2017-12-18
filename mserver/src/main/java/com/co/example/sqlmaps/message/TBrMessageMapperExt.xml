@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.message.TBrMessageMapper" >
+ 
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.message.aide.TBrMessageVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+    <result column="user_display_name" property="userDisplayName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.title, 
+    t.detail, 
+    t.type_id, 
+    t.receive_by, 
+    t.receive_time, 
+    t.is_read, 
+    t.read_time, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id
+     <if test="joinUserFlg" >
+     ,tu.display_name user_display_name
+    </if>
+  </sql>
+  <sql id="Vo_Where_Clause" >
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <if test="joinUserFlg" >
+   		 left join t_user tu on t.receive_by = tu.id
+    </if>
+  </sql>
+</mapper>

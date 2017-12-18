@@ -7,6 +7,8 @@ import java.util.Locale;
 
 public class DateFormatUtil {
 	
+	public static final DateFormat formartDateTimeMs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+	
 	public static final DateFormat formartDateTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
 	public static final DateFormat formartDateNumber = new SimpleDateFormat("yyMMdd");

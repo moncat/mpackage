@@ -53,6 +53,14 @@ public class TBrProductQuery extends TBrProduct {
     
     /** 品牌id */
 	private Long brandId;
+	
+	/** 连接开关  是否关联品牌*/
+	private Boolean joinLabelFlg = false;
+	
+	/** 品牌id */
+	private Long labelId;
+	
+	
 }
 
 

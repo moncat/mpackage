@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.co.example.common.constant.Constant;
 import com.co.example.dao.system.TMenuDao;
+import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.system.TMenu;
 import com.co.example.entity.system.TRole;
 import com.co.example.entity.system.aide.TMenuQuery;
@@ -61,5 +62,11 @@ public class TMenuServiceImpl extends BaseServiceImpl<TMenu, Long> implements TM
 		tMenuQuery.setParentId(id);
 		delete(tMenuQuery);
 		deleteById(id);
+	}
+
+	@Override
+	public List<TMenu> queryMenuByAdmin(TAdmin admin) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

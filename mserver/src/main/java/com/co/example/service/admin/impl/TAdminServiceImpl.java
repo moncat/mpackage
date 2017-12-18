@@ -138,7 +138,7 @@ public class TAdminServiceImpl extends BaseServiceImpl<TAdmin, Long> implements 
 		}
 		
 		//密码加密
-		admin.setPassword(MD5.encodeStr(admin.getPassword()).toLowerCase());
+		admin.setPassword(MD5.encodeStr(admin.getPassword()));
 		add(admin);
 		//用户注册信息表,暂时不使用注册功能
 		if(tAdminActive != null){

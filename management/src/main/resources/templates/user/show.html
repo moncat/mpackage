@@ -1,0 +1,86 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 用户管理 
+		<span class="c-gray en">&gt;</span> 用户详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                            <h2 class="text-c"  th:utext="${one.displayName}">无名称</h2>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">
+		                            <div class="col-md-12">
+    					                 <h4>头像： 
+    					                 <img th:src="${one.headImage}"></img>
+    					                 </h4>
+          			                     <h4>登录名： <span th:text="${one.loginName}"></span></h4>
+          			                     <h4>展示名： <span th:text="${one.displayName}"></span></h4>
+          			                     <h4>真实姓名： <span th:text="${one.personName}"></span></h4>
+          			                     <h4>手机号： <span th:text="${one.mobilePhone}"></span></h4>
+          			                     <h4>邮箱： <span th:text="${one.email}"></span></h4>
+          			                     <h4>QQ号： <span th:text="${one.qq}"></span></h4>
+          			                     <h4>微信号： <span th:text="${one.wx}"></span></h4>
+          			                     <h4>性别： <span th:if="${one.sex eq 1}">男</span><span th:if="${one.sex eq 0}">女</span></h4>
+          			                     <h4>年龄： <span th:text="${one.age}"></span></h4>
+          			                     <h4>访问次数： <span th:text="${one.visitCount}"></span></h4>
+          			                     <h4>最后登录时间： <span th:text="${one.lastTime}"></span></h4>
+          			                     <h4>最后登录IP： <span th:text="${one.lastIp}"></span></h4>
+          		                     </div>
+	                            </div> 
+	                            <h3>用户邮寄列表</h3>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">
+		                            <div class="col-md-12">
+		                           		 <table class="table table-border table-bordered table-bg table-hover mt-10">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														用户邮寄信息列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>联系方式</th>
+													<th>省</th>
+													<th>地市</th>
+													<th>区县</th>
+													<th>乡镇</th>
+													<th>详细</th>
+												</tr>
+											</thead>
+											<tbody>
+												<section th:each="item,status:${addressList}" >
+													<tr class="text-c">
+														<td th:text="${status.index+1}">1</td>
+														<td th:text="${item.contact}"></td>
+														<td th:text="${item.provinceName}"></td>
+														<td th:text="${item.cityName}"></td>
+														<td th:text="${item.contryName}"></td>
+														<td th:text="${item.townName}"></td>
+														<td th:text="${item.detail}"></td>
+													</tr>					
+												</section>
+											</tbody>
+										</table>
+          		                     </div>
+	                            </div> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/user/show.js"></script>
+</section>
+</html>

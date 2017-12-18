@@ -94,13 +94,14 @@ $(function(){
 		
 		layer.confirm('是否解除关联？', {
 			  btn: ['是','否'] //按钮
-			}, function(){
+			}, function(index){
+				layer.close(index);
 				$.post('/brand/relieve?id='+bid+'&pid='+pid,function(data){
 					layer.alert(data.desc);
 					relieve.parent().remove();
 					layer.msg('解除成功', {icon: 1});
 				});
-			}, function(){
+			}, function(index){
 				layer.msg('取消解除', {icon: 1});
 			});
 		

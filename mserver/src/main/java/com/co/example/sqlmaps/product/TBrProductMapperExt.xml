@@ -83,7 +83,10 @@
         and jd_url like '%item%' 
       </if>
       <if test="brandId != null" >
-        and tbpb.brand_id =  #{brandId,jdbcType=VARCHAR}
+        and tbpb.brand_id =  #{brandId,jdbcType=BIGINT}
+      </if>
+      <if test="labelId != null" >
+        and tbpl.label_id =  #{labelId,jdbcType=BIGINT}
       </if>
   </sql>
   <sql id="Table_Join_Clause" >
@@ -92,6 +95,9 @@
       </if>
 	  <if test="joinBrandFlg" >
 	      left JOIN t_br_product_brand tbpb on t.id = tbpb.product_id
+      </if>
+	  <if test="joinLabelFlg" >
+	      left JOIN t_br_product_label tbpl on t.id = tbpl.product_id
       </if>
 	  <if test="joinOperEnterpriseFlg" >
 	      left JOIN t_br_product_oper_enterprise tbpoe on t.id = tbpoe.product_id

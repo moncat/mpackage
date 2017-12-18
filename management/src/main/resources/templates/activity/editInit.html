@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="${one.id}" name="id"></input>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								活动标题：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.title}" value="" placeholder="活动标题" name="title"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								活动类型：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="hidden" id="check" class="input-text" th:value="${one.type}" />
+					<div class="formControls col-xs-9 col-sm-10">
+						<div class="skin-minimal">
+							  <div class="radio-box">
+								    <input id="radio-1" type="radio" value="1" name="type"/>
+								    <label for="radio-1">试用活动</label>
+							  </div>
+							  <div class="radio-box">
+								    <input id="radio-2" type="radio" value="2" name="type"/>
+								    <label for="radio-2">其他活动</label>
+							  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<!-- 
+			    <div class="row cl">
+					<label class="form-label col-xs-3 col-sm-2">
+										<span class="c-red">*</span>
+									活动大图：
+					</label>
+					<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text" th:value="${one.noticeImage}" value="" placeholder="活动大图" name="noticeImage"/>
+																	
+					</div>
+				</div>
+			 -->
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								开始时间：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${#dates.format(one.startTime, 'yyyy-MM-dd HH:mm:ss')}" value="" placeholder="开始时间" name="startTime"/>
+																
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								结束时间：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${#dates.format(one.endTime, 'yyyy-MM-dd HH:mm:ss')}" value="" placeholder="结束时间" name="endTime"/>
+																
+				</div>
+			</div>
+		    <div class="row cl hideDiv" hidden="hidden">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								商品数量：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.productNum}" value="" placeholder="商品数量" name="productNum"/>
+																
+				</div>
+			</div>
+		    <div class="row cl hideDiv" hidden="hidden">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								参与用户数量：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.userNum}" value="" placeholder="参与用户数量" name="userNum"/>
+																
+				</div>
+			</div>
+		    <div class="row cl" >
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								活动详情：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+						<script id="detail" th:utext="${one.detail}" name="detail" type="text/plain"></script>
+				</div>
+			</div>
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.config.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.all.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/activity/edit.js"></script>
+	</section>
+</body>
+</html>

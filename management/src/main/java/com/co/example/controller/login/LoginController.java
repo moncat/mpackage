@@ -18,6 +18,7 @@ import com.co.example.common.utils.MD5;
 import com.co.example.constant.HttpStatusCode;
 import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.TAdminActive;
+import com.co.example.entity.admin.aide.AdminSession;
 import com.co.example.service.admin.TAdminActiveService;
 import com.co.example.service.admin.TAdminLoginService;
 import com.co.example.service.admin.TAdminService;
@@ -42,6 +43,13 @@ public class LoginController {
 	 */
 	@RequestMapping(value="/login",method = { RequestMethod.GET})
 	public String login(HttpSession session,Model model){
+		AdminSession adminSession = SessionUtil.getAdminSession(session);
+		if(null != adminSession){
+			boolean isLogin = SessionUtil.getIsLogin(session);
+			if(isLogin){
+				return "redirect:/";
+			}
+		}
 		String username = (String)session.getAttribute("username");
 		Exception e = (Exception)session.getAttribute("SPRING_SECURITY_LAST_EXCEPTION");
 		String errMessage = "";
@@ -53,10 +61,6 @@ public class LoginController {
 			model.addAttribute("errMessage", errMessage);
 		}
 		model.addAttribute("username", username);
-		boolean isLogin = SessionUtil.getIsLogin(session);
-		if(isLogin){
-			return "redirect:/";
-		}
 		return "login/login";
 	}
 

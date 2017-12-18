@@ -19,7 +19,7 @@
 	                            <div class="row cl">
 		                            <div class="col-md-12">
 		                           		#foreach( $elem in $dataList)
-			                     <h4>$elem.label： <span th:text="$ {one.$elem.field}"></span></h4>
+			     <h4>$elem.label： <span th:text="$ {one.$elem.field}"></span></h4>
 			                            #end
 		                            </div>
 	                            </div> 

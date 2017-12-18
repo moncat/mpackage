@@ -17,7 +17,8 @@ public class LogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
 	@Override
 	public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
 			throws IOException, ServletException {
-		CookieUtil.removeCookie(response, CookieConstant.COOKIE_ADMIN_KEY);				
+		CookieUtil.removeCookie(response, CookieConstant.COOKIE_ADMIN_KEY);	
+		CookieUtil.removeCookie(response, CookieConstant.COOKIE_REMEMBER_ME);
 		super.onLogoutSuccess(request, response, authentication);
 	}
 	

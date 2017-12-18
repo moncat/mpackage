@@ -5,9 +5,11 @@
 		<span class="va-m">/(ㄒoㄒ)/~~</span>
 		<span th:text="${status}"></span>
 	</p>
-	<p class="error-description">不好意思，您没有权限访问或访问的页面不存在~</p>
+	<p class="error-description">不好意思，您访问的页面不存在~</p>
 	<p class="error-info">您可以：
 		<a href="javascript:void(0);" onclick="history.go(-1)" class="c-primary">&lt; 返回上一页</a>
+		<span class="ml-20">|</span>
+		<a href="/login" class="c-primary ml-20">重新登录</a>
 		<span class="ml-20">|</span>
 		<a href="/" class="c-primary ml-20">去首页 &gt;</a>
 	</p>

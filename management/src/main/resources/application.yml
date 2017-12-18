@@ -8,8 +8,8 @@ server:
     uri-encoding: UTF-8   
 
 ueditor:
- savePath: "/home/ue/"
+ savePath: "D:/home/ue/"
  readpath: ""     
 image:
- imageSavePath: "/home/images/"
+ imageSavePath: "D:/home/images/"
     

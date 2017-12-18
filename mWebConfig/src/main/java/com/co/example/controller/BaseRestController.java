@@ -23,7 +23,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.PageReq;
 import com.co.example.constant.HttpStatusCode;
-import com.co.example.entity.user.TUsers;
 import com.github.moncat.common.entity.BaseEntity;
 import com.github.moncat.common.service.BaseService;
 
@@ -43,9 +42,7 @@ public abstract class  BaseRestController<T extends BaseEntity> {
 	
 	//查询对象
 	public static final String QUERY = "query";
-	
-	//用户
-	protected TUsers tUser; 
+ 
 	//用户id
 	protected Long userId; 
 	

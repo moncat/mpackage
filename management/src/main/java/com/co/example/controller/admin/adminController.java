@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.Session;
+import org.apache.catalina.manager.util.SessionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -21,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.co.example.common.constant.Constant;
+import com.co.example.common.utils.MD5;
 import com.co.example.common.utils.PageReq;
 import com.co.example.constant.HttpStatusCode;
 import com.co.example.entity.admin.TAdmin;
@@ -157,4 +161,36 @@ public class adminController {
 		result.put("code", HttpStatusCode.CODE_SUCCESS);
 		return result;
 	}
+	
+	@RequestMapping(value = "/editPwdInit", method = { RequestMethod.GET,RequestMethod.POST })
+	public String editPwdInit(HttpSession session)throws Exception {
+		return "admin/editPwdInit";
+	}
+	@ResponseBody
+	@RequestMapping(value = "/editPwd", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> editPwd(HttpSession session,String oldPwd,String newPwd1,String newPwd2)throws Exception {
+		Map<String, Object> result = new HashMap<String, Object>();
+		if(!StringUtils.equals(newPwd1, newPwd2)){
+			result.put("desc", "两次密码不一致！");
+			result.put("code", HttpStatusCode.CODE_ERROR);
+			return result;
+		}
+		Long adminId = SessionUtil.getAdminId(session);
+		TAdmin admin = tAdminService.queryById(adminId);
+		String oldPwdMD5 = MD5.encodeStr(oldPwd);
+		if(StringUtils.equals(oldPwdMD5, admin.getPassword())){
+			TAdminQuery query = new TAdminQuery();
+			query.setId(adminId);
+			query.setPassword(MD5.encodeStr(newPwd1));
+			tAdminService.updateByIdSelective(query);			
+			result.put("code", HttpStatusCode.CODE_SUCCESS);
+			
+		}else{
+			result.put("desc", "原密码不正确！");
+			result.put("code", HttpStatusCode.CODE_ERROR);
+		}
+		return result;
+	}
+	
+	
 }

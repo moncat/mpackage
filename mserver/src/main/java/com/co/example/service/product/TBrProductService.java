@@ -1,10 +1,12 @@
 package com.co.example.service.product;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import com.co.example.common.utils.PageReq;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.TBrProductQuery;
@@ -55,11 +57,52 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	int updateByArea(TBrProductQuery query);
 	/**
 	 * 显示一条商品记录（移动端）
+	 * 已弃用，因为服务器配置较低，为了提高显示效率，商品信息采用异步方式获取，此获取全量数据方法弃用
 	 * @param id
 	 * @return
 	 */
+	@Deprecated
 	TBrProduct showOneProduct4Mobile(Long id);
 	
+	/**
+	 * 根据标签获得商品列表 未登录
+	 * 已弃用，未登录则不显示推荐
+	 * @see queryByLabel(Long id,Long userId,PageReq pageReq);
+	 * @param id
+	 * @return
+	 */
+	@Deprecated
+	Page<TBrProduct> queryByLabel(Long id,PageReq pageReq);
+	
+	
+	/**
+	 * 根据标签及个人肤质特点获得商品列表
+	 * 已弃用，不再使用取交集的方式 ，使用左连接分组的方式
+	 * @see queryByLabel(Long id,Long userId,PageReq pageReq);
+	 * @param id
+	 * @param pageReq
+	 * @param userid
+	 * @return
+	 */
+	@Deprecated
+	Page<TBrProduct> queryByLabel(Long id,PageReq pageReq,Long userId);
+	
+	
+	/**
+	 * 获得更低的价格
+	 * @param id 商品Id
+	 * @return
+	 */
+	BigDecimal getCheapPrice(Long id);
+	
+	
+	
+	
+	/**
+	 * 设置商品的标签
+	 * @param id
+	 */
+	TBrProduct setLabels(TBrProduct tBrProduct);
 	
 	
 }

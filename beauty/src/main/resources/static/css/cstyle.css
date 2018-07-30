@@ -1,0 +1,332 @@
+/*通用颜色*/
+.c-text-color-1{
+    color:#808080 !important;
+}
+.c-text-color-2{
+    color:#b8b8b8 !important;
+}
+.c-text-color-3{
+    color:#666666 !important;
+}
+.c-text-color-4{
+    color:#f73772 !important;
+}
+.c-text-color-5{
+    color:#fff !important;
+}
+.c-text-color-6{
+    color:#757575 !important;
+}
+.c-bg-color-1{
+    background-color:#f73772 !important;
+    color: #fff;
+}
+/*框架不存在的字号*/
+.aui-font-size-20 {
+    font-size: 0.85rem !important;
+}
+.aui-font-size-22 {
+    font-size: 1.1rem !important;
+}
+.aui-font-size-24 {
+    font-size: 1.2rem !important;
+}
+.aui-font-size-26 {
+    font-size: 1.3rem !important;
+}
+.aui-font-size-28 {
+    font-size: 1.4rem !important;
+}
+.aui-font-size-32{
+    font-size: 1.6rem !important;
+}
+/*aui-list去除顶部线条*/
+.c-aui-list-border-t-none{
+    border-top: none !important;
+    background-image:none !important;
+}
+/*aui-media-list去除顶部线条*/
+.c-aui-media-list-border-none{
+    background-repeat:no-repeat;
+    background-image:none !important;
+    border-bottom:none !important;
+}
+/*框架不存在的高度*/
+.aui-padded-t-20 {
+    margin-top: 1rem !important;
+}
+.aui-margin-r-20 {
+    margin-right: 1rem !important;
+}
+.aui-margin-t-25 {
+    /*margin-top: 1.25rem !important;*/
+}
+.aui-margin-t-35 {
+    margin-top: 1.75rem !important;
+}
+/*修改基本容器默认值*/
+.c-aui-content-padded{
+    margin: 0.3rem;
+    position: relative;
+    word-break: break-all;
+    -webkit-overflow-scrolling: touch;
+}
+.aui-text-center>b{
+	font-weight: normal;
+}
+/*********************************************************************对比页面*********************************************************************/
+.c-fillet-border-color-1{
+    border:1px solid #c7c7c7;
+}
+.c-fillet-border-color-2{
+    border:1px solid #f73772;
+    text-align: center !important;
+    padding: 0;
+    display: block;
+}
+.c-fillet-border-color-2 a{
+    color: #f73772;
+}
+
+
+/*多选颜色*/
+.aui-radio:checked,
+.aui-radio.aui-checked,
+.aui-checkbox:checked,
+.aui-checkbox.aui-checked {
+    background-color: #fff;
+    border: solid 1px #c7c7c7;
+    text-align: center;
+    background-clip: padding-box;
+}
+/*多选打钩颜色*/
+.aui-radio:checked:before,
+.aui-radio.aui-checked:before,
+.aui-checkbox:checked:before,
+.aui-checkbox.aui-checked:before,
+.aui-radio:checked:after,
+.aui-radio.aui-checked:after,
+.aui-checkbox:checked:after,
+.aui-checkbox.aui-checked:after {
+    border: 1px solid #666666 !important;
+    border-top: none  !important;
+    border-right: none  !important;
+}
+/*tab切换字体颜色*/
+.aui-tab{
+    border-bottom: 1px solid #f5f5f5;
+}
+.aui-tab-item{
+    color:#666;
+}
+.aui-tab-item.aui-active{
+    color:#f73772;
+    border-bottom:2px solid #ff95b6;
+}
+/*对比tab详情*/
+.c-content-div{
+    padding: 0.4rem;
+}
+/*.c-row-height{
+    margin-top: 0.3rem;
+}*/
+.c-border-radius{
+    padding: 0.3rem !important;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+
+}
+/*进度条*/
+.aui-progress{
+    border-radius:0.5rem;
+}
+.aui-progress-bar{
+    background-color:#f73772;
+}
+/*总成分样式*/
+.c-contrast-component{
+    padding: 0.5rem !important;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.c-contrast-component-content{
+    padding: 0.5rem !important;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-top:none;
+}
+/*********************************************************************肤质测试页面*********************************************************************/
+.contrast-tab-info{
+    display: none;
+}
+.c-aui-row-padded{
+    margin-left: -0.2rem;
+    margin-right: -0.2rem;
+    /*background: #f2f2f2;*/
+}
+.c-aui-row-padded .c-xs-6{
+    padding: 0.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 7;
+    background-color: #fff;
+    float: left;
+    width: 49%;
+    height: 100%;
+}
+.c-aui-row-padded .c-xs-6 img{
+    width: 50% !important;
+    margin: 0 auto;
+	height: 6rem;
+
+}
+
+.c-skintest-b{
+    padding: 0.6rem 0;
+    background-color: #fff
+}
+.c-skintest-b-title{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 0.2rem;
+    vertical-align:middle;
+    width: 80%;
+    margin: 0 auto;
+}
+.c-skintest-b-title a{
+    color: #fff;
+    font-size: 0.85rem;
+    line-height: 1.8rem;
+    display: block;
+}
+.c-aui-progress-bar-radius{
+
+    border-radius: 0.5rem
+}
+.c-aui-progress-bar-radius-color-1{
+    background-color: #ff8eb4;
+}
+.c-aui-progress-bar-radius-color-2{
+    background-color: #98cb4f;
+}
+.c-aui-progress-bar-radius-color-3{
+    background-color: #12c7c7;
+}
+.c-aui-progress-bar-radius-color-4{
+    background-color: #ffae00;
+}
+.customized-radius{
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 1.7rem;
+    color: #fff;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.7rem;
+}
+.customized-col-2-border{
+    border-top: 1px solid #ff8eb4;
+    border-bottom: 1px solid #ff8eb4;
+    padding:0.2rem 0;
+}
+.customized-col-2-border a{
+    color: #f73772;
+}
+.customized-col-2-border div:nth-child(1){
+    color: #ff8eb4;
+}
+.aui-list .aui-list-item{
+	/*margin: 0.3rem;*/
+	border-bottom: 1px solid #f5f5f5;
+}
+.aui-list .aui-list-item .aui-list-item-inner{
+	/*padding-right: 0.3rem;*/
+}
+.
+/*产品推荐*/
+.maui-recommendation-product, .maui-recommendation-refer {
+    margin-bottom: 0.5rem !important;
+}
+.maui-recommendation-product>p, .maui-recommendation-refer>p {
+    margin-top: 0.8rem;
+    text-align: center;
+    font-size: 1rem;
+    color: gray;
+}
+.maui-recommendation-product>span, .maui-recommendation-refer>span {
+    font-size: 0.7rem;
+    color: #A5A5A5;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.maui-picture-list>li>.aui-col-xs-4>a {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.25rem;
+    margin: 0.25rem;
+}
+.maui-picture-list>li>.aui-col-xs-4>a>img {
+    display: block;
+    margin: 0 auto;
+    height: 7rem;
+}
+.maui-picture-list>li>.aui-col-xs-4>a>span {
+    font-size: 0.6rem;
+    color: #AAA5A5;
+    display: block;
+}
+.maui-tab-tag li {
+    display: none;
+    margin-bottom: 0.75rem;
+}
+/*你的肌肤情况*/
+.customized-content-situation{
+    display: inline-block;
+    width:4rem;
+    text-align: center;
+}
+
+/*********************************************************************护肤百科*********************************************************************/
+.skinbaike-index-icon{
+    width: 2rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+.skinbaike-index-icon-1{
+    background-color: #fbbf3f;
+}
+.skinbaike-index-icon-2{
+    background-image:-webkit-linear-gradient(-45deg, #19e5bd, #32c7e7);
+    background-image:linear-gradient(-45deg,#19e5bd,#32c7e7);
+}
+.skinbaike-index-icon-3{
+    background-image:-webkit-linear-gradient(-45deg, #f88d9e, #fe998c);
+    background-image:linear-gradient(-45deg,#f88d9e,#fe998c);
+}
+.skinbaike-index-icon-4{
+    background-image:-webkit-linear-gradient(-45deg, #5ea1ff, #6ab9ff);
+    background-image:linear-gradient(-45deg,#5ea1ff,#6ab9ff);
+}
+.skinbaike-index-icon-5{
+    background-image:-webkit-linear-gradient(-45deg, #6ab9ff, #5ea1ff);
+    background-image:linear-gradient(-45deg,#6ab9ff,#5ea1ff);
+}
+.skinbaike-index-icon-6{
+    background-image:-webkit-linear-gradient(-45deg, #f55971, #f576b9);
+    background-image:linear-gradient(-45deg,#f55971,#f576b9);
+}
+.skinbaike-index-icon-7{
+    background-image:-webkit-linear-gradient(-45deg, #ca9df2, #9ca7f6);
+    background-image:linear-gradient(-45deg,#ca9df2,#9ca7f6);
+}
+.skinbaike-index-icon-8{
+    background-image:-webkit-linear-gradient(-45deg, #ff8f41, #feaba1);
+    background-image:linear-gradient(-45deg,#ff8f41,#feaba1);
+}
+.aui-list .c-aui-list-item-media{
+    width: 6.5rem !important;
+}

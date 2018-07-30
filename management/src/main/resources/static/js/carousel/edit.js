@@ -36,15 +36,18 @@ $(function(){
 			focusCleanup:true,
 			success:"valid",
 			submitHandler:function(form){
+				$(':submit').attr('disabled','disabled');
 				$(form).ajaxSubmit({
 					type: 'post',
 					url: "/carousel/edit" ,
 					success: function(data){
+						$(':submit').removeAttr('disabled');
 						layer.alert('编辑成功!',function(){
 							lc();
 						});
 					},
 	                error: function(XmlHttpRequest, textStatus, errorThrown){
+	                	$(':submit').removeAttr('disabled');
 						layer.msg('error!',{icon:1,time:1000});
 					}
 				});

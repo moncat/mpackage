@@ -7,4 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TBrLogAdminQuery extends TBrLogAdmin {
+	
+private String userNameLike;
+	
+	private String operTypeLike;
+	
+	private String moduleLike;
+	
+	private String detailLike;
 }

@@ -15,4 +15,8 @@ public interface TUserActiveService extends BaseService<TUserActive, Long> {
 	 */
 	Boolean verifyVCode(String phoneNum, String vcode);
 	
+	
+	Boolean updateVCodeUsed(String phoneNum, String vcode);
+	
+	
 }

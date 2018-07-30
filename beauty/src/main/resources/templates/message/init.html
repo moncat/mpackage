@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout"  th:with="title='我的消息-柠檬妆典'">
+<section layout:fragment="main" >
+	<header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="max-width: 768px; margin: 0 auto">
+        <a href="javascript:history.go(-1);" class="aui-btn aui-pull-left">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">我的消息</div>
+    </header>
+    <div class=" aui-margin-t-15" style="background-color: #fff">
+        <ul class="aui-list aui-media-list c-aui-list-border-t-none" id="list">
+          
+          
+        </ul>
+    </div>
+</section>
+<section layout:fragment="my">
+<script type="text/javascript" src="/js/message/init.js"></script>
+<script id="listTmp" type="text/x-jquery-tmpl">
+	{{each(i,item) page.content}} 
+          <li class="aui-list-item " style="padding: 0; margin: 0 0.6rem">
+                <div class="aui-text-center aui-padded-t-10 " style="padding-bottom: 0.6rem">
+	          		  <p class="aui-font-size-24">${ms2time(item.createTime)}</p>
+		        </div>
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-inner" style="background: #f5f5f5;border: 1px solid #f2f2f2;padding: 0.4rem 0.7rem;">
+                        <div class="aui-list-item-text">
+							{{if item.isRead != 1}}
+				         	    <div data-id="${item.id}" class="aui-dot" style="right: 0%;"></div>
+                            {{/if}}
+                            <div class="aui-list-item-title">${item.title}</div>
+                        </div>
+                        <div class="aui-list-item-text aui-ellipsis-2">
+                      		   ${item.detail}
+                        </div>
+                    </div>
+                </div>
+            </li>
+	{{/each}}
+</script>
+</section>
+</html>

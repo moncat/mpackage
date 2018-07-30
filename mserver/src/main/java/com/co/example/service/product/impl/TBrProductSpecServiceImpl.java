@@ -60,32 +60,32 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, Long> implements TBrProductSpecService {
-    @Resource
-    private TBrProductSpecDao tBrProductSpecDao;
+	@Resource
+	private TBrProductSpecDao tBrProductSpecDao;
 
-    @Override
-    protected BaseDao<TBrProductSpec, Long> getBaseDao() {
-        return tBrProductSpecDao;
-    }
+	@Override
+	protected BaseDao<TBrProductSpec, Long> getBaseDao() {
+		return tBrProductSpecDao;
+	}
 
-    @Autowired
-	TBrProductService tBrProductService;
-    
 	@Autowired
-	TBrProductImageService tBrProductImageService;	
-	
+	TBrProductService tBrProductService;
+
+	@Autowired
+	TBrProductImageService tBrProductImageService;
+
 	@Autowired
 	TBrSpecKeyService tBrSpecKeyService;
-	
+
 	@Autowired
 	TBrSpecValueService tBrSpecValueService;
-	
+
 	@Autowired
 	TBrProductCommentStatisticsService tBrProductCommentStatisticsService;
-	
-	public static  final String UTF8 = "UFT-8";
-	public static  final String GBK = "gbk";
-    
+
+	public static final String UTF8 = "UFT-8";
+	public static final String GBK = "gbk";
+
 	Long productId;
 	String encode = "utf-8";
 	String skuUrl;
@@ -94,67 +94,70 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 	Document skuDoc;
 	TBrProduct tBrProduct;
 	Byte sourceType;
-	List<TBrSpecKey> tbrSpecKeyList ;
+	List<TBrSpecKey> tbrSpecKeyList;
 	String sellerId;
 	int count = 0;
+	int count2 = 0;
+
 	@Override
-	public int addData(TBrProduct tBrProduct,Byte sourceType,List<TBrSpecKey> tbrSpecKeyList,WebDriver chrome) {
+	public int addData(TBrProduct tBrProduct, Byte sourceType, List<TBrSpecKey> tbrSpecKeyList, WebDriver chrome) {
 		this.tBrProduct = tBrProduct;
 		this.productId = tBrProduct.getId();
 		this.sourceType = sourceType;
-		this.productName = 
-				StringEscapeUtils.unescapeHtml4(tBrProduct.getProductName().replace(" ", ""));
-		this.tbrSpecKeyList =tbrSpecKeyList;
+		this.productName = StringEscapeUtils.unescapeHtml4(tBrProduct.getProductName().replace(" ", ""));
+		this.tbrSpecKeyList = tbrSpecKeyList;
 		String searchUrl = null;
-		//抓取京东数据
-		if(sourceType == ProductConstant.PRODUCT_SOURCE_JD){
-			searchUrl = ProductConstant.JD_PRODUCT_SEARCH_URL+productName;
+		// 抓取京东数据
+		if (sourceType == ProductConstant.PRODUCT_SOURCE_JD) {
+			searchUrl = ProductConstant.JD_PRODUCT_SEARCH_URL + productName;
 			try {
 				Document doc = JsoupUtil.getDoc(searchUrl, encode);
-				if(doc == null){
+				if (doc == null) {
 					return 0;
-				};
+				}
+				;
 				Elements ns = doc.select(".notice-search");
-				if(CollectionUtils.isNotEmpty(ns)){
-					//并未找到该产品数据
-					log.info("***未查询到该商品***"+productName);
+				if (CollectionUtils.isNotEmpty(ns)) {
+					// 并未找到该产品数据
+					log.info("***未查询到该商品***" + productName);
 					TBrProduct product = new TBrProduct();
 					product.setId(productId);
 					product.setJdUrl(searchUrl);
 					tBrProductService.updateByIdSelective(product);
 					return 4;
-				}else{
+				} else {
 					Elements goodsList = doc.select("#J_goodsList");
-					if(goodsList.size()>0){
+					if (goodsList.size() > 0) {
 						Elements good = goodsList.select("ul").eq(0).select("li").eq(0);
 						this.skuId = good.attr("data-sku");
-						this.skuUrl = "http://item.jd.com/"+skuId+".html";
-						this.skuDoc = JsoupUtil.getDoc(skuUrl, GBK);						
-						if(skuDoc == null){
+						this.skuUrl = "http://item.jd.com/" + skuId + ".html";
+						this.skuDoc = JsoupUtil.getDoc(skuUrl, GBK);
+						if (skuDoc == null) {
 							return 0;
-						};
-						
-						//获得图片
+						}
+						;
+
+						// 获得图片
 						getJDImages();
-						//获得规格参数
+						// 获得规格参数
 						getJDSpecData();
-						//获得聊天统计
+						// 获得聊天统计
 						getJDCommentStatisticsData();
-						//获得价格，无销量,url
+						// 获得价格，无销量,url
 						getJDBaseData(doc);
-						log.info("抓取京东完毕："+productName+"***"+productId);
-					}else{
-						log.info("未抓取到京东数据!!!："+productName);
+						log.info("抓取京东完毕：" + productName + "***" + productId);
+					} else {
+						log.info("未抓取到京东数据!!!：" + productName);
 					}
 				}
-				
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 				return 0;
 			}
-		 //抓取天猫数据
-		}else if(sourceType == ProductConstant.PRODUCT_SOURCE_TMALL){
-			searchUrl = ProductConstant.TMALL_PRODUCT_SEARCH_URL+productName;
+			// 抓取天猫数据
+		} else if (sourceType == ProductConstant.PRODUCT_SOURCE_TMALL) {
+			searchUrl = ProductConstant.TMALL_PRODUCT_SEARCH_URL + productName;
 			this.encode = "gbk";
 			Document doc = null;
 			try {
@@ -166,95 +169,115 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 				}
 				String data = chrome.getPageSource();
 				doc = Jsoup.parse(data);
-				
+
 				String title = doc.select("title").text();
-				if(StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found") || StringUtils.equals(title, "SecurityMatrix") ){
-					Thread.sleep(5000);
-					log.info("未抓取到天猫数据!!!："+productName);
-					return 5;
+				if (StringUtils.isBlank(title) || StringUtils.equals(title, "302 Found")
+						|| StringUtils.equals(title, "SecurityMatrix")) {
+					Thread.sleep(100000);
+					log.info("未抓取到天猫数据!!!：" + productName);
+					log.info("睡眠100s");
+					// count2++;
+					// if(count2>2){
+					// count2 = 0;
+					// return 5;
+					// }
+					return 0;
 				}
 				Elements ns = doc.select(".searchTip");
-				if(CollectionUtils.isNotEmpty(ns)){
-					//并未找到该产品数据
-					log.info("***未查询到该商品***"+productName);
+				if (CollectionUtils.isNotEmpty(ns)) {
+					// 并未找到该产品数据
+					log.info("***未查询到该商品***" + productName);
 					TBrProduct product = new TBrProduct();
 					product.setId(productId);
 					product.setTmallUrl(searchUrl);
 					tBrProductService.updateByIdSelective(product);
 					return 4;
-				}else{
+				} else {
 					Elements goodsList = doc.select("#J_ItemList");
-					if(goodsList.size()>0){
+					if (goodsList.size() > 0) {
 						Elements good = goodsList.select("div.product").eq(0);
 						this.skuId = good.attr("data-id");
 						String tmallSkuUrl = good.select(".productImg-wrap a").attr("href");
-						this.skuUrl="https://detail.tmall.com/item.htm?id="+skuId;
-						chrome.get("https:"+tmallSkuUrl);
-//						Thread.sleep(1000);
+						this.skuUrl = "https://detail.tmall.com/item.htm?id=" + skuId;
+						chrome.get("https:" + tmallSkuUrl);
+						// Thread.sleep(1000);
 						String pageSource = chrome.getPageSource();
 						this.skuDoc = Jsoup.parse(pageSource);
-						if(skuDoc == null){
+						if (skuDoc == null) {
 							return 0;
-						};
-						try{
+						}
+						;
+						try {
 							String skuStr = skuDoc.toString();
 							skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
-							skuStr = skuStr.substring(skuStr.indexOf("=")+1,skuStr.indexOf("&amp;"));
-							this.sellerId = skuStr.replace(":", "").replace("\"", "");							
-						}catch(Exception e){
+							skuStr = skuStr.substring(skuStr.indexOf("=") + 1, skuStr.indexOf("&amp;"));
+							this.sellerId = skuStr.replace(":", "").replace("\"", "");
+						} catch (Exception e) {
 							log.info("***获取sellerId失败***");
 						}
-						//获得图片
+						// 获得图片
 						getTmallImages();
-						//获得规格参数
+						// 获得规格参数
 						getTmallSpecData();
-						//获得聊天统计
+						// 获得聊天统计
 						getTmallCommentStatisticsData();
-						//获得价格,url
+						// 获得价格,url
 						int status = getTmallBaseData(chrome);
-						if(status == 5){
-							log.info("***获取价格，销量，请求超时***"+productName);
+						if (status == 5) {
+							log.info("***获取价格，销量，请求超时***" + productName);
 							return 0;
 						}
-						
-						log.info("抓取天猫完毕："+productName+"***"+productId);
-					}else{
-						log.info("未抓取到天猫数据!!!2："+productName);
-						String currentUrl = chrome.getCurrentUrl();
-						if(currentUrl.indexOf("login.tmall")>-1){
-							log.info("需要重新登录***"+productName);
-							return 5;
-						}
-						if(currentUrl.indexOf("error")>-1){
+
+						log.info("抓取天猫完毕：" + productName + "***" + productId);
+					} else {
+						log.info("未抓取到天猫数据!!!2：" + productName);
+
+						if (productName.startsWith("#")) {
 							TBrProduct product = new TBrProduct();
 							product.setId(productId);
 							product.setTmallUrl(searchUrl);
 							tBrProductService.updateByIdSelective(product);
-							log.info("出现错误页面***"+productName);
+						}
+
+						String currentUrl = chrome.getCurrentUrl();
+						if (currentUrl.indexOf("login.tmall") > -1) {
+							log.info("需要重新登录***" + productName);
+							Thread.sleep(25000);
+							String currentUrl2 = chrome.getCurrentUrl();
+							if (currentUrl2.indexOf("login.tmall") > -1) {
+								log.info("*手动登录失败**");
+								return 5;
+							}
+							return 0;
+						}
+						if (currentUrl.indexOf("error") > -1) {
+							TBrProduct product1 = new TBrProduct();
+							product1.setId(productId);
+							product1.setTmallUrl(searchUrl);
+							tBrProductService.updateByIdSelective(product1);
+							log.info("出现错误页面***" + productName);
 							return 0;
 						}
 						count++;
-						if(count>10){
-							count =0;
-							log.info("***请求被拒绝"+count+"***"+productName);
+						if (count > 10) {
+							log.info("***请求被拒绝" + count + "***" + productName);
+							count = 0;
 							return 5;
 						}
 						return 0;
 					}
 				}
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 				return 0;
 			}
-			
-			
+
 		}
-		
+
 		return 0;
 	}
 
-	
 	private void getTmallImages() {
 		Elements images = skuDoc.select("#J_UlThumb li img");
 		saveImages(images);
@@ -265,61 +288,60 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		Long keyId = 0l;
 		String keyName = null;
 		String valueName = null;
-		
+
 		String liText = null;
 		String[] split = null;
 		String keyText = null;
-		//循环抓取li的每一行
+		// 循环抓取li的每一行
 		int size = specs.size();
 		for (int i = 0; i < size; i++) {
 			liText = specs.eq(i).text().replace(" ", "").replace("：", "");
-			split = liText.split(":"); 
-			
-			if(split.length==2){
+			split = liText.split(":");
+
+			if (split.length == 2) {
 				keyText = split[0];
 				valueName = split[1];
-				//循环key列表
+				// 循环key列表
 				for (TBrSpecKey key : tbrSpecKeyList) {
-					//当前dt包含keyName时，操作该规格参数。
+					// 当前dt包含keyName时，操作该规格参数。
 					keyName = key.getKeyName();
-					if(StringUtils.isNotBlank(keyText) && keyText.contains(keyName)){
+					if (StringUtils.isNotBlank(keyText) && keyText.contains(keyName)) {
 						keyId = key.getId();
-						//查到当前dt对应的dd的值。
-						saveProductSpec(keyId, keyName, valueName,ProductConstant.PRODUCT_SOURCE_TMALL);
+						// 查到当前dt对应的dd的值。
+						saveProductSpec(keyId, keyName, valueName, ProductConstant.PRODUCT_SOURCE_TMALL);
 						break;
 					}
 				}
 			}
-			
+
 		}
-		
+
 	}
 
-
-	private void saveProductSpec(Long keyId, String keyName, String valueNames,Byte source) {
+	private void saveProductSpec(Long keyId, String keyName, String valueNames, Byte source) {
 		TBrProductSpecQuery tBrProductSpecQuery = new TBrProductSpecQuery();
 		tBrProductSpecQuery.setPid(productId);
 		long queryCount = queryCount(tBrProductSpecQuery);
-		if(queryCount>0){
-			return ;
+		if (queryCount > 0) {
+			return;
 		}
 		Long valueId = 0l;
 		TBrSpecValue one = null;
-		TBrSpecValue tBrSpecValue  = null;
-		TBrSpecValueQuery tBrSpecValueQuery  = null;
+		TBrSpecValue tBrSpecValue = null;
+		TBrSpecValueQuery tBrSpecValueQuery = null;
 		valueNames = valueNames.replace(";", "；");
 		valueNames = valueNames.replace(" ", "；");
-		valueNames = valueNames.replace(" ","；");
+		valueNames = valueNames.replace(" ", "；");
 		String[] valueNameArr = valueNames.split("；");
 		for (String valueName : valueNameArr) {
-			if(StringUtils.isNoneBlank(valueName)){
-				valueName=valueName.replace(" ", "");
-				//查询该值是否存在
-				tBrSpecValueQuery  = new TBrSpecValueQuery();
+			if (StringUtils.isNoneBlank(valueName)) {
+				valueName = valueName.replace(" ", "");
+				// 查询该值是否存在
+				tBrSpecValueQuery = new TBrSpecValueQuery();
 				tBrSpecValueQuery.setValueName(valueName);
 				one = tBrSpecValueService.queryOne(tBrSpecValueQuery);
-				//不存在该值，则保存
-				if(one == null){
+				// 不存在该值，则保存
+				if (one == null) {
 					tBrSpecValue = new TBrSpecValue();
 					tBrSpecValue.setKeyId(keyId);
 					tBrSpecValue.setValueName(valueName);
@@ -327,12 +349,12 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 					tBrSpecValue.setSource(source);
 					tBrSpecValueService.add(tBrSpecValue);
 					valueId = tBrSpecValue.getId();
-				}else{
-					//存在，则取出
+				} else {
+					// 存在，则取出
 					valueId = one.getId();
 					valueName = one.getValueName();
 				}
-				//保存产品规格关联表
+				// 保存产品规格关联表
 				TBrProductSpec tBrProductSpec = new TBrProductSpec();
 				tBrProductSpec.setPid(productId);
 				tBrProductSpec.setSpecKeyId(keyId);
@@ -346,36 +368,33 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		}
 	}
 
-
 	private void getTmallCommentStatisticsData() {
 		TBrProductCommentStatistics tBrProductCommentStatistics = new TBrProductCommentStatistics();
 		tBrProductCommentStatistics.setPid(productId);
 		TBrProductCommentStatistics queryOne = tBrProductCommentStatisticsService.queryOne(tBrProductCommentStatistics);
 		TBrProductCommentStatistics commentSummary = TmallData.getCommentSummary(skuId, sellerId);
-		if(commentSummary == null){
-			return ;
+		if (commentSummary == null) {
+			return;
 		}
-		if(queryOne == null){
+		if (queryOne == null) {
 			commentSummary.setPid(productId);
 			setDefaultData((BaseEntity) commentSummary);
 			tBrProductCommentStatisticsService.add(commentSummary);
-		}else{
+		} else {
 			queryOne.setTmallNumAll(commentSummary.getTmallNumAll());
 			queryOne.setTmallNumImg(commentSummary.getTmallNumImg());
 			queryOne.setTmallNumMore(commentSummary.getTmallNumMore());
 			tBrProductCommentStatisticsService.updateByIdSelective(queryOne);
 		}
-		
-		
+
 	}
 
-	
-	private int getTmallBaseData(WebDriver chrome) {				
-		
+	private int getTmallBaseData(WebDriver chrome) {
+
 		try {
 			String saleStr = skuDoc.select(".tm-ind-sellCount .tm-count").text();
 			String priceStr = skuDoc.select("#J_StrPriceModBox .tm-price").text();
-			if(priceStr.indexOf("-")>0){
+			if (priceStr.indexOf("-") > 0) {
 				priceStr = priceStr.split("-")[0];
 			}
 			TBrProduct product = new TBrProduct();
@@ -386,7 +405,7 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 			} catch (NumberFormatException e) {
 				log.info("销量格式化错误");
 				product.setTmallPrice(BigDecimal.ZERO);
-			}							
+			}
 			product.setId(productId);
 			product.setTmallUrl(skuUrl);
 			product.setSales(saleInt);
@@ -394,30 +413,26 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		} catch (Exception e1) {
 			log.info("请求超时");
 			return 5;
-		}			
+		}
 		return 0;
 	}
 
-	
 	//
 	public static void main(String[] args) throws Exception {
 		String url = "https://mdskip.taobao.com/core/initItemDetail.htm?"
-				+ "tryBeforeBuy=false&isApparel=false&isPurchaseMallPage=false"
-				+ "&isForbidBuyItem=false"
+				+ "tryBeforeBuy=false&isApparel=false&isPurchaseMallPage=false" + "&isForbidBuyItem=false"
 				+ "&household=false&offlineShop=false&isRegionLevel=true"
 				+ "&isAreaSell=true&queryMemberRight=true&itemId=35828877486"
-				+ "&addressLevel=3&isUseInventoryCenter=true&sellerPreview=false"
-				+ "&cartEnable=true&service3C=false"
+				+ "&addressLevel=3&isUseInventoryCenter=true&sellerPreview=false" + "&cartEnable=true&service3C=false"
 				+ "&tmallBuySupport=true&showShopProm=false&isSecKill=false";
-		
+
 		HttpClientBuilder builder = HttpClients.custom();
 		builder.setUserAgent("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:0.9.4)");
 		CloseableHttpClient httpClient = builder.build();
 		final HttpGet httpGet = new HttpGet(url);
-//		httpGet.addHeader("Referer", "http://detail.tmall.com/item.htm?id=40533381395&skuId=68347779144&areaId=110000&cat_id=50024400&rn=763d147479ecdc17c2632a4219ce96b3&standard=1&user_id=263726286&is_b=1");
-		httpGet.addHeader("Referer", "https://detail.tmall.com/item.htm?"
-				+ "&id=35828877486"
-				);
+		// httpGet.addHeader("Referer",
+		// "http://detail.tmall.com/item.htm?id=40533381395&skuId=68347779144&areaId=110000&cat_id=50024400&rn=763d147479ecdc17c2632a4219ce96b3&standard=1&user_id=263726286&is_b=1");
+		httpGet.addHeader("Referer", "https://detail.tmall.com/item.htm?" + "&id=35828877486");
 		CloseableHttpResponse response = null;
 		response = httpClient.execute(httpGet);
 		final HttpEntity entity = response.getEntity();
@@ -426,78 +441,70 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 			result = EntityUtils.toString(entity);
 			EntityUtils.consume(entity);
 		}
-		
-		//商品价格的返回值，需要解析出来价格
-		
-		result = result.substring(10, result.length()-1);
+
+		// 商品价格的返回值，需要解析出来价格
+
+		result = result.substring(10, result.length() - 1);
 		System.out.println(result);
 		response.close();
 		httpClient.close();
-}
-	
-	
-	
-	
-	
+	}
 
-	//获得京东图片
+	// 获得京东图片
 	private void getJDImages() throws InterruptedException {
 		Elements images = skuDoc.select("#spec-list ul li img");
 		saveImages(images);
 	}
 
-	
-	
-	
-	//获得京东规格参数
+	// 获得京东规格参数
 	private void getJDSpecData() throws InterruptedException {
-		
-		Elements dl = skuDoc.select(".Ptable .Ptable-item dl");	
+
+		Elements dl = skuDoc.select(".Ptable .Ptable-item dl");
 		Elements dt = dl.select("dt");
 		Elements dd = dl.select("dd");
 		String dtText = null;
 		Long keyId = 0l;
 		String keyName = null;
 		String valueNames = null;
-		//循环抓取dl的每一行
+		// 循环抓取dl的每一行
 		int size = dt.size();
 		for (int i = 0; i < size; i++) {
 			dtText = dt.eq(i).text();
-			//循环key列表
+			// 循环key列表
 			for (TBrSpecKey key : tbrSpecKeyList) {
-				//当前dt包含keyName时，操作该规格参数。
+				// 当前dt包含keyName时，操作该规格参数。
 				keyName = key.getKeyName();
-				if(StringUtils.isNotBlank(dtText) && dtText.contains(keyName)){
+				if (StringUtils.isNotBlank(dtText) && dtText.contains(keyName)) {
 					keyId = key.getId();
-					//查到当前dt对应的dd的值。
+					// 查到当前dt对应的dd的值。
 					valueNames = dd.get(i).text();
-					saveProductSpec(keyId, keyName, valueNames,ProductConstant.PRODUCT_SOURCE_JD);
+					saveProductSpec(keyId, keyName, valueNames, ProductConstant.PRODUCT_SOURCE_JD);
 					break;
 				}
 			}
 		}
 	}
 
-	private void getJDCommentStatisticsData()throws InterruptedException {
-		
-		
+	private void getJDCommentStatisticsData() throws InterruptedException {
+
 		try {
-			//异步返回评论统计数据的action
-			String data = HttpUtils.getData("https://club.jd.com/comment/productCommentSummaries.action?referenceIds="+skuId,GBK);
+			// 异步返回评论统计数据的action
+			String data = HttpUtils
+					.getData("https://club.jd.com/comment/productCommentSummaries.action?referenceIds=" + skuId, GBK);
 			JSONObject jsonObj = JSON.parseObject(data);
 			JSONArray jsonArray = jsonObj.getJSONArray("CommentsCount");
 			JSONObject jsonObj2 = jsonArray.getJSONObject(0);
-			
-			String data2 = HttpUtils.getData("http://club.jd.com/discussion/getProductPageImageCommentList.action?productId="+skuId,GBK);
+
+			String data2 = HttpUtils.getData(
+					"http://club.jd.com/discussion/getProductPageImageCommentList.action?productId=" + skuId, GBK);
 			JSONObject jsonObj3 = JSON.parseObject(data2);
 			JSONObject jsonObj4 = jsonObj3.getJSONObject("imgComments");
 			String jdNumImg = jsonObj4.getString("imgCommentCount");
-			
-			
+
 			TBrProductCommentStatistics one = new TBrProductCommentStatistics();
 			one.setPid(productId);
 			TBrProductCommentStatistics queryOne = tBrProductCommentStatisticsService.queryOne(one);
-			if(queryOne  == null){
+			if (queryOne == null) {
 				one.setJdNumAll(jsonObj2.getString("CommentCountStr"));
 				one.setJdNumImg(jdNumImg);
 				one.setJdNumMore(jsonObj2.getString("AfterCountStr"));
@@ -506,7 +513,7 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 				one.setJdNumBad(jsonObj2.getString("PoorCountStr"));
 				setDefaultData((BaseEntity) one);
 				tBrProductCommentStatisticsService.add(one);
-			}else{
+			} else {
 				queryOne.setJdNumAll(jsonObj2.getString("CommentCountStr"));
 				queryOne.setJdNumImg(jdNumImg);
 				queryOne.setJdNumMore(jsonObj2.getString("AfterCountStr"));
@@ -517,17 +524,16 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 			}
 		} catch (Exception e) {
 			log.info("***获得京东评论统计信息，json解析异常***");
-//			e.printStackTrace();
+			// e.printStackTrace();
 		}
-		
-		
+
 	}
-	
-	//获得价格，无销量
-	private void getJDBaseData(Document doc)throws InterruptedException {			
+
+	// 获得价格，无销量
+	private void getJDBaseData(Document doc) throws InterruptedException {
 		Elements goodsList = doc.select("#J_goodsList");
 		String priceStr = goodsList.select("ul").eq(0).select("li").eq(0).select(".p-price").select("i").text();
-			
+
 		TBrProduct product = new TBrProduct();
 		product.setId(productId);
 		product.setJdUrl(skuUrl);
@@ -535,14 +541,13 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		tBrProductService.updateByIdSelective(product);
 	}
 
-
 	private BigDecimal transformPrice(String priceStr) {
 		BigDecimal price = null;
-		if(StringUtils.isBlank(priceStr)){
+		if (StringUtils.isBlank(priceStr)) {
 			return null;
 		}
 		try {
-			double doubleValue = Double.valueOf(priceStr).doubleValue(); 
+			double doubleValue = Double.valueOf(priceStr).doubleValue();
 			price = BigDecimal.valueOf(doubleValue);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -550,28 +555,27 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		return price;
 	}
 
-
 	private void saveImages(Elements images) {
-		//获得图片
+		// 获得图片
 		TBrProductImage tBrProductImage = null;
 		String imageUrl = null;
-		
+
 		TBrProductImageQuery tBrProductImageQuery = new TBrProductImageQuery();
 		tBrProductImageQuery.setProductId(productId);
 		tBrProductImageQuery.setSource(sourceType);
 		long queryCount = tBrProductImageService.queryCount(tBrProductImageQuery);
-		if(queryCount ==0){
+		if (queryCount == 0) {
 			List<TBrProductImage> tBrProductImageList = Lists.newArrayList();
 			for (Element image : images) {
 				tBrProductImage = new TBrProductImage();
-				if(sourceType == ProductConstant.PRODUCT_SOURCE_JD){
+				if (sourceType == ProductConstant.PRODUCT_SOURCE_JD) {
 					imageUrl = image.attr("data-url");
 					tBrProductImage.setJdUrl(imageUrl);
-				}else if(sourceType == ProductConstant.PRODUCT_SOURCE_TMALL){
-					imageUrl = image.attr("src");	
+				} else if (sourceType == ProductConstant.PRODUCT_SOURCE_TMALL) {
+					imageUrl = image.attr("src");
 					tBrProductImage.setTmallUrl(imageUrl);
 				}
-				setDefaultData((BaseEntity)tBrProductImage);
+				setDefaultData((BaseEntity) tBrProductImage);
 				tBrProductImage.setName(productName);
 				tBrProductImage.setProductId(productId);
 				tBrProductImage.setFileType(imageUrl.substring(imageUrl.lastIndexOf(".")));
@@ -583,51 +587,69 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		}
 	}
 
-	
 	private void setDefaultData(BaseEntity be) {
 		be.setCreateTime(new Date());
 		be.setDelFlg(Constant.NO);
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
 
-	
 	public static String getTmallId(String tmallUrl) {
 		int index = tmallUrl.indexOf("id=");
 		String id = "";
-		if(index>0){
-			id =tmallUrl.substring(tmallUrl.lastIndexOf("id=")+3);
+		if (index > 0) {
+			id = tmallUrl.substring(tmallUrl.lastIndexOf("id=") + 3);
 		}
 		return id;
 	}
-	
 
 	public static String getJdSkuId(String jdUrl) {
 		int index = jdUrl.indexOf(".html");
 		String JdSkuId = "";
-		if(index>0){
-			JdSkuId =jdUrl.substring(jdUrl.lastIndexOf("/")+1,index);
+		if (index > 0) {
+			JdSkuId = jdUrl.substring(jdUrl.lastIndexOf("/") + 1, index);
 		}
 		return JdSkuId;
 	}
-	
-	
+
 	@Override
 	public List<Comment> getComment(Long id) {
+
+		// jd comment
 		List<Comment> commentList = Lists.newArrayList();
-		List<Comment> jdComments = getJdComments(id);
-		if(jdComments!=null){
-			commentList.addAll(jdComments);
+		TBrProduct tBrProduct = tBrProductService.queryById(id);
+		String jdUrl = tBrProduct.getJdUrl();
+		String JdSkuId = getJdSkuId(jdUrl);
+		if (StringUtils.isNoneBlank(JdSkuId)) {
+			List<Comment> jdCommentDetails = JdData.getCommentDetails(JdSkuId);
+			commentList.addAll(jdCommentDetails);
 		}
-		List<Comment> tmallComments = getTmallComments(id);
-		if(jdComments!=null){
-			commentList.addAll(tmallComments);
+
+		// tmall comment
+		String tmallUrl = tBrProduct.getTmallUrl();
+		try {
+			this.skuDoc = JsoupUtil.getDoc(tmallUrl, "GBK");
+			this.skuId = getTmallId(tmallUrl);
+		} catch (InterruptedException e) {
+			log.info("***天猫url不正确，无法获得评论***");
+			// e.printStackTrace();
 		}
+		if (skuDoc != null && StringUtils.isNoneBlank(skuId)) {
+			String skuStr = skuDoc.toString();
+			skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
+			skuStr = skuStr.substring(skuStr.indexOf(":"), skuStr.indexOf(","));
+			this.sellerId = skuStr.replace(":", "").replace("\"", "");
+			List<Comment> tmallCommentDetails = TmallData.getCommentDetails(skuId, sellerId);
+			commentList.addAll(tmallCommentDetails);
+		}
+		;
+
 		return commentList;
 	}
 
-		
 	@Override
 	public List<Comment> getTmallComments(Long id) {
+		// tmall comment
+		List<Comment> commentList = Lists.newArrayList();
 		TBrProduct tBrProduct = tBrProductService.queryById(id);
 		String tmallUrl = tBrProduct.getTmallUrl();
 		try {
@@ -636,40 +658,31 @@ public class TBrProductSpecServiceImpl extends BaseServiceImpl<TBrProductSpec, L
 		} catch (InterruptedException e) {
 			log.info("***天猫url不正确，无法获得评论***");
 		}
-		if(skuDoc != null && StringUtils.isNoneBlank(skuId)){
+		if (skuDoc != null && StringUtils.isNoneBlank(skuId)) {
 			String skuStr = skuDoc.toString();
 			skuStr = skuStr.substring(skuStr.indexOf("sellerId"));
-			skuStr = skuStr.substring(skuStr.indexOf(":"),skuStr.indexOf(","));
+			skuStr = skuStr.substring(skuStr.indexOf(":"), skuStr.indexOf(","));
 			this.sellerId = skuStr.replace(":", "").replace("\"", "");
-			List<Comment> tmallComments = TmallData.getCommentDetails(skuId,sellerId);
-			return tmallComments;
-		};
-		return null;
-	}
+			List<Comment> tmallCommentDetails = TmallData.getCommentDetails(skuId, sellerId);
+			commentList.addAll(tmallCommentDetails);
+		}
+		;
 
+		return commentList;
+	}
 
 	@Override
 	public List<Comment> getJdComments(Long id) {
+		// jd comment
+		List<Comment> commentList = Lists.newArrayList();
 		TBrProduct tBrProduct = tBrProductService.queryById(id);
 		String jdUrl = tBrProduct.getJdUrl();
-		String JdSkuId =getJdSkuId(jdUrl);
-		if(StringUtils.isNoneBlank(JdSkuId)){
-			List<Comment> jdCommentDetails = JdData.getCommentDetails(JdSkuId);	
-			return jdCommentDetails;
+		String JdSkuId = getJdSkuId(jdUrl);
+		if (StringUtils.isNoneBlank(JdSkuId)) {
+			List<Comment> jdCommentDetails = JdData.getCommentDetails(JdSkuId);
+			commentList.addAll(jdCommentDetails);
 		}
-		return null;
+		return commentList;
 	}
 
-
-
-
-
-	
-	
-	
 }
-
-
-
-
-

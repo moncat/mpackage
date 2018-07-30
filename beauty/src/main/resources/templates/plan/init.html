@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='量肤定制您的护肤方案-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+<div class="aui-content" style="background: #f2f2f2">
+    <header class="aui-bar aui-bar-nav currency-bgcolor" id="">
+        <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="">“量肤定制”您的护肤方案</div>
+    </header>
+    <div style="background-color: #fff">
+        <div class="aui-text-center aui-padded-t-10 aui-padded-b-10">
+            <p class="aui-font-size-24">你的肌肤情况</p>
+            <div class="aui-margin-t-15 aui-margin-b-10">
+                <span class="customized-radius c-aui-progress-bar-radius-color-1 aui-margin-r-20" th:text="${#strings.toUpperCase(planItem[0].flag)}" >D</span>
+                <span class="customized-radius c-aui-progress-bar-radius-color-2 aui-margin-r-20" th:text="${#strings.toUpperCase(planItem[1].flag)}">R</span>
+                <span class="customized-radius c-aui-progress-bar-radius-color-3 aui-margin-r-20" th:text="${#strings.toUpperCase(planItem[2].flag)}">N</span>
+                <span class="customized-radius c-aui-progress-bar-radius-color-4" th:text="${#strings.toUpperCase(planItem[3].flag)}">T</span>
+            </div>
+        </div>
+        <div class="aui-row">
+            <div class="aui-col-xs-7">
+                <div class="c-aui-content-padded">
+                    <div class="aui-progress aui-progress">
+                        <div class="aui-progress-bar c-aui-progress-bar-radius c-aui-progress-bar-radius-color-1" th:style="'width:'+@{${planItem[0].gradeCount/44*100}}+'%;'"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-col-xs-5">
+                <div class="c-aui-content-padded aui-text-center" th:text="${planItem[0].typeName}">
+               	     偏干性
+                </div>
+            </div>
+        </div>
+        <div class="aui-row">
+            <div class="aui-col-xs-7">
+                <div class="c-aui-content-padded">
+                    <div class="aui-progress aui-progress">
+                        <div class="aui-progress-bar c-aui-progress-bar-radius c-aui-progress-bar-radius-color-2" th:style="'width:'+@{${planItem[1].gradeCount/72*100}}+'%;'"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-col-xs-5">
+                <div class="c-aui-content-padded aui-text-center" th:text="${planItem[1].typeName}">
+            	        耐受性
+                </div>
+            </div>
+        </div>
+        <div class="aui-row">
+            <div class="aui-col-xs-7">
+                <div class="c-aui-content-padded">
+                    <div class="aui-progress aui-progress">
+                        <div class="aui-progress-bar c-aui-progress-bar-radius c-aui-progress-bar-radius-color-3" th:style="'width:'+@{${planItem[2].gradeCount/45*100}}+'%;'"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-col-xs-5">
+                <div class="c-aui-content-padded aui-text-center"  th:text="${planItem[2].typeName}">
+                 	   紧致性
+                </div>
+            </div>
+        </div>
+        <div class="aui-row">
+            <div class="aui-col-xs-7">
+                <div class="c-aui-content-padded">
+                    <div class="aui-progress aui-progress">
+                        <div class="aui-progress-bar c-aui-progress-bar-radius c-aui-progress-bar-radius-color-4" th:style="'width:'+@{${planItem[3].gradeCount/85*100}}+'%;'"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-col-xs-5">
+                <div class="c-aui-content-padded aui-text-center" th:text="${planItem[3].typeName}">
+                  	  无色素沉淀
+                </div>
+            </div>
+        </div>
+        <div class="customized-col-2-border aui-margin-t-15">
+            <div class="aui-row ">
+                <div class="aui-col-xs-5 aui-text-center">
+                    <a href="/plan/detail">肤质报告</a>
+                </div>
+                <div class="aui-col-xs-2 aui-text-center">|</div>
+                <div class="aui-col-xs-5 aui-text-center">
+                    <a href="#" id="testAgainBtn">重新测试</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="aui-content maui-content maui-recommendation-product" id="mine" style="display:none">
+            <p>— 适合我的产品 —</p>
+            <span>测试后的专属推荐</span>
+            <div class="maui-tab">
+                <ul class="aui-tab" id="mineTab">
+                </ul>
+            </div>
+            <ul class="maui-picture-list  maui-tab-tag">
+                <li class="aui-row maui-tab1" style="display: block;">
+                </li>
+                <li class="aui-row maui-tab2">
+                </li>
+                <li class="aui-row maui-tab3">
+                </li>
+                <li class="aui-row maui-tab4">
+                </li>
+                <li class="aui-row maui-tab5">
+                </li>
+                <li class="aui-row maui-tab6">
+                </li>
+                <li class="aui-row maui-tab7">
+                </li>
+                <li class="aui-row maui-tab8">
+                </li>
+                <li class="aui-row maui-tab9">
+                </li>
+                <li class="aui-row maui-tab10">
+                </li>
+            </ul>
+        </div>
+        
+        
+    </div>
+    <div class="aui-bar aui-padded-t-15 aui-padded-b-15 " style="background-color: #fff;" id="consult">
+        <div class="aui-title c-text-color-4">
+        		    美肤指导一对一为您定制
+        </div>
+    </div>
+
+
+</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-tab.js"></script>
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/plan/init.js"></script>
+	<script type="text/javascript" src="/js/common/fallspage.js"></script>
+</section>
+</html>

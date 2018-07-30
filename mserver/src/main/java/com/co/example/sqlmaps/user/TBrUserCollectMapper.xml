@@ -193,9 +193,12 @@
     </if>
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+   	<if test="userDisplayNameLike != null" >
+       and tu.display_name like concat ('%', #{userDisplayNameLike,jdbcType=VARCHAR},'%')
+     </if>
+   	<if test="nameLike != null" >
+       and t.name like concat ('%', #{nameLike,jdbcType=VARCHAR},'%')
+     </if>
   </sql>
   <sql id="Table_Join_Clause" >
  	 <if test="joinFlg" >

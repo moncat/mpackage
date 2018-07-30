@@ -15,8 +15,7 @@ public class TBrUserPlan extends BaseEntity {
     /** 方案id */
     private Long planId;
 
-    /** 方案类型（冗余数据） 16种 1357 1358 1367 1368 1457 1458 1467 1468 2357 2358 2367 2368 2457 2458 2467 2468 */
-    private Byte type;
+    private String remark;
 
     /** 应用id */
     private Byte appId;

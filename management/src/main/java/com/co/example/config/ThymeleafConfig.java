@@ -26,7 +26,7 @@ public class ThymeleafConfig {
         templateResolver.setCacheable(false);
         return templateResolver;
     }
-
+	
     @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();

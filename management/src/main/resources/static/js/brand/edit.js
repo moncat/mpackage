@@ -46,10 +46,12 @@ $(function(){
 			focusCleanup:true,
 			success:"valid",
 			submitHandler:function(form){
+				$(':submit').attr('disabled','disabled');
 				$(form).ajaxSubmit({
 					type: 'post',
 					url: "/brand/edit" ,
 					success: function(data){
+						$(':submit').removeAttr('disabled');
 						if(data.code==200){
 							lc();
 						}else{
@@ -58,6 +60,7 @@ $(function(){
 						
 					},
 	                error: function(XmlHttpRequest, textStatus, errorThrown){
+	                	$(':submit').removeAttr('disabled');
 						layer.msg('error!',{icon:1,time:1000});
 					}
 				});

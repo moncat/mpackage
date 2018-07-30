@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='化妆品对比-柠檬妆典'">
+<section layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/mine.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+	<!-- 
+	<link rel="stylesheet" type="text/css" href="/base/lib/awesomplete/css/awesomplete.css" />
+	 -->
+	<style>
+        .aui-searchbar {
+            background: transparent;
+        }
+    </style>
+</section>
+<section layout:fragment="main" >
+<div class="aui-content" style="position:relative;z-index=2">
+    <header class="aui-bar aui-bar-nav currency-bgcolor" id="aui-header">
+        <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);" >
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">化妆品对比</div>
+        <a class="aui-pull-right" id="edit">编辑</a>
+    </header>
+    <!--   对比添加入口在商品列表详情页面
+    <div class="aui-row aui-margin-t-15" style="position:relative;z-index=99">
+        <div class="aui-title  aui-col-xs-10">
+            <div class="aui-searchbar" id="search">
+                <div class="aui-searchbar-input aui-border-radius c-fillet-border-color-1">
+                    <input class=""  type="search" placeholder="输入产品名称" id="searchNow">
+                </div>
+            </div>
+        </div>
+        <div class="aui-col-xs-2   ">
+            <div class="aui-searchbar">
+                <div class="aui-searchbar-input aui-border-radius  c-fillet-border-color-2">
+                    <a href="#">添加</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+     -->
+    <div class="aui-margin-t-25" style="position:relative;z-index=1">
+        <ul class="aui-list aui-media-list" style="border-top:none">
+            <li class="aui-list-item aui-padded-t-20 liItem" th:each="one:${list}">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        <img th:src="@{${one.moreData1==null?'/img/no-image.png':one.moreData1}}" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title c-text-color-1" th:text="${one.productName}">
+                            </div>
+                        </div>
+                        <div class="aui-list-item-text c-text-color-2 aui-pull-right">
+                      		 <input th:attr="data-id=${one.id}" class="aui-checkbox "  type="checkbox" >
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-bottom: 2.67rem;"></div>
+    <div class="aui-bar aui-bar-nav aui-bar-tab currency-bgcolor" style="color: #ffffff; " id="operBtn">
+        <div class="aui-title"  >
+        	    立即对比
+        </div>
+    </div>
+    <div class="aui-bar aui-bar-nav aui-bar-tab currency-bgcolor" style="color: #ffffff; display:none"  id="delBtn" >
+        <div class="aui-title" >
+         	   删除
+        </div>
+    </div>
+   
+    
+</div>
+</section>
+<section layout:fragment="my">
+<!-- 
+	<script type="text/javascript" src="/base/lib/awesomplete/js/awesomplete.min.js"></script>
+	 -->
+	 <script type="text/javascript" src="/base/lib/aui/js/aui-dialog.js"></script>
+	<script type="text/javascript" src="/js/contrast/list.js"></script>
+</section>
+</html>

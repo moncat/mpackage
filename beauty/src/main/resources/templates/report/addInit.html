@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="common/layout" th:with="title='填写报告-柠檬妆典'">
+<section layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main">
+	<header class="aui-bar aui-bar-nav maui-header-red" id="mine-head">
+		<a class="aui-pull-left aui-btn" href="javascript:history.go(-1);"> 
+			<span class="aui-iconfont aui-icon-left" ></span>
+		</a>
+		<div class="aui-title">填写报告</div>
+	</header>
+	<form id="curForm" >
+		<div class="aui-content aui-margin-b-15">
+			<div class="try_new">
+				<div class="try_title">
+					报告名称<font>*如需修改请在试用产品名称后输入</font>
+				</div>
+				<ul class="aui-list aui-form-list">
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-label">名称</div>
+							<div class="aui-list-item-input">
+								<input type="text" placeholder="请输入报告名称（必填）" name="name" datatype="*" nullmsg="报告名称能为空！">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="try_title">图文说明</div>
+				<ul id="imgUl">
+					<li class="dousc" data-id="1">
+						<div class="try_1">
+							<img src="" class="try_img" alt=" " id="image1" />
+							<span id="span1">+</span>
+						</div> 
+						<input type="file" name="file" id="file1" class="imgInput" style="display:none">
+						<input type="hidden" name="list[0].image" id="url1"></input>
+						<div class="aui-list-item-input">
+							<textarea placeholder="请输入试用感受" name="list[0].imageInfo" class="try_2"></textarea>
+						</div>
+					</li>
+					
+				</ul>
+				<div class="try_addtw">
+					<a id="addImg" >新增图文说明</a>
+				</div>
+				<div class="try_title">试用说明</div>
+				<div class="aui-list-item-input">
+					<textarea placeholder="请输入试用说明"  name="detail" class="try_3"  ></textarea>
+				</div>
+			</div>
+		</div>
+		<nav class="aui-bar aui-bar-nav bottom-info">
+			<div id="save" class="aui-title">保存信息</div>
+		</nav>
+		<input type="hidden" name="id" th:value="${activityId}">
+	</form>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/upload/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-toast.js" ></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-dialog.js"></script>
+	<script type="text/javascript" src="/base/lib/Validform/5.3.2/Validform.js"></script>
+	<script type="text/javascript" src="/js/report/add.js"></script>
+</section>
+</html>

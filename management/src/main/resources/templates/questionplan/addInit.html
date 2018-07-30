@@ -26,24 +26,25 @@
 				 肤质特点：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-												<textarea  class="textarea" value="" placeholder="肤质特点" name="skinFeature"/>
-												</div>
+					<script id="skinFeature" name="skinFeature" type="text/plain"></script>
+				</div>
 			</div>
 		    <div class="row cl">
 				<label class="form-label col-xs-3 col-sm-2">
 				 解决办法：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-												<textarea  class="textarea" value="" placeholder="解决办法" name="skinIdea"/>
-												</div>
+					<script id="skinIdea" name="skinIdea" type="text/plain"></script>
+				</div>
 			</div>
 		    <div class="row cl">
 				<label class="form-label col-xs-3 col-sm-2">
 				 备注：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-												<textarea  class="textarea" value="" placeholder="备注" name="remark"/>
-												</div>
+					<script id="remark" name="remark" type="text/plain">
+        			</script>
+				</div>
 			</div>
 							
 			<div class="row cl">
@@ -56,6 +57,9 @@
 	</div>
 	</section>
 	<section  layout:fragment="my">
+			<script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.config.js"></script>
+		    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.all.js"></script>
+		    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 			<script type="text/javascript" charset="utf-8" src="/js/questionplan/add.js"></script>
 	</section>
 </body>

@@ -16,10 +16,12 @@ $(function(){
 				}, function(index){
 					$('.btns').hide();
 					 layer.close(index);
+					 $(':submit').attr('disabled','disabled');
 					$(form).ajaxSubmit({
 						type: 'post',
 						url: "/label/add" ,
 						success: function(data){
+							$(':submit').removeAttr('disabled');
 							var iconId =1;
 							if(data.code ==400){
 								var iconId =2;
@@ -28,6 +30,7 @@ $(function(){
 							$('.btns').show();
 						},
 		                error: function(XmlHttpRequest, textStatus, errorThrown){
+		                	$(':submit').removeAttr('disabled');
 							layer.msg('error!',{icon:1,time:1000});
 							$('.btns').show();
 						}

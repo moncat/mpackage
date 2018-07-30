@@ -29,14 +29,17 @@ $(function(){
 			focusCleanup:true,
 			success:"valid",
 			submitHandler:function(form){
+				$(':submit').attr('disabled','disabled');
 				$(form).ajaxSubmit({
 					type: 'post',
 					url: "/article/edit" ,
 					success: function(data){
+						$(':submit').removeAttr('disabled');
 						layer.msg('编辑成功!',{icon:1,time:1000});
 						
 					},
 	                error: function(XmlHttpRequest, textStatus, errorThrown){
+	                	$(':submit').removeAttr('disabled');
 						layer.msg('error!',{icon:1,time:1000});
 					}
 				});

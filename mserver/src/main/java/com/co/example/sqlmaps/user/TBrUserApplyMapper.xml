@@ -176,6 +176,7 @@
      <result column="title" property="title" jdbcType="VARCHAR" />
      <result column="admin_display_name" property="adminDisplayName" jdbcType="VARCHAR" />
      <result column="user_display_name" property="userDisplayName" jdbcType="VARCHAR" />
+     <result column="product_image" property="productImage" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Vo_Column_List" >
     t.id, 
@@ -192,14 +193,18 @@
     t.app_id
     <if test="joinActivity" >
      ,tba.title
+     ,tba.product_image
      ,ta.display_name admin_display_name
      ,tu.display_name user_display_name
      </if>
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+    <if test="titleLike != null" >
+        and tba.title like concat ('%', #{titleLike,jdbcType=VARCHAR},'%')
+     </if>
+    <if test="userDisplayNameLike != null" >
+        and tu.display_name like concat ('%', #{userDisplayNameLike,jdbcType=VARCHAR},'%')
+     </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <if test="joinActivity" >

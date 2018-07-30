@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="common/layout"
+	th:with="title=${one.productName}+'-产品详情-柠檬妆典'">
+<section layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+	<link rel="stylesheet" type="text/css" href="/css/pro.css" />
+</section>
+<section layout:fragment="main">
+	<div class="mask" style="display:none"></div>
+	<div class="openGuide" style="display:none">
+		<image src="/img/openGuide.png">
+	</div>
+	<div class="aui-content">
+		<header class="aui-bar aui-bar-nav currency-bgcolor" id="aui-header">
+			<a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+				<span class="aui-iconfont aui-icon-left" style="cursor: pointer"></span>
+			</a>
+			<div class="aui-title">产品详情</div>
+			<!-- 
+			<a class="aui-pull-right" th:href="@{'/contrast/list?productId='+${one.id}}">对比</a>
+			 -->
+		</header>
+		<div class="aui-margin-t-25">
+			<ul class="aui-list aui-media-list c-aui-list-border-t-none">
+				<li class="aui-list-item c-aui-media-list-border-none">
+					<div class="aui-list-item-inner">
+						<div class="aui-row aui-row-padded">
+							<div class="aui-col-xs-12">
+								<img id="pimg"
+									th:src="@{${one.moreData1==null?'/img/no-image.png':one.moreData1}}" />
+								<p id="title" style="font-size: 1rem; margin-top: 20px; color: #333;" th:attr="data-id=${one.id}"
+									th:text="${one.productName}">法兰琳卡</p>
+									<span style="font-size: 0.65rem;line-height: 0.9rem;color: #999999;margin-top: 0.3rem;margin-bottom: 0.3rem;	display: block;" class="label">美白 遮瑕</span>
+									<span style="color: #f73772;font-size: 1rem;line-height: 1.1rem;display: block;" th:text="${one.tmallPrice == null? '':'平台参考价格：￥ '+one.tmallPrice}"></span>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="aui-tab " id="tab">
+			<div class="aui-tab-item aui-active">成分分析</div>
+			<div class="aui-tab-item">安全分析</div>
+			<div class="aui-tab-item">功效分析</div>
+			<div class="aui-tab-item">肤质匹配</div>
+		</div>
+		<div class="c-contrast-container pro_con">
+			<!-- tab1 -->
+			<div class="contrast-tab-info contrast-tab-info1"
+				style="display: block">
+				<div class="c-content-div">
+					<div class="aui-row aui-row-padded c-row-height">
+						<div class="aui-col-xs-12">
+							<div class="c-content-div product_skin">
+								<p>· 本商品成分来自备案库 ·</p>
+								<span>Own archives repositories</span>
+							</div>
+							<div class="aui-progress aui-progress" id="tab1progress">
+								<!-- precent -->
+							</div>
+						</div>
+						<div class="product_com" id="tab1data">
+							<!-- num -->
+						</div>
+						<a th:href="@{'/ingredient/detail?productId='+${one.id}}"
+							class="product_com_a">查看全部成分</a>
+					</div>
+				</div>
+			</div>
+			<!-- tab2 -->
+			<div class="contrast-tab-info contrast-tab-info2">
+				<div class="c-content-div product_skin">
+					<p>· 安全评分 ·</p>
+					<span>Security rating</span>
+					<div class="star" id="tab2data"></div>
+				</div>
+				<div class="c-content-div">
+					<div class="aui-row aui-row-padded c-row-height" id="tab2dataMore"></div>
+				</div>
+			</div>
+			<!-- tab3 -->
+			<div class="contrast-tab-info contrast-tab-info3">
+				<div class="c-content-div">
+					<div class="aui-row aui-row-padded c-row-height" id="tab3data">
+					</div>
+				</div>
+			</div>
+			<!-- tab4 -->
+			<div class="contrast-tab-info contrast-tab-info4">
+				<div class="c-content-div product_skin">
+					<p>· 本产品与肤质匹配度 ·</p>
+					<span>Skin compatibility</span>
+					<div class="star" id="tab4data"><div class="clickable" id="tologin">请登录完成肤质测试</div></div>
+				</div>
+			</div>
+		</div>
+		<div class="aui-tab" id="tab2">
+			<div class="aui-tab-item aui-active">天猫</div>
+			<div class="aui-tab-item">京东</div>
+		</div>
+		<div class="c-contrast-container2 pro_con">
+			<div class="contrast-tab-info contrast-tab-info1"
+				style="display: block">
+				<div class="c-content-div">
+					<ul class="product_dp">
+						<li th:text="${one.tmallPrice == null? '':'售价：￥ '+one.tmallPrice}"></li>
+						<li th:text="${one.sales == null? '':'销量： '+one.sales+'件'}"></li>
+					</ul>
+					<ul class="product_pl" id="tmallComment">
+					</ul>
+				</div>
+			</div>
+			<div class="contrast-tab-info contrast-tab-info2">
+				<div class="c-content-div">
+					<ul class="product_dp">
+						<li th:text="${one.jdPrice == null? '':'售价：￥ '+one.jdPrice}"></li>
+					</ul>
+					<ul class="product_pl" id="jdComment">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="soshm"></div>
+	<div style="margin-bottom: 2.67rem;"></div>
+	<footer class="aui-bar aui-bar-tab aui-margin-t-15 " style="min-height: 1.25rem;">
+		<div th:attr="data-collect=${collectFlg},data-id=${collectId}" class="aui-bar-tab-item aui-border-r" tapmode style="width: 3rem;" id="collect">
+			<i  class="aui-iconfont aui-icon-star" th:style="${collectFlg == 1?'color: #ffbb33 !important; font-weight: bold;':''}"></i>
+			<div class="aui-bar-tab-label">收藏</div>
+		</div>
+		 <!-- 
+		<div class="aui-bar-tab-item" tapmode style="width: 3rem;" id='share'>
+			<i class="aui-iconfont aui-icon-share"
+				style="color: #39c649 !important; font-weight: bold;"></i>
+			<div class="aui-bar-tab-label ">分享</div>
+		</div>
+		  -->
+		
+		<div class="aui-bar-tab-item" tapmode style="width: 3rem; ">
+			<i class="aui-iconfont aui-icon-flag"></i>
+			<a class="aui-bar-tab-label clickable" style="color:#757575" th:href="@{'/contrast/list?productId='+${one.id}}">对比</a>
+		</div>
+		
+		<a th:if="${#strings.contains(one.jdUrl,'item')}" th:href="@{${one.jdUrl}}"
+		class="aui-bar-tab-item aui-bg-danger aui-text-white"style="width: auto; background: #f73772 !important;border-right: 1px solid #ff5589;">
+			去京东购买
+		</a>		
+		<a  th:attr="biz-itemid=${#strings.substringAfter(one.tmallUrl,'=')}" isconvert=1 id="tmallUrl"
+		th:if="${#strings.contains(one.tmallUrl,'item')}" th:href="@{${one.tmallUrl}}" 
+		class="aui-bar-tab-item aui-bg-danger aui-text-white" style="width: auto; background: #f73772 !important">
+			去天猫购买
+		</a> 
+	</footer>
+	<div th:utext="${tbkWidget.mapValue}"></div> 
+	
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-tab.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-toast.js" ></script>
+	<script type="text/javascript" src="/base/lib/share/soshm.js" ></script>
+	<script type="text/javascript" src="/js/product/show.js"></script>
+</section>
+</html>

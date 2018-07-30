@@ -30,8 +30,7 @@
 								肤质特点：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-												<textarea class="textarea" th:utext="${one.skinFeature}" value="" placeholder="肤质特点" name="skinFeature"/>
-								
+					<script id="skinFeature" name="skinFeature" type="text/plain"></script>
 				</div>
 			</div>
 		    <div class="row cl">
@@ -39,8 +38,7 @@
 								解决办法：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-												<textarea class="textarea" th:utext="${one.skinIdea}" value="" placeholder="解决办法" name="skinIdea"/>
-								
+					<script id="skinIdea" name="skinIdea" type="text/plain"></script>
 				</div>
 			</div>
 		    <div class="row cl">
@@ -48,8 +46,7 @@
 								备注：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-												<textarea class="textarea" th:utext="${one.remark}" value="" placeholder="备注" name="remark"/>
-								
+					<script id="remark" name="remark" type="text/plain"></script>
 				</div>
 			</div>
 							
@@ -63,6 +60,14 @@
 	</div>
 	</section>
 	<section  layout:fragment="my">
+	<script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.config.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.all.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+	    <script th:inline="javascript">
+		    var skinFeatureTmp = [[${one.skinFeature}]];
+		    var skinIdeaTmp = [[${one.skinIdea}]];
+		    var remarkTmp = [[${one.remark}]];
+		</script>
 		<script type="text/javascript" charset="utf-8" src="/js/questionplan/edit.js"></script>
 	</section>
 </body>

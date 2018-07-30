@@ -435,7 +435,7 @@
   	<module>mserver</module>
   	<module>mWebConfig</module>
   	<module>management</module>
-  	<module>mWebAppConfig</module>
+ 	<module>mWebAppConfig</module>
   	<module>beauty</module>
  <!--  	
   	<module>mweb</module>

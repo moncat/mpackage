@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" 
+th:with="title=${activity.title}+'-试用专区-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="margin: 0 auto">
+            <a class="aui-btn aui-pull-left" href="/try/list">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </a>
+            <div class="aui-title">试用专区</div>
+        </header>
+        <div class="aui-content maui-content maui-trial-detail">
+        <!-- 
+            <p th:text="${activity.title}">VENSE唯恩诗 梦幻柔光气垫BB霜，开始试用啦！</p>
+             -->
+            <ul class="maui-trial-activity" style="display: block;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <img th:src="@{${activity.noticeImage}}">
+                        <div class="trial-bottom-img">
+                            <p th:text="${activity.title}">VENSE唯恩诗 梦幻柔光气垫BB霜</p>
+                            <span>
+	                           	 申领时间：<span th:text="${#dates.format(activity.startTime, 'yyyy-MM-dd') +'至'+#dates.format(activity.endTime, 'yyyy-MM-dd')}"></span>
+	                       		限量<span th:text="${activity.productNum}">1</span>份
+								<span th:text="${activity.userNum}">1</span>人申请
+                            </span>
+                        </div>
+                        <span th:attr="data-st=${activity.startTime},data-et=${activity.endTime}"  class="trial-activity-time timer">距离活动结束00天00时00分00秒</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="maui-process">
+                <span>试用流程</span>
+                <div class="aui-row">
+                    <span>申请试用</span>
+                    <i class="icon hufuiconfont hufuicon-you-copy"></i>
+                    <span>填写信息</span>
+                    <i class="icon hufuiconfont hufuicon-you-copy"></i>
+                    <span>申请成功</span>
+                    <i class="icon hufuiconfont hufuicon-you-copy"></i>
+                    <span>试用报告</span>
+                </div>
+            </div>
+        </div>
+        <div class="aui-content maui-content maui-process">
+            试用详情
+            <span class="maui-trial-detail-content">
+                <p th:utext="${activity.detail}"></p>
+            </span>
+        </div>
+        <div style="margin-bottom: 2.67rem;"></div><!--防止底部遮盖内容-->
+        <footer class="aui-bar aui-bar-tab maui-footer">
+      		<!-- 活动暂无收藏
+            <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
+                <i class="aui-iconfont aui-icon-star aui-text-warning"></i>
+                <div class="aui-bar-tab-label aui-text-warning">收藏</div>
+            </div>
+             -->
+            <div class="aui-bar-tab-item aui-border-r" tapmode style="width: 3rem;" id="consult">
+                <i class="aui-iconfont aui-icon-comment aui-text-info" style="color: #F73671 !important;"></i>
+                <div class="aui-bar-tab-label aui-text-info" style="color: #F73671 !important;">咨询</div>
+            </div>
+            
+            
+            <div th:if="${flg ==4}" class="aui-bar-tab-item  aui-text-white" tapmode style="background-color: #757575 !important;width: auto;">
+            	<span>已结束</span>
+            </div>
+            
+            <div th:if="${flg ==5}" class="aui-bar-tab-item aui-bg-danger aui-text-white" tapmode style="width: auto;" id="try" th:attr="data-id=${activity.id}">
+            	 <span>我要试用</span>
+            </div>
+            
+            <div th:if="${flg ==6}" class="aui-bar-tab-item  aui-text-white" tapmode style="background-color: #757575 !important; width: auto;" >
+            	 <span>活动即将开始</span>
+            </div>
+            
+            <div th:if="${flg ==1}" class="aui-bar-tab-item  aui-text-white" tapmode style="background-color: #757575 !important; width: auto;">
+            	<span>申请中，请耐心等待</span>
+            </div>
+            
+            <div th:if="${flg ==2}" class="aui-bar-tab-item  aui-text-white" tapmode style="background-color: #757575 !important; width: auto;" id="report" th:attr="data-id=${activity.id}">
+             	<span>申请成功，请填写试用报告</span>
+            </div>
+            
+            <div th:if="${flg ==0}" class="aui-bar-tab-item  aui-text-white" tapmode style="background-color: #757575 !important; width: auto;">
+            	<span>申请失败，祝您下次好运</span>
+            </div>
+            
+            <div th:if="${flg ==3}" class="aui-bar-tab-item  aui-text-white" tapmode style="background-color: #757575 !important;width: auto;">
+            	<span>试用完成，祝您明天更美丽</span>
+            </div>
+        </footer>
+    </div>
+    
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/try/detail.js"></script>
+</section>
+</html>       

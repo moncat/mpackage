@@ -30,13 +30,16 @@
     delete from t_menu
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.system.TMenu" >
+  <insert id="insert" parameterType="com.co.example.entity.system.TMenu" keyColumn="id" keyProperty="id" >
+	 	 <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+	      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+	    </selectKey>
     insert into t_menu (id, name, 
       url, icon, level, parent_id, 
       is_root, item_order, create_time, 
       create_by, update_time, update_by, 
       del_flg)
-    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{name,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
       #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, 
       #{isRoot,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
@@ -193,14 +196,32 @@
     t.update_time, 
     t.update_by, 
     t.del_flg
-     <!-- ,alias.field -->
+     <if test="roleId !=null">
+  		  ,trr.role_id
+     </if>
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+     <if test="menuIds != null ">
+	      <if test="menuIds.size() > 0">
+	    	  and t.id in 
+	    	  <foreach collection="menuIds" index="index" item="item" open="(" close=")" separator="," >
+	    	  	#{item,jdbcType=SMALLINT}
+	    	  </foreach>
+	      </if>
+			<!--       
+		  <if test="menuIds.size() == 0">
+	    	  and 1=0
+	      </if>
+	       -->
+   	  </if>
+	 
+   	  
+   	  
+   	  
   </sql>
   <sql id="Table_Join_Clause" >
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  	 <if test="roleId !=null">
+  		  left join t_role_right trr on t.id = trr.right_id and trr.role_id = #{roleId,jdbcType=BIGINT}
+     </if>
   </sql>
 </mapper>

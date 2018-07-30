@@ -4,6 +4,49 @@ $(function(){
 //		Hui_admin_tab($(this));
 //	});
 	
+	
+	$('.ok').on('click',function(){
+		//推荐
+		var btn = $(this);
+		var id = $(this).attr('data-id');
+		$.post("/recommend/ok/"+id,function(){
+			var span= btn.parents('td').prev().find('span');
+			span.text('已推荐');
+			btn.prev().show();
+			btn.hide();
+		});
+		
+
+		
+	});
+	
+	$('.label').on('click',function(){
+		var id = $(this).attr('data-id');	
+		//勾选推荐标签
+		l2('/product/label/'+id,'900px','500px');
+		
+	});
+	
+	
+	
+	
+	$('.cancel').on('click',function(){
+		var btn = $(this);
+		var id = $(this).attr('data-id');
+		$.post("/recommend/cancel/"+id,function(){
+			var span= btn.parents('td').prev().find('span');
+			span.text('');
+			btn.next().show();
+			btn.hide();
+		}); 
+		
+	});
+	
+	
+	
+	
+	
+	//***********************
 	$('.add').on('click',function(){
 		lf2('/product/addInit','900px','500px');
 	});

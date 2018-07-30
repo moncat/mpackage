@@ -28,13 +28,13 @@ public interface TBrIngredientService extends BaseService<TBrIngredient, Long> {
 	 * @param productId
 	 * @return
 	 */
-	Map<String, Integer> safeAnalyze(Long productId);
+	List<Map<String, Object>> safeAnalyze(Long productId);
 	/**
 	 * 功效分析 美白（1种） 保湿（2种）
 	 * @param productId
 	 * @return
 	 */
-	Map<String, Integer> effectAnalyze(Long productId);
+	List<Map<String, Object>> effectAnalyze(Long productId);
 	
 	
 }

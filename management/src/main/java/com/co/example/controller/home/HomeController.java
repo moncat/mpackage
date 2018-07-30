@@ -48,7 +48,7 @@ public class HomeController {
     		,HttpSession session) throws Exception{
     	TAdmin admin = SessionUtil.getAdmin(session);
     	TAdminVo adminVo = (TAdminVo) admin; 
-    	List<TMenu> list = tMenuService.getMenuTree(adminVo.getRoles());
+    	List<TMenu> list = tMenuService.getMenuTree(adminVo.getRoles(),true);
     	model.addAttribute("admin", admin);
     	model.addAttribute("list", list);
         return "common/index";
@@ -64,6 +64,7 @@ public class HomeController {
 	public String error403(Model model) throws Exception{
 		return "error403";
 	}
+	
 	
 	
 

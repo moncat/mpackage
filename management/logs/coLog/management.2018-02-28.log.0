@@ -1,0 +1,571 @@
+2018-02-28 17:42:27.111 [main] DEBUG o.s.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.co.example.DataTest13]
+2018-02-28 17:42:27.127 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+2018-02-28 17:42:27.170 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+2018-02-28 17:42:27.270 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.co.example.DataTest13] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+2018-02-28 17:42:27.304 [main] DEBUG o.s.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.co.example.DataTest13]: class path resource [com/co/example/DataTest13-context.xml] does not exist
+2018-02-28 17:42:27.304 [main] DEBUG o.s.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.co.example.DataTest13]: class path resource [com/co/example/DataTest13Context.groovy] does not exist
+2018-02-28 17:42:27.305 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest13]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-02-28 17:42:27.434 [main] DEBUG o.s.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.co.example.DataTest13]
+2018-02-28 17:42:27.577 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.co.example.DataTest13]
+2018-02-28 17:42:27.578 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.co.example.DataTest13]
+2018-02-28 17:42:27.598 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.co.example.DataTest13]
+2018-02-28 17:42:27.598 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.co.example.DataTest13]
+2018-02-28 17:42:27.599 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.co.example.DataTest13]
+2018-02-28 17:42:27.599 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.co.example.DataTest13]
+2018-02-28 17:42:27.600 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.co.example.DataTest13]
+2018-02-28 17:42:27.600 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.co.example.DataTest13]
+2018-02-28 17:42:27.606 [main] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@44c73c26 testClass = DataTest13, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+2018-02-28 17:42:27.608 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.co.example.DataTest13]
+2018-02-28 17:42:27.608 [main] DEBUG o.s.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.co.example.DataTest13]
+2018-02-28 17:42:27.727 [main] DEBUG o.s.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+2018-02-28 17:42:28.660 [main] INFO  com.co.example.DataTest13 - Starting DataTest13 on SKY-20160518SVB with PID 12196 (started by Administrator in D:\Workspaces2\package\management)
+2018-02-28 17:42:28.660 [main] DEBUG com.co.example.DataTest13 - Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE
+2018-02-28 17:42:28.660 [main] INFO  com.co.example.DataTest13 - No active profile set, falling back to default profiles: default
+2018-02-28 17:42:28.925 [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2018-02-28 17:42:32.386 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2018-02-28 17:42:32.616 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2018-02-28 17:42:32.619 [main] DEBUG o.s.integration.config.IntegrationRegistrar - SpEL function '#xpath' isn't registered: there is no spring-integration-xml.jar on the classpath.
+2018-02-28 17:42:33.412 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2018-02-28 17:42:33.418 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2018-02-28 17:42:34.530 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [sync*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.531 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [lock*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.531 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [do*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.531 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [merge*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.531 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [save*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.531 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [delete*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.532 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [add*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.532 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [insert*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.532 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [select*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly,-Throwable]
+2018-02-28 17:42:34.532 [main] DEBUG o.s.t.i.NameMatchTransactionAttributeSource - Adding transactional method [update*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable]
+2018-02-28 17:42:34.937 [main] DEBUG o.s.ui.context.support.UiApplicationContextUtils - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1a3b1f7e]
+2018-02-28 17:42:35.118 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2018-02-28 17:42:38.720 [main] DEBUG o.s.s.a.ScheduledAnnotationBeanPostProcessor - 1 @Scheduled methods processed on bean 'logController': {public void com.co.example.controller.product.LogController.testOne() throws java.lang.InterruptedException=[@org.springframework.scheduling.annotation.Scheduled(zone=, initialDelayString=, fixedDelayString=, fixedDelay=-1, cron=0 00 16 * * ? , fixedRate=-1, fixedRateString=, initialDelay=-1)]}
+2018-02-28 17:42:39.077 [main] DEBUG o.s.s.a.ScheduledAnnotationBeanPostProcessor - 2 @Scheduled methods processed on bean 'statisticsController': {public void com.co.example.controller.statistics.StatisticsController.addData()=[@org.springframework.scheduling.annotation.Scheduled(zone=, initialDelayString=, fixedDelayString=, fixedDelay=-1, cron=00 00 01 * * ? , fixedRate=-1, fixedRateString=, initialDelay=-1)], public void com.co.example.controller.statistics.StatisticsController.addUserData()=[@org.springframework.scheduling.annotation.Scheduled(zone=, initialDelayString=, fixedDelayString=, fixedDelay=-1, cron=1 0 0 1 * ? , fixedRate=-1, fixedRateString=, initialDelay=-1)]}
+2018-02-28 17:42:39.670 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2018-02-28 17:42:42.981 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$EnableGlobalAuthenticationAutowiredConfigurer - Eagerly initializing {managerApplication=com.co.example.ManagerApplication$$EnhancerBySpringCGLIB$$c184aba3@5ddd84d2, webSecurityConfig=com.co.example.security.WebSecurityConfig$$EnhancerBySpringCGLIB$$7435288@1d2d793d}
+2018-02-28 17:42:43.119 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2018-02-28 17:42:43.120 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2018-02-28 17:42:43.124 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2018-02-28 17:42:43.124 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2018-02-28 17:42:43.124 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2018-02-28 17:42:43.124 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2018-02-28 17:42:43.124 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2018-02-28 17:42:43.124 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2018-02-28 17:42:43.732 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression 'permitAll', for ExactUrl [processUrl='/login?error=true']
+2018-02-28 17:42:43.733 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression 'permitAll', for ExactUrl [processUrl='/login']
+2018-02-28 17:42:43.733 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression 'permitAll', for ExactUrl [processUrl='/login']
+2018-02-28 17:42:43.733 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression 'permitAll', for Ant [pattern='/logout', POST]
+2018-02-28 17:42:43.733 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression 'permitAll', for ExactUrl [processUrl='/login']
+2018-02-28 17:42:43.733 [main] DEBUG o.s.s.w.a.e.ExpressionBasedFilterInvocationSecurityMetadataSource - Adding web access control expression 'authenticated', for org.springframework.security.web.util.matcher.AnyRequestMatcher@1
+2018-02-28 17:42:43.743 [main] DEBUG o.s.s.w.access.intercept.FilterSecurityInterceptor - Validated configuration attributes
+2018-02-28 17:42:43.743 [main] DEBUG o.s.s.w.access.intercept.FilterSecurityInterceptor - Validated configuration attributes
+2018-02-28 17:42:43.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@761ea1f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c3627c, org.springframework.security.web.header.HeaderWriterFilter@49b6373f, org.springframework.security.web.csrf.CsrfFilter@62aefc75, org.springframework.security.web.authentication.logout.LogoutFilter@230dd372, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5bb45afc, org.springframework.security.web.session.ConcurrentSessionFilter@f047670, org.springframework.security.web.session.ConcurrentSessionFilter@654dbb78, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b897ffb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1254a3cd, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1e186006, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a91027c, org.springframework.security.web.session.SessionManagementFilter@2f51b100, org.springframework.security.web.access.ExceptionTranslationFilter@2e243122, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a0e5c0c]
+2018-02-28 17:42:43.835 [main] DEBUG o.s.s.a.i.aopalliance.MethodSecurityInterceptor - Validated configuration attributes
+2018-02-28 17:42:45.773 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2018-02-28 17:42:46.619 [main] DEBUG o.s.i.config.GlobalChannelInterceptorProcessor - No global channel interceptors.
+2018-02-28 17:42:46.624 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2018-02-28 17:42:46.625 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2018-02-28 17:42:46.625 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2018-02-28 17:42:51.818 [main] INFO  com.co.example.DataTest13 - Started DataTest13 in 24.071 seconds (JVM running for 25.906)
+2018-02-28 17:42:51.818 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Storing ApplicationContext in cache under key [[WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2018-02-28 17:42:51.819 [main] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@69f35d31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1]
+2018-02-28 17:42:51.819 [main] DEBUG o.s.test.context.web.ServletTestExecutionListener - Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test context [DefaultTestContext@44c73c26 testClass = DataTest13, testInstance = com.co.example.DataTest13@68c1d547, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]].
+2018-02-28 17:42:51.831 [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@44c73c26 testClass = DataTest13, testInstance = com.co.example.DataTest13@68c1d547, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]].
+2018-02-28 17:42:51.831 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2018-02-28 17:42:51.831 [main] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@69f35d31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1]
+2018-02-28 17:42:51.844 [main] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@44c73c26 testClass = DataTest13, testInstance = com.co.example.DataTest13@68c1d547, testMethod = getData@DataTest13, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2018-02-28 17:42:51.847 [main] DEBUG o.s.t.c.c.DefaultCacheAwareContextLoaderDelegate - Retrieved ApplicationContext from cache with key [[WebMergedContextConfiguration@41005828 testClass = DataTest13, locations = '{}', classes = '{class com.co.example.ManagerApplication, class com.co.example.ManagerApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7dc3712, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2fb0623e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@383dc82c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]
+2018-02-28 17:42:51.847 [main] DEBUG org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@69f35d31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1]
+2018-02-28 17:43:01.358 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:43:02.672 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - ==>  Preparing: select count(t.id) from t_br_product t WHERE t.del_flg = ? 
+2018-02-28 17:43:02.756 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - ==> Parameters: 2(Byte)
+2018-02-28 17:43:02.848 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - <==      Total: 1
+2018-02-28 17:43:02.850 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:43:12.183 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:43:12.186 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.select - ==>  Preparing: select t.id, t.product_name, t.product_alias, t.jd_price, t.tmall_price, t.sales, t.tmall_url, t.jd_url, t.apply_type, t.apply_sn, t.enterprise_name, t.enterprise_name_en, t.producing_area, t.confirm_date, t.is_off, t.cfda_processid, t.cfda_new_processid, t.bevol_mid, t.remark, t.source, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.del_flg from t_br_product t WHERE t.del_flg = ? limit 30 
+2018-02-28 17:43:12.206 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.select - ==> Parameters: 2(Byte)
+2018-02-28 17:43:12.488 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.select - <==      Total: 30
+2018-02-28 17:43:12.489 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:43:12.498 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:43:12.499 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - ==>  Preparing: select count(t.id) from t_br_product t WHERE t.del_flg = ? 
+2018-02-28 17:43:12.500 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - ==> Parameters: 2(Byte)
+2018-02-28 17:43:12.511 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - <==      Total: 1
+2018-02-28 17:43:12.512 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:43:22.445 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:43:22.446 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:43:22.462 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320609958035456(Long)
+2018-02-28 17:43:23.036 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:43:23.038 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:38.527 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:38.537 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:38.542 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:38.557 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:38.562 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 50(String), 8(Byte), 2320609958035456(Long)
+2018-02-28 17:44:39.069 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:39.069 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:39.069 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:39.113 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:39.114 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:39.114 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:39.114 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:39.115 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320610574991360(Long)
+2018-02-28 17:44:39.355 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:39.355 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:39.356 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:39.356 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:39.356 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:39.366 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:39.366 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 0(String), 8(Byte), 2320610574991360(Long)
+2018-02-28 17:44:39.505 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:39.505 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:39.505 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:39.528 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:39.528 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:39.529 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:39.530 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:39.530 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320610582577152(Long)
+2018-02-28 17:44:39.784 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:39.785 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:39.785 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:39.786 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:39.786 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:39.796 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:39.797 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 0(String), 8(Byte), 2320610582577152(Long)
+2018-02-28 17:44:39.915 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:39.916 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:39.916 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:39.956 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:39.957 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:39.957 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:39.957 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:39.958 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320611175333888(Long)
+2018-02-28 17:44:40.203 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:40.205 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:40.206 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:40.206 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:40.206 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:40.215 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:40.216 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 0(String), 8(Byte), 2320611175333888(Long)
+2018-02-28 17:44:40.327 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:40.327 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:40.328 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:40.353 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:40.353 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:40.355 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:40.355 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:40.355 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320611274801152(Long)
+2018-02-28 17:44:40.606 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:40.606 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:40.606 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:40.606 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:40.606 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:40.616 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:40.616 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 40(String), 8(Byte), 2320611274801152(Long)
+2018-02-28 17:44:40.725 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:40.725 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:40.725 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:40.748 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:40.748 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:40.749 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:40.750 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:40.750 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320614446530560(Long)
+2018-02-28 17:44:40.987 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:40.988 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:40.989 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:40.989 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:40.990 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:41.001 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:41.002 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 300(String), 8(Byte), 2320614446530560(Long)
+2018-02-28 17:44:41.138 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:41.139 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:41.139 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:41.179 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:41.179 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:41.180 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:41.181 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:41.182 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320614785843200(Long)
+2018-02-28 17:44:41.415 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:41.416 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:41.417 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:41.417 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:41.417 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:41.425 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:41.426 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 7(String), 8(Byte), 2320614785843200(Long)
+2018-02-28 17:44:41.535 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:41.536 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:41.536 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:41.567 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:41.567 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:41.569 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:41.569 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:41.569 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320615085064192(Long)
+2018-02-28 17:44:41.813 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:41.816 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:41.816 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:41.816 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:41.817 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:41.828 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:41.830 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 40(String), 8(Byte), 2320615085064192(Long)
+2018-02-28 17:44:41.937 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:41.937 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:41.937 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:41.965 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:41.965 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:41.967 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:41.968 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:41.969 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320615702134784(Long)
+2018-02-28 17:44:42.204 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:42.204 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:42.205 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:42.205 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:42.205 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:42.215 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:42.215 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 0(String), 8(Byte), 2320615702134784(Long)
+2018-02-28 17:44:42.332 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:42.333 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:42.333 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:42.355 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:42.355 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:42.356 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:42.356 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:42.357 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320616275525632(Long)
+2018-02-28 17:44:42.593 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:42.594 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:42.594 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:42.594 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:42.594 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:42.604 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:42.604 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 30(String), 8(Byte), 2320616275525632(Long)
+2018-02-28 17:44:42.717 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:42.717 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:42.717 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:42.750 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:42.751 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:42.751 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:42.752 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:42.752 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320617609035776(Long)
+2018-02-28 17:44:43.008 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:43.015 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:43.015 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:43.015 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:43.015 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:43.023 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:43.024 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 20(String), 8(Byte), 2320617609035776(Long)
+2018-02-28 17:44:43.133 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:43.133 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:43.133 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:43.159 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:43.160 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:43.161 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:43.161 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:43.162 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320617831219200(Long)
+2018-02-28 17:44:43.395 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:43.395 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:43.396 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:43.396 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:43.396 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:43.405 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:43.406 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 2(String), 8(Byte), 2320617831219200(Long)
+2018-02-28 17:44:43.512 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:43.512 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:43.512 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:43.537 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:43.538 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:43.540 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:43.540 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:43.540 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320617838067712(Long)
+2018-02-28 17:44:43.775 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:43.776 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:43.776 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:43.776 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:43.776 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:43.785 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:43.785 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 5(String), 8(Byte), 2320617838067712(Long)
+2018-02-28 17:44:43.897 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:43.897 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:43.897 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:43.920 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:43.920 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:43.921 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:43.921 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:43.922 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320617894887424(Long)
+2018-02-28 17:44:44.159 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:44.160 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:44.161 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:44.162 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:44.163 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:44.172 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:44.172 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 20(String), 8(Byte), 2320617894887424(Long)
+2018-02-28 17:44:44.274 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:44.275 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:44.275 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:44.300 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:44.300 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:44.301 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:44.301 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:44.301 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320618043031552(Long)
+2018-02-28 17:44:44.536 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:44.536 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:44.537 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:44.537 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:44.537 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:44.545 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:44.545 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 600(String), 8(Byte), 2320618043031552(Long)
+2018-02-28 17:44:44.662 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:44.662 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:44.662 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:44.686 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:44.687 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:44.691 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:44.691 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:44.692 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320618133716992(Long)
+2018-02-28 17:44:44.935 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:44.936 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:44.937 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:44.937 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:44.937 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:44.952 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:44.953 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 40(String), 8(Byte), 2320618133716992(Long)
+2018-02-28 17:44:45.063 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:45.063 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:45.063 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:45.087 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:45.087 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:45.088 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:45.088 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:45.088 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320618839162880(Long)
+2018-02-28 17:44:45.322 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:45.322 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:45.322 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:45.322 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:45.323 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:45.332 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:45.332 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 900(String), 8(Byte), 2320618839162880(Long)
+2018-02-28 17:44:45.441 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:45.441 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:45.441 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:45.463 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:45.463 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:45.464 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:45.464 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:45.464 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320619082383360(Long)
+2018-02-28 17:44:45.698 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:45.699 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:45.699 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:45.699 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:45.699 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:45.707 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:45.708 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 10(String), 8(Byte), 2320619082383360(Long)
+2018-02-28 17:44:45.814 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:45.814 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:45.814 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:45.842 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:45.842 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:45.843 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:45.843 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:45.843 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320619087675392(Long)
+2018-02-28 17:44:46.081 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:46.081 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:46.082 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:46.083 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:46.083 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:46.091 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:46.091 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 4(String), 8(Byte), 2320619087675392(Long)
+2018-02-28 17:44:46.216 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:46.216 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:46.216 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:46.245 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:46.245 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:46.247 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:46.247 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:46.247 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320619163697152(Long)
+2018-02-28 17:44:46.487 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:46.487 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:46.487 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:46.487 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:46.487 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:46.497 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:46.498 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 100(String), 8(Byte), 2320619163697152(Long)
+2018-02-28 17:44:46.604 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:46.605 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:46.606 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:46.632 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:46.633 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:46.634 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:46.634 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:46.634 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320619533762560(Long)
+2018-02-28 17:44:46.868 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:46.868 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:46.868 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:46.869 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:46.869 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:46.877 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:46.882 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 40(String), 8(Byte), 2320619533762560(Long)
+2018-02-28 17:44:46.989 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:46.990 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:46.991 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:47.015 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:47.016 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:47.017 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:47.017 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:47.018 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320620072452096(Long)
+2018-02-28 17:44:47.252 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:47.252 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:47.253 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:47.253 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:47.253 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:47.261 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:47.262 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 20(String), 8(Byte), 2320620072452096(Long)
+2018-02-28 17:44:47.367 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:47.368 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:47.368 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:47.389 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:47.390 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:47.390 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:47.390 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:47.390 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320620078678016(Long)
+2018-02-28 17:44:47.635 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:47.636 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:47.636 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:47.636 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:47.637 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:47.645 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:47.646 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 8(String), 8(Byte), 2320620078678016(Long)
+2018-02-28 17:44:47.754 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:47.755 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:47.755 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:47.776 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:47.776 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:47.777 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:47.777 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:47.777 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320620572540928(Long)
+2018-02-28 17:44:48.010 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:48.010 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:48.011 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:48.011 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:48.011 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:48.019 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:48.019 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 400(String), 8(Byte), 2320620572540928(Long)
+2018-02-28 17:44:48.130 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:48.131 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:48.131 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:48.155 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:48.155 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:48.156 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:48.156 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:48.156 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320620590923776(Long)
+2018-02-28 17:44:48.391 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:48.391 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:48.392 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:48.392 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:48.392 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:48.401 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:48.401 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 100(String), 8(Byte), 2320620590923776(Long)
+2018-02-28 17:44:48.508 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:48.508 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:48.508 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:48.532 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:48.533 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:48.534 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:48.535 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:48.535 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320620626804736(Long)
+2018-02-28 17:44:48.769 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:48.770 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:48.770 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:48.770 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:48.770 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:48.778 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:48.779 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 8(String), 8(Byte), 2320620626804736(Long)
+2018-02-28 17:44:48.897 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:48.897 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:48.897 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:48.920 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:48.920 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:48.921 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:48.922 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:48.922 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320620940525568(Long)
+2018-02-28 17:44:49.178 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:49.179 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:49.179 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:49.180 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:49.180 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:49.188 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:49.189 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 400(String), 8(Byte), 2320620940525568(Long)
+2018-02-28 17:44:49.297 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:49.297 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:49.297 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:49.321 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:49.321 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:49.321 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:49.322 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:49.322 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320621137608704(Long)
+2018-02-28 17:44:49.555 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:49.555 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:49.556 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:49.556 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:49.556 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:49.565 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:49.565 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 100(String), 8(Byte), 2320621137608704(Long)
+2018-02-28 17:44:49.673 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:49.673 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:49.673 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:49.695 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:49.698 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:49.698 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:49.699 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:49.699 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320621853114368(Long)
+2018-02-28 17:44:49.932 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:49.932 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:49.932 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:49.932 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:49.932 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:49.941 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:49.942 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 0(String), 8(Byte), 2320621853114368(Long)
+2018-02-28 17:44:50.048 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:50.049 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:50.049 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:50.076 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:50.076 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.077 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:50.078 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:50.078 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320622527905792(Long)
+2018-02-28 17:44:50.311 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:50.312 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.312 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:50.313 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:50.313 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:50.321 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:50.322 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 20(String), 8(Byte), 2320622527905792(Long)
+2018-02-28 17:44:50.428 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:50.429 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:50.429 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:50.457 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:50.457 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.459 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:50.459 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.select - ==>  Preparing: select t.id, t.product_name, t.product_alias, t.jd_price, t.tmall_price, t.sales, t.tmall_url, t.jd_url, t.apply_type, t.apply_sn, t.enterprise_name, t.enterprise_name_en, t.producing_area, t.confirm_date, t.is_off, t.cfda_processid, t.cfda_new_processid, t.bevol_mid, t.remark, t.source, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.del_flg from t_br_product t WHERE t.del_flg = ? limit 30 
+2018-02-28 17:44:50.460 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.select - ==> Parameters: 2(Byte)
+2018-02-28 17:44:50.507 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.select - <==      Total: 30
+2018-02-28 17:44:50.508 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.508 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:50.508 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - ==>  Preparing: select count(t.id) from t_br_product t WHERE t.del_flg = ? 
+2018-02-28 17:44:50.509 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - ==> Parameters: 2(Byte)
+2018-02-28 17:44:50.555 [main] DEBUG c.c.e.sqlmaps.product.TBrProductMapper.selectCount - <==      Total: 1
+2018-02-28 17:44:50.555 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.555 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:50.555 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:50.556 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320624006103040(Long)
+2018-02-28 17:44:50.794 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - <==      Total: 1
+2018-02-28 17:44:50.794 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.795 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Creating new transaction with name [com.co.example.service.product.impl.TBrProductServiceImpl.updateByIdSelective]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Throwable
+2018-02-28 17:44:50.795 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Acquired Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] for JDBC transaction
+2018-02-28 17:44:50.795 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Switching JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] to manual commit
+2018-02-28 17:44:50.804 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==>  Preparing: update t_br_product SET more_data2 = ?, del_flg = ? where id = ? 
+2018-02-28 17:44:50.805 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - ==> Parameters: 30(String), 8(Byte), 2320624006103040(Long)
+2018-02-28 17:44:50.911 [main] DEBUG c.c.e.s.p.T.updateByPrimaryKeySelective - <==    Updates: 1
+2018-02-28 17:44:50.912 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Initiating transaction commit
+2018-02-28 17:44:50.913 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Committing JDBC transaction on Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83]
+2018-02-28 17:44:50.945 [main] DEBUG o.s.jdbc.datasource.DataSourceTransactionManager - Releasing JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@6924ff83] after transaction
+2018-02-28 17:44:50.945 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Returning JDBC Connection to DataSource
+2018-02-28 17:44:50.946 [main] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2018-02-28 17:44:50.946 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==>  Preparing: select t.id, t.pid, t.tmall_num_all, t.tmall_num_img, t.tmall_num_more, t.jd_num_all, t.jd_num_img, t.jd_num_more, t.jd_num_good, t.jd_num_middle, t.jd_num_bad, t.remark, t.more_data1, t.more_data2, t.item_order, t.create_time, t.create_by, t.update_time, t.update_by, t.is_active, t.del_flg from t_br_product_comment_statistics t WHERE t.pid = ? 
+2018-02-28 17:44:50.946 [main] DEBUG c.c.e.s.c.TBrProductCommentStatisticsMapper.select - ==> Parameters: 2320625034117120(Long)

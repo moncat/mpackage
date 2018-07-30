@@ -7,4 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TBrLabelVo extends TBrLabel {
+	
+	private boolean selected = false;
+	
 }

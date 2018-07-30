@@ -6,6 +6,7 @@
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="INTEGER" />
     <result column="notice_image" property="noticeImage" jdbcType="VARCHAR" />
+    <result column="product_image" property="productImage" jdbcType="VARCHAR" />
     <result column="detail" property="detail" jdbcType="VARCHAR" />
     <result column="product_num" property="productNum" jdbcType="INTEGER" />
     <result column="user_num" property="userNum" jdbcType="INTEGER" />
@@ -21,8 +22,9 @@
     <result column="app_id" property="appId" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, title, type, notice_image, detail, product_num, user_num, start_time, end_time, 
-    item_order, create_time, create_by, update_time, update_by, is_active, del_flg, app_id
+    id, title, type, notice_image, product_image, detail, product_num, user_num, start_time, 
+    end_time, item_order, create_time, create_by, update_time, update_by, is_active, 
+    del_flg, app_id
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -39,17 +41,19 @@
       SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
     </selectKey>
     insert into t_br_activity (id, title, type, 
-      notice_image, detail, product_num, 
-      user_num, start_time, end_time, 
-      item_order, create_time, create_by, 
-      update_time, update_by, is_active, 
-      del_flg, app_id)
+      notice_image, product_image, detail, 
+      product_num, user_num, start_time, 
+      end_time, item_order, create_time, 
+      create_by, update_time, update_by, 
+      is_active, del_flg, app_id
+      )
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
-      #{noticeImage,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{productNum,jdbcType=INTEGER}, 
-      #{userNum,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
-      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
-      #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT})
+      #{noticeImage,jdbcType=VARCHAR}, #{productImage,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
+      #{productNum,jdbcType=INTEGER}, #{userNum,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT}
+      )
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.activity.TBrActivity" >
     update t_br_activity
@@ -62,6 +66,9 @@
       </if>
       <if test="noticeImage != null" >
         notice_image = #{noticeImage,jdbcType=VARCHAR},
+      </if>
+      <if test="productImage != null" >
+        product_image = #{productImage,jdbcType=VARCHAR},
       </if>
       <if test="detail != null" >
         detail = #{detail,jdbcType=VARCHAR},
@@ -110,6 +117,7 @@
     set title = #{title,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER},
       notice_image = #{noticeImage,jdbcType=VARCHAR},
+      product_image = #{productImage,jdbcType=VARCHAR},
       detail = #{detail,jdbcType=VARCHAR},
       product_num = #{productNum,jdbcType=INTEGER},
       user_num = #{userNum,jdbcType=INTEGER},
@@ -145,6 +153,9 @@
       </if>
       <if test="noticeImage != null" >
           and t.notice_image = #{noticeImage,jdbcType=VARCHAR}
+      </if>
+      <if test="productImage != null" >
+          and t.product_image = #{productImage,jdbcType=VARCHAR}
       </if>
       <if test="detail != null" >
           and t.detail = #{detail,jdbcType=VARCHAR}
@@ -210,38 +221,5 @@
     <include refid="Query_Where_Clause" />
     )
   </delete>
-  <!--  ************************expand your SQL below the line***********************  -->
-  <resultMap id="VoResultMap" type="com.co.example.entity.activity.aide.TBrActivityVo" extends="BaseResultMap" >
-    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
-    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
-    <!--  </association> -->
-  </resultMap>
-  <sql id="Vo_Column_List" >
-    t.id, 
-    t.title, 
-    t.type, 
-    t.notice_image, 
-    t.detail, 
-    t.product_num, 
-    t.user_num, 
-    t.start_time, 
-    t.end_time, 
-    t.item_order, 
-    t.create_time, 
-    t.create_by, 
-    t.update_time, 
-    t.update_by, 
-    t.is_active, 
-    t.del_flg, 
-    t.app_id
-     <!-- ,alias.field -->
-  </sql>
-  <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
-  </sql>
-  <sql id="Table_Join_Clause" >
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
-  </sql>
+  
 </mapper>

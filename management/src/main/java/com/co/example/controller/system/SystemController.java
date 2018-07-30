@@ -47,7 +47,7 @@ public class SystemController extends BaseControllerHandler<TMenu>{
 		log.debug("列表展示");
 		TAdmin admin = SessionUtil.getAdmin(session);
     	TAdminVo adminVo = (TAdminVo) admin; 
-    	List<TMenu> list = tMenuService.getMenuTree(adminVo.getRoles());
+    	List<TMenu> list = tMenuService.getMenuTree(adminVo.getRoles(),false);
     	model.addAttribute("list", list);
 		return true;
 	}
@@ -70,7 +70,8 @@ public class SystemController extends BaseControllerHandler<TMenu>{
 	public Boolean addExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			TMenu t, PageReq pageReq,Map<String, Object> result) {
 		setInfo(t);
-		return false;
+		tMenuService.addMenuAndSaPermission(t);
+		return true;
 	}
 	
 

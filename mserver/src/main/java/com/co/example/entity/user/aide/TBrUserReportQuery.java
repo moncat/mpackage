@@ -9,4 +9,12 @@ import lombok.Setter;
 public class TBrUserReportQuery extends TBrUserReport {
 	
 	private Boolean joinFlg = false;
+	
+	
+	private String nameLike;
+	
+	private String titleLike;
+	
+	private String userDisplayNameLike;
+	
 }

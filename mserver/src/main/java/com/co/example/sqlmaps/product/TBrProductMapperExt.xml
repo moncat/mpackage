@@ -14,6 +14,7 @@
     <collection property="tBrProductIngredients" resultMap="aaaaa">
     </collection>
      -->
+    <result column="recommend_id" property="recommendId" jdbcType="BIGINT" />
   </resultMap>
   <!-- 
    <resultMap id="aaaaa" type="com.co.example.entity.product.TBrProductIngredient" >
@@ -56,6 +57,14 @@
     tpi.ingredient_id ingredient_id
      -->
      <!-- ,alias.field -->
+      <if test="joinRecommendFlg" >
+	       ,tbr.id  recommend_id
+      </if>
+      <!-- 
+      <if test="commentFlg" >
+	       , (REPLACE(REPLACE(REPLACE(pcs.jd_num_good,'万','0000'),'.',''),'+','')) good 
+      </if>
+       -->
   </sql>
   <sql id="Vo_Where_Clause" >
      <if test="greaterThanConfirmDate != null" >
@@ -69,6 +78,9 @@
      </if>
       <if test="productNameLike != null" >
           and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="productNameLike2 != null" >
+          and t.product_name like concat('%',#{productNameLike2,jdbcType=VARCHAR},'%')
       </if>
 	  <if test="brandIsNullFlg" >
 	      and tbpb.brand_id is null
@@ -88,6 +100,20 @@
       <if test="labelId != null" >
         and tbpl.label_id =  #{labelId,jdbcType=BIGINT}
       </if>
+      
+      <if test="labelIdArr != null" >
+        and tbpl.label_id in   
+			<foreach collection="labelIdArr" index="index" item="item" open="(" close=")" separator="," >
+	    	  	#{item,jdbcType=BIGINT}
+	    	</foreach>
+      </if>
+      
+      <if test="recommendIsNotNullFlg" >
+        and tbr.id is not null
+      </if>
+     <if test="joinCollectFlg" >
+	      and c.create_by = #{userId,jdbcType=BIGINT} and c.type =1 
+      </if>
   </sql>
   <sql id="Table_Join_Clause" >
 	  <if test="joinFlg" >
@@ -102,6 +128,17 @@
 	  <if test="joinOperEnterpriseFlg" >
 	      left JOIN t_br_product_oper_enterprise tbpoe on t.id = tbpoe.product_id
       </if>
+	  <if test="joinRecommendFlg" >
+	      left JOIN t_br_recommend tbr on t.id = tbr.cid
+      </if>
+	  <if test="joinCollectFlg" >
+	      left join t_br_user_collect c on t.id = c.cid
+      </if>
+      <!-- 
+      <if test="commentFlg" >
+	       left join t_br_product_comment_statistics pcs on t.id = pcs.pid
+      </if>
+       -->
   </sql>
   <select id="selectOperEnterprise" parameterType="java.util.Map" resultType="java.lang.String" >
       select distinct  t.enterprise_name from t_br_product t where t.create_by = 0 

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='活动中心-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="margin: 0 auto">
+            <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </a>
+            <div class="aui-title">活动中心</div>
+        </header>
+        <!-- 活动中心 -->
+        <div class="aui-refresh-content">
+	        <div class="aui-content maui-content aui-refresh-content">
+	            <ul class="maui-trial-activity" style="display: block;">
+	                <li  th:each="one,status:${page.content}">
+	                    <a th:href="@{'/normal/detail/'+${one.id}}" >
+	                        <img th:src="@{${one.noticeImage}}">
+	                        <div class="trial-bottom-img">
+	                            <p th:text="${one.title}"></p>
+	                        </div>
+	                    </a>
+	                </li>
+	            </ul>
+	        </div>
+        </div>
+        <div style="margin-bottom: 2.67rem;"></div><!--防止底部遮盖内容-->
+        <footer class="aui-bar aui-bar-tab" id="footer">
+            <div class="aui-bar-tab-item aui-active" tapmode>
+                <i class="icon hufuiconfont hufuicon-shouye hufuTabItem"></i>
+                <div class="aui-bar-tab-label">页面首页</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-duihua hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤咨询</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-jiejuefangan1 hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤方案</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-zhanghao hufuTabItem"></i>
+                <div class="aui-bar-tab-label">我的信息</div>
+            </div>
+        </footer>
+    </div>
+    
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-tab.js"></script>
+	<script type="text/javascript" src="/js/normal/list.js"></script>
+	<script type="text/javascript" src="/js/common/footer.js"></script>
+</section>
+</html>    

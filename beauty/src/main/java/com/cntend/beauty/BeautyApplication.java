@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication
-@EnableScheduling //支持定时器
+//@EnableScheduling //支持定时器
 @ComponentScan(basePackages ={"com.cntend","com.co"})
 public class BeautyApplication {
     public static void main(String[] args) {

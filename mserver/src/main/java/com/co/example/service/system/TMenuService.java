@@ -2,25 +2,27 @@ package com.co.example.service.system;
 
 import java.util.List;
 
-import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.system.TMenu;
 import com.co.example.entity.system.TRole;
 import com.github.moncat.common.service.BaseService;
 
 public interface TMenuService extends BaseService<TMenu, Long> {
 	/**
-	 * 获得菜单树
+	 *  获得菜单树
+	 * @param roles 角色列表
+	 * @param flg 是否根据角色过滤
 	 * @return
 	 */
-	List<TMenu> getMenuTree(List<TRole>  roles);
+	List<TMenu> getMenuTree(List<TRole>  roles,Boolean flg);
+	
+	
+	
 	
 	void deleteAll(Long id);
 	
 	/**
-	 * 根据用户获得角色，根据角色获得权限
-	 * @param admin
-	 * @return
+	 * 添加菜单，并默认赋权给超级管理员
 	 */
-	List<TMenu> queryMenuByAdmin(TAdmin admin);
+	void addMenuAndSaPermission(TMenu menu);
 	
 }

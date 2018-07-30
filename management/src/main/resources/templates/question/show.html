@@ -18,11 +18,16 @@
 	                            <div class="line mt-10"></div>
 	                            <div class="row cl">
 		                            <div class="col-md-12">
-		                           					     <h4>问题名称： <span th:text="${one.name}"></span></h4>
-			                            			     <h4>问题类型： <span th:text="${one.type}"></span></h4>
-			                            			     <h4>问题描述： <span th:text="${one.detail}"></span></h4>
-			                            			     <h4>问题备注： <span th:text="${one.remark}"></span></h4>
-			                            		                            </div>
+                        				 <h4>问题名称： <span th:text="${one.name}"></span></h4>
+                         			     <h4>类型：
+	                       			    	 <span th:if="${one.type ==1}" >干油性试题</span>
+											 <span th:if="${one.type ==2}" >敏感耐受性试题</span>
+											 <span th:if="${one.type ==3}" >色素沉着性试题</span>
+											 <span th:if="${one.type ==4}" >皮肤紧致性试题</span>
+	                       			     </h4>
+                         			     <h4>问题描述： <span th:text="${one.detail}"></span></h4>
+                         			     <h4>问题备注： <span th:text="${one.remark}"></span></h4>
+                          		    </div>
 	                            </div> 
 	                        </div>
 	                    </div>

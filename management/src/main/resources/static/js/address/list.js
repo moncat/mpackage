@@ -55,5 +55,27 @@ $(function(){
 		event.stopPropagation(); 
 	});
 	
+	
+	$('select').on('change',function(){
+		var text = $(this).find("option:selected").text();
+		if(text.indexOf("——")>-1){
+			text = "";
+		}
+		$(this).next().val(text);
+	});
+
+	
+	
+	var distData = {
+			province: $('[name="provinceName"]').val(),
+			city: $('[name="cityName"]').val(),
+			district: $('[name="contryName"]').val()
+	}
+	
+	$("#distpicker").distpicker(distData);
+	
+	
+	
+	
 });
 

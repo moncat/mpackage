@@ -1,0 +1,6 @@
+﻿http://beauty.zylweb.com
+http://beauty.zylweb.com/try/list
+http://beauty.zylweb.com/normal/list
+http://beauty.zylweb.com/product/init
+http://beauty.zylweb.com//${item.url}
+http://beauty.zylweb.com/product/show/${item.id}

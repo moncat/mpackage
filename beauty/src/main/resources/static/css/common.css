@@ -1,0 +1,11 @@
+body {background:#fff}   /* 重置body 页面背景为白色 */
+body,th,td,input,select,textarea,button {
+	/*font-family:"微软雅黑", "黑体","宋体";*/
+	color:#666} /* 重置页面文字属性 */
+.currency-bgcolor {
+    background: #f73772;
+}
+ .clickable
+ {
+     cursor: pointer;
+ }

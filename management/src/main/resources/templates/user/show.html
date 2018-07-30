@@ -19,7 +19,7 @@
 	                            <div class="row cl">
 		                            <div class="col-md-12">
     					                 <h4>头像： 
-    					                 <img th:src="${one.headImage}"></img>
+    					                 <img th:src="${one.headImage}" width="90px" height="90px"></img>
     					                 </h4>
           			                     <h4>登录名： <span th:text="${one.loginName}"></span></h4>
           			                     <h4>展示名： <span th:text="${one.displayName}"></span></h4>
@@ -31,8 +31,9 @@
           			                     <h4>性别： <span th:if="${one.sex eq 1}">男</span><span th:if="${one.sex eq 0}">女</span></h4>
           			                     <h4>年龄： <span th:text="${one.age}"></span></h4>
           			                     <h4>访问次数： <span th:text="${one.visitCount}"></span></h4>
-          			                     <h4>最后登录时间： <span th:text="${one.lastTime}"></span></h4>
+          			                     <h4>最后登录时间： <span th:text="${#dates.format(one.lastTime, 'yyyy-MM-dd HH:mm:ss')}"></span></h4>
           			                     <h4>最后登录IP： <span th:text="${one.lastIp}"></span></h4>
+          			                     
           		                     </div>
 	                            </div> 
 	                            <h3>用户邮寄列表</h3>

@@ -15,29 +15,30 @@
 			 <span class="r"></span> 
 		 </div>
 		  -->
-		 <!-- 
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
 			<form action="/address/list">
 				<div class="text-c"> 
-					用户名称：<input type="text" class="input-text" style="width:200px" placeholder="用户名称" id="" th:value="${query.name}" name="name"/> 
-					联系方式：<input type="text" class="input-text" style="width:200px" placeholder="联系方式" id="" th:value="${query.contact}" name="contact"/> 
-					省份：<input type="text" class="input-text" style="width:200px" placeholder="省份" id="" th:value="${query.provinceName}" name="provinceName"/> 
-					地市：<input type="text" class="input-text" style="width:200px" placeholder="地市" id="" th:value="${query.cityName}" name="cityName"/> 
-					区县：<input type="text" class="input-text" style="width:200px" placeholder="区县" id="" th:value="${query.contryName}" name="contryName"/> 
-					乡镇：<input type="text" class="input-text" style="width:200px" placeholder="乡镇" id="" th:value="${query.townName}" name="townName"/> 
-					详细地址：<input type="text" class="input-text" style="width:200px" placeholder="详细地址" id="" th:value="${query.detail}" name="detail"/> 
-					该用户默认地址：<input type="text" class="input-text" style="width:200px" placeholder="该用户默认地址" id="" th:value="${query.isDefault}" name="isDefault"/> 
-										<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+					用户名称：<input type="text" class="input-text" style="width:200px" placeholder="用户名称" id="" th:value="${query.nameLike}" name="nameLike"/> 
+					联系方式：<input type="text" class="input-text" style="width:200px" placeholder="联系方式" id="" th:value="${query.contactLike}" name="contactLike"/> 
+					区域选择：
+					<div style="display:inline" class="select-box" id="distpicker" >
+					    <select class="select" style="width:120px" size="1" name="provinceName"></select>
+					    <select class="select" style="width:120px" size="1" name="cityName"></select>
+					    <select class="select" style="width:120px" size="1" name="contryName"></select>
+					</div>
+					
+					
+					详细地址：<input type="text" class="input-text" style="width:200px" placeholder="详细地址" id="" th:value="${query.detailLike}" name="detailLike"/> 
+					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>
 		</div>
-		 -->
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>
 				<tr>
 					<th colspan="11" scope="col">
-						列表
+						列
 					</th>
 				</tr>
 				<tr class="text-c ">
@@ -48,7 +49,7 @@
 					<th>省份</th>
 					<th>地市</th>
 					<th>区县</th>
-					<th>乡镇</th>
+<!-- 					<th>乡镇</th> -->
 					<th>详细地址</th>
 					<th>该用户默认地址</th>
 					<th>创建时间</th>
@@ -68,7 +69,7 @@
 						<td th:text="${one.provinceName}"></td>
 						<td th:text="${one.cityName}"></td>
 						<td th:text="${one.contryName}"></td>
-						<td th:text="${one.townName}"></td>
+<!-- 						<td th:text="${one.townName}"></td> -->
 						<td th:text="${one.detail}"></td>
 						<td>
 							<span th:if="${one.isDefault ==0}" class="label radius c-999">非默认</span>
@@ -107,6 +108,7 @@
 	</div>
 </section>
 <section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/distpicker/distpicker.min.js"></script>
 	<script type="text/javascript" src="/js/address/list.js"></script>
 </section>
 </html>

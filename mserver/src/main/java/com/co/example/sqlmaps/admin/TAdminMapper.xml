@@ -225,7 +225,9 @@
     t.update_by, 
     t.is_active, 
     t.del_flg
-     <!-- ,alias.field -->
+    <if test="roleId !=null">
+  		  ,tar.role_id
+     </if>
   </sql>
   <sql id="Vo_Where_Clause">
     <!-- <if test="queryBeanField != null" > -->
@@ -233,6 +235,8 @@
     <!-- </if> -->
   </sql>
   <sql id="Table_Join_Clause">
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+    <if test="roleId !=null">
+  		  left join t_admin_role tar on t.id = tar.admin_id and tar.role_id = #{roleId,jdbcType=BIGINT}
+     </if>
   </sql>
 </mapper>

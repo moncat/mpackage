@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='试用专区-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+	<link rel="stylesheet" type="text/css" href="/css/mine.css" />
+</section>
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav maui-header-red aui-bar-light" id="mine-head" >
+        <a class="aui-pull-left aui-btn" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">试用专区</div>
+    </header>
+    <nav class="mine-trying">
+        <div class="aui-tab" id="tab">
+            <div class="aui-tab-item aui-active">申请中</div>
+            <div class="aui-tab-item">申请成功</div>
+            <div class="aui-tab-item">申请失败</div>
+        </div>
+        <ul class="maui-picture-list maui-tab-tag">
+            <li class="aui-row maui-tab1" style="display: block;" id="list1">
+            </li>
+            <li class="aui-row maui-tab2" id="list2">
+            </li>
+			<li class="aui-row maui-tab3" id="list3">
+            </li>
+        </ul>
+    </nav>
+    <nav class="aui-bar aui-bar-nav  bottom-info" style="color:#fff" id="consult">
+        <div class="aui-title">在线咨询</div>
+    </nav>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-tab.js"></script>
+	<script type="text/javascript" src="/js/apply/list.js"></script>
+	<script id="list1Tmp" type="text/x-jquery-tmpl">
+	{{each(i,item) page.content}} 
+ 				
+<div class="aui-col-xs-12">
+	<div class="aui-col-xs-3">
+		<img src="${item.productImage}" alt="${item.title}">
+	</div>
+	<div class="aui-col-xs-9 p-content" >
+		<p>${item.title}</p>
+		<div class="pass">
+			<span>*试用正在申请中，请稍候</span>
+		</div>
+		<a href="javascript:;">
+			<div class="btn-l"></div>
+			<div data-id="${item.activityId}" class="btn-c check">查看活动</div>
+			<div class="btn-r"></div>
+		</a>
+	</div>
+</div> 
+	{{/each}}
+	</script>
+		<script id="list2Tmp" type="text/x-jquery-tmpl">
+	{{each(i,item) page.content}} 
+ 				
+<div class="aui-col-xs-12">
+	<div class="aui-col-xs-3">
+		<img src="${item.productImage}" alt="${item.title}">
+	</div>
+	<div class="aui-col-xs-9 p-content" >
+		<p>${item.title}</p>
+		<div class="pass">
+			<span>*恭喜您申请成功</span>
+		</div>
+		<a href="javascript:;">
+			<div class="btn-l"></div>
+			<div data-id="${item.activityId}" class="btn-c check">查看活动</div>
+			<div class="btn-r"></div>
+		</a>
+		<a href="javascript:;">
+			<div class="btn-l"></div>
+			<div data-id="${item.activityId}" class="btn-c report">填写报告</div>
+			<div class="btn-r"></div>
+		</a>
+	</div>
+</div> 
+	{{/each}}
+	</script>
+		<script id="list3Tmp" type="text/x-jquery-tmpl">
+	{{each(i,item) page.content}} 
+ 				
+<div class="aui-col-xs-12">
+	<div class="aui-col-xs-3">
+		<img src="${item.productImage}" alt="${item.title}">
+	</div>
+	<div class="aui-col-xs-9 p-content" >
+		<p>${item.title}</p>
+		<div class="pass">
+			<span>*申请失败，祝你下次好运</span>
+		</div>
+		<a href="javascript:;">
+			<div class="btn-l"></div>
+			<div data-id="${item.activityId}" class="btn-c check">查看活动</div>
+			<div class="btn-r"></div>
+		</a>
+	</div>
+</div> 
+	{{/each}}
+	</script>
+</section>
+</html>    

@@ -9,6 +9,7 @@ public class QuestionConstant {
 	public static final Float OPTION_4_GRADE = 4f; 
 	public static final Float OPTION_2P5_GRADE = 2.5f; 
 	public static final Float OPTION_5_GRADE = 5f; 
+	public static final Float OPTION_0_GRADE = 0f; 
 	
 	
 	

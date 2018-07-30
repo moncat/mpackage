@@ -10,5 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TBrQuestionTypeVo extends TBrQuestionType {
+	
 	private List<TBrQuestionType> questionTypes;
+	//本次得分
+	private Float gradeCount ;
 }

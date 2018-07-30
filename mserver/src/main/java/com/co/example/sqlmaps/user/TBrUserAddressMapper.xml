@@ -287,9 +287,15 @@
     t.app_id
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+    <if test="nameLike != null" >
+        and t.name like concat ('%', #{nameLike,jdbcType=VARCHAR},'%')
+     </if>
+    <if test="contactLike != null" >
+        and t.contact like concat ('%', #{contactLike,jdbcType=VARCHAR},'%')
+     </if>
+    <if test="detailLike != null" >
+        and t.detail like concat ('%', #{detailLike,jdbcType=VARCHAR},'%')
+     </if>
   </sql>
   <sql id="Table_Join_Clause" >
      

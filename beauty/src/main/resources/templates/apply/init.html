@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" 
+th:with="title=${activity.title}+'-试用专区-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="margin: 0 auto">
+            <a class="aui-btn aui-pull-left"  href="javascript:history.go(-1);">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </a>
+            <div class="aui-title">试用专区</div>
+        </header>
+        <div class="aui-content maui-content maui-trial-detail">
+        <!-- 
+            <p  th:text="${activity.title}">VENSE唯恩诗 梦幻柔光气垫BB霜，开始试用啦！</p>
+             -->
+            <ul class="maui-trial-activity" style="display: block;">
+                <li>
+                    <a  href="javascript:void(0);">
+                        <img th:src="@{${activity.noticeImage}}">
+                        <div class="trial-bottom-img">
+                            <p th:text="${activity.title}">VENSE唯恩诗 梦幻柔光气垫BB霜</p>
+                            <span>
+	                           	 申领时间：<span th:text="${#dates.format(activity.startTime, 'yyyy-MM-dd') +'至'+#dates.format(activity.endTime, 'yyyy-MM-dd')}"></span>
+	                       		限量<span th:text="${activity.productNum}">1</span>份
+								<span th:text="${activity.userNum}">1</span>人申请
+                            </span>
+                        </div>
+                        <span th:attr="data-et=${activity.endTime}" class="trial-activity-time timer">距离活动结束00天00时00分00秒</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="maui-process">
+                <span>试用流程</span>
+                <div class="aui-row">
+                    <span>申请试用</span>
+                    <i class="icon hufuiconfont hufuicon-you-copy"></i>
+                    <span>填写信息</span>
+                    <i class="icon hufuiconfont hufuicon-you-copy"></i>
+                    <span>申请成功</span>
+                    <i class="icon hufuiconfont hufuicon-you-copy"></i>
+                    <span>试用报告</span>
+                </div>
+            </div>
+        </div>
+        <div class="aui-content maui-content maui-personal-information">
+            <span class="title">• 个人信息 •</span>
+            <p class="en-title">Persenal Information</p>
+            <form th:action="@{/apply/act}" id="userInfoForm">
+                <table>
+                    <tr>
+                        <td width="13%">姓名</td>
+                        <td><input type="text"  th:value='${user.personName}' name="personName" id='personName' maxlength="11" placeholder="请输入您的姓名(必填)"></td>
+                    </tr>
+                    <tr>
+                        <td>性别</td>
+                        <td>
+	                         <label style="color:#979797"><input  class="aui-radio" th:checked="${user.sex}==0"  value="0" type="radio" name="sex" >美女&nbsp;&nbsp;&nbsp;</label>
+	                         <label style="color:#979797"><input  class="aui-radio" th:checked="${user.sex}==1"  value="1" type="radio" name="sex" >帅哥&nbsp;&nbsp;&nbsp;</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>年龄</td>
+                        <td>
+                           <input type="number" min="1" max="100" th:value='${user.age}' id="age" name="age">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>肤质</td>
+                        <td style="color: #F73772;line-height: 1rem;" id="skin" ></td>
+                    </tr>
+                </table>
+                <div class="maui-mailing-message">
+                    <span class="maui-left">&nbsp;邮寄信息</span>
+                    <span class="maui-right"><a href="/address/addInit">新增&nbsp;&nbsp;</a></span>
+                </div>
+                <ul class="maui-customer-address">
+                    <li th:each="one:${addressList}">
+                        <p class="maui-name-phone">
+	                        <span class="maui-left" th:text="${one.name}" ></span>
+	                        <span class="maui-right" th:text="${one.contact}"></span>
+                        </p>
+                        <p>
+	                        <span th:text="${one.provinceName}"></span>
+	                        <span th:text="${one.cityName}"></span>
+	                        <span th:text="${one.contryName}"></span>
+	                        <span th:text="${one.detail}"></span>
+                        </p>
+                      
+                        <span th:attr="data-addressId=${one.id}" th:style="'display:'+@{(${one.isDefault} ==1? block:none )}"  class="maui-default-address">
+                       		 <img src="/img/address-right.png">
+                        </span>
+                    </li>
+                </ul>
+                <span style="font-size: 14px; " >
+              		  <input checked type="checkbox" id="agreement">
+              		  <a href="/register/agreement">同意用户协议</a>
+                </span>
+                <input type="hidden" name="addressId" />
+                <input  id="activity" type="hidden" name="activityId" th:value="${activity.id}" />
+                 
+            </form>
+        </div>
+        <footer class="aui-bar aui-bar-nav maui-header-red" style="margin: 0 auto">
+            <div class="aui-title" id="submit">提交</div>
+        </footer>
+    </div>
+
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-toast.js" ></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-dialog.js"></script>
+	<script type="text/javascript" src="/js/apply/init.js"></script>
+</section>
+</html>      

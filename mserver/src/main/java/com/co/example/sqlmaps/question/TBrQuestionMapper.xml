@@ -199,9 +199,9 @@
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+    <if test="nameLike != null" >
+        and t.name like concat ('%', #{nameLike,jdbcType=VARCHAR},'%')
+    </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->

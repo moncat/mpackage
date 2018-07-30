@@ -1,0 +1,96 @@
+﻿
+@top-head-color: #F73671;
+@cont-color:#fff;
+@product-color:#717171;
+@pa-color:#C4C4C4;
+@ps-color:#ED706E;
+@btn-color:#F6BFDE;
+
+body{background:@cont-color}
+#mine-head {
+  background: @top-head-color;font-size: 0.8rem;color:@cont-color;
+  >.aui-btn>.aui-iconfont {
+    color: @cont-color;
+  }
+}
+.mine-p-bg{
+  img{
+     width: 100%; position: absolute;z-index: 1;
+  }
+}
+.mine-came{
+   padding-bottom: 10px;
+  .mine-camera{
+     margin: 0 auto;
+     img{
+        margin: 0 auto; width: 25%;position: relative;top:58px;z-index: 10;margin-bottom: 70px;
+     }
+     span{
+        font-size:1.2rem;
+        margin-top: 2px;
+     }
+     p{
+       font-size:0.8rem;
+     }
+  }
+}
+.mine-form{
+  .m-title{color: #333333;margin-top: 4px;}
+  ul {
+     padding: 10px;
+     >li{
+        div input{
+           color:#979797;
+        }
+     }
+  }
+}
+.custom-btn{
+  .btn-l{
+    width: 15px;height: 23px;float: left;border-left: 1px solid @btn-color;border-top: 1px solid @btn-color;border-bottom: 1px solid @btn-color;border-radius:20px 0px 0px 20px ;
+  }
+  .btn-c{
+    width: 65px;height: 23px;float: left;border-top: 1px solid @btn-color;border-bottom: 1px solid @btn-color;text-align: center;font-size: 0.2rem;line-height:1rem;
+  }
+  .btn-r{
+    width: 15px;height: 23px;float: left;border-right: 1px solid @btn-color;border-top: 1px solid @btn-color;border-bottom: 1px solid @btn-color;border-radius:0px 20px 20px 0px ;
+  }
+}
+
+.bottom-info{
+   max-width: 768px; background: @top-head-color;font-size: 0.8rem;color:@cont-color;margin: 0 auto;position: fixed; bottom:0;top: auto;;
+}
+.mine-trying{
+   >ul{
+      padding: 10px;
+      li{
+         >div{
+             border-bottom: 1px solid #dddddd;margin-bottom: 5px;height: 110px;padding-top: 5px;width: 100%;float:left;
+            img{
+              width: 100%;max-height:100px;
+            }
+            .p-content{
+               padding-left: 9px;
+               p{
+                  font-size:0.6rem;color:@product-color;
+               }
+               .tip{
+                  color:@pa-color;font-size:0.5rem;line-height: 1rem;
+               }
+               .pass{
+
+                  span{
+                     color:@ps-color;font-size:0.45rem;
+                  }
+                  a{
+                     float: right;color:#ED706E;font-size: 0.3rem;
+                     .custom-btn
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+

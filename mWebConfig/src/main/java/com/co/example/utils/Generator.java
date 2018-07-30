@@ -15,7 +15,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
 import com.co.example.bean.GeInfo;
-import com.co.example.entity.log.TBrLogAdmin;
+import com.co.example.entity.system.TSystemConfig;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 
@@ -24,9 +24,9 @@ import com.google.common.io.Files;
  */
 public class Generator {
 
-	static String model = "logadmin";
+	static String model = "config";
 	
-	static Class<TBrLogAdmin> entity = TBrLogAdmin.class;
+	static Class<TSystemConfig> entity = TSystemConfig.class;
 	
 	static String basePath="D:/Workspaces2/package/management/src/main/resources/";
 
@@ -36,9 +36,9 @@ public class Generator {
 		
 		ge(Type.list);	
 		
-//		ge(Type.add);
-//		ge(Type.edit);		
-//		ge(Type.show);
+		ge(Type.add);
+		ge(Type.edit);		
+		ge(Type.show);
 	}
 
 	public static void initData() {

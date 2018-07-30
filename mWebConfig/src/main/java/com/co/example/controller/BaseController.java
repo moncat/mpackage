@@ -107,6 +107,7 @@ public abstract class  BaseController<T extends BaseEntity> {
 	public Map<String,Object> add(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,PageReq pageReq,RedirectAttributes redirectAttributes)throws Exception {
 		Map<String, Object> result = result();
 		BaseService<T,Long> service = getService(request, t);
+		t.setIsActive(Constant.STATUS_ACTIVE);
 		t.setDelFlg(Constant.NO);
 		t.setCreateTime(new Date());
 		t.setUpdateTime(t.getCreateTime());

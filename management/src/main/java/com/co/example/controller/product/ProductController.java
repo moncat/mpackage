@@ -14,10 +14,12 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.PageReq;
 import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.brand.TBrBrand;
@@ -26,6 +28,11 @@ import com.co.example.entity.brand.aide.TBrProductBrandQuery;
 import com.co.example.entity.comment.TBrProductCommentStatistics;
 import com.co.example.entity.comment.aide.Comment;
 import com.co.example.entity.comment.aide.TBrProductCommentStatisticsQuery;
+import com.co.example.entity.label.TBrLabel;
+import com.co.example.entity.label.TBrProductLabel;
+import com.co.example.entity.label.aide.TBrLabelQuery;
+import com.co.example.entity.label.aide.TBrLabelVo;
+import com.co.example.entity.label.aide.TBrProductLabelQuery;
 import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
@@ -41,12 +48,15 @@ import com.co.example.entity.product.aide.TBrProductSpecQuery;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
 import com.co.example.service.comment.TBrProductCommentStatisticsService;
+import com.co.example.service.label.TBrLabelService;
+import com.co.example.service.label.TBrProductLabelService;
 import com.co.example.service.product.TBrAimService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrIngredientService;
 import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
+import com.co.example.utils.BaseDataUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -82,14 +92,23 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@Inject
 	TBrProductCommentStatisticsService tBrProductCommentStatisticsService;
 	
+	@Inject
+	TBrProductLabelService tBrProductLabelService;
+	
+	@Inject
+	TBrLabelService tBrLabelService;
+	
 	static final String PRODUCT_TOTAIL = "productTotail";
 	
+	 /**   0刚抓取 1匹配不完整  2完整匹配  4特殊符号匹配错误    */
+	Byte specialFlg = 2;
 	
 	@Override
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			PageReq pageReq, TBrProductQuery query) {
 		
-		
+		query.setJoinRecommendFlg(true);
+		query.setDelFlg(specialFlg);
 		Integer ecType = query.getEcType();
 		if(ecType == 1){
 			query.setUseTmallUrlNotNullFlg(true);
@@ -245,6 +264,55 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		result.put("productImageList", productImageList);
 		result.put("jdImageList", jdImageList);
 		result.put("tmallImageList", tmallImageList);
+		return result;
+	}
+	
+	
+	//打开标签关联页面
+	@RequestMapping(value = "/label/{id}", method = { RequestMethod.GET })
+	public String label( Model model,HttpSession session, @PathVariable Long id ) {
+		TBrProductLabelQuery tBrProductLabelQuery = new TBrProductLabelQuery();
+		tBrProductLabelQuery.setProductId(id);
+		List<TBrProductLabel> listTmp = tBrProductLabelService.queryList(tBrProductLabelQuery);
+		TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
+		tBrLabelQuery.setDelFlg(Constant.NO);
+		List<TBrLabel> labelList = tBrLabelService.queryList(tBrLabelQuery);
+		Long labelId  = 0l;
+		Long labelIdTmp  = 0l;
+		for (TBrProductLabel tBrProductLabel : listTmp) {
+			for (TBrLabel tBrLabel : labelList) {
+				TBrLabelVo vo =  (TBrLabelVo) tBrLabel;
+				labelIdTmp = tBrProductLabel.getLabelId();
+				labelId = tBrLabel.getId();
+				if(labelId.equals(labelIdTmp)){
+					vo.setSelected(true);
+				}
+			}
+		}
+		model.addAttribute("id", id);
+		model.addAttribute("labelList", labelList);
+		return "product/label";
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/addLabel", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> addLabel(Model model, HttpSession session, TBrProductLabelQuery query) {
+		Map<String, Object> result = result();
+		long count = tBrProductLabelService.queryCount(query);
+		if(count==0){
+			BaseDataUtil.setDefaultData(query);
+			tBrProductLabelService.add(query);
+		}
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/removeLabel", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> removeLabel(Model model, HttpSession session, TBrProductLabelQuery query) {
+		Map<String, Object> result = result();
+		TBrProductLabel one = tBrProductLabelService.queryOne(query);
+		tBrProductLabelService.deleteById(one.getId());
 		return result;
 	}
 	

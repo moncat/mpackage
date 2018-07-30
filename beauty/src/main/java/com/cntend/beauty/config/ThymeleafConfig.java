@@ -18,7 +18,8 @@ public class ThymeleafConfig {
 	@Bean
     public ITemplateResolver templateResolver() {
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
-        templateResolver.setTemplateMode("HTML5");
+//        templateResolver.setTemplateMode("HTML5");
+        templateResolver.setTemplateMode("LEGACYHTML5");
         templateResolver.setPrefix("templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setCharacterEncoding("utf-8");

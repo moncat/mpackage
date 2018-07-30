@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='首页-柠檬妆典'">
+<section layout:fragment="main"  >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red aui-row" id="aui-header" style="position: fixed;">
+            <form action="#" method="post">
+                <div class="aui-col-xs-1">
+                </div>
+                <div class="aui-col-xs-9">
+                    <i class="aui-iconfont aui-icon-search maui-icon-search"></i>
+                    <input type="text" id="search_key" value=""></input>
+                </div>
+                <div class="aui-col-xs-2" style="font-size: 0.8rem;"><a class="search" href="javascript:void(0);">搜索</a></div>
+            </form>
+        </header>
+        <div class="aui-refresh-content" style="margin-top:45px">
+	        <!--轮播图 start-->
+	        <div class="aui-content maui-banner">
+	            <div id="aui-slide">
+	                <ul class="aui-slide-wrap" id="carousel">
+	                </ul>
+	                <div class="aui-slide-page-wrap"></div>
+	            </div>
+	        </div>
+	        <!--轮播图 end-->
+	        
+	        <!--菜单 start-->
+	        <div class="aui-content maui-content  maui-module maui-text-center">
+	            <!--<div class="aui-row">
+	                <div class="aui-col-xs-3">
+	                    <a href="/try/list">
+	                        <span class="module-icon"  style="background-color: #FBBF3E;"><i class="icon hufuiconfont hufuicon-liwu-copy"></i></span>
+	                        <span class="module-title">试用专区</span>
+	                    </a>
+	                </div>
+	                <div class="aui-col-xs-3">
+	                    <a href="/normal/list">
+	                        <span class="module-icon" style="background-color: #F572AE;"><i class="icon hufuiconfont hufuicon-huodong"></i></span>
+	                        <span class="module-title">活动中心</span>
+	                    </a>
+	                </div>
+	                <div class="aui-col-xs-3">
+	                    <a href="/product/init">
+	                        <span class="module-icon" style="background-color: #FA9297;"><i class="icon hufuiconfont hufuicon-hufutaozhuang"></i></span>
+	                        <span class="module-title">护肤产品</span>
+	                    </a>
+	                </div>
+	                <div class="aui-col-xs-3">
+	                    <a href="javascript:void(0);" id="consult">
+	                        <span class="module-icon" style="background-color: #61A8FF;">
+	                        <i style="font-size: 3rem;  line-height: 3.0rem;" class="icon hufuiconfont hufuicon-zixun"></i></span>
+	                        <span class="module-title">护肤咨询</span>
+	                    </a>
+	                </div>
+	            </div>-->
+	        	<div class="aui-row">
+	                <div class="aui-col-xs-3">
+	                    <a href="/try/list">
+	                        <span class="module-icon"><i class="icon hufuiconfont hufuicon-liwu-copy"></i></span>
+	                        <span class="module-title">试用专区</span>
+	                    </a>
+	                </div>
+	                <div class="aui-col-xs-3">
+	                    <a href="/normal/list">
+	                        <span class="module-icon"><i class="icon hufuiconfont hufuicon-huodong"></i></span>
+	                        <span class="module-title">活动中心</span>
+	                    </a>
+	                </div>
+	                <div class="aui-col-xs-3">
+	                    <a href="/product/init">
+	                        <span class="module-icon"><i class="icon hufuiconfont hufuicon-hufutaozhuang"></i></span>
+	                        <span class="module-title">护肤产品</span>
+	                    </a>
+	                </div>
+	                <div class="aui-col-xs-3">
+	                    <a href="javascript:void(0);" id="consult">
+	                        <span class="module-icon">
+	                        <!--style="font-size: 3rem;  line-height: 3.0rem;"-->
+	                        <i class="icon hufuiconfont hufuicon-zixun"></i></span>
+	                        <span class="module-title">护肤咨询</span>
+	                    </a>
+	                </div>
+	            </div>
+	        </div>
+	        <!--菜单 end-->
+	        
+	         <!--测试start-->
+	        <div class="aui-content maui-content maui-skin-test">
+	            <p>完成肤质测试，获取专属护肤方案</p>
+	            <button class="btn" id="skinTestBtn">肤质测试</button>
+	        </div>
+	        <div class="aui-content maui-content maui-recommendation-product" id="mine" style="display:none">
+	            <p>— 适合我的产品 —</p>
+	            <span>测试后的专属推荐</span>
+	            <div class="maui-tab">
+	                <ul class="aui-tab" id="mineTab">
+	                </ul>
+	            </div>
+	            <ul class="maui-picture-list  maui-tab-tag">
+	                <li class="aui-row maui-tab1" style="display: block;">
+	                </li>
+	                <li class="aui-row maui-tab2">
+	                </li>
+	                <li class="aui-row maui-tab3">
+	                </li>
+	                <li class="aui-row maui-tab4">
+	                </li>
+	                <li class="aui-row maui-tab5">
+	                </li>
+	                <li class="aui-row maui-tab6">
+	                </li>
+	                <li class="aui-row maui-tab7">
+	                </li>
+	                <li class="aui-row maui-tab8">
+	                </li>
+	                <li class="aui-row maui-tab9">
+	                </li>
+	                <li class="aui-row maui-tab10">
+	                </li>
+	            </ul>
+	        </div>
+	         <!--测试 end-->
+	        
+	
+	        <!-- 广告 start-->
+	        <div class="aui-content maui-content maui-scientific-research" id="ad">
+	           
+	        </div>
+	         <!--广告 end-->
+	
+	        <!-- 产品推荐 start-->
+	        <div class="aui-content maui-content maui-recommendation-product">
+	            <p>— 推荐产品 —</p>
+	            <span>你值得拥有</span>
+	            <ul class="maui-picture-list">
+	                <li class="aui-row" id="recommend">
+	                </li>
+	            </ul>
+	        </div>
+	         <!--产品推荐 end-->
+        </div>
+        <div style="margin-bottom: 2.67rem;"></div>
+        <footer class="aui-bar aui-bar-tab" id="footer">
+            <div class="aui-bar-tab-item aui-active" tapmode>
+                <i class="icon hufuiconfont hufuicon-shouye hufuTabItem"></i>
+                <div class="aui-bar-tab-label">页面首页</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-duihua hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤咨询</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-jiejuefangan1 hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤方案</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-zhanghao hufuTabItem"></i>
+                <div class="aui-bar-tab-label">我的信息</div>
+            </div>
+        </footer>
+    </div>
+
+
+</section>
+<section layout:fragment="my">
+	<link rel="stylesheet" type="text/css" href="/base/lib/aui/css/aui-slide.css" />
+	<script type="text/javascript" src="/base/lib/aui/js/api.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-tab.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-slide.js"></script>
+	<script type="text/javascript" src="/js/index/index.js"></script>
+	<script type="text/javascript" src="/js/common/footer.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-pull-refresh.js"></script>
+	<script type="text/javascript">
+	    var pullRefresh = new auiPullToRefresh({
+	        container: document.querySelector('.aui-refresh-content'),
+	        triggerDistance: 100
+	    },function(ret){
+	        if(ret.status=="success"){
+	            setTimeout(function(){
+	                location.href=location.href;
+	                pullRefresh.cancelLoading(); //刷新成功后调用此方法隐藏
+	            },1500)
+	        }
+	    })
+	</script>
+	<script id="carouselTmp" type="text/x-jquery-tmpl" >
+   			{{each(i,item) page.content}} 
+	            <li class="aui-slide-node bg-dark">
+					<a href="${item.url}">
+				    	<img src="${item.image}" alt="${item.name}" >
+					</a>
+				</li>
+			{{/each}}
+	</script>
+		
+	<script id="recommendTmp" type="text/x-jquery-tmpl" >
+   		{{each(i,item) page.content}} 
+			{{if item!=null}}
+ 				<div class="aui-col-xs-12 sysRecommend${page.number}"  data-id="${item.id}">
+                     <a href="/product/show/${item.id}">
+						{{if item.moreData1!=null}}
+                          <img src="${item.moreData1}" alt="${item.productName}"/>
+						{{else}}
+                          <img src="/img/no-image.png" alt="${item.productName}"/>
+						{{/if}}
+						<div>
+							<p class="aui-ellipsis-2">${item.productName}</p>
+       						<div class="aui-ellipsis-2 label">修颜 美白 遮瑕</div>
+							<p class="safe"></p>
+       						<p>平台参考价格：${item.tmallPrice==null? '暂无':'￥'+item.tmallPrice}</p>
+							<div class="moreInfo">
+								<div class="sales">销量：${item.sales}</div>
+								<div class="commentNumber"></div>
+							</div>
+							<p class="match" >肤质匹配度：<span class="notTest">请登录完成肤质测试</span></p>
+						</div>
+                      </a>
+                </div>
+			{{/if}}
+		{{/each}}
+		{{if parseInt(page.number) >= parseInt(page.totalPages)-1 || page.totalPages<=1}}
+			 <div class="aui-col-xs-12 " style="float:left;text-align: center; margin: 10px 0 20px 0;font-size: 0.75rem;color: #c7c7c7;">—&nbsp;&nbsp;我是有底线的&nbsp;&nbsp;—</div>
+		{{else}}
+			<a href="javascript:void(0);" class="aui-col-xs-12 moreRecommend" data-totalPages=${page.totalPages}   data-curPage=${page.number} style="float:left;text-align: center; margin: 10px 0 20px 0;font-size: 0.75rem;color: #999;">查看更多</a>
+		{{/if}}
+	</script>
+</section>
+</html>

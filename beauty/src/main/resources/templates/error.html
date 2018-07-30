@@ -1,25 +1,29 @@
-﻿<html  layout:decorator="/common/layout_iframe" >
-<section layout:fragment="main" class="container-fluid page-404 minWP text-c">
-	<p class="error-title">
-		<!-- <i class="Hui-iconfont va-m" style="font-size:80px">&#xe688;</i> -->
-		<span class="va-m">/(ㄒoㄒ)/~~</span>
-		<span th:text="${status}"></span>
-	</p>
-	<p class="error-description">不好意思，您没有权限访问或访问的页面不存在~</p>
-	<p class="error-info">您可以：
-		<a href="javascript:void(0);" onclick="history.go(-1)" class="c-primary">&lt; 返回上一页</a>
-		<span class="ml-20">|</span>
-		<a href="/" class="c-primary ml-20">去首页 &gt;</a>
-	</p>
-	<div class="error-info" th:hidden="${param.show eq null}">
-	    timestamp:<span th:if="${timestamp ne null}" th:text="${#dates.format(timestamp, 'yyyy-MM-dd HH:mm:ss')}"/>
-		status:<span th:text="${status}"/>
-	    path:<span th:text="${path}"/>
-   		errmsg:<span th:text="${errmsg}"/>
-    	message:<span th:text="${message}"/>
-	    error:<span th:text="${error}"/>
-	    <br/>
-	    <span class ="text-l" th:utext="${errInfo}"></span><br/>
-	</div>
+﻿</html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='出错了-柠檬妆典'">
+<section layout:fragment="main" >
+	<header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="max-width: 768px; margin: 0 auto">
+        <a href="javascript:history.go(-1);" class="aui-btn aui-pull-left">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">出错了</div>
+    </header>
+    <div class="agreement-detail" style="max-width: 768px; margin: 0 auto">
+    	<div class="content">
+	    	<div class="aui-row">
+				<div class="aui-col-xs-2">
+					<div style="color: #fff">.</div>
+				</div>
+				<div class="aui-col-xs-8">
+                    <a href="/">
+				    	<img alt="出错了" src="/img/404.jpg">
+			    	</a>
+                 </div>
+                 <div class="aui-col-xs-2">
+                      <div style="color:#fff" >.</div> 
+                 </div>
+               </div>
+    	</div>
+    </div>
 </section>
 </html>

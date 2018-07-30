@@ -37,6 +37,10 @@ public class MyServletContextConfig extends ServletContextConfig {
     public SessionInterceptor sessionInterceptor(){
     	return new SessionInterceptor();
     }
+//    @Bean
+//    public WechatInterceptor wechatInterceptor(){
+//    	return new WechatInterceptor();
+//    }
     
 //    @Bean
 //    public RemembermeInterceptor remembermeInterceptor(){
@@ -52,6 +56,7 @@ public class MyServletContextConfig extends ServletContextConfig {
 	@Override
 	protected void addMoreInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(sessionInterceptor()).addPathPatterns("/**");
+//		registry.addInterceptor(wechatInterceptor()).addPathPatterns("/**");
 //		registry.addInterceptor(remembermeInterceptor()).addPathPatterns("/**");
 	//	registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/identifyCode","/login");
 	}

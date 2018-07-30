@@ -1,9 +1,12 @@
 package com.co.example;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -64,9 +67,10 @@ public class DataTest8TmallAndJD {
 	{
 		//切换代理
 		String ipPort = ProxyUtil.getInfo();
-//		chrome = initBrowser(ipPort);
+		chrome = initBrowser(ipPort);
+		log.info("ipPort="+ipPort);
 //		chrome = initBrowser(null);
-		chrome = BrowserFactory.getChrome(ipPort);
+//		chrome = BrowserFactory.getChrome(ipPort);
 //		chrome = BrowserFactory.getChrome(null);
 	}
 	 
@@ -87,7 +91,7 @@ public class DataTest8TmallAndJD {
 		//查询未匹配的数据
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		PageReq pageReq = new PageReq();
-		pageReq.setPage(30);
+		pageReq.setPage(1);
 		pageReq.setPageSize(2000);
 		if(k == ProductConstant.PRODUCT_SOURCE_JD){
 			tBrProductQuery.setJdUrl("0");
@@ -110,14 +114,14 @@ public class DataTest8TmallAndJD {
 			List<TBrProduct> content = pageList.getContent();
 			List<TBrSpecKey> tbrSpecKeyList = tBrSpecKeyService.queryList();
 			for (TBrProduct tBrProduct : content) {
-//				Thread.sleep(500);
+				Thread.sleep(1067);
 				tmp--;
 				log.info("***tmpNum***"+tmp);
 				int addData = tBrProductSpecService.addData(tBrProduct, k,tbrSpecKeyList,chrome);
 				if(addData == 5){
 					chrome.quit();
 					log.info("***睡眠一会***");
-					Thread.sleep(15000);
+					Thread.sleep(300000);
 //					chrome = initBrowser(null);
 					String ipPort = ProxyUtil.getInfo();
 					chrome = BrowserFactory.getChrome(ipPort);

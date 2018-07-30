@@ -111,7 +111,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 					System.out.println("***爬取结束***"+i+"***用时(分钟)***"+minute);
 					tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA,  "***爬取结束***"+i+"***用时(分钟)***"+minute, 0 ,"有",  null);
 					if(i>1){
-						EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
+						//EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
 						log.info("***开始执行品牌匹配***"+dateStr);
 						brand(dateStr);
 						label(dateStr);

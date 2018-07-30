@@ -26,6 +26,7 @@ D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\ConfigManager.jav
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\StringUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\DateUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\HttpUtils.java
+D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\ImageUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\MD5.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\RegexUtils.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\JodaTimeTest.java
@@ -33,6 +34,7 @@ D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\JsoupUt
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\PhantomjsUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\define\ActionState.java
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\upload\Uploader.java
+D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\HttpClientUtils.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\FtpUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\define\MultiState.java
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\upload\Base64Uploader.java
@@ -42,6 +44,7 @@ D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\PageInt
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\define\BaseState.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\UUIDUtils.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\ArrayUtil.java
+D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\Base64ImageUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\htmlUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\ValidateUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\define\AppInfo.java
@@ -54,4 +57,6 @@ D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\upload\BinaryUplo
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\EmailUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\baidu\ueditor\upload\StorageManager.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\PictureZoom.java
+D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\randomUtil.java
+D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\MultipartFileUploadUtil.java
 D:\Workspaces2\package\commons\src\main\java\com\co\example\common\utils\VelocityUtil.java

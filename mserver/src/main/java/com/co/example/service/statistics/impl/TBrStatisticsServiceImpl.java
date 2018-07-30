@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.co.example.common.constant.Constant;
+import com.co.example.common.utils.DateFormatUtil;
 import com.co.example.dao.statistics.TBrStatisticsDao;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.entity.statistics.TBrStatistics;
@@ -130,6 +131,9 @@ public class TBrStatisticsServiceImpl extends BaseServiceImpl<TBrStatistics, Lon
 		add(tBrStatistics);
 	}
 
+	
+	//TODO
+	//对用户统计表进行数据整理
 
 	@Override
 	public void addUserData() {
@@ -154,6 +158,8 @@ public class TBrStatisticsServiceImpl extends BaseServiceImpl<TBrStatistics, Lon
 	private void addUserDataNow(TBrUserStatisticsQuery tBrUserStatisticsQuery) {
 		long registerCount = uss.queryCount(tBrUserStatisticsQuery);
 		TBrUserStatisticsMonth tBrUserStatisticsMonth = new TBrUserStatisticsMonth();
+		tBrUserStatisticsMonth.setMonth(DateFormatUtil.format(new Date(), DateFormatUtil.formartYearAndMonth));
+		tBrUserStatisticsMonth.setType(tBrUserStatisticsQuery.getType());
 		tBrUserStatisticsMonth.setCount(Integer.parseInt(registerCount+""));
 		usms.add(tBrUserStatisticsMonth);
 	}

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:mobile="http://www.baidu.com/schemas/sitemap-mobile/1/">
+<url>
+ <loc>http://beauty.zylweb.com</loc>
+ <mobile:mobile type="mobile">
+ <priority>0.5</priority>
+ <lastmod>2018-02-24</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+<url>
+ <loc>http://beauty.zylweb.com/try/list</loc>
+ <mobile:mobile type="mobile">
+ <priority>0.5</priority>
+ <lastmod>2018-02-24</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+<url>
+ <loc>http://beauty.zylweb.com/normal/list</loc>
+ <mobile:mobile type="mobile">
+ <priority>0.5</priority>
+ <lastmod>2018-02-24</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+<url>
+ <loc>http://beauty.zylweb.com/product/init</loc>
+ <mobile:mobile type="mobile">
+ <priority>0.5</priority>
+ <lastmod>2018-02-24</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+<url>
+ <loc>http://beauty.zylweb.com//${item.url}</loc>
+ <mobile:mobile type="mobile">
+ <priority>0.5</priority>
+ <lastmod>2018-02-24</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+<url>
+ <loc>http://beauty.zylweb.com/product/show/${item.id}</loc>
+ <mobile:mobile type="mobile">
+ <priority>0.5</priority>
+ <lastmod>2018-02-24</lastmod>
+ <changefreq>monthly</changefreq>
+</url>
+</urlset>

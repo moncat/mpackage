@@ -22,6 +22,7 @@ import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.product.TBrIngredientService;
 import com.co.example.service.product.TBrProductService;
 
+//成分
 @Controller
 @RequestMapping("ingredient")
 public class IngredientController extends BaseControllerHandler<TBrIngredientQuery> {

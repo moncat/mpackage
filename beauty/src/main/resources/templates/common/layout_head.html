@@ -6,18 +6,24 @@
 <meta name="renderer" content="webkit|ie-comp|ie-stand"></meta>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" ></meta>
+<meta name="format-detection" content="telephone=no,email=no,date=no,address=no"></meta>
 <meta http-equiv="Cache-Control" content="no-siteapp" ></meta>
-<meta name="keywords" content="美妆"></meta>
-<meta name="description" content="美妆"></meta>
+<meta name="keywords"  content="化妆品,成分,功效,美妆,靓丽,唯恩诗,肤质测试,专业护肤咨询,化妆品对比,产品试用,红血丝,黑头,敏感肌,	趋势"></meta>
+<meta name="description"  content="美妆"></meta>
 <meta name="_csrf" th:content="${_csrf.token}"/>
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 <!-- ico -->
-<link rel="Bookmark" href="/img/favicon.ico" ></link>
-<link rel="Shortcut Icon" href="/img/favicon.ico" ></link>
+<link rel="Bookmark" href="/img/icon.ico" ></link>
+<link rel="Shortcut Icon" href="/img/icon.ico" ></link>
+
 <!-- common css -->
-<link rel="stylesheet" type="text/css" href="/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/base/lib/aui/css/aui.css" />
+<link rel="stylesheet" type="text/css" href="/css/hufuiconfont.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/base/lib/aui/css/aui-pull-refresh.css" />
 <!-- 把jquery单独提前 -->
 <script type="text/javascript" src="/base/lib/jquery/1.9.1/jquery.js"></script> 
-<title>后台管理</title>
+<title th:text="${title}" >柠檬妆典</title>
 </head>
 </html>

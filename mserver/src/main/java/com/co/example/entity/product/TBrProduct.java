@@ -70,9 +70,14 @@ public class TBrProduct extends BaseEntity {
     /** 来源  1 药监局 ； 2美丽修行 */
     private Byte source;
 
-    /**  */
+    /** 用于冗余图片链接，来自京东第二张图片  */
     private String moreData1;
 
-    /**  */
+    /**  京东好评度冗余数据   */
     private String moreData2;
+    
+    /** 是否删除  1已删除  0未删除   0刚抓取 1匹配不完整  2完整匹配  4特殊符号匹配错误    */
+    //private Byte delFlg;
+
+    
 }

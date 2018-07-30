@@ -1039,7 +1039,6 @@
 						},
 						error: function(data){
 							var msg="status: "+data.status+"; statusText: "+data.statusText;
-									
 							Validform.util.showmsg.call(curform,msg,settings.tiptype,{obj:curform,type:3,sweep:settings.tipSweep},"byajax");
 							
 							settings.callback && settings.callback(data);
@@ -1322,6 +1321,7 @@
 	
 	//公用方法显示&关闭信息提示框;
 	$.Showmsg=function(msg){
+		debugger;
 		creatMsgbox();
 		Validform.util.showmsg.call(win,msg,1,{});
 	};

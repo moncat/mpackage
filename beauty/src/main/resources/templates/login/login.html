@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='登录-柠檬妆典'">
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="max-width: 768px; margin: 0 auto">
+        <a class="aui-btn aui-pull-left" href="/">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">登录</div>
+    </header>
+    <div class="aui-content aui-margin-b-15 main-font" style="max-width: 768px; margin: 0 auto">
+	    <!-- 
+	        <div class="aui-row maui-nav login-type-change">
+	            <div class="aui-col-xs-6"><span class="login-type-active">账号密码登录</span></div>
+	            <div class="aui-col-xs-6"><span>手机验证码登录</span></div>
+	        </div>
+         -->
+        <div class="aui-row maui-logo">
+            <img src="/img/pretty-girl.png"/>
+        </div>
+        <div class="aui-row">
+            <form th:action="@{/login}" method="post" id="defaultForm">
+                <ul class="aui-list maui-list aui-form-list">
+                    <li class="aui-list-item maui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-lable-icon">
+                                <i class="aui-iconfont aui-icon-mobile"></i>
+                            </div>
+                            <div class="aui-list-item-input maui-list-input">
+                                <input style="width: 90%;" class="number phone" name="username" type="text" placeholder="请输入手机号"/>
+                                <span style="width: 8%;"><i class="aui-iconfont aui-icon-close aui-hide phone-error-icon"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item maui-list-item">
+                        <div class="aui-list-item-inner login-type-targe">
+                            <div class="aui-list-item-lable-icon">
+                                <i class="aui-iconfont aui-icon-lock"></i>
+                            </div>
+                            <div class="aui-list-item-input maui-list-input">
+                                <input style="width: 90%;" class="pwd first-pwd" type="password" name="password" placeholder="请输入密码"/>
+                                <span style="width: 8%;"><i class="icon pwd-is-show hufuiconfont hufuicon-mimabukejianx"></i></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item maui-li-bordermiss">
+                        <div class="aui-list-item-inner">
+                            <button type="button" onclick="maui_checkForm();" class="aui-btn aui-btn-block aui-btn-sm login-button">登录</button>
+                        </div>
+                    </li>
+                    <li class="aui-list-item maui-li-bordermiss maui-li-border-miss " th:classappend="${param.error}? '':'maui-hide'">
+                        <div class="aui-list-item-inner maui-form-note-div">
+                            <span th:if="${param.error}" th:text="${errMessage}" class="maui-form-note"></span>
+                        </div>
+                    </li>
+                    <li class="aui-list-item maui-li-bordermiss aui-font-size-12 " >
+                        <div class="aui-list-item-inner">
+                            <a  href="/retrieve1">找回密码-></a>
+                        </div>
+                    </li>
+                    <li class="aui-list-item maui-li-bordermiss aui-padded-r-15 "  >
+                        <div class="aui-list-item-inner">
+                            <a type="button" href="/register/init" class="aui-btn aui-btn-sm go-register-button">快速注册</a>
+                        </div>
+                    </li>
+                    
+                    <li class="aui-list-item maui-list-item maui-li-bordermiss" style="background-size: 0; margin-top: 20px;">
+                        <div class="aui-list-item-inner">
+	                        <!-- 
+	                            <span style="display: inline-block;border-bottom: 1px solid #d1d3dd; width: 35%;"></span>
+	                            <span style="font-size: 0.5rem; color: #d1d3dd;">第三方登录</span>
+	                            <span style="display: inline-block;border-bottom: 1px solid #d1d3dd; width: 35%;"></span>
+                             -->
+                        </div>
+                    </li>
+                    
+                </ul>
+               <!--  
+                <div class="third-party">
+                    <span><i class="icon hufuiconfont hufuicon-qq" style="color: #4CAFEA;"></i></span>
+                    <span><i class="icon hufuiconfont hufuicon-weixin" style="color: #18D101;"></i></span>
+                    <span><i class="icon hufuiconfont hufuicon-weibo" style="color: #EA5D5C;"></i></span>
+                    <span><i class="icon hufuiconfont hufuicon-taobao" style="color: #FF440B;"></i></span>
+                </div>
+                 -->
+            </form>
+        </div>
+    </div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/login/login.js"></script>
+</section>
+</html>

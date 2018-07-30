@@ -23,6 +23,7 @@
                           			     
                           			     <h4>开始时间： <span th:text="${#dates.format(one.startTime, 'yyyy-MM-dd HH:mm:ss')}"></span></h4>
                            			     <h4>结束时间： <span th:text="${#dates.format(one.endTime, 'yyyy-MM-dd HH:mm:ss')}"></span></h4>
+                          			     <h4>商品图片： <img th:src="@{${one.productImage}}"></img></h4>
                           			     <h4>商品数量： <span th:text="${one.productNum}"></span></h4>
                           			     <h4>参与用户数量： <span th:text="${one.userNum}"></span></h4>
                           			     <h4>活动详情： <span th:utext="${one.detail}"></span></h4>

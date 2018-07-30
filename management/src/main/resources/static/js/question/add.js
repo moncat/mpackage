@@ -4,7 +4,7 @@ $(function(){
 				name:{
 					    required:true,
 						minlength:1,
-						maxlength:100,
+						maxlength:200,
 					},
 				 type:{
 						
@@ -38,6 +38,10 @@ $(function(){
 						minlength:1,
 						maxlength:1000,
 					},	
+					optionG:{
+						minlength:1,
+						maxlength:1000,
+					},	
 				 detail:{
 						minlength:1,
 						maxlength:1000,
@@ -51,25 +55,42 @@ $(function(){
 			focusCleanup:true,
 			success:"valid",
 			submitHandler:function(form){
-				
-				$(form).ajaxSubmit({
-					type: 'post',
-					url: "/question/add" ,
-					success: function(data){
-						layer.alert('添加成功!',function(){
-							lc();
-						});
-						
-					},
-	                error: function(XmlHttpRequest, textStatus, errorThrown){
-						layer.msg('error!',{icon:1,time:1000});
+				//请至少填写两个选项
+//				$('[name^="aa"]') 以aa开头
+//				$('[name$="aa"]') 以aa结尾
+//				$('[name*="aa"]') 含有aa
+				var count = 0;
+				$('[name^="option"]').each(function(){
+					var val = $(this).val();
+					if(val!=""){
+						count++;
 					}
 				});
+				if(count<2){
+					layer.alert('请至少填写两个选项!');
+				}else{
+					$(':submit').attr('disabled','disabled');
+					$(form).ajaxSubmit({
+						type: 'post',
+						url: "/question/add" ,
+						success: function(data){
+							$(':submit').removeAttr('disabled');
+							layer.alert('添加成功!',function(){
+								lc();
+							});
+							
+						},
+						error: function(XmlHttpRequest, textStatus, errorThrown){
+							$(':submit').removeAttr('disabled');
+							layer.msg('error!',{icon:1,time:1000});
+						}
+					});
+				}
 			}
 		});
 		
 		$('.cancle').on('click',function(){
-			lc()
+			lc();
 		});
 				
 		$('.skin-minimal input').iCheck({
@@ -77,6 +98,7 @@ $(function(){
 			radioClass: 'iradio-blue',
 			increaseArea: '20%'
 		});
+		
 		
 });
 

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='成分分析-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+	<link rel="stylesheet" type="text/css" href="/css/pro.css" />
+</section>
+<section layout:fragment="main"  >
+	<div class="aui-content">
+	    <header class="aui-bar aui-bar-nav currency-bgcolor" id="aui-header">
+	        <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+	            <span class="aui-iconfont aui-icon-left" style="cursor: pointer"></span>
+	        </a>
+	        <div class="aui-title">成分分析</div>
+	    </header>
+		<div class="pro_com_xq">
+			<span>· 本产品含<b th:text="${#lists.size(list)}">17</b>种成分 ·</span>
+			<table cellspacing="0">
+				<tr>
+					<th>成分名称</th>
+					<th>安全风险</th>
+					<th>活性成分</th>
+					<th>致痘分险</th>
+					<th>使用目的</th>
+				</tr>
+				<tr th:each="one:${list}">
+					<td th:text="${one.name}">水</td>   
+					<td th:text="${one.securityRisks}" th:style="'color:'+@{(${one.safeColour =='badge-success'}? '#7ebc59':(${one.safeColour =='badge-warning'}? '#ffb950':'#f1404b') )}" >1</td>
+					<td th:text="${one.activeIngredient ==1?'Y':''}">Y</td>
+					<td th:text="${one.blainRisk ==1?'Y':''}">Y</td>
+					<td>
+					   <div th:each="aim:${one.tBrAims}" th:text="${aim.name}">溶剂</div> 
+					</td>
+				</tr>
+			</table>
+		</div>       
+	</div>
+</section>
+<section layout:fragment="my">
+</section>
+</html>

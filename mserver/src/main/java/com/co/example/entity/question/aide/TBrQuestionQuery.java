@@ -4,6 +4,7 @@ import com.co.example.entity.question.TBrQuestion;
 import lombok.Getter;
 import lombok.Setter;
 
+@SuppressWarnings("serial")
 @Getter
 @Setter
 public class TBrQuestionQuery extends TBrQuestion {
@@ -16,7 +17,10 @@ public class TBrQuestionQuery extends TBrQuestion {
 	private String optionD;
 	private String optionE;
 	private String optionF;
+	private String optionG;
 	
+	
+	private String nameLike;
 	
 	
 }

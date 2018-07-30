@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='个人中心-柠檬妆典'">
+<section layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/mine.css" />
+	<link rel="stylesheet" type="text/css" href="/base/lib/mobiscroll/css/mobiscroll_002.css" />
+	<link rel="stylesheet" type="text/css" href="/base/lib/mobiscroll/css/mobiscroll_003.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cropper.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/ImgCropping.css" />
+</section>
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav aui-bar-light" id="mine-head" >
+    <!-- 
+    href="javascript:document.getElementById('curForm').submit()"
+     -->
+        <a class="aui-pull-left aui-btn" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">个人中心</div>
+    </header>
+  <form th:action="@{/center/editInfo}" method='post' id="curForm">
+    <div class="mine-p-bg" style="z-index: 4" ><img src="/img/mine/mine-bg.png" alt=""></div>
+    <div class="aui-content maui-content maui-text-center mine-came" style="z-index: 5">
+        <div class="mine-camera">
+            <img style="border-radius: 50%;width: 4rem;height: 4rem;" th:src="@{${(user.headImage ==null || user.headImage =='' )? '/img/mine/mine-camera.png': user.headImage} }" src="/img/mine/mine-camera.png" alt="" id="headImage"/>
+            <img style="border-radius: 50%;width: 4rem;height: 4rem;position: absolute;top:-84px;left:-84px" id="camera"  src="/img/mine/camera.png"/>
+            <input type="file" name="file" id="file" hidden="hidden"  accept="image/jpg,image/jpeg,image/png" />
+			<input type="hidden" th:value="${user.headImage}" name="headImage" id="image"/>
+            <span id='nicknameBig' th:text='${user.displayName}' >&nbsp;</span>
+            <p id="mySkin" hidden="hidden" style="color:#039be5">我的肤质</p>
+            <input name="id" type="hidden" th:value="${user.id}" />
+        </div>
+    </div>
+    <div class="mine-form">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item aui-list-item-middle" >
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">昵 称</div>
+                    <div class="aui-col-xs-8 aui-list-item-inner">
+                        <input type="text"   th:value='${user.displayName}' name="displayName" id='nickname' maxlength="11">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle" >
+                <div class="aui-list-item-inner aui-list-item-arrow ">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">性 别</div>
+                    <div class="aui-col-xs-8 aui-list-item-inner">
+		                <div class="aui-list-item-input">
+		                    <label style="color:#979797"><input class="aui-radio" th:checked="${user.sex}==0" value="0" type="radio" name="sex" >&nbsp;&nbsp;美女&nbsp;&nbsp;&nbsp;</label>
+		                    <label style="color:#979797"><input class="aui-radio" th:checked="${user.sex}==1" value="1" type="radio" name="sex">&nbsp;&nbsp;帅哥</label>
+		                </div>
+               		 </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle" >
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">生 日</div>
+                    <div class="aui-col-xs-8 aui-list-item-inner">
+                        <input type="text" readonly="readonly"  th:value='${user.birthday}' id='birthday' name="birthday">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle" >
+                <div class="aui-list-item-inner ">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">年 龄</div>
+                    <div class="aui-col-xs-8 aui-list-item-inner">
+                        <input type="text " readonly="readonly" th:value='${user.age}' id="age" name="age">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle" >
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">手机号</div>
+                    <div class="aui-col-xs-8 aui-list-item-inner" >
+                        <input type="text"  th:value='${user.mobilePhone}'  readonly="readonly" id="mobile" >
+                    </div>
+                </div>
+            </li>
+        </ul>
+	     <p><div class="aui-btn aui-btn-primary aui-btn-block clickable editMineInfo">完成</div></p>
+        <div id="datePlugin"></div>
+    </div>
+   </form>
+   <div style="display: none;" class="tailoring-container" >
+	    <div  class="black-cloth" onclick="closeTailor(this)"></div>
+		    <div class="tailoring-content" >
+		      <div class="tailoring-content-one">
+		         <!--  <div class="close-tailoring" onclick="closeTailor(this)">×</div> -->
+		      </div>
+		      <div class="tailoring-content-two">
+		          <div class="tailoring-box-parcel">
+		              <img id="tailoringImg">
+		          </div>
+		     </div>
+		     <div class="tailoring-content-three">
+                <button class="l-btn cropper-reset-btn">复位</button>
+                <button class="l-btn cropper-rotate-btn">旋转</button>
+                <button class="l-btn cropper-scaleX-btn">换向</button>
+                <button class="l-btn cancleCut" id="cancleCut">取消</button>
+                <button class="l-btn sureCut" id="sureCut">确定</button>
+            </div>
+	    </div>
+    </div>
+   
+   <div style="margin-bottom: 2.67rem;"></div>
+    <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon hufuiconfont hufuicon-shouye hufuTabItem"></i>
+            <div class="aui-bar-tab-label">页面首页</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon hufuiconfont hufuicon-duihua hufuTabItem"></i>
+            <div class="aui-bar-tab-label">护肤咨询</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon hufuiconfont hufuicon-jiejuefangan1 hufuTabItem"></i>
+            <div class="aui-bar-tab-label">护肤方案</div>
+        </div>
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="icon hufuiconfont hufuicon-zhanghao hufuTabItem"></i>
+            <div class="aui-bar-tab-label">我的信息</div>
+        </div>
+    </footer>
+
+
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/common/footer.js"></script>
+	<script type="text/javascript" src="/base/lib/upload/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/base/lib/mobiscroll/js/mobiscroll_002.js"></script>
+	<script type="text/javascript" src="/base/lib/mobiscroll/js/mobiscroll_003.js"></script>
+	<script type="text/javascript" src="/base/lib/mobiscroll/js/mobiscroll_004.js"></script>
+	<script type="text/javascript" src="/base/lib/mobiscroll/js/mobiscroll_005.js"></script>
+	<script type="text/javascript" src="/base/lib/mobiscroll/js/mobiscroll.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-toast.js" ></script>
+	<script type="text/javascript" src="/base/lib/cropper/cropper.min.js" ></script>
+	<script type="text/javascript" src="/js/center/init.js"></script>
+</section>
+</html>

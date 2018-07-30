@@ -67,12 +67,12 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 	}
 
 	@Override
-	public boolean isAccountNonExpired() {
+	public boolean isAccountNonExpired() {  //账户过期
 		return true;
 	}
 
 	@Override
-	public boolean isAccountNonLocked() {
+	public boolean isAccountNonLocked() {  //账户锁定
 		Byte isActive = super.getIsActive();
 		if(Constant.STATUS_ACTIVE == isActive){
 			return true;
@@ -82,7 +82,7 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 	}
 
 	@Override
-	public boolean isCredentialsNonExpired() {
+	public boolean isCredentialsNonExpired() { //证书过期
 		return true;
 	}
 

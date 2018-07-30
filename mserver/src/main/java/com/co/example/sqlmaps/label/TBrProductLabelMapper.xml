@@ -155,6 +155,7 @@
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
+     <result column="label_name" property="labelName" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Vo_Column_List" >
     t.id, 
@@ -167,7 +168,9 @@
     t.update_by, 
     t.is_active, 
     t.del_flg
-     <!-- ,alias.field -->
+     <if test="joinLabelFlg" >
+     	,tbl.name label_name
+    </if>
   </sql>
   <sql id="Vo_Where_Clause" >
     <!-- <if test="queryBeanField != null" > -->
@@ -175,6 +178,33 @@
     <!-- </if> -->
   </sql>
   <sql id="Table_Join_Clause" >
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+     <if test="joinLabelFlg" >
+   		 left join t_br_label tbl on t.label_id=tbl.id
+    </if>
   </sql>
+  
+  
+   <select id="selectCount4label" parameterType="java.util.Map" resultType="java.lang.Long" >
+	select count(*) 
+	from (
+		select pl.product_id ,count(*) cc
+		from t_br_product_label pl
+		left JOIN t_br_user_plan_label ul on pl.label_id = ul.label_id
+		where ul.create_by = #{userId,jdbcType=BIGINT}
+		GROUP BY pl.product_id
+	) tmp
+	left join t_br_product_label twins on tmp.product_id = twins.product_id where twins.label_id =#{labelId,jdbcType=BIGINT}
+  </select>
+  <select id="select4label" parameterType="java.util.Map" resultMap="VoResultMap"  >
+	select tmp.product_id from (
+	select pl.product_id ,count(*) cc
+	from t_br_product_label pl
+	left JOIN t_br_user_plan_label ul on pl.label_id = ul.label_id
+	where ul.create_by = #{userId,jdbcType=BIGINT}
+	GROUP BY pl.product_id
+	) tmp
+	left join t_br_product_label twins on tmp.product_id = twins.product_id where twins.label_id =#{labelId,jdbcType=BIGINT}
+	order by tmp.cc  desc
+  </select>
+  
 </mapper>

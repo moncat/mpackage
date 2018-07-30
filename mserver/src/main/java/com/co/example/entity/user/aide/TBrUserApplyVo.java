@@ -16,4 +16,8 @@ public class TBrUserApplyVo extends TBrUserApply {
     
     /** 用户展示名称 */
     private String userDisplayName;
+    
+    /** 商品图片链接 */
+    private String productImage;
+    
 }

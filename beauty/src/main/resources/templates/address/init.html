@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" 
+th:with="title='收货地址-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+    <div class="maui-container">
+		<div class="aui-content" style="background: #f2f2f2">
+		    <header class="aui-bar aui-bar-nav currency-bgcolor" id="">
+		        <a class="aui-btn aui-pull-left"  href="javascript:history.go(-1);">
+		            <span class="aui-iconfont aui-icon-left"></span>
+		        </a>
+		        <div class="aui-title">收货地址</div>
+		        <a class="aui-pull-right aui-btn "  id="add" >
+			      		  新增
+			    </a>
+		    </header>    
+		    <section id="list">
+		    
+		   </section> 
+		</div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/address/init.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-toast.js" ></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-dialog.js"></script>
+	<script id="listTmp" type="text/x-jquery-tmpl">
+	{{each(i,item) page.content}} 
+          <div class="aui-card-list aui-margin-t-15">
+        <div class="aui-card-list-header">
+            <div><span>${item.name}</span></div>
+            <div><span>${item.contact}</span></div>
+        </div>
+        <div class="aui-card-list-content-padded aui-border-b aui-border-t">
+            <div class="aui-row aui-row-padded">
+          		 ${item.provinceName}${item.cityName}${item.contryName}${item.detail}
+            </div>
+        </div>
+        <div class="aui-card-list-footer">
+            <div class="clickable agreement" data-id="${item.id}">
+					{{if item.isDefault ==1}}
+						<i class="icon hufuiconfont hufuicon-duihao" style="background-color:#f73772"></i>
+					{{else}}
+						<i class="icon hufuiconfont hufuicon-duihao" style="background-color:gray"></i>
+					{{/if}}
+					默认邮寄地址
+			</div>
+            <div style="color:#f73772">
+				<i data-id="${item.id}" class="icon hufuiconfont hufuicon-bianji edit clickable"></i>
+				<i data-id="${item.id}" class="icon hufuiconfont hufuicon-shanchu-m delete clickable"></i>
+            </div>
+        </div>
+    </div>
+	{{/each}}
+	</script>
+</section>
+</html>     

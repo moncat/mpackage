@@ -327,6 +327,28 @@
 		    <version>1.7</version>
 		</dependency>
 		
+		<!-- 宽松的HTML5检查模式 -->
+		<dependency>  
+		       <groupId>net.sourceforge.nekohtml</groupId>  
+		       <artifactId>nekohtml</artifactId>  
+		       <version>1.9.22</version>  
+		</dependency> 
+		
+		<!-- https://mvnrepository.com/artifact/org.oxerr.taobao/taobao-client-spring-boot -->
+		<dependency>
+		    <groupId>org.oxerr.taobao</groupId>
+		    <artifactId>taobao-client-spring-boot</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+		
+		<!-- 淘宝联盟jar包打入到 maven -->
+		<dependency>
+		    <groupId>com.taobao.alliance</groupId>
+		    <artifactId>taobao</artifactId>
+		    <version>1.0</version>
+		</dependency>
+		
+		
 		
 	</dependencies>
   

@@ -71,8 +71,23 @@ $(function(){
 			event.stopPropagation(); 
 		});
 	    
-	    
 	  
+	    $(document).on('ifChecked',':checkbox', function(event){
+	    	var typeId = $('#label').data('type-id');
+	    	var labelId = $(this).attr('label-id');
+		   $.post('/questiontype/addLabel',{'typeId':typeId,'labelId':labelId},function(data){
+			   layer.msg('关联成功!',{icon:1,time:1000});
+		   });
+		});
+	    
+	    $(document).on('ifUnchecked',':checkbox', function(event){
+	    	var typeId = $('#label').data('type-id');
+	    	var labelId = $(this).attr('label-id');
+	    	$.post('/questiontype/removeLabel',{'typeId':typeId,'labelId':labelId},function(data){
+	    		layer.msg('取消关联!',{icon:1,time:1000});
+	    	});
+	    });
+	    
 });
 
 		function onClick(event, treeId, treeNode, clickFlag) {
@@ -102,6 +117,20 @@ $(function(){
 			}else{
 				$('.add').show();
 			}
+			var nodeId = treeNode.id;
+		
+			$.post('/questiontype/label?id='+nodeId, function(data) {
+				$('#label').empty();
+				$('#label').data('type-id',nodeId);
+				$('#labelTmp').tmpl(data).appendTo('#label');
+				 $('.skin-minimal input').iCheck({
+						checkboxClass: 'icheckbox-blue',
+						radioClass: 'iradio-blue',
+						increaseArea: '20%'
+					});
+			});
+			
+			
 		}
 
 	function filter(treeId, parentNode, childNodes) {

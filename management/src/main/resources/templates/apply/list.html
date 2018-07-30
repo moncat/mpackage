@@ -7,20 +7,27 @@
 		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
 	<div class="page-container" >
-		<!-- 
+		
 		<div class="cl pd-5 bg-1 bk-gray mt-10">
 			<form action="/apply/list">
 				<div class="text-c"> 
-					活动名称：<input type="text" class="input-text" style="width:200px" placeholder="活动名称" id="" th:value="${query.activityId}" name="activityId"/> 
-					申请人：<input type="text" class="input-text" style="width:200px" placeholder="申请人" id="" th:value="${query.createBy}" name="createBy"/> 
-					申请时间：<input type="text" class="input-text" style="width:200px" placeholder="申请时间" id="" th:value="${query.createTime}" name="createTime"/> 
-					审批人：<input type="text" class="input-text" style="width:200px" placeholder="审批人" id="" th:value="${query.operBy}" name="operBy"/> 
-					审批：<input type="text" class="input-text" style="width:200px" placeholder="审批" id="" th:value="${query.operTime}" name="operTime"/> 
+					活动名称：<input type="text" class="input-text" style="width:200px" placeholder="活动名称" id="" th:value="${query.titleLike}" name="titleLike"/> 
+					申请人：<input type="text" class="input-text" style="width:200px" placeholder="申请人" id="" th:value="${query.userDisplayNameLike}" name="userDisplayNameLike"/> 
+					状态：
+						<span class="select-box" style="width:200px">
+						  <select class="select" size="1" name="isActive" >
+						    <option value="" th:selected ="${query.isActive} == ''">无</option>
+						    <option value="0" th:selected ="${query.isActive} == 0">已拒绝</option>
+						    <option value="1" th:selected ="${query.isActive} == 1">待审批</option>
+						    <option value="2" th:selected ="${query.isActive} == 2">已通过</option>
+						    <option value="3" th:selected ="${query.isActive} == 3">报告已提交</option>
+						  </select>
+					   </span> 
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>
 		</div>
-		 -->
+		
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>
@@ -54,12 +61,12 @@
 						<td th:text="${one.userDisplayName}"></td>
 						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td th:text="${one.adminDisplayName}"></td>
-						<td th:text="${#dates.format(one.operTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td th:text="${one.operTime == null? '' : #dates.format(one.operTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
 						<td class="td-status" th:switch="${one.isActive}" >
 							<span th:case="0" >已拒绝</span>
 							<span th:case="1" >待审批</span>
-							<span th:case="2" >已通过，待用户填写报告</span>
-							<span th:case="3" >用户报告已提交</span>
+							<span th:case="2" >已通过</span>
+							<span th:case="3" >报告已提交</span>
 						</td>
 						<td class="td-manage">
 						

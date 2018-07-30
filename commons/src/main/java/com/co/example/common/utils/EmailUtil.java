@@ -22,8 +22,8 @@ public class EmailUtil {
 	public static void sendEmail(String toEmail, String toName, String title,
 			String content) {
 		HtmlEmail email = new HtmlEmail();
-		String fromEmail = "moncat@126.com";
-		String fromEmailPwd= "*";
+		String fromEmail = "****";  //填写邮箱
+		String fromEmailPwd= "****"; //填写密码
 		String server = "smtp.126.com";
 		email.setHostName(server);// 发信邮件服务器
 		email.setAuthentication(fromEmail, fromEmailPwd);// smtp认证的用户名和密码

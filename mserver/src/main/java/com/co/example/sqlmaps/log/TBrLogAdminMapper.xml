@@ -208,9 +208,18 @@
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+    <if test="userNameLike != null" >
+        and t.user_name like concat ('%', #{userNameLike,jdbcType=VARCHAR},'%')
+     </if>
+   	<if test="operTypeLike != null" >
+        and t.oper_type like concat ('%', #{operTypeLike,jdbcType=VARCHAR},'%')
+     </if>
+   	<if test="moduleLike != null" >
+        and t.module like concat ('%', #{moduleLike,jdbcType=VARCHAR},'%')
+     </if>
+   	<if test="detailLike != null" >
+        and t.detail like concat ('%', #{detailLike,jdbcType=VARCHAR},'%')
+     </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->

@@ -2,6 +2,9 @@ package com.co.example.entity.user;
 
 import com.github.moncat.common.entity.BaseEntity;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -25,6 +28,9 @@ public class TUser extends BaseEntity {
     /** 头像链接 */
     private String headImage;
 
+    /** 生日日期 */
+    private String birthday;
+
     /** 年龄 */
     private Integer age;
 
@@ -44,6 +50,7 @@ public class TUser extends BaseEntity {
     private Short visitCount;
 
     /** 最后一次登录时间 */
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date lastTime;
 
     /** 最后一次登录ip */

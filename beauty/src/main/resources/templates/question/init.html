@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='肤质测试-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+<div class="aui-content" style="background: #f2f2f2">
+    <header class="aui-bar aui-bar-nav currency-bgcolor" id="">
+        <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">肤质测试</div>
+    </header>
+    <div class="aui-card-list">
+        <div class="aui-card-list-content">
+            <img src="/img/skintest-index.jpg"/>
+        </div>
+    </div>
+
+    <div class="aui-margin-t-10">
+        <div class="aui-row c-aui-row-padded">
+            <div class="c-xs-6 " >
+                <img src="/img/skintest-index-01.png" />
+                <span class="aui-font-size-20">干油性测试</span><br>
+                <span class="c-text-color-4 aui-font-size-20 aui-ellipsis-2">开始测试</span>
+            </div>
+
+            <div class="c-xs-6 aui-pull-right ">
+                <img src="/img/skintest-index-02.png"/>
+                <span class="aui-font-size-20">敏感耐受性测试</span><br>
+                <span class="c-text-color-4 aui-font-size-20 aui-ellipsis-2">开始测试</span>
+            </div>
+        </div>
+    </div>
+    <div class="aui-margin-t-10">
+        <div class="aui-row c-aui-row-padded">
+            <div class="c-xs-6 " >
+                <img src="/img/skintest-index-03.png" />
+                <span class="aui-font-size-20">色素沉着性测试</span><br>
+                <span class="c-text-color-4 aui-font-size-20 aui-ellipsis-2">开始测试</span>
+            </div>
+
+            <div class="c-xs-6 aui-pull-right ">
+                <img src="/img/skintest-index-04.png"/>
+                <span class="aui-font-size-20">皮肤紧致性测试</span><br>
+                <span class="c-text-color-4 aui-font-size-20 aui-ellipsis-2">开始测试</span>
+            </div>
+        </div>
+    </div>
+    <div class="aui-margin-t-10 c-skintest-b">
+        <div class="aui-col-xs-12 aui-text-center " >
+            <div class="  c-bg-color-1 aui-font-size-26 c-skintest-b-title">
+               <a id="test" href="#">"量肤定制"我的护肤方案</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-dialog.js"></script>
+	<script type="text/javascript" src="/js/question/init.js"></script>
+</section>
+</html>

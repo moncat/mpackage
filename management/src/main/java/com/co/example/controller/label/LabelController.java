@@ -63,8 +63,6 @@ public class LabelController extends  BaseControllerHandler<TBrLabelQuery> {
 		return "label/detail";
 	}
 
-
-
 	@Override
 	public Boolean addExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			TBrLabelQuery t, PageReq pageReq, Map<String, Object> result) {
@@ -81,6 +79,9 @@ public class LabelController extends  BaseControllerHandler<TBrLabelQuery> {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			//设置appId 为0 默认为标签   为1 默认为分类
+			Byte appId = 0;
+			t.setAppId(appId);
 			tBrLabelService.add(t);
 			int count = tBrLabelService.addConnect2Product(t);
 			log.info(t.getName()+"("+t.getId()+") 成功数量："+count);

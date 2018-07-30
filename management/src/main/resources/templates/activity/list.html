@@ -13,19 +13,28 @@
 			 </span> 
 			 <span class="r"></span> 
 		 </div>
-		 <!-- 
+		 
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
 			<form action="/activity/list">
 				<div class="text-c"> 
-					活动标题：<input type="text" class="input-text" style="width:200px" placeholder="活动标题" id="" th:value="${query.title}" name="title"/> 
-					活动类型：<input type="text" class="input-text" style="width:200px" placeholder="活动类型" id="" th:value="${query.type}" name="type"/> 
-					开始时间：<input type="text" class="input-text" style="width:200px" placeholder="开始时间" id="" th:value="${query.startTime}" name="startTime"/> 
-					结束时间：<input type="text" class="input-text" style="width:200px" placeholder="结束时间" id="" th:value="${query.endTime}" name="endTime"/> 
-										<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+					活动标题：<input type="text" class="input-text" style="width:200px" placeholder="活动标题" id="" th:value="${query.titleLike}" name="titleLike"/> 
+					活动类型：
+						<span class="select-box" style="width:200px">
+						  <select class="select" size="1" name="type" >
+						    <option value="" th:selected ="${query.type} == ''">无</option>
+						    <option value="1" th:selected ="${query.type} == 1">试用活动</option>
+						    <option value="2" th:selected ="${query.type} == 2">其他活动</option>
+						  </select>
+					   </span> 
+					开始时间： <input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${query.startTime1== null? '': #dates.format(query.startTime1, 'yyyy-MM-dd HH:mm:ss')}" style="width:200px" placeholder="开始时间"  name="startTime1"/> 
+						  -<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${query.startTime2== null? '': #dates.format(query.startTime2, 'yyyy-MM-dd HH:mm:ss')}" style="width:200px" placeholder="开始时间"  name="startTime2"/> 
+					结束时间： <input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${query.endTime1== null? '' : #dates.format(query.endTime1, 'yyyy-MM-dd HH:mm:ss')}" style="width:200px" placeholder="结束时间"  name="endTime1"/> 
+						  -<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${query.endTime2== null? '' : #dates.format(query.endTime2, 'yyyy-MM-dd HH:mm:ss')}" style="width:200px" placeholder="结束时间"  name="endTime2"/> 
+					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>
 		</div>
-			 -->
+			 
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>

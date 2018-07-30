@@ -5,7 +5,10 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <!-- 头部，包含meta，公共css -->
 <head th:replace="common/layout_head :: head"></head>
-<body>
+<body >
+<!-- 自定义css -->
+<section  layout:fragment="css">
+</section>
 <!-- 主页面 -->	
 <section  layout:fragment="main">
 	这里是main
@@ -14,7 +17,6 @@
 <section th:replace="common/layout_js :: js"></section>
 <!-- 自定义js -->
 <section  layout:fragment="my">
-	这里是js
 </section>
 </body>
 </html>

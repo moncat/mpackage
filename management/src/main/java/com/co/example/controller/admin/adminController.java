@@ -6,16 +6,15 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.Session;
-import org.apache.catalina.manager.util.SessionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,7 +49,9 @@ public class adminController {
 	@Resource
 	private TAdminRoleService tAdminRoleService;
 	
-	
+//	@Secured({"ROLE_sa","ROLE_admin"})
+//	@PreAuthorize("hasRole('ROLE_sa') or hasRole('ROLE_user')")
+//	@RolesAllowed({"ROLE_user","ROLE_admin"})
 	@RequestMapping(value="/list",method = { RequestMethod.GET,RequestMethod.POST})
 	public String list(Model model ,PageReq pageReq ,TAdminQuery query){
 		//所有用户
@@ -61,7 +62,7 @@ public class adminController {
 		return "admin/list";
 	}
 	
-	
+
 	@RequestMapping(value="/center",method = { RequestMethod.GET,RequestMethod.POST})
 	public String center(Model model){
 		//用户中心

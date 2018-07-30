@@ -15,19 +15,22 @@
 				 <span class="r"></span> 
 			 </div>
 		  -->
-		 <!-- 
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
 			<form action="/collect/list">
 				<div class="text-c"> 
-					收藏名称：<input type="text" class="input-text" style="width:200px" placeholder="收藏名称" id="" th:value="${query.name}" name="name"/> 
-					收藏类型：<input type="text" class="input-text" style="width:200px" placeholder="收藏类型" id="" th:value="${query.type}" name="type"/> 
-					收藏人：<input type="text" class="input-text" style="width:200px" placeholder="收藏人" id="" th:value="${query.createBy}" name="createBy"/> 
-					收藏时间：<input type="text" class="input-text" style="width:200px" placeholder="收藏时间" id="" th:value="${query.createTime}" name="createTime"/> 
+					收藏名称：<input type="text" class="input-text" style="width:200px" placeholder="收藏名称" id="" th:value="${query.nameLike}" name="nameLike"/> 
+					收藏类型：<span class="select-box" style="width:200px">
+							  <select class="select" size="1" name="type" >
+							    <option value="" th:selected ="${query.type} == ''">无</option>
+							    <option value="1" th:selected ="${query.type} == 1">商品</option>
+							    <option value="2" th:selected ="${query.type} == 2">资讯</option>
+							  </select>
+						   </span>
+					收藏人：<input type="text" class="input-text" style="width:200px" placeholder="收藏人" id="" th:value="${query.userDisplayNameLike}" name="userDisplayNameLike"/> 
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>
 		</div>
-		 -->
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>

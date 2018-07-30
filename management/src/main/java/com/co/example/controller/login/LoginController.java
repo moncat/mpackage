@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +55,8 @@ public class LoginController {
 		if(e != null){
 			errMessage = e.getMessage();
 			if(StringUtils.equals("Bad credentials", errMessage)){
+				errMessage = "用户名或密码错误！";
+			}else if(StringUtils.equals("User is disabled", errMessage)){  //用户不存在或已删除
 				errMessage = "用户名或密码错误！";
 			}
 			model.addAttribute("errMessage", errMessage);

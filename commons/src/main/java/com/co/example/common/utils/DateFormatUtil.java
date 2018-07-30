@@ -17,6 +17,8 @@ public class DateFormatUtil {
 	
 	public static final DateFormat formartDate = new SimpleDateFormat("yyyy-MM-dd");
 	
+	public static final DateFormat formartYearAndMonth = new SimpleDateFormat("yyyy-MM");
+	
 	public static final DateFormat formartTime = new SimpleDateFormat("HH:mm:ss");
 	
 	public static final DateFormat formartWeek = new SimpleDateFormat("E",Locale.CHINA);

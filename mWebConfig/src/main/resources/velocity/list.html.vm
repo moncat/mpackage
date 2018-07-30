@@ -17,7 +17,7 @@
 			<form action="/$!{foo}/list">
 				<div class="text-c"> 
 					#foreach( $elem in $dataList) 
-$elem.label：<input type="text" class="input-text" style="width:200px" placeholder="$elem.label" id="" th:value="$ {query.$elem.field}" name="$elem.field"/> 
+$elem.label：<input type="text" class="input-text" style="width:200px" placeholder="$elem.label" id="" th:value="$ {query.$elem.fieldLike}" name="$elem.fieldLike"/> 
 					#end
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>

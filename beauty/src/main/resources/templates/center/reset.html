@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='个人中心-柠檬妆典'">
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="max-width: 768px; margin: 0 auto">
+        <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">新密码</div>
+    </header>
+    <div class="aui-content aui-margin-b-15 main-font" style="max-width: 768px; margin: 0 auto">
+        <div class="aui-row maui-logo">
+            <img src="/img/pretty-girl.png">
+        </div>
+        <div class="aui-row">
+        <form action="#" method="post">
+            <ul class="aui-list maui-list aui-form-list">
+                <li class="aui-list-item maui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-lable-icon">
+                            <i class="aui-iconfont aui-icon-lock"></i>
+                        </div>
+                        <div class="aui-list-item-input maui-list-input">
+                            <input style="width: 90%;" class="pwd first-pwd" type="password" placeholder="设置6-20位密码(支持数字，字母)">
+                            <span style="width: 8%;"><i class="icon pwd-is-show hufuiconfont hufuicon-mimabukejianx"></i></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-lable-icon">
+                            <i class="aui-iconfont aui-icon-lock"></i>
+                        </div>
+                        <div class="aui-list-item-input maui-list-input">
+                            <input style="width: 90%;" class="pwd second-pwd" type="password" placeholder="请重新输入密码">
+                            <span style="width: 8%;"><i class="aui-iconfont aui-icon-close aui-hide"></i></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-li-bordermiss">
+                    <div class="aui-list-item-inner">
+                        <button type="button" onclick="return maui_checkForm();" class="aui-btn aui-btn-danger aui-btn-block aui-btn-sm retrieve-button">完成</button>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-li-bordermiss maui-li-border-miss">
+                    <div class="aui-list-item-inner maui-form-note-div">
+                        <span class="maui-form-note"></span>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        </div>
+    </div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/center/reset.js"></script>
+</section>
+</html>

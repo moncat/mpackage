@@ -2,6 +2,7 @@ package com.co.example.entity.product.aide;
 
 import java.util.List;
 
+import com.co.example.entity.label.TBrProductLabel;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.TBrProductImage;
@@ -48,4 +49,13 @@ public class TBrProductVo extends TBrProduct {
 	 */
 	private TBrProductImage image;
 	
+	/**
+	 * 被推荐Id
+	 */
+	private Long recommendId;
+	
+	/**
+	 * 商品标签
+	 */
+	private List<TBrProductLabel> labels;
 }

@@ -3,6 +3,7 @@ package com.co.example.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -47,6 +48,10 @@ public class BaseControllerAdvice {
         String str = json.toString();      
         model.addAttribute("errInfo", str);              
         ex.printStackTrace(); 
+        // 如果是后台访问拒绝，则返回error403页面
+        if(ex instanceof  AccessDeniedException){
+        	return "error403";  
+        }
         return "error";  
     } 
 	

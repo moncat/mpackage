@@ -13,7 +13,7 @@ $(function(){
 				}else if(flg ==0){
 					span.text('已拒绝');
 				}
-				$('.oper').hide();
+				btn.parent().find('a').hide();
 			});
 		}
 	});

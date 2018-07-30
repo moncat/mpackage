@@ -104,6 +104,7 @@ public class PageReq implements Pageable, Serializable {
 		}
 	}
 
+	
 	public void setPage(Integer page) {
 		if (page == null || page < 1) {
 			this.page = DEFAULT_PAGE;

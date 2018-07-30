@@ -28,24 +28,32 @@ public class TBrQuestionOptionServiceImpl extends BaseServiceImpl<TBrQuestionOpt
 		Byte video =1;
 		TBrQuestionOption tBrQuestionOption = new TBrQuestionOption();
 		tBrQuestionOption.setQuestionId(id);
-		tBrQuestionOption.setName(question.getOptionA());
 		tBrQuestionOption.setType(video);
-		tBrQuestionOption.setGrade(QuestionConstant.OPTION_1_GRADE);
 		BaseDataUtil.setDefaultData(tBrQuestionOption);
-		add(tBrQuestionOption);
 		
-		tBrQuestionOption.setName(question.getOptionB());
-		tBrQuestionOption.setGrade(QuestionConstant.OPTION_2_GRADE);
-		add(tBrQuestionOption);
+		if(StringUtils.isNotBlank(question.getOptionA())){
+			tBrQuestionOption.setName(question.getOptionA());
+			tBrQuestionOption.setGrade(QuestionConstant.OPTION_1_GRADE);
+			add(tBrQuestionOption);
+		}
 		
-		tBrQuestionOption.setName(question.getOptionC());
-		tBrQuestionOption.setGrade(QuestionConstant.OPTION_3_GRADE);
-		add(tBrQuestionOption);
+		if(StringUtils.isNotBlank(question.getOptionB())){
+			tBrQuestionOption.setName(question.getOptionB());
+			tBrQuestionOption.setGrade(QuestionConstant.OPTION_2_GRADE);
+			add(tBrQuestionOption);
+		}
 		
-		tBrQuestionOption.setName(question.getOptionD());
-		tBrQuestionOption.setGrade(QuestionConstant.OPTION_4_GRADE);
-		add(tBrQuestionOption);
+		if(StringUtils.isNotBlank(question.getOptionC())){
+			tBrQuestionOption.setName(question.getOptionC());
+			tBrQuestionOption.setGrade(QuestionConstant.OPTION_3_GRADE);
+			add(tBrQuestionOption);
+		}
 		
+		if(StringUtils.isNotBlank(question.getOptionD())){
+			tBrQuestionOption.setName(question.getOptionD());
+			tBrQuestionOption.setGrade(QuestionConstant.OPTION_4_GRADE);
+			add(tBrQuestionOption);
+		}
 		if(StringUtils.isNotBlank(question.getOptionE())){
 			tBrQuestionOption.setName(question.getOptionE());
 			tBrQuestionOption.setGrade(QuestionConstant.OPTION_2P5_GRADE);
@@ -58,6 +66,13 @@ public class TBrQuestionOptionServiceImpl extends BaseServiceImpl<TBrQuestionOpt
 			add(tBrQuestionOption);
 		}
 		
+		if(StringUtils.isNotBlank(question.getOptionG())){
+			tBrQuestionOption.setName(question.getOptionG());
+			tBrQuestionOption.setGrade(QuestionConstant.OPTION_0_GRADE);
+			add(tBrQuestionOption);
+		}
+		
 		return 0;
 	}
+		
 }

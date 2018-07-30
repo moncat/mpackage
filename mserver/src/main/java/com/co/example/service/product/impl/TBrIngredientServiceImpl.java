@@ -18,6 +18,7 @@ import com.co.example.service.product.TBrAimService;
 import com.co.example.service.product.TBrIngredientService;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.service.BaseServiceImpl;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 @Service
@@ -73,6 +74,7 @@ public class TBrIngredientServiceImpl extends BaseServiceImpl<TBrIngredient, Lon
 		Map<String, Integer> map = Maps.newHashMap();
 		TBrIngredientQuery query = new TBrIngredientQuery();
 		query.setProductId(productId);
+		query.setJoinFlg(true);
 		List<TBrIngredient> list = queryList(query);
 		String securityRisks = null;
 		int safeInt = 0;
@@ -109,22 +111,24 @@ public class TBrIngredientServiceImpl extends BaseServiceImpl<TBrIngredient, Lon
 	
 	
 	@Override
-	public Map<String, Integer> safeAnalyze(Long productId) {
+	public List<Map<String, Object>>safeAnalyze(Long productId) {
 		return analyzeCount(productId, SAFE_TYPE);
 	}
 
 	@Override
-	public Map<String, Integer> effectAnalyze(Long productId) {
+	public List<Map<String, Object>> effectAnalyze(Long productId) {
 		return analyzeCount(productId, EFFECT_TYPE);
 	}
 	
-	private Map<String, Integer> analyzeCount(Long productId, String[] strs) {
-		Map<String, Integer> map = Maps.newHashMap();
+	private List<Map<String, Object>> analyzeCount(Long productId, String[] strs) {
+		List<Map<String, Object>> list = Lists.newArrayList();
 		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
 		tBrIngredientQuery.setProductId(productId);
+		tBrIngredientQuery.setJoinFlg(true);
 		List<TBrIngredient> ingredientList = tBrIngredientService.queryList(tBrIngredientQuery);
 		for (int i = 0; i < strs.length; i++) {
 			int num = 0;
+			Map<String, Object> map = Maps.newHashMap();
 			for (TBrIngredient ingredient : ingredientList) {
 				TBrAimQuery tBrAimQuery = new TBrAimQuery();
 				tBrAimQuery.setIngredientId(ingredient.getId());
@@ -137,9 +141,13 @@ public class TBrIngredientServiceImpl extends BaseServiceImpl<TBrIngredient, Lon
 					}
 				}
 			}
-			map.put("strs[i]", num);
+			if(num>0){
+				map.put("key", strs[i]);
+				map.put("value", num);
+				list.add(map);
+			}
 		}
-		return map;
+		return list;
 	}
 
 	

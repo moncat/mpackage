@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='我的信息-柠檬妆典'">
+<section layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/mine.css" />
+</section>
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav aui-bar-light" id="mine-head" >
+        <a class="aui-pull-left aui-btn" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">我的</div>
+    </header>
+    <div class="my">
+    	<img src="/img/mine/mine-bg.png" style="display:none">
+    	<div class="my_top">
+    		 <img style="width: 65px;height: 65px;" th:src="@{${(user.headImage ==null || user.headImage =='' )? '/img/mine/mine-camera.png': user.headImage} }" src="/img/mine/mine-camera.png" alt="" id="headImage"/>
+    		<p th:text='${user.displayName}'>木小童</p>
+    		<p>
+	    		<span  th:if="${user.sex}==0" >美女&nbsp;&nbsp;</span>
+	    		<span  th:if="${user.sex}==1" >帅哥&nbsp;&nbsp;</span>
+	    		<span  th:text='${user.age}' >18岁</span>
+    		</p>
+    	</div>
+    </div>
+	<section class="aui-content">
+        <ul class="aui-list aui-list-in aui-margin-b-15">
+            <li class="aui-list-item" >
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-my aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">个人中心</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-like aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">我的收藏</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-calendar aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">试用申请</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-location aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">收货地址</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-edit aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">试用协议</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-cert aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">试用报告</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-mail aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">我的消息</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-gear aui-text-info"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">设置</div>
+                </div>
+            </li>
+        </ul>
+        
+    </section>
+    <div style="margin-bottom: 2.67rem;"></div>
+ 	<footer class="aui-bar aui-bar-tab" id="footer">
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-shouye hufuTabItem"></i>
+                <div class="aui-bar-tab-label">页面首页</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-duihua hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤咨询</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-jiejuefangan1 hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤方案</div>
+            </div>
+            <div class="aui-bar-tab-item aui-active" tapmode>
+                <i class="icon hufuiconfont hufuicon-zhanghao hufuTabItem"></i>
+                <div class="aui-bar-tab-label">我的信息</div>
+            </div>
+        </footer>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/common/footer.js"></script>
+	<script type="text/javascript" src="/js/center/mine.js"></script>
+</section>
+</html>

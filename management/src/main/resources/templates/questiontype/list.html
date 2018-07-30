@@ -28,45 +28,55 @@
 						<ul id="treeDemo" class="ztree"></ul>
 					</div>
 	                <div class="col-md-9">
-	                	<table class="table table-border table-bordered table-bg table-hover mt-10">
-							<thead>
-								<tr>
-									<th colspan="10" scope="col">
-										节点详情
-									</th>
-								</tr>
-								<tr class="text-c ">
-									<th>节点名称</th>
-									<th>层级</th>
-									<th>最小得分</th>
-									<th>最大得分</th>
-									<th>字母标志</th>
-									<th>备注</th>
-									<th>操作</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="text-c">									
-									<td id="name"></td>
-									<td id="typeLevel"></td>
-									<td id="gradeMin"></td>
-									<td id="gradeMax"></td>
-									<td id="flag"></td>
-									<td id="remark"></td>
-									<td id="oper">   
-									 	<a style="text-decoration:none;display:none" href="javascript:void(0);" title="新增子节点" class="ml-5 add" >
-											<i class="Hui-iconfont">&#xe600;</i>
-										</a> 
-									 	<a style="text-decoration:none" href="javascript:void(0);" title="编辑该节点" class="ml-5 edit" >
-											<i class="Hui-iconfont">&#xe6df;</i>
-										</a> 
-										<a  style="text-decoration:none;display:none" href="javascript:void(0);" title="删除该节点 " class="ml-5 delete" >
-											<i class="Hui-iconfont">&#xe6e2;</i>
-										</a>
-									</td>
-								</tr>					
-							</tbody>
-						</table>
+	                
+	                	<div class="row cl">
+			                <div class="col-md-12">
+								<table class="table table-border table-bordered table-bg table-hover mt-10">
+									<thead>
+										<tr>
+											<th colspan="10" scope="col">
+												节点详情
+											</th>
+										</tr>
+										<tr class="text-c ">
+											<th>节点名称</th>
+											<th>层级</th>
+											<th>最小得分</th>
+											<th>最大得分</th>
+											<th>字母标志</th>
+											<th>备注</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="text-c">									
+											<td id="name"></td>
+											<td id="typeLevel"></td>
+											<td id="gradeMin"></td>
+											<td id="gradeMax"></td>
+											<td id="flag"></td>
+											<td id="remark"></td>
+											<td id="oper">   
+											 	<a style="text-decoration:none;display:none" href="javascript:void(0);" title="新增子节点" class="ml-5 add" >
+													<i class="Hui-iconfont">&#xe600;</i>
+												</a> 
+											 	<a style="text-decoration:none" href="javascript:void(0);" title="编辑该节点" class="ml-5 edit" >
+													<i class="Hui-iconfont">&#xe6df;</i>
+												</a> 
+												<a  style="text-decoration:none;display:none" href="javascript:void(0);" title="删除该节点 " class="ml-5 delete" >
+													<i class="Hui-iconfont">&#xe6e2;</i>
+												</a>
+											</td>
+										</tr>					
+									</tbody>
+								</table>
+							</div>
+			                <div class="col-md-12" >
+								<h3 class="mt-10">标签关联</h3>
+								<div class="line mb-10"></div>
+			                	<div class="skin-minimal" id="label"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -75,6 +85,20 @@
 </section>
 <section  layout:fragment="my">
 	<script type="text/javascript" src="/base/lib/zTree/v3/js/jquery.ztree.all-3.5.js"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="/js/questiontype/list.js"></script>
+	<script id="labelTmp" type="text/x-jquery-tmpl">
+	  {{each(i,item) labelList}} 
+ 			<div class="check-box" style="margin-top: 20px;padding-left: 22px;">
+					{{if item.selected}}
+   						 <input label-id="${item.id}" type="checkbox" id="checkbox-${i}" checked="checked" />
+					{{else}}
+   						 <input label-id="${item.id}" type="checkbox" id="checkbox-${i}"  />
+					{{/if}}
+				
+   				 <label for="checkbox-${i}">${item.name}</label>
+  			</div>
+	  {{/each}}
+	</script>
 </section>
 </html>

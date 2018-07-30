@@ -13,4 +13,5 @@ public interface TBrProductDao extends BaseDao<TBrProduct, Long> {
 	
 	int updateByArea(TBrProductQuery query);
 	
+	
 }

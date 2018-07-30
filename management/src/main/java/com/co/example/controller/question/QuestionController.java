@@ -87,6 +87,9 @@ public class QuestionController extends  BaseControllerHandler<TBrQuestionQuery>
 			if(Math.abs(grade - QuestionConstant.OPTION_5_GRADE)<=0){
 				t.setOptionF(name);
 			}
+			if(Math.abs(grade - QuestionConstant.OPTION_0_GRADE)<=0){
+				t.setOptionG(name);
+			}
 		}
 		
 		model.addAttribute(ONE, t);

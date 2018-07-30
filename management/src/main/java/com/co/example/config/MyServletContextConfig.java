@@ -27,7 +27,10 @@ public class MyServletContextConfig extends ServletContextConfig {
     	registry.addResourceHandler("/**").addResourceLocations("classpath:/static/","file:"+savepath,"file:"+imageSavePath);    
 	}
 
-    
+//    @Bean
+//    public SessionInterceptor sessionInterceptor(){
+//    	return new SessionInterceptor();
+//    }
     
 //    @Bean
 //    public RemembermeInterceptor remembermeInterceptor(){
@@ -42,7 +45,7 @@ public class MyServletContextConfig extends ServletContextConfig {
     
 	@Override
 	protected void addMoreInterceptors(InterceptorRegistry registry) {
-
+//		registry.addInterceptor(sessionInterceptor()).addPathPatterns("/**");
 //		registry.addInterceptor(remembermeInterceptor()).addPathPatterns("/**");
 	//	registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/identifyCode","/login");
 	}

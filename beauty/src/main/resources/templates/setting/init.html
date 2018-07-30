@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='设置-柠檬妆典'">
+<section layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/mine.css" />
+</section>
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav aui-bar-light" id="mine-head" >
+        <a class="aui-pull-left aui-btn" href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">设置</div>
+    </header>
+    <div class="mine-form">
+        <ul class="aui-list aui-list-in">
+       
+            <li class="aui-list-item aui-list-item-middle"  id="updatePwd">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">修改密码</div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle"  id="aboutUs">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title aui-col-xs-4 m-title">关于我们</div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle"  id="version">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title m-title">版本信息</div>
+                </div>
+            </li>
+	        <!-- 
+	            <li class="aui-list-item aui-list-item-middle" >
+	                <div class="aui-list-item-inner aui-list-item-arrow">
+	                    <div class="aui-list-item-title m-title">清理缓存</div>
+	                </div>
+	            </li>
+             -->
+            <li class="aui-list-item aui-list-item-middle"  id="agreement">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title m-title">App用户协议</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 网页用户可以退出 -->
+    <nav th:if="${flg}==false" class="aui-bar aui-bar-nav bottom-info quit" id="logout">
+        <div class="aui-title">退出登录</div>
+        <form th:action="@{/logout}" method="post" id="logoutForm" hidden="hidden"></form>
+    </nav>
+    
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/setting/init.js"></script>
+</section>
+</html>

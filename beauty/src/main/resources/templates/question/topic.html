@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='肤质测试-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+	<link rel="stylesheet" type="text/css" href="/base/lib/Swiper-4.0.7/css/swiper.min.css" />
+</section>
+<section layout:fragment="main" >
+<div class="aui-content">
+    <header class="aui-bar aui-bar-nav currency-bgcolor" id="">
+        <a class="aui-btn aui-pull-left" id="back" href="javascript:void(0)">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">肤质测试</div>
+    </header>
+    
+    <div class="swiper-container">
+	    <div class="swiper-wrapper" >
+	   		 <div class="swiper-slide " th:each="one,status:${list}"  >
+		    	 <!-- 题目大类 -->
+		    	 <div class="aui-text-center aui-margin-t-35">
+			        <p class="c-text-color-4 aui-font-size-28 " th:utext="'·'+${typeText}+'·'"></p>
+			    </div>
+			     <!-- 标题 -->
+		    	<div class="aui-content-padded">
+			        <div class="aui-list-item-title aui-font-size-22" th:attr="data-id=${one.id}" th:utext="${one.name}">
+			        </div>
+			        <div class="aui-margin-t-10">
+			            <ul class="aui-select-list"  >
+			                <li   th:each="item:${one.optionList}" >
+			                    <div class="aui-list-item-inner aui-font-size-20 aui-margin-t-10 topic">
+			                        <input th:attr="data-id=${item.id} , name=${'radio'+status.index}" class="aui-radio" type="radio"   th:utext="${item.name}" >
+			                    </div>
+			                </li>
+			            </ul>
+			        </div>
+			    </div>
+			    <!-- 不是首页 -->
+			     <div th:if="${status.index > 0 && status.index < #lists.size(list)-1}" class="aui-margin-t-10 c-skintest-b previous">
+		            <div class="aui-col-xs-12 aui-text-center ">
+		                <div class="c-bg-color-1 aui-font-size-20 c-skintest-b-title">
+		                    <a href="javascript:void(0);">上一题</a>
+		                </div>
+		            </div>
+		        </div>
+		     
+		        <!-- 最后一页 -->
+		        <div th:if="${status.index == #lists.size(list)-1}" class="aui-margin-t-10 c-skintest-b">
+		            <div class="aui-row aui-row-padded">
+		                <div class="aui-col-xs-5 aui-text-center previous">
+		                    <div class=" c-bg-color-1 aui-font-size-20 c-skintest-b-title">
+		                        <a href="javascript:void(0);">上一题</a>
+		                    </div>
+		                </div>
+		                <div class="aui-col-xs-5 aui-text-center aui-pull-right" id="resultBtn">
+		                    <div class=" c-bg-color-1 aui-font-size-20 c-skintest-b-title">
+		                        <a href="javascript:void(0);">查看结果</a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+			</div>
+	    </div>
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev aui-hide"></div>
+	    <div class="swiper-button-next aui-hide"></div>
+	</div>
+    <div style="margin-bottom: 2.67rem;"></div>
+    <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="aui-bar-tab-item " tapmode>
+            <i class="icon hufuiconfont hufuicon-shouye hufuTabItem"></i>
+            <div class="aui-bar-tab-label">页面首页</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon hufuiconfont hufuicon-duihua hufuTabItem"></i>
+            <div class="aui-bar-tab-label">护肤咨询</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon hufuiconfont hufuicon-jiejuefangan1 hufuTabItem"></i>
+            <div class="aui-bar-tab-label">护肤方案</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="icon hufuiconfont hufuicon-zhanghao hufuTabItem"></i>
+            <div class="aui-bar-tab-label">我的信息</div>
+        </div>
+    </footer>
+</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/Swiper-4.0.7/js/swiper.min.js"></script>
+	<script type="text/javascript" src="/base/lib/aui/js/aui-dialog.js"></script>
+	<script type="text/javascript" src="/js/common/footer.js"></script>
+	<script type="text/javascript" src="/js/question/topic.js"></script>
+</section>
+</html>

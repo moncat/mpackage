@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='用户注册-柠檬妆典'">
+<section layout:fragment="main" >
+    <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="max-width: 768px; margin: 0 auto">
+        <a href="/login" class="aui-btn aui-pull-left"  href="javascript:history.go(-1);">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">注册</div>
+    </header>
+    <div class="aui-content aui-margin-b-15 main-font" style="max-width: 768px; margin: 0 auto">
+        <div class="aui-row maui-logo">
+            <img src="/img/pretty-girl.png">
+        </div>
+        <div class="aui-row">
+        <form action="#" method="post" id ="defaultForm">
+            <ul class="aui-list maui-list aui-form-list">
+                <li class="aui-list-item maui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-lable-icon">
+                            <i class="aui-iconfont aui-icon-mobile"></i>
+                        </div>
+                        <div class="aui-list-item-input maui-list-input">
+                            <input style="width: 90%;" class="number phone" name="phoneNum" type="text" placeholder="请输入手机号">
+                            <span style="width: 8%;"><i class="aui-iconfont aui-icon-close aui-hide phone-error-icon"></i></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-lable-icon">
+                            <i class="icon hufuiconfont hufuicon-yanzhengma" style="font-size: 0.8rem"></i>
+                        </div>
+                        <div class="aui-list-item-input maui-list-input">
+                            <input type="text" name="vcode" class="number identify-code" placeholder="输入手机验证码">
+                            <span class="get-message-code">
+                                <a>获取验证码</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-lable-icon">
+                            <i class="aui-iconfont aui-icon-lock"></i>
+                        </div>
+                        <div class="aui-list-item-input maui-list-input">
+                            <input style="width: 90%;" name="password1" class="pwd first-pwd" type="password" placeholder="设置6-20位密码(支持数字，字母)">
+                            <span style="width: 8%;"><i class="icon pwd-is-show hufuiconfont hufuicon-mimabukejianx"></i></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-lable-icon">
+                            <i class="aui-iconfont aui-icon-lock"></i>
+                        </div>
+                        <div class="aui-list-item-input maui-list-input">
+                            <input style="width: 90%;" name="password2" class="pwd second-pwd" type="password" placeholder="请重新输入密码">
+                            <span style="width: 8%;"><i class="aui-iconfont aui-icon-close aui-hide"></i></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-li-bordermiss">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-input maui-list-input agreement">
+                            <i class="icon hufuiconfont hufuicon-duihao"></i>同意<a href="agreement.html">《用户协议》</a>
+                            <input name="agreement" type="hidden" value="0">
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-li-bordermiss">
+                    <div class="aui-list-item-inner">
+                        <button type="button" onclick="return register();" class="aui-btn aui-btn-danger aui-btn-block aui-btn-sm register-button" disabled>注册</button>
+                    </div>
+                </li>
+                <li class="aui-list-item maui-li-bordermiss maui-li-border-miss" >
+                    <div class="aui-list-item-inner maui-form-note-div">
+                        <span class="maui-form-note"></span>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        </div>
+    </div>
+    <footer class="maui-help" style="max-width: 768px; margin: 0 auto">
+        <span>手机收不到验证码怎么办？</span>
+        <span>检查垃圾短信，在设置中，将发件人设置为白名单。</span>
+    </footer>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/register/register.js"></script>
+<!-- #f73772 -->
+</section>
+</html>

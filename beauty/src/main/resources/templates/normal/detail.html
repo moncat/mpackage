@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" 
+th:with="title=${activity.title}+'-活动中心-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="margin: 0 auto">
+            <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </a>
+            <div class="aui-title">活动中心</div>
+        </header>
+        <div class="aui-content maui-content maui-trial-detail">
+           <!--  <p th:text="${activity.title}">VENSE唯恩诗 梦幻柔光气垫BB霜，开始试用啦！</p> -->
+            <ul class="maui-trial-activity" style="display: block;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <img th:src="@{${activity.noticeImage}}">
+                        <div class="trial-bottom-img">
+                            <p th:text="${activity.title}">VENSE唯恩诗 梦幻柔光气垫BB霜</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="aui-content maui-content maui-process">
+          		  活动详情
+            <span class="maui-trial-detail-content">
+                <p th:utext="${activity.detail}"></p>
+            </span>
+        </div>
+        <div style="margin-bottom: 2.67rem;"></div><!--防止底部遮盖内容-->
+        <footer class="aui-bar aui-bar-tab maui-footer">
+            <div class="aui-bar-tab-item aui-border-r" tapmode style="width: 3rem;" id="consult">
+                <i class="aui-iconfont aui-icon-comment aui-text-info" style="color: #F73671 !important;"></i>
+                <div class="aui-bar-tab-label aui-text-info" style="color: #F73671 !important;">咨询</div>
+            </div>
+        </footer>
+    </div>
+    
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/try/detail.js"></script>
+</section>
+</html>       

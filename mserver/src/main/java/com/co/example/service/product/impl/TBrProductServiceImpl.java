@@ -1,7 +1,10 @@
 package com.co.example.service.product.impl;
 
+import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -14,6 +17,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +26,10 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.co.example.common.constant.Constant;
 import com.co.example.common.utils.HttpUtils;
+import com.co.example.common.utils.PageReq;
 import com.co.example.dao.product.TBrProductDao;
+import com.co.example.entity.label.TBrProductLabel;
+import com.co.example.entity.label.aide.TBrProductLabelQuery;
 import com.co.example.entity.product.TBrAim;
 import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
@@ -37,9 +44,11 @@ import com.co.example.entity.product.aide.TBrAimQuery;
 import com.co.example.entity.product.aide.TBrEnterpriseQuery;
 import com.co.example.entity.product.aide.TBrIngredientQuery;
 import com.co.example.entity.product.aide.TBrIngredientVo;
-import com.co.example.entity.product.aide.TBrProductImageQuery;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.entity.product.aide.TBrProductVo;
+import com.co.example.entity.user.TBrUserPlanLabel;
+import com.co.example.entity.user.aide.TBrUserPlanLabelQuery;
+import com.co.example.service.label.TBrProductLabelService;
 import com.co.example.service.product.TBrAimService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrIngredientAimService;
@@ -49,6 +58,10 @@ import com.co.example.service.product.TBrProductEnterpriseService;
 import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductIngredientService;
 import com.co.example.service.product.TBrProductService;
+import com.co.example.service.question.TBrQuestionTypeLabelService;
+import com.co.example.service.user.TBrUserPlanItemService;
+import com.co.example.service.user.TBrUserPlanLabelService;
+import com.co.example.service.user.TBrUserPlanService;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.service.BaseServiceImpl;
 import com.google.common.collect.Lists;
@@ -85,6 +98,23 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
     
     @Resource
     private TBrProductEnterpriseService tBrProductEnterpriseService;
+    
+    @Resource
+    private TBrUserPlanService tBrUserPlanService;
+    
+    @Resource
+    private TBrUserPlanItemService tBrUserPlanItemService;
+    
+    @Resource
+    private TBrQuestionTypeLabelService tBrQuestionTypeLabelService;
+    
+    @Resource
+    private TBrUserPlanLabelService tBrUserPlanLabelService;
+    
+    @Resource
+    private TBrProductLabelService tBrProductLabelService;
+    
+    
 
     @Override
     protected BaseDao<TBrProduct, Long> getBaseDao() {
@@ -741,21 +771,144 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	}
 
 
+	@Deprecated
 	@Override
 	public TBrProduct showOneProduct4Mobile(Long id) {
-		
-		TBrProductVo one = queryVoById(id);
-		Byte source = 4; //取天猫的图片
-		TBrProductImageQuery tBrProductImageQuery = new TBrProductImageQuery();
-		tBrProductImageQuery.setProductId(id);
-		tBrProductImageQuery.setSource(source);
-		List<TBrProductImage> list = tBrProductImageService.queryList(tBrProductImageQuery);
-		TBrProductImage image = list.get(0);
-		one.setImage(image);
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setId(id);
+		TBrProductVo one = queryOne(tBrProductQuery);
+//		Byte source = 3; //4取天猫的图片  3取京东数据  （2018年2月23日改动 ）
+//		TBrProductImageQuery tBrProductImageQuery = new TBrProductImageQuery();
+//		tBrProductImageQuery.setProductId(id);
+//		tBrProductImageQuery.setSource(source);
+//		List<TBrProductImage> list = tBrProductImageService.queryList(tBrProductImageQuery);
+//		if(list.size()>0){
+//			TBrProductImage image = list.get(0);
+//			//String tmallUrl = image.getTmallUrl();
+//			//tmallUrl = tmallUrl.replace("60x60", "240x240");
+//			String jdUrl = image.getJdUrl();
+//			jdUrl = "https://img11.360buyimg.com/n1/"+jdUrl;
+//			image.setTmallUrl(jdUrl); //此处的set 方法名称暂时不改动
+//			one.setImage(image);
+//		}
 		return one;
 	}
-	
-	
+
+
+	@Deprecated
+	@Override
+	public Page<TBrProduct> queryByLabel(Long id,PageReq pageReq) {
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setJoinLabelFlg(true);
+		tBrProductQuery.setJoinRecommendFlg(true);
+		tBrProductQuery.setLabelId(id);
+		tBrProductQuery.setRecommendIsNotNullFlg(true);
+		Page<TBrProduct> page = queryPageList(tBrProductQuery,pageReq);
+		List<TBrProduct> newContent = Lists.newArrayList();
+		for (TBrProduct tBrProduct : page.getContent()) {
+			tBrProduct = queryById(tBrProduct.getId());
+			newContent.add(tBrProduct);
+		}
+		return new PageImpl<TBrProduct>(newContent, pageReq, page.getTotalElements());
+	}
+
+	@Deprecated
+	@Override
+	public Page<TBrProduct> queryByLabel(Long id, PageReq pageReq, Long userId) {
+		TBrUserPlanLabelQuery tBrUserPlanLabelQuery = new TBrUserPlanLabelQuery();
+		tBrUserPlanLabelQuery.setCreateBy(userId);
+		List<TBrUserPlanLabel> labelList = tBrUserPlanLabelService.queryList(tBrUserPlanLabelQuery);
+		if(CollectionUtils.isEmpty(labelList)){
+			//该用户虽然登录，但从未做过测试，因而选择默认推荐
+			return queryByLabel(id,pageReq);
+		}
+		//以下为个性推荐
+		List<Long> alist = Lists.newArrayList();
+		//用户标签列表
+		List<Long> blist = Lists.newArrayList();
+		
+		for (TBrUserPlanLabel tBrUserPlanLabel : labelList) {
+			alist.add(tBrUserPlanLabel.getLabelId());
+		}
+		//获得该分类下已推荐的商品列表
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setJoinLabelFlg(true);
+		tBrProductQuery.setJoinRecommendFlg(true);
+		tBrProductQuery.setLabelId(id);
+		tBrProductQuery.setRecommendIsNotNullFlg(true);
+		Page<TBrProduct> page = queryPageList(tBrProductQuery,pageReq);
+		List<TBrProduct> productList = page.getContent();
+		List<TBrProduct> clist = Lists.newArrayList();
+		//对商品列表进行过滤
+		List<TBrProductLabel> plList = null;
+		TBrProductLabelQuery tBrProductLabelQuery = new TBrProductLabelQuery();
+		
+		//因为要删除部分元素 ，因而使用迭代器循环  防止出现 ConcurrentModificationException异常
+		Iterator<TBrProduct> it = productList.iterator();
+		while(it.hasNext()){
+			TBrProduct tBrProduct = it.next();
+			blist.clear();
+			//获得该商品的标签列表
+			tBrProductLabelQuery.setProductId(tBrProduct.getId());
+			plList = tBrProductLabelService.queryList(tBrProductLabelQuery);
+			for (TBrProductLabel tBrProductLabel : plList) {
+				blist.add(tBrProductLabel.getLabelId());
+			}
+			// 用户label和商品label取交集
+			Collection<Long> intersection = CollectionUtils.intersection(alist, blist);
+			if(intersection.size()==0){
+				//没有交集，没有匹配上，移除该商品
+//				it.remove();
+			}else{
+				//该商品可用则进行图片装饰
+				tBrProduct = queryById(tBrProduct.getId());
+				clist.add(tBrProduct);
+			}
+		}
+		if(clist.size()==0){
+			return null;
+		}
+		//对商品列表进行分页
+		return new PageImpl<TBrProduct>(clist, pageReq, page.getTotalElements());
+		
+	}
+
+
+	@Override
+	public BigDecimal getCheapPrice(Long id) {
+		TBrProduct one = queryById(id);
+		BigDecimal tmallPrice = one.getTmallPrice();
+		BigDecimal jdPrice = one.getJdPrice();
+		BigDecimal price = null;
+		if(tmallPrice != null && jdPrice != null){
+			int compareTo = tmallPrice.compareTo(jdPrice);
+			if(compareTo>0){
+				price = tmallPrice;
+			}else{
+				price = jdPrice;
+			}
+		}
+		if(tmallPrice != null && jdPrice == null){
+			price = tmallPrice;
+		}
+		
+		if(tmallPrice == null && jdPrice != null){
+			price = jdPrice;
+		}
+		
+		return price;
+	}
+
+
+	@Override
+	public TBrProduct setLabels(TBrProduct tBrProduct) {
+		TBrProductVo vo = (TBrProductVo) tBrProduct;
+		List<TBrProductLabel> labels = tBrProductLabelService.getProductLabels(tBrProduct.getId());
+		vo.setLabels(labels);
+		return vo;
+	}
+
+
 	
 //	public static void main(String[] args) {
 //		HashMap<String, String> params = Maps.newHashMap();
@@ -777,11 +930,6 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 //			}
 //		}
 //	}
-	
-
-	
-	
-	
 	
 	
 //	public static void main(String[] args) {

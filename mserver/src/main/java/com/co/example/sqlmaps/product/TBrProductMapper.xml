@@ -38,7 +38,7 @@
     more_data2, item_order, create_time, create_by, update_time, update_by, del_flg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
+    select     
     <include refid="Base_Column_List" />
     from t_br_product
     where id = #{id,jdbcType=BIGINT}
@@ -290,12 +290,15 @@
     </if>
   </sql>
   <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
-    select count(t.id) from t_br_product t
+    select count(
+    <if test="labelIdArr != null" >distinct </if>
+    t.id) from t_br_product t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
   <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
     select 
+    <if test="labelIdArr != null" >distinct</if>
     <include refid="Vo_Column_List" />
     from t_br_product t
     <include refid="Table_Join_Clause" />

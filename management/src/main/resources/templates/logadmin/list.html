@@ -6,22 +6,19 @@
 		<span class="c-gray en">&gt;</span> 列表 
 		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
 	</nav>
-	<div class="page-container" >
-	<!-- 
+	<div class="page-container" >	
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
 			<form action="/logadmin/list">
 				<div class="text-c"> 
-					管理员名称：<input type="text" class="input-text" style="width:200px" placeholder="管理员名称" id="" th:value="${query.userName}" name="userName"/> 
-					操作时间：<input type="text" class="input-text" style="width:200px" placeholder="操作时间" id="" th:value="${query.createTime}" name="create_time"/> 
-					管理员登录IP：<input type="text" class="input-text" style="width:200px" placeholder="管理员登录IP" id="" th:value="${query.ip}" name="ip"/> 
-					操作类型：<input type="text" class="input-text" style="width:200px" placeholder="操作类型" id="" th:value="${query.operType}" name="operType"/> 
-					操作模块：<input type="text" class="input-text" style="width:200px" placeholder="操作模块" id="" th:value="${query.module}" name="module"/> 
-					操作详情：<input type="text" class="input-text" style="width:200px" placeholder="操作详情" id="" th:value="${query.detail}" name="detail"/> 
+					管理员名称：<input type="text" class="input-text" style="width:200px" placeholder="管理员名称" id="" th:value="${query.userNameLike}" name="userNameLike"/> 
+					操作类型：<input type="text" class="input-text" style="width:200px" placeholder="操作类型" id="" th:value="${query.operTypeLike}" name="operTypeLike"/> 
+					操作模块：<input type="text" class="input-text" style="width:200px" placeholder="操作模块" id="" th:value="${query.moduleLike}" name="moduleLike"/> 
+					操作详情：<input type="text" class="input-text" style="width:200px" placeholder="操作详情" id="" th:value="${query.detailLike}" name="detailLike"/> 
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>
 		</div>
-		 -->
+	
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>

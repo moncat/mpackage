@@ -31,7 +31,7 @@ public class Constant {
 	public static final Byte STATUS_THREE = 3;
 	
 	
-	public static final String  IMAGE_BASE_PATH = "D:/home/images/";
+	public static final String  IMAGE_BASE_PATH = "/home/images/";
 	
 	
 }

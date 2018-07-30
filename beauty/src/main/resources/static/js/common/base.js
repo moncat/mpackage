@@ -2,67 +2,8 @@
 
 // common header
 $(function(){
-	
-    var $backToTopEle=$('<a href="javascript:void(0)" class="Hui-iconfont toTop" title="返回顶部" alt="返回顶部" style="display:none">&#xe684;</a>').appendTo($("body")).click(function(){
-        $("html, body").animate({ scrollTop: 0 }, 120);
-    });
-    var $backToTopFun = function() {
-        var st = $(document).scrollTop(); 
-        var winh = $(window).height();
-        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
-        /*IE6下的定位*/
-        if(!window.XMLHttpRequest){
-            $backToTopEle.css("top", st + winh - 166);
-        }
-    };
-    $(window).on("scroll",$backToTopFun);
-    
-    jQuery.cookie = function(name, value, options) {   
-        if (typeof value != 'undefined') { // name and value given, set cookie  
-            options = options || {};  
-            if (value === null) {  
-                value = '';  
-                options.expires = -1;  
-            }  
-            var expires = '';  
-            if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {  
-                var date;  
-                if (typeof options.expires == 'number') {  
-                    date = new Date();  
-                    date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));  
-                } else {  
-                    date = options.expires;  
-                }  
-                expires = '; expires=' + date.toUTCString(); // use expires attribute, max-age is not supported by IE  
-            }  
-            // CAUTION: Needed to parenthesize options.path and options.domain  
-            // in the following expressions, otherwise they evaluate to undefined  
-            // in the packed version for some reason...  
-            var path = options.path ? '; path=' + (options.path) : '';  
-            var domain = options.domain ? '; domain=' + (options.domain) : '';  
-            var secure = options.secure ? '; secure' : '';    
-            document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');  
-        } else { // only name given, get cookie  
-            var cookieValue = null;  
-            if (document.cookie && document.cookie != '') {  
-                var cookies = document.cookie.split(';');  
-                for (var i = 0; i < cookies.length; i++) {  
-                    var cookie = jQuery.trim(cookies[i]);  
-                    // Does this cookie string begin with the name we want?  
-                    if (cookie.substring(0, name.length + 1) == (name + '=')) {  
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));  
-                        break;  
-                    }  
-                }  
-            }  
-            return cookieValue;  
-        }  
-    }; 
-    
-    $('#showErr').on('click',function(){
-    	$('.error-info').show();
-    });
-    
+
+   
     //处理 spring security post请求不了的问题
 	var token = $('meta[name="_csrf"]').attr("content");
     var header = $('meta[name="_csrf_header"]').attr("content");
@@ -93,7 +34,7 @@ function getUrlParam(name)
      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
      var r = window.location.search.substr(1).match(reg);
      if(r!=null)
-    	 return  unescape(r[2]);
+    	 return  unescape(decodeURI(r[2]));
      return null;
 }
 
@@ -105,64 +46,18 @@ function ecUrl(url){
 	return url;
 }
 
-
-/*个人信息*/
-function myselfinfo(){
-	layer.open({
-		type: 1,
-		area: ['300px','200px'],
-		fix: false, //不固定
-		maxmin: true,
-		shade:0.4,
-		title: '查看信息',
-		content: '<div>管理员信息</div>'
-	});
+//检测手机号
+function checkPhone(phone) {
+	var reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+	return reg.test(phone);
 }
 
-function l0(info){
-	layer.alert(info);
+// 检测密码是否为6-20位密码(支持数字，字母)
+function checkPassword(pwd) {
+	var reg = /^[0-9A-Za-z]{6,20}$/;
+	return reg.test(pwd);
 }
 
-function l2(url,width,height){
-	var title = '信息';
-	if(url.indexOf('add')>0){
-		title='新增';
-	}
-	if(url.indexOf('edit')>0){
-		title='编辑';
-	}
-	if(url.indexOf('show')>0){
-		title='查看';
-	}
-	if(width == null || height == null){
-		width = '800px';
-		height = '495px';
-	}
-	
-	var index = layer.open({
-		type: 2,
-		offset: 't',
-		area: [width,height],
-		fix: false, //不固定
-		maxmin: true,
-		shade:0.4,
-		title: title,
-		content: url
-	});
-	return index;
-	//layer.full(index);
-}
-function lf2(url,width,height){
-	var index = l2(url,width,height);
-	layer.full(index);
-}
-
-
-function lc(){
-	parent.location.reload();
-	var index = parent.layer.getFrameIndex(window.name);
-    parent.layer.close(index);
-}
 
 function getJSONP(url, callback) {
     if (!url) {
@@ -198,6 +93,12 @@ function getJSONP(url, callback) {
     script.src = url;
     document.getElementsByTagName('head')[0].appendChild(script);
 }
+
+function ms2time(data){
+	var date = new Date(data);
+	return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();;
+}
+
 /*getJSONP('http://localhost:8888/',function(response){
 　　alert(response.name);
 });*/

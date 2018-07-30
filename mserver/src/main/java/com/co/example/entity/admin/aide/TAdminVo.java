@@ -9,6 +9,7 @@ import com.co.example.entity.system.TRole;
 import lombok.Getter;
 import lombok.Setter;
 
+@SuppressWarnings("serial")
 @Getter
 @Setter
 public class TAdminVo extends TAdmin {
@@ -17,5 +18,9 @@ public class TAdminVo extends TAdmin {
 	
 	/** 管理员和权限关联列表 */
 	private List<TAdminRole> AdminRoles;
+	
+	private Long roleId;
+	
+	private Boolean checked = false;
 	
 }

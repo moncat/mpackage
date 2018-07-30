@@ -16,18 +16,16 @@
 			 </div>
 			  -->
 			  
-			  <!-- 
-				 <div class="cl pd-5 bg-1 bk-gray mt-10">
-					<form action="/report/list">
-						<div class="text-c"> 
-							报告名称：<input type="text" class="input-text" style="width:200px" placeholder="报告名称" id="" th:value="${query.name}" name="name"/> 
-							报告人：<input type="text" class="input-text" style="width:200px" placeholder="报告人" id="" th:value="${query.createBy}" name="createBy"/> 
-							报告时间：<input type="text" class="input-text" style="width:200px" placeholder="报告时间" id="" th:value="${query.createTime}" name="createTime"/> 
-							<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-						</div>
-					</form>
-				</div>
-			 -->
+			 <div class="cl pd-5 bg-1 bk-gray mt-10">
+				<form action="/report/list">
+					<div class="text-c"> 
+						报告名称：<input type="text" class="input-text" style="width:200px" placeholder="报告名称" id="" th:value="${query.nameLike}" name="nameLike"/> 
+						活动名称：<input type="text" class="input-text" style="width:200px" placeholder="活动名称" id="" th:value="${query.titleLike}" name="titleLike"/> 
+						报告人：<input type="text" class="input-text" style="width:200px" placeholder="报告人" id="" th:value="${query.userDisplayNameLike}" name="userDisplayNameLike"/> 
+						<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+					</div>
+				</form>
+			</div>
 		<div class="line mb-10"></div>
 		<table class="table table-border table-bordered table-bg table-hover">
 			<thead>

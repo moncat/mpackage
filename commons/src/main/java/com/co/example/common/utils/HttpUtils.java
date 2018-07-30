@@ -81,7 +81,7 @@ public class HttpUtils {
                      return result ;
             	}else{
             		if(i >1){
-            			log.info("正在发起第***"+i+"***次请求");
+            			//log.info("正在发起第***"+i+"***次请求");
             			ms = ms+600;
             		}
             		try {

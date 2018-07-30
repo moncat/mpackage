@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.activity.TBrActivityMapper" >
+ 
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.activity.aide.TBrActivityVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+     <result column="apply_user_id" property="applyUserId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.title, 
+    t.type, 
+    t.notice_image, 
+    t.product_image, 
+    t.detail, 
+    t.product_num, 
+    t.user_num, 
+    t.start_time, 
+    t.end_time, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id
+     <if test="joinApplyFlg" >
+ 		  ,tbua.create_by apply_user_id
+     </if>
+    
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+     <if test="titleLike != null" >
+        and t.title like concat ('%', #{titleLike,jdbcType=VARCHAR},'%')
+     </if>
+     <if test="startTime1 != null" >
+          and t.start_time &gt; #{startTime1,jdbcType=TIMESTAMP}
+      </if>
+     <if test="startTime2 != null" >
+          and t.start_time &lt; #{startTime2,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime1 != null" >
+          and t.end_time &gt; #{endTime1,jdbcType=TIMESTAMP}
+      </if>
+      <if test="endTime2 != null" >
+          and t.end_time &lt; #{endTime2,jdbcType=TIMESTAMP}
+      </if>
+      <if test="joinApplyFlg" >
+  		  and tbua.create_by = #{userId,jdbcType=BIGINT} 
+      </if>
+       <if test="reportSatus != null" >
+          and tbua.is_active = #{reportSatus,jdbcType=TINYINT}
+      </if>
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <if test="joinApplyFlg" >
+  		  left join t_br_user_apply tbua on t.id=tbua.activity_id 
+      </if>
+  </sql>
+</mapper>

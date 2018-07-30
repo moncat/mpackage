@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" th:with="title='试用专区-柠檬妆典'">
+<section  layout:fragment="css">
+	<link rel="stylesheet" type="text/css" href="/css/cstyle.css" />
+</section>
+<section layout:fragment="main" >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="margin: 0 auto">
+            <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </a>
+            <div class="aui-title">试用专区</div>
+        </header>
+        <!-- 试用活动 -->
+        <div class="aui-content maui-content maui-trial-zone-tab" style="margin-bottom: 0;">
+            <ul class="aui-tab" id="tab">
+                <li class="aui-tab-item aui-active">试用活动</li>
+                <li class="aui-tab-item">试用报告</li>
+            </ul>
+        </div>
+        <div class="aui-content maui-content">
+            <ul class="maui-trial-activity" style="display: block;">
+            
+                <li  th:each="one,status:${page.content}">
+                    <a th:href="@{'/try/detail/'+${one.id}}" >
+                        <img th:src="@{${one.noticeImage}}">
+                        <div class="trial-bottom-img">
+                            <p th:text="${one.title}"></p>
+                            <span>
+	                           	 申领时间：<span th:text="${#dates.format(one.startTime, 'yyyy-MM-dd') +'至'+#dates.format(one.endTime, 'yyyy-MM-dd')}"></span>
+	                       		限量<span th:text="${one.productNum}">1</span>份
+								<span th:text="${one.userNum}">1</span>人申请
+                            </span>
+                            <span th:attr="data-st=${one.startTime},data-et=${one.endTime}" class="trial-activity-time timer">距离活动结束00天00时00分00秒</span>
+                        </div>
+                        <span th:hidden="${map[one.id] == null}" class="trial-activity-applied"><img src="/img/applied.png"></span>
+                    </a>
+                </li>
+                
+            </ul>
+            <ul class="maui-trial-report" style="display: none;" id="reportList">
+
+            </ul>
+        </div>
+        <div style="margin-bottom: 2.67rem;"></div><!--防止底部遮盖内容-->
+        <footer class="aui-bar aui-bar-tab" id="footer">
+            <div class="aui-bar-tab-item aui-active" tapmode>
+                <i class="icon hufuiconfont hufuicon-shouye hufuTabItem"></i>
+                <div class="aui-bar-tab-label">页面首页</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-duihua hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤咨询</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-jiejuefangan1 hufuTabItem"></i>
+                <div class="aui-bar-tab-label">护肤方案</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <i class="icon hufuiconfont hufuicon-zhanghao hufuTabItem"></i>
+                <div class="aui-bar-tab-label">我的信息</div>
+            </div>
+        </footer>
+    </div>
+    
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/aui/js/aui-tab.js"></script>
+	<script type="text/javascript" src="/js/try/list.js"></script>
+	<script type="text/javascript" src="/js/common/footer.js"></script>
+	<script id="reportListTmp" type="text/x-jquery-tmpl">
+	{{each(i,item) page.content}} 
+         <li>
+             <a href="/report/detail/${item.id}" class="aui-row" style="display: block;">
+                 <p class="aui-col-xs-1"><img src="${userMap[item.id].headImage}"></p>
+                 <div class="aui-col-xs-11 maui-index-report">
+                     <span class="maui-left">${userMap[item.id].displayName}</span><span class="maui-right">${ms2time(item.createTime)}</span>
+                     <div style="clear: both;"></div>
+                     <p style="color: #9C9C9C;">${planMap[item.id]}</p>
+                     <div class="maui-report-title">${item.name}</div>
+                     <div class="aui-row">
+						 {{each(j,one) itemMap[item.id]}} 
+                            <span class="aui-col-xs-4"><img src="${one.image}"></span>
+						 {{/each}}
+                     </div>
+                     <p>${item.detail}</p>
+                 </div>
+             </a>
+         </li>
+	{{/each}}
+	</script>
+</section>
+</html>    

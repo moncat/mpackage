@@ -71,16 +71,19 @@ $(function(){
 			focusCleanup:true,
 			success:"valid",
 			submitHandler:function(form){
+				$(':submit').attr('disabled','disabled');
 				$(form).ajaxSubmit({
 					type: 'post',
 					url: "/activity/edit" ,
 					success: function(data){
+						$(':submit').removeAttr('disabled');
 						layer.msg('编辑成功!',{icon:1,time:1000},function(){
 							lc();
 						});
 						
 					},
 	                error: function(XmlHttpRequest, textStatus, errorThrown){
+	                	$(':submit').removeAttr('disabled');
 						layer.msg('error!',{icon:1,time:1000});
 					}
 				});
@@ -96,6 +99,42 @@ $(function(){
 			radioClass: 'iradio-blue',
 			increaseArea: '20%'
 		});
+		
+
+		$('#file').pekeUpload({
+			btnText:'上传图片',
+			allowedExtensions:'jpg|jpeg|png|gif|bmp',
+			url:'/activity/upload',
+			invalidExtError:'格式错误',
+			errorOnResponse:'上传出错',
+			delfiletext:'删除',
+			onFileSuccess:function(file,data){
+				$('#file').prev().remove();
+				$('#productImage').val(data.picUrl);
+				layer.msg('上传成功');
+			},
+			onFileError:function(file,error){
+				layer.msg(error);
+			},
+		});
+		
+		$('#file1').pekeUpload({
+			btnText:'上传图片',
+			allowedExtensions:'jpg|jpeg|png|gif|bmp',
+			url:'/activity/upload',
+			invalidExtError:'格式错误',
+			errorOnResponse:'上传出错',
+			delfiletext:'删除',
+			onFileSuccess:function(file,data){
+				$('#file1').prev().remove();
+				$('#noticeImage').val(data.picUrl);
+				layer.msg('上传成功');
+			},
+			onFileError:function(file,error){
+				layer.msg(error);
+			},
+		});
+		
 });
 
 

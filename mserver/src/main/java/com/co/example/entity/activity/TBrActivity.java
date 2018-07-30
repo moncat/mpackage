@@ -25,6 +25,9 @@ public class TBrActivity extends BaseEntity {
     /** 公告图链接 */
     private String noticeImage;
 
+    /** 商品图片链接 */
+    private String productImage;
+
     /** 活动详情 */
     private String detail;
 

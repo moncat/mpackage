@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="common/layout" 
+th:with="title=${one.name}+'-柠檬妆典'">
+<section layout:fragment="main" >
+    <div class="maui-container">
+        <header class="aui-bar aui-bar-nav maui-header-red" id="aui-header" style="margin: 0 auto">
+            <a class="aui-btn aui-pull-left" href="javascript:history.go(-1);">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </a>
+            <div class="aui-title">试用报告</div>
+        </header>
+        <div class="aui-content maui-content maui-trial-detail maui-process">
+            <p th:text="${one.name}"></p>
+            <div class="aui-row" style="text-align: center; margin-bottom:1rem">
+                <p class="aui-col-xs-6" style="font-size: 0.6rem;">试用者：<span th:text="${user.displayName}"></span></p>
+                <p class="aui-col-xs-6" style="font-size: 0.6rem;" th:text="${#dates.format(user.createTime, 'yyyy-MM-dd HH:mm')}"></p>
+            </div>
+       		<div th:each="item:${itemList}">
+	            <span class="maui-trial-detail-content">
+	                <p th:text="${item.imageInfo}"></p>
+	            </span>
+	       		<div class="maui-report-detail-img">
+	           	    <img th:src="@{${item.image}}">
+	            </div>
+            </div>
+      		<div class="aui-hr"></div>
+      		<div class="detail">
+	      		<p>试用说明</p>
+	      		<p th:text="${one.detail}"></p>
+      		</div>
+        </div>
+        <!--防止底部遮盖内容-->
+        <div style="margin-bottom: 2.67rem;"></div>
+        <footer class="aui-bar aui-bar-tab maui-footer">
+	        <!-- 
+	            <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
+	                <i class="aui-iconfont aui-icon-star aui-text-warning"></i>
+	                <div class="aui-bar-tab-label aui-text-warning">收藏</div>
+	            </div>
+             -->
+            <div class="aui-bar-tab-item aui-border-r" tapmode style="width: 3rem;" id="consult">
+                <i class="aui-iconfont aui-icon-comment aui-text-info" style="color: #F73671 !important;"></i>
+                <div class="aui-bar-tab-label aui-text-info" style="color: #F73671 !important;">咨询</div>
+            </div>
+        </footer>
+    </div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/report/detail.js"></script>
+</section>
+</html>

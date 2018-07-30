@@ -33,7 +33,10 @@ public class TBrProductQuery extends TBrProduct {
 	/** 连接开关 是否关联  产品与运营企业关联表*/
 	private Boolean joinOperEnterpriseFlg = false;
 	
+	/** 模糊查询*/
 	private String productNameLike;
+	/** 多个模糊查询*/
+	private String productNameLike2;
 	
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -57,10 +60,31 @@ public class TBrProductQuery extends TBrProduct {
 	/** 连接开关  是否关联品牌*/
 	private Boolean joinLabelFlg = false;
 	
-	/** 品牌id */
+	/** 标签id */
 	private Long labelId;
 	
+	/** 连接开关  是否关联推荐*/
+	private Boolean joinRecommendFlg = false;
 	
+	
+	/** 连接开关  是否设置推荐Id不为空*/
+	private Boolean recommendIsNotNullFlg = false;
+	
+	/** 连接开关  连结统计按照统计进行排序  */
+	private Boolean commentFlg = false;
+	
+	/** 连接开关 按照销量进行排序  */
+	private Boolean salesFlg = false;
+	
+	private Boolean joinCollectFlg = false;
+	
+	private Long userId ;
+		
+	/** 2018年4月24日新增 标签id组，接收前台labels */
+	private String labelIds;
+	
+	/** 用于in查询 */
+	private String[] labelIdArr;
 }
 
 

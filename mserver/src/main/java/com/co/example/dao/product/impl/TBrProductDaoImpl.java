@@ -8,7 +8,6 @@ import com.co.example.dao.product.TBrProductDao;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.github.moncat.common.dao.BaseDaoImpl;
-import com.github.moncat.common.dao.BaseSqlId;
 import com.github.moncat.common.exception.DaoException;
 
 @Repository
@@ -36,6 +35,5 @@ public class TBrProductDaoImpl extends BaseDaoImpl<TBrProduct, Long> implements 
 			throw new DaoException(String.format("根据ID更新对象出错！语句：%s", getSqlName(UPDATE_BY_AREA)), e);
 		}
 	}
-	
 	
 }

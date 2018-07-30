@@ -50,7 +50,7 @@ public class TBrLabelServiceImpl extends BaseServiceImpl<TBrLabel, Long> impleme
 			for (TBrProduct tBrProduct : list) {
 				tBrProductLabel = new TBrProductLabel();
 				tBrProductLabel.setLabelId(label.getId());
-				tBrProductLabel.setProductId(tBrProduct.getId());
+				tBrProductLabel.setProductId(tBrProduct.getId());				
 				setDefaultData((BaseEntity)tBrProductLabel);
 				tBrProductLabelList.add(tBrProductLabel);
 			}

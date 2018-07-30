@@ -10,9 +10,9 @@
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
 			<form action="/user/list">
 				<div class="text-c"> 
-					展示名：<input type="text" class="input-text" style="width:200px" placeholder="展示名" id="" th:value="${query.displayName}" name="displayName"/> 
-					真实姓名：<input type="text" class="input-text" style="width:200px" placeholder="真实姓名" id="" th:value="${query.personName}" name="personName"/> 
-					手机号：<input type="text" class="input-text" style="width:200px" placeholder="手机号" id="" th:value="${query.mobilePhone}" name="mobilePhone"/> 
+					展示名：<input type="text" class="input-text" style="width:200px" placeholder="展示名" id="" th:value="${query.displayNameLike}" name="displayNameLike"/> 
+					真实姓名：<input type="text" class="input-text" style="width:200px" placeholder="真实姓名" id="" th:value="${query.personNameLike}" name="personNameLike"/> 
+					手机号：<input type="text" class="input-text" style="width:200px" placeholder="手机号" id="" th:value="${query.mobilePhoneLike}" name="mobilePhoneLike"/> 
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 				</div>
 			</form>

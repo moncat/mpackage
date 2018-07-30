@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -29,6 +31,7 @@ import com.co.example.entity.user.aide.TBrUserStatisticsQuery;
 import com.co.example.service.statistics.TBrStatisticsService;
 import com.co.example.service.user.TBrUserStatisticsMonthService;
 import com.co.example.service.user.TBrUserStatisticsService;
+import com.co.example.utils.SessionUtil;
 import com.google.common.collect.Lists;
 
 import lombok.extern.slf4j.Slf4j;
@@ -51,7 +54,10 @@ public class StatisticsController extends BaseControllerHandler<TBrAimQuery>{
 	TBrUserStatisticsService uss;
 	
 	@Resource
-	TBrUserStatisticsMonthService usms;
+	TBrUserStatisticsMonthService usms;   
+	
+	@Resource
+    TBrUserStatisticsService tBrUserStatisticsService;
 	
 	/**
 	 * 产品基础数据统计
@@ -110,7 +116,7 @@ public class StatisticsController extends BaseControllerHandler<TBrAimQuery>{
 	//按月统计
 	@ResponseBody
 	@RequestMapping(value = "/month", method = { RequestMethod.GET, RequestMethod.POST })
-	public Map<String, Object> register() {
+	public Map<String, Object> month() {
 		Map<String, Object> result = result();
 		result.put("categories",getMonthLabel(TBrUserStatisticsConstant.REGISTER));
 		result.put("register",getMonthData(TBrUserStatisticsConstant.REGISTER));
@@ -118,8 +124,6 @@ public class StatisticsController extends BaseControllerHandler<TBrAimQuery>{
 		result.put("consult",getMonthData(TBrUserStatisticsConstant.CONSULT));
 		return result;
 	}
-
-	
 	
 	private ArrayList<String> getMonthLabel(Integer type) {
 		ArrayList<String> categories = Lists.newArrayList();	
@@ -169,7 +173,7 @@ public class StatisticsController extends BaseControllerHandler<TBrAimQuery>{
 	public void addUserData() { 
 		log.info("***addUserData数据统计定时器开始***");
 		long startMs = System.currentTimeMillis();
-		tBrStatisticsService.addData();
+		tBrStatisticsService.addUserData();
 		long endMs = System.currentTimeMillis();
 		Long interval=endMs-startMs;
 		Long second = interval/1000;

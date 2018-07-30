@@ -19,7 +19,7 @@ public class TBrAdvertisement extends BaseEntity {
     /** 广告名称 */
     private String name;
 
-    /** 类型 1图片 2文字 */
+    /** 类型 1文字 2图片 */
     private Integer type;
 
     /** 广告图 */

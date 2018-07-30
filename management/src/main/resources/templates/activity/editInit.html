@@ -37,38 +37,44 @@
 				</div>
 			</div>
 			
-			
-			
-			<!-- 
-			    <div class="row cl">
-					<label class="form-label col-xs-3 col-sm-2">
-										<span class="c-red">*</span>
-									活动大图：
-					</label>
-					<div class="formControls col-xs-9 col-sm-10">
-					<input type="text" class="input-text" th:value="${one.noticeImage}" value="" placeholder="活动大图" name="noticeImage"/>
-																	
-					</div>
-				</div>
-			 -->
-		    <div class="row cl">
+			 
+			 <div class="row cl hideDiv" hidden="hidden">
 				<label class="form-label col-xs-3 col-sm-2">
-									<span class="c-red">*</span>
-								开始时间：
+					<span class="c-red">*</span>活动大图：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-				<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${#dates.format(one.startTime, 'yyyy-MM-dd HH:mm:ss')}" value="" placeholder="开始时间" name="startTime"/>
-																
+					<img alt="活动大图" th:src="${one.noticeImage}" height="80"  id="img"/>
+					<input   type="file"  id="file1"  class="input-text" value="" placeholder="活动大图" name="file"/>
+					<input type="hidden" class="input-text" th:value="${one.noticeImage}" placeholder="活动大图" name="noticeImage" id="noticeImage"/>
+				</div>
+			</div>
+			 
+			 
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+						<span class="c-red">*</span>开始时间：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss',maxDate:'#F{$dp.$D(\'endTime\')}' })" th:value="${#dates.format(one.startTime, 'yyyy-MM-dd HH:mm:ss' )}" value="" placeholder="开始时间" id="startTime" name="startTime"/>
 				</div>
 			</div>
 		    <div class="row cl">
 				<label class="form-label col-xs-3 col-sm-2">
-									<span class="c-red">*</span>
-								结束时间：
+						<span class="c-red">*</span>结束时间：
 				</label>
 				<div class="formControls col-xs-9 col-sm-10">
-				<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss' })" th:value="${#dates.format(one.endTime, 'yyyy-MM-dd HH:mm:ss')}" value="" placeholder="结束时间" name="endTime"/>
+				<input type="text" class="input-text Wdate" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd H:mm:ss',minDate:'#F{$dp.$D(\'startTime\')}' })" th:value="${#dates.format(one.endTime, 'yyyy-MM-dd HH:mm:ss' )}" value="" placeholder="结束时间" id="endTime" name="endTime"/>
 																
+				</div>
+			</div>
+			<div class="row cl hideDiv" hidden="hidden">
+				<label class="form-label col-xs-3 col-sm-2">
+					<span class="c-red">*</span>商品图片：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<img alt="试用商品图" th:src="${one.productImage}" height="80"  id="img"/>
+					<input   type="file"  id="file"  class="input-text" value="" placeholder="试用产品图" name="file"/>
+					<input type="hidden" class="input-text" th:value="${one.productImage}" placeholder="试用产品图" name="productImage" id="productImage"/>
 				</div>
 			</div>
 		    <div class="row cl hideDiv" hidden="hidden">
@@ -81,16 +87,17 @@
 																
 				</div>
 			</div>
-		    <div class="row cl hideDiv" hidden="hidden">
-				<label class="form-label col-xs-3 col-sm-2">
-									<span class="c-red">*</span>
-								参与用户数量：
-				</label>
-				<div class="formControls col-xs-9 col-sm-10">
-				<input type="text" class="input-text" th:value="${one.userNum}" value="" placeholder="参与用户数量" name="userNum"/>
-																
+			<!-- 
+			    <div class="row cl hideDiv" hidden="hidden">
+					<label class="form-label col-xs-3 col-sm-2">
+										<span class="c-red">*</span>
+									参与用户数量：
+					</label>
+					<div class="formControls col-xs-9 col-sm-10">
+						<input type="text" class="input-text" th:value="${one.userNum}" value="" placeholder="参与用户数量" name="userNum"/>
+					</div>
 				</div>
-			</div>
+			 -->
 		    <div class="row cl" >
 				<label class="form-label col-xs-3 col-sm-2">
 									<span class="c-red">*</span>
@@ -115,6 +122,7 @@
 	    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/ueditor.all.js"></script>
 	    <script type="text/javascript" charset="utf-8" src="/base/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 		<script type="text/javascript" charset="utf-8" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+		<script type="text/javascript" src="/base/lib/upload/pekeUpload.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="/js/activity/edit.js"></script>
 	</section>
 </body>

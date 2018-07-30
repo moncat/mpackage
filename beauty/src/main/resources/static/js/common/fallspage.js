@@ -8,8 +8,8 @@ laypage({
   jump: function(obj){
   	var count = Number($('#pageCont').attr('data-totalPages'));
     if(obj.curr >= count){
-      this.next = '没有更多了';
-      $('.page_nomore').text('没有更多了');
+      this.next = '—  我是有底线的  —';
+      $('.page_nomore').text('—  我是有底线的  —');
     }
    $('#pageCont').attr('data-curPage',obj.curr);
   }

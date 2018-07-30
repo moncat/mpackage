@@ -8,6 +8,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.access.ConfigAttribute;
@@ -78,6 +79,10 @@ public class MyInvocationSecurityMetadataSourceService implements FilterInvocati
 		String resUrl;
 		for (Iterator<String> iter = map.keySet().iterator(); iter.hasNext();) {
 			resUrl = iter.next();
+			//不是叶子节点，没有url链接
+			if(StringUtils.isBlank(resUrl)){
+				continue;
+			}
 			matcher = new AntPathRequestMatcher(resUrl);
 			if (matcher.matches(request)) {
 				return map.get(resUrl);

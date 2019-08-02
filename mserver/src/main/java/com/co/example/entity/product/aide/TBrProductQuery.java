@@ -85,6 +85,9 @@ public class TBrProductQuery extends TBrProduct {
 	
 	/** 用于in查询 */
 	private String[] labelIdArr;
+	
+	/** 2019年7月26日添加，用于查询solr数据 */
+	private String labelNames;
 }
 
 

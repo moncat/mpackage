@@ -54,7 +54,7 @@ public class ServletContextConfig extends WebMvcConfigurationSupport {
     //添加拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-    	registry.addInterceptor(sessionInterceptor()).addPathPatterns("/**").excludePathPatterns("/identifyCode","/login");
+    	registry.addInterceptor(sessionInterceptor()).addPathPatterns("/**").excludePathPatterns("/identifyCode","/login","/lubanOrder/addDatas");
     	registry.addInterceptor(baseInterceptor()).addPathPatterns("/**");
     	addMoreInterceptors(registry);
         super.addInterceptors(registry);

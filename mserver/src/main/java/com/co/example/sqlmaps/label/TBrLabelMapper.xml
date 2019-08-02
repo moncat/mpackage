@@ -185,5 +185,11 @@
   </sql>
   <sql id="Table_Join_Clause">
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+ 	<if test="productJoinFlg">
+        LEFT JOIN t_br_product_label pl ON t.id = pl.label_id
+		LEFT JOIN t_br_product_test p ON p.id = pl.product_id
+		where  p.id= #{productId,jdbcType=BIGINT}
+    </if>
+
   </sql>
 </mapper>

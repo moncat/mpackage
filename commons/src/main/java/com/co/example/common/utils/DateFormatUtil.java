@@ -89,4 +89,8 @@ public class DateFormatUtil {
 	public static String getDateTimeNumber(){
 		return format(new Date(),formartDateTimeNumber);
 	}
+	
+	public static String getDateTime(){
+		return format(new Date(),formartDateTime);
+	}
 }

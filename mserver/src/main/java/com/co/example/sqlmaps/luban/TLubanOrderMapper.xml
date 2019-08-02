@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.luban.TLubanOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.luban.TLubanOrder" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="id2" property="id2" jdbcType="BIGINT" />
+    <result column="order_id" property="orderId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="user_type" property="userType" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="shop_id" property="shopId" jdbcType="BIGINT" />
+    <result column="shop_name" property="shopName" jdbcType="VARCHAR" />
+    <result column="post_amount" property="postAmount" jdbcType="INTEGER" />
+    <result column="total_amount" property="totalAmount" jdbcType="INTEGER" />
+    <result column="post_code" property="postCode" jdbcType="INTEGER" />
+    <result column="post_receiver" property="postReceiver" jdbcType="VARCHAR" />
+    <result column="post_tel_secret" property="postTelSecret" jdbcType="VARCHAR" />
+    <result column="logistics_code" property="logisticsCode" jdbcType="VARCHAR" />
+    <result column="logistics_time" property="logisticsTime" jdbcType="VARCHAR" />
+    <result column="create_time2" property="createTime2" jdbcType="VARCHAR" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="post_tel" property="postTel" jdbcType="VARCHAR" />
+    <result column="tel_area" property="telArea" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+    <result column="app_id" property="appId" jdbcType="TINYINT" />
+    <result column="more_data1" property="moreData1" jdbcType="VARCHAR" />
+    <result column="more_data2" property="moreData2" jdbcType="VARCHAR" />
+    <result column="more_data3" property="moreData3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, id2, order_id, user_id, user_type, user_name, product_id, shop_id, shop_name, 
+    post_amount, total_amount, post_code, post_receiver, post_tel_secret, logistics_code, 
+    logistics_time, create_time2, product_name, post_tel, tel_area, item_order, create_time, 
+    create_by, update_time, update_by, is_active, del_flg, app_id, more_data1, more_data2, 
+    more_data3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_luban_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_luban_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.luban.TLubanOrder" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_luban_order (id, id2, order_id, 
+      user_id, user_type, user_name, 
+      product_id, shop_id, shop_name, 
+      post_amount, total_amount, post_code, 
+      post_receiver, post_tel_secret, logistics_code, 
+      logistics_time, create_time2, product_name, 
+      post_tel, tel_area, item_order, 
+      create_time, create_by, update_time, 
+      update_by, is_active, del_flg, 
+      app_id, more_data1, more_data2, 
+      more_data3)
+    values (#{id,jdbcType=BIGINT}, #{id2,jdbcType=BIGINT}, #{orderId,jdbcType=BIGINT}, 
+      #{userId,jdbcType=BIGINT}, #{userType,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{productId,jdbcType=BIGINT}, #{shopId,jdbcType=BIGINT}, #{shopName,jdbcType=VARCHAR}, 
+      #{postAmount,jdbcType=INTEGER}, #{totalAmount,jdbcType=INTEGER}, #{postCode,jdbcType=INTEGER}, 
+      #{postReceiver,jdbcType=VARCHAR}, #{postTelSecret,jdbcType=VARCHAR}, #{logisticsCode,jdbcType=VARCHAR}, 
+      #{logisticsTime,jdbcType=VARCHAR}, #{createTime2,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, 
+      #{postTel,jdbcType=VARCHAR}, #{telArea,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, 
+      #{appId,jdbcType=TINYINT}, #{moreData1,jdbcType=VARCHAR}, #{moreData2,jdbcType=VARCHAR}, 
+      #{moreData3,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.luban.TLubanOrder" >
+    update t_luban_order
+    <set >
+      <if test="id2 != null" >
+        id2 = #{id2,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="shopId != null" >
+        shop_id = #{shopId,jdbcType=BIGINT},
+      </if>
+      <if test="shopName != null" >
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="postAmount != null" >
+        post_amount = #{postAmount,jdbcType=INTEGER},
+      </if>
+      <if test="totalAmount != null" >
+        total_amount = #{totalAmount,jdbcType=INTEGER},
+      </if>
+      <if test="postCode != null" >
+        post_code = #{postCode,jdbcType=INTEGER},
+      </if>
+      <if test="postReceiver != null" >
+        post_receiver = #{postReceiver,jdbcType=VARCHAR},
+      </if>
+      <if test="postTelSecret != null" >
+        post_tel_secret = #{postTelSecret,jdbcType=VARCHAR},
+      </if>
+      <if test="logisticsCode != null" >
+        logistics_code = #{logisticsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="logisticsTime != null" >
+        logistics_time = #{logisticsTime,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime2 != null" >
+        create_time2 = #{createTime2,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="postTel != null" >
+        post_tel = #{postTel,jdbcType=VARCHAR},
+      </if>
+      <if test="telArea != null" >
+        tel_area = #{telArea,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+      <if test="appId != null" >
+        app_id = #{appId,jdbcType=TINYINT},
+      </if>
+      <if test="moreData1 != null" >
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null" >
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData3 != null" >
+        more_data3 = #{moreData3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.luban.TLubanOrder" >
+    update t_luban_order
+    set id2 = #{id2,jdbcType=BIGINT},
+      order_id = #{orderId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      user_type = #{userType,jdbcType=INTEGER},
+      user_name = #{userName,jdbcType=VARCHAR},
+      product_id = #{productId,jdbcType=BIGINT},
+      shop_id = #{shopId,jdbcType=BIGINT},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      post_amount = #{postAmount,jdbcType=INTEGER},
+      total_amount = #{totalAmount,jdbcType=INTEGER},
+      post_code = #{postCode,jdbcType=INTEGER},
+      post_receiver = #{postReceiver,jdbcType=VARCHAR},
+      post_tel_secret = #{postTelSecret,jdbcType=VARCHAR},
+      logistics_code = #{logisticsCode,jdbcType=VARCHAR},
+      logistics_time = #{logisticsTime,jdbcType=VARCHAR},
+      create_time2 = #{createTime2,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      post_tel = #{postTel,jdbcType=VARCHAR},
+      tel_area = #{telArea,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT},
+      app_id = #{appId,jdbcType=TINYINT},
+      more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
+      more_data3 = #{moreData3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_luban_order t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="id2 != null" >
+          and t.id2 = #{id2,jdbcType=BIGINT}
+      </if>
+      <if test="orderId != null" >
+          and t.order_id = #{orderId,jdbcType=BIGINT}
+      </if>
+      <if test="userId != null" >
+          and t.user_id = #{userId,jdbcType=BIGINT}
+      </if>
+      <if test="userType != null" >
+          and t.user_type = #{userType,jdbcType=INTEGER}
+      </if>
+      <if test="userName != null" >
+          and t.user_name = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="productId != null" >
+          and t.product_id = #{productId,jdbcType=BIGINT}
+      </if>
+      <if test="shopId != null" >
+          and t.shop_id = #{shopId,jdbcType=BIGINT}
+      </if>
+      <if test="shopName != null" >
+          and t.shop_name = #{shopName,jdbcType=VARCHAR}
+      </if>
+      <if test="postAmount != null" >
+          and t.post_amount = #{postAmount,jdbcType=INTEGER}
+      </if>
+      <if test="totalAmount != null" >
+          and t.total_amount = #{totalAmount,jdbcType=INTEGER}
+      </if>
+      <if test="postCode != null" >
+          and t.post_code = #{postCode,jdbcType=INTEGER}
+      </if>
+      <if test="postReceiver != null" >
+          and t.post_receiver = #{postReceiver,jdbcType=VARCHAR}
+      </if>
+      <if test="postTelSecret != null" >
+          and t.post_tel_secret = #{postTelSecret,jdbcType=VARCHAR}
+      </if>
+      <if test="logisticsCode != null" >
+          and t.logistics_code = #{logisticsCode,jdbcType=VARCHAR}
+      </if>
+      <if test="logisticsTime != null" >
+          and t.logistics_time = #{logisticsTime,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime2 != null" >
+          and t.create_time2 = #{createTime2,jdbcType=VARCHAR}
+      </if>
+      <if test="productName != null" >
+          and t.product_name = #{productName,jdbcType=VARCHAR}
+      </if>
+      <if test="postTel != null" >
+          and t.post_tel = #{postTel,jdbcType=VARCHAR}
+      </if>
+      <if test="telArea != null" >
+          and t.tel_area = #{telArea,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <if test="appId != null" >
+          and t.app_id = #{appId,jdbcType=TINYINT}
+      </if>
+      <if test="moreData1 != null" >
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null" >
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData3 != null" >
+          and t.more_data3 = #{moreData3,jdbcType=VARCHAR}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_luban_order t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_luban_order t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_luban_order where id in (
+    select t.id from (select * from t_luban_order) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.luban.aide.TLubanOrderVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.id2, 
+    t.order_id, 
+    t.user_id, 
+    t.user_type, 
+    t.user_name, 
+    t.product_id, 
+    t.shop_id, 
+    t.shop_name, 
+    t.post_amount, 
+    t.total_amount, 
+    t.post_code, 
+    t.post_receiver, 
+    t.post_tel_secret, 
+    t.logistics_code, 
+    t.logistics_time, 
+    t.create_time2, 
+    t.product_name, 
+    t.post_tel, 
+    t.tel_area, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+    t.del_flg, 
+    t.app_id, 
+    t.more_data1, 
+    t.more_data2, 
+    t.more_data3
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

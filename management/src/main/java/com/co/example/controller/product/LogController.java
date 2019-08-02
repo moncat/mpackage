@@ -45,90 +45,89 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequestMapping("log")
 public class LogController extends BaseControllerHandler<TBrLogQuery> {
-	
+
 	@Resource
 	TBrLabelService tBrLabelService;
-	
+
 	@Resource
-    TBrBrandService tBrBrandService;
-	
+	TBrBrandService tBrBrandService;
+
 	@Resource
 	TBrProductService tBrProductService;
-	
+
 	@Resource
 	TBrProductBrandService tBrProductBrandService;
-	
+
 	@Resource
 	TBrProductLabelService tBrProductLabelService;
-	
-	
-	//定时
-//	@Scheduled(fixedRate=10000)   //每隔10秒执行一次
-//	@Scheduled(cron="0 12 16 * * ? ")  //每天16:12分执行一次
-//	@Scheduled(cron="0 0/10 * * * ? ")  //每10秒执行一次
-	public void testTasks() {    
+
+	// 定时
+	// @Scheduled(fixedRate=10000) //每隔10秒执行一次
+	// @Scheduled(cron="0 12 16 * * ? ") //每天16:12分执行一次
+	// @Scheduled(cron="0 0/10 * * * ? ") //每10秒执行一次
+	public void testTasks() {
 		tBrProductService.doSomeThing();
 	}
-	
+
 	/**
-	 * 运维工作
-	 * 1.检查同步药监局数据情况            正常运行
-	 * 2.检查药监局数据品牌匹配情况   正常运行
-	 * 3.获得新的实际生产企业（手动）  create_by  4 已匹配    2 未匹配     0 新数据
-	 * 4.获得运营企业数据（手动）       尚未获得，待处理
-	 * 5.全量维护企业法律诉讼，行政处罚的数据（手动）、
+	 * 运维工作 1.检查同步药监局数据情况 正常运行 2.检查药监局数据品牌匹配情况 正常运行 3.获得新的实际生产企业（手动） create_by 4
+	 * 已匹配 2 未匹配 0 新数据 4.获得运营企业数据（手动） 尚未获得，待处理 5.全量维护企业法律诉讼，行政处罚的数据（手动）、
 	 * 6.抓取天猫，淘宝等数据
 	 */
-	
-	
-	
-	//定时爬取CFDA数据，定时爬取昨天的500条数据，如果有数据则爬取， 并记录日志
-	@Scheduled(cron="0 00 16 * * ? ")  //每天16:00分执行一次
+
+	// 定时爬取CFDA数据，定时爬取昨天的500条数据，如果有数据则爬取， 并记录日志
+	@Scheduled(cron = "0 00 16 * * ? ") // 每天16:00分执行一次
 	public void testOne() throws InterruptedException {
-		//模拟定时执行
-		//查询到了最新数据开始获取
+		// 模拟定时执行
+		// 查询到了最新数据开始获取
 		TBrProductQuery query = new TBrProductQuery();
 		Calendar instance = Calendar.getInstance();
-		instance.add(Calendar.DAY_OF_YEAR, -1);	
+		instance.add(Calendar.DAY_OF_YEAR, -1);
 		String dateStr = DateFormatUtils.format(instance.getTime(), "yyyy-MM-dd");
-		log.info("开始执行定时器:"+ new Date());
-//		EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步定时器开始运行");
+		log.info("开始执行定时器:" + new Date());
+		// EmailUtil.sendEmail("xxx@126.com", "BR系统开发人员", "数据同步",
+		// "数据同步定时器开始运行");
 		query.setConfirmDate(dateStr);
 		long startMs = System.currentTimeMillis();
 		long queryCount = tBrProductService.queryCount(query);
-		if(queryCount==0){
-			System.out.println("在数据库中没有查询到昨天("+dateStr+")数据,需要爬取验证");
-			log.info("在数据库中没有查询到昨天("+dateStr+")数据,需要爬取验证");
-			tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA,  "在数据库中没有查询到昨天("+dateStr+")数据,需要爬取验证", 0 ,"无",  null);
+		if (queryCount == 0) {
+			System.out.println("在数据库中没有查询到昨天(" + dateStr + ")数据,需要爬取验证");
+			log.info("在数据库中没有查询到昨天(" + dateStr + ")数据,需要爬取验证");
+			tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA, "在数据库中没有查询到昨天(" + dateStr + ")数据,需要爬取验证", 0,
+					"无", null);
 			for (int i = 1; i <= 500; i++) {
 				Thread.sleep(1000);
-				int dataFlg = tBrProductService.addProductFromCFDA(i+"",dateStr);
-				if(dataFlg == 1){
+				int dataFlg = tBrProductService.addProductFromCFDA(i + "", dateStr);
+				log.info("***dataFlg***" + dataFlg);
+				if (dataFlg == 1) {
 					long endMs = System.currentTimeMillis();
-					Long interval=endMs-startMs;
-					Long minute = interval/60000;
-					log.info("***爬取结束***"+i+"***用时(分钟)***"+minute);
-					System.out.println("***爬取结束***"+i+"***用时(分钟)***"+minute);
-					tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA,  "***爬取结束***"+i+"***用时(分钟)***"+minute, 0 ,"有",  null);
-					if(i>1){
-						//EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员", "数据同步", "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
-						log.info("***开始执行品牌匹配***"+dateStr);
+					Long interval = endMs - startMs;
+					Long minute = interval / 60000;
+					log.info("***爬取结束***" + i + "***用时(分钟)***" + minute);
+					System.out.println("***爬取结束***" + i + "***用时(分钟)***" + minute);
+					tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA,
+							"***爬取结束***" + i + "***用时(分钟)***" + minute, 0, "有", null);
+					if (i > 1) {
+						// EmailUtil.sendEmail("moncat@126.com", "BR系统开发人员",
+						// "数据同步",
+						// "数据同步完毕，同步"+dateStr+"的数据,在第"+i+"页时结束，用时"+minute+"分钟");
+						log.info("***开始执行品牌匹配***" + dateStr);
 						brand(dateStr);
 						label(dateStr);
 					}
 					break;
 				}
-				log.info("***继续爬取***"+i);
+				log.info("***继续爬取***" + i);
 			}
-		}else{
+		} else {
 			// 有最新的数据
 			System.out.println("查询到昨天数据，不要重复爬取");
 			log.info("查询到昨天数据，不要重复爬取");
 		}
-	
+
 	}
-	
-	//定时抓取cfda数据后，开始执行品牌匹配
+
+	// 定时抓取cfda数据后，开始执行品牌匹配
 	public void brand(String dateStr) throws InterruptedException {
 		List<TBrBrand> brands = tBrBrandService.queryByNameLength();
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
@@ -141,22 +140,22 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		Long brandId = 0l;
 		int i = 0;
 		try {
-			if(CollectionUtils.isNotEmpty(tBrProductList)){
+			if (CollectionUtils.isNotEmpty(tBrProductList)) {
 				for (TBrProduct tBrProduct : tBrProductList) {
 					productName = tBrProduct.getProductName();
 					i++;
-					if(StringUtils.isNoneBlank(productName)){
+					if (StringUtils.isNoneBlank(productName)) {
 						for (TBrBrand brand : brands) {
 							brandName = brand.getName();
 							brandId = brand.getId();
-							if(StringUtils.isNoneBlank(brandName)){
-								if(productName.contains(brandName)){
+							if (StringUtils.isNoneBlank(brandName)) {
+								if (productName.contains(brandName)) {
 									TBrProductBrand tBrProductBrand = new TBrProductBrand();
 									tBrProductBrand.setBrandId(brandId);
 									tBrProductBrand.setProductId(tBrProduct.getId());
 									tBrProductBrand.setCreateTime(new Date());
 									tBrProductBrandService.add(tBrProductBrand);
-									log.info("定时品牌匹配成功！ "+productName+"["+brandName+"]");
+									log.info("定时品牌匹配成功！ " + productName + "[" + brandName + "]");
 									tBrProductService.saveLog(Constant.YES, brandName, i, productName, null);
 									break;
 								}
@@ -169,12 +168,10 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			tBrProductService.saveLog(Constant.NO, brandName, i, productName, e);
 			e.printStackTrace();
 		}
-		log.info("***定时品牌匹配完毕***"+i);
+		log.info("***定时品牌匹配完毕***" + i);
 	}
-	
-	
-	
-	//定时抓取cfda数据后，定时匹配标签
+
+	// 定时抓取cfda数据后，定时匹配标签
 	public void label(String dateStr) throws InterruptedException {
 		List<TBrLabel> labels = tBrLabelService.queryList();
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
@@ -185,22 +182,22 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		Long labelId = 0l;
 		int i = 0;
 		try {
-			if(CollectionUtils.isNotEmpty(tBrProductList)){
+			if (CollectionUtils.isNotEmpty(tBrProductList)) {
 				for (TBrProduct tBrProduct : tBrProductList) {
 					productName = tBrProduct.getProductName();
 					i++;
-					if(StringUtils.isNoneBlank(productName)){
+					if (StringUtils.isNoneBlank(productName)) {
 						for (TBrLabel label : labels) {
 							labelName = label.getName();
 							labelId = label.getId();
-							if(StringUtils.isNoneBlank(labelName)){
-								if(productName.contains(labelName)){
+							if (StringUtils.isNoneBlank(labelName)) {
+								if (productName.contains(labelName)) {
 									TBrProductLabel tBrProductLabel = new TBrProductLabel();
 									tBrProductLabel.setLabelId(labelId);
 									tBrProductLabel.setProductId(tBrProduct.getId());
 									setDefaultData(tBrProductLabel);
 									tBrProductLabelService.add(tBrProductLabel);
-									log.info("定时标签匹配成功！ "+productName+"["+labelName+"]");
+									log.info("定时标签匹配成功！ " + productName + "[" + labelName + "]");
 									tBrProductService.saveLog(Constant.YES, labelName, i, productName, null);
 								}
 							}
@@ -212,215 +209,207 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			tBrProductService.saveLog(Constant.NO, labelName, i, productName, e);
 			e.printStackTrace();
 		}
-		log.info("***定时标签匹配完毕***"+i);
+		log.info("***定时标签匹配完毕***" + i);
 	}
-	
-	
-    //定时爬取bevol数据 ，如果有数据则爬取， 每天早上3点开始执行，并记录日志
-	//暂时不开起
-	//@Scheduled(cron="0 0 3 * * ? ")
-	
-	
-	//手动
-	//手动抓取CFDA数据
+
+	// 定时爬取bevol数据 ，如果有数据则爬取， 每天早上3点开始执行，并记录日志
+	// 暂时不开起
+	// @Scheduled(cron="0 0 3 * * ? ")
+
+	// 手动
+	// 手动抓取CFDA数据
 	@ResponseBody
 	@RequestMapping("cfda")
-	public Map<String,String> getCFDA(Integer startPage1,Integer endPage1) throws InterruptedException {
-		Map<String,String> map = Maps.newHashMap();
-		if(startPage1 != null && endPage1 != null){
+	public Map<String, String> getCFDA(Integer startPage1, Integer endPage1) throws InterruptedException {
+		Map<String, String> map = Maps.newHashMap();
+		if (startPage1 != null && endPage1 != null) {
 			long startMs = System.currentTimeMillis();
 			for (int i = startPage1; i <= endPage1; i++) {
 				Thread.sleep(1200);
-				int dataFlg = tBrProductService.addProductFromCFDA(i+"","");
-				if(dataFlg == 1){
+				int dataFlg = tBrProductService.addProductFromCFDA(i + "", "");
+				if (dataFlg == 1) {
 					long endMs = System.currentTimeMillis();
-					Long interval=endMs-startMs;
-					Long minute = interval/60000;
-					log.info("***爬取结束***"+i+"***用时(分钟)***"+minute);
-					System.out.println("***爬取结束***"+i+"***用时(分钟)***"+minute);
-					tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA,  "takes "+minute+" minutes", 0 ,"有",  null);
+					Long interval = endMs - startMs;
+					Long minute = interval / 60000;
+					log.info("***爬取结束***" + i + "***用时(分钟)***" + minute);
+					System.out.println("***爬取结束***" + i + "***用时(分钟)***" + minute);
+					tBrProductService.saveLog(ProductConstant.PRODUCT_SOURCE_CFDA, "takes " + minute + " minutes", 0,
+							"有", null);
 					break;
 				}
-				log.info("***cfda***"+i);
+				log.info("***cfda***" + i);
 			}
 			map.put("desc", "***cfda***success!!!");
-		}else{
+		} else {
 			map.put("desc", "***cfda***fail...");
 			log.info("***cfda***NONE");
 		}
 		return map;
 	}
-	
+
 	@ResponseBody
 	@RequestMapping("bevol")
-	public Map<String,String> getBEVOL(Integer startPage2,Integer endPage2,Integer category) throws InterruptedException {
-		Map<String,String> map = Maps.newHashMap();
-		if(startPage2 != null && endPage2 != null && category != null){
+	public Map<String, String> getBEVOL(Integer startPage2, Integer endPage2, Integer category)
+			throws InterruptedException {
+		Map<String, String> map = Maps.newHashMap();
+		if (startPage2 != null && endPage2 != null && category != null) {
 			for (int i = startPage2; i <= endPage2; i++) {
-				tBrProductService.addProductFromBEVOL(i,category);
-				log.info("***bevol***"+i);
+				tBrProductService.addProductFromBEVOL(i, category);
+				log.info("***bevol***" + i);
 			}
 			map.put("desc", "***bevol***success!!!");
-		}else{
+		} else {
 			log.info("***bevol***NONE");
 			map.put("desc", "***bevol***fail...");
 		}
 		return map;
 	}
-	
-	
-	
-	
-	
+
 	/**
 	 * 全量匹配
-	 * @param startDateStr  保留参数
-	 * @param startPage3     品牌起始匹配号 
+	 * 
+	 * @param startDateStr
+	 *            保留参数
+	 * @param startPage3
+	 *            品牌起始匹配号
 	 * @throws InterruptedException
 	 */
 	@ResponseBody
-	@RequestMapping(value="brand",method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "brand", method = { RequestMethod.GET, RequestMethod.POST })
 	public void brandNew(String startDateStr, Integer startPage3) throws InterruptedException {
 		List<TBrBrand> brands = tBrBrandService.queryByNameLength();
 		TBrBrand tBrBrand = null;
-		int count =  0;
-		//选用5200 作为结束点，剩下的不再匹配 （共5369）
+		int count = 0;
+		// 选用5200 作为结束点，剩下的不再匹配 （共5369）
 		for (int j = startPage3; j < 5200; j++) {
 			tBrBrand = brands.get(j);
 			count = tBrBrandService.addConnect2Product(tBrBrand);
-			log.info("匹配第"+j+"个："+tBrBrand.getName()+"("+tBrBrand.getId()+") 成功数量："+count);
-		};
-		
+			log.info("匹配第" + j + "个：" + tBrBrand.getName() + "(" + tBrBrand.getId() + ") 成功数量：" + count);
+		}
+		;
+
 	}
-	
+
 	/**
-	 * 全量匹配  暂时不做进一步修改，需求再确定
-	 * @param startDateStr  保留参数
-	 * @param startPage  标签起始匹配号 
+	 * 全量匹配 暂时不做进一步修改，需求再确定
+	 * 
+	 * @param startDateStr
+	 *            保留参数
+	 * @param startPage
+	 *            标签起始匹配号
 	 * @throws InterruptedException
 	 */
 	@ResponseBody
-	@RequestMapping(value="label",method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "label", method = { RequestMethod.GET, RequestMethod.POST })
 	public void label(String startDateStr4, Integer startPage4) throws InterruptedException {
 		List<TBrLabel> labels = tBrLabelService.queryList();
 		TBrLabel label = null;
-		int count =  0;
+		int count = 0;
 		int size = labels.size();
 		for (int j = startPage4; j < size; j++) {
 			label = labels.get(j);
 			count = tBrLabelService.addConnect2Product(label);
-			log.info("匹配第"+j+"个："+label.getName()+"("+label.getId()+") 成功数量："+count);
-		};
+			log.info("匹配第" + j + "个：" + label.getName() + "(" + label.getId() + ") 成功数量：" + count);
+		}
+		;
 	}
-	
-	
-	
+
 	/**
 	 * 弃用，请参见 brandNew 方法
 	 */
 	@Deprecated
-//	@ResponseBody
-//	@RequestMapping(value="brand",method = { RequestMethod.GET, RequestMethod.POST })
-	public Map<String,String> brand( String startDateStr, Integer startPage3) throws InterruptedException {
-		Map<String,String> map = Maps.newHashMap();
-		if(startPage3 != null){
+	// @ResponseBody
+	// @RequestMapping(value="brand",method = { RequestMethod.GET,
+	// RequestMethod.POST })
+	public Map<String, String> brand(String startDateStr, Integer startPage3) throws InterruptedException {
+		Map<String, String> map = Maps.newHashMap();
+		if (startPage3 != null) {
 			List<TBrBrand> brands = tBrBrandService.queryByNameLength();
 			TBrProductQuery tBrProductQuery = new TBrProductQuery();
-			if(StringUtils.isNoneBlank(startDateStr)){
+			if (StringUtils.isNoneBlank(startDateStr)) {
 				tBrProductQuery.setGreaterThanConfirmDate(startDateStr);
 			}
 			tBrProductQuery.setJoinBrandFlg(true);
 			tBrProductQuery.setBrandIsNullFlg(true);
-			Page<TBrProduct> productPageList  = null;
+			Page<TBrProduct> productPageList = null;
 			int k = startPage3;
 			PageReq pageReq = new PageReq();
 			pageReq.setPageSize(1000);
 			pageReq.setPage(1);
 			String productName = null;
 			for (; k < brands.size(); k++) {
-//				Thread.sleep(1000);
-				log.info("程序运行中k..."+k);
+				// Thread.sleep(1000);
+				log.info("程序运行中k..." + k);
 				long productCount = tBrProductService.queryCount(tBrProductQuery);
-				log.info("当前还有未匹配的产品个数"+productCount);
+				log.info("当前还有未匹配的产品个数" + productCount);
 				TBrBrand brand = brands.get(k);
-				String brandName  = brand.getName();
+				String brandName = brand.getName();
 				Long brandId = brand.getId();
 				Long tmp = 0l;
-				if(StringUtils.isNotBlank(brandName)){
-					while (productCount>0) {
+				if (StringUtils.isNotBlank(brandName)) {
+					while (productCount > 0) {
 						productPageList = tBrProductService.querySimplePageList(tBrProductQuery, pageReq);
-						if(productCount<1000){
+						if (productCount < 1000) {
 							productCount = tBrProductService.queryCount(tBrProductQuery);
-							if(productCount == tmp){
-							}else{
+							if (productCount == tmp) {
+							} else {
 								tmp = productCount;
 							}
 						}
 						List<TBrProduct> content = productPageList.getContent();
-						if(CollectionUtils.isNotEmpty(content)){
+						if (CollectionUtils.isNotEmpty(content)) {
 							for (TBrProduct tBrProduct : content) {
 								productName = tBrProduct.getProductName();
-								if(StringUtils.isNotBlank(productName)){
-									if(productName.contains(brandName)){
+								if (StringUtils.isNotBlank(productName)) {
+									if (productName.contains(brandName)) {
 										TBrProductBrand tBrProductBrand = new TBrProductBrand();
 										tBrProductBrand.setBrandId(brandId);
 										tBrProductBrand.setProductId(tBrProduct.getId());
 										tBrProductBrand.setCreateTime(new Date());
 										tBrProductBrandService.add(tBrProductBrand);
-										log.info("匹配成功！ "+productName+"["+brandName+"]");
+										log.info("匹配成功！ " + productName + "[" + brandName + "]");
 										tBrProductService.saveLog(Constant.YES, brandName, k, productName, null);
 										break;
 									}
 								}
-								productCount--;	
+								productCount--;
 							}
 						}
 					}
-				}else{
+				} else {
 					log.info("品牌名为空");
 				}
 			}
 			map.put("desc", "***brand***success!!!");
-		}else{
+		} else {
 			log.info("***brand***NONE");
 			map.put("desc", "***brand***fail...");
 		}
 		return map;
 	}
-	
-	
+
 	private String getRealEn(String en) {
 		String reg = "[\u4e00-\u9fa5]";
-		Pattern pat = Pattern.compile(reg);  
-		Matcher mat=pat.matcher(en); 
+		Pattern pat = Pattern.compile(reg);
+		Matcher mat = pat.matcher(en);
 		en = mat.replaceAll("");
 		en = en.replace("（", "").replace("）", "");
 		return en.toLowerCase();
 	}
-	
+
 	public static void main(String[] args) {
 		String str = "123abc（你好）efc";
-    	String reg = "[\u4e00-\u9fa5]";
-    	Pattern pat = Pattern.compile(reg);  
-    	Matcher mat=pat.matcher(str); 
-    	str = mat.replaceAll("");
-    	str = str.replace("（", "").replace("）", "");
-    	System.out.println("去中文后:"+str);
+		String reg = "[\u4e00-\u9fa5]";
+		Pattern pat = Pattern.compile(reg);
+		Matcher mat = pat.matcher(str);
+		str = mat.replaceAll("");
+		str = str.replace("（", "").replace("）", "");
+		System.out.println("去中文后:" + str);
 	}
-	
-	
+
 	private void setDefaultData(BaseEntity be) {
 		be.setCreateTime(new Date());
 		be.setDelFlg(Constant.NO);
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
 }
-
-
-
-
-
-
-
-
-

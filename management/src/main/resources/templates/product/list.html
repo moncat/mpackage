@@ -9,7 +9,7 @@
 	<div class="page-container" >
 	
 		<div class="cl pd-5 bg-1 bk-gray mt-10">
-			<form action="/product/list">
+			<form action="/product/list" id="productSearch">
 				<div class="text-c"> 
 				产品名称：<input type="text" class="input-text" style="width:200px" placeholder="产品名称" id="" th:value="${query.productNameLike}" name="productNameLike"/> 
 				备案编号：<input type="text" class="input-text" style="width:200px" placeholder="备案编号" id="" th:value="${query.applySn}" name="applySn"/> 
@@ -23,6 +23,8 @@
 						  </select>
 					   </span>
 					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+					<button type="button" class="btn btn-success radius" id="export" name=""><i class="Hui-iconfont">&#xe644;</i> 导出</button>
+					<span  style="display:none" id="exportTip">导出中,请到<a class="c-blue" href="/export/list" target="_self" >导出列表</a>查看</span>
 				</div>
 			</form>
 		</div>

@@ -7,4 +7,6 @@ public interface TBrLabelService extends BaseService<TBrLabel, Long> {
 	
 	//添加商品标签
 	int addConnect2Product(TBrLabel label);
+	
+	String queryLabelsByProductId(Long id);
 }

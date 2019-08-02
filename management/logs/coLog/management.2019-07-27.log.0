@@ -1,0 +1,352 @@
+2019-07-27 10:18:49.303 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 8552 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 10:18:49.326 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 10:18:55.217 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 10:18:56.238 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 10:18:56.950 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 10:18:56.969 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 10:18:59.460 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 10:18:59.462 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 10:18:59.713 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 10:19:02.625 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 10:19:12.563 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 10:19:12.563 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 10:19:12.563 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 10:19:12.563 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 10:19:12.563 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 10:19:12.564 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 10:19:12.566 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 10:19:12.566 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 10:19:12.566 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 10:19:12.850 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2974e68e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a27474d, org.springframework.security.web.header.HeaderWriterFilter@58a49d07, org.springframework.security.web.csrf.CsrfFilter@12f446a9, org.springframework.security.web.authentication.logout.LogoutFilter@6517755e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3927fc23, org.springframework.security.web.session.ConcurrentSessionFilter@2fb4c167, org.springframework.security.web.session.ConcurrentSessionFilter@34290f45, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41155638, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44f033f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1cfbba38, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7338e2b, org.springframework.security.web.session.SessionManagementFilter@45828095, org.springframework.security.web.access.ExceptionTranslationFilter@71f1efdc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@119485cc]
+2019-07-27 10:19:14.395 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 10:19:15.786 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 10:19:15.791 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 10:19:15.801 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 10:19:15.814 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 10:19:15.814 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 10:19:15.814 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 10:19:21.445 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 10:19:21.468 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 10:19:21.480 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 10:19:21.561 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 32.952 seconds (JVM running for 35.598)
+2019-07-27 10:33:23.821 [http-nio-7002-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 10:33:25.575 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 10:33:25.576 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 10:33:25.591 [http-nio-7002-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 10:33:26.819 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 10:33:26.887 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 10:33:26.887 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 10:33:26.887 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 10:33:26.887 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 10:33:26.893 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 10:37:39.872 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 4136 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 10:37:39.890 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 10:37:45.097 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 10:37:46.034 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 10:37:46.647 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 10:37:46.658 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 10:37:48.931 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 10:37:48.933 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 10:37:49.160 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 10:37:52.033 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 10:37:59.837 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 10:37:59.837 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 10:37:59.837 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 10:37:59.837 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 10:37:59.838 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 10:37:59.838 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 10:37:59.838 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 10:37:59.838 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 10:37:59.838 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 10:38:00.070 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d2d4cea, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f9b2d8b, org.springframework.security.web.header.HeaderWriterFilter@98fbf80, org.springframework.security.web.csrf.CsrfFilter@27fd62fe, org.springframework.security.web.authentication.logout.LogoutFilter@56d7819e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3799e5bf, org.springframework.security.web.session.ConcurrentSessionFilter@7561f4ed, org.springframework.security.web.session.ConcurrentSessionFilter@34b3798a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5583685a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c76eb9e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@64626a19, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5636a9ac, org.springframework.security.web.session.SessionManagementFilter@133de145, org.springframework.security.web.access.ExceptionTranslationFilter@77b498cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41050463]
+2019-07-27 10:38:02.356 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 10:38:04.032 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 10:38:04.037 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 10:38:04.045 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 10:38:04.059 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 10:38:04.059 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 10:38:04.059 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 10:38:09.647 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 10:38:09.670 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 10:38:09.681 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 10:38:09.739 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 30.572 seconds (JVM running for 32.187)
+2019-07-27 10:42:12.207 [http-nio-7002-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 10:42:14.318 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 10:42:14.319 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 10:42:14.335 [http-nio-7002-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 10:42:16.170 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 10:42:16.243 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 10:42:16.243 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 10:42:16.243 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 10:42:16.243 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 10:42:16.247 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 11:37:24.328 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 3808 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 11:37:24.335 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 11:37:29.393 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 11:37:30.319 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 11:37:30.869 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 11:37:30.876 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 11:37:33.352 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 11:37:33.353 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 11:37:33.592 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 11:37:36.416 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 11:37:46.141 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 11:37:46.141 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 11:37:46.141 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 11:37:46.142 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 11:37:46.143 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 11:37:46.146 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 11:37:46.146 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 11:37:46.146 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 11:37:46.146 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 11:37:46.408 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ed0f19f, org.springframework.security.web.context.SecurityContextPersistenceFilter@69b2ce32, org.springframework.security.web.header.HeaderWriterFilter@2c76c0b0, org.springframework.security.web.csrf.CsrfFilter@523449d0, org.springframework.security.web.authentication.logout.LogoutFilter@12d56b4f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@69928a57, org.springframework.security.web.session.ConcurrentSessionFilter@73ed1220, org.springframework.security.web.session.ConcurrentSessionFilter@9f0a8b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a9e6239, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67d63af1, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@729a21e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49f88ce8, org.springframework.security.web.session.SessionManagementFilter@53b66772, org.springframework.security.web.access.ExceptionTranslationFilter@245ac93b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c917014]
+2019-07-27 11:37:47.774 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 11:37:48.978 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 11:37:48.984 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 11:37:48.992 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 11:37:49.003 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 11:37:49.004 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 11:37:49.004 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 11:37:54.349 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 11:37:54.376 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 11:37:54.386 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 11:37:54.543 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 30.869 seconds (JVM running for 32.42)
+2019-07-27 11:39:19.030 [http-nio-7002-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 11:39:21.087 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 11:39:21.088 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 11:39:21.114 [http-nio-7002-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 11:39:23.117 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 11:39:23.196 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 11:39:23.196 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 11:39:23.196 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 11:39:23.196 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 11:39:23.202 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 11:45:15.108 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 11:45:15.109 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 0 subscriber(s).
+2019-07-27 11:45:15.109 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-07-27 11:45:15.110 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-07-27 11:45:15.112 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-07-27 11:45:15.119 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-07-27 11:45:16.820 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 3808 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 11:45:16.820 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 11:45:19.838 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 11:45:20.520 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 11:45:20.630 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 11:45:20.631 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 11:45:21.499 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 11:45:21.499 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 11:45:21.924 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 11:45:24.772 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 11:45:44.609 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7364 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 11:45:44.670 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 11:45:51.873 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 11:45:53.331 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 11:45:53.923 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 11:45:53.936 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 11:45:56.564 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 11:45:56.566 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 11:45:56.903 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 11:45:59.812 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 11:46:12.346 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 11:46:12.346 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 11:46:12.347 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 11:46:12.347 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 11:46:12.347 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 11:46:12.347 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 11:46:12.347 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 11:46:12.347 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 11:46:12.348 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 11:46:12.595 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1cba338e, org.springframework.security.web.context.SecurityContextPersistenceFilter@629fe2a2, org.springframework.security.web.header.HeaderWriterFilter@49ce78cf, org.springframework.security.web.csrf.CsrfFilter@a8bb257, org.springframework.security.web.authentication.logout.LogoutFilter@599b3a4d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@605f795a, org.springframework.security.web.session.ConcurrentSessionFilter@7b40cea, org.springframework.security.web.session.ConcurrentSessionFilter@6b6d369, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d9c233d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@db61f34, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@399d9f71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d1072c, org.springframework.security.web.session.SessionManagementFilter@3ec3d4a7, org.springframework.security.web.access.ExceptionTranslationFilter@26f99225, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@490d91f5]
+2019-07-27 11:46:13.881 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 11:46:15.065 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 11:46:15.070 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 11:46:15.080 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 11:46:15.091 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 11:46:15.091 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 11:46:15.091 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 11:46:20.765 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 11:46:20.786 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 11:46:20.798 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 11:46:20.972 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 37.036 seconds (JVM running for 38.794)
+2019-07-27 11:48:27.136 [http-nio-7002-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 11:48:28.605 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 11:48:28.605 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 11:48:28.619 [http-nio-7002-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 11:48:29.979 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 11:48:30.059 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 11:48:30.064 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 11:48:30.064 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 11:48:30.064 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 11:48:30.070 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 13:53:56.118 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 13:53:56.120 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 0 subscriber(s).
+2019-07-27 13:53:56.120 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-07-27 13:53:56.122 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-07-27 13:53:56.124 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-07-27 13:53:56.124 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-07-27 13:53:57.173 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7364 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 13:53:57.173 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 13:55:42.776 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 3572 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 13:55:42.814 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 13:55:47.722 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 13:55:48.688 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 13:55:49.408 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 13:55:49.419 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 13:55:51.964 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 13:55:51.966 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 13:55:52.193 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 13:55:55.433 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 13:56:03.454 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 13:56:03.684 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ace0ca7, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e32a794, org.springframework.security.web.header.HeaderWriterFilter@e0a038d, org.springframework.security.web.csrf.CsrfFilter@6f5dbe9, org.springframework.security.web.authentication.logout.LogoutFilter@43e22bbc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5424b9b5, org.springframework.security.web.session.ConcurrentSessionFilter@4b56e35a, org.springframework.security.web.session.ConcurrentSessionFilter@52fcd2fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63da7b09, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41a8618b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@30be95aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@582522b5, org.springframework.security.web.session.SessionManagementFilter@4c126e7b, org.springframework.security.web.access.ExceptionTranslationFilter@7e9dcc2f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26158def]
+2019-07-27 13:56:06.207 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 13:56:07.532 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 13:56:07.539 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 13:56:07.548 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 13:56:07.559 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 13:56:07.560 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 13:56:07.560 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 13:56:13.022 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 13:56:13.048 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 13:56:13.059 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 13:56:13.380 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 31.368 seconds (JVM running for 33.433)
+2019-07-27 13:56:59.683 [http-nio-7002-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 13:57:01.597 [http-nio-7002-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 13:57:01.597 [http-nio-7002-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 13:57:01.612 [http-nio-7002-exec-2] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 13:57:03.111 [http-nio-7002-exec-4] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 13:57:03.192 [http-nio-7002-exec-4] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 13:57:03.192 [http-nio-7002-exec-4] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 13:57:03.193 [http-nio-7002-exec-4] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 13:57:03.193 [http-nio-7002-exec-4] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 13:57:03.198 [http-nio-7002-exec-4] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 14:04:32.563 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 9064 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 14:04:32.577 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 14:04:37.250 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 14:04:38.216 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 14:04:38.940 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 14:04:38.946 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 14:04:41.285 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 14:04:41.286 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 14:04:41.550 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 14:04:44.578 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 14:04:53.067 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 14:04:53.068 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 14:04:53.070 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 14:04:53.071 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 14:04:53.071 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 14:04:53.071 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 14:04:53.071 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 14:04:53.071 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 14:04:53.071 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 14:04:53.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31a1f2c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f886008, org.springframework.security.web.header.HeaderWriterFilter@5be2a913, org.springframework.security.web.csrf.CsrfFilter@240a7679, org.springframework.security.web.authentication.logout.LogoutFilter@7ccbb5f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@40a96739, org.springframework.security.web.session.ConcurrentSessionFilter@3a3adb62, org.springframework.security.web.session.ConcurrentSessionFilter@2f870890, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45f0fe2e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e19d1f8, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@70f72c9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6815abda, org.springframework.security.web.session.SessionManagementFilter@1d25cd0a, org.springframework.security.web.access.ExceptionTranslationFilter@561363c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b2f5702]
+2019-07-27 14:04:54.913 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 14:04:56.057 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 14:04:56.062 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 14:04:56.070 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 14:04:56.081 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 14:04:56.081 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 14:04:56.081 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 14:05:01.841 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 14:05:01.968 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 14:05:01.980 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 14:05:02.039 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 30.082 seconds (JVM running for 31.496)
+2019-07-27 14:05:34.688 [http-nio-7002-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 14:05:35.927 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 14:05:35.927 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 14:05:35.940 [http-nio-7002-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 14:05:37.076 [http-nio-7002-exec-10] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 14:05:37.155 [http-nio-7002-exec-10] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 14:05:37.156 [http-nio-7002-exec-10] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 14:05:37.156 [http-nio-7002-exec-10] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 14:05:37.156 [http-nio-7002-exec-10] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 14:05:37.161 [http-nio-7002-exec-10] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 14:43:59.253 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7320 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 14:43:59.294 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 14:44:04.195 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 14:44:05.182 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 14:44:05.793 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 14:44:05.804 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 14:44:08.254 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 14:44:08.256 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 14:44:08.481 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 14:44:11.326 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 14:44:19.819 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 14:44:19.819 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 14:44:19.819 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 14:44:19.819 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 14:44:19.820 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 14:44:19.820 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 14:44:19.821 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 14:44:19.823 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 14:44:19.823 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 14:44:20.251 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61a8d9c, org.springframework.security.web.context.SecurityContextPersistenceFilter@753070f, org.springframework.security.web.header.HeaderWriterFilter@671906d3, org.springframework.security.web.csrf.CsrfFilter@115a8fbf, org.springframework.security.web.authentication.logout.LogoutFilter@4c25b35e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@76759381, org.springframework.security.web.session.ConcurrentSessionFilter@5ca9ef45, org.springframework.security.web.session.ConcurrentSessionFilter@60fd6e9f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d13d110, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f6c1548, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3ef60d77, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f8679fb, org.springframework.security.web.session.SessionManagementFilter@37a7c58, org.springframework.security.web.access.ExceptionTranslationFilter@547ada27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@474ff376]
+2019-07-27 14:44:22.107 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 14:44:23.342 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 14:44:23.347 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 14:44:23.356 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 14:44:23.367 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 14:44:23.367 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 14:44:23.367 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 14:44:28.873 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 14:44:28.902 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 14:44:28.915 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 14:44:28.978 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 30.398 seconds (JVM running for 31.871)
+2019-07-27 14:45:43.481 [http-nio-7002-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 14:45:44.891 [http-nio-7002-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 14:45:44.891 [http-nio-7002-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 14:45:44.910 [http-nio-7002-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 14:45:46.257 [http-nio-7002-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 14:45:46.321 [http-nio-7002-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 14:45:46.321 [http-nio-7002-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 14:45:46.321 [http-nio-7002-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 14:45:46.321 [http-nio-7002-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 14:45:46.325 [http-nio-7002-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-07-27 15:26:41.069 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 6032 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-07-27 15:26:41.074 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-07-27 15:26:45.821 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-07-27 15:26:46.740 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-07-27 15:26:47.407 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-07-27 15:26:47.413 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-07-27 15:26:50.304 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-07-27 15:26:50.305 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-07-27 15:26:50.484 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-07-27 15:26:53.543 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-07-27 15:27:02.425 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-07-27 15:27:02.426 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-07-27 15:27:02.427 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-27 15:27:02.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-27 15:27:02.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-07-27 15:27:02.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-07-27 15:27:02.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-07-27 15:27:02.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-27 15:27:02.429 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-07-27 15:27:02.666 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d54e280, org.springframework.security.web.context.SecurityContextPersistenceFilter@3fd404a1, org.springframework.security.web.header.HeaderWriterFilter@5570667f, org.springframework.security.web.csrf.CsrfFilter@38a5c999, org.springframework.security.web.authentication.logout.LogoutFilter@21d36f8a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ae86af3, org.springframework.security.web.session.ConcurrentSessionFilter@1442b82b, org.springframework.security.web.session.ConcurrentSessionFilter@36d2970a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47605fc0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5eb44045, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3490e284, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@950aaa9, org.springframework.security.web.session.SessionManagementFilter@4c13b0ec, org.springframework.security.web.access.ExceptionTranslationFilter@4fd0e75e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1453a3dd]
+2019-07-27 15:27:04.057 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-07-27 15:27:05.337 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-07-27 15:27:05.342 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-07-27 15:27:05.351 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-07-27 15:27:05.361 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-07-27 15:27:05.361 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7002.errorChannel' has 1 subscriber(s).
+2019-07-27 15:27:05.361 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-07-27 15:27:10.898 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7002"]
+2019-07-27 15:27:10.924 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7002"]
+2019-07-27 15:27:10.935 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-07-27 15:27:10.993 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 30.505 seconds (JVM running for 31.821)
+2019-07-27 15:27:41.170 [http-nio-7002-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-07-27 15:27:42.593 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-07-27 15:27:42.594 [http-nio-7002-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-07-27 15:27:42.616 [http-nio-7002-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-07-27 15:27:44.194 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-07-27 15:27:44.270 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-07-27 15:27:44.270 [http-nio-7002-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-07-27 15:27:44.270 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-07-27 15:27:44.270 [http-nio-7002-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-07-27 15:27:44.276 [http-nio-7002-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED

@@ -1,7 +1,9 @@
 package com.co.example.service.label.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
@@ -11,6 +13,7 @@ import com.co.example.common.constant.Constant;
 import com.co.example.dao.label.TBrLabelDao;
 import com.co.example.entity.label.TBrLabel;
 import com.co.example.entity.label.TBrProductLabel;
+import com.co.example.entity.label.aide.TBrLabelQuery;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.label.TBrLabelService;
@@ -64,4 +67,41 @@ public class TBrLabelServiceImpl extends BaseServiceImpl<TBrLabel, Long> impleme
 		be.setDelFlg(Constant.NO);
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
+
+	@Override
+	public String queryLabelsByProductId(Long id) {
+		TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
+		tBrLabelQuery.setProductJoinFlg(true);
+		tBrLabelQuery.setProductId(id);
+		List<TBrLabel> selectList = tBrLabelDao.selectList(tBrLabelQuery);		
+		String collect = selectList.stream().map(TBrLabel::getName).collect(Collectors.joining(","));
+		return collect;
+	}
+	
+	public static void main(String[] args) {
+		List<TBrLabel> selectList = new ArrayList<TBrLabel>();
+		
+		TBrLabel tBrLabel = new TBrLabel();
+		tBrLabel.setName("aaa");
+		selectList.add(tBrLabel);
+		
+		TBrLabel tBrLabel2 = new TBrLabel();
+		tBrLabel2.setName("bbb");
+		selectList.add(tBrLabel2);
+		
+		TBrLabel tBrLabel3 = new TBrLabel();
+		tBrLabel3.setName("ccc");
+		selectList.add(tBrLabel3);
+		
+		String collect = selectList.stream().map(TBrLabel::getName).collect(Collectors.joining(","));
+		System.out.println(collect);
+	}
 }
+
+
+
+
+
+
+
+

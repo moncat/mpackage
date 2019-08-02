@@ -149,11 +149,12 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					index =i;
 					product = productList.getJSONObject(i);
 					String date = product.getString("provinceConfirm");
+					date =date.replace(" ", "");
 					if(StringUtils.isBlank(dateStr)){
 						//不设置时间，全量更新
 					}else{
 						//设置时间，增量更新
-						if(!date.equals(dateStr)){
+						if(date!=null && !date.equals("") &&  !date.equals(dateStr)){
 							//增量截止
 							saveLog(ProductConstant.PRODUCT_SOURCE_CFDA, ProductConstant.CFDA_PRODUCT_URL, index, HttpUtils.getRequestData(params).toString(),null);
 							return 1;
@@ -161,23 +162,40 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 					}
 					
 					String productName = product.getString("productName");
+					// 2019-02-23 添加。
+					String applySn =  product.getString("applySn");
 					
 					TBrProductQuery tBrProductQuery = new TBrProductQuery();
 					tBrProductQuery.setProductName(productName);
+					tBrProductQuery.setApplySn(applySn);
 					List<TBrProduct> oldList = queryList(tBrProductQuery);
-					//名称已经重复，则进入下一次循环（重复原因：1网上数据错误  2增量补传时网站又更新了数据，导致起始页面不正确）
+//					//名称已经重复，则进入下一次循环（重复原因：1网上数据错误  2增量补传时网站又更新了数据，导致起始页面不正确）
 					if(CollectionUtils.isNotEmpty(oldList)){
 						log.info("***已经有*** "+productName);
 						continue;
+					}else{
+						log.info("^^^没有^^^ "+productName);
 					}
+//					Long munber =  queryCount(tBrProductQuery);
+//					if(munber!=null && munber > 0){
+//						log.info("***已经有*** "+productName);
+//						continue;
+//					}					
+					String applySnNew =  product.getString("applySn");
 					tBrProduct = new TBrProduct();
 					tBrProduct.setProductName(productName);
 					tBrProduct.setProductAlias(null);
 					tBrProduct.setApplyType(ProductConstant.PRODUCT_APPLYTYPE_DOMESTIC);
-					tBrProduct.setApplySn(product.getString("applySn"));
+					tBrProduct.setApplySn(applySnNew);
 					tBrProduct.setEnterpriseName(product.getString("enterpriseName"));
 					tBrProduct.setEnterpriseNameEn(null);
 					tBrProduct.setProducingArea(null);
+					/** 2019年8月2日 add  start*/
+					if(StringUtils.isNotBlank(applySnNew) && applySnNew.contains("已注销")){
+						tBrProduct.setMoreData2("1"); //标记该产品已经注销 用于增量处理。
+					}
+					
+					/** 2019年8月2日 add  end*/
 					tBrProduct.setConfirmDate(date);
 					String isOff = product.getString("is_off");
 					if(StringUtils.isEmpty(isOff) || isOff.toUpperCase().equals("N")){

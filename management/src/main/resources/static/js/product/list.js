@@ -27,6 +27,23 @@ $(function(){
 		
 	});
 	
+	$('#export').on('click',function(){
+
+		var btn = $(this);	
+		btn.hide();
+		$('#exportTip').show();
+		btn.off('click');
+		var formData = $("#productSearch").serialize();
+		$.ajax({  
+            url:"/product/export",  
+            type:"post",  
+            data:formData, 
+            success:function(){
+            	location.href="/export/list";
+            }
+		 });
+		
+	});
 	
 	
 	

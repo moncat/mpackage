@@ -1,0 +1,83 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section  layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/base/lib/multiple-select/1.3.1/css/multiple-select.css" />
+	<style>
+		select {
+	  		width: 180px;
+		}
+	</style>
+</section>
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 产品列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+	
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			<form action="/product/list2" id="productSearch">
+				<div class="text-c"> 
+				产品名称：<input type="text" class="input-text" style="width:200px" placeholder="产品名称" id="" th:value="${query.productNameLike}" name="productNameLike"/> 
+				备案编号：<input type="text" class="input-text" style="width:200px" placeholder="备案编号" id="" th:value="${query.applySn}" name="applySn"/> 
+				企业名称：<input type="text" class="input-text" style="width:200px" placeholder="企业名称" id="" th:value="${query.enterpriseName}" name="enterpriseName"/> 
+				 <input type="hidden" name ="labelNames"  th:value="${query.labelNames}" ></input>
+				 <input type="hidden" name ="labelId"  th:value="${query.labelId}" ></input>
+				 <select multiple="multiple" placeholder="请选择标签"  >
+				   <option th:selected="${query.labelId eq oneLabel.id}"
+				   th:each="oneLabel:${labelList}" th:value="${oneLabel.id}" th:text="${oneLabel.name}"></option>
+				</select>
+				<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>				
+				</div>
+			</form>
+		</div>
+		<!-- 
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			 <span class="l">
+				 <a href="javascript:void(0);" class="btn btn-success  radius add"><i class="Hui-iconfont">&#xe600;</i> 添加</a>
+			 </span> 
+			 <span class="r"></span> 
+		 </div>
+		 -->
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+				<!-- 
+					<th><input type="checkbox" /></th>
+				 -->
+					<th>序号</th>
+					<th>产品名称</th>
+					<th>备案编号</th>
+					<th>企业名称</th>						
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr  class="text-c">				
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td>
+						 <a th:href="@{'/product/show/'+${one.id}}"   target="_blank">
+							<span th:utext="${one.productName}"></span>
+						</a>					
+						</td>
+						<td th:text="${one.applySn}"></td>
+						<td th:text="${one.enterpriseName}"></td>				
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/multiple-select/1.3.1/js/multiple-select.js"></script>
+	<script type="text/javascript" src="/js/product/list2.js"></script>
+</section>
+</html>

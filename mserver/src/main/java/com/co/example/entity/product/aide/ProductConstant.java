@@ -2,7 +2,8 @@ package com.co.example.entity.product.aide;
 
 public class ProductConstant {
 	
-	public static String CFDA_PRODUCT = "http://125.35.6.80:8080/ftba";
+//	public static String CFDA_PRODUCT = "http://125.35.6.80:8080/ftba";
+	public static String CFDA_PRODUCT = "http://125.35.6.80:8181/ftban";
 	public static String BEVOL_PRODUCT = "https://www.bevol.cn";
 	
 	//药监局产品url
@@ -10,16 +11,17 @@ public class ProductConstant {
 	
 	//药监局产品成分url
 	public static final String CFDA_INGREDIENT_URL =CFDA_PRODUCT+"/itownet/fwAction.do?method=getBaInfo" ;
+	        					
 	
 	//药监局产品图片url
 	public static final String CFDA_PRODUCT_IMAGE_URL =CFDA_PRODUCT+"/itownet/fwAction.do?method=getAttachmentCpbz" ;
-	
+								
 	//药监局产品图片预览
 	public static final String CFDA_PRODUCT_IMAGE_SHOW =CFDA_PRODUCT+"/itownet/_static/common/FlexPaper_2.0.2/yl2015.jsp?fileId=@1" ;
 	
 	//药监局产品图片查看
 	public static final String CFDA_PRODUCT_IMAGE_DOWNLOAD =CFDA_PRODUCT+"/itownet/download.do?method=downloadFile&fid=@1&ssid=@2" ;
-	
+
 	//美丽修行产品url
 	public static final String BEVOL_PRODUCT_URL = "https://api.bevol.cn/search/goods/index3";
 	//美丽修行产品成分url

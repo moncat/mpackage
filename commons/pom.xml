@@ -5,6 +5,14 @@
     <artifactId>package</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
+  <repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+  
   <artifactId>commons</artifactId>
   	<dependencies>
 		<dependency>
@@ -264,9 +272,7 @@
 		    <groupId>com.codeborne</groupId>
 		    <artifactId>phantomjsdriver</artifactId>
 		    <version>1.2.1</version>
-		</dependency>
-		 
-		
+		</dependency>	 		
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
@@ -274,11 +280,7 @@
 		    <version>2.41.0</version>
 		</dependency>
 		
-		<dependency>
-		     <groupId>com.github.moncat</groupId>
-   			 <artifactId>MyMyBatisGenerator</artifactId>
-   			 <version>0.0.1-SNAPSHOT</version>
-		</dependency>
+	
 		<!-- hibernate validate 必须 -->
 		<dependency>  
            <groupId>javax.el</groupId>  
@@ -348,7 +350,37 @@
 		    <version>1.0</version>
 		</dependency>
 		
+		<!-- poi office -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
 		
+		<dependency>
+		    <groupId>com.github.moncat</groupId>
+		    <artifactId>MyMybatisGenerator</artifactId>
+		    <version>0.0.1</version>
+		</dependency>	
+			
+		
+		<!-- solr -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-solr</artifactId>
+		</dependency> 
+		
+		 
 		
 	</dependencies>
   

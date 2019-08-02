@@ -6,15 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +38,8 @@ import com.co.example.utils.SessionUtil;
 @Controller
 @RequestMapping("/admin")
 public class adminController {
-	
+
+ 
 	@Resource
 	private TAdminService tAdminService;
 	@Resource
@@ -59,6 +57,7 @@ public class adminController {
 		pageReq.setSort(new Sort(Direction.DESC,"t.create_time"));
 		Page<TAdmin> page = tAdminService.queryAllInfoList(query, pageReq);
 		model.addAttribute("page", page);
+ 
 		return "admin/list";
 	}
 	

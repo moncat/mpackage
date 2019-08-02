@@ -186,4 +186,4 @@
   <sql id="Table_Join_Clause">
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
   </sql>
-</mapper>
+  </mapper>

@@ -12,6 +12,6 @@ public class TBrProductLabelQuery extends TBrProductLabel {
 	Boolean joinLabelFlg = false;
 	
 	/** 用户id */
-    private Long userId;
+    private Long userId;   
     
 }

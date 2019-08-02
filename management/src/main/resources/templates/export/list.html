@@ -1,0 +1,98 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 导出管理 
+		<span class="c-gray en">&gt;</span> 导出列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+			<!--
+		<div class="cl pd-5 bg-1 bk-gray mt-10">
+			 <span class="l">
+				 <a href="javascript:void(0);" class="btn btn-success  radius add"><i class="Hui-iconfont">&#xe600;</i> 添加</a>
+			 </span> 
+			 <span class="r"></span> 
+		 </div>
+		 <div class="cl pd-5 bg-1 bk-gray mt-10">
+			 <form action="/export/list">
+				<div class="text-c"> 
+					过滤条件：<input type="text" class="input-text" style="width:200px" placeholder="过滤条件" id="" th:value="${query.$elem.fieldLike}" name="$elem.fieldLike"/> 
+					数据来源：<input type="text" class="input-text" style="width:200px" placeholder="数据来源" id="" th:value="${query.$elem.fieldLike}" name="$elem.fieldLike"/> 
+					下载链接：<input type="text" class="input-text" style="width:200px" placeholder="下载链接" id="" th:value="${query.$elem.fieldLike}" name="$elem.fieldLike"/> 
+					创建时间：<input type="text" class="input-text" style="width:200px" placeholder="创建时间" id="" th:value="${query.$elem.fieldLike}" name="$elem.fieldLike"/> 
+					是否有效：<input type="text" class="input-text" style="width:200px" placeholder="是否有效" id="" th:value="${query.$elem.fieldLike}" name="$elem.fieldLike"/> 
+					<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+				</div>
+			</form> 
+		</div>
+			-->
+		<div class="line mb-10"></div>
+		<table class="table table-border table-bordered table-bg table-hover">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col">
+						列表
+					</th>
+				</tr>
+				<tr class="text-c ">
+					<th><input type="checkbox" /></th>
+					<th>序号</th>
+					<th>过滤条件</th>
+					<th>数据来源</th>
+					<th>下载链接</th>
+					<th>创建时间</th>				
+					<th>状态</th>
+					<!-- <th>操作</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<section th:each="one,status:${page.content}" >
+					<tr  class="text-c">
+						<td><input type="checkbox" /></td>
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td th:text="${one.filters}"></td>
+						<td th:text="${one.source}"></td>
+						<td>
+							<a class="btn-link" th:href="@{${one.url}}" title="下载" target="_blank">
+								<span th:utext="${one.url}"></span>
+							</a>
+						</td>
+						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td class="td-status"><span th:text="${one.isActive ne 0 ? '已导出点击链接下载':'导出中……'}" class="label radius status" th:classappend="${one.isActive ne 0 ? 'label-success':'label-warning'}"></span></td>
+												
+						<!-- 
+						<td class="td-manage">
+							<a th:hidden="${one.isActive eq 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="停用" class="stop" >
+								<i class="Hui-iconfont">&#xe631;</i>
+							</a>
+							
+							<a th:hidden="${one.isActive ne 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="启用" class="ml-5 start" >
+								<i class="Hui-iconfont">&#xe615;</i>
+							</a>
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
+								<i class="Hui-iconfont">&#xe6e2;</i>
+							</a>
+							
+						 	<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
+								<i class="Hui-iconfont">&#xe6df;</i>
+							</a> 
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="查看" class="ml-5 show" >
+								<i class="Hui-iconfont">&#xe709;</i>
+							</a> 
+						 </td>
+						  -->
+						 
+					</tr>					
+				</section>
+			</tbody>
+		</table>
+		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/export/list.js"></script>
+</section>
+</html>

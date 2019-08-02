@@ -33,5 +33,8 @@ public class Constant {
 	
 	public static final String  IMAGE_BASE_PATH = "/home/images/";
 	
+	public static final String  EXPORT_BASE_SAVE_PATH = "/home/file/export/";
+	
+	public static final String  EXPORT_BASE_READ_PATH = "http://114.215.106.58:7001/file/export/";
 	
 }

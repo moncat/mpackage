@@ -9,6 +9,5 @@ public interface EhCacheService {
 	void delete(Long id);
 	
 	void deleteAll();
- 
- 
+  
 }

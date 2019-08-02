@@ -16,7 +16,7 @@ public class weiboLoginUtil {
 		chrome.get("https://www.weibo.com");
 		Thread.sleep(10000);
 		String tbuserNmae="moncatcn@sina.com";
-		String tbpassWord="78963214zyl!@#$";
+		String tbpassWord="???";
 		
 		chrome.findElement(By.id("loginname")).clear();
 		chrome.findElement(By.id("loginname")).sendKeys(tbuserNmae);

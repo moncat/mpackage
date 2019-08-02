@@ -11,4 +11,4 @@ public interface TAdminRoleService extends BaseService<TAdminRole, Long> {
 	 * @param adminIds
 	 */
 	void addAdminConn(Long roleId, Long[] adminIds);
-}
+} 

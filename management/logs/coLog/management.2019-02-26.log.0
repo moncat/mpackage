@@ -1,0 +1,415 @@
+2019-02-26 09:00:48.149 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 6252 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-02-26 09:00:48.178 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-02-26 09:00:53.942 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-02-26 09:00:54.328 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-02-26 09:00:55.067 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-02-26 09:00:55.078 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-02-26 09:00:57.959 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-02-26 09:00:57.961 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-02-26 09:00:58.291 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-02-26 09:01:01.180 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-02-26 09:01:08.949 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-02-26 09:01:08.950 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-02-26 09:01:08.951 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-02-26 09:01:08.953 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-02-26 09:01:08.953 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-02-26 09:01:08.954 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-02-26 09:01:08.954 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-02-26 09:01:08.954 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-02-26 09:01:09.253 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@704aecf1, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a3ece64, org.springframework.security.web.header.HeaderWriterFilter@6757b968, org.springframework.security.web.csrf.CsrfFilter@652538c2, org.springframework.security.web.authentication.logout.LogoutFilter@36247015, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58dd8ad7, org.springframework.security.web.session.ConcurrentSessionFilter@44f55b1d, org.springframework.security.web.session.ConcurrentSessionFilter@33e45ac0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@430e9ea6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57175dd5, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@345d834e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58590fc2, org.springframework.security.web.session.SessionManagementFilter@45652af5, org.springframework.security.web.access.ExceptionTranslationFilter@cb3422, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e034a0e]
+2019-02-26 09:01:11.317 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-02-26 09:01:12.895 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-02-26 09:01:12.900 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-26 09:01:12.909 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-02-26 09:01:12.924 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-02-26 09:01:12.924 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:8082.errorChannel' has 1 subscriber(s).
+2019-02-26 09:01:12.924 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-02-26 09:01:18.844 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:01:18.867 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:01:19.147 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-02-26 09:01:19.212 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 31.836 seconds (JVM running for 34.255)
+2019-02-26 09:06:29.257 [http-nio-8082-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-26 09:06:32.557 [http-nio-8082-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-02-26 09:06:32.558 [http-nio-8082-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-02-26 09:06:32.578 [http-nio-8082-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-02-26 09:06:32.578 [http-nio-8082-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-02-26 09:06:32.581 [http-nio-8082-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-02-26 09:06:32.598 [http-nio-8082-exec-8] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-02-26 09:06:37.856 [http-nio-8082-exec-6] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-02-26 09:06:39.954 [http-nio-8082-exec-6] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-02-26 09:06:39.955 [http-nio-8082-exec-6] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-02-26 09:06:39.955 [http-nio-8082-exec-6] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-02-26 09:06:39.955 [http-nio-8082-exec-6] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-02-26 09:06:39.962 [http-nio-8082-exec-6] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-02-26 09:27:59.999 [http-nio-8082-exec-7] INFO  o.s.jdbc.support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2019-02-26 09:47:10.902 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7708 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-02-26 09:47:10.918 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-02-26 09:47:16.100 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-02-26 09:47:16.470 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-02-26 09:47:17.031 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-02-26 09:47:17.037 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-02-26 09:47:19.525 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-02-26 09:47:19.527 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-02-26 09:47:19.742 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-02-26 09:47:22.669 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-02-26 09:47:30.827 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-02-26 09:47:30.829 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-02-26 09:47:30.834 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-02-26 09:47:30.836 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-02-26 09:47:30.836 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-02-26 09:47:30.836 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-02-26 09:47:30.836 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-02-26 09:47:30.836 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-02-26 09:47:31.137 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c32016a, org.springframework.security.web.context.SecurityContextPersistenceFilter@79597ff7, org.springframework.security.web.header.HeaderWriterFilter@482d27b3, org.springframework.security.web.csrf.CsrfFilter@1157916a, org.springframework.security.web.authentication.logout.LogoutFilter@677510ea, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@568fd147, org.springframework.security.web.session.ConcurrentSessionFilter@749fe642, org.springframework.security.web.session.ConcurrentSessionFilter@2ca55909, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@559070c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53be70ed, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6fae1dbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@269f0bfc, org.springframework.security.web.session.SessionManagementFilter@51103806, org.springframework.security.web.access.ExceptionTranslationFilter@62c51715, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49df5e0e]
+2019-02-26 09:47:32.338 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-02-26 09:47:33.870 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-02-26 09:47:33.875 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-26 09:47:33.885 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-02-26 09:47:33.895 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-02-26 09:47:33.896 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:8082.errorChannel' has 1 subscriber(s).
+2019-02-26 09:47:33.896 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-02-26 09:47:40.368 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:47:40.388 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:47:40.398 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-02-26 09:47:40.505 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 30.382 seconds (JVM running for 31.9)
+2019-02-26 09:49:23.579 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 8824 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-02-26 09:49:23.594 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-02-26 09:49:29.835 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-02-26 09:49:30.184 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-02-26 09:49:30.836 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-02-26 09:49:30.845 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-02-26 09:49:33.936 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-02-26 09:49:33.937 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-02-26 09:49:34.244 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-02-26 09:49:37.589 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-02-26 09:49:46.024 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-02-26 09:49:46.025 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-02-26 09:49:46.026 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-02-26 09:49:46.028 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-02-26 09:49:46.028 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-02-26 09:49:46.028 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-02-26 09:49:46.029 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-02-26 09:49:46.029 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-02-26 09:49:46.310 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41ff3b99, org.springframework.security.web.context.SecurityContextPersistenceFilter@276b2b6b, org.springframework.security.web.header.HeaderWriterFilter@1327b1fa, org.springframework.security.web.csrf.CsrfFilter@baf63e9, org.springframework.security.web.authentication.logout.LogoutFilter@708a1080, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@712cd74e, org.springframework.security.web.session.ConcurrentSessionFilter@567e124f, org.springframework.security.web.session.ConcurrentSessionFilter@5fa4cabb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f660b8f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25876277, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5f8d449a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f46ef41, org.springframework.security.web.session.SessionManagementFilter@60df7ea0, org.springframework.security.web.access.ExceptionTranslationFilter@313e71c9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40abd8fa]
+2019-02-26 09:49:48.445 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-02-26 09:49:50.027 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-02-26 09:49:50.033 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-26 09:49:50.043 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-02-26 09:49:50.053 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-02-26 09:49:50.054 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:8082.errorChannel' has 1 subscriber(s).
+2019-02-26 09:49:50.054 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-02-26 09:49:56.126 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:49:56.156 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:49:56.168 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-02-26 09:49:56.260 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 33.379 seconds (JVM running for 34.884)
+2019-02-26 09:51:02.042 [http-nio-8082-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-26 09:51:04.074 [http-nio-8082-exec-10] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.security.web.authentication.rememberme.CookieTheftException: Invalid remember-me token (Series/token) mismatch. Implies previous cookie theft attack.
+	at org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices.processAutoLoginCookie(PersistentTokenBasedRememberMeServices.java:119)
+	at org.springframework.security.web.authentication.rememberme.AbstractRememberMeServices.autoLogin(AbstractRememberMeServices.java:130)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:98)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-02-26 09:51:04.950 [http-nio-8082-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-02-26 09:51:05.034 [http-nio-8082-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-02-26 09:51:05.034 [http-nio-8082-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-02-26 09:51:05.034 [http-nio-8082-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-02-26 09:51:05.035 [http-nio-8082-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-02-26 09:51:05.040 [http-nio-8082-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-02-26 09:51:13.864 [http-nio-8082-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-02-26 09:51:13.864 [http-nio-8082-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-02-26 09:51:13.879 [http-nio-8082-exec-3] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-02-26 09:55:22.950 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 5056 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-02-26 09:55:23.037 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-02-26 09:55:28.014 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-02-26 09:55:28.339 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-02-26 09:55:28.953 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-02-26 09:55:28.990 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-02-26 09:55:31.776 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-02-26 09:55:31.778 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-02-26 09:55:32.025 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-02-26 09:55:34.943 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-02-26 09:55:42.501 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-02-26 09:55:42.510 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-02-26 09:55:42.510 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-02-26 09:55:42.510 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-02-26 09:55:42.510 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-02-26 09:55:42.510 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-02-26 09:55:42.510 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-02-26 09:55:42.511 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-02-26 09:55:42.783 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bf745f0, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b76a78b, org.springframework.security.web.header.HeaderWriterFilter@78740256, org.springframework.security.web.csrf.CsrfFilter@23e57d4d, org.springframework.security.web.authentication.logout.LogoutFilter@31e32f89, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b3d6a87, org.springframework.security.web.session.ConcurrentSessionFilter@1bce675b, org.springframework.security.web.session.ConcurrentSessionFilter@3898dd54, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25226324, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@399b128f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@11e85b2d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@620cc23f, org.springframework.security.web.session.SessionManagementFilter@53848806, org.springframework.security.web.access.ExceptionTranslationFilter@171896c8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a4801a9]
+2019-02-26 09:55:43.993 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-02-26 09:55:45.693 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-02-26 09:55:45.698 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-26 09:55:45.706 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-02-26 09:55:45.717 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-02-26 09:55:45.718 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:8082.errorChannel' has 1 subscriber(s).
+2019-02-26 09:55:45.718 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-02-26 09:55:51.794 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:55:51.821 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:55:51.833 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-02-26 09:55:52.160 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 29.918 seconds (JVM running for 31.258)
+2019-02-26 09:56:34.671 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-26 09:56:36.143 [http-nio-8082-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-02-26 09:56:36.143 [http-nio-8082-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-02-26 09:56:36.186 [http-nio-8082-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-02-26 09:56:37.849 [http-nio-8082-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-02-26 09:56:38.271 [http-nio-8082-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-02-26 09:56:38.272 [http-nio-8082-exec-2] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-02-26 09:56:38.272 [http-nio-8082-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-02-26 09:56:38.272 [http-nio-8082-exec-2] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-02-26 09:56:38.276 [http-nio-8082-exec-2] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-02-26 09:59:18.323 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7932 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-02-26 09:59:18.336 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-02-26 09:59:23.302 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-02-26 09:59:23.621 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-02-26 09:59:24.237 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-02-26 09:59:24.249 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-02-26 09:59:26.842 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-02-26 09:59:26.844 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-02-26 09:59:27.088 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-02-26 09:59:30.032 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-02-26 09:59:37.723 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-02-26 09:59:37.724 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-02-26 09:59:37.960 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5620c4ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@4fa29d07, org.springframework.security.web.header.HeaderWriterFilter@21632dee, org.springframework.security.web.csrf.CsrfFilter@6ef683bf, org.springframework.security.web.authentication.logout.LogoutFilter@379a6f2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7961e35d, org.springframework.security.web.session.ConcurrentSessionFilter@20adbe7e, org.springframework.security.web.session.ConcurrentSessionFilter@1af031f0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@551b17ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b72bac2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2ccc5bbb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a76d036, org.springframework.security.web.session.SessionManagementFilter@1855e821, org.springframework.security.web.access.ExceptionTranslationFilter@7229edd4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a740c52]
+2019-02-26 09:59:39.610 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-02-26 09:59:41.020 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-02-26 09:59:41.025 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-02-26 09:59:41.034 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-02-26 09:59:41.052 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-02-26 09:59:41.053 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:8082.errorChannel' has 1 subscriber(s).
+2019-02-26 09:59:41.053 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-02-26 09:59:47.302 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:59:47.332 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2019-02-26 09:59:47.344 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-02-26 09:59:47.422 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 29.689 seconds (JVM running for 31.131)
+2019-02-26 10:00:03.381 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-02-26 10:00:04.909 [http-nio-8082-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-02-26 10:00:04.911 [http-nio-8082-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-02-26 10:00:04.928 [http-nio-8082-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-02-26 10:00:06.392 [http-nio-8082-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-02-26 10:00:06.479 [http-nio-8082-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-02-26 10:00:06.479 [http-nio-8082-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-02-26 10:00:06.479 [http-nio-8082-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-02-26 10:00:06.479 [http-nio-8082-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-02-26 10:00:06.487 [http-nio-8082-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-02-26 10:00:27.192 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环0
+2019-02-26 10:00:30.592 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环1
+2019-02-26 10:00:33.753 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环2
+2019-02-26 10:00:37.028 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环3
+2019-02-26 10:00:41.974 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环4
+2019-02-26 10:00:45.320 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环5
+2019-02-26 10:00:48.678 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环6
+2019-02-26 10:00:52.047 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环7
+2019-02-26 10:00:55.495 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环8
+2019-02-26 10:00:58.906 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环9
+2019-02-26 10:01:02.218 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环10
+2019-02-26 10:01:05.593 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环11
+2019-02-26 10:01:09.024 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环12
+2019-02-26 10:01:12.451 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环13
+2019-02-26 10:01:15.852 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环14
+2019-02-26 10:01:19.435 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环15
+2019-02-26 10:01:23.034 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环16
+2019-02-26 10:01:26.632 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环17
+2019-02-26 10:01:30.210 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环18
+2019-02-26 10:01:33.812 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环19
+2019-02-26 10:01:37.590 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环20
+2019-02-26 10:01:41.412 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环21
+2019-02-26 10:01:45.264 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环22
+2019-02-26 10:01:49.086 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环23
+2019-02-26 10:01:53.079 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环24
+2019-02-26 10:01:57.471 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环25
+2019-02-26 10:02:01.600 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环26
+2019-02-26 10:02:06.291 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环27
+2019-02-26 10:02:10.643 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环28
+2019-02-26 10:02:14.959 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环29
+2019-02-26 10:02:19.317 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环30
+2019-02-26 10:02:23.853 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环31
+2019-02-26 10:02:28.458 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环32
+2019-02-26 10:02:33.268 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环33
+2019-02-26 10:02:38.481 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环34
+2019-02-26 10:02:43.163 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环35
+2019-02-26 10:02:48.749 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环36
+2019-02-26 10:02:53.681 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环37
+2019-02-26 10:02:58.380 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环38
+2019-02-26 10:03:03.305 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环39
+2019-02-26 10:03:08.256 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环40
+2019-02-26 10:03:13.296 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环41
+2019-02-26 10:03:19.350 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环42
+2019-02-26 10:03:24.812 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环43
+2019-02-26 10:03:29.916 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环44
+2019-02-26 10:03:35.062 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环45
+2019-02-26 10:03:42.014 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环46
+2019-02-26 10:03:47.341 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环47
+2019-02-26 10:03:52.703 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环48
+2019-02-26 10:03:58.063 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环49
+2019-02-26 10:04:04.734 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环50
+2019-02-26 10:04:10.372 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环51
+2019-02-26 10:04:16.613 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环52
+2019-02-26 10:04:22.304 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环53
+2019-02-26 10:04:28.135 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环54
+2019-02-26 10:04:33.881 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环55
+2019-02-26 10:04:39.683 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环56
+2019-02-26 10:04:45.636 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环57
+2019-02-26 10:04:51.589 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环58
+2019-02-26 10:04:57.586 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环59
+2019-02-26 10:05:03.669 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环60
+2019-02-26 10:05:09.903 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环61
+2019-02-26 10:05:16.136 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环62
+2019-02-26 10:05:22.660 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环63
+2019-02-26 10:05:29.001 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环64
+2019-02-26 10:05:35.428 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环65
+2019-02-26 10:05:41.806 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环66
+2019-02-26 10:05:48.646 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环67
+2019-02-26 10:05:55.134 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环68
+2019-02-26 10:06:01.695 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环69
+2019-02-26 10:06:08.464 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环70
+2019-02-26 10:06:15.513 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环71
+2019-02-26 10:06:22.121 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环72
+2019-02-26 10:06:30.408 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环73
+2019-02-26 10:06:37.167 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环74
+2019-02-26 10:06:46.503 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环75
+2019-02-26 10:06:52.394 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环76
+2019-02-26 10:06:59.764 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环77
+2019-02-26 10:07:07.129 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环78
+2019-02-26 10:07:14.295 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环79
+2019-02-26 10:07:21.876 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环80
+2019-02-26 10:07:29.192 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环81
+2019-02-26 10:07:36.585 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环82
+2019-02-26 10:07:44.058 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环83
+2019-02-26 10:07:51.494 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环84
+2019-02-26 10:07:59.101 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环85
+2019-02-26 10:08:06.555 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环86
+2019-02-26 10:08:18.748 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环87
+2019-02-26 10:08:26.633 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环88
+2019-02-26 10:08:34.386 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环89
+2019-02-26 10:08:43.095 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环90
+2019-02-26 10:08:58.290 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环91
+2019-02-26 10:09:06.528 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环92
+2019-02-26 10:09:14.511 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环93
+2019-02-26 10:09:22.872 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环94
+2019-02-26 10:09:31.594 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环95
+2019-02-26 10:09:38.366 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环96
+2019-02-26 10:09:45.331 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环97
+2019-02-26 10:09:53.317 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环98
+2019-02-26 10:10:01.665 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环99
+2019-02-26 10:10:09.918 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环100
+2019-02-26 10:10:18.290 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环101
+2019-02-26 10:10:26.868 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环102
+2019-02-26 10:10:35.413 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环103
+2019-02-26 10:10:44.240 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环104
+2019-02-26 10:10:52.738 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环105
+2019-02-26 10:11:01.366 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环106
+2019-02-26 10:11:10.068 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环107
+2019-02-26 10:11:19.002 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环108
+2019-02-26 10:11:28.001 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环109
+2019-02-26 10:11:36.695 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环110
+2019-02-26 10:11:45.768 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环111
+2019-02-26 10:11:54.620 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环112
+2019-02-26 10:12:03.553 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环113
+2019-02-26 10:12:12.364 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环114
+2019-02-26 10:12:21.489 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环115
+2019-02-26 10:12:31.025 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环116
+2019-02-26 10:12:40.400 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环117
+2019-02-26 10:12:48.169 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环118
+2019-02-26 10:12:56.229 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环119
+2019-02-26 10:13:06.080 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环120
+2019-02-26 10:13:15.679 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环121
+2019-02-26 10:13:26.506 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环122
+2019-02-26 10:13:35.885 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环123
+2019-02-26 10:13:45.436 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环124
+2019-02-26 10:13:54.913 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环125
+2019-02-26 10:14:04.629 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环126
+2019-02-26 10:14:14.860 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环127
+2019-02-26 10:14:24.534 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环128
+2019-02-26 10:14:35.042 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环129
+2019-02-26 10:14:45.427 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环130
+2019-02-26 10:15:00.322 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环131
+2019-02-26 10:15:12.276 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环132
+2019-02-26 10:15:22.502 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环133
+2019-02-26 10:15:33.128 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环134
+2019-02-26 10:15:44.129 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环135
+2019-02-26 10:15:54.304 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环136
+2019-02-26 10:16:04.462 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环137
+2019-02-26 10:16:14.703 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环138
+2019-02-26 10:16:24.789 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环139
+2019-02-26 10:16:34.851 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环140
+2019-02-26 10:16:44.984 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环141
+2019-02-26 10:16:55.951 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环142
+2019-02-26 10:17:06.387 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环143
+2019-02-26 10:17:16.738 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环144
+2019-02-26 10:17:26.749 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环145
+2019-02-26 10:17:36.724 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环146
+2019-02-26 10:17:46.862 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环147
+2019-02-26 10:17:57.013 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环148
+2019-02-26 10:18:07.164 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环149
+2019-02-26 10:18:17.328 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环150
+2019-02-26 10:18:28.322 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环151
+2019-02-26 10:18:38.576 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环152
+2019-02-26 10:18:50.046 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环153
+2019-02-26 10:19:02.522 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环154
+2019-02-26 10:19:12.806 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环155
+2019-02-26 10:19:24.694 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - 外层循环156
+2019-02-26 10:19:50.977 [http-nio-8082-exec-6] INFO  c.co.example.controller.product.ProductController - **产品数据导出完成**
+2019-02-26 10:20:50.214 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-02-26 10:20:50.215 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:8082.errorChannel' has 0 subscriber(s).
+2019-02-26 10:20:50.215 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-02-26 10:20:50.217 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-02-26 10:20:50.218 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-02-26 10:20:50.218 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-02-26 10:20:51.381 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7932 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-02-26 10:20:51.381 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default

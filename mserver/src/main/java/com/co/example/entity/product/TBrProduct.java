@@ -1,7 +1,11 @@
 package com.co.example.entity.product;
 
-import com.github.moncat.common.entity.BaseEntity;
 import java.math.BigDecimal;
+
+ 
+
+import com.github.moncat.common.entity.BaseEntity;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -16,7 +20,7 @@ public class TBrProduct extends BaseEntity {
     /** 产品名称 */
     private String productName;
 
-    /** 产品别名 */
+    /** 产品别名 */	
     private String productAlias;
 
     /** 京东价格 */
@@ -73,7 +77,7 @@ public class TBrProduct extends BaseEntity {
     /** 用于冗余图片链接，来自京东第二张图片  */
     private String moreData1;
 
-    /**  京东好评度冗余数据   */
+    /**  用于增量存储 ，判断是否已经注销 */
     private String moreData2;
     
     /** 是否删除  1已删除  0未删除   0刚抓取 1匹配不完整  2完整匹配  4特殊符号匹配错误    */

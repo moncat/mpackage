@@ -70,12 +70,19 @@ public class TBrLabelServiceImpl extends BaseServiceImpl<TBrLabel, Long> impleme
 
 	@Override
 	public String queryLabelsByProductId(Long id) {
+		List<TBrLabel> selectList = queryLabelListByProductId(id);
+		String collect = selectList.stream().map(TBrLabel::getName).collect(Collectors.joining(","));
+		return collect;
+	}
+	
+
+	@Override
+	public List<TBrLabel> queryLabelListByProductId(Long id) {
 		TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
 		tBrLabelQuery.setProductJoinFlg(true);
 		tBrLabelQuery.setProductId(id);
-		List<TBrLabel> selectList = tBrLabelDao.selectList(tBrLabelQuery);		
-		String collect = selectList.stream().map(TBrLabel::getName).collect(Collectors.joining(","));
-		return collect;
+		List<TBrLabel> selectList = tBrLabelDao.selectList(tBrLabelQuery);	
+		return selectList;
 	}
 	
 	public static void main(String[] args) {
@@ -96,6 +103,7 @@ public class TBrLabelServiceImpl extends BaseServiceImpl<TBrLabel, Long> impleme
 		String collect = selectList.stream().map(TBrLabel::getName).collect(Collectors.joining(","));
 		System.out.println(collect);
 	}
+
 }
 
 

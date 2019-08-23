@@ -15,8 +15,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 
 import com.co.example.bean.GeInfo;
-import com.co.example.entity.export.TBrExport;
-import com.co.example.entity.system.TSystemConfig;
+import com.co.example.entity.label.TBrIngredientLabelClass;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 
@@ -26,8 +25,8 @@ import com.google.common.io.Files;
 public class Generator {
 
 	// 修改下面两行
-	static String model = "export";	
-	static Class<TBrExport> entity = TBrExport.class;
+	static String model = "ingredientLabelClass";	
+	static Class<TBrIngredientLabelClass> entity = TBrIngredientLabelClass.class;
 	
 	
 	static String basePath="D:/Workspaces2/package/management/src/main/resources/";

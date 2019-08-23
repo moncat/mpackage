@@ -1,5 +1,36 @@
 $(function(){
 	
+	
+	$('.switchItem').on('switch-change', function (e, data) {
+		var  id = $(this).attr('data-id');
+	    var  flg = data.value;
+	    $.post("/enterprise/updateStatus/?id="+id+"&flg="+flg,function(){			
+		});
+	    
+	});
+	
+	$('.clear').on('click',function(){
+		 $('.enterpriseNameLike').val('');
+		   $(".select").find("option:contains('企业/生产企业')").attr("selected",true);
+		 $('#searchForm').submit();
+	});
+	
+	
+	$('.showMore').on('click',function(){
+		var  id = $(this).attr('data-id');
+		l2('/product/tab3/'+id,'900px','500px');
+	});
+	
+	$('.count').each(function(i,obj){
+		var td = $(this)
+		var  id = td.attr('data-id');
+		$.post("/enterprise/count/"+id,function(data){
+			td.text(data.num); 
+		});
+	});
+	
+	//****************
+	
 	$('.add').on('click',function(){
 		lf2('/enterprise/addInit','900px','500px');
 	});

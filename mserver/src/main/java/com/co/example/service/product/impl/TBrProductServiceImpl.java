@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -39,6 +40,7 @@ import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.TBrProductEnterprise;
 import com.co.example.entity.product.TBrProductImage;
 import com.co.example.entity.product.TBrProductIngredient;
+import com.co.example.entity.product.aide.ConfirmVo;
 import com.co.example.entity.product.aide.ProductConstant;
 import com.co.example.entity.product.aide.TBrAimQuery;
 import com.co.example.entity.product.aide.TBrEnterpriseQuery;
@@ -180,14 +182,17 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 //					if(munber!=null && munber > 0){
 //						log.info("***已经有*** "+productName);
 //						continue;
-//					}					
+//					}		
+			 			
+				
 					String applySnNew =  product.getString("applySn");
+					//组织产品基础数据，在抓成分时，一并保存
 					tBrProduct = new TBrProduct();
 					tBrProduct.setProductName(productName);
 					tBrProduct.setProductAlias(null);
 					tBrProduct.setApplyType(ProductConstant.PRODUCT_APPLYTYPE_DOMESTIC);
 					tBrProduct.setApplySn(applySnNew);
-					tBrProduct.setEnterpriseName(product.getString("enterpriseName"));
+					tBrProduct.setEnterpriseName(product.getString("enterpriseName")); 				
 					tBrProduct.setEnterpriseNameEn(null);
 					tBrProduct.setProducingArea(null);
 					/** 2019年8月2日 add  start*/
@@ -226,7 +231,48 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	}
 	
 	
-	//保存成分   药监局
+	/**
+	 * 先查询是否有该企业，有则查询出id并返回
+	 * 查询有该企业时，查看其is_bus状态，是运营企业，如果没设置为1，则更新为1
+	 * 查询无该企业，新增该企业，保存is_bus状态，返回id
+	 */
+	private Long saveBusE(TBrEnterprise tBrEnterpriseBus){
+		Long id = 0l;
+		String enterpriseName = tBrEnterpriseBus.getEnterpriseName();
+		if(StringUtils.isNoneBlank(enterpriseName)){
+			log.info("**保存运营企业**");
+			TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+			tBrEnterpriseQuery.setEnterpriseName(enterpriseName);
+			List<TBrEnterprise> tBrEnterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
+			//如果实际生产企业在库中不存在
+			if(CollectionUtils.isEmpty(tBrEnterpriseList)){
+				tBrEnterpriseService.add(tBrEnterpriseBus);
+				id = tBrEnterpriseBus.getId();
+				log.info("**该运营企业不存在，保存并生成**"+id);
+			}else{
+				log.info("**该运营企业已经存在**");
+				TBrEnterprise tBrEnterpriseBus2 = tBrEnterpriseList.get(0);
+				id = tBrEnterpriseBus2.getId();
+				Byte isBus = tBrEnterpriseBus2.getIsBus();
+				if(isBus != Constant.YES){
+					log.info("**该运营企业NO设置是运营企业的标识，更新一下**"+id);
+					TBrEnterprise tBrEnterpriseUpdate = new TBrEnterprise();
+					tBrEnterpriseUpdate.setIsBus(Constant.YES);
+					tBrEnterpriseUpdate.setId(id);
+					tBrEnterpriseService.updateByIdSelective(tBrEnterpriseUpdate);
+				}else{
+					log.info("**该运营企业YES设置是运营企业的标识**"+id);				
+				}
+				 
+			}
+			 
+		}
+		
+		return id;
+		
+	}
+	
+	//保存成分   药监局  保存生产企业
 	private TBrProduct addIngredientFromCFDA(TBrProduct tBrProduct ,String processid){
 		String text = HttpUtils.postData(ProductConstant.CFDA_INGREDIENT_URL, "processid="+processid);
 		int index =0;
@@ -247,6 +293,22 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 			if(StringUtils.isNotBlank(eNameStr)){
 				tBrProduct.setEnterpriseName(eNameStr);
 			}
+			
+			//保存运营企业
+			TBrEnterprise tBrEnterpriseBus= new TBrEnterprise();			
+			tBrEnterpriseBus.setApplySn(unitInfo.getString("enterprise_healthpermits"));
+			tBrEnterpriseBus.setEnterpriseName(eNameStr);
+			tBrEnterpriseBus.setProducingArea(unitInfo.getString("enterprise_address"));
+			tBrEnterpriseBus.setRemark(unitInfo.getString("remark"));
+			tBrEnterpriseBus.setCreateBy(0l);
+			tBrEnterpriseBus.setIsBus(Constant.YES); //是运营企业
+			tBrEnterpriseBus.setIsActive(Constant.STATUS_ACTIVE);
+			tBrEnterpriseBus.setDelFlg(Constant.NO);
+			tBrEnterpriseBus.setCreateTime(new Date());			
+			Long enterpriseId = saveBusE(tBrEnterpriseBus);			
+			tBrProduct.setEnterpriseId(enterpriseId);  //2019年8月7日 新增字段，保存运营企业id
+			
+			
 			add(tBrProduct);
 			Long tBrProductId = tBrProduct.getId();
 			pId = tBrProductId;
@@ -272,6 +334,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 							tBrEnterprise.setProducingArea(enterprise.getString("enterprise_address"));
 							tBrEnterprise.setRemark(enterprise.getString("remark"));
 							tBrEnterprise.setCreateBy(0l);
+							tBrEnterprise.setIsProduct(Constant.YES); //是生产企业
 							tBrEnterprise.setIsActive(Constant.STATUS_ACTIVE);
 							tBrEnterprise.setDelFlg(Constant.NO);
 							tBrEnterprise.setCreateTime(new Date());
@@ -924,6 +987,15 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		List<TBrProductLabel> labels = tBrProductLabelService.getProductLabels(tBrProduct.getId());
 		vo.setLabels(labels);
 		return vo;
+	}
+
+
+	@Override
+	public  List<ConfirmVo>  queryConfirmData(String startTime ,String endTime, Integer type) {
+		if(type == null){
+			type = 2;
+		}		
+		return tBrProductDao.selectConfirmData(startTime , endTime,type);
 	}
 
 

@@ -12,4 +12,9 @@ public class TBrLabelQuery extends TBrLabel {
     private Long productId;
     
     private boolean productJoinFlg;
+    
+    private String nameLike;
+
+    
+    private boolean labelClassJoinFlg;
 }

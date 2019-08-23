@@ -41,4 +41,7 @@ public class TBrIngredient extends BaseEntity {
 
     /** 描述 */
     private String description;
+
+    /** 是否选择为常用 */
+    private Byte isChoice;
 }

@@ -17,4 +17,7 @@ public class TBrBrandQuery extends TBrBrand {
     private Long  idNotEqual;
     
 	
+    private Boolean joinFlg;
+    
+    private Long  productId;
 }

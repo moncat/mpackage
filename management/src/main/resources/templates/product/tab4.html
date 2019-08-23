@@ -1,0 +1,86 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<div class="page-container" >
+		<section class="container">
+	        <div class="responsive">
+	            <div class=" cl">
+	                <div style="width:50%;float:left" >
+                       	<span class='hide' id="eid"  th:utext="${one.id}"></span>
+                           <div class="row cl f-14">
+                           <div class="col-md-12">
+      					              <b class="f-16" th:text="${one.enterpriseName}"></b> 
+       			                     <div>备案号： <span th:text="${one.applySn}"></span></div>
+       			                     <div>生产地址： <span th:text="${one.producingArea}"></span></div>
+       			                     <div th:if="${base != null}" >
+	       					             <div>联系电话： <span th:text="${base.telePhone}"></span></div>
+	       					             <div>电子邮箱： <span th:text="${base.email}"></span></div>
+	       					             <div>网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址： <span th:text="${base.website}"></span></div>
+	       					             <div>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介： <span th:text="${base.intro}"></span></div>
+          		                     </div>
+         			                     <div>备注： <span th:text="${one.remark}"></span></div>
+         		                    </div>
+                           </div> 
+                           <div th:if="${register != null}" >
+							<div class="f-14  mt-15">注册信息（数据来源于天眼查）</div>
+                            <div class="line  "></div>
+                            <div class="row cl  f-14 mt-5">
+	                            <div class="col-md-12">
+		                            <div>法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人： <span th:text="${register.legalPerson}"></span></div>
+        					        <div>注册资本： <span th:text="${register.registerCapital}"></span></div>
+        					        <div>企业状态： <span th:text="${register.enterpriseStatus}"></span></div>
+        					        <div>工商注册号： <span th:text="${register.registerId}"></span></div>
+        					        <div>组织机构代码： <span th:text="${register.orgId}"></span></div>
+        					        <div>统一信用代码： <span th:text="${register.creditId}"></span></div>
+        					        <div>企业类型： <span th:text="${register.enterpriseType}"></span></div>
+        					        <div>纳税人识别号： <span th:text="${register.revenueId}"></span></div>
+        					        <div>行业类型： <span th:text="${register.industryType}"></span></div>
+        					        <div>营业期限： <span th:text="${register.businessTerm}"></span></div>
+        					        <div>注册日期： <span th:if="${register.registerDate != null }" th:text="${#dates.format(register.registerDate, 'yyyy-MM-dd')}"></span></div>
+        					        <div>核准日期： <span th:if="${register.approveDate != null }" th:text="${#dates.format(register.approveDate, 'yyyy-MM-dd')}"></span></div>
+        					        <div>登记机关： <span th:text="${register.registerAuthority}"></span></div>
+        					        <div>注册地址： <span th:text="${register.registerAddress}"></span></div>
+        					        <div>英文名称： <span th:text="${register.nameEn}"></span></div>
+        					        <div>经营范围： <span th:text="${register.businessScope}"></span></div>
+          		                    </div>
+                            </div> 
+                           </div>
+	                   </div>
+		             <div style="width:50%;float:left" >
+                           <h5>共搜索到<span th:text="${count}"></span>条数据</h5>
+                           <table class="table table-border table-bordered table-bg table-hover mt-10">
+							<thead>
+								<tr>
+									<th colspan="10" scope="col">
+										归属该公司的产品列表
+									</th>
+								</tr>
+								<tr class="text-c ">
+									<th>序号</th>
+									<th>产品名称</th>
+								</tr>
+							</thead>
+							<tbody>
+								<section th:each="item,status:${page.content}" >
+									<tr class="text-c">
+										<td th:text="${page.number*page.size+status.index+1}">1</td>
+										<td>
+											<a class="btn-link" th:href="@{'/product/detail/'+${item.productId}}" title="查看详情" target="_parent">
+												<span th:utext="${item.productName}"></span>
+											</a>
+										</td>
+									</tr>					
+								</section>
+							</tbody>
+						</table>
+						<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+                         <h5 th:if="${base} !=null"><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></h5>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/enterprise/show.js"></script>
+</section>
+</html>

@@ -3,6 +3,7 @@ package com.co.example.entity.product.aide;
 import java.util.List;
 
 import com.co.example.entity.label.TBrProductLabel;
+import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.TBrProductImage;
@@ -58,4 +59,16 @@ public class TBrProductVo extends TBrProduct {
 	 * 商品标签
 	 */
 	private List<TBrProductLabel> labels;
+	
+	
+	/**
+	 * 品牌名称
+	 */
+	private String brandName;
+	
+	/**
+	 * 生产企业列表
+	 */
+	private List<TBrEnterprise>  enterpriseList;
+	
 }

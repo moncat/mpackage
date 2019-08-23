@@ -88,6 +88,26 @@ public class TBrProductQuery extends TBrProduct {
 	
 	/** 2019年7月26日添加，用于查询solr数据 */
 	private String labelNames;
+	
+	/** 用于对备案和取消备案查询  confirmDataType 备案类型  ；confirmDataDays查询天数  */
+	private int confirmDataType;
+	private int confirmDataDays;
+	
+	//******************************** 2019年8月19日 add *************
+	/**
+	 * 2019年8月19日 add
+	 * 对于 忠良的各种in查询所需要的查询数据
+	 */
+	private String normal ="";
+	private Integer normalType;
+	private String startTime;
+	private String endTime;
+	private String eIds ="";
+	private String peIds ="";
+	private Long lId;
+	private Long bId;
+	private Long iId;
+	
 }
 
 

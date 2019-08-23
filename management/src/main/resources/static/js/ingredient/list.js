@@ -1,5 +1,56 @@
 $(function(){
 	
+	
+	$('.setLabel').on('click',function(){
+		var arr = new Array()
+		$(".checkbox1:checked").each(function(i,obj){
+			arr.push($(obj).attr("data-id")) ;
+		}); 
+		if(arr.length==0){
+			layer.msg('请勾选要关联的成分',{icon:1,time:1000});
+		}else{
+			hls('set','ids',arr);
+			l2('/ingredient/labels/','900px','500px');		
+		}
+	});
+	
+	
+	
+	$('.switchItem').on('switch-change', function (e, data) {
+		var  id = $(this).attr('data-id');
+	    var  flg = data.value;
+	    $.post("/ingredient/updateStatus/?id="+id+"&flg="+flg,function(){			
+		});
+	    
+	});
+	
+	$('.clear').on('click',function(){
+		 $('.nameLike').val('');
+		 $(".select").get(0).selectedIndex=0;
+		 $('#searchForm').submit();
+	});
+	
+	
+	$('.showMore').on('click',function(){
+		var  id = $(this).attr('data-id');
+		l2('/ingredient/showMore2/'+id,'900px','500px');
+	});
+	
+//	$('.showMore').on('click',function(){
+//		var  id = $(this).attr('data-id');
+//		l2('/product/tab1/'+id,'900px','500px');
+//	});
+	
+	$('.count').each(function(i,obj){
+		var td = $(this)
+		var  id = td.attr('data-id');
+		$.post("/ingredient/count/"+id,function(data){
+			td.text(data.num); 
+		});
+	});
+	
+	
+	//////////////////////////////////////////////////////////
 	$('.add').on('click',function(){
 		lf2('/ingredient/addInit','900px','500px');
 	});

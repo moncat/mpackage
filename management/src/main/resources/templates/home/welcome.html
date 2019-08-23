@@ -1,94 +1,171 @@
 ﻿<!DOCTYPE HTML>
-<html  layout:decorator="common/layout_iframe">
+<html layout:decorator="common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+body {
+	background-color: #eee;
+}
+
+.panel-header.more {
+	background-color: #fff;
+}
+.moreBtn {
+	border-radius: 37px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #fff;
+}
+</style>
+</section>
+
 <div class="page-container" layout:fragment="main">
-	<p class="f-20 text-success">欢迎使用护肤App后台管理系统 <span class="f-14">v1.0</span></p>
-	<p>登录次数：<span way-data="loginInfo.visitCount"></span> 登录IP：<span way-data="loginInfo.lastIp"></span> 登录时间：<span way-data="loginInfo.lastTime"></span></p>
-	<!-- 
-	<div sec:authorize="isAuthenticated()">登录成功，欢迎您:</div>
-	<div sec:authorize="hasRole('ROLE_sa')">超级管理员</div>
-	<div sec:authorize="hasRole('ROLE_admin')">普通管理员</div>
-	<div sec:authorize="hasRole('ROLE_user')">普通用户</div>
-	 -->
-	
-	<h3>产品统计信息</h3>
-	<div>截至<span id="today"></span>统计数据如下，每早1点更新一次</div>
-	<div class="line"></div>
-	<table class="table table-border table-bordered table-bg table-hover mt-20">
-		<thead>
-			<tr>
-				<th colspan="16" scope="col">统计信息</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>产品数量</td>
-				<td way-data="statistics.moreData1" ></td>
-				<td>品牌数量</td>
-				<td way-data="statistics.moreData2" ></td>
-				<td>产品品牌匹配数量</td>
-				<td way-data="statistics.moreData3" ></td>
-				<td>产品图片数量</td>
-				<td way-data="statistics.moreData12" ></td>
-			</tr>
-			
-			<tr>
-				<td>京东产品匹配数量</td>
-				<td way-data="statistics.moreData4" ></td>
-				<td>天猫产品匹配数量</td>
-				<td way-data="statistics.moreData5" ></td>
-				<td>实际生产企业数量</td>
-				<td way-data="statistics.moreData6" ></td>
-				<td>已获取企业信息数量</td>
-				<td way-data="statistics.moreData7" ></td>
-			</tr>
-			
-			<tr>
-				<td>当前成分数量</td>
-				<td way-data="statistics.moreData8" ></td>
-				<td>产品成分匹配数量</td>
-				<td way-data="statistics.moreData9" ></td>
-				<td>成分使用目的数量</td>
-				<td way-data="statistics.moreData10" ></td>
-				<td>规格种类数量</td>
-				<td way-data="statistics.moreData11" ></td>
-			</tr>
-		</tbody>
-	</table>
-	
-	<h3>用户统计信息</h3>
-	<div>1.总统计与日统计为实时数据</div>
-	<div class="line"></div>
-	<table class="table table-border table-bordered table-bg table-hover mt-20">
-		<thead>
-			<tr>
-				<th colspan="12" scope="col">统计信息</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>今日注册数</td>
-				<td way-data="userData.registerCountToday" ></td>
-				<td>今日测试数</td>
-				<td way-data="userData.examCountToday" ></td>
-				<td>今日咨询数</td>
-				<td way-data="userData.consultCountToday" ></td>
-				<td>总注册数</td>
-				<td way-data="userData.registerCount" ></td>
-				<td>总测试数</td>
-				<td way-data="userData.examCount" ></td>
-				<td>总咨询数</td>
-				<td way-data="userData.consultCount" ></td>
-			</tr>
-		</tbody>
-	</table>
-	
-	<div class="mt-10">2.月统计为历史数据（不包含本月数据，每月初更新上月数据）</div>
-	<div class="line  mb-5"></div>
-	<div id="main" style="width: 1200px;height:400px;"></div>
-	
+	<div class="panel panel-default">
+		<div class="panel-header more">总览数据</div>
+		<div class="panel-body">
+			<div class="row cl f-18 mt-10">
+				<div class="col-md-2 mt-5 c-white">
+					<div class=" radius pt-10 pb-10 pl-30 cl"
+						style="background-color: #58A3F7;">
+						<div>
+							<div class="f-28" way-data="statistics.moreData1">0</div>
+							<div class="f-14">备案产品</div>
+							<div class="f-r pr-10">
+								<img style="width: 35px; height: 35px;"
+									src="/img/welcome/product.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 mt-5 c-white">
+					<div class=" radius pt-10 pb-10 pl-30 cl"
+						style="background-color: rgb(254, 192, 61);">
+						<div>
+							<div class="f-28" way-data="statistics.moreData2">0</div>
+							<div class="f-14">产品品牌</div>
+							<div class="f-r pr-10">
+								<img style="width: 35px; height: 35px;"
+									src="/img/welcome/brand.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 mt-5 c-white">
+					<div class=" radius pt-10 pb-10 pl-30 cl"
+						style="background-color: rgb(82, 193, 245);">
+						<div>
+							<div class="f-28" way-data="statistics.moreData13">0</div>
+							<div class="f-14">企业</div>
+							<div class="f-r pr-10">
+								<img style="width: 35px; height: 35px;" src="/img/welcome/e.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 mt-5 c-white">
+					<div class=" radius pt-10 pb-10 pl-30 cl"
+						style="background-color: rgb(251, 98, 96);">
+						<div>
+							<div class="f-28" way-data="statistics.moreData6">0</div>
+							<div class="f-14">生产企业</div>
+							<div class="f-r pr-10">
+								<img style="width: 35px; height: 35px;"
+									src="/img/welcome/oe.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 mt-5 c-white">
+					<div class=" radius pt-10 pb-10 pl-30 cl"
+						style="background-color: rgb(129, 103, 245);">
+						<div>
+							<div class="f-28" way-data="statistics.moreData8">0</div>
+							<div class="f-14">产品成分</div>
+							<div class="f-r pr-10">
+								<img style="width: 35px; height: 35px;" src="/img/welcome/i.svg" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 备案&取消备案趋势图  -->
+	<div class="panel panel-default  mt-10">
+		<div class="panel-header more cl">
+			<span>备案&amp;取消备案趋势图</span>
+			<div class="f-r"  id="dateLimit1">
+				<div class="btn-group" style="display: inline-block;">
+					<span class="btn btn-primary radius" data-day='7'>7天</span>
+					<span class="btn btn-default radius" data-day='30'>30天</span>
+					<span class="btn btn-default radius" data-day='90'>90天</span>
+				</div>
+				<input type="text" 
+				onfocus="WdatePicker({onpicked:function(dp){initChartDate()}})"
+				class="input-text Wdate chartdate1" style="width: 120px; margin-top: 9px;" />
+				<input type="text" 
+				onfocus="WdatePicker({onpicked:function(dp){initChartDate()}})"
+				class="input-text Wdate chartdate2" style="width: 120px; margin-top: 9px;" />
+			</div>
+
+		</div>
+		<div class="panel-body">
+			<div id="chart" style="width: 100%; height: 400px;"></div>
+		</div>
+	</div>
+	<div class="row cl f-18 mt-10">
+		<div class="col-md-6 mt-5">
+			<div class="panel panel-default">
+				<div class="panel-header more cl">
+					新增成分排行
+					<div class="f-r"  id="dateLimit2">
+						<div class="btn-group" style="display: inline-block;">
+							<span class="btn btn-primary radius" data-day='7'>7天</span>
+							<span class="btn btn-default radius" data-day='30'>30天</span>
+							<span class="btn btn-default radius" data-day='90'>90天</span>
+						</div>
+						<input type="text" 
+						onfocus="WdatePicker({onpicked:function(dp){initIngredientDate()}})"
+						class="input-text Wdate idate1" style="width: 120px; margin-top: 9px;" />~
+						<input type="text" 
+						onfocus="WdatePicker({onpicked:function(dp){initIngredientDate()}})"
+						class="input-text Wdate idate2" style="width: 120px; margin-top: 9px;" />
+					</div>
+				</div>
+				<div class="panel-body f-14 ingredient">
+ 				</div>
+			</div>
+		</div>
+		<div class="col-md-6 mt-5">
+			<div class="panel panel-default">
+				<div class="panel-header more cl">
+					企业新备案排行
+					<div class="f-r"  id="dateLimit3">
+						<div class="btn-group" style="display: inline-block;">
+							<span class="btn btn-primary radius" data-day='7'>7天</span>
+							<span class="btn btn-default radius" data-day='30'>30天</span>
+							<span class="btn btn-default radius" data-day='90'>90天</span>
+						</div>
+						<input type="text" 
+						onfocus="WdatePicker({onpicked:function(dp){initEnterpriseDate()}})"
+						class="input-text Wdate edate1" style="width: 120px; margin-top: 9px;" />~
+						<input type="text" 
+						onfocus="WdatePicker({onpicked:function(dp){initEnterpriseDate()}})"
+						class="input-text Wdate edate2" style="width: 120px; margin-top: 9px;" />
+					</div>
+				</div>
+				<div class="panel-body f-14 enterprise">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 </div>
 <section layout:fragment="my">
-	<script type="text/javascript" src="/base/lib/echarts/3.4.0/echarts.common.min.js"></script>
+	<script type="text/javascript"
+		src="/base/lib/echarts/3.4.0/echarts.common.min.js"></script>
+	<script type="text/javascript"
+		src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 	<script type="text/javascript" src="/js/home/show.js"></script>
 </section>
 </html>

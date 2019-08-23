@@ -11,6 +11,8 @@ public interface SolrService {
         
     Map<String,Object> queryProductSolr(TBrProductQuery query,int start,int rows);
     
+    Map<String,Object> querySolr(TBrProductQuery query,int start,int rows);
+    
     Boolean deleteProducts();
     
     Boolean deleteProductById(Long id);

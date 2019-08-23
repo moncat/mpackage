@@ -122,9 +122,10 @@ function myselfinfo(){
 function l0(info){
 	layer.alert(info);
 }
-
 function l2(url,width,height){
-	var title = '信息';
+	l2(url,width,height,"信息");
+}
+function l2(url,width,height,title){	 
 	if(url.indexOf('add')>0){
 		title='新增';
 	}
@@ -201,3 +202,28 @@ function getJSONP(url, callback) {
 /*getJSONP('http://localhost:8888/',function(response){
 　　alert(response.name);
 });*/
+
+function hls(method, key, value) {
+  switch (method) {
+    case 'get' : {
+      let temp = window.localStorage.getItem(key);
+      if (temp) {
+        return temp
+      } else {
+        return false
+      }
+    }
+    case 'set' : {
+      window.localStorage.setItem(key, value);
+      break
+    }
+    case 'remove': {
+      window.localStorage.removeItem(key);
+      break
+    }
+    default : {
+      return false
+    }
+  }
+}
+	 

@@ -4,6 +4,9 @@
   <resultMap id="BaseResultMap" type="com.co.example.entity.label.TBrLabel">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="class_id" jdbcType="BIGINT" property="classId" />
+    <result column="is_choice" jdbcType="TINYINT" property="isChoice" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
     <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
@@ -15,8 +18,8 @@
     <result column="app_id" jdbcType="TINYINT" property="appId" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, parent_id, item_order, create_time, create_by, update_time, update_by, 
-    is_active, del_flg, app_id
+    id, name, class_id, is_choice, description, parent_id, item_order, create_time, create_by, 
+    update_time, update_by, is_active, del_flg, app_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -32,11 +35,13 @@
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
       SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
     </selectKey>
-    insert into t_br_label (id, name, parent_id, 
+    insert into t_br_label (id, name, class_id, 
+      is_choice, description, parent_id, 
       item_order, create_time, create_by, 
       update_time, update_by, is_active, 
       del_flg, app_id)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{classId,jdbcType=BIGINT}, 
+      #{isChoice,jdbcType=TINYINT}, #{description,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, 
       #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
       #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT})
@@ -46,6 +51,15 @@
     <set>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="classId != null">
+        class_id = #{classId,jdbcType=BIGINT},
+      </if>
+      <if test="isChoice != null">
+        is_choice = #{isChoice,jdbcType=TINYINT},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
       </if>
       <if test="parentId != null">
         parent_id = #{parentId,jdbcType=BIGINT},
@@ -80,6 +94,9 @@
   <update id="updateByPrimaryKey" parameterType="com.co.example.entity.label.TBrLabel">
     update t_br_label
     set name = #{name,jdbcType=VARCHAR},
+      class_id = #{classId,jdbcType=BIGINT},
+      is_choice = #{isChoice,jdbcType=TINYINT},
+      description = #{description,jdbcType=VARCHAR},
       parent_id = #{parentId,jdbcType=BIGINT},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -105,6 +122,15 @@
       </if>
       <if test="name != null">
           and t.name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="classId != null">
+          and t.class_id = #{classId,jdbcType=BIGINT}
+      </if>
+      <if test="isChoice != null">
+          and t.is_choice = #{isChoice,jdbcType=TINYINT}
+      </if>
+      <if test="description != null">
+          and t.description = #{description,jdbcType=VARCHAR}
       </if>
       <if test="parentId != null">
           and t.parent_id = #{parentId,jdbcType=BIGINT}
@@ -163,10 +189,14 @@
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
+      <result column="labelClassName" property="labelClassName" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Vo_Column_List">
     t.id, 
     t.name, 
+    t.class_id, 
+    t.is_choice, 
+    t.description, 
     t.parent_id, 
     t.item_order, 
     t.create_time, 
@@ -175,6 +205,10 @@
     t.update_by, 
     t.is_active, 
     t.del_flg, 
+     <if test="labelClassJoinFlg">
+        	lc.name labelClassName, 
+    </if>   
+    
     t.app_id
      <!-- ,alias.field -->
   </sql>
@@ -182,14 +216,27 @@
     <!-- <if test="queryBeanField != null" > -->
     <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
     <!-- </if> -->
+     <if test="nameLike != null">
+          and t.name like concat('%',#{nameLike,jdbcType=VARCHAR},'%') 
+      </if>
+      
+      
+      
   </sql>
   <sql id="Table_Join_Clause">
-    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
- 	<if test="productJoinFlg">
+    	<if test="productJoinFlg">
         LEFT JOIN t_br_product_label pl ON t.id = pl.label_id
-		LEFT JOIN t_br_product_test p ON p.id = pl.product_id
-		where  p.id= #{productId,jdbcType=BIGINT}
-    </if>
-
+		where  pl.product_id= #{productId,jdbcType=BIGINT}
+    </if>   
+    
+    <if test="labelClassJoinFlg">
+        	LEFT JOIN t_br_label_class lc ON t.class_id = lc.id	 
+    </if>   
+    
+    
+    
+    
+    
+     
   </sql>
 </mapper>

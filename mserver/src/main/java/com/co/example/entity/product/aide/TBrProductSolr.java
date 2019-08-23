@@ -28,15 +28,61 @@ public class TBrProductSolr {
 	@Field
     private String enterpriseName;
 
-	/** 时间  */
-	@Field
-    private String confirmDate;
 	
+	/** 备案时间限制  */
+	@Field
+    private String confirmDate;	
+
+	/**
+	 * 多个标签搜索 ,暂时去掉
+	 */
     @Field
+    @Deprecated
     private String labelNames;
 	
- 
-	
-	
+     
+    
+    /**
+     * 多种成分搜索
+     */
+    @Field
+    private String ingredients;
+    
+    /**
+     * 多种品牌搜索
+     */
+    @Field
+    private String brands;
+    
+    /**
+     * 企业id
+     */
+    @Field
+    private String beid;
+    
+    /**
+     * 生产企业ids
+     */
+    @Field
+    private String peids;
+    
+    /**
+     * 成分ids
+     */
+    @Field
+    private String iids;
+    
+    /**
+     * 标签ids
+     */
+    @Field
+    private String lids;
+    
+    /**
+     * 品牌ids
+     */
+    @Field
+    private String bids;
+
 
 }

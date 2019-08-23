@@ -30,14 +30,15 @@ public class CustomWebAuthenticationDetails extends WebAuthenticationDetails {
 		if(StringUtils.isBlank(password)){
 			throw new BadCredentialsException("密码不能为空！");
 		}
-		String inputCode = request.getParameter(SessionConstant.SESSION_IDENTITY_CODE);
-		String genCode = (String)session.getAttribute(SessionConstant.SESSION_IDENTITY_CODE);
-		if(StringUtils.isBlank(inputCode)){
-			throw new BadCredentialsException("验证码不能为空！");
-		}
-		if(!genCode.equalsIgnoreCase(inputCode)){
-			throw new BadCredentialsException("验证码不正确！");
-		}
+		//V2ADD 将验证码去掉
+//		String inputCode = request.getParameter(SessionConstant.SESSION_IDENTITY_CODE);
+//		String genCode = (String)session.getAttribute(SessionConstant.SESSION_IDENTITY_CODE);
+//		if(StringUtils.isBlank(inputCode)){
+//			throw new BadCredentialsException("验证码不能为空！");
+//		}
+//		if(!genCode.equalsIgnoreCase(inputCode)){
+//			throw new BadCredentialsException("验证码不正确！");
+//		}
         
     }
 

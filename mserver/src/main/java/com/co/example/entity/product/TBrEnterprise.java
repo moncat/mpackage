@@ -23,4 +23,13 @@ public class TBrEnterprise extends BaseEntity {
 
     /** 备注 */
     private String remark;
+
+    /** 是否是运营单位 */
+    private Byte isBus;
+
+    /** 是否是生产单位 */
+    private Byte isProduct;
+
+    /** 是否选择为常用 */
+    private Byte isChoice;
 }

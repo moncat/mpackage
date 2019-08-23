@@ -1,0 +1,59 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+		<div class="page-container" >
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">	                   
+						<table class="table table-border table-bordered table-bg table-hover">
+							<thead>
+								<tr>
+									<th colspan="10" scope="col">
+										成分列表
+									</th>
+								</tr>
+								<tr class="text-c ">
+									<th>序号</th>
+									<th>成分名称</th>
+									<th>安全风险</th>
+									<th>活性成分</th>
+									<th>致痘风险</th>
+									<th>使用目的</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="text-c"  th:each="item,status:${ingredientList}">
+									<td th:text="${status.index+1}">1</td>
+									<td>
+										<a class="btn-link openShow" th:attr="data-id=${item.id}"  title="查看详情"  >
+											<span th:utext="${item.name}"></span>
+										</a>
+									</td>
+									<td><span  th:text="${item.securityRisks}" class="badge radius" th:classappend="${item.safeColour}" >4</span></td>
+									<td th:if="${item.activeIngredient eq 1}"><img src="/img/hxcf.png" alt="活性成分"/></td>
+									<td th:if="${item.activeIngredient ne 1}"></td>
+									<td th:if="${item.blainRisk eq 1}"><img src="/img/zdfx.png" alt="致痘风险"/></td>
+									<td th:if="${item.blainRisk ne 1}"></td>
+									<td>
+									   <span th:each="aim:${item.tBrAims}" th:text="${aim.name}">溶剂</span> 
+									</td>
+								</tr>					
+							</tbody>
+						</table>
+						 <div class="ml-10 f-16">
+                        	  本产品含有香精:<span class="mt-10" th:text="${#lists.size(one.essenceList)}"></span>种(<span th:each="essence: ${one.essenceList}" th:text="${essence}+' '"></span>)<br/>
+                        	  本产品含有防腐剂:<span class="mt-10" th:text="${#lists.size(one.corrosionList)}"></span>种(<span th:each="corrosion: ${one.corrosionList}" th:text="${corrosion}+' '"></span>)<br/>
+                        	  本产品含有风险成分:<span class="mt-10" th:text="${#lists.size(one.riskList)}"></span>种(<span th:each="risk: ${one.riskList}" th:text="${risk}+' '"></span>)<br/>
+                        	  本产品含有清洁成分:<span class="mt-10" th:text="${#lists.size(one.cleanList)}"></span>种(<span th:each="clean: ${one.cleanList}" th:text="${clean}+' '"></span>)<br/>
+                        	  本产品含有表活成分:<span class="mt-10" th:text="${#lists.size(one.activeList)}"></span>种(<span th:each="active: ${one.activeList}" th:text="${active}+' '"></span>)<br/>
+                           </div>					
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/product/tab1.js"></script>
+</section>
+</html>

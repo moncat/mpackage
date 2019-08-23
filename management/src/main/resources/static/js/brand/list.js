@@ -1,12 +1,17 @@
 $(function(){
 	
+	$('.showMore').on('click',function(){
+		var  id = $(this).attr('data-id');
+		l2('/product/tab2/'+id,'900px','500px');
+	});
+
 	$('.add').on('click',function(){
-		lf2('/brand/addInit','900px','500px');
+		l2('/brand/addInit','900px','500px');
 	});
 	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
-		lf2('/brand/editInit/'+id+'/0','900px','500px');
+		l2('/brand/editInit/'+id+'/0','900px','500px');
 		event.stopPropagation(); 
 	});
 	
@@ -60,6 +65,24 @@ $(function(){
 			});
 		event.stopPropagation(); 
 	});
+	
+	
+	$('.switchItem').on('switch-change', function (e, data) {
+		var  id = $(this).attr('data-id');
+	    var  flg = data.value;
+	    $.post("/brand/updateStatus/?id="+id+"&flg="+flg,function(){			
+		});
+	    
+	});
+	
+	$('.clear').on('click',function(){
+		 $('.nameLike').val('');
+		 $('#searchForm').submit();
+	});
+	
+	
+ 
+	
 	
 });
 

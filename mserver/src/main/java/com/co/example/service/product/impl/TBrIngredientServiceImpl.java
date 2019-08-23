@@ -12,6 +12,7 @@ import com.co.example.dao.product.TBrIngredientDao;
 import com.co.example.entity.product.TBrAim;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.aide.TBrAimQuery;
+import com.co.example.entity.product.aide.TBrIngredientCountVo;
 import com.co.example.entity.product.aide.TBrIngredientQuery;
 import com.co.example.entity.product.aide.TBrIngredientVo;
 import com.co.example.service.product.TBrAimService;
@@ -31,7 +32,7 @@ public class TBrIngredientServiceImpl extends BaseServiceImpl<TBrIngredient, Lon
     
     @Resource
     private TBrIngredientService tBrIngredientService;
-
+    
     @Override
     protected BaseDao<TBrIngredient, Long> getBaseDao() {
         return tBrIngredientDao;
@@ -150,11 +151,56 @@ public class TBrIngredientServiceImpl extends BaseServiceImpl<TBrIngredient, Lon
 		return list;
 	}
 
-	
+	@Override
+	public List<TBrIngredientCountVo> queryIngredientCount(String limitTime,String endTime) {		 
+		return tBrIngredientDao.selectIngredientCount(limitTime,endTime);
+	}
 
+	@Override
+	public List<TBrIngredient> queryTBrIngredientList(Long productId) {
+		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
+		tBrIngredientQuery.setJoinFlg(true);
+		tBrIngredientQuery.setProductId(productId); 
+		List<TBrIngredient> selectList = tBrIngredientDao.selectList(tBrIngredientQuery);
+		TBrIngredientVo ingredientVo;
+		for(TBrIngredient ingredient :selectList){
+			ingredientVo = (TBrIngredientVo)ingredient;
+			getAims(ingredientVo);
+		}
+		return selectList;
+	}
 	
-	
-	
+	@Override
+	public Float getProductScore(Long productId) {
+		List<TBrIngredient> selectList = queryTBrIngredientList(productId);
+		return getProductScore(selectList);
+	}
+
+
+	@Override
+	public Float getProductScore(List<TBrIngredient> selectList) {
+		int safeInt ,index=0;
+		for (TBrIngredient tBrIngredient : selectList) {
+			String securityRisks = tBrIngredient.getSecurityRisks();
+			if(StringUtils.isNoneBlank(securityRisks)){
+				if(securityRisks.indexOf("-")>0){
+					securityRisks = securityRisks.substring(0,securityRisks.lastIndexOf("-"));
+				}
+				safeInt = Integer.parseInt(securityRisks);
+				if(safeInt<3){
+					index++; 
+				}				
+			}			
+		}
+		int size =selectList.size();
+		if (size ==0){
+			size=1;
+		}
+		float safe = index*5/size;
+		return safe;
+	}
+
+
 	
 	
 	

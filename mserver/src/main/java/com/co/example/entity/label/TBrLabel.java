@@ -15,9 +15,18 @@ public class TBrLabel extends BaseEntity {
     /** 标签名称 */
     private String name;
 
+    /** 标签分类id */
+    private Long classId;
+
+    /** 是否被选为常用 */
+    private Byte isChoice;
+
+    /** 标签描述 */
+    private String description;
+
     /** 父标签id */
     private Long parentId;
 
-    /** 应用id */
+    /** 应用id  1:在首页显示的分类 0肤质特点关联的标签   */
     private Byte appId;
 }

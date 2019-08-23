@@ -1,0 +1,207 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 生产企业管理 
+		<span class="c-gray en">&gt;</span> 企业详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                        	<span class='hide' id="eid"  th:utext="${one.id}"></span>
+	                            <h2 class="text-c"  th:utext="${one.enterpriseName}">无名称</h2>
+	                            <h3>基本信息</h3>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl f-18 mt-10">
+		                            <div class="col-md-12">
+        					             <div>企业名称： <span th:text="${one.enterpriseName}"></span></div>
+           			                     <div>备案号： <span th:text="${one.applySn}"></span></div>
+           			                     <div>生产地址： <span th:text="${one.producingArea}"></span></div>
+           			                     <div th:if="${base != null}" >
+	        					             <div>联系电话： <span th:text="${base.telePhone}"></span></div>
+	        					             <div>电子邮箱： <span th:text="${base.email}"></span></div>
+	        					             <div>网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址： <span th:text="${base.website}"></span></div>
+	        					             <div>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介： <span th:text="${base.intro}"></span></div>
+	           		                     </div>
+           			                     <div>备注： <span th:text="${one.remark}"></span></div>
+           		                    </div>
+	                            </div> 
+	                            <div th:if="${register != null}" >
+									<h3>注册信息</h3>
+		                            <div class="line mt-10"></div>
+		                            <div class="row cl f-18 mt-10">
+			                            <div class="col-md-12">
+				                            <div>法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人： <span th:text="${register.legalPerson}"></span></div>
+		        					        <div>注册资本： <span th:text="${register.registerCapital}"></span></div>
+		        					        <div>企业状态： <span th:text="${register.enterpriseStatus}"></span></div>
+		        					        <div>工商注册号： <span th:text="${register.registerId}"></span></div>
+		        					        <div>组织机构代码： <span th:text="${register.orgId}"></span></div>
+		        					        <div>统一信用代码： <span th:text="${register.creditId}"></span></div>
+		        					        <div>企业类型： <span th:text="${register.enterpriseType}"></span></div>
+		        					        <div>纳税人识别号： <span th:text="${register.revenueId}"></span></div>
+		        					        <div>行业类型： <span th:text="${register.industryType}"></span></div>
+		        					        <div>营业期限： <span th:text="${register.businessTerm}"></span></div>
+		        					        <div>注册日期： <span th:if="${register.registerDate != null }" th:text="${#dates.format(register.registerDate, 'yyyy-MM-dd')}"></span></div>
+		        					        <div>核准日期： <span th:if="${register.approveDate != null }" th:text="${#dates.format(register.approveDate, 'yyyy-MM-dd')}"></span></div>
+		        					        <div>登记机关： <span th:text="${register.registerAuthority}"></span></div>
+		        					        <div>注册地址： <span th:text="${register.registerAddress}"></span></div>
+		        					        <div>英文名称： <span th:text="${register.nameEn}"></span></div>
+		        					        <div>经营范围： <span th:text="${register.businessScope}"></span></div>
+	           		                    </div>
+		                            </div> 
+	                            </div>
+	                            <div th:if="${#lists.size(managers)>0}" > 
+									<h3>高层人员</h3>
+		                            <div class="line mt-10"></div>
+		                            <div class="row cl f-18 mt-10">
+			                            <div th:each="manager:${managers}" >
+				                            <div class="col-md-4 mt-5">
+					                            <div class=" radius pt-10 pb-10 pl-10 text-c" style="border: solid 1px #84f06d;">
+						                            <span th:text="${manager.post}"></span>:
+						                            <span th:text="${manager.name}"></span>
+					                            </div>
+		           		                    </div>
+			                            </div> 
+		                            </div> 
+	                            </div> 
+	                            
+		                        <div th:if="${#lists.size(shareholders)>0}" >
+									<h3>股东结构</h3>
+	                           		<div class="line mt-10"></div>
+	                           		 <div class="row cl f-18 mt-10 ml-10 mr-10">
+		                            	<table class="table table-border table-bordered table-bg table-hover">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														股东结构列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>股东</th>
+													<th>出资比例</th>
+													<th>认缴出资</th>
+												</tr>
+											</thead>
+											<tbody>
+												<section th:each="shareholder,shNum:${shareholders}"  >
+													<tr  class="text-c">
+														<td th:text="${shNum.index+1}">1</td>
+														<td th:text="${shareholder.name}"></td>
+														<td th:text="${shareholder.moneyPercent}"></td>
+														<td th:text="${shareholder.moneyPlan}"></td>
+													</tr>					
+												</section>
+											</tbody>
+										</table>
+		                            </div> 
+	                            </div> 
+	                            
+		                        <div th:if="${#lists.size(lawsuits)>0}" >
+									<h3>法律诉讼</h3>
+	                           		<div class="line mt-10"></div>
+	                           		 <div class="row cl f-18 mt-10 ml-10 mr-10">
+		                            	<table class="table table-border table-bordered table-bg table-hover">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														法律诉讼列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>日期</th>
+													<th>裁判文书</th>
+													<th>案件类型</th>
+													<th>案件号</th>
+												</tr>
+											</thead>
+											<tbody>
+												<section th:each="lawsuit,lsNum:${lawsuits}"  >
+													<tr  class="text-c">
+														<td th:text="${lsNum.index+1}">1</td>
+														<td th:text="${lawsuit.caseDate}"></td>
+														<td th:text="${lawsuit.caseWrit}"></td>
+														<td th:text="${lawsuit.caseType}"></td>
+														<td th:text="${lawsuit.caseId}"></td>
+													</tr>					
+												</section>
+											</tbody>
+										</table>
+		                            </div> 
+	                            </div> 
+	                            
+		                        <div th:if="${#lists.size(punishs)>0}" >
+									<h3>行政处罚</h3>
+	                           		<div class="line mt-10"></div>
+	                           		 <div class="row cl f-18 mt-10 ml-10 mr-10">
+		                            	<table class="table table-border table-bordered table-bg table-hover">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														行政处罚列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>决定日期</th>
+													<th>决定书文号</th>
+													<th>类型</th>
+													<th>决定机关</th>
+												</tr>
+											</thead>
+											<tbody>
+												<section th:each="punish,pNum:${punishs}"  >
+													<tr  class="text-c">
+														<td th:text="${pNum.index+1}">1</td>
+														<td th:text="${punish.punishDate}"></td>
+														<td th:text="${punish.punishId}"></td>
+														<td th:text="${punish.punishType}"></td>
+														<td th:text="${punish.punishOffice}"></td>
+													</tr>					
+												</section>
+											</tbody>
+										</table>
+		                            </div> 
+	                            </div> 
+	                            
+	                            <h3>公司产品</h3>
+	                            <div class="line mt-10"></div>
+                           		 <div class="row cl f-18 mt-10 ml-10 mr-10">
+	                            	<table class="table table-border table-bordered table-bg table-hover">
+										<thead>
+											<tr>
+												<th colspan="10" scope="col">
+													公司产品列表
+												</th>
+											</tr>
+											<tr class="text-c ">
+												<th width="30%">序号</th>
+												<th width="70%">产品名称</th>
+											</tr>
+										</thead>
+										<tbody id="productList" >
+										</tbody>
+									</table>
+	                            </div>
+	                            
+	                            <h5 th:if="${base} !=null"><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></h5>
+	                            
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/enterprise/show.js"></script>
+</section>
+</html>

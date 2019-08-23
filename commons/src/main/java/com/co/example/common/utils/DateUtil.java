@@ -4,7 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class DateUtil {
@@ -99,10 +98,60 @@ public class DateUtil {
 //		Date date = calendar.getTime();
 //		System.out.println(df.format(date));
 		
-		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
-		Calendar calendar = new GregorianCalendar(2016, 6, 28,18,0,0);
-		Date date = calendar.getTime();
-		System.out.println(df.format(date));
+//		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+//		Calendar calendar = new GregorianCalendar(2016, 6, 28,18,0,0);
+//		Date date = calendar.getTime();
+//		System.out.println(df.format(date));
+		
+//		System.out.println(getDays(2));
+		System.out.println(getIntervalDays("2019-08-18","2019-08-21"));
 	}
+	
+	public static Date getDateByCalendar(){
+		Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date date = calendar.getTime();
+        return date;
+	}
+	
+	public static String  getDays(int num){
+		Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.DAY_OF_YEAR, num);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date date = calendar.getTime();
+        String str = DateFormatUtil.format(date, DateFormatUtil.formartDate);
+        return str;
+	}
+	
+	public static String  getDays(String startDateStr, int num){
+		Calendar calendar = Calendar.getInstance();
+		Date startDate = DateParseUtil.parseDate(startDateStr);
+		calendar.setTime(startDate);
+		calendar.add(Calendar.DAY_OF_YEAR, num);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		Date date = calendar.getTime();
+		String str = DateFormatUtil.format(date, DateFormatUtil.formartDate);
+		return str;
+	}
+	
+ 
+	public static int  getIntervalDays(String start,String end){
+		Date date1=DateParseUtil.parseDate(start);
+		Date date2=DateParseUtil.parseDate(end);	
+        long tmp = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 *24);
+        return Integer.parseInt(String.valueOf(tmp)); 
+	}
+	
+	
+	 
+	
 	
 }

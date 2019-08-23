@@ -11,6 +11,7 @@
     <result column="found_date" property="foundDate" jdbcType="VARCHAR" />
     <result column="website" property="website" jdbcType="VARCHAR" />
     <result column="story" property="story" jdbcType="VARCHAR" />
+    <result column="is_choice" property="isChoice" jdbcType="TINYINT" />
     <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_by" property="createBy" jdbcType="BIGINT" />
@@ -21,8 +22,8 @@
     <result column="app_id" property="appId" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, name_en, img_url, founder, originate, found_date, website, story, item_order, 
-    create_time, create_by, update_time, update_by, is_active, del_flg, app_id
+    id, name, name_en, img_url, founder, originate, found_date, website, story, is_choice, 
+    item_order, create_time, create_by, update_time, update_by, is_active, del_flg, app_id
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -41,15 +42,17 @@
     insert into t_br_brand (id, name, name_en, 
       img_url, founder, originate, 
       found_date, website, story, 
-      item_order, create_time, create_by, 
-      update_time, update_by, is_active, 
-      del_flg, app_id)
+      is_choice, item_order, create_time, 
+      create_by, update_time, update_by, 
+      is_active, del_flg, app_id
+      )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, 
       #{imgUrl,jdbcType=VARCHAR}, #{founder,jdbcType=VARCHAR}, #{originate,jdbcType=VARCHAR}, 
       #{foundDate,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{story,jdbcType=VARCHAR}, 
-      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
-      #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT})
+      #{isChoice,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT}
+      )
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.brand.TBrBrand" >
     update t_br_brand
@@ -77,6 +80,9 @@
       </if>
       <if test="story != null" >
         story = #{story,jdbcType=VARCHAR},
+      </if>
+      <if test="isChoice != null" >
+        is_choice = #{isChoice,jdbcType=TINYINT},
       </if>
       <if test="itemOrder != null" >
         item_order = #{itemOrder,jdbcType=INTEGER},
@@ -115,6 +121,7 @@
       found_date = #{foundDate,jdbcType=VARCHAR},
       website = #{website,jdbcType=VARCHAR},
       story = #{story,jdbcType=VARCHAR},
+      is_choice = #{isChoice,jdbcType=TINYINT},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
@@ -161,6 +168,9 @@
       <if test="story != null" >
           and t.story = #{story,jdbcType=VARCHAR}
       </if>
+      <if test="isChoice != null" >
+          and t.is_choice = #{isChoice,jdbcType=TINYINT}
+      </if>
       <if test="itemOrder != null" >
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
       </if>
@@ -203,9 +213,6 @@
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  
-
-  
   <delete id="delete" parameterType="java.util.Map" >
     delete from t_br_brand where id in (
     select t.id from (select * from t_br_brand) t
@@ -213,7 +220,7 @@
     <include refid="Query_Where_Clause" />
     )
   </delete>
-  <!--  ************************expand your SQL below the line***********************  -->
+   <!--  ************************expand your SQL below the line***********************  -->
   
    <select id="selectByNameLength" parameterType="java.util.Map" resultMap="VoResultMap" >
     select id,name from t_br_brand ORDER BY LENGTH(name) desc
@@ -239,6 +246,7 @@
     t.found_date, 
     t.website, 
     t.story, 
+    t.is_choice, 
     t.item_order, 
     t.create_time, 
     t.create_by, 
@@ -259,6 +267,9 @@
       <if test="idNotEqual != null" >
           and t.id != #{id,jdbcType=BIGINT}
       </if>
+      <if test="productId !=null" >
+          and pb.product_id = #{productId,jdbcType=BIGINT}
+      </if>
   
     <!-- <if test="queryBeanField != null" > -->
     <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
@@ -266,5 +277,8 @@
   </sql>
   <sql id="Table_Join_Clause" >
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+      <if test="joinFlg" >
+          left join t_br_product_brand pb on t.id = pb.brand_id
+      </if>
   </sql>
 </mapper>

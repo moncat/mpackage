@@ -1,0 +1,133 @@
+<html layout:decorator="/common/layout_iframe">
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+		产品管理 <span class="c-gray en">&gt;</span> 成分列表 <a
+			class="btn btn-success radius r btn-refresh"
+			style="line-height: 1.6em; margin-top: 3px"
+			href="javascript:location.replace(location.href);" title="刷新"><i
+			class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container">
+		<div class="panel panel-default">
+			<div class="panel-header">数据筛选</div>
+			<div class="panel-body">
+				<form action="/ingredient/list2" id="searchForm">
+					<div class="text-l">
+						输入查询：<input type="text" class="input-text nameLike"
+							style="width: 200px" placeholder="成分名称" id=""
+							th:value="${query.nameLike}" name="nameLike" /> 成分标签： <span
+							class="select-box" style="width: 200px"> <select
+							class="select" size="1" placeholder="请选择标签" name="labelId"
+							th:attr="data-labelId=${query.labelId}">
+								<option></option>
+								<option th:selected="${query.labelId} eq ${oneLabel.id}"
+									th:value="${oneLabel.id}" th:text="${oneLabel.name}"
+									th:each="oneLabel:${labelList}"></option>
+						</select>
+						</span>
+						<button type="submit" class="btn btn-success radius" name="">
+							<i class="Hui-iconfont">&#xe665;</i> 查询
+						</button>
+						<button type="button" class="btn btn-default radius clear" name="">
+							<i class="Hui-iconfont">&#xe66b;</i> 重置
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<table
+			class="table table-border table-bordered table-bg table-hover mt-5">
+			<thead>
+				<tr>
+					<th colspan="10" scope="col"><span>数据列表</span>
+					 </th>
+				</tr>
+				<tr class="text-c ">
+					<th><input type="checkbox" /></th>
+					<th>序号</th>
+					<th>成分名称</th>
+					<th>安全风险</th>
+					<th>活性成分</th>
+					<th>致痘风险</th>
+					<th>使用目的</th>
+					<th>关联产品</th>
+					<th>常用设置</th>
+					<!-- 
+					<th>创建时间</th>
+					<th>状态</th>
+					<th>操作</th>
+					 -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="text-c" th:each="one,status:${page.content}">
+					<td><input class="checkbox1" type="checkbox" th:attr="data-id=${one.id}" /></td>
+					<td th:text="${page.number*page.size+status.index+1}">1</td>
+					<td><a class="btn-link showMore" th:attr="data-id=${one.id}">
+							<span th:utext="${one.name}"></span>
+					</a></td>
+					<td><span th:text="${one.securityRisks}" class="badge radius"
+						th:classappend="${one.safeColour}">4</span></td>
+					<td th:if="${one.activeIngredient eq 1}"><img
+						src="/img/hxcf.png" alt="活性成分" /></td>
+					<td th:if="${one.activeIngredient ne 1}"></td>
+					<td th:if="${one.blainRisk eq 1}"><img src="/img/zdfx.png"
+						alt="致痘风险" /></td>
+					<td th:if="${one.blainRisk ne 1}"></td>
+					<td><span th:each="aim:${one.tBrAims}" th:text="${aim.name}+' '">溶剂</span>
+					</td>
+					<td th:attr="data-id=${one.id}" class="count"></td>
+					<td class="td-status">
+						<div class="switch size-S switchItem" th:attr="data-id=${one.id}">
+							<input type="checkbox"
+								th:checked='${one.isChoice eq 1 ? "checked":"false"}'></input>
+						</div>
+					</td>
+					<!-- 
+						<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+						<td class="td-status"><span th:text="${one.isActive ne 0 ? '已开启':'已停用'}" class="label radius status" th:classappend="${one.isActive ne 0 ? 'label-success':'label-warning'}"></span></td>
+						<td class="td-manage">
+							<a th:hidden="${one.isActive eq 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="停用" class="stop" >
+								<i class="Hui-iconfont">&#xe631;</i>
+							</a>
+							
+							<a th:hidden="${one.isActive ne 0}" th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="启用" class="ml-5 start" >
+								<i class="Hui-iconfont">&#xe615;</i>
+							</a>
+							
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
+								<i class="Hui-iconfont">&#xe6e2;</i>
+							</a>
+							
+						 	<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
+								<i class="Hui-iconfont">&#xe6df;</i>
+							</a> 
+						 </td>
+						 -->
+
+				</tr>
+
+			</tbody>
+		</table>
+
+		<div class="cl pd-5 ">
+			<span class="l"> <a href="javascript:void(0);"
+				class="btn btn-primary-outline   radius l setLabel">设置标签</a>
+			</span> <span class="r">
+				<div class="mt-10 text-r"
+					th:attr="data-totalPages=${page.totalPages}" style="right: 20px"
+					id="pageCont"></div>
+			</span>
+		</div>
+
+
+
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript"
+		src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/ingredient/list.js"></script>
+</section>
+</html>

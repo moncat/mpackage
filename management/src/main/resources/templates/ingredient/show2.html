@@ -1,0 +1,69 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 成分详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" >
+		<section class="container">
+	        <div class="responsive">
+	            <div class="cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius ">
+	                        <div class="panel-body">
+	                            <div class="row cl">
+		                            <div class='pl-5 pl-5' style="width:40%;float:left" >
+			                           <h4>
+											 <b th:text="${one.name}"></b>
+										</h4>
+			                            <h5>英文名：     <span th:utext="${one.nameEn}"></span></h5>
+			                            <h5>成分别名： <span th:utext="${one.alias}"></span></h5>
+			                            <h5>CAS号：    <span th:utext="${one.casNum}"></span></h5>
+			                            <h5>安全风险： <span th:text="${one.securityRisks}"></span></h5>
+			                            <h5>活性成分： <span th:text="${one.activeIngredient eq 1? '有':'无'}"></span></h5>
+			                            <h5>致痘风险： <span th:text="${one.blainRisk eq 1 ? '有':'无'}"></span></h5>
+			                            <h5>使用目的： <span th:each="aim:${one.tBrAims}" th:text="${aim.name}"></span></h5>
+			                            <h5>成分简介： <span th:utext="${one.description}"></span></h5>
+			                             
+		                            </div>
+		                            <div style="width:55%;float:left" >
+										<table class="table table-border table-bordered table-bg table-hover mt-10">
+											<thead>
+												<tr>
+													<th colspan="10" scope="col">
+														含有此成分的产品列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>序号</th>
+													<th>产品名称</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="text-c" th:each="item,status:${page.content}" >
+													<td th:text="${page.number*page.size+status.index+1}">1</td>
+													<td>
+														<a class="btn-link showP"  href="javascript:void(0)" th:attr="data-id=${item.id}" title="查看详情" target="_blank">
+															<span th:utext="${item.productName}"></span>
+														</a>
+													</td>
+												</tr>					
+											</tbody>
+										</table>
+										<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+		                            </div>
+	                            </div> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/ingredient/show2.js"></script>
+</section>
+</html>

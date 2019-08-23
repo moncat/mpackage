@@ -1,75 +1,247 @@
-$(function(){
-	$.post('/admin/show',function(data){
-		var loginInfo=data.admin;
-		loginInfo.lastTime = new Date(loginInfo.lastTime).format("yyyy-mm-dd HH:MM:ss");
-		way.set("loginInfo", loginInfo );
-	});
-	
-	var today = new Date();
-	var todayFormat = today.format("yyyy-mm-dd");
-	$('#today').text(todayFormat);
-	
-	$.post('/statistics/show',function(data){
-		var statistics=data.statistics;
-		way.set("statistics", statistics );
-	});
-	
-	$.post('/statistics/user',function(data){
-		way.set("userData",data);
-	});
-	
-	//baidu echarts
-    var myChart = echarts.init(document.getElementById('main'));
-    myChart.showLoading();
-    $.get('/statistics/month').done(function (data) {
-    	myChart.hideLoading();
-    	 myChart.setOption({
-	        title: {
-	        	show:true,
-	            text: '用户月统计',
-	            subtext: '显示最近几个月的用户注册数量、肤质测试数量、用户咨询数量'
-	        },
-	        tooltip : {
-	            trigger: 'axis',
-	            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-	                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-	            }
-	        },
-	        toolbox: {
-	            feature: {
-	                dataView: {show: true, readOnly: false},
-	                magicType: {show: true, type: ['line', 'bar']},
-	                restore: {show: true},
-	                saveAsImage: {show: true}
-	            }
-	        },
-	        legend: {
-	            data:['注册数量','测试数量','咨询数量'],
-	            icon: 'circle',
-	        },
-	        xAxis: {
-	            data: data.categories
-	        },
-	        yAxis: {},
-	        series: [
-	        	{
-	                type: 'bar',
-		            name: '注册数量',
-		            data: data.register
-		        },
-		        {
-	                type: 'bar',
-		            name: '测试数量',
-		            data: data.exam
-		        },
-		        {
-		        	type: 'bar',
-		        	name: '咨询数量',
-		        	data: data.consult
-		        },		        
-	        ]
-	    });
-    });
+$(function() {
+	// $.post('/admin/show',function(data){
+	// var loginInfo=data.admin;
+	// loginInfo.lastTime = new Date(loginInfo.lastTime).format("yyyy-mm-dd
+	// HH:MM:ss");
+	// way.set("loginInfo", loginInfo );
+	// });
+	//	
+	// var today = new Date();
+	// var todayFormat = today.format("yyyy-mm-dd");
+	// $('#today').text(todayFormat);
+	//	
+	 $.post('/statistics/show',function(data){
+	 var statistics=data.statistics;
+	 way.set("statistics", statistics );
+	 });
 
+	 
+	 //备案图表
+	initChart(tranNum2Date(7),'');
+	$('#dateLimit1 span').on('click', function() {
+		var days = $(this).attr('data-day');
+		$(this).removeClass('btn-default').addClass('btn-primary')
+		$(this).siblings().removeClass('btn-primary').addClass('btn-default')
+		if (days == undefined) {
+			days = 7;
+		}
+		initChart(tranNum2Date(days),'');
+	});
+
+	//成分数量
+	initIngredient(tranNum2Date(7),'');	
+	$('#dateLimit2 span').on('click', function() {
+		var days = $(this).attr('data-day');
+		$(this).removeClass('btn-default').addClass('btn-primary')
+		$(this).siblings().removeClass('btn-primary').addClass('btn-default')
+		if (days == undefined) {
+			days = 7;
+		}
+		initIngredient(tranNum2Date(days),'');
+	});
 	
+	//企业数量
+	initEnterprise(tranNum2Date(7),'');	
+	$('#dateLimit3 span').on('click', function() {
+		var days = $(this).attr('data-day');
+		$(this).removeClass('btn-default').addClass('btn-primary')
+		$(this).siblings().removeClass('btn-primary').addClass('btn-default')
+		if (days == undefined) {
+			days = 7;
+		}
+		initEnterprise(tranNum2Date(days),'');
+	});
+
 });
+
+
+
+
+function initIngredientDate(){
+	var idate1 = $('.idate1').val();
+	var idate2 = $('.idate2').val();
+	if(isNotBlank(idate1) && isNotBlank(idate2) ){
+		initIngredient(idate1,idate2)
+	}
+}
+
+function initEnterpriseDate(){
+	var edate1 = $('.edate1').val();
+	var edate2 = $('.edate2').val();
+	if(isNotBlank(edate1) && isNotBlank(edate2) ){
+		initEnterprise(edate1,edate2)
+	}
+}
+
+
+function initIngredient(date,end){
+	$('.ingredient').empty();
+	$('.ingredient').append("加载中……");
+	$.post('/statistics/ingredient?date='+date+"&end="+end,function(data){
+		var ingredient=data.ingredient;
+		var html ='';
+		var len =ingredient.length;
+		var moreFlg = false;
+		if(len>8){
+			len =8;
+			moreFlg = true;
+		}
+		for(var i=0; i<len;i++){
+			html+=' <div class="mt-5">';
+			html+='	<div>'+parseInt(i+1)+"、"+ingredient[i].name+'</div>';
+			html+='	<div class="progress radius mt-5" style="width: 90%;display: inline-block;">';
+			html+='		<div class="progress-bar progress-bar-danger">';
+			html+='			<span class="sr-only" style="width:'+100*ingredient[i].num/10+'%"></span>';
+			html+='		</div>';
+			html+='	</div>';
+			html+='<span class="ml-10">'+ingredient[i].num+'</span>';
+			html+='</div>';				 
+		}
+		if(moreFlg){
+			html+='<div class="line  mt-5 mb-10"></div>';	
+			html+='<div class=" text-c"><a class="btn btn-default moreBtn" href="/product/list3" target="_blank">查看更多</a></div>';	
+		}
+		if(html==''){
+			html+='该时段暂无数据。';
+		}		
+		$('.ingredient').empty();
+		$('.ingredient').append(html);
+	});	
+}
+
+function initEnterprise(date,end){
+	$('.enterprise').empty();
+	$('.enterprise').append("加载中……");
+	$.post('/statistics/enterprise?date='+date+"&end="+end,function(data){
+		var enterprise=data.enterprise;
+		var html ='';
+		var len =enterprise.length;
+		var moreFlg = false;
+		if(len>8){
+			len =8;
+			moreFlg = true;
+		}
+		for(var i=0; i<len;i++){
+			html+=' <div class="mt-5">';
+			html+='	<div>'+parseInt(i+1)+"、"+enterprise[i].enterpriseName+'</div>';
+			html+='	<div class="progress radius mt-5" style="width: 90%;display: inline-block;">';
+			html+='		<div class="progress-bar progress-bar-danger">';
+			html+='			<span class="sr-only" style="width:'+100*enterprise[i].num/10+'%"></span>';
+			html+='		</div>';
+			html+='	</div>';
+			html+='<span class="ml-10">'+enterprise[i].num+'</span>';
+			html+='</div>';				 
+		}
+		if(moreFlg){
+			html+='<div class="line  mt-5 mb-10"></div>';	
+			html+='<div class=" text-c"><a class="btn btn-default moreBtn" href="/product/list3" target="_blank">查看更多</a></div>';	
+		}
+		if(html==''){
+			html+='该时段暂无数据。';
+		}
+		$('.enterprise').empty();
+		$('.enterprise').append(html);
+	});	
+}
+
+
+function initChartDate( ) {
+	var chartdate1 = $('.chartdate1').val();
+	var chartdate2 = $('.chartdate2').val();
+	if(isNotBlank(chartdate1) && isNotBlank(chartdate2) ){
+		initChart(chartdate1,chartdate2)
+	} 
+}
+
+function initChart(start,end) {
+	// baidu echarts
+	var myChart = echarts.init(document.getElementById('chart'));
+	myChart.showLoading();
+	$.get('/statistics/confirm?start='+start+"&end="+end).done(function(data) {
+		myChart.hideLoading();
+		myChart.setOption({
+			title : {
+				show : true,
+				text : '备案&取消备案趋势图',
+				subtext : '备案&取消备案趋势日统计'
+			},
+			tooltip : {
+				trigger : 'axis',
+				axisPointer : { // 坐标轴指示器，坐标轴触发有效
+					type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+				}
+			},
+			toolbox : {
+				feature : {
+					dataView : {
+						show : true,
+						readOnly : false
+					},
+					magicType : {
+						show : true,
+						type : [ 'line', 'bar' ]
+					},
+					restore : {
+						show : true
+					},
+					saveAsImage : {
+						show : true
+					}
+				}
+			},
+			legend : {
+				data : [ '备案数量', '取消备案数量' ],
+				icon : 'circle',
+			},
+			xAxis : {
+				data : data.dateList
+			},
+			yAxis : {},
+			series : [ {
+				type : 'line',
+				name : '备案数量',
+				data : data.confirmList
+			}, {
+				type : 'line',
+				name : '取消备案数量',
+				data : data.cancelList
+			}, ]
+		});
+	});
+}	
+	
+function getFormatDate(date) { 
+    var seperator1 = "-";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;//date.getMonth()得到的月份从0开始
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = year + seperator1 + month + seperator1 + strDate;
+    return currentdate;
+}
+
+function isNotBlank(str){
+	if( str !=undefined && str !=null && str.trim()!="" ){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function tranNum2Date(num) {
+	var startTime = new Date().getTime()-num*24*3600*1000; 
+	var newDate = getFormatDate(new Date(startTime));
+	return newDate; 
+}
+
+function intervalToday(str) {
+	var startTime = new Date().getTime();
+	var endTime = new Date(Date.parse(str)).getTime();
+	var num = parseInt(Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24));
+	return num;
+}

@@ -61,9 +61,8 @@
 					<th>操作</th>
 				</tr>
 			</thead>
-			<tbody>
-				<section th:each="one,status:${page.content}" >
-					<tr  class="text-c">
+			<tbody>			
+					<tr  class="text-c"  th:each="one,status:${page.content}" >
 					<!-- 
 						<td><input type="checkbox" /></td>
 					 -->
@@ -108,9 +107,8 @@
 							</a> 
 							 -->
 						 </td>
-						 
 					</tr>					
-				</section>
+			
 			</tbody>
 		</table>
 		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>

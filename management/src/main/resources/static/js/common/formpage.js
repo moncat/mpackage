@@ -15,6 +15,9 @@ laypage({
       if(lh.indexOf("page=")>0){
     		  lh=lh.substring(0,lh.indexOf("page=")-1);    	  
       }
+      if(lh.indexOf("#")>0){
+    	  lh= lh.replace("#","");
+      }
       if(lh.indexOf("?")>0){
     	  location.href = lh+'&page='+e.curr;
       }else{

@@ -19,4 +19,7 @@ public class TBrIngredientQuery extends TBrIngredient {
 	/** 模糊查询 */
 	private String nameLike;
 	
+	/** 标签ID */
+	private String labelId;
+	
 }

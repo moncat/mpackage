@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 public class TBrEnterpriseQuery extends TBrEnterprise {
 	
+
 	/** 产品id */
 	private Long productId;
 	
@@ -20,6 +21,13 @@ public class TBrEnterpriseQuery extends TBrEnterprise {
     /** 企业名称模糊查询 */
     private String enterpriseNameLike;
 	
-	
+	//// 1 默认全部 2生产企业 3运营企业
+    private Integer enterpriseType;
+    
+    
+	/** 连接开关 ,连接注册表*/
+	private Boolean joinRegFlg = false;
+    
+    
 	
 }

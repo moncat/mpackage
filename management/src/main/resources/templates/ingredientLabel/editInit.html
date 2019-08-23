@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		<input type="hidden" th:value="${one.id}" name="id"></input>
+				 
+			
+			 <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								标签分类：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+												<span class="select-box">
+				    <select class="select" size="1"    placeholder="请选择分类"  name="classId" >
+					   <option th:selected="${one.classId eq oneLabelClass.id}"  th:each="oneLabelClass:${labelClassList}" th:value="${oneLabelClass.id}" th:text="${oneLabelClass.name}"></option>
+					</select>
+				</span>
+				</div>
+			</div>
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+									<span class="c-red">*</span>
+								标签：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+					<span th:text="${one.name}" > </span>																															</div>
+			</div>
+	
+		    <div class="row cl">
+				<label class="form-label col-xs-3 col-sm-2">
+								描述：
+				</label>
+				<div class="formControls col-xs-9 col-sm-10">
+				<input type="text" class="input-text" th:value="${one.description}"  placeholder="描述" name="description"/>
+																																				</div>
+			</div>
+		
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+						<script type="text/javascript" charset="utf-8" src="/js/ingredientLabel/edit.js"></script>
+	</section>
+</body>
+</html>

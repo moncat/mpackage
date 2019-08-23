@@ -36,15 +36,9 @@ public class TBrBrand extends BaseEntity {
     /** 故事历史 */
     private String story;
 
-    /** 数据来源标识 
-     *  1 从太平洋女性网抓取品牌数据
-		2 从YOKA时尚网抓取数据
-		3从Onlylady女人志时尚网抓取数据
-		4从腾讯女性时尚网抓取数据
-		5从39化妆品库抓取数据
-		6从凤凰时尚化妆品库抓取数据
-		7从瑞丽网抓取数据
-		8从网易女人抓取数据
-     */
+    /** 是否被选择为常用 */
+    private Byte isChoice;
+
+    /** 应用id */
     private Byte appId;
 }

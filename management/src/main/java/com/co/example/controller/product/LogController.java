@@ -412,4 +412,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		be.setDelFlg(Constant.NO);
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
+
+	// 抓取全量品牌运营企业
+
 }

@@ -15,8 +15,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.stereotype.Service;
 
 import com.co.example.dao.product.TBrEnterpriseDao;
@@ -29,6 +27,7 @@ import com.co.example.entity.enterprise.TBrEnterpriseShareholder;
 import com.co.example.entity.enterprise.aide.TBrEnterpriseLawsuitQuery;
 import com.co.example.entity.enterprise.aide.TBrEnterprisePunishQuery;
 import com.co.example.entity.product.TBrEnterprise;
+import com.co.example.entity.product.aide.TBrEnterpriseCountVo;
 import com.co.example.service.enterprise.TBrEnterpriseBaseService;
 import com.co.example.service.enterprise.TBrEnterpriseLawsuitService;
 import com.co.example.service.enterprise.TBrEnterpriseManagerService;
@@ -37,14 +36,7 @@ import com.co.example.service.enterprise.TBrEnterpriseRegisterService;
 import com.co.example.service.enterprise.TBrEnterpriseShareholderService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrProductService;
-import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.DomElement;
-import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.gargoylesoftware.htmlunit.html.HtmlPasswordInput;
-import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.service.BaseServiceImpl;
 
@@ -531,5 +523,11 @@ public class TBrEnterpriseServiceImpl extends BaseServiceImpl<TBrEnterprise, Lon
 					"%257B%2522token%2522%253A%2522eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODI1NDEzMzM2NyIsImlhdCI6MTUwOTcwMDM1MCwiZXhwIjoxNTI1MjUyMzUwfQ.Q-eKAzDTbP2MXiuAD7HM0xwS22CEY--_awmt23JQfXlxROxIa54uqFnbaao6ZNVSKbdBuJCjb-l5XpfOVYtOHw%2522%252C%2522integrity%2522%253A%25220%2525%2522%252C%2522state%2522%253A%25220%2522%252C%2522vnum%2522%253A%25220%2522%252C%2522onum%2522%253A%25220%2522%252C%2522mobile%2522%253A%252218254133367%2522%257D")
 			.addCookie("uccid", "868866fdf6ec3c40fb6943dc1dccff80")//
 	;
+
+
+	@Override
+	public List<TBrEnterpriseCountVo> queryEnterpriseCount(String limitTime,String endTime) {
+		return tBrEnterpriseDao.selectEnterpriseCount(limitTime,endTime);
+	}
 	
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html layout:decorator="/common/layout_dialog">
+<section  layout:fragment="myCss">
+	<style>
+	.btnFix{
+		position: fixed;
+	    bottom: 0px;
+	    left: -5%;
+	    display: block;
+	    width: 100%;
+	    background-color: #fff;
+		}
+	</style>
+</section>
+<body>
+	<section layout:fragment="main">
+		<div class="page-container cl mb-20">
+			<div class="l" style=" width: 45%; border-right: 1px solid #eee;">
+				<div class='text-c'>
+				<input type="text" placeholder="请输入搜索内容" class="input-text  size-m key" 
+					style="width:50%; border-bottom-left-radius: 5px; border-top-left-radius: 5px; border-color: rgb(90, 152, 222);"/>
+					<button type="button" class="btn btn-primary size-m search"  style="margin-left: -5px;border-bottom-right-radius: 5px; border-top-right-radius: 5px;"><i class="Hui-iconfont">&#xe665;</i></button>		
+					
+				</div>
+				<span>标签：</span>	
+				<div class='addList'></div>			 			 
+				 <div class="text-c"  ><a class="addAll">全部添加&gt;&gt;</a></div>
+			</div>
+			<div class="l pl-5 " style="width: 45%;">
+				<span >已选择标签：</span>
+				<div id="choice"></div>			 			 
+				<div class="text-c" ><a class="delAll">&lt;&lt;全部删除</a></div>
+			</div>
+		</div>
+		<div  class='cl btnFix'  >
+			<div class='line'></div>
+			<div class="text-c pb-5  pt-5 "> 
+				<button type="submit" class="btn btn-default radius" id="cancel">取消</button>
+				<button type="submit" class="btn btn-success radius" id="ok">确定</button>
+			</div>
+		</div>
+		
+	</section>
+	<section layout:fragment="my">
+		<script type="text/javascript" charset="utf-8"
+			src="/js/product/labels.js"></script>
+	</section>
+</body>
+</html>

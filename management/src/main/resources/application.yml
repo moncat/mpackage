@@ -18,6 +18,7 @@ image:
 spring:
   data:
     solr:
-       host: http://114.215.106.58:8085/solr/allData
+      host: http://114.215.106.58:8085/solr/allData
+#       host: http://127.0.0.1:9080/solr/allData
 #      host: http://127.0.0.1:8080/solr/allData  http://114.215.106.58:8085/solr/
  

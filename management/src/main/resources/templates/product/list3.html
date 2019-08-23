@@ -1,0 +1,210 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section  layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/base/lib/multiple-select/1.3.1/css/multiple-select.css" />
+	<style>
+		select {
+	  		width: 180px;
+		}
+		.btn-simple{
+		    cursor: pointer;
+		    border-color: transparent;
+		    background-color: transparent;
+		}
+		
+		.items span{
+		color: #666;
+	    font-size: 12px;
+	    margin-right: 10px;
+	    cursor: pointer;
+		}
+		
+		.items span.choice{
+		    border: 1px solid rgb(45, 183, 245);
+		    background-color: rgb(45, 183, 245);
+		    color: #fff;
+		    border-radius: 3px;
+		    padding: 3px;
+		}
+		form {
+			border: 1px solid #eee;
+    		padding: 20px;
+    		background-color: #fff;
+    	}
+    	
+   .floatDiv{
+    position: fixed;
+    top: 238px;
+    right: 35px;
+    z-index: 999;
+    font-size: 16px;
+    overflow: hidden;
+    visibility: visible;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    font-size: 12px;
+    width: 124px;
+    text-align: center;
+    text-decoration: none;
+}
+    	
+	</style>
+</section>
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 产品列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container" style="background-color: #eee;" >
+		<div class="row cl pd-5 mt-10">
+			<div class="col-md-10 col-md-offset-1">
+				<form action="#" id="productSearch">
+					<div class="ml-10 btn-group ">
+					  <span class="btn btn-primary" th:class="${query.normalType ==1 or query.normalType ==null}? 'btn btn-primary':'btn btn-simple'" data-id='1' style="font-size:12px">产品名称</span>
+					  <span class="btn btn-simple " th:class="${query.normalType ==2 }? 'btn btn-primary':'btn btn-simple'"  data-id='2' style="font-size:12px">产品成分</span>
+					  <span class="btn btn-simple " th:class="${query.normalType ==3 }? 'btn btn-primary':'btn btn-simple'"  data-id='3' style="font-size:12px">企业名称</span>
+					  <span class="btn btn-simple " th:class="${query.normalType ==4 }? 'btn btn-primary':'btn btn-simple'"  data-id='4' style="font-size:12px">品牌名称</span>
+					</div>
+					<input type="text" placeholder="请输入搜索内容" class="input-text  size-L" name='normal' th:value='${query.normal}'
+					style="width:30%; border-bottom-left-radius: 5px; border-top-left-radius: 5px; border-color: rgb(90, 152, 222);"/>
+					<button type="submit" class="btn btn-primary size-L"  style="margin-left: -5px;border-bottom-right-radius: 5px; border-top-right-radius: 5px;"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>		
+					<button type="button" class="btn btn-link" id='openMore'>搜索条件</button>		
+					<div class="line mt-10"></div>
+					<div id="moreSearch" style="display:none">
+						<div class='cl mt-10'>
+							备案日期：
+							<input type="text"  name='startTime'  th:value='${query.startTime}'
+									onfocus="WdatePicker({onpicked:function(dp){initEnterprise(dp.cal.getNewDateStr())},minDate:'%y-%M-{%d-90}',maxDate:'%y-%M-{%d-1}'})"
+									class="input-text Wdate " style="width: 120px; margin-top: 9px;" />~
+							<input type="text" name='endTime'  th:value='${query.endTime}'
+								onfocus="WdatePicker({onpicked:function(dp){initEnterprise(dp.cal.getNewDateStr())},minDate:'%y-%M-{%d-90}',maxDate:'%y-%M-{%d-1}'})"
+								class="input-text Wdate " style="width: 120px; margin-top: 9px;" />
+							<a class='r' id='closeMore' >收起搜索  <i class="Hui-iconfont">&#xe6d5;</i></a>
+						</div>
+						
+						<div class='cl mt-10'>
+							（多选）企业名称：
+							 <input type="text" placeholder="请输入搜索内容" class="input-text radius r" style="width:10%;"/>
+							 <div class='mt-30 text-c items' style="margin-left:80px;margin-right:80px;" id='eeDiv'>
+							 	<span th:class='${#strings.contains(query.eIds,be.id)? "choice":""}' th:each="be:${bEnterpriseList}" th:attr="data-id=${be.id}" th:text="${be.enterpriseName}"></span>						 
+							 </div>
+						</div>
+						
+						<div class='cl mt-10'>
+							（多选）生产企业名称：
+							 <input type="text" placeholder="请输入搜索内容" class="input-text radius r" style="width:10%;"/>
+							 <div class='mt-30 text-c items' style="margin-left:80px;margin-right:80px;" id='peDiv'>
+							 	<span th:class='${#strings.contains(query.peIds,pe.id)? "choice":""}' th:each="pe:${pEnterpriseList}" th:attr="data-id=${pe.id}" th:text="${pe.enterpriseName}"></span>	
+							 </div>
+						</div>
+						
+						<div class='cl mt-10'>
+							品牌名称：
+							 <input type="text" placeholder="请输入搜索内容" class="input-text radius r" style="width:10%;"/>
+							 <div class='mt-30 text-c items' style="margin-left:80px;margin-right:80px;" id='brandDiv'>
+							 	<span th:class='${query.bId eq brand.id ? "choice":""}' th:each="brand:${brandList}" th:attr="data-id=${brand.id}" th:text="${brand.name}"></span>	
+							 </div>
+						</div>
+						
+						<div class='cl mt-10'>
+							产品成分：
+							 <input type="text" placeholder="请输入搜索内容" class="input-text radius r" style="width:10%;"/>
+							 <div class='mt-30 text-c items' style="margin-left:80px;margin-right:80px;" id='ingredientDiv'>
+							 	<span th:class='${query.iId eq ii.id? "choice":""}'  th:each="ii:${ingredientList}" th:attr="data-id=${ii.id}" th:text="${ii.name}"></span>	
+							 </div>
+						</div>
+						
+						<div class='cl mt-10'>
+							产品标签：
+							 <input type="text" placeholder="请输入搜索内容" class="input-text radius r" style="width:10%;"/>
+							 <div class='mt-30 text-c items' style="margin-left:80px;margin-right:80px;" id='labelDiv'>
+							 	<span th:class='${ query.lId eq label.id ? "choice":""}'   th:each="label:${labelList}" th:attr="data-id=${label.id}" th:text="${label.name}"></span>
+							 </div>
+						</div>
+					</div>
+				 	<input type='hidden'  id='lId' name='lId' th:value='${query.lId}'/>					
+				 	<input type='hidden'  id='bId' name='bId' th:value='${query.bId}'/>	
+				 	<input type='hidden'  id='iId' name='iId' th:value='${query.iId}'/>	
+				 	<input type='hidden'  id='eIds' name='eIds' th:value='${query.eIds}'/>	
+				 	<input type='hidden'  id='peIds' name='peIds' th:value='${query.peIds}'/>	
+				 	<input type='hidden'  id='normalType' name='normalType' value='1' th:value='${query.normalType eq null? "1":query.normalType}'/>				
+				</form>
+			
+				
+				<div class="line mb-10"></div>
+				<table class="table table-border table-bordered table-bg table-hover">
+					<thead>
+						<tr>
+							<th colspan="10" scope="col">	
+								共搜索到<span th:text="${count}"></span>条数据						
+							</th>
+						</tr>
+						<tr class="text-c ">				 
+							<th><input type="checkbox" /></th>				 
+							<th>序号</th>
+							<th>产品名称</th>
+							<th>生产企业</th>	
+							<th>备案编号</th>
+							<th>备案日期</th>
+							<th>操作</th>
+												
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="text-c" th:each="one,status:${page.content}" >	
+							<td><input  class="checkbox1"  type="checkbox"  th:attr="data-id=${one.id}" /></td>			
+							<td th:text="${page.number*page.size+status.index+1}">1</td>
+							<td>
+							 	<a th:href="@{'/product/detail/'+${one.id}}"   target="_self">
+									<span th:utext="${one.productName}"></span>
+								</a>					
+							</td>
+							<td th:text="${one.enterpriseName}"></td>				
+							<td th:text="${one.applySn}"></td>
+							<td th:text="${one.confirmDate}"></td>
+							<td>
+							 	<a href="javascript:void(0)" class="addContrast"  target="_blank" 
+							 	th:attr="data-id=${one.id},data-text=${one.productName}"  >
+									对比
+								</a>					
+							</td>
+						</tr>					
+					</tbody>
+				</table>
+				
+				<div class="cl pd-5 ">
+					<span class="l"> 
+					<a href="javascript:void(0);" class="btn btn-primary-outline radius setLabel pl-10">设置标签</a>
+					<a href="javascript:void(0);" class="btn btn-primary-outline radius  setBrand pl-10">设置品牌</a>
+					</span> 
+					<span class="r">
+						<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right: 20px" 	id="pageCont"></div>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class='floatDiv'>
+			<div style="background-color: rgb(45, 183, 245);">
+				<div class="cl" style='padding: 5px;'>
+					<div class='r'>
+						<a id="contrastClose" ><i class="Hui-iconfont">&#xe706;</i> </a>
+					</div>
+					[<span class="contrastListSize">0</span>/5]对比框
+					
+				</div>			
+			</div>
+			<div style='padding: 5px; ' class='contrastList'>							
+			</div>
+			<div  class="cl"  style='padding: 5px; '>
+				<div  class='l'><input class="btn btn-secondary radius nowContrast" type="button" value="对比"/></div>
+				<div  class='r'><input class="btn btn-default radius clearContrast" type="button" value="清除"/></div>
+			</div>
+		</div>	
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/product/list3.js"></script>
+</section>
+</html>

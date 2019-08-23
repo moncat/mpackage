@@ -12,6 +12,7 @@
     <result column="jd_url" property="jdUrl" jdbcType="VARCHAR" />
     <result column="apply_type" property="applyType" jdbcType="VARCHAR" />
     <result column="apply_sn" property="applySn" jdbcType="VARCHAR" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="BIGINT" />
     <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
     <result column="enterprise_name_en" property="enterpriseNameEn" jdbcType="VARCHAR" />
     <result column="producing_area" property="producingArea" jdbcType="VARCHAR" />
@@ -33,12 +34,13 @@
   </resultMap>
   <sql id="Base_Column_List" >
     id, product_name, product_alias, jd_price, tmall_price, sales, tmall_url, jd_url, 
-    apply_type, apply_sn, enterprise_name, enterprise_name_en, producing_area, confirm_date, 
-    is_off, cfda_processid, cfda_new_processid, bevol_mid, remark, source, more_data1, 
-    more_data2, item_order, create_time, create_by, update_time, update_by, del_flg
+    apply_type, apply_sn, enterprise_id, enterprise_name, enterprise_name_en, producing_area, 
+    confirm_date, is_off, cfda_processid, cfda_new_processid, bevol_mid, remark, source, 
+    more_data1, more_data2, item_order, create_time, create_by, update_time, update_by, 
+    del_flg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select     
+    select 
     <include refid="Base_Column_List" />
     from t_br_product
     where id = #{id,jdbcType=BIGINT}
@@ -54,23 +56,23 @@
     insert into t_br_product (id, product_name, product_alias, 
       jd_price, tmall_price, sales, 
       tmall_url, jd_url, apply_type, 
-      apply_sn, enterprise_name, enterprise_name_en, 
-      producing_area, confirm_date, is_off, 
-      cfda_processid, cfda_new_processid, bevol_mid, 
-      remark, source, more_data1, 
-      more_data2, item_order, create_time, 
-      create_by, update_time, update_by, 
-      del_flg)
+      apply_sn, enterprise_id, enterprise_name, 
+      enterprise_name_en, producing_area, confirm_date, 
+      is_off, cfda_processid, cfda_new_processid, 
+      bevol_mid, remark, source, 
+      more_data1, more_data2, item_order, 
+      create_time, create_by, update_time, 
+      update_by, del_flg)
     values (#{id,jdbcType=BIGINT}, #{productName,jdbcType=VARCHAR}, #{productAlias,jdbcType=VARCHAR}, 
       #{jdPrice,jdbcType=DECIMAL}, #{tmallPrice,jdbcType=DECIMAL}, #{sales,jdbcType=INTEGER}, 
       #{tmallUrl,jdbcType=VARCHAR}, #{jdUrl,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
-      #{applySn,jdbcType=VARCHAR}, #{enterpriseName,jdbcType=VARCHAR}, #{enterpriseNameEn,jdbcType=VARCHAR}, 
-      #{producingArea,jdbcType=VARCHAR}, #{confirmDate,jdbcType=VARCHAR}, #{isOff,jdbcType=VARCHAR}, 
-      #{cfdaProcessid,jdbcType=VARCHAR}, #{cfdaNewProcessid,jdbcType=VARCHAR}, #{bevolMid,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{source,jdbcType=TINYINT}, #{moreData1,jdbcType=VARCHAR}, 
-      #{moreData2,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
-      #{delFlg,jdbcType=TINYINT})
+      #{applySn,jdbcType=VARCHAR}, #{enterpriseId,jdbcType=BIGINT}, #{enterpriseName,jdbcType=VARCHAR}, 
+      #{enterpriseNameEn,jdbcType=VARCHAR}, #{producingArea,jdbcType=VARCHAR}, #{confirmDate,jdbcType=VARCHAR}, 
+      #{isOff,jdbcType=VARCHAR}, #{cfdaProcessid,jdbcType=VARCHAR}, #{cfdaNewProcessid,jdbcType=VARCHAR}, 
+      #{bevolMid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{source,jdbcType=TINYINT}, 
+      #{moreData1,jdbcType=VARCHAR}, #{moreData2,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrProduct" >
     update t_br_product
@@ -101,6 +103,9 @@
       </if>
       <if test="applySn != null" >
         apply_sn = #{applySn,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseId != null" >
+        enterprise_id = #{enterpriseId,jdbcType=BIGINT},
       </if>
       <if test="enterpriseName != null" >
         enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
@@ -170,6 +175,7 @@
       jd_url = #{jdUrl,jdbcType=VARCHAR},
       apply_type = #{applyType,jdbcType=VARCHAR},
       apply_sn = #{applySn,jdbcType=VARCHAR},
+      enterprise_id = #{enterpriseId,jdbcType=BIGINT},
       enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
       enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
       producing_area = #{producingArea,jdbcType=VARCHAR},
@@ -228,6 +234,9 @@
       </if>
       <if test="applySn != null" >
           and t.apply_sn = #{applySn,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseId != null" >
+          and t.enterprise_id = #{enterpriseId,jdbcType=BIGINT}
       </if>
       <if test="enterpriseName != null" >
           and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
@@ -290,15 +299,12 @@
     </if>
   </sql>
   <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
-    select count(
-    <if test="labelIdArr != null" >distinct </if>
-    t.id) from t_br_product t
+    select count(t.id) from t_br_product t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
   <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
     select 
-    <if test="labelIdArr != null" >distinct</if>
     <include refid="Vo_Column_List" />
     from t_br_product t
     <include refid="Table_Join_Clause" />

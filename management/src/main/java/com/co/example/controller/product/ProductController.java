@@ -2,12 +2,12 @@ package com.co.example.controller.product;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +16,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.poi.ss.usermodel.Row;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
@@ -28,6 +26,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.co.example.common.constant.Constant;
@@ -38,24 +37,34 @@ import com.co.example.common.utils.excel.ExportExcel;
 import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.brand.TBrProductBrand;
+import com.co.example.entity.brand.aide.TBrBrandQuery;
 import com.co.example.entity.brand.aide.TBrProductBrandQuery;
 import com.co.example.entity.comment.TBrProductCommentStatistics;
 import com.co.example.entity.comment.aide.Comment;
 import com.co.example.entity.comment.aide.TBrProductCommentStatisticsQuery;
+import com.co.example.entity.enterprise.TBrEnterpriseBase;
+import com.co.example.entity.enterprise.TBrEnterpriseRegister;
+import com.co.example.entity.enterprise.aide.TBrEnterpriseBaseQuery;
+import com.co.example.entity.enterprise.aide.TBrEnterpriseRegisterQuery;
 import com.co.example.entity.export.TBrExport;
+import com.co.example.entity.label.TBrIngredientLabel;
+import com.co.example.entity.label.TBrIngredientLabelJoin;
 import com.co.example.entity.label.TBrLabel;
 import com.co.example.entity.label.TBrProductLabel;
+import com.co.example.entity.label.aide.TBrIngredientLabelQuery;
 import com.co.example.entity.label.aide.TBrLabelQuery;
 import com.co.example.entity.label.aide.TBrLabelVo;
 import com.co.example.entity.label.aide.TBrProductLabelQuery;
 import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.TBrProductEnterprise;
 import com.co.example.entity.product.TBrProductImage;
 import com.co.example.entity.product.TBrProductSpec;
 import com.co.example.entity.product.aide.ProductConstant;
 import com.co.example.entity.product.aide.TBrEnterpriseQuery;
 import com.co.example.entity.product.aide.TBrIngredientQuery;
+import com.co.example.entity.product.aide.TBrProductEnterpriseQuery;
 import com.co.example.entity.product.aide.TBrProductImageQuery;
 import com.co.example.entity.product.aide.TBrProductImageVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
@@ -64,24 +73,25 @@ import com.co.example.entity.product.aide.TBrProductSpecQuery;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
 import com.co.example.service.comment.TBrProductCommentStatisticsService;
+import com.co.example.service.enterprise.TBrEnterpriseBaseService;
+import com.co.example.service.enterprise.TBrEnterpriseRegisterService;
 import com.co.example.service.export.TBrExportService;
 import com.co.example.service.label.TBrLabelService;
 import com.co.example.service.label.TBrProductLabelService;
 import com.co.example.service.product.TBrAimService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrIngredientService;
+import com.co.example.service.product.TBrProductEnterpriseService;
 import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
 import com.co.example.service.solr.SolrService;
 import com.co.example.utils.BaseDataUtil;
 import com.github.moncat.common.generator.id.NextId;
-import com.github.moncat.common.service.BaseService;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -127,6 +137,15 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 
 	@Inject
 	SolrService solrService;
+	
+	@Inject
+	TBrProductEnterpriseService tBrProductEnterpriseService;
+	
+	@Inject
+	TBrEnterpriseRegisterService tBrEnterpriseRegisterService;
+	
+	@Inject
+	TBrEnterpriseBaseService tBrEnterpriseBaseService;
 
 	static final String PRODUCT_TOTAIL = "productTotail";
 
@@ -174,9 +193,11 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		query.setUpdateBy(6l);
 		long queryCount = tBrProductService.queryCount(query);
 		log.info("solr全量数据--需要同步" + queryCount);
-		//783874
-		int pagesize = 1000;
-		while (queryCount > 0) {
+		// 783874  --变成 784125
+		int pagesize = 100;
+//		int pagesize = 1000;
+		if (queryCount > 0) {
+//		while (queryCount > 0) {
 			List<TBrProductSolr> tBrProductSolrList = new ArrayList<TBrProductSolr>();
 			List<TBrProduct> tBrProductTmpList = new ArrayList<TBrProduct>();
 			PageReq pageReq = new PageReq();
@@ -185,21 +206,73 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 			Page<TBrProduct> page = tBrProductService.queryPageList(query, pageReq);
 			List<TBrProduct> content = page.getContent();
 			for (TBrProduct tBrProduct : content) {
-				TBrProductSolr tBrProductSolr = new TBrProductSolr();			
-				tBrProductSolr.setId(tBrProduct.getId());
+				TBrProductSolr tBrProductSolr = new TBrProductSolr();
+				Long id = tBrProduct.getId(); 
+				tBrProductSolr.setId(id);
 				tBrProductSolr.setEnterpriseName(tBrProduct.getEnterpriseName());
 				tBrProductSolr.setProductName(tBrProduct.getProductName());
 				tBrProductSolr.setConfirmDate(tBrProduct.getConfirmDate());
 				tBrProductSolr.setApplySn(tBrProduct.getApplySn());
-				// TODO 查询
-				String labels = tBrLabelService.queryLabelsByProductId(tBrProduct.getId());
-				tBrProductSolr.setLabelNames(labels);
+				tBrProductSolr.setBeid(tBrProduct.getEnterpriseId()+"");  //企业ID
+
+				//生产企业id 生产企业名称
+				TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+				tBrEnterpriseQuery.setJoinFlg(true);
+				tBrEnterpriseQuery.setProductId(id);
+				List<TBrEnterprise> tBrEnterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
+//				String enterprise2Ids = tBrEnterpriseList.stream().map(TBrEnterprise::getEnterpriseName).collect(Collectors.joining(","));
+				List<String> enterpriseIdsArr = Lists.newArrayList();
+				for (TBrEnterprise tBrEnterprise : tBrEnterpriseList) {
+					enterpriseIdsArr.add(tBrEnterprise.getId()+"");
+				}
+				tBrProductSolr.setPeids(String.join(",", enterpriseIdsArr));
+				
+				// 成分id 成分名称
+				TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
+				tBrIngredientQuery.setJoinFlg(true);
+				tBrIngredientQuery.setProductId(id);
+				List<TBrIngredient> tBrIngredientList = tBrIngredientService.queryList(tBrIngredientQuery);
+				List<String> iNameArr = Lists.newArrayList();
+				List<String> iIdsArr = Lists.newArrayList();
+				for (TBrIngredient tBrIngredient : tBrIngredientList) {
+					iNameArr.add(tBrIngredient.getName());
+					iIdsArr.add(tBrIngredient.getId() + "");
+				}
+				tBrProductSolr.setIngredients(String.join(",", iNameArr));
+				tBrProductSolr.setIids(String.join(",", iIdsArr));
+
+				//品牌
+				TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+				tBrBrandQuery.setJoinFlg(true);
+				tBrBrandQuery.setProductId(id);
+				List<TBrBrand> brandList = tBrBrandService.queryList(tBrBrandQuery);
+				List<String> bNameArr = Lists.newArrayList();
+				List<String> bIdsArr = Lists.newArrayList();
+				for (TBrBrand tBrBrand : brandList) {
+					bNameArr.add(tBrBrand.getName());
+					bIdsArr.add(tBrBrand.getId() + "");
+				}
+				tBrProductSolr.setBrands(String.join(",", bNameArr));
+				tBrProductSolr.setBids(String.join(",", bIdsArr));
+
+				//标签
+				TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
+				tBrLabelQuery.setProductJoinFlg(true);
+				tBrLabelQuery.setProductId(id);
+				List<TBrLabel> labelList = tBrLabelService.queryList(tBrLabelQuery);
+				List<String> lIdsArr = Lists.newArrayList();
+				for (TBrLabel tBrLabel : labelList) {
+					lIdsArr.add(tBrLabel.getId()+"");
+				}
+				tBrProductSolr.setLids(String.join(",", lIdsArr));
+				
 				tBrProductSolrList.add(tBrProductSolr);
 				
-				TBrProduct productTmp =  new TBrProduct();
+				TBrProduct productTmp = new TBrProduct();
 				productTmp.setId(tBrProduct.getId());
 				productTmp.setUpdateBy(7l);
 				tBrProductTmpList.add(productTmp);
+
 			}
 			solrService.syncProducts(tBrProductSolrList);
 			tBrProductService.updateInBatch(tBrProductTmpList);
@@ -218,9 +291,7 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	// update_by 数据从solr根据id删除，并将数据库中的id保存为 6l 以便后续再添加。
 
 	// solr 测试添加
-	
- 
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/addSolr", method = { RequestMethod.GET, RequestMethod.POST })
 	public Map<String, Object> addSolr(String q) throws Exception {
@@ -231,8 +302,8 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		tBrProductSolr.setEnterpriseName(q + DateFormatUtil.getDateTimeNumber());
 		tBrProductSolr.setProductName(q + DateFormatUtil.getDateTimeNumber() + "abc");
 		tBrProductSolr.setConfirmDate("date" + DateFormatUtil.getDateNumber());
-		tBrProductSolr.setApplySn("鲁B" + DateFormatUtil.getDateTimeNumber() + "汉字");
-		tBrProductSolr.setLabelNames("aa,bb,cc" + DateFormatUtil.getDateTimeNumber());
+		tBrProductSolr.setApplySn("鲁A" + DateFormatUtil.getDateTimeNumber() + "汉字");
+		tBrProductSolr.setLabelNames("123,234,345,456,567");
 		tBrProductSolrList.add(tBrProductSolr);
 		// if(i%500==0){
 		solrService.syncProducts(tBrProductSolrList);
@@ -251,14 +322,14 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 			PageReq pageReq, TBrProductQuery query) throws Exception {
 		query.setDelFlg(Constant.NO);
 		int pageSize = 15;
-		Map<String, Object> map = solrService.queryProductSolr(query, 15 * pageReq.getPageNumber(), pageSize);
+		Map<String, Object> map = solrService.querySolr(query, 15 * pageReq.getPageNumber(), pageSize);
 		pageReq.setPageSize(pageSize);
 		@SuppressWarnings("unchecked")
 		Page<TBrProductSolr> page = new PageImpl<TBrProductSolr>((List<TBrProductSolr>) map.get("list"), pageReq,
 				Integer.parseInt(map.get("count").toString()));
-		
+
 		List<TBrLabel> labelList = tBrLabelService.queryList();
-		
+
 		model.addAttribute("labelList", labelList);
 		model.addAttribute(QUERY, query);
 		model.addAttribute(PAGE, page);
@@ -571,4 +642,304 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		return result;
 	}
 
+	@RequestMapping(value = "/detail/{id}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String detail(Model model, HttpSession session, @PathVariable Long id) {
+		// 产品
+		TBrProduct tBrProduct = new TBrProduct();
+		tBrProduct.setId(id);
+		TBrProduct one = tBrProductService.queryOne(tBrProduct);
+
+		Float productScore = tBrIngredientService.getProductScore(id);
+		//标签
+		List<TBrLabel> labels = tBrLabelService.queryLabelListByProductId(id);
+		// 品牌
+		TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+		tBrBrandQuery.setJoinFlg(true);
+		tBrBrandQuery.setProductId(id);
+		TBrBrand brand = tBrBrandService.queryOne(tBrBrandQuery);
+		// 成分及统计
+		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
+		tBrIngredientQuery.setProductId(id);
+		tBrIngredientQuery.setJoinFlg(true);
+		List<TBrIngredient> ingredientList = tBrIngredientService.queryList(tBrIngredientQuery);
+		one = tBrProductService.getStatisticsInfo(one, ingredientList);
+		// 实际生产企业
+		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+		tBrEnterpriseQuery.setProductId(id);
+		tBrEnterpriseQuery.setJoinFlg(true);
+		List<TBrEnterprise> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
+		model.addAttribute("enterpriseList", enterpriseList);
+		model.addAttribute("productScore", productScore);
+		model.addAttribute("one", one);
+		model.addAttribute("labels", labels);
+		model.addAttribute("brand", brand); // TODO
+		return "product/detail";
+	}
+
+	@RequestMapping(value = "/tab1/{id}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String tab1(Model model, HttpSession session, @PathVariable Long id) { //产品id
+		// 产品
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setId(id);
+		TBrProduct one = tBrProductService.queryOne(tBrProductQuery);
+		// 成分
+		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
+		tBrIngredientQuery.setProductId(id);
+		tBrIngredientQuery.setJoinFlg(true);
+		List<TBrIngredient> ingredientList = tBrIngredientService.queryList(tBrIngredientQuery);
+		// 装饰成分信息
+		tBrIngredientService.decorateColour(ingredientList);
+		// 成分统计
+		one = tBrProductService.getStatisticsInfo(one, ingredientList);
+		model.addAttribute(ONE, one);
+		model.addAttribute("ingredientList", ingredientList);
+		return "product/tab1";
+	}
+
+	// 品牌
+	@RequestMapping(value = "/tab2/{id}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String tab2(Model model, HttpSession session, PageReq pageReq, @PathVariable Long id) { //品牌id
+		TBrBrand one = tBrBrandService.queryById(id);
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setJoinBrandFlg(true);
+		tBrProductQuery.setBrandId(one.getId());
+		pageReq.setPageSize(10);
+		Page<TBrProduct> page = tBrProductService.queryPageList(tBrProductQuery, pageReq);
+		long count = page.getTotalElements();
+		model.addAttribute("count", count);
+		model.addAttribute(PAGE, page);
+		model.addAttribute(ONE, one);
+		return "product/tab2";
+	}
+
+	// 企业
+	@RequestMapping(value = "/tab3/{id}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String tab3(Model model, HttpSession session, PageReq pageReq, @PathVariable Long id) { //企业id
+		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+		tBrEnterpriseQuery.setId(id);
+		TBrEnterprise one = tBrEnterpriseService.queryOne(tBrEnterpriseQuery);
+		
+		TBrEnterpriseBaseQuery tBrEnterpriseBaseQuery = new TBrEnterpriseBaseQuery();
+		tBrEnterpriseBaseQuery.setEid(id);
+		TBrEnterpriseBase base = tBrEnterpriseBaseService.queryOne(tBrEnterpriseBaseQuery);
+		
+		TBrEnterpriseRegisterQuery tBrEnterpriseRegisterQuery = new TBrEnterpriseRegisterQuery();
+		tBrEnterpriseRegisterQuery.setEid(id);
+		TBrEnterpriseRegister register = tBrEnterpriseRegisterService.queryOne(tBrEnterpriseRegisterQuery);
+		
+		//该企业的产品
+		TBrProductEnterpriseQuery tBrProductEnterpriseQuery = new TBrProductEnterpriseQuery();
+		tBrProductEnterpriseQuery.setEnterpriseId(id);
+		tBrProductEnterpriseQuery.setJoinProductFlg(true);
+		Page<TBrProductEnterprise> page = tBrProductEnterpriseService.queryPageList(tBrProductEnterpriseQuery, pageReq);
+		
+		long count = page.getTotalElements();
+		model.addAttribute("count", count);
+		
+		model.addAttribute(ONE, one);
+		model.addAttribute("base", base);
+		model.addAttribute("register", register);
+		model.addAttribute(PAGE, page);
+		return "product/tab3";
+	}
+
+	// 实际生产企业
+	@RequestMapping(value = "/tab4/{id}", method = { RequestMethod.GET, RequestMethod.POST })
+	public String tab4(Model model, HttpSession session, PageReq pageReq, @PathVariable Long id) { //产品id
+		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+		tBrEnterpriseQuery.setProductId(id);
+		tBrEnterpriseQuery.setJoinFlg(true);
+		List<TBrEnterprise> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
+		TBrEnterprise tBrEnterprise = enterpriseList.get(0);
+		model.addAttribute(ONE, tBrEnterprise);
+		
+		TBrEnterpriseBaseQuery tBrEnterpriseBaseQuery = new TBrEnterpriseBaseQuery();
+		tBrEnterpriseBaseQuery.setEid(tBrEnterprise.getId());
+		TBrEnterpriseBase base = tBrEnterpriseBaseService.queryOne(tBrEnterpriseBaseQuery);
+		model.addAttribute("base", base);
+		
+		TBrEnterpriseRegisterQuery tBrEnterpriseRegisterQuery = new TBrEnterpriseRegisterQuery();
+		tBrEnterpriseRegisterQuery.setEid(tBrEnterprise.getId());
+		TBrEnterpriseRegister register = tBrEnterpriseRegisterService.queryOne(tBrEnterpriseRegisterQuery);
+		model.addAttribute("register", register);
+		
+		
+		TBrProductEnterpriseQuery tBrProductEnterpriseQuery = new TBrProductEnterpriseQuery();
+		tBrProductEnterpriseQuery.setEnterpriseId(tBrEnterprise.getId());
+		tBrProductEnterpriseQuery.setJoinProductFlg(true);
+		Page<TBrProductEnterprise> page = tBrProductEnterpriseService.queryPageList(tBrProductEnterpriseQuery, pageReq);
+		model.addAttribute(PAGE, page);
+
+		long count = page.getTotalElements();
+		model.addAttribute("count", count);
+		return "product/tab4";
+	}
+	
+	
+	//待关联的产品标签列表
+	@RequestMapping(value = "/labels", method = { RequestMethod.GET, RequestMethod.POST })
+	public String labels( Model model ) throws Exception{	 
+		return  "product/labels";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/labelList", method = { RequestMethod.GET, RequestMethod.POST })
+	public Map<String,Object> labelList( Model model,String key ) throws Exception{		 
+		Map<String, Object> result = result();
+		TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
+		tBrLabelQuery.setNameLike(key);
+		tBrLabelQuery.setDelFlg(Constant.NO);
+		List<TBrLabel> labelList = tBrLabelService.queryList(tBrLabelQuery);	
+		result.put("labelList", labelList);
+		return  result;
+	}
+	
+	//关联产品标签
+	@ResponseBody
+	@RequestMapping(value = "/setLabels", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> setLabels(Model model, String pids,@RequestParam(value = "lids[]") Long[] lids)  {
+		Map<String, Object> result = result();	 	
+		try {
+			String[] productIds = pids.split(",");
+			for (int i = 0; i < productIds.length; i++) {
+				Long productId = Long.parseLong(productIds[i]);
+				for (int j = 0; j < lids.length; j++) {
+					Long labelId = lids[j];				
+					TBrProductLabel tBrProductIdsLabel = new TBrProductLabel();
+					tBrProductIdsLabel.setProductId(productId);
+					tBrProductIdsLabel.setLabelId(labelId);
+					long queryCount = tBrProductLabelService.queryCount(tBrProductIdsLabel);
+					if(queryCount ==0){
+						tBrProductIdsLabel.setCreateTime(new Date());
+						tBrProductIdsLabel.setDelFlg(Constant.NO);
+						tBrProductLabelService.add(tBrProductIdsLabel);
+					}
+				}
+			}
+		} catch (Exception e) {
+			result.put("info", "关联失败！");
+		}		
+		result.put("info", "关联完成！");
+		return result;
+	}
+	 
+	
+	
+	//待关联的产品标签列表
+	@RequestMapping(value = "/brandInit", method = { RequestMethod.GET, RequestMethod.POST })
+	public String brand( Model model ) throws Exception{		 
+		return  "product/brand";
+	}
+	@ResponseBody
+	@RequestMapping(value = "/brandList", method = { RequestMethod.GET, RequestMethod.POST })
+	public Map<String,Object> brandList( Model model,String key ) throws Exception{		 
+		Map<String, Object> result = result();
+		TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+		tBrBrandQuery.setNameLike(key);
+		tBrBrandQuery.setDelFlg(Constant.NO);
+		List<TBrBrand> brandList = tBrBrandService.queryList(tBrBrandQuery);	
+		result.put("brandList", brandList);
+		return  result;
+	}
+	
+	//关联产品标签
+	@ResponseBody
+	@RequestMapping(value = "/setBrand", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String,Object> setBrand(Model model, String pids,@RequestParam(value = "bids[]") Long[] bids)  {
+		Map<String, Object> result = result();	 	
+		try {
+			String[] productIds = pids.split(",");
+			for (int i = 0; i < productIds.length; i++) {
+				Long productId = Long.parseLong(productIds[i]);
+				for (int j = 0; j < bids.length; j++) {
+					Long labelId = bids[j];				
+					TBrProductBrand tBrProductBrand = new TBrProductBrand();
+					tBrProductBrand.setProductId(productId);
+					tBrProductBrand.setBrandId(labelId);
+					long queryCount = tBrProductBrandService.queryCount(tBrProductBrand);
+					if(queryCount ==0){
+						tBrProductBrand.setCreateTime(new Date());
+						tBrProductBrand.setDelFlg(Constant.NO);
+						tBrProductBrandService.add(tBrProductBrand);
+					}
+				}
+			}
+		} catch (Exception e) {
+			result.put("info", "关联失败！");
+		}		
+		result.put("info", "关联完成！");
+		return result;
+	}
+	 
+	
+
+	// solr 查询
+	@RequestMapping(value = "/list3", method = { RequestMethod.GET, RequestMethod.POST })
+	public String list3(Model model, HttpSession session, PageReq pageReq, TBrProductQuery query) throws Exception {
+		
+
+		TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+		tBrEnterpriseQuery.setDelFlg(Constant.NO);
+		tBrEnterpriseQuery.setIsChoice(Constant.YES);
+		tBrEnterpriseQuery.setIsBus(Constant.YES);
+		List<TBrEnterprise> bEnterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
+		model.addAttribute("bEnterpriseList", bEnterpriseList);
+		
+		TBrEnterpriseQuery tBrEnterpriseQuery2 = new TBrEnterpriseQuery();
+		tBrEnterpriseQuery2.setDelFlg(Constant.NO);
+		tBrEnterpriseQuery2.setIsChoice(Constant.YES);
+		tBrEnterpriseQuery2.setIsProduct(Constant.YES);
+		List<TBrEnterprise> pEnterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery2);
+		model.addAttribute("pEnterpriseList", pEnterpriseList);
+		
+		
+		TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+		tBrBrandQuery.setDelFlg(Constant.NO);
+		tBrBrandQuery.setIsChoice(Constant.YES);
+		List<TBrBrand> brandList = tBrBrandService.queryList(tBrBrandQuery);
+		model.addAttribute("brandList", brandList);
+		
+		TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
+		tBrLabelQuery.setDelFlg(Constant.NO);
+		tBrLabelQuery.setIsChoice(Constant.YES);
+		List<TBrLabel> labelList = tBrLabelService.queryList(tBrLabelQuery);
+		model.addAttribute("labelList", labelList);
+
+		TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
+		tBrIngredientQuery.setDelFlg(Constant.NO);
+		tBrIngredientQuery.setIsChoice(Constant.YES);
+		List<TBrIngredient> ingredientList = tBrIngredientService.queryList(tBrIngredientQuery);
+		model.addAttribute("ingredientList", ingredientList);
+			
+		
+		query.setDelFlg(Constant.NO);
+		int pageSize = 15;
+		Map<String, Object> map = solrService.querySolr(query, 15 * pageReq.getPageNumber(), pageSize);
+		pageReq.setPageSize(pageSize);
+		@SuppressWarnings("unchecked")
+		int count = Integer.parseInt(map.get("count").toString());
+		Page<TBrProductSolr> page = new PageImpl<TBrProductSolr>((List<TBrProductSolr>) map.get("list"), pageReq,
+				count);
+		model.addAttribute("count", count);
+		model.addAttribute(QUERY, query);
+		model.addAttribute(PAGE, page);
+		return "product/list3";
+	}
+
+	
+	// solr 查询
+	@ResponseBody
+	@RequestMapping(value = "/list4", method = { RequestMethod.GET, RequestMethod.POST })
+	public Map<String,Object> list4(Model model,   String  key) throws Exception {
+		Map<String, Object> result = result();
+		TBrProductQuery query = new TBrProductQuery();
+		query.setNormal(key);
+		query.setDelFlg(Constant.NO);
+		Map<String, Object> map = solrService.querySolr(query,1, 10);
+		List<TBrProductSolr> list = (List<TBrProductSolr>) map.get("list");	 	 
+		result.put("list", list);
+		return result;
+	}
+
+	
 }

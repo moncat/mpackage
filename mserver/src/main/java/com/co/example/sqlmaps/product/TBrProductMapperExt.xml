@@ -15,6 +15,7 @@
     </collection>
      -->
     <result column="recommend_id" property="recommendId" jdbcType="BIGINT" />
+    <result column="brandName" property="brandName" jdbcType="VARCHAR" />
   </resultMap>
   <!-- 
    <resultMap id="aaaaa" type="com.co.example.entity.product.TBrProductIngredient" >
@@ -33,6 +34,7 @@
     t.jd_url, 
     t.apply_type, 
     t.apply_sn, 
+    t.enterprise_id,
     t.enterprise_name, 
     t.enterprise_name_en, 
     t.producing_area, 
@@ -148,4 +150,21 @@
      set update_by = 1
      where  t.producing_area = #{producingArea,jdbcType=VARCHAR} and t.update_by =0
   </update>
+  
+  <select id="selectIngredientCount" parameterType="java.util.Map" resultType="com.co.example.entity.product.aide.TBrIngredientCountVo" >
+		
+		SELECT
+			t.id, t.`name`, count(pi.id) num
+		FROM
+			`t_br_ingredient` t
+		left join t_br_product_ingredient pi on t.id = pi.ingredient_id
+		WHERE
+			t.create_time >  #{limitTime,jdbcType=VARCHAR}
+			and t.create_time &lt;  #{endTime,jdbcType=VARCHAR}
+		group by t.id
+		order by num desc
+  </select>
+  
+  
+  
 </mapper>

@@ -2,6 +2,7 @@ package com.co.example.service.product;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.aide.ConfirmVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.github.moncat.common.service.BaseService;
 
@@ -103,6 +105,16 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	 * @param id
 	 */
 	TBrProduct setLabels(TBrProduct tBrProduct);
+	
+	/**
+	 * 根据日期获取备案数量
+	 * @param days 获取的数
+	 * @param type 是否获取注销   1 获取注销  0不获取注销
+	 * @return
+	 */
+	 List<ConfirmVo>  queryConfirmData(String startTime ,String endTime,Integer type);
+	
+	 
 	
 	
 }

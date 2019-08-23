@@ -54,6 +54,9 @@ public class DateFormatUtil {
 	public static String formatDate(Date date){
 		return format(date,formartDate);
 	}
+	public static String formatDate(){
+		return formatDate(new Date());
+	}
 	
 	/**
 	 * 时间转字符串 格式:HH:mm:ss(null转为空字符串)

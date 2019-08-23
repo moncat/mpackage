@@ -1,0 +1,225 @@
+<html layout:decorator="/common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+.logout {
+	color: #fff;
+	background-image: url(/img/product/logout.png);
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	display: inline-block;
+	overflow: hidden;
+	width: 73px;
+	height: 50px;
+	position: relative;
+	right: -27px;
+	top: -19px;
+}
+
+.logout .words {
+	padding-top: 11px;
+	padding-left: 20px;
+}
+
+.score {
+	border-width: 0px;
+	left: 0px;
+	top: 0px;
+	background: inherit;
+	background-color: rgba(254, 148, 0, 1);
+	border: none;
+	border-radius: 35px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-family: '微软雅黑 Bold', '微软雅黑';
+	font-weight: 700;
+	font-style: normal;
+	font-size: 15px;
+	color: #FFFFFF;
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+}
+td{
+	font-size:14px;
+}
+.label{
+	color: #fff;
+	background-color: rgba(45, 183, 245, 1);
+}
+body {
+	background-color: #eee;
+}
+
+.floatDiv{
+    position: fixed;
+    top: 238px;
+    right: 58px;
+    z-index: 999;
+    font-size: 16px;
+    overflow: hidden;
+    visibility: visible;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    font-size: 12px;
+    width: 124px;
+    text-align: center;
+    text-decoration: none;
+}
+
+</style>
+</section>
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+		产品管理 <span class="c-gray en">&gt;</span> 产品详情 <a
+			class="btn btn-success radius r btn-refresh"
+			style="line-height: 1.6em; margin-top: 3px"
+			href="javascript:location.replace(location.href);" title="刷新"><i
+			class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container">
+		<div class="row cl mt-10">
+			<div class="col-md-3 col-md-offset-1">
+				<div class="panel panel-default">
+					<div class="panel-body cl">
+						<div    th:style="'display:' + @{(${one.moreData2 eq null} ? 'none' : 'inline-block')} + ''" class='logout f-r'>
+							<div class='words'>已注销</div>
+						</div>
+						<div class="line  mt-5"></div>
+						<span class="f-20 product" th:attr="data-id=${one.id}"  th:utext="${one.productName}"> 洁面乳</span>
+						<div class="f-r mt-5">
+							<button type="button" class="btn btn-default radius" id="addContrast" name="">
+								<i class="Hui-iconfont">&#xe600;</i>对比
+							</button>
+						</div>
+						<div class="line mt-10"></div>
+						<table class="table mt-10" >
+							<tbody >
+								<tr class="text-c">
+									<td style="width: 30%">产品评分：</td>
+									<td>
+										<div class="score">
+											<div style="padding-top: 23px;"><span th:utext="${productScore}"></span>分</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">产品品牌：</td>
+									<td style="width: 70%" th:if="${brand} ne null" th:utext="${brand.name}">雅诗兰黛</td>
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">备案号：</td>
+									<td style="width: 70%" th:utext="${one.applySn}" >粤G妆网备字2017179708</td>
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">备案日期：</td>
+									<td style="width: 70%" th:utext="${one.confirmDate}">2017-12-20</td>
+								</tr>
+
+								<tr class="text-c">
+									<td style="width: 30%">备案类型：</td>
+									<td style="width: 70%" th:utext="${one.applyType} eq 1? '国产备案' :'进口备案'" >国产备案</td>  
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">企业名称：</td>
+									<td style="width: 70%" th:utext="${one.enterpriseName}"></td> 
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">实际生产企业：</td>
+									<td style="width: 70%">
+									<span th:each="enterprise,status:${enterpriseList}" th:utext="${enterprise.enterpriseName}" >
+									</span>
+									</td>
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">成分分析：</td>
+									<td style="width: 70%">
+										  本产品含有香精:<span class="mt-10" th:text="${#lists.size(one.essenceList)}"></span>种(<span th:each="essence: ${one.essenceList}" th:text="${essence}+' '"></span>)<br/>
+			                        	  本产品含有防腐剂:<span class="mt-10" th:text="${#lists.size(one.corrosionList)}"></span>种(<span th:each="corrosion: ${one.corrosionList}" th:text="${corrosion}+' '"></span>)<br/>
+			                        	  本产品含有风险成分:<span class="mt-10" th:text="${#lists.size(one.riskList)}"></span>种(<span th:each="risk: ${one.riskList}" th:text="${risk}+' '"></span>)<br/>
+			                        	  本产品含有清洁成分:<span class="mt-10" th:text="${#lists.size(one.cleanList)}"></span>种(<span th:each="clean: ${one.cleanList}" th:text="${clean}+' '"></span>)<br/>
+			                        	  本产品含有表活成分:<span class="mt-10" th:text="${#lists.size(one.activeList)}"></span>种(<span th:each="active: ${one.activeList}" th:text="${active}+' '"></span>)<br/>
+									</td>
+								</tr>
+								<tr class="text-c">
+									<td style="width: 30%">标签：</td>
+									<td style="width: 70%">
+										<div >
+											<button  th:attr="data-id=${one.id}" type="button" class="btn btn-default radius setLabel" >
+												<i class="Hui-iconfont">&#xe600;</i>设置标签
+											</button>
+										</div>
+										<div class="row ">
+									 		<div class="col-md-5 col-md-offset-1 label mt-5"
+									 		th:if="${labels} ne null" 
+									 		th:each="label,status2:${labels}"
+									 		 th:utext="${label.name}"
+									 		>提拉紧致</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div id="tab_demo" class="HuiTab">
+							<div class="tabBar clearfix">
+								<span>成分列表</span>
+								<span  th:if="${brand} ne null">品牌信息</span>
+								<span  th:if="${one.enterpriseId} ne null" >企业信息</span>
+								<span>实际生产企业信息</span>
+							</div>
+							<div class="tabCon">
+							  	<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab1/'+${one.id}}" 
+							  	onload="this.height=this.contentWindow.document.body.scrollHeight"
+									style="width: 100%; "></iframe> 
+							</div>
+							<div class="tabCon" th:if="${brand} ne null">
+							 	<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab2/'+${brand.id}}"							
+									style="width: 100%; "></iframe> 
+							</div>
+							<div class="tabCon" th:if="${one.enterpriseId} ne null" >
+								<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab3/'+${one.enterpriseId}}"					
+									style="width: 100%; "></iframe> 
+							</div>
+							<div class="tabCon">
+						 		<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab4/'+${one.id}}"						
+									style="width: 100%; "></iframe>  
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='floatDiv'>
+			<div style="background-color: rgb(45, 183, 245);">
+				<div class="cl" style='padding: 5px;'>
+					<div class='r'>
+						<a id="contrastClose" ><i class="Hui-iconfont">&#xe706;</i> </a>
+					</div>
+					[<span class="contrastListSize">0</span>/5]对比框
+					
+				</div>			
+			</div>
+			<div style='padding: 5px; ' class='contrastList'>							
+			</div>
+			<div  class="cl"  style='padding: 5px; '>
+				<div  class='l'><input class="btn btn-secondary radius nowContrast" type="button" value="对比"/></div>
+				<div  class='r'><input class="btn btn-default radius clearContrast" type="button" value="清除"/></div>
+			</div>
+		</div>
+		<div style="display:block" id="showMore2">3333333333</div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript"
+		src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/js/product/detail.js"></script>
+</section>
+</html>

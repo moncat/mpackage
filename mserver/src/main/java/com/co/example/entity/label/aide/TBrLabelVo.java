@@ -10,4 +10,6 @@ public class TBrLabelVo extends TBrLabel {
 	
 	private boolean selected = false;
 	
+	private String labelClassName;
+	
 }

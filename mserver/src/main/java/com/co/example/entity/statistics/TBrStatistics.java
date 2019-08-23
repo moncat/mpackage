@@ -48,7 +48,7 @@ public class TBrStatistics extends BaseEntity {
     /** 产品图片数量 */
     private String moreData12;
 
-    /** 数据 */
+    /** 运营企业数据 */
     private String moreData13;
 
     /** 数据 */

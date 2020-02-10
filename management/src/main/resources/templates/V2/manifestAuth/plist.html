@@ -1,0 +1,402 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/manifestAuth/plist.css" />
+</section>
+<section layout:fragment="main">
+<div class="wrapper">
+				<div class="content_wrapper">
+					<!--选项卡-->
+					<div class="layui-tab layui-tab-card">
+						<ul class="layui-tab-title">
+							<li data-index='0' class="layui-this">关注产品</li>
+							<li data-index='1'>关联品牌</li>
+							<li data-index='2'>关联供应商</li>
+							<li data-index='3'>关联品类</li>
+							<li data-index='4'>关联成分</li>
+						</ul>
+						<div class="layui-tab-content">
+							<!--tab1-->
+							<div class="layui-tab-item layui-show clearfix">
+								<!--数据-->
+								<div class="numbers" id="p100">
+								</div>
+								<!--/数据-->
+								<!--图表-->
+								<div style="width: 100%; overflow: hidden;">
+									<div class="Statistical-table-left clearfix">
+										<div style="height: 55px;"></div>
+										<div class="Statistical-table chart" id="pie111" >
+										</div>
+									</div>
+									<div class="Statistical-table-right clearfix">
+										<h3 class="clearfix">
+											<span class="float-left" style="margin-top: 10px;">关注品牌供应商分布图</span>
+											<div class="float-right month" data-bar='bar112'>
+												<button type="button" class="btn btn-primary " data-id='1'>7天</button>
+												<button type="button" class="btn" data-id='2'>30天</button>
+												<button type="button" class="btn" data-id='3'>90天</button>
+											</div>
+										</h3>
+										<div class="Statistical-table" id="bar112"></div>
+									</div>
+								</div>
+								<!--/图表-->
+								<p class="Index-analysis-title">商品列表<span class="float-right Refresh"><i class="iconfont iconzhongzhi"></i>&nbsp;刷新数据</span></p>
+								<div style="width: 98%; margin: 0 auto;">
+									<table class="layui-table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>产品名称</th>
+												<th>产品配方评分</th>
+												<th>品牌</th>
+												<th>品类</th>
+												<th>生产企业</th>
+												<th>实际生产企业</th>
+												<th>淘宝价格</th>
+												<th>全网月销量</th>
+												<th>全网月销售额</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody id="pList">											
+										</tbody>
+									</table>
+									<div id="pPage"></div>
+								</div>
+							</div>
+							<!--/tab1-->
+							<!--tab2-->
+							<div class="layui-tab-item  clearfix">
+								<!--数据-->
+								<div class="numbers " id="pie121" style='width:100%;height:250px;text-align: center;'>
+								</div>
+								<!--/数据-->
+								<!--图表-->
+								<div style="width: 100%; overflow: hidden;">
+									<div class="Statistical-table-left clearfix">
+										<div style="height: 55px;"></div>
+										<div class="Statistical-table chart" id="pie122">
+										</div>
+									</div>
+									<div class="Statistical-table-right clearfix">
+										<h3 class="clearfix">
+											<span class="float-left" style="margin-top: 10px;">关注品牌生产供应商权重排行榜TOP10</span>
+										</h3>
+										<div class="Statistical-table">
+											<table class="layui-table">
+												<thead>
+													<tr>
+														<th>排名</th>
+														<th>供应商名称</th>
+														<th>品牌数</th>
+														<th>品类</th>
+														<th>产品数</th>
+														<th>供应商权重</th>
+													</tr>
+												</thead>
+												<tbody  id='top123'>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!--/图表-->
+								<p class="Index-analysis-title">关注品牌列表</p>
+								<div style="width: 98%; margin: 0 auto;">
+									<table class="layui-table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>品牌名称</th>
+												<th>品牌等级</th>
+												<th>供应商</th>
+												<th>品类</th>
+												<th>备案数</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody id="bList">
+										</tbody>
+									</table>
+									<div id="bPage"></div>
+								</div>
+
+							</div>
+							<!--/tab2-->
+							<!--tab3-->
+							<div class="layui-tab-item clearfix">
+								<!--数据-->
+								<div class="numbers" id="p130"></div>
+								<!--/数据-->
+								<!--图表-->
+								<div style="width: 100%; overflow: hidden;">
+									<div class="Statistical-table-left clearfix">
+										<div style="height: 55px;"></div>
+										<div class="Statistical-table chart" id="pie131" >
+										</div>
+									</div>
+									<div class="Statistical-table-right clearfix">
+										<div class="Statistical-table">
+											<table class="layui-table">
+												<thead>
+													<tr>
+														<th>排名</th>
+														<th>供应商名称</th>
+														<th>品牌数</th>
+														<th>品类</th>
+														<th>产品数</th>
+														<th>供应商权重</th>
+													</tr>
+												</thead>
+												<tbody id='top132'></tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!--地图-->
+								<div class="map-box chart" id="cn133" >
+								</div>
+								<!--/地图-->
+								<!--/图表-->
+								<p class="Index-analysis-title">关注供应商列表</p>
+								<div style="width: 98%; margin: 0 auto;">
+									<table class="layui-table">
+										<thead>
+											<tr>
+												<th>排行</th>
+												<th>供应商名称</th>
+												<th>备案号</th>
+												<th>发证日期</th>
+												<th>有效期</th>
+												<th>合作品牌数</th>
+												<th>生成品类</th>
+												<th>生成产品的数</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody id="eList">
+										</tbody>
+									</table>
+									<div id="ePage"></div>
+								</div>
+							</div>
+							<!--/tab3-->
+							<!--tab4-->
+							<div class="layui-tab-item clearfix">
+								<!--图表-->
+								<div style="width: 100%; overflow: hidden;">
+									<div class="Statistical-table-left clearfix">
+										<div style="height: 55px;"></div>
+										<div class="Statistical-table  chart" id="pie141">
+										</div>
+									</div>
+									<div class="Statistical-table-right clearfix">
+										<h3 class="clearfix">
+											<span class="float-left" style="margin-top: 10px;">关注产品品类销售分析（上月）</span>
+											<div class="float-right month" data-bar='bar142'>
+												<button type="button" class="btn btn-primary" data-id='1'>7天</button>
+												<button type="button" class="btn" data-id='2'>30天</button>
+												<button type="button" class="btn" data-id='3'>90天</button>
+											</div>
+										</h3>
+										<div class="Statistical-table chart" id="bar142"></div>
+									</div>
+								</div>
+								<!--/图表-->
+								<p class="Index-analysis-title">关联品类类别</p>
+								<div style="width: 98%; margin: 0 auto;">
+									<table class="layui-table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>品类名称</th>
+												<th>产品数</th>
+												<th>品牌数</th>
+												<th>供应商数</th>
+												<th>全网月销量</th>
+												<th>全网月销售额</th>
+											</tr>
+										</thead>
+										<tbody id="cList">
+										</tbody>
+									</table>
+									<div id="cPage"></div>
+								</div>
+
+							</div>
+
+							<!--/tab4-->
+							<!--tab5-->
+							<div class="layui-tab-item clearfix">
+								<!--图表-->
+								<div style="width: 100%; overflow: hidden;">
+									<div class="Statistical-table-left clearfix">
+										<div style="height: 55px;"></div>
+										<div class="Statistical-table chart" id="pie151">
+										</div>
+									</div>
+									<div class="Statistical-table-right clearfix">
+										<h3 class="clearfix">
+											<span class="float-left" style="margin-top: 10px;">优质供应商排行榜TOP10</span>
+										</h3>
+										<div class="Statistical-table  chart" id="line152">
+										</div>
+									</div>
+								</div>
+								<!--/图表-->
+								<p class="Index-analysis-title">关注供应商列表</p>
+								<div style="width: 98%; margin: 0 auto;">
+									<table class="layui-table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>成分名称</th>
+												<th>使用目的</th>
+												<th>备案产品数</th>
+												<th>全网月销量</th>
+												<th>全网月销售额</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody  id="iList">
+										</tbody>
+									</table>
+									<div id="iPage"></div>
+								</div>
+							</div>
+							<!--tab5-->
+						</div>
+					</div>
+					<!--选项卡-->
+				</div>
+			</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/v2/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/china.js"></script>
+	<script type="text/javascript" src="/js/v2/manifestAuth/model.js?version=8"></script>
+	<script type="text/javascript" src="/js/v2/manifestAuth/plist.js?version=11"></script>
+		<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="/js/v2/common/form_page_post.js?version=1"></script>
+	<script id="topTmp" type="text/x-jquery-tmpl">
+{{each(i,item) jsondata}} 
+  <tr  class="text-c">
+	<td>${i+1}</td>												
+	<td>		
+		 <a class="btn-link showMoreE" data-id="${item.id}" title="${item.enterpriseName}" target='_blank' >
+			<span>${item.enterpriseName}</span>
+		</a> 
+	</td>												
+	<td>${item.brandNum}</td>												
+	<td>${item.catagoryNum}</td>												
+	<td>${item.productNum}</td>												
+	<td>${item.enterpriseWeight}</td>																	
+  </tr>		
+{{/each}}
+	</script>
+<script id="pListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+  <tr  class="text-c">
+	<td>${size*number+i+1}</td>	
+	<td>
+		<a href="/product/detail/${item.productId}" target="_self">
+			<span >${item.productName}</span>
+		</a>					
+	</td>											
+	<td>${item.iscore}</td>																	
+	<td>${operNull(item.productBrandName)}</td>																	
+	<td>${operNull(item.categoryName)}</td>																	
+	<td>${operNull(item.enterpriseName)}</td>																	
+	<td>${operNull(item.realEnterpriseName)}</td>																	
+	<td>${item.taobaoPrice}</td>																	
+	<td>${item.taobaoSale}</td>																	
+	<td>${item.taobaoTurnover}</td>																	
+	<td>
+		<a href="javascript:void(0)" class="showMoreP" data-id="${item.productId}" >
+			<i class="Hui-iconfont ">&#xe6f1;</i>商品链接
+		</a>
+	</td>
+  </tr>		
+{{/each}}
+	</script>	
+	<script id="bListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+    <td>
+		<a href="javascript:void(0)" class="showMoreB" data-id="${item.brandId}" >
+			<span>${item.name}</span>
+		</a>
+    </td>
+    <td>${getLevelName(item.level)}</td>
+	<td>${item.eenum}</td>
+	<td>${item.cnum}</td>
+	<td>${item.pnum}</td>
+    <td>
+		<a href="javascript:void(0)" class="showMoreB" data-id="${item.brandId}" >
+    		<i class="Hui-iconfont">&#xe647;</i>数据分析
+		</a>
+    </td>
+  </tr>		
+{{/each}}
+	</script>	
+   <script id="eListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+    <td>
+    	<a href="javascript:void(0)" class="showMoreE" data-id="${item.enterpriseId}" >
+			<span>${item.enterpriseName}</span>
+		</a>
+    </td>
+	<td>${item.applySn}</td>
+	<td>${item.startDate}</td>
+	<td>${item.endDate}</td>
+	<td>${item.bnum}</td>
+	<td>${item.cnum}</td>
+	<td>${item.pnum}</td>
+    <td>
+		<a href="javascript:void(0)" class="showMoreE" data-id="${item.enterpriseId}" >
+    		<i class="Hui-iconfont">&#xe647;</i>数据分析
+		</a>
+    </td>
+  </tr>		
+{{/each}}
+  </script>
+   <script id="cListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+	<td>${item.name}</td>
+	<td>${item.pnum}</td>
+	<td>${item.bnum}</td>
+	<td>${item.eenum}</td>
+	<td>${item.taobaoSale}</td>
+	<td>${item.taobaoTurnover}</td>
+  </tr>		
+{{/each}}
+  </script>
+     <script id="iListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+	<td>
+    	<a href="javascript:void(0)" class="showMoreI" data-id="${item.ingredientId}" >
+			<span>${item.name}</span>
+		</a>
+    </td>
+	<td>${item.aims}</td>
+	<td>${item.pnum}</td>
+	<td>${item.taobaoSale}</td>
+	<td>${item.taobaoTurnover}</td>
+	<td>
+		<a href="javascript:void(0)" class="showMoreI" data-id="${item.ingredientId}" >
+    		<i class="Hui-iconfont">&#xe647;</i>数据分析
+		</a>
+    </td>
+  </tr>		
+{{/each}}
+  </script>	
+</section>
+</html>

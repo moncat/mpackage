@@ -9,7 +9,19 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class TBrBrand extends BaseEntity {
-    /** id */
+	
+	
+	
+    public TBrBrand(Long id) {
+		super();
+		this.id = id;
+	}
+
+	public TBrBrand() {
+		super();
+	}
+
+	/** id */
     private Long id;
 
     /** 中文名 */
@@ -35,6 +47,9 @@ public class TBrBrand extends BaseEntity {
 
     /** 故事历史 */
     private String story;
+
+    /** 品牌等级 顶级10分 一线8 二线5 三线2 四线1 其他0.5 */
+    private Byte level;
 
     /** 是否被选择为常用 */
     private Byte isChoice;

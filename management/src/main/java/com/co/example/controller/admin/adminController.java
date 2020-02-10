@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
+import org.eclipse.jetty.util.StringUtil;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -31,6 +32,7 @@ import com.co.example.service.admin.TAdminLoginService;
 import com.co.example.service.admin.TAdminRoleService;
 import com.co.example.service.admin.TAdminService;
 import com.co.example.utils.SessionUtil;
+import com.google.common.collect.Maps;
 
 
 
@@ -166,6 +168,7 @@ public class adminController {
 	public String editPwdInit(HttpSession session)throws Exception {
 		return "admin/editPwdInit";
 	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/editPwd", method = { RequestMethod.GET,RequestMethod.POST })
 	public Map<String, Object> editPwd(HttpSession session,String oldPwd,String newPwd1,String newPwd2)throws Exception {
@@ -184,7 +187,6 @@ public class adminController {
 			query.setPassword(MD5.encodeStr(newPwd1));
 			tAdminService.updateByIdSelective(query);			
 			result.put("code", HttpStatusCode.CODE_SUCCESS);
-			
 		}else{
 			result.put("desc", "原密码不正确！");
 			result.put("code", HttpStatusCode.CODE_ERROR);
@@ -192,5 +194,48 @@ public class adminController {
 		return result;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/changeNew", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> changeNew(HttpSession session) throws Exception {
+		HashMap<String, Object> result = Maps.newHashMap();
+		result.put("code", "200");
+		TAdmin admin = SessionUtil.getAdmin(session);
+		String pageVersion = admin.getPageVersion();
+		Long aid = admin.getId();
+		if(StringUtil.isBlank(pageVersion) || pageVersion.equals("1")){
+			TAdminQuery tAdminQuery = new TAdminQuery();
+			tAdminQuery.setId(aid);
+			tAdminQuery.setPageVersion("2");
+			tAdminService.updateByIdSelective(tAdminQuery);
+		}
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/changeOld", method = { RequestMethod.GET,RequestMethod.POST })
+	public Map<String, Object> changeOld(HttpSession session) throws Exception {
+		HashMap<String, Object> result = Maps.newHashMap();
+		result.put("code", "200");
+		TAdmin admin = SessionUtil.getAdmin(session);
+		String pageVersion = admin.getPageVersion();
+		Long aid = admin.getId();
+		if(StringUtil.isBlank(pageVersion) || pageVersion.equals("2")){
+			TAdminQuery tAdminQuery = new TAdminQuery();
+			tAdminQuery.setId(aid);
+			tAdminQuery.setPageVersion("1");
+			tAdminService.updateByIdSelective(tAdminQuery);
+		}
+		return result;
+	}
+	
+	
 	
 }
+
+
+
+
+
+
+
+

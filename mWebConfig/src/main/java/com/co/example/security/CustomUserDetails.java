@@ -35,7 +35,7 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 			this.setIsActive(admin.getIsActive());
 			this.setDelFlg(admin.getDelFlg());
 			this.setRoles(admin.getRoles());
-			
+			this.setPageVersion(admin.getPageVersion());
 			
 		}
 	}

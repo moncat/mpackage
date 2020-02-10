@@ -1,7 +1,5 @@
 package com.co.example;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +7,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.co.example.entity.region.TBrRegion;
+import com.co.example.entity.product.TBrEnterprise;
+import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.region.TBrRegionService;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ManagerApplication.class, webEnvironment = WebEnvironment.MOCK)
 public class DataTest10Region {
@@ -19,7 +22,10 @@ public class DataTest10Region {
 	@Autowired
 	TBrRegionService tBrRegionService;
 	
-	@Test
+	@Autowired
+	TBrEnterpriseService tBrEnterpriseService;
+	
+//	@Test
 	public void getRegionData(){
 		try {
 			tBrRegionService.crawRegionData();
@@ -36,8 +42,41 @@ public class DataTest10Region {
 //				e.printStackTrace();
 //			}
 //		}
-		
-		
 	}
-		
+	//根据 产品名称对比
+	@Test
+	public void setEnterpriseRegion(){
+		tBrRegionService.setEnterpriseRegion();
+	}
+	//根据产品备案缩写对比
+//	@Test
+	public void setEnterpriseRegionByShort(){
+		tBrRegionService.setEnterpriseRegionByShort();
+	}
+	
+	
+//	@Test
+	public void setEnterpriseRegionByAll(){
+		TBrEnterprise tBrEnterprise = tBrEnterpriseService.queryById(3464067331751936l);
+		tBrRegionService.setEnterpriseRegionByAll(tBrEnterprise);
+		log.info(tBrEnterprise.toString());
+		log.info(tBrEnterprise.toString());
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<html  layout:decorator="v2/common/layout_iframe" >
+<section layout:fragment="main">
+
+<table class="layui-table">
+	<thead>
+		<tr>
+			<th>序号</th>
+			<th>成分名称</th>
+			<th>安全风险</th>
+			<th>活跃成分</th>
+			<th>致痘风险</th>
+			<th>使用目的</th>
+		</tr>
+	</thead>														
+
+	<tbody>
+		<tr class="text-c"  th:each="item,status:${ingredientList}">
+			<td th:text="${status.index+1}">1</td>
+			<td>
+				<a class=" openShow" th:attr="data-id=${item.id}"  title="查看详情"  >
+					<span th:utext="${item.name}"></span>
+				</a>
+			</td>
+			<td><span  th:text="${item.securityRisks}" style='padding: 5px;'  th:classappend="${item.safeColour}" >4</span></td>
+			<td th:if="${item.activeIngredient eq 1}"><img src="/img/hxcf.png" alt="活性成分"/></td>
+			<td th:if="${item.activeIngredient ne 1}"></td>
+			<td th:if="${item.blainRisk eq 1}"><img src="/img/zdfx.png" alt="致痘风险"/></td>
+			<td th:if="${item.blainRisk ne 1}"></td>
+			<td>
+			   <span th:each="aim:${item.tBrAims}" th:text="${aim.name}">溶剂</span> 
+			</td>
+		</tr>	
+	</tbody>
+</table>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/product/tab1.js"></script>
+</section>
+</html>

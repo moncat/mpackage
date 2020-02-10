@@ -36,4 +36,7 @@ public class TAdmin extends BaseEntity {
 
     /** 最后一次登录ip */
     private String lastIp;
+
+    /** 页面版本 */
+    private String pageVersion;
 }

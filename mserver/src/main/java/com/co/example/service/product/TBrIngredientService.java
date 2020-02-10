@@ -1,8 +1,10 @@
 package com.co.example.service.product;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import com.co.example.entity.label.TBrIngredientLabel;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.aide.TBrIngredientCountVo;
 import com.co.example.entity.product.aide.TBrIngredientVo;
@@ -45,6 +47,7 @@ public interface TBrIngredientService extends BaseService<TBrIngredient, Long> {
 	List<TBrIngredientCountVo> queryIngredientCount(String limitTime,String endTime);
 
 	
+	List<TBrIngredient> queryTBrIngredientList(Long productId,Boolean simple);  
 	
 	List<TBrIngredient> queryTBrIngredientList(Long productId);  
 	 /**
@@ -57,6 +60,11 @@ public interface TBrIngredientService extends BaseService<TBrIngredient, Long> {
 	 Float getProductScore(Long productId);
 	 
 	 Float getProductScore(List<TBrIngredient> list);
+	 
+	 Map<String,Object> getIngredientTrend(Collection<TBrIngredient> list);
+	 
+	 List<TBrIngredientLabel> getLabelListById(Long ingredientId);
+	 
 	 
 	
 }

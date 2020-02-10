@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 头部，包含meta，公共css -->
+<head th:replace="V2/common/layout_head :: head"></head>
+<body>
+	<!-- 页眉导航  -->
+	<div  class="main-layout" id='main-layout' >
+		<!-- 左侧导航 -->
+		<section th:replace="V2/common/layout_left :: left"></section>
+		<div class="main-layout-container">
+			<!-- 右侧头部 -->	
+			<div th:replace="V2/common/layout_header :: header"></div>
+			<!-- 右侧主页面 -->	
+			<div layout:fragment="main">
+				这里是main
+			</div>
+		</div>
+	</div>
+</body>
+<section layout:fragment="js"></section>
+</html>

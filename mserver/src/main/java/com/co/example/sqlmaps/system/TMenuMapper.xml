@@ -1,97 +1,102 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.co.example.sqlmaps.system.TMenuMapper" >
-  <resultMap id="BaseResultMap" type="com.co.example.entity.system.TMenu" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="url" property="url" jdbcType="VARCHAR" />
-    <result column="icon" property="icon" jdbcType="VARCHAR" />
-    <result column="level" property="level" jdbcType="INTEGER" />
-    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
-    <result column="is_root" property="isRoot" jdbcType="TINYINT" />
-    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="create_by" property="createBy" jdbcType="BIGINT" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
-    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.system.TMenuMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.system.TMenu">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="icon_v2" jdbcType="VARCHAR" property="iconV2" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="is_root" jdbcType="TINYINT" property="isRoot" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    id, name, url, icon, level, parent_id, is_root, item_order, create_time, create_by, 
-    update_time, update_by, del_flg
+  <sql id="Base_Column_List">
+    id, name, url, icon, icon_v2, level, parent_id, is_root, item_order, create_time, 
+    create_by, update_time, update_by, del_flg
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_menu
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from t_menu
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.system.TMenu" keyColumn="id" keyProperty="id" >
-	 	 <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
-	      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
-	    </selectKey>
-    insert into t_menu (id, name, 
-      url, icon, level, parent_id, 
-      is_root, item_order, create_time, 
-      create_by, update_time, update_by, 
-      del_flg)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, 
-      #{isRoot,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
-      #{delFlg,jdbcType=TINYINT})
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.system.TMenu">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_menu (id, name, url, 
+      icon, icon_v2, level, 
+      parent_id, is_root, item_order, 
+      create_time, create_by, update_time, 
+      update_by, del_flg)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{icon,jdbcType=VARCHAR}, #{iconV2,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+      #{parentId,jdbcType=BIGINT}, #{isRoot,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.system.TMenu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.system.TMenu">
     update t_menu
-    <set >
-      <if test="name != null" >
+    <set>
+      <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="url != null" >
+      <if test="url != null">
         url = #{url,jdbcType=VARCHAR},
       </if>
-      <if test="icon != null" >
+      <if test="icon != null">
         icon = #{icon,jdbcType=VARCHAR},
       </if>
-      <if test="level != null" >
+      <if test="iconV2 != null">
+        icon_v2 = #{iconV2,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
         level = #{level,jdbcType=INTEGER},
       </if>
-      <if test="parentId != null" >
+      <if test="parentId != null">
         parent_id = #{parentId,jdbcType=BIGINT},
       </if>
-      <if test="isRoot != null" >
+      <if test="isRoot != null">
         is_root = #{isRoot,jdbcType=TINYINT},
       </if>
-      <if test="itemOrder != null" >
+      <if test="itemOrder != null">
         item_order = #{itemOrder,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
         create_by = #{createBy,jdbcType=BIGINT},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null">
         update_by = #{updateBy,jdbcType=BIGINT},
       </if>
-      <if test="delFlg != null" >
+      <if test="delFlg != null">
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.system.TMenu" >
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.system.TMenu">
     update t_menu
     set name = #{name,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       icon = #{icon,jdbcType=VARCHAR},
+      icon_v2 = #{iconV2,jdbcType=VARCHAR},
       level = #{level,jdbcType=INTEGER},
       parent_id = #{parentId,jdbcType=BIGINT},
       is_root = #{isRoot,jdbcType=TINYINT},
@@ -103,73 +108,76 @@
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
     select 
     <include refid="Vo_Column_List" />
     from t_menu t
     <include refid="Table_Join_Clause" />
     where t.id = #{id,jdbcType=BIGINT}
   </select>
-  <sql id="Query_Where_Clause" >
-    <where >
-      <if test="id != null" >
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
           and t.id = #{id,jdbcType=BIGINT}
       </if>
-      <if test="name != null" >
+      <if test="name != null">
           and t.name = #{name,jdbcType=VARCHAR}
       </if>
-      <if test="url != null" >
+      <if test="url != null">
           and t.url = #{url,jdbcType=VARCHAR}
       </if>
-      <if test="icon != null" >
+      <if test="icon != null">
           and t.icon = #{icon,jdbcType=VARCHAR}
       </if>
-      <if test="level != null" >
+      <if test="iconV2 != null">
+          and t.icon_v2 = #{iconV2,jdbcType=VARCHAR}
+      </if>
+      <if test="level != null">
           and t.level = #{level,jdbcType=INTEGER}
       </if>
-      <if test="parentId != null" >
+      <if test="parentId != null">
           and t.parent_id = #{parentId,jdbcType=BIGINT}
       </if>
-      <if test="isRoot != null" >
+      <if test="isRoot != null">
           and t.is_root = #{isRoot,jdbcType=TINYINT}
       </if>
-      <if test="itemOrder != null" >
+      <if test="itemOrder != null">
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
           and t.create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="createBy != null" >
+      <if test="createBy != null">
           and t.create_by = #{createBy,jdbcType=BIGINT}
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
           and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
-      <if test="updateBy != null" >
+      <if test="updateBy != null">
           and t.update_by = #{updateBy,jdbcType=BIGINT}
       </if>
-      <if test="delFlg != null" >
+      <if test="delFlg != null">
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
       </if>
       <include refid="Vo_Where_Clause" />
     </where>
-    <if test="sorting != null" >
+    <if test="sorting != null">
       order by ${sorting},t.id desc
     </if>
   </sql>
-  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
     select count(t.id) from t_menu t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
     select 
     <include refid="Vo_Column_List" />
     from t_menu t
     <include refid="Table_Join_Clause" />
     <include refid="Query_Where_Clause" />
   </select>
-  <delete id="delete" parameterType="java.util.Map" >
+  <delete id="delete" parameterType="java.util.Map">
     delete from t_menu where id in (
     select t.id from (select * from t_menu) t
     <include refid="Table_Join_Clause" />
@@ -177,16 +185,17 @@
     )
   </delete>
   <!--  ************************expand your SQL below the line***********************  -->
-  <resultMap id="VoResultMap" type="com.co.example.entity.system.aide.TMenuVo" extends="BaseResultMap" >
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.system.aide.TMenuVo">
     <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
     <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
     <!--  </association> -->
   </resultMap>
-  <sql id="Vo_Column_List" >
+  <sql id="Vo_Column_List">
     t.id, 
     t.name, 
     t.url, 
     t.icon, 
+    t.icon_v2, 
     t.level, 
     t.parent_id, 
     t.is_root, 
@@ -200,11 +209,11 @@
   		  ,trr.role_id
      </if>
   </sql>
-  <sql id="Vo_Where_Clause" >
+  <sql id="Vo_Where_Clause">
      <if test="menuIds != null ">
-	      <if test="menuIds.size() > 0">
+	      <if test="menuIds.size() &gt; 0">
 	    	  and t.id in 
-	    	  <foreach collection="menuIds" index="index" item="item" open="(" close=")" separator="," >
+	    	  <foreach close=")" collection="menuIds" index="index" item="item" open="(" separator=",">
 	    	  	#{item,jdbcType=SMALLINT}
 	    	  </foreach>
 	      </if>
@@ -214,12 +223,8 @@
 	      </if>
 	       -->
    	  </if>
-	 
-   	  
-   	  
-   	  
   </sql>
-  <sql id="Table_Join_Clause" >
+  <sql id="Table_Join_Clause">
   	 <if test="roleId !=null">
   		  left join t_role_right trr on t.id = trr.right_id and trr.role_id = #{roleId,jdbcType=BIGINT}
      </if>

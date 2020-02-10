@@ -1,0 +1,1164 @@
+2020-01-07 00:28:28.782 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.controller.product.LogController]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 00:28:30.562 [main] INFO  com.co.example.controller.product.LogController - Starting LogController on SKY-20160518SVB with PID 2852 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 00:28:30.563 [main] INFO  com.co.example.controller.product.LogController - No active profile set, falling back to default profiles: default
+2020-01-07 00:28:56.725 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 00:29:04.684 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 00:29:10.249 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 00:29:10.300 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 00:29:59.003 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 00:30:19.558 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 00:30:19.558 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 00:30:19.558 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 00:30:19.558 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 00:30:19.558 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 00:30:19.559 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 00:30:19.559 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 00:30:19.559 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 00:30:19.559 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 00:30:19.980 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11fb4f69, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bbc8c82, org.springframework.security.web.header.HeaderWriterFilter@676f70dc, org.springframework.security.web.csrf.CsrfFilter@35ab0bf3, org.springframework.security.web.authentication.logout.LogoutFilter@45c73e09, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@681302ad, org.springframework.security.web.session.ConcurrentSessionFilter@618d2191, org.springframework.security.web.session.ConcurrentSessionFilter@172f2717, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ca31ad7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21a14c45, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@63f609a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b1ef6a, org.springframework.security.web.session.SessionManagementFilter@761d3c20, org.springframework.security.web.access.ExceptionTranslationFilter@3d9dc84d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a571516]
+2020-01-07 00:30:24.581 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 00:30:26.397 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 00:30:26.397 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 00:30:26.397 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 00:30:39.642 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 00:30:39.648 [main] INFO  com.co.example.controller.product.LogController - Started LogController in 130.431 seconds (JVM running for 134.501)
+2020-01-07 00:30:40.347 [main] INFO  com.co.example.controller.product.LogController - *************start**chechSolrData**************
+2020-01-07 00:30:43.209 [main] INFO  com.co.example.controller.product.LogController - solr全量数据--需要检查434000
+2020-01-07 00:30:52.083 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==433000cur==1
+2020-01-07 00:31:00.438 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==432000cur==2
+2020-01-07 00:31:07.134 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==431000cur==3
+2020-01-07 00:31:13.333 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==430000cur==4
+2020-01-07 00:31:18.218 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==429000cur==5
+2020-01-07 00:31:24.240 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==428000cur==6
+2020-01-07 00:31:29.084 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==427000cur==7
+2020-01-07 00:31:33.753 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==426000cur==8
+2020-01-07 00:31:38.618 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==425000cur==9
+2020-01-07 00:31:43.254 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==424000cur==10
+2020-01-07 00:31:48.202 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==423000cur==11
+2020-01-07 00:31:53.212 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==422000cur==12
+2020-01-07 00:31:57.829 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==421000cur==13
+2020-01-07 00:32:02.609 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==420000cur==14
+2020-01-07 00:32:07.173 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==419000cur==15
+2020-01-07 00:32:11.867 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==418000cur==16
+2020-01-07 00:32:17.030 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==417000cur==17
+2020-01-07 00:32:22.441 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==416000cur==18
+2020-01-07 00:32:27.212 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==415000cur==19
+2020-01-07 00:32:32.004 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==414000cur==20
+2020-01-07 00:32:36.704 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==413000cur==21
+2020-01-07 00:32:41.592 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==412000cur==22
+2020-01-07 00:32:46.465 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==411000cur==23
+2020-01-07 00:32:51.248 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==410000cur==24
+2020-01-07 00:32:56.315 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==409000cur==25
+2020-01-07 00:33:00.886 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==408000cur==26
+2020-01-07 00:33:06.053 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==407000cur==27
+2020-01-07 00:33:11.214 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==406000cur==28
+2020-01-07 00:33:16.354 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==405000cur==29
+2020-01-07 00:33:21.153 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==404000cur==30
+2020-01-07 00:33:25.726 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==403000cur==31
+2020-01-07 00:33:30.559 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==402000cur==32
+2020-01-07 00:33:35.073 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==401000cur==33
+2020-01-07 00:33:40.282 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==400000cur==34
+2020-01-07 00:33:45.344 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==399000cur==35
+2020-01-07 00:33:50.225 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==398000cur==36
+2020-01-07 00:33:54.830 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==397000cur==37
+2020-01-07 00:33:59.763 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==396000cur==38
+2020-01-07 00:34:04.708 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==395000cur==39
+2020-01-07 00:34:09.586 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==394000cur==40
+2020-01-07 00:34:14.441 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==393000cur==41
+2020-01-07 00:34:19.402 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==392000cur==42
+2020-01-07 00:34:24.661 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==391000cur==43
+2020-01-07 00:34:29.726 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==390000cur==44
+2020-01-07 00:34:34.356 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==389000cur==45
+2020-01-07 00:34:39.520 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==388000cur==46
+2020-01-07 00:34:44.588 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==387000cur==47
+2020-01-07 00:34:49.769 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==386000cur==48
+2020-01-07 00:34:54.408 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==385000cur==49
+2020-01-07 00:34:59.170 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==384000cur==50
+2020-01-07 00:35:04.297 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==383000cur==51
+2020-01-07 00:35:09.482 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==382000cur==52
+2020-01-07 00:35:14.563 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==381000cur==53
+2020-01-07 00:35:19.485 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==380000cur==54
+2020-01-07 00:35:24.323 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==379000cur==55
+2020-01-07 00:35:29.645 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==378000cur==56
+2020-01-07 00:35:35.032 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==377000cur==57
+2020-01-07 00:35:40.344 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==376000cur==58
+2020-01-07 00:35:45.934 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==375000cur==59
+2020-01-07 00:35:51.250 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==374000cur==60
+2020-01-07 00:35:56.584 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==373000cur==61
+2020-01-07 00:36:01.991 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==372000cur==62
+2020-01-07 00:36:07.329 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==371000cur==63
+2020-01-07 00:36:12.765 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==370000cur==64
+2020-01-07 00:36:18.291 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==369000cur==65
+2020-01-07 00:36:23.687 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==368000cur==66
+2020-01-07 00:36:28.861 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==367000cur==67
+2020-01-07 00:36:34.225 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==366000cur==68
+2020-01-07 00:36:39.425 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==365000cur==69
+2020-01-07 00:36:44.484 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==364000cur==70
+2020-01-07 00:36:49.396 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==363000cur==71
+2020-01-07 00:36:54.354 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==362000cur==72
+2020-01-07 00:36:59.686 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==361000cur==73
+2020-01-07 00:37:05.182 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==360000cur==74
+2020-01-07 00:37:10.548 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==359000cur==75
+2020-01-07 00:37:15.926 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==358000cur==76
+2020-01-07 00:37:21.374 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==357000cur==77
+2020-01-07 00:37:26.550 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==356000cur==78
+2020-01-07 00:37:31.808 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==355000cur==79
+2020-01-07 00:37:37.154 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==354000cur==80
+2020-01-07 00:37:42.395 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==353000cur==81
+2020-01-07 00:37:48.118 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==352000cur==82
+2020-01-07 00:37:53.597 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==351000cur==83
+2020-01-07 00:37:59.037 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==350000cur==84
+2020-01-07 00:38:04.684 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==349000cur==85
+2020-01-07 00:38:09.870 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==348000cur==86
+2020-01-07 00:38:15.330 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==347000cur==87
+2020-01-07 00:38:20.859 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==346000cur==88
+2020-01-07 00:38:26.606 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==345000cur==89
+2020-01-07 00:38:31.757 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==344000cur==90
+2020-01-07 00:38:36.878 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==343000cur==91
+2020-01-07 00:38:42.241 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==342000cur==92
+2020-01-07 00:38:47.720 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==341000cur==93
+2020-01-07 00:38:53.075 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==340000cur==94
+2020-01-07 00:38:58.435 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==339000cur==95
+2020-01-07 00:39:03.881 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==338000cur==96
+2020-01-07 00:39:09.548 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==337000cur==97
+2020-01-07 00:39:14.890 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==336000cur==98
+2020-01-07 00:39:20.137 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==335000cur==99
+2020-01-07 00:39:25.425 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==334000cur==100
+2020-01-07 00:39:31.051 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==333000cur==101
+2020-01-07 00:39:36.248 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==332000cur==102
+2020-01-07 00:39:41.879 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==331000cur==103
+2020-01-07 00:39:47.570 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==330000cur==104
+2020-01-07 00:39:53.303 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==329000cur==105
+2020-01-07 00:39:58.661 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==328000cur==106
+2020-01-07 00:40:04.190 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==327000cur==107
+2020-01-07 00:40:09.535 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==326000cur==108
+2020-01-07 00:40:15.054 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==325000cur==109
+2020-01-07 00:40:20.513 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==324000cur==110
+2020-01-07 00:40:25.858 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==323000cur==111
+2020-01-07 00:40:31.900 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==322000cur==112
+2020-01-07 00:40:37.497 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==321000cur==113
+2020-01-07 00:40:43.028 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==320000cur==114
+2020-01-07 00:40:48.589 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==319000cur==115
+2020-01-07 00:40:53.918 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==318000cur==116
+2020-01-07 00:40:59.435 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==317000cur==117
+2020-01-07 00:41:04.846 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==316000cur==118
+2020-01-07 00:41:10.627 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==315000cur==119
+2020-01-07 00:41:16.475 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==314000cur==120
+2020-01-07 00:41:22.026 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==313000cur==121
+2020-01-07 00:41:27.683 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==312000cur==122
+2020-01-07 00:41:33.270 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==311000cur==123
+2020-01-07 00:41:38.780 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==310000cur==124
+2020-01-07 00:41:44.621 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==309000cur==125
+2020-01-07 00:41:50.618 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==308000cur==126
+2020-01-07 00:41:56.386 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==307000cur==127
+2020-01-07 00:42:02.111 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==306000cur==128
+2020-01-07 00:42:07.712 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==305000cur==129
+2020-01-07 00:42:13.449 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==304000cur==130
+2020-01-07 00:42:18.964 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==303000cur==131
+2020-01-07 00:42:24.707 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==302000cur==132
+2020-01-07 00:42:30.661 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==301000cur==133
+2020-01-07 00:42:36.689 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==300000cur==134
+2020-01-07 00:42:42.615 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==299000cur==135
+2020-01-07 00:42:48.395 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==298000cur==136
+2020-01-07 00:42:53.983 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==297000cur==137
+2020-01-07 00:42:59.762 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==296000cur==138
+2020-01-07 00:43:05.665 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==295000cur==139
+2020-01-07 00:43:11.323 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==294000cur==140
+2020-01-07 00:43:17.230 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==293000cur==141
+2020-01-07 00:43:22.953 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==292000cur==142
+2020-01-07 00:43:28.740 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==291000cur==143
+2020-01-07 00:43:34.608 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==290000cur==144
+2020-01-07 00:43:40.339 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==289000cur==145
+2020-01-07 00:43:46.389 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==288000cur==146
+2020-01-07 00:43:52.623 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==287000cur==147
+2020-01-07 00:43:58.332 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==286000cur==148
+2020-01-07 00:44:04.184 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==285000cur==149
+2020-01-07 00:44:10.152 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==284000cur==150
+2020-01-07 00:44:16.023 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==283000cur==151
+2020-01-07 00:44:21.950 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==282000cur==152
+2020-01-07 00:44:27.996 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==281000cur==153
+2020-01-07 00:44:34.319 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==280000cur==154
+2020-01-07 00:44:40.201 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==279000cur==155
+2020-01-07 00:44:46.465 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==278000cur==156
+2020-01-07 00:44:52.297 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==277000cur==157
+2020-01-07 00:44:58.270 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==276000cur==158
+2020-01-07 00:45:04.515 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==275000cur==159
+2020-01-07 00:45:10.951 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==274000cur==160
+2020-01-07 00:45:17.262 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==273000cur==161
+2020-01-07 00:45:23.331 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==272000cur==162
+2020-01-07 00:45:29.401 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==271000cur==163
+2020-01-07 00:45:35.316 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==270000cur==164
+2020-01-07 00:45:41.400 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==269000cur==165
+2020-01-07 00:45:47.838 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==268000cur==166
+2020-01-07 00:45:54.100 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==267000cur==167
+2020-01-07 00:46:00.105 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==266000cur==168
+2020-01-07 00:46:06.040 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==265000cur==169
+2020-01-07 00:46:12.279 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==264000cur==170
+2020-01-07 00:46:18.659 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==263000cur==171
+2020-01-07 00:46:24.752 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==262000cur==172
+2020-01-07 00:46:31.312 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==261000cur==173
+2020-01-07 00:46:37.445 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==260000cur==174
+2020-01-07 00:46:43.542 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==259000cur==175
+2020-01-07 00:46:49.619 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==258000cur==176
+2020-01-07 00:46:55.709 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==257000cur==177
+2020-01-07 00:47:01.766 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==256000cur==178
+2020-01-07 00:47:08.303 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==255000cur==179
+2020-01-07 00:47:14.286 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==254000cur==180
+2020-01-07 00:47:20.575 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==253000cur==181
+2020-01-07 00:47:26.807 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==252000cur==182
+2020-01-07 00:47:32.908 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==251000cur==183
+2020-01-07 00:47:39.192 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==250000cur==184
+2020-01-07 00:47:45.640 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==249000cur==185
+2020-01-07 00:47:52.190 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==248000cur==186
+2020-01-07 00:47:58.618 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==247000cur==187
+2020-01-07 00:48:04.725 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==246000cur==188
+2020-01-07 00:48:10.900 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==245000cur==189
+2020-01-07 00:48:17.643 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==244000cur==190
+2020-01-07 00:48:24.015 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==243000cur==191
+2020-01-07 00:48:30.706 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==242000cur==192
+2020-01-07 00:48:37.066 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==241000cur==193
+2020-01-07 00:48:43.589 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==240000cur==194
+2020-01-07 00:48:49.743 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==239000cur==195
+2020-01-07 00:48:56.064 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==238000cur==196
+2020-01-07 00:49:02.635 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==237000cur==197
+2020-01-07 00:49:09.199 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==236000cur==198
+2020-01-07 00:49:15.668 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==235000cur==199
+2020-01-07 00:49:22.148 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==234000cur==200
+2020-01-07 00:49:28.626 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==233000cur==201
+2020-01-07 00:49:35.247 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==232000cur==202
+2020-01-07 00:49:41.874 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==231000cur==203
+2020-01-07 00:49:49.227 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==230000cur==204
+2020-01-07 00:49:55.823 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==229000cur==205
+2020-01-07 00:50:02.344 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==228000cur==206
+2020-01-07 00:50:09.023 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==227000cur==207
+2020-01-07 00:50:15.404 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==226000cur==208
+2020-01-07 00:50:22.094 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==225000cur==209
+2020-01-07 00:50:28.923 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==224000cur==210
+2020-01-07 00:50:35.488 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==223000cur==211
+2020-01-07 00:50:42.131 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==222000cur==212
+2020-01-07 00:50:48.808 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==221000cur==213
+2020-01-07 00:50:55.372 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==220000cur==214
+2020-01-07 00:51:02.085 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==219000cur==215
+2020-01-07 00:51:08.764 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==218000cur==216
+2020-01-07 00:51:15.539 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==217000cur==217
+2020-01-07 00:51:22.190 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==216000cur==218
+2020-01-07 00:51:25.593 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==215000cur==219
+2020-01-07 00:51:28.748 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==214000cur==220
+2020-01-07 00:51:31.908 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==213000cur==221
+2020-01-07 00:51:35.066 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==212000cur==222
+2020-01-07 00:51:38.222 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==211000cur==223
+2020-01-07 00:51:41.378 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==210000cur==224
+2020-01-07 00:51:44.542 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==209000cur==225
+2020-01-07 00:51:47.706 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==208000cur==226
+2020-01-07 00:51:50.865 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==207000cur==227
+2020-01-07 00:51:54.026 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==206000cur==228
+2020-01-07 00:51:57.181 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==205000cur==229
+2020-01-07 00:52:00.338 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==204000cur==230
+2020-01-07 00:52:03.497 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==203000cur==231
+2020-01-07 00:52:06.664 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==202000cur==232
+2020-01-07 00:52:09.826 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==201000cur==233
+2020-01-07 00:52:12.990 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==200000cur==234
+2020-01-07 00:52:16.148 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==199000cur==235
+2020-01-07 00:52:19.309 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==198000cur==236
+2020-01-07 00:52:22.473 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==197000cur==237
+2020-01-07 00:52:25.635 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==196000cur==238
+2020-01-07 00:52:28.795 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==195000cur==239
+2020-01-07 00:52:31.952 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==194000cur==240
+2020-01-07 00:52:35.112 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==193000cur==241
+2020-01-07 00:52:38.269 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==192000cur==242
+2020-01-07 00:52:41.425 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==191000cur==243
+2020-01-07 00:52:44.592 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==190000cur==244
+2020-01-07 00:52:47.750 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==189000cur==245
+2020-01-07 00:52:50.906 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==188000cur==246
+2020-01-07 00:52:54.062 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==187000cur==247
+2020-01-07 00:52:57.218 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==186000cur==248
+2020-01-07 00:53:00.385 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==185000cur==249
+2020-01-07 00:53:03.552 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==184000cur==250
+2020-01-07 00:53:06.708 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==183000cur==251
+2020-01-07 00:53:09.863 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==182000cur==252
+2020-01-07 00:53:13.023 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==181000cur==253
+2020-01-07 00:53:16.188 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==180000cur==254
+2020-01-07 00:53:19.344 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==179000cur==255
+2020-01-07 00:53:22.505 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==178000cur==256
+2020-01-07 00:53:25.664 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==177000cur==257
+2020-01-07 00:53:28.827 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==176000cur==258
+2020-01-07 00:53:31.983 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==175000cur==259
+2020-01-07 00:53:35.143 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==174000cur==260
+2020-01-07 00:53:38.299 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==173000cur==261
+2020-01-07 00:53:41.458 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==172000cur==262
+2020-01-07 00:53:44.622 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==171000cur==263
+2020-01-07 00:53:47.802 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==170000cur==264
+2020-01-07 00:53:50.959 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==169000cur==265
+2020-01-07 00:53:54.120 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==168000cur==266
+2020-01-07 00:53:57.280 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==167000cur==267
+2020-01-07 00:54:00.440 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==166000cur==268
+2020-01-07 00:54:03.599 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==165000cur==269
+2020-01-07 00:54:06.760 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==164000cur==270
+2020-01-07 00:54:09.916 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==163000cur==271
+2020-01-07 00:54:13.072 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==162000cur==272
+2020-01-07 00:54:16.229 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==161000cur==273
+2020-01-07 00:54:19.389 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==160000cur==274
+2020-01-07 00:54:22.547 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==159000cur==275
+2020-01-07 00:54:25.716 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==158000cur==276
+2020-01-07 00:54:28.874 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==157000cur==277
+2020-01-07 00:54:32.030 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==156000cur==278
+2020-01-07 00:54:35.189 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==155000cur==279
+2020-01-07 00:54:38.343 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==154000cur==280
+2020-01-07 00:54:41.503 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==153000cur==281
+2020-01-07 00:54:44.663 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==152000cur==282
+2020-01-07 00:54:47.821 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==151000cur==283
+2020-01-07 00:54:50.983 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==150000cur==284
+2020-01-07 00:54:54.145 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==149000cur==285
+2020-01-07 00:54:57.300 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==148000cur==286
+2020-01-07 00:55:00.457 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==147000cur==287
+2020-01-07 00:55:03.615 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==146000cur==288
+2020-01-07 00:55:06.773 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==145000cur==289
+2020-01-07 00:55:09.929 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==144000cur==290
+2020-01-07 00:55:13.084 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==143000cur==291
+2020-01-07 00:55:16.243 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==142000cur==292
+2020-01-07 00:55:19.401 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==141000cur==293
+2020-01-07 00:55:22.557 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==140000cur==294
+2020-01-07 00:55:25.719 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==139000cur==295
+2020-01-07 00:55:28.874 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==138000cur==296
+2020-01-07 00:55:32.032 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==137000cur==297
+2020-01-07 00:55:35.220 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==136000cur==298
+2020-01-07 00:55:38.378 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==135000cur==299
+2020-01-07 00:55:41.532 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==134000cur==300
+2020-01-07 00:55:44.688 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==133000cur==301
+2020-01-07 00:55:47.848 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==132000cur==302
+2020-01-07 00:55:51.009 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==131000cur==303
+2020-01-07 00:55:54.167 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==130000cur==304
+2020-01-07 00:55:57.326 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==129000cur==305
+2020-01-07 00:56:00.482 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==128000cur==306
+2020-01-07 00:56:03.639 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==127000cur==307
+2020-01-07 00:56:06.797 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==126000cur==308
+2020-01-07 00:56:09.968 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==125000cur==309
+2020-01-07 00:56:13.127 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==124000cur==310
+2020-01-07 00:56:16.287 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==123000cur==311
+2020-01-07 00:56:19.449 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==122000cur==312
+2020-01-07 00:56:22.605 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==121000cur==313
+2020-01-07 00:56:25.764 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==120000cur==314
+2020-01-07 00:56:28.920 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==119000cur==315
+2020-01-07 00:56:32.112 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==118000cur==316
+2020-01-07 00:56:35.268 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==117000cur==317
+2020-01-07 00:56:38.433 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==116000cur==318
+2020-01-07 00:56:41.597 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==115000cur==319
+2020-01-07 00:56:44.761 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==114000cur==320
+2020-01-07 00:56:47.935 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==113000cur==321
+2020-01-07 00:56:51.102 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==112000cur==322
+2020-01-07 00:56:54.267 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==111000cur==323
+2020-01-07 00:56:57.434 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==110000cur==324
+2020-01-07 00:57:00.598 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==109000cur==325
+2020-01-07 00:57:03.769 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==108000cur==326
+2020-01-07 00:57:06.937 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==107000cur==327
+2020-01-07 00:57:10.100 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==106000cur==328
+2020-01-07 00:57:13.261 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==105000cur==329
+2020-01-07 00:57:16.423 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==104000cur==330
+2020-01-07 00:57:19.590 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==103000cur==331
+2020-01-07 00:57:22.753 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==102000cur==332
+2020-01-07 00:57:25.915 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==101000cur==333
+2020-01-07 00:57:29.084 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==100000cur==334
+2020-01-07 00:57:32.251 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==99000cur==335
+2020-01-07 00:57:35.416 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==98000cur==336
+2020-01-07 00:57:38.583 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==97000cur==337
+2020-01-07 00:57:41.750 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==96000cur==338
+2020-01-07 00:57:44.918 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==95000cur==339
+2020-01-07 00:57:48.082 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==94000cur==340
+2020-01-07 00:57:51.246 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==93000cur==341
+2020-01-07 00:57:54.412 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==92000cur==342
+2020-01-07 00:57:57.580 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==91000cur==343
+2020-01-07 00:58:00.746 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==90000cur==344
+2020-01-07 00:58:03.912 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==89000cur==345
+2020-01-07 00:58:07.077 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==88000cur==346
+2020-01-07 00:58:10.249 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==87000cur==347
+2020-01-07 00:58:13.413 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==86000cur==348
+2020-01-07 00:58:16.576 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==85000cur==349
+2020-01-07 00:58:19.743 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==84000cur==350
+2020-01-07 00:58:22.906 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==83000cur==351
+2020-01-07 00:58:26.074 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==82000cur==352
+2020-01-07 00:58:29.244 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==81000cur==353
+2020-01-07 00:58:32.408 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==80000cur==354
+2020-01-07 00:58:35.573 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==79000cur==355
+2020-01-07 00:58:38.739 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==78000cur==356
+2020-01-07 00:58:41.903 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==77000cur==357
+2020-01-07 00:58:45.067 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==76000cur==358
+2020-01-07 00:58:48.241 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==75000cur==359
+2020-01-07 00:58:51.407 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==74000cur==360
+2020-01-07 00:58:54.572 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==73000cur==361
+2020-01-07 00:58:57.737 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==72000cur==362
+2020-01-07 00:59:00.904 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==71000cur==363
+2020-01-07 00:59:04.074 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==70000cur==364
+2020-01-07 00:59:07.239 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==69000cur==365
+2020-01-07 00:59:10.406 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==68000cur==366
+2020-01-07 00:59:13.568 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==67000cur==367
+2020-01-07 00:59:16.731 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==66000cur==368
+2020-01-07 00:59:19.905 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==65000cur==369
+2020-01-07 00:59:23.070 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==64000cur==370
+2020-01-07 00:59:26.237 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==63000cur==371
+2020-01-07 00:59:29.409 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==62000cur==372
+2020-01-07 00:59:32.575 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==61000cur==373
+2020-01-07 00:59:35.741 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==60000cur==374
+2020-01-07 00:59:38.910 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==59000cur==375
+2020-01-07 00:59:42.076 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==58000cur==376
+2020-01-07 00:59:45.256 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==57000cur==377
+2020-01-07 00:59:48.426 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==56000cur==378
+2020-01-07 00:59:51.591 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==55000cur==379
+2020-01-07 00:59:54.757 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==54000cur==380
+2020-01-07 00:59:57.922 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==53000cur==381
+2020-01-07 01:00:00.046 [task-scheduler-1] INFO  c.c.e.controller.statistics.StatisticsController - ***数据统计定时器开始***
+2020-01-07 01:00:01.129 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==52000cur==382
+2020-01-07 01:00:04.519 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==51000cur==383
+2020-01-07 01:00:08.111 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==50000cur==384
+2020-01-07 01:00:12.929 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==49000cur==385
+2020-01-07 01:00:14.716 [task-scheduler-1] INFO  c.c.e.controller.statistics.StatisticsController - ***数据统计定时器结束***用时(秒)***14
+2020-01-07 01:00:16.712 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==48000cur==386
+2020-01-07 01:00:19.868 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==47000cur==387
+2020-01-07 01:00:23.022 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==46000cur==388
+2020-01-07 01:00:26.173 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==45000cur==389
+2020-01-07 01:00:29.326 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==44000cur==390
+2020-01-07 01:00:32.481 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==43000cur==391
+2020-01-07 01:00:35.637 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==42000cur==392
+2020-01-07 01:00:38.789 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==41000cur==393
+2020-01-07 01:00:41.950 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==40000cur==394
+2020-01-07 01:00:45.099 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==39000cur==395
+2020-01-07 01:00:48.251 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==38000cur==396
+2020-01-07 01:00:51.418 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==37000cur==397
+2020-01-07 01:00:54.570 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==36000cur==398
+2020-01-07 01:00:57.946 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==35000cur==399
+2020-01-07 01:01:01.185 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==34000cur==400
+2020-01-07 01:01:04.424 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==33000cur==401
+2020-01-07 01:01:07.808 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==32000cur==402
+2020-01-07 01:01:11.017 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==31000cur==403
+2020-01-07 01:01:14.198 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==30000cur==404
+2020-01-07 01:01:17.347 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==29000cur==405
+2020-01-07 01:01:20.506 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==28000cur==406
+2020-01-07 01:01:23.673 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==27000cur==407
+2020-01-07 01:01:26.825 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==26000cur==408
+2020-01-07 01:01:29.980 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==25000cur==409
+2020-01-07 01:01:33.130 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==24000cur==410
+2020-01-07 01:01:36.287 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==23000cur==411
+2020-01-07 01:01:39.444 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==22000cur==412
+2020-01-07 01:01:42.598 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==21000cur==413
+2020-01-07 01:01:45.748 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==20000cur==414
+2020-01-07 01:01:48.902 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==19000cur==415
+2020-01-07 01:01:52.057 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==18000cur==416
+2020-01-07 01:01:55.219 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==17000cur==417
+2020-01-07 01:01:58.373 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==16000cur==418
+2020-01-07 01:02:01.533 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==15000cur==419
+2020-01-07 01:02:04.683 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==14000cur==420
+2020-01-07 01:02:07.835 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==13000cur==421
+2020-01-07 01:02:10.990 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==12000cur==422
+2020-01-07 01:02:14.141 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==11000cur==423
+2020-01-07 01:02:17.293 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==10000cur==424
+2020-01-07 01:02:20.453 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==9000cur==425
+2020-01-07 01:02:23.610 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==8000cur==426
+2020-01-07 01:02:26.760 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==7000cur==427
+2020-01-07 01:02:29.912 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==6000cur==428
+2020-01-07 01:02:33.064 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==5000cur==429
+2020-01-07 01:02:36.218 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==4000cur==430
+2020-01-07 01:02:39.373 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==3000cur==431
+2020-01-07 01:02:42.541 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==2000cur==432
+2020-01-07 01:02:45.691 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==1000cur==433
+2020-01-07 01:02:48.843 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==0cur==434
+2020-01-07 01:02:48.883 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 01:02:48.884 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 01:02:48.884 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 01:02:48.885 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 09:18:38.480 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.controller.product.LogController]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 09:18:40.255 [main] INFO  com.co.example.controller.product.LogController - Starting LogController on SKY-20160518SVB with PID 11720 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 09:18:40.256 [main] INFO  com.co.example.controller.product.LogController - No active profile set, falling back to default profiles: default
+2020-01-07 09:18:55.628 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 09:18:58.407 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 09:19:00.881 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 09:19:00.909 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 09:19:25.119 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 09:19:34.540 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 09:19:34.540 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 09:19:34.540 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 09:19:34.540 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 09:19:34.540 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 09:19:34.541 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 09:19:34.541 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 09:19:34.541 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 09:19:34.541 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 09:19:36.260 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35800dea, org.springframework.security.web.context.SecurityContextPersistenceFilter@505f6511, org.springframework.security.web.header.HeaderWriterFilter@27b9d5b7, org.springframework.security.web.csrf.CsrfFilter@3a917e07, org.springframework.security.web.authentication.logout.LogoutFilter@4d7f3adf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2eb27091, org.springframework.security.web.session.ConcurrentSessionFilter@3b4cce5a, org.springframework.security.web.session.ConcurrentSessionFilter@27c9500c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52c919f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53d94a6b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@313c3cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58178b69, org.springframework.security.web.session.SessionManagementFilter@490b8f1e, org.springframework.security.web.access.ExceptionTranslationFilter@3e92bded, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17c3e33]
+2020-01-07 09:19:40.486 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 09:19:41.623 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 09:19:41.624 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 09:19:41.624 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 09:19:55.334 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 09:19:55.336 [main] INFO  com.co.example.controller.product.LogController - Started LogController in 76.179 seconds (JVM running for 146.963)
+2020-01-07 09:19:55.985 [main] INFO  com.co.example.controller.product.LogController - *************start**chechSolrData**************
+2020-01-07 09:19:58.595 [main] INFO  com.co.example.controller.product.LogController - solr全量数据--需要检查216000
+2020-01-07 09:20:07.013 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==215000cur==1
+2020-01-07 09:20:14.087 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==214000cur==2
+2020-01-07 09:20:20.748 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==213000cur==3
+2020-01-07 09:20:27.592 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==212000cur==4
+2020-01-07 09:20:33.808 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==211000cur==5
+2020-01-07 09:20:40.638 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==210000cur==6
+2020-01-07 09:20:45.824 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==209000cur==7
+2020-01-07 09:20:50.656 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==208000cur==8
+2020-01-07 09:20:55.632 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==207000cur==9
+2020-01-07 09:21:01.006 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==206000cur==10
+2020-01-07 09:21:06.231 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==205000cur==11
+2020-01-07 09:21:11.450 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==204000cur==12
+2020-01-07 09:21:16.744 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==203000cur==13
+2020-01-07 09:21:22.158 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==202000cur==14
+2020-01-07 09:21:27.487 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==201000cur==15
+2020-01-07 09:21:36.733 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==200000cur==16
+2020-01-07 09:21:47.825 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==199000cur==17
+2020-01-07 09:21:53.092 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==198000cur==18
+2020-01-07 09:21:58.534 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==197000cur==19
+2020-01-07 09:22:04.132 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==196000cur==20
+2020-01-07 09:22:09.646 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==195000cur==21
+2020-01-07 09:22:14.808 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==194000cur==22
+2020-01-07 09:22:20.016 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==193000cur==23
+2020-01-07 09:22:25.632 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==192000cur==24
+2020-01-07 09:22:31.112 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==191000cur==25
+2020-01-07 09:22:36.503 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==190000cur==26
+2020-01-07 09:22:41.766 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==189000cur==27
+2020-01-07 09:22:47.056 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==188000cur==28
+2020-01-07 09:22:52.727 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==187000cur==29
+2020-01-07 09:22:58.025 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==186000cur==30
+2020-01-07 09:23:03.335 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==185000cur==31
+2020-01-07 09:23:08.713 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==184000cur==32
+2020-01-07 09:23:13.982 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==183000cur==33
+2020-01-07 09:23:19.609 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==182000cur==34
+2020-01-07 09:23:24.869 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==181000cur==35
+2020-01-07 09:23:30.643 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==180000cur==36
+2020-01-07 09:23:36.162 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==179000cur==37
+2020-01-07 09:23:41.641 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==178000cur==38
+2020-01-07 09:23:47.185 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==177000cur==39
+2020-01-07 09:23:52.634 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==176000cur==40
+2020-01-07 09:23:58.201 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==175000cur==41
+2020-01-07 09:24:03.683 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==174000cur==42
+2020-01-07 09:24:09.462 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==173000cur==43
+2020-01-07 09:24:15.296 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==172000cur==44
+2020-01-07 09:24:20.880 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==171000cur==45
+2020-01-07 09:24:26.476 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==170000cur==46
+2020-01-07 09:24:31.966 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==169000cur==47
+2020-01-07 09:24:37.701 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==168000cur==48
+2020-01-07 09:24:43.313 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==167000cur==49
+2020-01-07 09:24:49.035 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==166000cur==50
+2020-01-07 09:24:54.777 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==165000cur==51
+2020-01-07 09:25:00.527 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==164000cur==52
+2020-01-07 09:25:06.308 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==163000cur==53
+2020-01-07 09:25:12.585 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==162000cur==54
+2020-01-07 09:25:18.236 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==161000cur==55
+2020-01-07 09:25:23.993 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==160000cur==56
+2020-01-07 09:25:29.745 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==159000cur==57
+2020-01-07 09:25:35.781 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==158000cur==58
+2020-01-07 09:25:41.945 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==157000cur==59
+2020-01-07 09:25:48.861 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==156000cur==60
+2020-01-07 09:25:54.958 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==155000cur==61
+2020-01-07 09:26:00.953 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==154000cur==62
+2020-01-07 09:26:07.306 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==153000cur==63
+2020-01-07 09:26:14.087 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==152000cur==64
+2020-01-07 09:26:20.246 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==151000cur==65
+2020-01-07 09:26:26.694 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==150000cur==66
+2020-01-07 09:26:33.279 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==149000cur==67
+2020-01-07 09:26:39.627 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==148000cur==68
+2020-01-07 09:26:45.570 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==147000cur==69
+2020-01-07 09:26:51.696 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==146000cur==70
+2020-01-07 09:26:58.011 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==145000cur==71
+2020-01-07 09:27:04.421 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==144000cur==72
+2020-01-07 09:27:10.904 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==143000cur==73
+2020-01-07 09:27:17.359 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==142000cur==74
+2020-01-07 09:27:23.379 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==141000cur==75
+2020-01-07 09:27:29.723 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==140000cur==76
+2020-01-07 09:27:36.647 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==139000cur==77
+2020-01-07 09:27:44.562 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==138000cur==78
+2020-01-07 09:27:51.500 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==137000cur==79
+2020-01-07 09:27:58.352 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==136000cur==80
+2020-01-07 09:28:05.026 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==135000cur==81
+2020-01-07 09:28:13.854 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==134000cur==82
+2020-01-07 09:28:19.827 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==133000cur==83
+2020-01-07 09:28:26.066 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==132000cur==84
+2020-01-07 09:28:33.061 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==131000cur==85
+2020-01-07 09:28:40.491 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==130000cur==86
+2020-01-07 09:28:47.630 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==129000cur==87
+2020-01-07 09:28:54.374 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==128000cur==88
+2020-01-07 09:29:01.403 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==127000cur==89
+2020-01-07 09:29:08.153 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==126000cur==90
+2020-01-07 09:29:14.764 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==125000cur==91
+2020-01-07 09:29:21.507 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==124000cur==92
+2020-01-07 09:29:28.205 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==123000cur==93
+2020-01-07 09:29:34.901 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==122000cur==94
+2020-01-07 09:29:42.135 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==121000cur==95
+2020-01-07 09:29:48.820 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==120000cur==96
+2020-01-07 09:29:55.605 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==119000cur==97
+2020-01-07 09:30:02.507 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==118000cur==98
+2020-01-07 09:30:10.010 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==117000cur==99
+2020-01-07 09:30:17.408 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==116000cur==100
+2020-01-07 09:30:24.817 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==115000cur==101
+2020-01-07 09:30:32.272 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==114000cur==102
+2020-01-07 09:30:39.507 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==113000cur==103
+2020-01-07 09:30:46.705 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==112000cur==104
+2020-01-07 09:30:53.729 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==111000cur==105
+2020-01-07 09:31:00.853 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==110000cur==106
+2020-01-07 09:31:07.999 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==109000cur==107
+2020-01-07 09:31:15.146 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==108000cur==108
+2020-01-07 09:31:22.102 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==107000cur==109
+2020-01-07 09:31:25.434 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==106000cur==110
+2020-01-07 09:31:28.623 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==105000cur==111
+2020-01-07 09:31:31.809 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==104000cur==112
+2020-01-07 09:31:34.994 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==103000cur==113
+2020-01-07 09:31:38.164 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==102000cur==114
+2020-01-07 09:31:41.354 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==101000cur==115
+2020-01-07 09:31:44.558 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==100000cur==116
+2020-01-07 09:31:47.755 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==99000cur==117
+2020-01-07 09:31:50.964 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==98000cur==118
+2020-01-07 09:31:54.154 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==97000cur==119
+2020-01-07 09:31:57.344 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==96000cur==120
+2020-01-07 09:32:00.537 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==95000cur==121
+2020-01-07 09:32:03.719 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==94000cur==122
+2020-01-07 09:32:06.903 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==93000cur==123
+2020-01-07 09:32:10.087 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==92000cur==124
+2020-01-07 09:32:13.275 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==91000cur==125
+2020-01-07 09:32:16.460 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==90000cur==126
+2020-01-07 09:32:19.646 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==89000cur==127
+2020-01-07 09:32:22.826 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==88000cur==128
+2020-01-07 09:32:26.004 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==87000cur==129
+2020-01-07 09:32:29.194 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==86000cur==130
+2020-01-07 09:32:32.373 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==85000cur==131
+2020-01-07 09:32:35.542 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==84000cur==132
+2020-01-07 09:32:38.708 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==83000cur==133
+2020-01-07 09:32:41.877 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==82000cur==134
+2020-01-07 09:32:45.053 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==81000cur==135
+2020-01-07 09:32:48.247 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==80000cur==136
+2020-01-07 09:32:51.427 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==79000cur==137
+2020-01-07 09:32:54.597 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==78000cur==138
+2020-01-07 09:32:57.769 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==77000cur==139
+2020-01-07 09:33:00.950 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==76000cur==140
+2020-01-07 09:33:04.127 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==75000cur==141
+2020-01-07 09:33:07.315 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==74000cur==142
+2020-01-07 09:33:10.504 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==73000cur==143
+2020-01-07 09:33:13.693 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==72000cur==144
+2020-01-07 09:33:16.877 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==71000cur==145
+2020-01-07 09:33:20.071 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==70000cur==146
+2020-01-07 09:33:23.254 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==69000cur==147
+2020-01-07 09:33:26.430 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==68000cur==148
+2020-01-07 09:33:29.612 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==67000cur==149
+2020-01-07 09:33:32.804 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==66000cur==150
+2020-01-07 09:33:36.000 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==65000cur==151
+2020-01-07 09:33:39.196 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==64000cur==152
+2020-01-07 09:33:42.384 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==63000cur==153
+2020-01-07 09:33:45.579 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==62000cur==154
+2020-01-07 09:33:48.767 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==61000cur==155
+2020-01-07 09:33:51.947 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==60000cur==156
+2020-01-07 09:33:55.128 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==59000cur==157
+2020-01-07 09:33:58.308 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==58000cur==158
+2020-01-07 09:34:01.494 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==57000cur==159
+2020-01-07 09:34:04.674 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==56000cur==160
+2020-01-07 09:34:07.865 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==55000cur==161
+2020-01-07 09:34:11.049 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==54000cur==162
+2020-01-07 09:34:14.236 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==53000cur==163
+2020-01-07 09:34:17.427 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==52000cur==164
+2020-01-07 09:34:20.619 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==51000cur==165
+2020-01-07 09:34:23.802 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==50000cur==166
+2020-01-07 09:34:26.987 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==49000cur==167
+2020-01-07 09:34:30.189 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==48000cur==168
+2020-01-07 09:34:33.372 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==47000cur==169
+2020-01-07 09:34:36.550 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==46000cur==170
+2020-01-07 09:34:39.725 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==45000cur==171
+2020-01-07 09:34:42.916 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==44000cur==172
+2020-01-07 09:34:46.107 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==43000cur==173
+2020-01-07 09:34:49.299 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==42000cur==174
+2020-01-07 09:34:52.491 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==41000cur==175
+2020-01-07 09:34:55.676 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==40000cur==176
+2020-01-07 09:34:58.856 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==39000cur==177
+2020-01-07 09:35:02.074 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==38000cur==178
+2020-01-07 09:35:05.254 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==37000cur==179
+2020-01-07 09:35:08.436 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==36000cur==180
+2020-01-07 09:35:11.618 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==35000cur==181
+2020-01-07 09:35:14.806 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==34000cur==182
+2020-01-07 09:35:17.989 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==33000cur==183
+2020-01-07 09:35:21.168 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==32000cur==184
+2020-01-07 09:35:24.350 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==31000cur==185
+2020-01-07 09:35:27.521 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==30000cur==186
+2020-01-07 09:35:30.702 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==29000cur==187
+2020-01-07 09:35:33.940 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==28000cur==188
+2020-01-07 09:35:37.139 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==27000cur==189
+2020-01-07 09:35:40.361 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==26000cur==190
+2020-01-07 09:35:43.550 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==25000cur==191
+2020-01-07 09:35:46.728 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==24000cur==192
+2020-01-07 09:35:49.899 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==23000cur==193
+2020-01-07 09:35:53.092 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==22000cur==194
+2020-01-07 09:35:56.274 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==21000cur==195
+2020-01-07 09:35:59.465 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==20000cur==196
+2020-01-07 09:36:02.662 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==19000cur==197
+2020-01-07 09:36:05.839 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==18000cur==198
+2020-01-07 09:36:09.016 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==17000cur==199
+2020-01-07 09:36:12.200 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==16000cur==200
+2020-01-07 09:36:15.376 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==15000cur==201
+2020-01-07 09:36:18.549 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==14000cur==202
+2020-01-07 09:36:21.732 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==13000cur==203
+2020-01-07 09:36:24.914 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==12000cur==204
+2020-01-07 09:36:28.100 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==11000cur==205
+2020-01-07 09:36:31.305 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==10000cur==206
+2020-01-07 09:36:34.476 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==9000cur==207
+2020-01-07 09:36:37.647 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==8000cur==208
+2020-01-07 09:36:40.823 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==7000cur==209
+2020-01-07 09:36:43.997 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==6000cur==210
+2020-01-07 09:36:47.169 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==5000cur==211
+2020-01-07 09:36:50.339 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==4000cur==212
+2020-01-07 09:36:53.517 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==3000cur==213
+2020-01-07 09:36:56.690 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==2000cur==214
+2020-01-07 09:36:59.863 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==1000cur==215
+2020-01-07 09:37:03.057 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==0cur==216
+2020-01-07 09:37:03.288 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 09:37:03.289 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 09:37:03.289 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 09:37:03.292 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 09:38:33.000 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.controller.product.LogController]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 09:38:34.566 [main] INFO  com.co.example.controller.product.LogController - Starting LogController on SKY-20160518SVB with PID 720 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 09:38:34.567 [main] INFO  com.co.example.controller.product.LogController - No active profile set, falling back to default profiles: default
+2020-01-07 09:38:38.935 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 09:38:40.303 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 09:38:42.022 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 09:38:42.028 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 09:38:58.074 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 09:39:05.613 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 09:39:05.615 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 09:39:05.616 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 09:39:05.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 09:39:05.618 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 09:39:05.621 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 09:39:05.621 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 09:39:05.621 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 09:39:05.621 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 09:39:05.855 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50e7d8ba, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ce9985f, org.springframework.security.web.header.HeaderWriterFilter@4f3a8e3e, org.springframework.security.web.csrf.CsrfFilter@63cff421, org.springframework.security.web.authentication.logout.LogoutFilter@48c584c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@57e9cd2, org.springframework.security.web.session.ConcurrentSessionFilter@210e4678, org.springframework.security.web.session.ConcurrentSessionFilter@5d5a77de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56d4481f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8c54f48, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@34a48013, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4548bfc7, org.springframework.security.web.session.SessionManagementFilter@6ae1d5f1, org.springframework.security.web.access.ExceptionTranslationFilter@47fca369, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ee949d4]
+2020-01-07 09:39:11.894 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 09:39:13.795 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 09:39:13.796 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 09:39:13.796 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 09:39:25.941 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 09:39:25.943 [main] INFO  com.co.example.controller.product.LogController - Started LogController in 52.408 seconds (JVM running for 54.513)
+2020-01-07 09:39:26.362 [main] INFO  com.co.example.controller.product.LogController - *************start**chechSolrData**************
+2020-01-07 09:39:28.385 [main] INFO  com.co.example.controller.product.LogController - solr全量数据--需要检查107000
+2020-01-07 09:39:36.620 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==106000cur==1
+2020-01-07 09:39:44.698 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==105000cur==2
+2020-01-07 09:39:52.316 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==104000cur==3
+2020-01-07 09:39:59.110 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==103000cur==4
+2020-01-07 09:40:04.980 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==102000cur==5
+2020-01-07 09:40:11.323 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==101000cur==6
+2020-01-07 09:40:16.799 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==100000cur==7
+2020-01-07 09:40:22.302 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==99000cur==8
+2020-01-07 09:40:27.647 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==98000cur==9
+2020-01-07 09:40:33.269 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==97000cur==10
+2020-01-07 09:40:39.491 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==96000cur==11
+2020-01-07 09:40:46.160 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==95000cur==12
+2020-01-07 09:40:51.964 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==94000cur==13
+2020-01-07 09:40:58.110 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==93000cur==14
+2020-01-07 09:41:05.274 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==92000cur==15
+2020-01-07 09:41:11.661 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==91000cur==16
+2020-01-07 09:41:17.747 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==90000cur==17
+2020-01-07 09:41:27.664 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==89000cur==18
+2020-01-07 09:41:33.975 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==88000cur==19
+2020-01-07 09:41:42.668 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==87000cur==20
+2020-01-07 09:41:48.895 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==86000cur==21
+2020-01-07 09:42:00.601 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==85000cur==22
+2020-01-07 09:42:18.661 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==84000cur==23
+2020-01-07 09:42:37.197 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.controller.product.LogController]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 09:42:38.507 [main] INFO  com.co.example.controller.product.LogController - Starting LogController on SKY-20160518SVB with PID 2300 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 09:42:38.507 [main] INFO  com.co.example.controller.product.LogController - No active profile set, falling back to default profiles: default
+2020-01-07 09:42:47.509 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 09:42:51.647 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 09:42:53.569 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 09:42:53.583 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 09:43:15.761 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 09:43:24.810 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 09:43:24.810 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 09:43:24.811 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 09:43:24.811 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 09:43:24.811 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 09:43:24.811 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 09:43:24.811 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 09:43:24.811 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 09:43:24.812 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 09:43:25.447 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@549dfe1d, org.springframework.security.web.context.SecurityContextPersistenceFilter@162c89ac, org.springframework.security.web.header.HeaderWriterFilter@7f289126, org.springframework.security.web.csrf.CsrfFilter@402d45c6, org.springframework.security.web.authentication.logout.LogoutFilter@7b0a69b9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@27f6854b, org.springframework.security.web.session.ConcurrentSessionFilter@537fb7bf, org.springframework.security.web.session.ConcurrentSessionFilter@1d1c5bb5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@306a9cd8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6921ce3f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@65145fb7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@445adbd7, org.springframework.security.web.session.SessionManagementFilter@46e32574, org.springframework.security.web.access.ExceptionTranslationFilter@58178b69, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@724e483f]
+2020-01-07 09:43:28.706 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 09:43:29.726 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 09:43:29.727 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 09:43:29.727 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 09:43:48.797 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 09:43:48.799 [main] INFO  com.co.example.controller.product.LogController - Started LogController in 71.157 seconds (JVM running for 73.19)
+2020-01-07 09:43:48.937 [main] INFO  com.co.example.controller.product.LogController - *************start**chechSolrData**************
+2020-01-07 09:43:51.194 [main] INFO  com.co.example.controller.product.LogController - solr全量数据--需要检查83656
+2020-01-07 09:44:02.159 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==82656cur==0
+2020-01-07 09:44:13.462 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==81656cur==0
+2020-01-07 09:44:21.158 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==80656cur==0
+2020-01-07 09:44:27.278 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==79656cur==0
+2020-01-07 09:44:32.879 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==78656cur==0
+2020-01-07 09:44:42.439 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==77656cur==0
+2020-01-07 09:44:47.635 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==76656cur==0
+2020-01-07 09:44:52.910 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==75656cur==0
+2020-01-07 09:44:57.861 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==74656cur==0
+2020-01-07 09:45:03.102 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==73656cur==0
+2020-01-07 09:45:08.630 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==72656cur==0
+2020-01-07 09:45:13.827 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==71656cur==0
+2020-01-07 09:45:19.089 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==70656cur==0
+2020-01-07 09:45:24.642 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==69656cur==0
+2020-01-07 09:45:30.198 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==68656cur==0
+2020-01-07 09:45:35.759 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==67656cur==0
+2020-01-07 09:45:41.334 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==66656cur==0
+2020-01-07 09:45:47.474 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==65656cur==0
+2020-01-07 09:45:53.311 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==64656cur==0
+2020-01-07 09:45:59.005 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==63656cur==0
+2020-01-07 09:46:07.318 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==62656cur==0
+2020-01-07 09:46:14.445 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==61656cur==0
+2020-01-07 09:46:21.117 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==60656cur==0
+2020-01-07 09:46:28.903 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==59656cur==0
+2020-01-07 09:46:35.946 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==58656cur==0
+2020-01-07 09:46:42.089 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==57656cur==0
+2020-01-07 09:46:50.062 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==56656cur==0
+2020-01-07 09:46:56.011 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==55656cur==0
+2020-01-07 09:47:02.181 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==54656cur==0
+2020-01-07 09:47:18.562 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==53656cur==0
+2020-01-07 09:47:28.700 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==52656cur==0
+2020-01-07 09:47:39.761 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==51656cur==0
+2020-01-07 09:47:52.164 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==50656cur==0
+2020-01-07 09:48:22.544 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==49656cur==0
+2020-01-07 09:48:29.350 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==48656cur==0
+2020-01-07 09:48:41.346 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==47656cur==0
+2020-01-07 09:48:48.368 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==46656cur==0
+2020-01-07 09:48:54.618 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==45656cur==0
+2020-01-07 09:49:01.155 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==44656cur==0
+2020-01-07 09:49:07.801 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==43656cur==0
+2020-01-07 09:49:14.374 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==42656cur==0
+2020-01-07 09:49:21.122 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==41656cur==0
+2020-01-07 09:49:27.476 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==40656cur==0
+2020-01-07 09:49:49.372 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==39656cur==0
+2020-01-07 09:49:57.203 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==38656cur==0
+2020-01-07 09:50:47.331 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==37656cur==0
+2020-01-07 09:50:55.299 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==36656cur==0
+2020-01-07 09:51:02.079 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==35656cur==0
+2020-01-07 09:51:20.291 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==34656cur==0
+2020-01-07 09:51:27.433 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==33656cur==0
+2020-01-07 09:51:36.659 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==32656cur==0
+2020-01-07 09:51:46.541 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==31656cur==0
+2020-01-07 09:51:53.482 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==30656cur==0
+2020-01-07 09:52:01.852 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==29656cur==0
+2020-01-07 09:52:10.530 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==28656cur==0
+2020-01-07 09:52:17.990 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==27656cur==0
+2020-01-07 09:52:42.117 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==26656cur==0
+2020-01-07 09:53:03.514 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==25656cur==0
+2020-01-07 09:53:15.243 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==24656cur==0
+2020-01-07 09:53:28.588 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==23656cur==0
+2020-01-07 09:53:45.971 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==22656cur==0
+2020-01-07 09:53:53.039 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==21656cur==0
+2020-01-07 09:53:59.870 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==20656cur==0
+2020-01-07 09:54:07.046 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==19656cur==0
+2020-01-07 09:54:13.826 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==18656cur==0
+2020-01-07 09:54:20.819 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==17656cur==0
+2020-01-07 09:54:27.890 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==16656cur==0
+2020-01-07 09:54:34.877 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==15656cur==0
+2020-01-07 09:54:42.232 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==14656cur==0
+2020-01-07 09:54:49.279 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==13656cur==0
+2020-01-07 09:55:12.186 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==12656cur==0
+2020-01-07 09:55:56.667 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==11656cur==0
+2020-01-07 09:56:06.864 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==10656cur==0
+2020-01-07 09:56:17.737 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==9656cur==0
+2020-01-07 09:56:26.445 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==8656cur==0
+2020-01-07 09:56:37.957 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==7656cur==0
+2020-01-07 09:56:46.341 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==6656cur==0
+2020-01-07 09:56:53.141 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==5656cur==0
+2020-01-07 09:56:59.751 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==4656cur==0
+2020-01-07 09:57:07.173 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==3656cur==0
+2020-01-07 09:57:14.927 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==2656cur==0
+2020-01-07 09:57:22.683 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==1656cur==0
+2020-01-07 09:57:30.284 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==656cur==0
+2020-01-07 09:57:36.431 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==-344cur==0
+2020-01-07 09:57:36.525 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 09:57:36.525 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 09:57:36.527 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 09:57:36.544 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 10:04:57.060 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.controller.product.LogController]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 10:04:58.527 [main] INFO  com.co.example.controller.product.LogController - Starting LogController on SKY-20160518SVB with PID 3868 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 10:04:58.528 [main] INFO  com.co.example.controller.product.LogController - No active profile set, falling back to default profiles: default
+2020-01-07 10:05:03.189 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 10:05:06.488 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 10:05:07.421 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 10:05:07.427 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 10:05:25.284 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 10:05:31.299 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 10:05:31.299 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 10:05:31.299 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 10:05:31.299 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 10:05:31.299 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 10:05:31.299 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 10:05:31.300 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 10:05:31.300 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 10:05:31.300 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 10:05:31.618 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3747877, org.springframework.security.web.context.SecurityContextPersistenceFilter@bda4cbe, org.springframework.security.web.header.HeaderWriterFilter@3d9dc84d, org.springframework.security.web.csrf.CsrfFilter@1007954a, org.springframework.security.web.authentication.logout.LogoutFilter@21a14c45, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7719b257, org.springframework.security.web.session.ConcurrentSessionFilter@86abdbd, org.springframework.security.web.session.ConcurrentSessionFilter@2591477f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bbc8c82, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70c68e4e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@681302ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42e14655, org.springframework.security.web.session.SessionManagementFilter@676f70dc, org.springframework.security.web.access.ExceptionTranslationFilter@1150b923, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7be95197]
+2020-01-07 10:05:34.206 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 10:05:35.178 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 10:05:35.179 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 10:05:35.179 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 10:05:46.832 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 10:05:46.834 [main] INFO  com.co.example.controller.product.LogController - Started LogController in 49.375 seconds (JVM running for 51.976)
+2020-01-07 10:05:46.959 [main] INFO  com.co.example.controller.product.LogController - *************start**chechSolrData**************
+2020-01-07 10:05:48.774 [main] INFO  com.co.example.controller.product.LogController - solr全量数据--需要检查1929
+2020-01-07 10:06:00.120 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==929cur==0
+2020-01-07 10:06:09.353 [main] INFO  com.co.example.controller.product.LogController - queryCountNow==-71cur==0
+2020-01-07 10:06:09.396 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 10:06:09.397 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 10:06:09.398 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 10:06:09.401 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 10:43:10.610 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 10940 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 10:43:10.639 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-01-07 10:43:19.341 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 10:43:20.760 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 10:43:23.100 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 10:43:23.107 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 10:43:26.348 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-01-07 10:43:26.349 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-01-07 10:43:26.788 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-01-07 10:43:31.856 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 10:43:43.079 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 10:43:43.080 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 10:43:43.081 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 10:43:43.084 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 10:43:43.084 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 10:43:43.084 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 10:43:43.084 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 10:43:43.084 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 10:43:43.085 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 10:43:43.369 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d1c4758, org.springframework.security.web.context.SecurityContextPersistenceFilter@15fe4296, org.springframework.security.web.header.HeaderWriterFilter@22a87ab5, org.springframework.security.web.csrf.CsrfFilter@5c5e1e01, org.springframework.security.web.authentication.logout.LogoutFilter@73de3738, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4045ad43, org.springframework.security.web.session.ConcurrentSessionFilter@20dec40d, org.springframework.security.web.session.ConcurrentSessionFilter@1eadc049, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11038903, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@182b7eb9, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@27a301b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7191d616, org.springframework.security.web.session.SessionManagementFilter@2c8b44a3, org.springframework.security.web.access.ExceptionTranslationFilter@44836f45, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21297f9f]
+2020-01-07 10:43:46.873 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 10:43:48.990 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-01-07 10:43:48.995 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-01-07 10:43:49.010 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-01-07 10:43:49.021 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 10:43:49.021 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-01-07 10:43:49.022 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 10:43:58.982 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-01-07 10:43:59.012 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-01-07 10:43:59.033 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-01-07 10:43:59.387 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 10:43:59.390 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 49.523 seconds (JVM running for 51.721)
+2020-01-07 10:48:16.243 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-01-07 10:48:18.324 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-01-07 10:48:18.440 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-01-07 10:48:18.440 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-01-07 10:48:18.441 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-01-07 10:48:18.441 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-01-07 10:48:18.447 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-01-07 10:48:34.150 [http-nio-7000-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-01-07 10:48:34.150 [http-nio-7000-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-01-07 10:48:34.166 [http-nio-7000-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-01-07 10:48:59.604 [http-nio-7000-exec-9] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-01-07 10:48:59.604 [http-nio-7000-exec-9] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-01-07 10:48:59.606 [http-nio-7000-exec-9] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-01-07 13:12:26.146 [http-nio-7000-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-01-07 13:12:26.147 [http-nio-7000-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-01-07 13:12:26.148 [http-nio-7000-exec-8] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-01-07 13:28:19.474 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-01-07 13:28:19.474 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-01-07 13:28:19.475 [http-nio-7000-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-01-07 15:06:06.711 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 15:06:08.124 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 4520 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 15:06:08.124 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2020-01-07 15:06:14.381 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 15:06:15.350 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 15:06:17.318 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 15:06:17.335 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 15:06:28.629 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 15:06:32.484 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 15:06:32.484 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 15:06:32.485 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 15:06:32.765 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f1e5f85, org.springframework.security.web.context.SecurityContextPersistenceFilter@8c54f48, org.springframework.security.web.header.HeaderWriterFilter@4283f29b, org.springframework.security.web.csrf.CsrfFilter@724e483f, org.springframework.security.web.authentication.logout.LogoutFilter@44aaa987, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@647468a7, org.springframework.security.web.session.ConcurrentSessionFilter@48682f91, org.springframework.security.web.session.ConcurrentSessionFilter@627f678d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48c584c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2dbfcbe4, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@fcee97c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4dc23273, org.springframework.security.web.session.SessionManagementFilter@625430f8, org.springframework.security.web.access.ExceptionTranslationFilter@28c38eeb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5eabcf77]
+2020-01-07 15:06:34.823 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 15:06:35.665 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 15:06:35.666 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 15:06:35.666 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 15:06:42.802 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 15:06:42.807 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 35.457 seconds (JVM running for 38.293)
+2020-01-07 15:06:42.940 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addOne**************
+2020-01-07 15:07:44.027 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addOneData**************
+2020-01-07 15:07:44.080 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 15:07:44.081 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 15:07:44.081 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 15:07:44.088 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 15:30:09.796 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 15:30:10.839 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 8284 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 15:30:10.840 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2020-01-07 15:30:14.649 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 15:30:15.481 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 15:30:16.624 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 15:30:16.630 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 15:30:26.430 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 15:30:30.368 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 15:30:30.369 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 15:30:30.580 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3129792a, org.springframework.security.web.context.SecurityContextPersistenceFilter@445adbd7, org.springframework.security.web.header.HeaderWriterFilter@483f19c0, org.springframework.security.web.csrf.CsrfFilter@17e7cc67, org.springframework.security.web.authentication.logout.LogoutFilter@5d5a77de, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@45cce4c2, org.springframework.security.web.session.ConcurrentSessionFilter@13617139, org.springframework.security.web.session.ConcurrentSessionFilter@64dc0a5f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b06dce0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4824d077, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4dfe5727, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c0becae, org.springframework.security.web.session.SessionManagementFilter@35d44cd3, org.springframework.security.web.access.ExceptionTranslationFilter@651bec9a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2bcaec2e]
+2020-01-07 15:30:32.426 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 15:30:33.356 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 15:30:33.360 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 15:30:33.360 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 15:30:41.257 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 15:30:41.259 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 31.132 seconds (JVM running for 32.567)
+2020-01-07 15:30:41.341 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addOne**************
+2020-01-07 15:30:43.276 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addOneData**************
+2020-01-07 15:30:43.370 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 15:30:43.371 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 15:30:43.371 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 15:30:43.378 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 16:31:16.612 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 16:31:17.555 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 5732 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 16:31:17.555 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2020-01-07 16:31:21.625 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 16:31:22.572 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 16:31:23.764 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 16:31:23.775 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 16:31:33.154 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 16:31:37.176 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 16:31:37.176 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 16:31:37.176 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 16:31:37.176 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 16:31:37.176 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 16:31:37.177 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 16:31:37.177 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 16:31:37.177 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 16:31:37.177 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 16:31:37.416 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5275d709, org.springframework.security.web.context.SecurityContextPersistenceFilter@6fa48ee4, org.springframework.security.web.header.HeaderWriterFilter@42d65ffc, org.springframework.security.web.csrf.CsrfFilter@64a0ee65, org.springframework.security.web.authentication.logout.LogoutFilter@7d364bce, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@28ab7ffb, org.springframework.security.web.session.ConcurrentSessionFilter@21523e1b, org.springframework.security.web.session.ConcurrentSessionFilter@30dabb23, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a5917f6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72769bf5, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5b3427c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6461c673, org.springframework.security.web.session.SessionManagementFilter@70a984c5, org.springframework.security.web.access.ExceptionTranslationFilter@40ff56f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e50e308]
+2020-01-07 16:31:39.033 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 16:31:39.964 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 16:31:39.965 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 16:31:39.965 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 16:31:48.025 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 16:31:48.029 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 31.103 seconds (JVM running for 32.751)
+2020-01-07 16:31:48.112 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addOne**************
+2020-01-07 16:37:39.409 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addOneData**************
+2020-01-07 16:37:39.445 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 16:37:39.461 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 16:37:39.461 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 16:37:39.463 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-01-07 16:53:23.849 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 16:53:25.355 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 9524 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 16:53:25.355 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2020-01-07 16:53:29.298 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 16:53:30.075 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 16:53:31.498 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 16:53:31.511 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 16:53:41.022 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 16:53:44.737 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 16:53:44.738 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 16:53:44.991 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7421213d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4708acc6, org.springframework.security.web.header.HeaderWriterFilter@3793896e, org.springframework.security.web.csrf.CsrfFilter@788a7567, org.springframework.security.web.authentication.logout.LogoutFilter@35c95587, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7c1e5d14, org.springframework.security.web.session.ConcurrentSessionFilter@6e98fd10, org.springframework.security.web.session.ConcurrentSessionFilter@41dbf02b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@750448fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1aaa3406, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@489e1887, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a3f1703, org.springframework.security.web.session.SessionManagementFilter@17fbbf0a, org.springframework.security.web.access.ExceptionTranslationFilter@72a45b71, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@188500e9]
+2020-01-07 16:53:46.737 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 16:53:47.701 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 16:53:47.702 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 16:53:47.702 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 16:53:56.019 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 16:53:56.026 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 31.569 seconds (JVM running for 33.607)
+2020-01-07 16:53:56.103 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addSolrData**************
+2020-01-07 16:53:57.981 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--需要同步29422
+2020-01-07 16:57:59.669 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中28922
+2020-01-07 17:01:07.733 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中28422
+2020-01-07 17:04:23.827 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中27922
+2020-01-07 17:07:30.934 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中27422
+2020-01-07 17:10:34.846 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中26922
+2020-01-07 17:13:43.173 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中26422
+2020-01-07 17:16:48.319 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中25922
+2020-01-07 17:19:55.026 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中25422
+2020-01-07 17:23:01.750 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中24922
+2020-01-07 17:26:09.192 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中24422
+2020-01-07 17:29:17.486 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中23922
+2020-01-07 17:32:27.676 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中23422
+2020-01-07 17:35:31.752 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中22922
+2020-01-07 17:38:35.679 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中22422
+2020-01-07 17:41:40.991 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中21922
+2020-01-07 17:44:44.594 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中21422
+2020-01-07 17:47:53.056 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中20922
+2020-01-07 17:51:01.995 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中20422
+2020-01-07 17:54:10.734 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中19922
+2020-01-07 17:57:17.039 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中19422
+2020-01-07 18:00:23.510 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中18922
+2020-01-07 18:03:36.063 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中18422
+2020-01-07 18:06:39.897 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中17922
+2020-01-07 18:09:46.111 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中17422
+2020-01-07 18:12:53.465 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中16922
+2020-01-07 18:16:01.092 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中16422
+2020-01-07 18:19:07.492 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中15922
+2020-01-07 18:22:18.286 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中15422
+2020-01-07 18:25:24.048 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中14922
+2020-01-07 18:28:35.016 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中14422
+2020-01-07 18:31:40.451 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中13922
+2020-01-07 18:34:48.904 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中13422
+2020-01-07 18:37:57.931 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中12922
+2020-01-07 18:41:05.954 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中12422
+2020-01-07 18:44:17.132 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中11922
+2020-01-07 18:47:25.811 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中11422
+2020-01-07 18:50:31.141 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中10922
+2020-01-07 18:53:38.386 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中10422
+2020-01-07 18:56:42.919 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中9922
+2020-01-07 19:00:16.310 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中9422
+2020-01-07 19:29:19.067 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-07 19:29:20.679 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 8964 (started by Administrator in D:\Workspaces2\package\management)
+2020-01-07 19:29:20.680 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2020-01-07 19:29:31.706 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-01-07 19:29:32.501 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-07 19:29:33.875 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-07 19:29:33.880 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-07 19:30:05.529 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-01-07 19:30:12.758 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-01-07 19:30:12.759 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-01-07 19:30:12.760 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-01-07 19:30:12.994 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d036335, org.springframework.security.web.context.SecurityContextPersistenceFilter@75c5ab79, org.springframework.security.web.header.HeaderWriterFilter@5e8f1db2, org.springframework.security.web.csrf.CsrfFilter@564e0a6c, org.springframework.security.web.authentication.logout.LogoutFilter@51577fc8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6da14f7f, org.springframework.security.web.session.ConcurrentSessionFilter@4a3e1b5d, org.springframework.security.web.session.ConcurrentSessionFilter@13a8cb4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@502f6f6a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@293dd4b3, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@18f493d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@587df3e4, org.springframework.security.web.session.SessionManagementFilter@571360b2, org.springframework.security.web.access.ExceptionTranslationFilter@68fb6c1e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7388d94d]
+2020-01-07 19:30:19.505 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-01-07 19:30:20.977 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 19:30:20.977 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2020-01-07 19:30:20.977 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-01-07 19:30:29.355 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-01-07 19:30:29.357 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 69.398 seconds (JVM running for 91.726)
+2020-01-07 19:30:29.432 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addSolrData**************
+2020-01-07 19:30:31.543 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--需要同步8943
+2020-01-07 19:33:40.651 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中8443
+2020-01-07 19:36:46.214 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中7943
+2020-01-07 19:39:52.860 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中7443
+2020-01-07 19:42:58.993 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中6943
+2020-01-07 19:46:10.007 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中6443
+2020-01-07 19:49:18.650 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中5943
+2020-01-07 19:52:27.928 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中5443
+2020-01-07 19:55:37.628 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中4943
+2020-01-07 19:58:41.046 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中4443
+2020-01-07 20:01:48.034 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中3943
+2020-01-07 20:04:58.727 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中3443
+2020-01-07 20:08:04.087 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中2943
+2020-01-07 20:11:06.897 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中2443
+2020-01-07 20:11:12.330 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1943
+2020-01-07 20:11:17.762 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1443
+2020-01-07 20:11:23.197 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中943
+2020-01-07 20:11:28.534 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中443
+2020-01-07 20:11:33.907 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中-57
+2020-01-07 20:11:33.908 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步数据完毕
+2020-01-07 20:11:33.908 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addSolrData**************
+2020-01-07 20:11:34.035 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-07 20:11:34.036 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2020-01-07 20:11:34.038 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-01-07 20:11:34.043 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'

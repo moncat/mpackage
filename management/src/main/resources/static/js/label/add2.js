@@ -27,7 +27,7 @@ $(function(){
 					url: "/label/add2" ,
 					success: function(data){					 
 					$(':submit').removeAttr('disabled');
-						layer.alert('添加成功!',function(){
+						layer.alert(data.info,function(){
 							lc();
 						});
 					},

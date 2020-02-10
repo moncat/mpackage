@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.co.example.ManagerApplication;
+import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomElement;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
@@ -22,22 +23,25 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootTest(classes = ManagerApplication.class, webEnvironment = WebEnvironment.MOCK)
 public class TestHtmlunit {
 	
-	@Test
+//	@Test
 	public void test1(){
 		log.info("");
 	}
 	
-	public static void submittingForm() throws Exception {  
+	
+	@Test
+	public  void submittingForm() throws Exception {  
         final WebClient webClient = new WebClient();  
         //1.获取某个待测页面  
-        final HtmlPage page1 = webClient.getPage("https://www.qixin.com/auth/login?return_url=%2F");  
+        final HtmlPage page1 = webClient.getPage("http://125.35.6.80:8181/ftban/fw.jsp");  
         //3.获取页面上的各个元素  
         
-        DomElement elementById = page1.getElementById("s1-0[0]-0[0]-account");
+        DomElement txt = page1.getElementById("searchtext");
+        DomElement btn = page1.getElementById("searchInfo");
+        txt.setTextContent("唯恩诗");
+        Page page2 = btn.click();
+ 
         
-//        DomElement elementById2 = page1.getElementById("s1-0[0]-0[0]-password");
-        
-        System.out.println(elementById);
 //        final HtmlSubmitInput button = form.getInputByName("testlogin");  
 //        final HtmlTextInput textField = form.getInputByName("username");  
 //        final HtmlPasswordInput pass= form.getInputByName("pass");  
@@ -46,11 +50,12 @@ public class TestHtmlunit {
 //        pass.setValueAttribute("routon");  
 //        //5.提交  
 //        button.click();  
+        System.out.println(page2.toString());
         webClient.close();
     }  
     public static void main(String[] args) {  
         try {  
-            submittingForm();  
+//            submittingForm();  
         } catch (Exception e) {  
             e.printStackTrace();  
         }  

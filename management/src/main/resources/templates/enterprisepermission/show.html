@@ -1,0 +1,52 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 企业管理 
+		<span class="c-gray en">&gt;</span> 企业许可信息详情 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-primary radius r " style="line-height:1.6em;margin-top:3px;margin-right:3px" href="javascript:history.go(-1);" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
+	</nav>
+	<div class="page-container" >
+		<div class="line mb-10"></div>
+		<section class="container">
+	        <div class="responsive">
+	            <div class="row cl">
+	                <div class="col-md-12">
+	                    <div class="panel shadow panel-default radius mt-20">
+	                        <div class="panel-body">
+	                            <h2 class="text-c"  th:utext="${one.enterpriseName}">无名称</h2>
+	                            <div class="line mt-10"></div>
+	                            <div class="row cl">
+		                            <div class="col-md-12">
+	                     				 <h4>企业名称： <span th:text="${one.enterpriseName}"></span></h4>
+	                       			     <h4>许可证编号： <span th:text="${one.permissionId}"></span></h4>
+	                       			     <h4>许可项目： <span th:text="${one.permissionProject}"></span></h4>
+	                       			     <h4>企业住所： <span th:text="${one.enterpriseLocal}"></span></h4>
+	                       			     <h4>生产地址： <span th:text="${one.productingLocal}"></span></h4>
+	                       			     <h4>社会信用代码： <span th:text="${one.creditId}"></span></h4>
+	                       			     <h4>法定代表人： <span th:text="${one.personLegal}"></span></h4>
+	                       			     <h4>企业负责人： <span th:text="${one.personIncharge}"></span></h4>
+	                       			     <h4>质量负责人： <span th:text="${one.personQuality}"></span></h4>
+	                       			     <h4>发证机关： <span th:text="${one.licenseOffice}"></span></h4>
+	                       			     <h4>签发人： <span th:text="${one.licensePerson}"></span></h4>
+	                       			     <h4>日常监督管理机构： <span th:text="${one.supervisionOffice}"></span></h4>
+	                       			     <h4>日常监督管理人员： <span th:text="${one.supervisionPerson}"></span></h4>
+	                       			     <h4>有效期至： <span th:text="${one.endDate}"></span></h4>
+	                       			     <h4>发证日期： <span th:text="${one.startDate}"></span></h4>
+	                       			     <h4>状态： <span>正常</span></h4>
+	                       			     <h4>投诉举报电话： <span></span>12331</h4>
+                       		         </div>
+	                            </div> 
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/enterprisepermission/show.js"></script>
+</section>
+</html>

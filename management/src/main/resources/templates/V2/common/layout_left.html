@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 左侧导航树 -->
+<!--侧边栏-->
+<div class="main-layout-side"  th:fragment="left">
+	<div class="m-logo">
+		国产化妆品备案数据分析平台
+	</div>
+	<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+	<!-- 
+		<li class="layui-nav-item">
+			<a href="javascript:;"><i class="iconfont" >&#xe61b;</i>工作台</a>
+			<dl class="layui-nav-child">
+				<dd>
+					<a href="javascript:;" data-url="welcome" daat-id='1'  data-text="工作台"><span class="l-line"></span>工作台</a>
+				</dd>
+			</dl>
+		</li>
+		 -->
+		<li class="layui-nav-item"  th:each="menu : ${list}">
+			<a href="javascript:;"><span class="iconfont" th:utext="${menu.iconV2}" ></span><span th:text="${menu.name}">-</span></a>
+			<dl class="layui-nav-child">
+				<dd th:each="subMenu : ${menu.menus}">
+					<a href="javascript:;"  th:attr="data-url=${subMenu.url},data-text=${subMenu.name},data-id=${subMenu.id}"  ><span class="l-line"></span><span th:text="${subMenu.name}"></span></a>
+				</dd>
+				
+			</dl>
+		</li> 
+	</ul>
+</div>
+</html>
+				  
+			 

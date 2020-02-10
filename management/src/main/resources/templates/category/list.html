@@ -1,0 +1,91 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="myCss">
+<style type="text/css">
+body {
+	background-color: #eee;
+}
+</style>
+</section>
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 
+		<span class="c-gray en">&gt;</span> 产品管理 
+		<span class="c-gray en">&gt;</span> 品类列表 
+		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-primary radius r " style="line-height:1.6em;margin-top:3px;margin-right:3px" href="javascript:history.go(-1);" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
+	</nav>
+	<div class="page-container" >	
+		 <div class="panel panel-default">
+			<div class="panel-body">
+		 		<div class="cl pd-5  mt-10">
+					<form action="/category/list">
+						<div > 
+							 品名：<input type="text" class="input-text" style="width:200px" placeholder="品名" id="nameLike" th:value="${query.nameLike}" name="nameLike"/> 
+							<button type="submit" class="btn btn-success radius" id="search" ><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+							<button type="button" class="btn btn-link" id='clearAll'>重置搜索</button>		
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="line mb-10"></div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+				<table class="table table-border table-bordered table-bg table-hover">
+					<thead>
+						<tr>
+							<th colspan="10" scope="col">
+								<span>数据列表</span>
+								<div class='r' style='display: inline-block;'>
+									<a href="javascript:void(0);" class="btn btn-success  radius add"><i class="Hui-iconfont">&#xe600;</i> 添加品类</a>
+								</div>
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th><input type="checkbox" /></th>
+							<th>序号</th>
+							<th>品名</th>
+							<th>父级分类</th>
+							<th>描述</th>
+							<th>添加时间</th>
+							<th>关联产品数</th>
+							<th>常用设置</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>			
+						<tr  class="text-c"  th:each="one,status:${page.content}" >
+							<td><input type="checkbox" /></td>
+							<td th:text="${page.number*page.size+status.index+1}">1</td>
+							<td th:text="${one.name}"></td>
+							<td th:text="${one.parentName}"></td>
+							<td th:text="${one.description}"></td>
+							<td th:text="${#dates.format(one.createTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+							<td th:attr="data-id=${one.id}" class="count"></td>
+							<td class="td-status">					
+								<div class="switch size-S switchItem" th:attr="data-id=${one.id}" >
+								    <input  type="checkbox"  th:checked='${one.isChoice eq 1 ? "checked":"false"}' ></input>
+								</div>						
+							</td>
+							<td class="td-manage">
+							 	<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
+									<i class="Hui-iconfont">&#xe6df;</i>编辑
+								</a> 							
+								<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
+									<i class="Hui-iconfont">&#xe6e2;</i>删除
+								</a>
+							 </td>
+						</tr>				
+					</tbody>
+				</table>
+				<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/common/formpage.js"></script>
+	<script type="text/javascript" src="/js/category/list.js?version=1"></script>
+</section>
+</html>

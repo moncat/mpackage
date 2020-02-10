@@ -37,6 +37,7 @@ import com.co.example.entity.user.TUser;
 import com.co.example.entity.user.aide.TBrUserCollectQuery;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.category.TBrCategoryService;
 import com.co.example.service.comment.TBrProductCommentStatisticsService;
 import com.co.example.service.label.TBrLabelService;
 import com.co.example.service.label.TBrProductLabelService;
@@ -103,10 +104,9 @@ public class ProductController {
 	
 	@Inject
 	TBrProductCommentStatisticsService pcss;
+
 	
 	String param = "cast(`good` as signed integer)";
-	
-	
 	
 	@RequestMapping(value = "init", method = { RequestMethod.GET, RequestMethod.POST })
 	public String init(Model model, HttpSession session, TBrProductQuery query) {

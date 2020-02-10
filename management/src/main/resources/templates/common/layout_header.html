@@ -3,8 +3,8 @@
 <!-- 头部导航 -->
 <header class="navbar-wrapper" th:fragment="header">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="javascript:void(0)">后台管理</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="#"></a> 
-			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v2.0</span> 
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="javascript:void(0)">国产化妆品备案数据分析平台</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="#"></a> 
+			<!-- <span class="logo navbar-slogan f-l mr-10 hidden-xs">v2.0</span>  -->
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 			<!-- 头部左侧导航菜单栏 -->
 			<nav class="nav navbar-nav">
@@ -32,6 +32,7 @@
 								<li><a href="javascript:void(0);" onClick="myselfinfo()">个人信息</a></li>
 								<li><a href="javascript:void(0);">模块设置</a></li>
 							 -->
+							<li id="changeNew" ><a href="javascript:void(0);" >切换新版</a></li>
 							<li>
 								<form th:action="@{/logout}" method="post" id="logoutForm">
 									<a href="javascript:document.getElementById('logoutForm').submit();" 

@@ -1,0 +1,251 @@
+<html layout:decorator="/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/home/show.css" />
+	<link rel="stylesheet" type="text/css"
+		href="/css/manifestAuth/list.css" />
+</section>
+<section layout:fragment="main">
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+		产品管理 <span class="c-gray en">&gt;</span> 产品列表
+	 	<a class="btn btn-success radius r btn-refresh" style="line-height: 1.6em; margin-top: 3px"
+		href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-primary radius r " style="line-height: 1.6em; margin-top: 3px; margin-right: 3px"
+		href="javascript:history.go(-1);" title="返回"><i class="Hui-iconfont">&#xe66b;</i></a>
+	</nav>
+
+	<div class="panel-header more list_title">
+		<span></span>我的关注清单
+	</div>
+	<div style="width: 96%; margin: 0 auto;">
+		<ul id="Huifold1" class="Huifold">
+			<li class="item">
+				<a href="Javascript:void(0)" class="off">产品清单<b class="Hui-iconfont">&#xe6d5;</b></a>
+				<div class="info" style="overflow: hidden;">			
+					<div class="col-md-3 mt-5 c-white list_con " th:each="one,status:${list}" th:if="${one.type eq 1}">
+						<div class=" radius pt-10 pb-10 pl-30 cl list_bgc">
+							<div class="list_icon"  th:attr="data-id=${one.id}">
+								<i class="Hui-iconfont">&#xe627;</i>
+								 <a target ="_self" th:href="@{'/manifestAuth/pList/'+${one.manifestId}}" style="line-height: 10px;" th:text="${one.manifestName}">加载中…</a>
+								 <div class="more" th:attr="data-id=${one.manifestId}">
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop eq 1 }" th:attr="data-top=0" >&#xe69d;</i>
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop ne 1 }" th:attr="data-top=1" >&#xe69e;</i>
+									<div class="menu_box">
+										<ul class="demo">
+											<li class="li01">
+												<div href="Javascript:void(0)">更多 &nbsp; &gt;</div>
+												<ul>
+													<li class='edit' ><a href="#"><i class="Hui-iconfont">&#xe60c;</i>编辑</a></li>
+													<li th:hidden="${one.usingBy ne one.createBy }"  class='share'><a href="#"><i class="Hui-iconfont">&#xe6aa;</i>共享</a></li>
+													<li class='delete'><a href="#"><i class="Hui-iconfont">&#xe609;</i>删除</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div style="color: #B3B3B3; font-size: 13px;">
+								创建人：<span th:text="${one.adminName}"></span>
+								创建时间：<span th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}"></span>
+							</div>
+							<p style="color: #333;height: 44px;text-align: center;" th:if="${one.status} ne 4">
+								<button type="button" th:if="${one.status} eq 1" class="btn btn-primary goto" 
+								 data-href='/product/list3' >添加产品</button>
+								<button type="button" th:if="${one.status} eq 1" class="btn btn-primary calculate"
+									 th:attr="data-id=${one.manifestId}" >数据计算</button>
+								<span th:if="${one.status} eq 2">加载中……</span>
+							</p>
+							<div class="list_message_box"  th:if="${one.status} eq 4">							
+								<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+									<h5 th:text="${kvBean.name}" ></h5>
+									<span th:text="${kvBean.value}"></span> 
+									<div class="line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 mt-5 c-white list_con new_list_con">
+						<div class=" radius pt-10  cl list_bgc new_list_bgc">
+							<button class="btn btn-primary radius add" type="button" data-type="1" >
+								<i class="Hui-iconfont">&#xe600;</i>新增产品清单
+							</button>
+							<p style="color: #333;">添加关注产品，系统自动分析产品数据</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item">
+				<a href="Javascript:void(0)" class="off">品牌清单<b class="Hui-iconfont">&#xe6d5;</b></a>
+				<div class="info" style="overflow: hidden;">			
+					<div class="col-md-3 mt-5 c-white list_con " th:each="one,status:${list}" th:if="${one.type eq 2}">
+						<div class=" radius pt-10 pb-10 pl-30 cl list_bgc">
+							<div class="list_icon"  th:attr="data-id=${one.id}">
+								<i class="Hui-iconfont">&#xe627;</i>
+								 <a target ="_self" th:href="@{'/manifestAuth/bList/'+${one.manifestId}}"  style="line-height: 10px;" th:text="${one.manifestName}">加载中…</a>
+								 <div class="more" th:attr="data-id=${one.manifestId}">
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop eq 1 }" th:attr="data-top=0" >&#xe69d;</i>
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop ne 1 }" th:attr="data-top=1" >&#xe69e;</i>
+									<div class="menu_box">
+										<ul class="demo">
+											<li class="li01">
+												<div href="Javascript:void(0)">更多 &nbsp; &gt;</div>
+												<ul>
+													<li class='edit'><a href="#"><i class="Hui-iconfont">&#xe60c;</i>编辑</a></li>
+													<li th:hidden="${one.usingBy ne one.createBy }"  class='share'><a href="#"><i class="Hui-iconfont">&#xe6aa;</i>共享</a></li>
+													<li class='delete'><a href="#"><i class="Hui-iconfont">&#xe609;</i>删除</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div style="color: #B3B3B3; font-size: 13px;">
+								创建人：<span th:text="${one.adminName}"></span>
+								创建时间：<span th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}"></span>
+							</div>
+							<div class="list_message_box" th:if="${one.status} ne 4">							
+								<div class="list_message" >
+									<button type="button" th:if="${one.status} eq 1" class="btn btn-primary goto" 
+									 data-href='/brand/list2' >添加品牌</button>
+									<button type="button" th:if="${one.status} eq 1" class="btn btn-primary calculate"
+									 th:attr="data-id=${one.manifestId}" >数据计算</button>
+									<span th:if="${one.status} eq 2">加载中……</span>
+								</div>
+							</div>
+							<div class="list_message_box" th:if="${one.status} eq 4">							
+								<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+									<h5 th:text="${kvBean.name}" ></h5>
+									<span th:text="${kvBean.value}"></span> 
+									<div class="line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 mt-5 c-white list_con new_list_con">
+						<div class=" radius pt-10  cl list_bgc new_list_bgc">
+							<button class="btn btn-primary radius add" type="button" th:attr="data-type=2" >
+								<i class="Hui-iconfont">&#xe600;</i>新增品牌清单
+							</button>
+							<p style="color: #333;">添加关注品牌，系统自动分析品牌数据</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item">
+				<a href="Javascript:void(0)" class="off">供应商清单<b class="Hui-iconfont">&#xe6d5;</b></a>
+				<div class="info" style="overflow: hidden;">			
+					<div class="col-md-3 mt-5 c-white list_con " th:each="one,status:${list}" th:if="${one.type eq 3}">
+						<div class=" radius pt-10 pb-10 pl-30 cl list_bgc">
+							<div class="list_icon"  th:attr="data-id=${one.id}">
+								<i class="Hui-iconfont">&#xe627;</i>
+								 <a target ="_self" th:href="@{'/manifestAuth/eList/'+${one.manifestId}}"  style="line-height: 10px;" th:text="${one.manifestName}">加载中…</a>
+								 <div class="more" th:attr="data-id=${one.manifestId}">
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop eq 1 }" th:attr="data-top=0" >&#xe69d;</i>
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop ne 1 }" th:attr="data-top=1" >&#xe69e;</i>
+									<div class="menu_box">
+										<ul class="demo">
+											<li class="li01">
+												<div href="Javascript:void(0)">更多 &nbsp; &gt;</div>
+												<ul>
+													<li class='edit'><a href="#"><i class="Hui-iconfont">&#xe60c;</i>编辑</a></li>
+													<li th:hidden="${one.usingBy ne one.createBy }"  class='share'><a href="#"><i class="Hui-iconfont">&#xe6aa;</i>共享</a></li>
+													<li class='delete'><a href="#"><i class="Hui-iconfont">&#xe609;</i>删除</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div style="color: #B3B3B3; font-size: 13px;">
+								创建人：<span th:text="${one.adminName}"></span>
+								创建时间：<span th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}"></span>
+							</div>
+							<p style="color: #333;height: 44px;text-align: center;" th:if="${one.status} ne 4">
+								<button type="button" th:if="${one.status} eq 1" class="btn btn-primary goto" 
+									 data-href='/enterprise/list2' >添加供应商</button>
+								<button type="button" th:if="${one.status} eq 1" class="btn btn-primary calculate"
+									 th:attr="data-id=${one.manifestId}" >数据计算</button>
+								<span th:if="${one.status} eq 2">加载中……</span>
+							</p>
+							<div class="list_message_box" th:if="${one.status} eq 4">							
+								<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+									<h5 th:text="${kvBean.name}" ></h5>
+									<span th:text="${kvBean.value}"></span> 
+									<div class="line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 mt-5 c-white list_con new_list_con">
+						<div class=" radius pt-10  cl list_bgc new_list_bgc">
+							<button class="btn btn-primary radius add" type="button" th:attr="data-type=3" >
+								<i class="Hui-iconfont">&#xe600;</i>新增供应商清单
+							</button>
+							<p style="color: #333;">添加供应商产品，系统自动分析供应商数据</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item">
+				<a href="Javascript:void(0)" class="off">成分清单<b class="Hui-iconfont">&#xe6d5;</b></a>
+				<div class="info" style="overflow: hidden;">			
+					<div class="col-md-3 mt-5 c-white list_con " th:each="one,status:${list}" th:if="${one.type eq 4}">
+						<div class=" radius pt-10 pb-10 pl-30 cl list_bgc">
+							<div class="list_icon"  th:attr="data-id=${one.id}">
+								<i class="Hui-iconfont">&#xe627;</i>
+								 <a target ="_self"  th:href="@{'/manifestAuth/iList/'+${one.manifestId}}"  style="line-height: 10px;" th:text="${one.manifestName}">加载中…</a>
+								 <div class="more" th:attr="data-id=${one.manifestId}">
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop eq 1 }" th:attr="data-top=0" >&#xe69d;</i>
+									<i class="Hui-iconfont isTop" style="float: left; cursor: pointer;" th:if="${one.isTop ne 1 }" th:attr="data-top=1" >&#xe69e;</i>
+									<div class="menu_box">
+										<ul class="demo">
+											<li class="li01">
+												<div href="Javascript:void(0)">更多 &nbsp; &gt;</div>
+												<ul>
+													<li class='edit'><a href="#"><i class="Hui-iconfont">&#xe60c;</i>编辑</a></li>
+													<li th:hidden="${one.usingBy ne one.createBy }"  class='share'><a href="#"><i class="Hui-iconfont">&#xe6aa;</i>共享</a></li>
+													<li class='delete'><a href="#"><i class="Hui-iconfont">&#xe609;</i>删除</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div style="color: #B3B3B3; font-size: 13px;">
+								创建人：<span th:text="${one.adminName}"></span>
+								创建时间：<span th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}"></span>
+							</div>
+							<p style="color: #333;height: 44px;text-align: center;" th:if="${one.status} ne 4">
+								<button type="button" th:if="${one.status} eq 1" class="btn btn-primary goto" 
+									 data-href='/ingredient/list2' >添加成分</button>
+								<button type="button" th:if="${one.status} eq 1" class="btn btn-primary calculate"
+									 th:attr="data-id=${one.manifestId}" >数据计算</button>
+								<span th:if="${one.status} eq 2">加载中……</span>
+							</p>
+							<div class="list_message_box" th:if="${one.status} eq 4">							
+								<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+									<h5 th:text="${kvBean.name}" ></h5>
+									<span th:text="${kvBean.value}"></span> 
+									<div class="line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 mt-5 c-white list_con new_list_con">
+						<div class=" radius pt-10  cl list_bgc new_list_bgc">
+							<button class="btn btn-primary radius add" type="button" th:attr="data-type=4" >
+								<i class="Hui-iconfont">&#xe600;</i>新增成分清单
+							</button>
+							<p style="color: #333;">添加关注成分，系统自动分析成分数据</p>
+						</div>
+					</div>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/manifestAuth/list.js?version=3"></script>
+</section>
+</html>

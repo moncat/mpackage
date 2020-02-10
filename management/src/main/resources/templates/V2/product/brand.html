@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html layout:decorator="/v2/common/layout_iframe">
+<section  layout:fragment="myCss">
+    <style type="text/css">
+        body {
+            background: #fff;
+        }
+        
+        .Selection-attention-box div {
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .Selection-attention-box div .brand-list {
+            position: absolute;
+            left: 0;
+            top: 70px;
+            width: 100%;
+            margin-bottom: 10px;
+            height: 137px;
+            overflow-y: auto;
+            border: 1px solid #e4e4e4;
+            padding: 3px;
+            border-top: none;
+            display: none;
+            background: #fff;
+            z-index:5;
+        }
+        
+        .Selection-attention-box div .brand-list li {
+            padding-left: 1%;
+            width: 100%;
+            cursor: pointer;
+            height: 32px;
+            line-height: 30px;
+        }
+        
+        .Selection-attention-box div .brand-list li:hover {
+            background: #0079FE;
+            color: #fff;
+        }
+        
+        .Selection-attention-box div .layui-btn-container {
+        	top: 20px;
+            height: 70px;
+            overflow-y: auto;
+        }
+        
+        .Selection-attention-box div .layui-btn-container button i {
+            font-size: 12px !important;
+            margin-left: 4px;
+        }
+        
+        .Selection-attention-box div .form-group .ts {
+            width: 70%;
+            text-align: left;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        a {
+            color: #1E9FFF;
+        }
+        
+        .btn_group {
+            text-align: right;
+            border-top: 1px solid #e5e9ec;
+            padding-top: 24px;
+            width: 90%;
+            margin: 30px auto 0;
+        }
+    </style>
+</section>
+<body>
+	<section layout:fragment="main">
+	    <div class="Selection-attention-box">
+	        <div style="margin-top: 14px;">
+	            <div class="form-group">
+	                <label >*选择品牌：</label>
+	                <input type="text" class="form-control Brand-input search" placeholder="请输入要查询的内容"/>
+	                <ul class="brand-list">
+	                </ul>
+	            </div>
+	            <div class="form-group ">
+	                <div class="layui-btn-container">
+	                   <span class="layui-btn layui-btn-normal  layui-btn-sm show">-</span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="form-group btn_group">
+	            <button type="button" class="layui-btn layui-btn-primary" id="cancel">取消</button>
+	            <button type="button" class="layui-btn layui-btn-normal" id="ok">确定</button>
+	        </div>
+	    </div>
+		
+	</section>
+	<section layout:fragment="my">
+		<script type="text/javascript" charset="utf-8"
+			src="/js/v2/product/brand.js?version=1"></script>
+	</section>
+</body>
+</html>

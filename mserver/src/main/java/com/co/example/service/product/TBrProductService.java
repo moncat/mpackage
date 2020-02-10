@@ -1,8 +1,8 @@
 package com.co.example.service.product;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,13 +10,23 @@ import org.springframework.data.domain.Pageable;
 import com.co.example.common.utils.PageReq;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.aide.BeVo;
 import com.co.example.entity.product.aide.ConfirmVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
+import com.co.example.entity.product.aide.TBrProductVo;
 import com.github.moncat.common.service.BaseService;
 
 public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	
 	int addProductFromCFDA(String page,String dateStr);
+
+	int addProductFromCFDA(File file);
+	/**
+	 * 解析进口非特殊
+	 * @param file
+	 * @return
+	 */
+	int addINProductFromCFDA(File file);
 	
 	void addProductFromBEVOL(int page , int category);
 
@@ -97,9 +107,6 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	 */
 	BigDecimal getCheapPrice(Long id);
 	
-	
-	
-	
 	/**
 	 * 设置商品的标签
 	 * @param id
@@ -115,6 +122,23 @@ public interface TBrProductService extends BaseService<TBrProduct, Long> {
 	 List<ConfirmVo>  queryConfirmData(String startTime ,String endTime,Integer type);
 	
 	 
-	
+	 List<BeVo>  queryBeData();
+	 
+	 
+	 List<TBrProductVo> queryProductVoListByBrandId(Long id);
+	 
+	 Page<TBrProductVo> queryProductVoPageByBrandId(Long id ,PageReq pageReq);
+	 
+	 long queryProductNumByBrandId(Long id);
+	 
+	 long queryProductNumByRealEnterpriseId(Long id);
+	 
+	 List<TBrProductVo> queryProductVoListByRealEnterpriseId(Long id);
+	 
+	 Page<TBrProductVo> queryProductVoPageByRealEnterpriseId(Long id,PageReq pageReq);
+	 
+	 List<TBrProductVo> queryProductVoListByIngredientId(Long id);
+	 
+	 void updateStatus(Long id, Long status);
 	
 }

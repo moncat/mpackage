@@ -45,6 +45,16 @@
     t.bevol_mid, 
     t.remark, 
     t.source, 
+    t.category_id, 
+    t.category_name, 
+    t.is_china, 
+    t.is_special, 
+    t.taobao_price, 
+    t.taobao_sale, 
+    t.taobao_turnover, 
+    t.i_score, 
+    t.product_brand_id, 
+    t.product_brand_name, 
     t.more_data1, 
     t.more_data2, 
     t.item_order, 
@@ -78,11 +88,25 @@
      <if test="ingredientId != null" >
   		  and tbpi.ingredient_id = #{ingredientId,jdbcType=BIGINT}
      </if>
+    
       <if test="productNameLike != null" >
           and t.product_name like concat('%',#{productNameLike,jdbcType=VARCHAR},'%')
       </if>
-      <if test="productNameLike2 != null" >
-          and t.product_name like concat('%',#{productNameLike2,jdbcType=VARCHAR},'%')
+      <if test="enterpriseNameLike != null" >
+          and t.enterprise_name like concat('%',#{enterpriseNameLike,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="productBrandNameLike != null" >
+          and t.product_brand_name like concat('%',#{productBrandNameLike,jdbcType=VARCHAR},'%')
+      </if>
+       
+       <if test="productNamesLike != null" >
+          <foreach item="item" index="index" collection="productNamesLike" open="and (t.product_name like '%"  close="%')" separator="%' or  t.product_name like '%">${item}</foreach>
+      </if>
+      <if test="enterpriseNamesLike != null" >
+      	 <foreach item="item" index="index" collection="enterpriseNamesLike" open="and (t.enterprise_name like '%"  close="%')" separator="%' or  t.enterprise_name like '%">${item}</foreach>
+      </if>
+      <if test="productBrandNamesLike != null" >
+      	 <foreach item="item" index="index" collection="productBrandNamesLike" open="and (t.product_brand_name like '%"  close="%')" separator="%' or  t.product_brand_name like '%">${item}</foreach>
       </if>
 	  <if test="brandIsNullFlg" >
 	      and tbpb.brand_id is null
@@ -102,7 +126,7 @@
       <if test="labelId != null" >
         and tbpl.label_id =  #{labelId,jdbcType=BIGINT}
       </if>
-      
+   
       <if test="labelIdArr != null" >
         and tbpl.label_id in   
 			<foreach collection="labelIdArr" index="index" item="item" open="(" close=")" separator="," >
@@ -116,6 +140,29 @@
      <if test="joinCollectFlg" >
 	      and c.create_by = #{userId,jdbcType=BIGINT} and c.type =1 
       </if>
+      
+      <if test="realEnterpriseId != null" >
+        and tbpe.enterprise_id =  #{realEnterpriseId,jdbcType=BIGINT}
+      </if>
+      
+      <if test="joinManifestDataFlg" >
+         and ma.manifest_id  =  #{manifestId,jdbcType=BIGINT}
+      </if>
+      
+      <if test="brandFlg != null and brandFlg ==1 " >
+         and   t.product_brand_id  is null
+      </if>
+      <if test="brandFlg != null and brandFlg ==2 " >
+         and   t.product_brand_id  is not null
+      </if>
+      
+      <if test="categoryFlg != null and categoryFlg ==1 " >
+         and  t.category_id   is null
+      </if>
+      <if test="categoryFlg != null and categoryFlg ==2 " >
+         and  t.category_id   is not null
+      </if>
+      
   </sql>
   <sql id="Table_Join_Clause" >
 	  <if test="joinFlg" >
@@ -135,6 +182,12 @@
       </if>
 	  <if test="joinCollectFlg" >
 	      left join t_br_user_collect c on t.id = c.cid
+      </if>
+	  <if test="joinRealEnterpriseFlg" >
+	      left JOIN t_br_product_enterprise tbpe on t.id = tbpe.product_id
+      </if>
+	  <if test="joinManifestDataFlg" >
+	      LEFT JOIN  t_br_manifest_data ma on t.id = ma.conn_id
       </if>
       <!-- 
       <if test="commentFlg" >
@@ -165,6 +218,14 @@
 		order by num desc
   </select>
   
-  
+    <select id="selectBeData" resultType="com.co.example.entity.product.aide.BeVo">
+	SELECT DISTINCT t.enterprise_name eName,producing_area eArea ,count(*) num
+	FROM
+	t_br_product t
+	WHERE
+	t.enterprise_id IS NULL
+	GROUP BY t.enterprise_name,producing_area	
+
+  </select>
   
 </mapper>

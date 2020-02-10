@@ -1,5 +1,7 @@
 package com.co.example.config;
 
+import java.util.HashMap;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
@@ -7,6 +9,9 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Map;
+import com.google.common.collect.Maps;
 
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import nz.net.ultraq.thymeleaf.decorators.strategies.GroupingStrategy;
@@ -26,6 +31,12 @@ public class ThymeleafConfig {
         templateResolver.setCacheable(false);
         return templateResolver;
     }
+	
+	private HashMap<String,String>  getTemplateAliases(){
+		HashMap<String,String> map = Maps.newHashMap();
+		map.put("layout_head", "/common/layout_head");
+		return map;
+	}
 	
     @Bean
     public SpringTemplateEngine templateEngine() {

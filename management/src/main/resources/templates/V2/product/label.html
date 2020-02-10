@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+		
+		    <div class="row cl">
+				
+				<div class="formControls col-xs-2 col-sm-12">
+					<h3 >标签关联</h3>
+					<h5 >推荐时，请关联该产品的标签，以便更精准推荐</h5>
+					<div class="line mb-10"></div>
+                	<div class="skin-minimal" id="label" th:attr="product-id=${id}">
+	                	<div class="check-box" th:each="item:${labelList}" style="margin-top: 20px;padding-left: 22px;">
+			   				<input th:attr="label-id=${item.id},id='checkbox-'+${itemStat.index}" type="checkbox"  th:checked="${item.selected}" />
+			   				<label th:attr="for='checkbox-'+${itemStat.index}" th:text="${item.name}"></label>
+			  			</div>
+                	</div>
+				</div>
+			</div>
+							
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3 btns" >
+					<input class="btn btn-danger radius cancle" type="button" value="&nbsp;&nbsp;关闭&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/product/label.js"></script>
+	</section>
+</body>
+</html>

@@ -2,12 +2,12 @@ package com.co.example.dao.product.impl;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
 import com.co.example.dao.product.TBrProductDao;
 import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.aide.BeVo;
 import com.co.example.entity.product.aide.ConfirmVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.github.moncat.common.dao.BaseDaoImpl;
@@ -53,6 +53,16 @@ public class TBrProductDaoImpl extends BaseDaoImpl<TBrProduct, Long> implements 
 			return this.sqlSession.selectList(selectConfirmData, newHashMap);
 		} catch (Exception e) {
 			throw new DaoException(String.format("查询备案数据出错！语句：%s", getSqlName(selectConfirmData)), e);
+		}
+	}
+
+
+	@Override
+	public List<BeVo> selectBeData() {
+		try {
+			return this.sqlSession.selectList("selectBeData");
+		} catch (Exception e) {
+			throw new DaoException(String.format("查询备案数据出错！语句：%s", getSqlName("selectBeData")), e);
 		}
 	}
 	

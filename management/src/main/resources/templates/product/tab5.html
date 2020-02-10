@@ -1,0 +1,68 @@
+<html  layout:decorator="/common/layout_iframe" >
+<section layout:fragment="main">
+	<div class="cl f-18 mt-10" th:attr="data-id=${id}" id="id">
+		<div class="l" style="width:49%">
+			<div class="panel panel-default">
+				<div class="panel-headercl">
+					产品销量趋势分析				
+				</div>
+				<div class="panel-body f-14" id='chart1' style='height: 300px;' >
+ 				</div>
+			</div>
+		</div>		
+		<div class="l ml-5" style="width:49%">
+			<div class="panel panel-default">
+				<div class="panel-headercl">
+					产品销售额趋势分析				
+				</div>
+				<div class="panel-body f-14" id='chart2' style='height: 300px;'>
+ 				</div>
+			</div>
+		</div>		
+		<div class="l ml-5" style="width:100%">
+			<table class="table table-border table-bordered table-bg table-hover">
+				<thead>
+					<tr>
+						<th colspan="10" scope="col">
+							列表
+							<span>数据列表</span>
+							<div class='r' style='display: inline-block;'>
+								<a href="javascript:void(0);" class="btn btn-success radius conn"><i class="Hui-iconfont">&#xe6f1;</i>商品链接</a>
+							</div>
+						</th>
+					</tr>
+					<tr class="text-c ">
+						<th>序号</th>
+						<th>产品名称</th>
+						<th>淘宝价格</th>
+						<th>全网月销量</th>
+						<th>全网月销量额</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr  class="text-c"  th:each="one,status:${mallList}" >
+						<td th:text="${status.index+1}">1</td>
+						<td th:text="${one.moreData1}"></td>
+						<td th:text="${one.price}"></td>
+						<td th:text="${one.sale}"></td>
+						<td th:text="${one.money}"></td>
+						<td>								
+							<a  style="text-decoration:none" 
+							href="javascript:void(0);" title="商品链接" class="conn" >
+								<i class="Hui-iconfont">&#xe6f1;</i>商品链接
+							</a> 
+						</td>
+					</tr>					
+				</tbody>
+			</table>
+		</div>		
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/common/formpage.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/3.4.0/echarts.common.min.js"></script>
+	<script type="text/javascript" src="/js/product/tab5.js"></script>
+</section>
+</html>

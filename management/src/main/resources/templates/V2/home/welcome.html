@@ -1,0 +1,137 @@
+﻿<!DOCTYPE HTML>
+<html layout:decorator="V2/common/layout_iframe">
+	<div class="content_wrapper" layout:fragment="main">
+		<!-- breadcrumb -->
+		<div class="container-fluid padding-zero">
+			<div class="page-heading">
+				<div class="row d-flex align-items-center">
+					<div class="col-md-6">
+						<div class="page-breadcrumb">
+							<h1>工作台</h1>
+						</div>
+					</div>
+					<div class="col-md-6 justify-content-md-end d-md-flex">
+						<div class="breadcrumb_nav">
+							<ol class="breadcrumb">
+								<li>
+									<i class="fa fa-home"></i>
+									<a class="parent-item" href="javascript:void(0);">Home</a>
+									<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">
+									工作台
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- breadcrumb_End -->
+
+		<!-- cars-box -->
+		<div class="container-fluid data-cars-box box-shadow">
+			<div class="datacars-title">总览数据</div>
+			<div class="data-cars">
+				<div class="col-md-2">
+					<p way-data="statistics.moreData1" >-</p>
+					<p>备案产品</p>
+					<p><i class="iconfont iconbeian"></i></p>
+				</div>
+				<div class="col-md-2">
+					<p way-data="statistics.moreData2">-</p>
+					<p>产品品牌</p>
+					<p><i class="iconfont iconpinpaiguanli"></i></p>
+				</div>
+				<div class="col-md-2">
+					<p way-data="statistics.moreData13">-</p>
+					<p>企业</p>
+					<p><i class="iconfont iconqiyeguanliqi"></i></p>
+				</div>
+				<div class="col-md-2">
+					<p way-data="statistics.moreData6">-</p>
+					<p>生产企业</p>
+					<p><i class="iconfont iconshengchan"></i></p>
+				</div>
+				<div class="col-md-2">
+					<p way-data="statistics.moreData8">-</p>
+					<p>产品成份</p>
+					<p><i class="iconfont iconxufanggouchengfenxi"></i></p>
+				</div>
+			</div>
+		</div>
+		<!-- /cars-box -->
+		<!-- 我的关注清单 -->
+		<div class="container-fluid  attention-box box-shadow">
+			<div class="attention-title">我的关注清单</div>
+				<div class="attention-cars" id="manifests">
+				</div>
+			</div>
+			<!-- /我的关注清单 -->
+
+			<!-- 折线图 -->
+			<div class="container-fluid zhexian-cars-box box-shadow">
+				<div class="zhexian-title" id="dateLimit1">
+					<span class="float-left">备案&amp;取消备案趋势图</span>
+					<div class="float-right">
+							 <input type="text" placeholder="请选择指定日期" 
+							 class="layui-input datetime1 " style="margin-top: 10px;width: 207px;font-weight: normal;"/>
+					</div>
+					<div class="float-right btn-box">
+						<button class="btn btn-primary" data-day='7'>7天</button>
+						<button class="btn" data-day='30'>30天</button>
+						<button class="btn" data-day='90'>90天</button>
+					</div>
+				</div>
+				<div class="data-cars">
+					<div class="card-body">
+						<div style="height: 400px">
+							<div id="chart" style='height: 438px;'></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /折线图 -->
+			<!-- 条形图 -->
+			<div class="container-fluid tiaoxing-cars-box">
+				<div class="float-left box-shadow tiaoxing-cars-box-left" style="width: 49%;">
+					<div class="tiaoxing-title" id="dateLimit2">
+						<span class="float-left">新增成份</span>
+						<div class="float-right">
+							<input type="text" placeholder="请选择指定日期" 
+							 class="layui-input datetime2 " style="margin-top: 10px;width: 207px;font-weight: normal;"/>
+						</div>
+						<div class="float-right btn-box">
+							<button class="btn btn-primary" data-day='7'>7天</button>
+							<button class="btn" data-day='30'>30天</button>
+							<button class="btn" data-day='90'>90天</button>
+						</div>
+					</div>
+					<div class="data-cars " style="height: 500px;" id="ingredient">
+					</div>
+					<a href="/V2/product/list3" target="_self"  class="more">更多</a>
+				</div>
+				<div class="float-right box-shadow tiaoxing-cars-box-left" style="width: 49%;">
+					<div class="tiaoxing-title" id="dateLimit3">
+						<span class="float-left">企业新备案排行</span>
+						<div class="float-right">
+							<input type="text" placeholder="请选择指定日期" 
+							 class="layui-input datetime3 " style="margin-top: 10px;width: 207px;font-weight: normal;"/>
+						</div>
+						<div class="float-right btn-box">
+							<button class="btn btn-primary" data-day='7'>7天</button>
+							<button class="btn" data-day='30'>30天</button>
+							<button class="btn" data-day='90'>90天</button>
+						</div>
+					</div>
+					<div class="data-cars " style="height: 500px;" id="enterprise"></div>
+					<a href="/V2/product/list3" target="_self"  class="more">更多</a>
+				</div>
+			</div>
+		</div>
+	<section layout:fragment="my">	
+	    <script type="text/javascript" src="/base/v2/echarts/4.3.0/echarts.min.js"></script>
+		<script type="text/javascript" src="/js/v2/home/show.js?version=2"></script>
+	</section>
+</html>

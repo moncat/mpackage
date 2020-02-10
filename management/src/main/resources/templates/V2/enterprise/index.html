@@ -1,0 +1,201 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/enterprise/index.css" />
+</section>
+<section layout:fragment="main">
+		<!--header-->
+		<div class="main">
+			<div class="right">
+				<header>
+					<h3 th:text="${one.enterpriseName}" >-</h3>
+					<p><span>许可证编号：</span><span  th:text="${one.applySn}" ></span></p>
+					<p th:if="${permission!=null}"><span>有效期至：</span><span th:text="${permission.endDate}">-</span></p>
+					<p th:if="${permission!=null}"><span>发证日期：</span><span th:text="${permission.startDate}">-</span></p>
+					<p>
+						<a  target="_blank" th:href="@{'http://125.35.6.84:81/xk/itownet/portal/dzpz.jsp?id='+${permission.moreData1}}"  th:if="${permission!=null}" class="layui-btn layui-btn-normal">查看许可证</a>
+						<a  target="_blank" th:href="${base.moreData1}" th:if="${register!=null}" class="layui-btn layui-btn-normal">查看企业</a>
+					</p>
+				</header>
+				<div class="numbers">
+					<div class="numbers_box">
+						<span>合作品牌</span>
+						<span class="base1" >-</span>
+					</div>
+					<div class="numbers_box">
+						<span>生产品类</span>
+						<span class="base2" >-</span>
+					</div>
+					<div class="numbers_box">
+						<span>生成产品数量</span>
+						<span class="base3" >-</span>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!--header-->
+		<!--body-->
+		<div class="layui-tab layui-tab-card">
+			<ul class="layui-tab-title">
+				<li data-id="1" class="layui-this">生产品类分析</li>
+				<li data-id="2">合作品牌分析</li>
+				<li data-id="3">供应商介绍</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show clearfix">
+					<div style="width: 100%; overflow: hidden;">
+						<div class="Statistical-table-left clearfix">
+							<h3>供应商生产品类构成占比</h3>
+							<div class="Statistical-table "  id='chart1'>
+							</div>
+						</div>
+						<div class="Statistical-table-right clearfix">
+							<h3>供应商生产品类备案产品数</h3>
+							<div class="Statistical-table " id='process1'></div>
+						</div>
+					</div>
+
+					<p class="Index-analysis-title"><span>商品列表</span></p>
+					<table class="layui-table">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>产品名称</th>
+								<th>品牌</th>
+								<th>品类</th>
+								<th>淘宝价格</th>
+								<th>全网月销量↓</th>
+								<th>全网月销售额</th>
+								<th>操作</th>
+							</tr>
+						</thead>				
+						<tbody id="productList">
+						</tbody>
+					</table>
+					<div id="pPage" ></div>
+				</div>
+				<div class="layui-tab-item clearfix">
+					<div style="width: 100%; overflow: hidden;">
+						<div class="Statistical-table-left clearfix">
+							<h3>合作品牌构成占比</h3>
+							<div class="Statistical-table "  id='chart2'>
+							</div>
+						</div>
+						<div class="Statistical-table-right clearfix">
+							<h3>合作品牌生产产品数</h3>
+							<div class="Statistical-table " id='process2'></div>
+						</div>
+					</div>
+					<p class="Index-analysis-title"><span>合作品牌构成占比</span></p>
+					<table class="layui-table">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>品牌名称</th>
+								<th>品牌等级</th>
+								<th>品类</th>
+								<th>备案数</th>
+								<th>生产产品占比</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="polist">
+						</tbody>
+						<div id="poPage"></div>
+					</table>
+				</div>
+				<div class="layui-tab-item clearfix">
+					<table class="layui-table">
+						<tbody>
+							<tr><td>许可证编号</td><td th:text="${permission.permissionId}"></td></tr>
+							<tr><td>许可项目</td><td th:text="${permission.permissionProject}"></td></tr>
+							<tr><td>企业住所</td><td th:text="${permission.enterpriseLocal}"></td></tr>												
+							<tr><td>生产地址：</td><td  th:text="${permission.productingLocal}"></td></tr>
+							<tr><td>社会信用代码：</td><td  th:text="${permission.creditId}"></td></tr>
+							<tr><td>法定代表人：</td><td  th:text="${permission.personLegal}"></td></tr>
+							<tr><td>企业负责人：</td><td  th:text="${permission.personIncharge}"></td></tr>
+							<tr><td>质量负责人：</td><td  th:text="${permission.personQuality}"></td></tr>
+							<tr><td>发证机关：</td><td  th:text="${permission.licenseOffice}"></td></tr>
+							<tr><td>签发人：</td><td  th:text="${permission.licensePerson}"></td></tr>
+							<tr><td>日常监督管理机构：</td><td  th:text="${permission.supervisionOffice}"></td></tr>
+							<tr><td>日常监督管理人员：</td><td  th:text="${permission.supervisionPerson}"></td></tr>
+							<tr><td>有效期至：</td><td  th:text="${permission.endDate}"></td></tr>
+							<tr><td>发证日期：</td><td  th:text="${permission.startDate}"></td></tr>
+							<tr><td>状态：</td><td  >正常</td></tr>
+						</tbody>
+					</table>
+					<h4  th:if="${register!=null}" class="zc">注册信息 &nbsp;<span>（数据来源于天眼查）</span></h4 >
+					<table class="layui-table"  th:if="${register!=null}" >
+						<tbody>
+							<tr><td>法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人： </td><td  th:text="${register.legalPerson}"></td></tr>
+							<tr><td>注册资本： </td><td  th:text="${register.registerCapital}"></td></tr>
+							<tr><td>企业状态： </td><td  th:text="${register.enterpriseStatus}"></td></tr>
+							<tr><td>工商注册号： </td><td  th:text="${register.registerId}"></td></tr>
+							<tr><td>组织机构代码： </td><td  th:text="${register.orgId}"></td></tr>
+							<tr><td>统一信用代码： </td><td  th:text="${register.creditId}"></td></tr>
+							<tr><td>企业类型： </td><td  th:text="${register.enterpriseType}"></td></tr>
+							<tr><td>纳税人识别号： </td><td  th:text="${register.revenueId}"></td></tr>
+							<tr><td>行业类型： </td><td  th:text="${register.industryType}"></td></tr>
+							<tr><td>营业期限： </td><td  th:text="${register.businessTerm}"></td></tr>
+							<tr><td>注册日期：  </td><td th:if="${register.registerDate != null }" th:text="${#dates.format(register.registerDate, 'yyyy-MM-dd')}"></td></tr>
+							<tr><td>核准日期：  </td><td th:if="${register.approveDate != null }" th:text="${#dates.format(register.approveDate, 'yyyy-MM-dd')}"></td></tr>
+							<tr><td>登记机关： </td><td  th:text="${register.registerAuthority}"></td></tr>
+							<tr><td>注册地址： </td><td  th:text="${register.registerAddress}"></td></tr>
+							<tr><td>英文名称： </td><td  th:text="${register.nameEn}"></td></tr>
+							<tr><td>经营范围： </td><td th:text="${register.businessScope}" style="width: 83%;" > </td></tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+
+	
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/v2/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/china.js"></script>
+	<script type="text/javascript" src="/js/v2/common/form_page_post.js?version=1"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="/js/v2/manifestAuth/model.js?version=4"></script>
+	<script type="text/javascript" src="/js/v2/enterprise/index.js?version=7"></script>
+	<script id="polistTmp" type="text/x-jquery-tmpl">
+	  {{each(i,item) content}} 
+	<tr  class="text-c">
+	<td>${size*number+i+1}</td>
+	<td>${item.tbrBrandName}</td>
+	<td>${item.tbrBrandLevel}</td>								
+	<td>${item.catagoryNum}</td>								
+	<td>${item.productNum}</td>								
+	<td>${(item.curProductNum/item.productNum*100).toFixed(2)}%</td>	
+	<td>								
+		<a  style="text-decoration:none" href="/brand/index/${item.id}"  title="数据分析" target="_blank" >
+			<i class="Hui-iconfont">&#xe621;</i>数据分析
+		</a> 
+	</td>							
+	</tr>		
+	  {{/each}}
+	</script>
+	<script id="productListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+  <tr  class="text-c">
+	<td>${size*number+i+1}</td>
+	<td>
+		<a href="/product/detail/${item.id}"   target="_blank">
+			<span >${item.productName}</span>
+		</a>
+	</td>
+	<td>${item.productBrandName}</td> 
+	<td>${item.categoryName}</td>
+	<td>${item.taobaoPrice}</td>								
+	<td>${item.taobaoSale}</td>								
+	<td>${item.taobaoTurnover}</td>								
+	<td>								
+		<a  style="text-decoration:none" href="javascript:void(0);" data-id="${item.id}" title="商品链接" class="conn" >
+			<i class="Hui-iconfont">&#xe6f1;</i>商品链接
+		</a> 
+	</td>							
+  </tr>		
+{{/each}}
+	</script>
+</section>
+</html>

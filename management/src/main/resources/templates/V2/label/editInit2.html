@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="v2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+    body {
+        background: #fff;
+    }
+    
+    .edit form {
+        width: 90%;
+        margin: 20px auto 0;
+    }
+    
+    p {
+        width: 100%;
+        padding: 10px;
+    }
+</style>
+</section>
+<body>
+<section layout:fragment="main">
+ <div class="edit">
+        <form id="curForm">
+        <input type="hidden" th:value="${one.id}" name="id"></input>
+            <div class="form-group">
+                <label >*选择标签分类：</label>
+				<select class="form-control select" size="1"    placeholder="请选择分类"  name="classId" >
+				   <option th:selected="${one.classId eq oneLabelClass.id}"  th:each="oneLabelClass:${labelClassList}" th:value="${oneLabelClass.id}" th:text="${oneLabelClass.name}"></option>
+				</select>
+            </div>
+            <div class="form-group">
+                <label >标签名称：</label>
+                <input type="text" class="form-control" placeholder="请输入名称" name="name" th:value="${one.name}"/>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">标签描述：</label>
+                <textarea class="form-control" rows="3" placeholder="请输入标签描述" th:utext="${one.description}" name="description"></textarea>
+            </div>
+            <div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:10px;">
+                <button type="button" class="layui-btn layui-btn-primary cancle">关闭</button>
+                <button type="submit" class="layui-btn layui-btn-normal">编辑标签</button>
+            </div>
+        </form>
+    </div>
+</section>
+<section  layout:fragment="my">
+	<script type="text/javascript" charset="utf-8" src="/js/v2/label/edit2.js?version=1"></script>
+</section>
+</body>
+</html>

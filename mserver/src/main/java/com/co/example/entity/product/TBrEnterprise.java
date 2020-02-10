@@ -9,7 +9,17 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class TBrEnterprise extends BaseEntity {
-    /** id */
+	
+    public TBrEnterprise(Long id) {
+		super();
+		this.id = id;
+	}
+
+	public TBrEnterprise() {
+		super();
+	}
+
+	/** id */
     private Long id;
 
     /** 备案号 */
@@ -18,8 +28,14 @@ public class TBrEnterprise extends BaseEntity {
     /** 企业名称 */
     private String enterpriseName;
 
+    /** 企业英文名 */
+    private String enterpriseNameEn;
+
     /** 产地 */
     private String producingArea;
+
+    /** 企业英文产地 */
+    private String producingAreaEn;
 
     /** 备注 */
     private String remark;
@@ -32,4 +48,10 @@ public class TBrEnterprise extends BaseEntity {
 
     /** 是否选择为常用 */
     private Byte isChoice;
+
+    /** t_br_region主键id */
+    private Long regionId;
+
+    /** 省份名称，不含“省份，自治区，市等汉字” */
+    private String province;
 }

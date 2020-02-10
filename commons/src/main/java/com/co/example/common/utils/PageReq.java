@@ -14,7 +14,7 @@ public class PageReq implements Pageable, Serializable {
 	private static final int DEFAULT_PAGE = 0;
 	
 	/** 默认每页10条 */
-	private static final int DEFAULT_SIZE = 10;
+	private static final int DEFAULT_SIZE = 15;
 	
 	private int page;
 	private int size;

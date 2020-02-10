@@ -28,6 +28,7 @@ import org.apache.http.impl.cookie.BasicClientCookie;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -39,10 +40,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 */
 public class BrowserFactory {
 	
-	
 	public static WebDriver getIE() {
 		try {
-			DriverInitter.init();
+			DriverInitter.initIE();
 		} catch (IOException e) {
 			return null;
 		}
@@ -62,7 +62,7 @@ public class BrowserFactory {
 
 	public static WebDriver getFireFox() {
 		try {
-			DriverInitter.init();
+			DriverInitter.initFirefox();
 		} catch (IOException e) {
 			return null;
 		}
@@ -103,7 +103,6 @@ public class BrowserFactory {
 		return browser;
 	}
 
-	
 
 	public static CookieStore getCookieStore(WebDriver driver) {
 		CookieStore store = new BasicCookieStore();

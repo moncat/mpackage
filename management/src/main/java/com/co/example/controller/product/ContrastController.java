@@ -2,6 +2,7 @@ package com.co.example.controller.product;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,27 +17,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.co.example.common.constant.Constant;
-import com.co.example.common.utils.PageReq;
 import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.brand.TBrProductBrand;
+import com.co.example.entity.brand.aide.TBrBrandQuery;
+import com.co.example.entity.brand.aide.TBrBrandVo;
 import com.co.example.entity.brand.aide.TBrProductBrandQuery;
+import com.co.example.entity.enterprise.TBrEnterprisePermission;
 import com.co.example.entity.label.TBrProductLabel;
 import com.co.example.entity.label.aide.TBrProductLabelQuery;
-import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.TBrEnterpriseQuery;
+import com.co.example.entity.product.aide.TBrEnterpriseVo;
+import com.co.example.entity.product.aide.TBrIngredientQuery;
+import com.co.example.entity.product.aide.TBrIngredientVo;
 import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.entity.product.aide.TBrProductVo;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.enterprise.TBrEnterprisePermissionService;
 import com.co.example.service.label.TBrProductLabelService;
 import com.co.example.service.product.TBrEnterpriseService;
 import com.co.example.service.product.TBrIngredientService;
 import com.co.example.service.product.TBrProductService;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 
 //商品对比
 @Controller
@@ -62,6 +67,9 @@ public class ContrastController {
 	@Inject
 	TBrBrandService tBrBrandService;
 
+	@Inject
+	TBrEnterprisePermissionService tBrEnterprisePermissionService;
+
 	@RequestMapping(value = "detail/{ids}", method = { RequestMethod.GET })
 	public String detail(Model model, HttpSession session, @PathVariable String ids) {
 		ArrayList<TBrProductVo> list = Lists.newArrayList();
@@ -81,7 +89,7 @@ public class ContrastController {
 							TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
 							tBrEnterpriseQuery.setProductId(id);
 							tBrEnterpriseQuery.setJoinFlg(true);
-							List<TBrEnterprise> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
+							List<TBrEnterpriseVo> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
 							productVo.setEnterpriseList(enterpriseList);
 							// 插入品牌
 							TBrProductBrandQuery tBrProductBrandQuery = new TBrProductBrandQuery();
@@ -147,6 +155,104 @@ public class ContrastController {
 	public String choice(Model model) throws Exception {
 		return "contrast/choice";
 	}
+	
+	
+	
+	@RequestMapping(value = "detailE/{ids}", method = { RequestMethod.GET })
+	public String detailE(Model model, HttpSession session, @PathVariable String ids) {
+		ArrayList<TBrEnterpriseVo> list = Lists.newArrayList();
+		if (StringUtils.isNotBlank(ids)) {
+			String[] idArr = ids.split("_");
+			for (String idStr : idArr) {
+				if (NumberUtils.isDigits(idStr)) {
+					long id = Long.parseLong(idStr);
+					if (id != 0) {
+						TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
+						tBrEnterpriseQuery.setId(id);
+						TBrEnterpriseVo eTmp = tBrEnterpriseService.queryOne(tBrEnterpriseQuery);
+						TBrEnterprisePermission permission = tBrEnterprisePermissionService.queryVoByEId(id);
+						if (eTmp != null) {
+							//许可信息
+							eTmp.setPermission(permission);
+							//产品数
+							List<TBrProductVo> plist = tBrProductService.queryProductVoListByRealEnterpriseId(id);
+							eTmp.setPnum(plist.size());
+							//品牌数
+							HashSet<Long> bSet = Sets.newHashSet();
+							for (TBrProductVo tBrProductVo : plist) {
+								bSet.add(tBrProductVo.getId());
+							}
+							eTmp.setBnum(bSet.size());
+							list.add(eTmp);
+						}
+					}
+				}
+			}
+		}
+		model.addAttribute("list", list);
+		return "contrast/detailE";
+	}
+	
+	@RequestMapping(value = "detailB/{ids}", method = { RequestMethod.GET })
+	public String detailB(Model model, HttpSession session, @PathVariable String ids) {
+		ArrayList<TBrBrandVo> list = Lists.newArrayList();
+		if (StringUtils.isNotBlank(ids)) {
+			String[] idArr = ids.split("_");
+			for (String idStr : idArr) {
+				if (NumberUtils.isDigits(idStr)) {
+					long id = Long.parseLong(idStr);
+					if (id != 0) {
+						TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+						tBrBrandQuery.setId(id);
+						TBrBrandVo bTmp = tBrBrandService.queryOne(tBrBrandQuery);
+						if (bTmp != null) {
+							list.add(bTmp);
+						}
+					}
+				}
+			}
+		}
+		model.addAttribute("list", list);
+		return "contrast/detailB";
+	}
+	
+	
+	@RequestMapping(value = "detailI/{ids}", method = { RequestMethod.GET })
+	public String detailI(Model model, HttpSession session, @PathVariable String ids) {
+		ArrayList<TBrIngredientVo> list = Lists.newArrayList();
+		if (StringUtils.isNotBlank(ids)) {
+			String[] idArr = ids.split("_");
+			for (String idStr : idArr) {
+				if (NumberUtils.isDigits(idStr)) {
+					long id = Long.parseLong(idStr);
+					if (id != 0) {
+						TBrIngredientQuery ingredientQuery = new TBrIngredientQuery();
+						ingredientQuery.setId(id);
+						TBrIngredientVo iTmp = tBrIngredientService.queryOne(ingredientQuery);
+						if (iTmp != null) {
+							tBrIngredientService.getAims(iTmp);
+							List<TBrProductVo> plist = tBrProductService.queryProductVoListByIngredientId(id);
+	//						HashSet<Long> bSet = Sets.newHashSet();
+							for (TBrProductVo tBrProductVo : plist) {
+								
+								
+	//							list.add(bTmp);
+								
+							}
+							//产品数
+							//品牌数
+							//企业数
+							
+						}
+					}
+				}
+			}
+		}
+		model.addAttribute("list", list);
+		return "contrast/detailI";
+	}
+	
+	
 	
 	
 }

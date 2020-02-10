@@ -126,7 +126,7 @@
       <if test="classId != null">
           and t.class_id = #{classId,jdbcType=BIGINT}
       </if>
-      <if test="isChoice != null">
+      <if test="isChoice != null and isChoice != 0">
           and t.is_choice = #{isChoice,jdbcType=TINYINT}
       </if>
       <if test="description != null">
@@ -219,8 +219,10 @@
      <if test="nameLike != null">
           and t.name like concat('%',#{nameLike,jdbcType=VARCHAR},'%') 
       </if>
-      
-      
+     <if test="isChoice == 0" >
+      and  ( is_choice is null or  is_choice = 0)
+     </if> 
+     
       
   </sql>
   <sql id="Table_Join_Clause">

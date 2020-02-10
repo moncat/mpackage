@@ -161,9 +161,12 @@
      <!-- ,alias.field -->
   </sql>
   <sql id="Vo_Where_Clause" >
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+       <if test="timeLmit1 != null" >
+          and t.create_time &gt; #{timeLmit1,jdbcType=TIMESTAMP}
+      </if>
+      <if test="timeLmit2 != null" >
+          and t.create_time &lt; #{timeLmit2,jdbcType=TIMESTAMP}
+      </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->

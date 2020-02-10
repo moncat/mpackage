@@ -19,7 +19,7 @@ $elem.field:{
 					url: "/$!{foo}/edit" ,
 					success: function(data){
 						$(':submit').removeAttr('disabled');
-						layer.alert('编辑成功!',function(){
+						layer.alert(data.info,function(){
 							lc();
 						});
 					},

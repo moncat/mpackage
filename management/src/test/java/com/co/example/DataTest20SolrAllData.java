@@ -1,6 +1,7 @@
 package com.co.example;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.data.domain.Page;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,6 +50,7 @@ import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
 import com.co.example.service.solr.SolrService;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -82,6 +85,9 @@ public class DataTest20SolrAllData {
 
 	@Inject
 	TBrBrandService tBrBrandService;
+	
+	@Inject
+	TBrLabelService tBrLabelService;
 
 	@Inject
 	TBrProductSpecService tBrProductSpecService;
@@ -91,9 +97,6 @@ public class DataTest20SolrAllData {
 
 	@Inject
 	TBrProductLabelService tBrProductLabelService;
-
-	@Inject
-	TBrLabelService tBrLabelService;
 
 	@Inject
 	TBrProductEnterpriseService tBrProductEnterpriseService;
@@ -113,23 +116,58 @@ public class DataTest20SolrAllData {
 		log.info("*************end****************");
 	}
 
-	@Test
+	 @Test
+	public void updateByIdSelective() throws Exception {
+
+		log.info("*************start**updateByIdSelective**************");
+		solrService.updateByIdSelective("3549461673213952", "brands", "");
+		log.info("**************end**updateByIdSelective*************");
+	}
+
+	// @Test
+	public void updateProductByIdSelective() throws Exception {
+		log.info("*************start**updateByIdSelective**************");
+
+		TBrProductQuery tBrProductQuery = new TBrProductQuery();
+		tBrProductQuery.setIsChina(Constant.NO);
+		List<TBrProduct> queryList = tBrProductService.queryList(tBrProductQuery);
+		Long id = 0l;
+		// 16489
+		String confirmDate = null;
+		for (int i = 189; i < queryList.size(); i++) {
+			TBrProduct tBrProduct = queryList.get(i);
+			id = tBrProduct.getId();
+			confirmDate = tBrProduct.getConfirmDate();
+			solrService.updateByIdSelective(id + "", "confirmDate", confirmDate);
+			log.info("**id**" + id + "**" + confirmDate + "**" + i);
+		}
+
+		log.info("**************end**updateByIdSelective*************");
+	}
+
+	// @Test
+	// public void updateInBatch() throws Exception {
+	// log.info("*************start**updateInBatch**************");
+	// HashMap<String, String> map = Maps.newHashMap();
+	// solrService.updateInBatch("", map);
+	// log.info("**************end**updateInBatch*************");
+	// }
+
+	// @Test
 	public void delAll() throws Exception {
 		log.info("*************start**delAll**************");
 		solrService.deleteProducts();
 		log.info("**************end**delAll*************");
 	}
 
-	@Test
+//	@Test
 	public void addSolrData() throws Exception {
 		log.info("*************start**addSolrData**************");
 		TBrProductQuery query = new TBrProductQuery();
-		query.setUpdateBy(6l);
+		query.setUpdateBy(7l);
 		long queryCount = tBrProductService.queryCount(query);
 		log.info("solr全量数据--需要同步" + queryCount);
-		// 784125
-//		int pagesize = 50;
-		 int pagesize = 1000;
+		int pagesize = 1;
 		if (queryCount > 0) {
 			// while (queryCount > 0) {
 			List<TBrProductSolr> tBrProductSolrList = new ArrayList<TBrProductSolr>();
@@ -140,71 +178,15 @@ public class DataTest20SolrAllData {
 			Page<TBrProduct> page = tBrProductService.queryPageList(query, pageReq);
 			List<TBrProduct> content = page.getContent();
 			for (TBrProduct tBrProduct : content) {
-				TBrProductSolr tBrProductSolr = new TBrProductSolr();
-				Long id = tBrProduct.getId();
-				tBrProductSolr.setId(id);
-				tBrProductSolr.setEnterpriseName(tBrProduct.getEnterpriseName());
-				tBrProductSolr.setProductName(tBrProduct.getProductName());
-				tBrProductSolr.setConfirmDate(tBrProduct.getConfirmDate());
-				tBrProductSolr.setApplySn(tBrProduct.getApplySn());
-				tBrProductSolr.setBeid(tBrProduct.getEnterpriseId() + ""); // 企业ID
-				// 生产企业ids 
-				TBrEnterpriseQuery tBrEnterpriseQuery = new TBrEnterpriseQuery();
-				tBrEnterpriseQuery.setIsProduct(Constant.YES);
-				tBrEnterpriseQuery.setJoinFlg(true);
-				tBrEnterpriseQuery.setProductId(id);
-				List<TBrEnterprise> tBrEnterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);			
-				List<String> enterpriseIdsArr = Lists.newArrayList();
-				for (TBrEnterprise tBrEnterprise : tBrEnterpriseList) {
-					enterpriseIdsArr.add(tBrEnterprise.getId() + "");
-				}			
-				tBrProductSolr.setPeids(String.join(",", enterpriseIdsArr));
-
-				// 成分id 成分名称
-				TBrIngredientQuery tBrIngredientQuery = new TBrIngredientQuery();
-				tBrIngredientQuery.setJoinFlg(true);
-				tBrIngredientQuery.setProductId(id);
-				List<TBrIngredient> tBrIngredientList = tBrIngredientService.queryList(tBrIngredientQuery);
-				List<String> iNameArr = Lists.newArrayList();
-				List<String> iIdsArr = Lists.newArrayList();
-				for (TBrIngredient tBrIngredient : tBrIngredientList) {
-					iNameArr.add(tBrIngredient.getName());
-					iIdsArr.add(tBrIngredient.getId() + "");
-				}
-				tBrProductSolr.setIngredients(String.join(",", iNameArr));
-				tBrProductSolr.setIids(String.join(",", iIdsArr));
-
-				//品牌
-				TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
-				tBrBrandQuery.setJoinFlg(true);
-				tBrBrandQuery.setProductId(id);
-				List<TBrBrand> brandList = tBrBrandService.queryList(tBrBrandQuery);
-				List<String> bNameArr = Lists.newArrayList();
-				List<String> bIdsArr = Lists.newArrayList();
-				for (TBrBrand tBrBrand : brandList) {
-					bNameArr.add(tBrBrand.getName());
-					bIdsArr.add(tBrBrand.getId() + "");
-				}
-				tBrProductSolr.setBrands(String.join(",", bNameArr));
-				tBrProductSolr.setBids(String.join(",", bIdsArr));
-
-				//标签
-				TBrLabelQuery tBrLabelQuery = new TBrLabelQuery();
-				tBrLabelQuery.setProductJoinFlg(true);
-				tBrLabelQuery.setProductId(id);
-				List<TBrLabel> labelList = tBrLabelService.queryList(tBrLabelQuery);
-				List<String> lIdsArr = Lists.newArrayList();
-				for (TBrLabel tBrLabel : labelList) {
-					lIdsArr.add(tBrLabel.getId()+"");
-				}
-				tBrProductSolr.setLids(String.join(",", lIdsArr));
-				
+				TBrProductSolr tBrProductSolr = solrService.getSolrBean(tBrProduct);
+				//solr列表
 				tBrProductSolrList.add(tBrProductSolr);
-				
+				//批量更新列表
 				TBrProduct productTmp = new TBrProduct();
 				productTmp.setId(tBrProduct.getId());
-				productTmp.setUpdateBy(7l);
+				productTmp.setUpdateBy(8l);
 				tBrProductTmpList.add(productTmp);
+				
 			}
 			solrService.syncProducts(tBrProductSolrList);
 			tBrProductService.updateInBatch(tBrProductTmpList);
@@ -215,6 +197,62 @@ public class DataTest20SolrAllData {
 		}
 		log.info("solr全量数据--同步数据完毕");
 		log.info("*************end**addSolrData**************");
+	}
+	
+	
+//	@Test
+	public void addOneData() throws Exception {
+		Long id = 3511229152509952l;
+		log.info("*************start**addOne**************");
+		TBrProduct tBrProduct = tBrProductService.queryById(id);
+		Integer syncOne = solrService.syncOne(tBrProduct,true,10l);
+		if(syncOne==1){
+			System.out.println(syncOne);
+		}else if(syncOne==2){
+			System.out.println(syncOne);
+		}else if(syncOne==3){
+			System.out.println(syncOne);
+		}else if(syncOne==4){
+			System.out.println(syncOne);
+		}
+		log.info("*************end**addOneData**************");
+	}
+	
+	
+	//正在使用
+//	@Test
+	public void addSolrData2() throws Exception {
+		log.info("*************start**addSolrData**************");
+		TBrProductQuery query = new TBrProductQuery();
+		query.setUpdateBy(7l);
+		long queryCount = tBrProductService.queryCount(query);
+		log.info("solr全量数据--需要同步" + queryCount);
+		int pagesize = 500;
+		while (queryCount > 0) {
+			PageReq pageReq = new PageReq();
+			pageReq.setPageSize(pagesize);
+			pageReq.setPage(0);
+			Page<TBrProduct> page = tBrProductService.queryPageList(query, pageReq);
+			List<TBrProduct> content = page.getContent();
+			for (TBrProduct tBrProduct : content) {
+				solrService.syncOne(tBrProduct,true,10l);
+//				Integer syncOne = solrService.syncOne(tBrProduct,true,10l);
+//				System.out.println("*****"+syncOne+"*****"+tBrProduct.getId());				
+			}
+			queryCount -= pagesize;
+			log.info("solr全量数据--同步中" + queryCount);
+		}
+		log.info("solr全量数据--同步数据完毕");
+		log.info("*************end**addSolrData**************");
+	}
+
+	
+//	@Test
+	public void queryCount() throws Exception {
+		log.info("*************start**queryCount**************");
+		Long queryCount = solrService.queryCount();
+		System.out.println("count=="+queryCount);
+		log.info("*************end**queryCount**************");
 	}
 
 }

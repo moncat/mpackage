@@ -1,0 +1,157 @@
+<html  layout:decorator="/v2/common/layout_iframe" >
+<section layout:fragment="main">
+	<div class="wrapper">
+				<div class="content_wrapper">
+					<!-- breadcrumb -->
+					<div class="container-fluid padding-zero">
+						<div class="page-heading">
+							<div class="row d-flex align-items-center">
+								<div class="col-md-6">
+									<div class="page-breadcrumb">
+										<h1>产品成分列表</h1>
+									</div>
+								</div>
+								<div class="col-md-6 justify-content-md-end d-md-flex">
+									<div class="breadcrumb_nav">
+										<ol class="breadcrumb">
+											<li>
+												<i class="fa fa-home"></i>
+												<a class="parent-item" href="#">Home</a>
+												<i class="fa fa-angle-right"></i>
+											</li>
+											<li class="active">
+												产品成分列表
+											</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- breadcrumb_End -->
+					<!-- 数据筛选 -->
+					<div class="container-fluid data-cars-box box-shadow">
+						<div class="datacars-title">数据筛选</div>
+						<div class="Brand_search_box">
+							<form class="form-inline" action="/ingredient/list2" id="searchForm">
+								<label>输入查询:</label>&nbsp;&nbsp;
+								<input th:value="${query.nameLike}"  name="nameLike" type="search" class="form-control Pro_search nameLike" placeholder="请输入成分"/>&nbsp;&nbsp;
+								<label>成分标签：</label>&nbsp;
+								<select	class="form-control select" size="1" placeholder="请选择标签" name="labelId" th:attr="data-labelId=${query.labelId}">&nbsp;&nbsp;
+									<option></option>
+									<option th:selected="${query.labelId} eq ${oneLabel.id}"
+										th:value="${oneLabel.id}" th:text="${oneLabel.name}"
+										th:each="oneLabel:${labelList}"></option>
+								</select> &nbsp;&nbsp;
+								<!-- 
+								<label>使用目的：</label>&nbsp;&nbsp;
+								<select class="form-control">
+									<option>祛痘</option>
+									<option>美白</option>
+								</select>&nbsp;&nbsp;
+								 -->
+								<label>是否活性：</label>&nbsp;&nbsp;
+								<select class="form-control select" name="activeIngredient" >
+									<option></option>
+									<option value="1" th:selected="${query.activeIngredient ==1}" >活性</option>
+									<option value="0" th:selected="${query.activeIngredient ==0}" >非活性</option>
+								</select>&nbsp;&nbsp;
+								<button class="layui-btn layui-btn-normal" style="color: #fff;"><i class="iconfont iconfangdajing" style="color: #fff;"></i>&nbsp;查询</button>
+								<a   class="layui-btn layui-btn-primary  clear"><i class="iconfont iconzhongzhi" style="color: #333;"></i>&nbsp;重置</a>
+							</form>
+						</div>
+					</div>
+					<!-- /数据筛选 -->
+					<!-- 数据列表 -->
+					<div class="container-fluid data-cars-box box-shadow" style="padding-bottom: 10px;">
+						<div class="datacars-title data-list">
+							<div class="data-list-left">数据列表</div>
+						</div>
+						<table class="layui-table">
+							<thead>
+								<tr>
+									<th><input type="checkbox"/></th>
+									<th>序号</th>
+									<th>成分名称</th>
+									<th>安全风险</th>
+									<th>活跃成分</th>
+									<th>致痘风险</th>
+									<th>使用目的</th>
+									<!-- <th>关联产品</th> -->
+									<th>常用设置</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  th:each="one,status:${page.content}">
+									<td><input  class="checkbox1" type="checkbox" th:attr="data-id=${one.id},data-text=${one.name}"/></td>
+									<td th:text="${page.number*page.size+status.index+1}">1024</td>
+									<td>
+										<a class="btn-link showMore" th:attr="data-id=${one.id}">
+											<span th:utext="${one.name}"></span>
+										</a>
+									</td>
+									<td><span th:text="${one.securityRisks}" class="badge radius" th:classappend="${one.safeColour}">4</span></td>
+									<td th:if="${one.activeIngredient eq 1}"><img src="/img/hxcf.png" alt="活性成分" /></td>
+									<td th:if="${one.activeIngredient ne 1}"></td>
+									<td th:if="${one.blainRisk eq 1}"><img src="/img/zdfx.png" alt="致痘风险" /></td>
+									<td th:if="${one.blainRisk ne 1}"></td>
+									<td><span th:each="aim:${one.tBrAims}" th:text="${aim.name}+' '">溶剂</span>
+									</td>
+									<!-- <td th:attr="data-id=${one.id}" class="count"></td> -->
+									<td width="100">
+										<div class="layui-form switchItem"  >
+											<input type="checkbox" th:attr="data-id=${one.id}" lay-skin="switch"
+												lay-text="开启|关闭" class="layui-btn-lg "  th:checked='${one.isChoice eq 1 ? "checked":"false"}'/>					
+			                            </div> 
+									</td>
+									<td class="caozuo" width="350">
+										<div style="margin-top: 5px;">
+											<a  th:attr="data-id=${one.id}"  style="color: #1E9FFF;" class="index"><i class="iconfont iconzhishufenxi"></i>&nbsp;数据分析</a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a  th:attr="data-id=${one.id}"  style="color: #1E9FFF;"  class="contrast"><b>+</b>&nbsp;对比</a>
+										</div>
+
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+						<div class="col-md-12 table-foot">
+							<div class="table-foot-left">
+								<span class='selectAll' >&nbsp;全选</span>
+								<span class='selectOther' >&nbsp;反选</span>
+								<span class="setLabel">设置标签</span>
+								<span class="setInventory">添加清单</span>
+							</div>
+							<div class="table-foot-right">
+								<div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+							</div>
+						</div>
+					</div>
+					<!-- 数据列表 -->
+				</div>
+			</div>		
+		<div class="Float-win">
+			<span class="small-pro-box">清<br/>单</span>
+
+			<div class="float-win-title">
+				<h3>产品清单</h3>
+				<span class="Num"></span>
+			</div>
+			<div class="list">
+				<ul id='inventorysIngredient'>
+				</ul>
+				<div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:10px; width: 90%; margin: 0 auto 10px;">
+					<button class="layui-btn layui-btn-primary layui-btn-sm clearInventorys">清空</button>
+					<button class="layui-btn layui-btn-normal layui-btn-sm Selection-attention-list connInventorys">设置清单</button>
+				</div>
+
+			</div>
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/common/form_page.js"></script>
+	<script type="text/javascript" src="/js/v2/ingredient/list.js?version=3"></script>
+</section>
+</html>

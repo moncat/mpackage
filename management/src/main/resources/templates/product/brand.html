@@ -10,6 +10,17 @@
 	    width: 100%;
 	    background-color: #fff;
 		}
+		
+	.loadDiv{
+	    position: fixed;
+	    top: 238px;
+	    right: 515px;
+	    z-index: 999;
+	    width: 124px;
+	    text-align: center;
+	}	
+		
+		
 	</style>
 </section>
 <body>
@@ -24,14 +35,22 @@
 				</div>
 				<span>品牌：</span>
 				<div class='addList'></div>				 			 
-				 <div class="text-c"  ><a class="addAll">全部添加&gt;&gt;</a></div>
+				 <div class="text-c" id='tip1' >请搜索要添加的品牌</div>
+				 <div class="text-c" id='addBrandDiv' style='display:none' ><a class="addBrand">添加品牌+</a></div>
+				 <!-- 
+				 <div class="text-c" id='oper1' style='display:none' ><a class="addAll">全部添加&gt;&gt;</a></div>
+				  -->
 			</div>
 			<div class="l pl-5" style="width: 45%;">
 				<span >已选择品牌：</span>
 				<div id="choice"></div>			 			 
-				<div class="text-c" ><a class="delAll">&lt;&lt;全部删除</a></div>
+				<div class="text-c" id='tip2' >请从左侧列表选择添加</div>	
+					<!--  			 
+				<div class="text-c" id='oper2' style='display:none'><a class="delAll">&lt;&lt;全部删除</a></div>
+				 -->
 			</div>
 		</div>
+		<div style="display:none" class="loading loadDiv"></div>
 		<div  class='cl btnFix'  >
 			<div class='line'></div>
 			<div class="text-c pb-5  pt-5 "> 
@@ -43,7 +62,7 @@
 	</section>
 	<section layout:fragment="my">
 		<script type="text/javascript" charset="utf-8"
-			src="/js/product/brand.js"></script>
+			src="/js/product/brand.js?version=1"></script>
 	</section>
 </body>
 </html>

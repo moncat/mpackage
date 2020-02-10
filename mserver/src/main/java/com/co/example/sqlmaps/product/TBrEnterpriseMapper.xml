@@ -1,245 +1,270 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.co.example.sqlmaps.product.TBrEnterpriseMapper">
-	<resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrEnterprise">
-		<id column="id" property="id" jdbcType="BIGINT" />
-		<result column="apply_sn" property="applySn" jdbcType="VARCHAR" />
-		<result column="enterprise_name" property="enterpriseName"
-			jdbcType="VARCHAR" />
-		<result column="producing_area" property="producingArea"
-			jdbcType="VARCHAR" />
-		<result column="remark" property="remark" jdbcType="VARCHAR" />
-		<result column="item_order" property="itemOrder" jdbcType="INTEGER" />
-		<result column="is_bus" property="isBus" jdbcType="TINYINT" />
-		<result column="is_product" property="isProduct" jdbcType="TINYINT" />
-		<result column="is_choice" property="isChoice" jdbcType="TINYINT" />
-		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-		<result column="create_by" property="createBy" jdbcType="BIGINT" />
-		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-		<result column="update_by" property="updateBy" jdbcType="BIGINT" />
-		<result column="is_active" property="isActive" jdbcType="TINYINT" />
-		<result column="del_flg" property="delFlg" jdbcType="TINYINT" />
-	</resultMap>
-	<sql id="Base_Column_List">
-		id, apply_sn, enterprise_name, producing_area, remark, item_order,
-		is_bus, is_product,
-		is_choice, create_time, create_by, update_time, update_by, is_active, del_flg
-	</sql>
-	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
-		parameterType="java.lang.Long">
-		select
-		<include refid="Base_Column_List" />
-		from t_br_enterprise
-		where id = #{id,jdbcType=BIGINT}
-	</select>
-	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-		delete from t_br_enterprise
-		where id = #{id,jdbcType=BIGINT}
-	</delete>
-	<insert id="insert" parameterType="com.co.example.entity.product.TBrEnterprise"
-		keyColumn="id" keyProperty="id">
-		<selectKey keyProperty="id" resultType="java.lang.Long"
-			order="BEFORE">
-			SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
-		</selectKey>
-		insert into t_br_enterprise (id, apply_sn, enterprise_name,
-		producing_area, remark, item_order,
-		is_bus, is_product, is_choice,
-		create_time, create_by, update_time,
-		update_by, is_active, del_flg
-		)
-		values (#{id,jdbcType=BIGINT}, #{applySn,jdbcType=VARCHAR},
-		#{enterpriseName,jdbcType=VARCHAR},
-		#{producingArea,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER},
-		#{isBus,jdbcType=TINYINT}, #{isProduct,jdbcType=TINYINT},
-		#{isChoice,jdbcType=TINYINT},
-		#{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP},
-		#{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT},
-		#{delFlg,jdbcType=TINYINT}
-		)
-	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrEnterprise">
-		update t_br_enterprise
-		<set>
-			<if test="applySn != null">
-				apply_sn = #{applySn,jdbcType=VARCHAR},
-			</if>
-			<if test="enterpriseName != null">
-				enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
-			</if>
-			<if test="producingArea != null">
-				producing_area = #{producingArea,jdbcType=VARCHAR},
-			</if>
-			<if test="remark != null">
-				remark = #{remark,jdbcType=VARCHAR},
-			</if>
-			<if test="itemOrder != null">
-				item_order = #{itemOrder,jdbcType=INTEGER},
-			</if>
-			<if test="isBus != null">
-				is_bus = #{isBus,jdbcType=TINYINT},
-			</if>
-			<if test="isProduct != null">
-				is_product = #{isProduct,jdbcType=TINYINT},
-			</if>
-			<if test="isChoice != null">
-				is_choice = #{isChoice,jdbcType=TINYINT},
-			</if>
-			<if test="createTime != null">
-				create_time = #{createTime,jdbcType=TIMESTAMP},
-			</if>
-			<if test="createBy != null">
-				create_by = #{createBy,jdbcType=BIGINT},
-			</if>
-			<if test="updateTime != null">
-				update_time = #{updateTime,jdbcType=TIMESTAMP},
-			</if>
-			<if test="updateBy != null">
-				update_by = #{updateBy,jdbcType=BIGINT},
-			</if>
-			<if test="isActive != null">
-				is_active = #{isActive,jdbcType=TINYINT},
-			</if>
-			<if test="delFlg != null">
-				del_flg = #{delFlg,jdbcType=TINYINT},
-			</if>
-		</set>
-		where id = #{id,jdbcType=BIGINT}
-	</update>
-	<update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrEnterprise">
-		update t_br_enterprise
-		set apply_sn = #{applySn,jdbcType=VARCHAR},
-		enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
-		producing_area = #{producingArea,jdbcType=VARCHAR},
-		remark = #{remark,jdbcType=VARCHAR},
-		item_order = #{itemOrder,jdbcType=INTEGER},
-		is_bus = #{isBus,jdbcType=TINYINT},
-		is_product = #{isProduct,jdbcType=TINYINT},
-		is_choice = #{isChoice,jdbcType=TINYINT},
-		create_time = #{createTime,jdbcType=TIMESTAMP},
-		create_by = #{createBy,jdbcType=BIGINT},
-		update_time = #{updateTime,jdbcType=TIMESTAMP},
-		update_by = #{updateBy,jdbcType=BIGINT},
-		is_active = #{isActive,jdbcType=TINYINT},
-		del_flg = #{delFlg,jdbcType=TINYINT}
-		where id = #{id,jdbcType=BIGINT}
-	</update>
-	<select id="selectVoByPrimaryKey" parameterType="java.util.Map"
-		resultMap="VoResultMap">
-		select
-		<include refid="Vo_Column_List" />
-		from t_br_enterprise t
-		<include refid="Table_Join_Clause" />
-		where t.id = #{id,jdbcType=BIGINT}
-	</select>
-	<sql id="Query_Where_Clause">
-		<where>
-			<if test="id != null">
-				and t.id = #{id,jdbcType=BIGINT}
-			</if>
-			<if test="applySn != null">
-				and t.apply_sn = #{applySn,jdbcType=VARCHAR}
-			</if>
-			<if test="enterpriseName != null">
-				and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
-			</if>
-			<if test="producingArea != null">
-				and t.producing_area = #{producingArea,jdbcType=VARCHAR}
-			</if>
-			<if test="remark != null">
-				and t.remark = #{remark,jdbcType=VARCHAR}
-			</if>
-			<if test="itemOrder != null">
-				and t.item_order = #{itemOrder,jdbcType=INTEGER}
-			</if>
-			<if test="isBus != null">
-				and t.is_bus = #{isBus,jdbcType=TINYINT}
-			</if>
-			<if test="isProduct != null">
-				and t.is_product = #{isProduct,jdbcType=TINYINT}
-			</if>
-			<if test="isChoice != null">
-				and t.is_choice = #{isChoice,jdbcType=TINYINT}
-			</if>
-			<if test="createTime != null">
-				and t.create_time = #{createTime,jdbcType=TIMESTAMP}
-			</if>
-			<if test="createBy != null">
-				and t.create_by = #{createBy,jdbcType=BIGINT}
-			</if>
-			<if test="updateTime != null">
-				and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
-			</if>
-			<if test="updateBy != null">
-				and t.update_by = #{updateBy,jdbcType=BIGINT}
-			</if>
-			<if test="isActive != null">
-				and t.is_active = #{isActive,jdbcType=TINYINT}
-			</if>
-			<if test="delFlg != null">
-				and t.del_flg = #{delFlg,jdbcType=TINYINT}
-			</if>
-			<include refid="Vo_Where_Clause" />
-		</where>
-		<if test="sorting != null">
-			order by ${sorting},t.id desc
-		</if>
-	</sql>
-	<select id="selectCount" parameterType="java.util.Map"
-		resultType="java.lang.Long">
-		select count(t.id) from t_br_enterprise t
-		<include refid="Table_Join_Clause" />
-		<include refid="Query_Where_Clause" />
-	</select>
-	<select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
-		select
-		<include refid="Vo_Column_List" />
-		from t_br_enterprise t
-		<include refid="Table_Join_Clause" />
-		<include refid="Query_Where_Clause" />
-	</select>
-	<delete id="delete" parameterType="java.util.Map">
-		delete from t_br_enterprise where id in (
-		select t.id from (select * from t_br_enterprise) t
-		<include refid="Table_Join_Clause" />
-		<include refid="Query_Where_Clause" />
-		)
-	</delete>
-	<!-- ************************expand your SQL below the line*********************** -->
-	<resultMap id="VoResultMap"
-		type="com.co.example.entity.product.aide.TBrEnterpriseVo" extends="BaseResultMap">
-		<!-- <association property="beanName" javaType="beanVoFullyQualifiedName"> -->
-		<!-- <result column="dbField" property="beanField" jdbcType="dbFieldStyle" 
-			/> -->
-		<!-- </association> -->
-
-		<result column="enterpriseStatus" property="enterpriseStatus" jdbcType="VARCHAR" />
+  <resultMap id="BaseResultMap" type="com.co.example.entity.product.TBrEnterprise">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="apply_sn" jdbcType="VARCHAR" property="applySn" />
+    <result column="enterprise_name" jdbcType="VARCHAR" property="enterpriseName" />
+    <result column="enterprise_name_en" jdbcType="VARCHAR" property="enterpriseNameEn" />
+    <result column="producing_area" jdbcType="VARCHAR" property="producingArea" />
+    <result column="producing_area_en" jdbcType="VARCHAR" property="producingAreaEn" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="is_bus" jdbcType="TINYINT" property="isBus" />
+    <result column="is_product" jdbcType="TINYINT" property="isProduct" />
+    <result column="is_choice" jdbcType="TINYINT" property="isChoice" />
+    <result column="region_id" jdbcType="BIGINT" property="regionId" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="is_active" jdbcType="TINYINT" property="isActive" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, apply_sn, enterprise_name, enterprise_name_en, producing_area, producing_area_en, 
+    remark, item_order, is_bus, is_product, is_choice, region_id, province, create_time, 
+    create_by, update_time, update_by, is_active, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_enterprise
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_br_enterprise
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.product.TBrEnterprise">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_enterprise (id, apply_sn, enterprise_name, 
+      enterprise_name_en, producing_area, producing_area_en, 
+      remark, item_order, is_bus, 
+      is_product, is_choice, region_id, 
+      province, create_time, create_by, 
+      update_time, update_by, is_active, 
+      del_flg)
+    values (#{id,jdbcType=BIGINT}, #{applySn,jdbcType=VARCHAR}, #{enterpriseName,jdbcType=VARCHAR}, 
+      #{enterpriseNameEn,jdbcType=VARCHAR}, #{producingArea,jdbcType=VARCHAR}, #{producingAreaEn,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{isBus,jdbcType=TINYINT}, 
+      #{isProduct,jdbcType=TINYINT}, #{isChoice,jdbcType=TINYINT}, #{regionId,jdbcType=BIGINT}, 
+      #{province,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
+      #{delFlg,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.product.TBrEnterprise">
+    update t_br_enterprise
+    <set>
+      <if test="applySn != null">
+        apply_sn = #{applySn,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseName != null">
+        enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseNameEn != null">
+        enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="producingArea != null">
+        producing_area = #{producingArea,jdbcType=VARCHAR},
+      </if>
+      <if test="producingAreaEn != null">
+        producing_area_en = #{producingAreaEn,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null">
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="isBus != null">
+        is_bus = #{isBus,jdbcType=TINYINT},
+      </if>
+      <if test="isProduct != null">
+        is_product = #{isProduct,jdbcType=TINYINT},
+      </if>
+      <if test="isChoice != null">
+        is_choice = #{isChoice,jdbcType=TINYINT},
+      </if>
+      <if test="regionId != null">
+        region_id = #{regionId,jdbcType=BIGINT},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="isActive != null">
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
+      <if test="delFlg != null">
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.product.TBrEnterprise">
+    update t_br_enterprise
+    set apply_sn = #{applySn,jdbcType=VARCHAR},
+      enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
+      producing_area = #{producingArea,jdbcType=VARCHAR},
+      producing_area_en = #{producingAreaEn,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      is_bus = #{isBus,jdbcType=TINYINT},
+      is_product = #{isProduct,jdbcType=TINYINT},
+      is_choice = #{isChoice,jdbcType=TINYINT},
+      region_id = #{regionId,jdbcType=BIGINT},
+      province = #{province,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="applySn != null">
+          and t.apply_sn = #{applySn,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseName != null">
+          and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseNameEn != null">
+          and t.enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR}
+      </if>
+      <if test="producingArea != null">
+          and t.producing_area = #{producingArea,jdbcType=VARCHAR}
+      </if>
+      <if test="producingAreaEn != null">
+          and t.producing_area_en = #{producingAreaEn,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null">
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null">
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="isBus != null">
+          and t.is_bus = #{isBus,jdbcType=TINYINT}
+      </if>
+      <if test="isProduct != null">
+          and t.is_product = #{isProduct,jdbcType=TINYINT}
+      </if>
+      <if test="isChoice != null and isChoice != 0 "  >
+          and t.is_choice = #{isChoice,jdbcType=TINYINT}
+      </if>
+      <if test="regionId != null">
+          and t.region_id = #{regionId,jdbcType=BIGINT}
+      </if>
+      <if test="province != null">
+          and t.province = #{province,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null">
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null">
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null">
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null">
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null">
+          and t.is_active = #{isActive,jdbcType=TINYINT}
+      </if>
+      <if test="delFlg != null">
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.id) from t_br_enterprise t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from t_br_enterprise where id in (
+    select t.id from (select * from t_br_enterprise) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.product.aide.TBrEnterpriseVo">
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+	<result column="enterpriseStatus" property="enterpriseStatus" jdbcType="VARCHAR" />
 		<result column="industryType" property="industryType" jdbcType="VARCHAR" />
-	</resultMap>
-	<sql id="Vo_Column_List">
-		t.id,
-		t.apply_sn,
-		t.enterprise_name,
-		t.producing_area,
-		t.remark,
-		t.item_order,
-		t.is_bus,
-		t.is_product,
-		t.is_choice,
-		t.create_time,
-		t.create_by,
-		t.update_time,
-		t.update_by,
-		t.is_active,
-		<if test="joinRegFlg">
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.id, 
+    t.apply_sn, 
+    t.enterprise_name, 
+    t.enterprise_name_en, 
+    t.producing_area, 
+    t.producing_area_en, 
+    t.remark, 
+    t.item_order, 
+    t.is_bus, 
+    t.is_product, 
+    t.is_choice, 
+    t.region_id, 
+    t.province, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.is_active, 
+	<if test="joinRegFlg">
 			  tber.enterprise_status enterpriseStatus,
 			  tber.industry_type industryType,
 		</if>
-		t.del_flg
-		<!-- ,alias.field -->
-	</sql>
-	<sql id="Vo_Where_Clause">
-		<if test="productId != null">
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+<if test="productId != null">
 			and tbpe.product_id = #{productId,jdbcType=BIGINT}
 		</if>
 		<if test="enterpriseNameLike != null">
@@ -252,7 +277,16 @@
 		<if test="joinFlg">
 			and tbpe.product_id = #{productId,jdbcType=BIGINT}
 		</if>
-	</sql>
+		<if test="isChoice == 0" >
+	      and  ( is_choice is null or  is_choice = 0)
+	     </if>
+	     <if test="isBus == 0">
+			and t.is_bus is null
+		</if>
+		<if test="isProduct == 0">
+			and t.is_product is null
+		</if>
+  </sql>
 	<sql id="Table_Join_Clause">
 		<if test="joinFlg">
 			LEFT JOIN t_br_product_enterprise tbpe on tbpe.enterprise_id = t.id
@@ -264,8 +298,6 @@
 
 	<select id="selectEnterpriseCount" parameterType="java.util.Map"
 		resultType="com.co.example.entity.product.aide.TBrEnterpriseCountVo">
-
-
 		SELECT
 		t.id, t.enterprise_name enterpriseName ,count(pe.id) num
 		FROM
@@ -273,12 +305,11 @@
 		left join t_br_product_enterprise pe on t.id =
 		pe.enterprise_id
 		WHERE
+		t.is_product =1
+		and
 		t.create_time > #{limitTime,jdbcType=VARCHAR}
 		and  t.create_time &lt; #{endTime,jdbcType=VARCHAR}
 		group by t.id
 		order by num desc
-
-
 	</select>
-
 </mapper>

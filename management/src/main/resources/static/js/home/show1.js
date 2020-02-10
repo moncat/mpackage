@@ -69,6 +69,9 @@ $(function(){
 		        },		        
 	        ]
 	    });
+    	 $(window).resize(function() { //重置容器高宽
+	　		　myChart.resize();
+		});
     });
 
 	

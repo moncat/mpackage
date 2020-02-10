@@ -162,7 +162,7 @@ public class StatisticsController extends BaseControllerHandler<TBrAimQuery> {
 	}
 
 	// 产品相关数据统计定时器
-	@Scheduled(cron = "00 00 01 * * ? ") // 每天01:00分执行一次
+//	@Scheduled(cron = "00 00 01 * * ? ") // 每天01:00分执行一次   58上不执行，199上执行
 	public void addData() {
 		log.info("***数据统计定时器开始***");
 		long startMs = System.currentTimeMillis();

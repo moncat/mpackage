@@ -2,6 +2,7 @@ package com.co.example.service.region;
 
 import java.util.List;
 
+import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.region.TBrRegion;
 import com.github.moncat.common.service.BaseService;
 
@@ -23,5 +24,19 @@ public interface TBrRegionService extends BaseService<TBrRegion, Long> {
 	 */
 	List<TBrRegion> getRegionListByParentRegionId(String id);
 	
+	
+	/**
+	 * 全量，根据产品名称对比
+	 */
+	void setEnterpriseRegion();
+	/**
+	 * 全量，根据产品备案缩写对比
+	 */
+	void setEnterpriseRegionByShort();
+	
+	/**
+	 * 抓取时，单个对比，根据产品名称、产品备案缩写对比,对比每个企业
+	 */
+	void setEnterpriseRegionByAll(TBrEnterprise tBrEnterprise);
 	
 }

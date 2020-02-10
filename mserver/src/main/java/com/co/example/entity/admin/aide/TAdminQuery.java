@@ -16,4 +16,6 @@ public class TAdminQuery extends TAdmin {
 	
 	private Long roleId;
 	
+	private String nameLike;
+	
 }

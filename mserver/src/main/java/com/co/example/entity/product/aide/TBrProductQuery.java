@@ -1,6 +1,7 @@
 package com.co.example.entity.product.aide;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -35,8 +36,17 @@ public class TBrProductQuery extends TBrProduct {
 	
 	/** 模糊查询*/
 	private String productNameLike;
-	/** 多个模糊查询*/
-	private String productNameLike2;
+	
+	private List<String> productNamesLike;
+	
+	
+	/** 模糊查询  2019年11月25日 配合使用*/
+	private String enterpriseNameLike;
+	private List<String> enterpriseNamesLike;
+	
+	/** 多个模糊查询   2019年11月25日 配合使用*/
+	private String productBrandNameLike;
+	private List<String> productBrandNamesLike;
 	
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -104,9 +114,22 @@ public class TBrProductQuery extends TBrProduct {
 	private String endTime;
 	private String eIds ="";
 	private String peIds ="";
-	private Long lId;
-	private Long bId;
-	private Long iId;
+	private String lIds ="";
+	private String bIds ="";
+	private String iIds ="";
+	
+	/** 实际生产企业 */
+	private Boolean joinRealEnterpriseFlg = false;
+	private Long realEnterpriseId;
+	
+		
+	private  boolean joinManifestDataFlg ;
+	private Long manifestId;
+	
+	/** 用于茶查询品牌 是否关联*/
+	private  Integer   brandFlg;
+	/** 用于茶查询品类 是否关联*/
+	private  Integer   categoryFlg;
 	
 }
 

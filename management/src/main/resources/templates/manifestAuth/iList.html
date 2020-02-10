@@ -1,0 +1,474 @@
+<html layout:decorator="/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/home/show.css" />
+	<link rel="stylesheet" type="text/css" href="/css/manifestAuth/plist.css" />
+</section>
+<section layout:fragment="main">
+<div id="tab_demo" class="HuiTab">
+			<div class="tabBar clearfix"><span>关注成分产品</span><span>关联品牌</span><span>关联供应商</span><span>关联品类</span>
+			<!-- <span>关联产品</span> -->
+			</div>
+			<!--关注成分产品-->
+			<div class="tabCon">
+				<div class="clearfix">
+					<div class="col-md-2 mt-5 c-white list_con product_box" way-repeat="i400">
+						<div class=" radius  cl list_bgc product_bgc">
+							<div class="NumBer" way-data="value">-</div>
+							<div class="product-tit"><span></span><span way-data="name">-</span></div>
+						</div>
+					</div>
+				</div>
+
+				<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+				<div class="clearfix" style="width: 99%;">
+					<div class="row cl f-18 mt-10">
+						<div class="col-md-6 mt-5">
+							<div class="panel panel-default">
+								<div class="panel-header cl" style="background-color: transparent;">
+									关注成分分类占比分析
+								</div>
+								<div id="pie411" class="panel-body f-14" style='height: 438px;text-align: center; line-height: 438px;'>
+									<!--新增加的内容-->
+									<img src="/img/welcome/NoData.png" width="400" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 mt-5">
+							<div class="panel panel-default">
+								<div class="panel-header cl" style="background-color: transparent;">
+									关联产品品类占比
+								</div>
+								<div  id="pie412" class="panel-body f-14 enterprise" style='height: 438px;text-align: center; line-height: 438px;'>
+									<!--新增加的内容-->
+									<img src="/img/welcome/NoData.png" width="400" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+				<div class="panel-header more list_title clearfix DataRefresh">
+					<p class="left">关注成分列表</p>
+					<!--<button class="btn btn-secondary-outline radius right"><i class="Hui-iconfont">&#xe68f;</i>数据刷新</button>-->
+				</div>
+				<!--数据表格-->
+				<table class="table table-border table-bordered table-bg table-hover">
+					<thead>
+						<tr>
+							<th colspan="11" scope="col">
+								列表
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th>序号</th>
+							<th>成分名称</th>
+							<th>使用目的</th>
+							<th>备案产品数↓</th>
+							<th>全网月销量</th>
+							<th>全网月销售额</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="iList">
+					</tbody>
+				</table>
+				<div id="iPage"></div>
+			</div>
+			<!--/关注成分产品-->
+
+			<!--关联品牌-->
+			<div class="tabCon">
+				<div id="pie421" class="clearfix" style="height: 220px;">
+				</div>
+				<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+				<div class="clearfix" style="width: 99%;">
+					<div class="row cl f-18 mt-10">
+						<div class="col-md-6 mt-5">
+							<div class="panel panel-default">
+								<div class="panel-header cl" style="background-color: transparent;">
+									关联品牌品类构成占比
+								</div>
+								<div  id="pie422" class="panel-body f-14" style='height: 438px;text-align: center; line-height: 438px;'>
+									<img src="/img/welcome/NoData.png" width="400" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 mt-5">
+							<div class="panel panel-default">
+								<div class="panel-header cl" style="background-color: transparent;">
+									关联品牌生产供应商权重排行榜TOP10
+								</div>
+								<div class="panel-body f-14 enterprise" style='height: 438px;text-align: center; line-height: 438px;'>
+
+									<table class="table table-border table-bordered table-bg table-hover">
+										<thead>
+											<tr>
+												<th colspan="6" scope="col">
+													列表
+												</th>
+											</tr>
+											<tr class="text-c ">
+												<th>排名</th>
+												<th>供应商名称</th>
+												<th>品牌数</th>
+												<th>品类</th>
+												<th>产品数</th>
+												<th>供应商权重</th>
+											</tr>
+										</thead>
+										<tbody id="top423">
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+
+				<div class="panel-header more list_title clearfix DataRefresh">
+					<p class="left">关联品牌列表</p>
+				</div>
+				<!--数据表格-->
+				<table class="table table-border table-bordered table-bg table-hover  attention-tab">
+					<thead>
+						<tr>
+							<th colspan="7" scope="col">
+								列表
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th>序号</th>
+							<th>品牌名称</th>
+							<th>品牌等级</th>
+							<th>供应商</th>
+							<th>品类</th>
+							<th>备案数</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="bList" >
+					</tbody>
+				</table>
+				<div id="bPage"></div>
+				<!--/数据表格-->
+			</div>
+			<!--/关联品牌-->
+			<!--关联供应商-->
+			<div class="tabCon">
+				<!--<div style="margin-top:40px;margin-left: 40px;"><button class="btn btn-primary-outline radius" type="button"><i class="Hui-iconfont">&#xe600;</i>新增产品清单</button></div>-->
+				<div class="clearfix">
+					<div class="col-md-2 mt-5 c-white list_con product_box" way-repeat='i430'>
+						<div class=" radius  cl list_bgc product_bgc">
+							<div class="NumBer" way-data="value">-</div>
+							<div class="product-tit"><span></span><span way-data="name">-</span></div>
+						</div>
+					</div>
+					<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+					<div class="clearfix" style="width: 99%;">
+						<div class="row cl f-18 mt-10">
+							<div class="col-md-6 mt-5">
+								<div class="panel panel-default">
+									<div  class="panel-header cl" style="background-color: transparent;">
+										关联品牌品类构成占比
+									</div>
+									<div id="pie431" class="panel-body f-14" style='height: 438px;text-align: center; line-height: 438px;'>
+										<!--新增加的内容-->
+										<img src="/img/welcome/NoData.png" width="400" />
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 mt-5">
+								<div class="panel panel-default">
+									<div class="panel-header cl" style="background-color: transparent;">
+										优质供应商排行榜TOP10
+									</div>
+									<div class="panel-body f-14 enterprise" style='height: 438px;text-align: center; line-height: 438px;'>
+
+										<table class="table table-border table-bordered table-bg table-hover">
+											<thead>
+												<tr>
+													<th colspan="6" scope="col">
+														列表
+													</th>
+												</tr>
+												<tr class="text-c ">
+													<th>排名</th>
+													<th>供应商名称</th>
+													<th>品牌数</th>
+													<th>品类</th>
+													<th>产品数</th>
+													<th>供应商权重</th>
+												</tr>
+											</thead>
+											<tbody id="top432">
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+					<!--供应商地域分布图-->
+					<div id='cn433' class="panel-header more list_title clearfix DataRefresh"   style='height: 600px;'>
+						<p class="left">供应商地域分布图</p>
+					</div>
+					<!--/供应商地域分布图-->
+
+					<!--数据表格-->
+					<table class="table table-border table-bordered table-bg table-hover">
+						<thead>
+							<tr>
+								<th colspan="11" scope="col">
+									关联供应商列表
+								</th>
+							</tr>
+							<tr class="text-c ">
+								<th>排序</th>
+								<th>供应商名称</th>
+								<th>备案号</th>
+								<th>发证日期</th>
+								<th>有效期</th>
+								<th>合作品牌数</th>
+								<th>生产品类</th>
+								<th>生产产品数</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="eList">
+						</tbody>
+					</table>
+					<div id="ePage"></div>
+					<!--/数据表格-->
+				</div>
+			</div>
+			<!--/关联供应商-->
+			<!--关联品类-->
+			<div class="tabCon">
+				<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+				<div class="clearfix" style="width: 99%;">
+					<div class="row cl f-18 mt-10">
+						<div class="col-md-6 mt-5">
+							<div class="panel panel-default">
+								<div class="panel-header cl" style="background-color: transparent;">
+									关联产品品类占比
+								</div>
+								<div id='pie441' class="panel-body f-14" style='height: 438px;text-align: center; line-height: 438px;'>
+									<img src="/img/welcome/NoData.png" width="400" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 mt-5">
+							<div class="panel panel-default">
+								<div class="panel-header cl" style="background-color: transparent;">
+									关联产品品类销售分析（上月）
+									<div class="f-r">
+										<div class="btn-group month" style="display: inline-block;">
+											<span class="btn btn-primary radius" data-id='1'>本月</span>
+											<span class="btn btn-default radius" data-id='2'>上月</span>
+											<span class="btn btn-default radius" data-id='3'>半年</span>
+										</div>
+
+									</div>
+								</div>
+								<div id='bar442' class="panel-body f-14 enterprise" style='height: 438px;text-align: center; line-height: 438px;'>
+									<!--新增加的内容-->
+									<img src="/img/welcome/NoData.png" width="400" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--关注产品品类占比&&&&关注产品品类销售分析（上月）-->
+
+				<div class="panel-header more list_title clearfix DataRefresh">
+					<p class="left">关联品类列表</p>
+				</div>
+				<table class="table table-border table-bordered table-bg table-hover">
+					<thead>
+						<tr>
+							<th colspan="11" scope="col">
+								列表
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th>序号</th>
+							<th>品类名称</th>
+							<th>产品数</th>
+							<th>品牌数</th>
+							<th>供应商数</th>
+							<th>全网月销量↓</th>
+							<th>全网月销售额</th>
+						</tr>
+					</thead>
+					<tbody id="cList" >
+					</tbody>
+				</table>
+				<div id="cPage"></div>
+			</div>
+			<!--关联产品-->
+	<!-- 	
+		<div class="tabCon">
+				<div class="panel-header more list_title clearfix DataRefresh">
+					<p class="left">商品列表</p>
+				</div>
+				<table class="table table-border table-bordered table-bg table-hover  attention-tab">
+					<thead>
+						<tr>
+							<th colspan="11" scope="col">
+								列表
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th>序号</th>
+							<th>产品名称</th>
+							<th>产品配方评分</th>
+							<th>品牌</th>
+							<th>品类</th>
+							<th>生产企业</th>
+							<th>实际生产企业</th>
+							<th>淘宝价格</th>
+							<th>全网月销量</th>
+							<th>全网月销售额</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="pList">
+					</tbody>
+				</table>
+				<div id="pPage"></div>
+			</div>
+-->
+			<!--/关联产品-->
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/china.js"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="/js/common/formpage_post.js"></script>
+	<script type="text/javascript" src="/js/manifestAuth/model.js?version=4"></script>
+	<script type="text/javascript" src="/js/manifestAuth/ilist.js?version=4"></script>
+	<script id="topTmp" type="text/x-jquery-tmpl">
+{{each(i,item) jsondata}} 
+  <tr  class="text-c">
+	<td>${i+1}</td>												
+	<td>		
+		 <a class="btn-link showMoreE" data-id="${item.id}" title="${item.enterpriseName}" target='_blank' >
+			<span>${item.enterpriseName}</span>
+		</a> 
+	</td>												
+	<td>${item.brandNum}</td>												
+	<td>${item.catagoryNum}</td>												
+	<td>${item.productNum}</td>												
+	<td>${item.enterpriseWeight}</td>																	
+  </tr>		
+{{/each}}
+	</script>
+	<script id="pListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+  <tr  class="text-c">
+	<td>${size*number+i+1}</td>	
+	<td>
+		<a href="/product/detail/${item.productId}" target="_self">
+			<span >${item.productName}</span>
+		</a>					
+	</td>											
+	<td>${item.iscore}</td>																	
+	<td>${operNull(item.productBrandName)}</td>																	
+	<td>${operNull(item.categoryName)}</td>																	
+	<td>${operNull(item.enterpriseName)}</td>																	
+	<td>${operNull(item.realEnterpriseName)}</td>																	
+	<td>${item.taobaoPrice}</td>																	
+	<td>${item.taobaoSale}</td>																	
+	<td>${item.taobaoTurnover}</td>																	
+	<td>
+		<a href="javascript:void(0)" class="showMoreP" data-id="${item.productId}" >
+			<i class="Hui-iconfont ">&#xe6f1;</i>商品链接
+		</a>
+	</td>
+  </tr>		
+{{/each}}
+	</script>	
+	<script id="bListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+    <td>
+		<a href="javascript:void(0)" class="showMoreB" data-id="${item.brandId}" >
+			<span>${item.name}</span>
+		</a>
+    </td>
+    <td>${getLevelName(item.level)}</td>
+	<td>${item.eenum}</td>
+	<td>${item.cnum}</td>
+	<td>${item.pnum}</td>
+    <td>
+		<a href="javascript:void(0)" class="showMoreB" data-id="${item.brandId}" >
+    		<i class="Hui-iconfont">&#xe647;</i>数据分析
+		</a>
+    </td>
+  </tr>		
+{{/each}}
+	</script>	
+   <script id="eListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+    <td>
+    	<a href="javascript:void(0)" class="showMoreE" data-id="${item.enterpriseId}" >
+			<span>${item.enterpriseName}</span>
+		</a>
+    </td>
+	<td>${item.applySn}</td>
+	<td>${item.startDate}</td>
+	<td>${item.endDate}</td>
+	<td>${item.bnum}</td>
+	<td>${item.cnum}</td>
+	<td>${item.pnum}</td>
+    <td>
+		<a href="javascript:void(0)" class="showMoreE" data-id="${item.enterpriseId}" >
+    		<i class="Hui-iconfont">&#xe647;</i>数据分析
+		</a>
+    </td>
+  </tr>		
+{{/each}}
+  </script>
+   <script id="cListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+	<td>${item.name}</td>
+	<td>${item.pnum}</td>
+	<td>${item.bnum}</td>
+	<td>${item.eenum}</td>
+	<td>${item.taobaoSale}</td>
+	<td>${item.taobaoTurnover}</td>
+  </tr>		
+{{/each}}
+  </script>
+     <script id="iListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+   <tr class="text-c">
+	<td>${size*number+i+1}</td>	
+	<td>
+    	<a href="javascript:void(0)" class="showMoreI" data-id="${item.ingredientId}" >
+			<span>${item.name}</span>
+		</a>
+    </td>
+	<td>${item.aims}</td>
+	<td>${item.pnum}</td>
+	<td>${item.taobaoSale}</td>
+	<td>${item.taobaoTurnover}</td>
+	<td>
+		<a href="javascript:void(0)" class="showMoreI" data-id="${item.ingredientId}" >
+    		<i class="Hui-iconfont">&#xe647;</i>数据分析
+		</a>
+    </td>
+  </tr>		
+{{/each}}
+  </script>
+</section>
+</html>

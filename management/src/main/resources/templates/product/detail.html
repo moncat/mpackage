@@ -68,6 +68,22 @@ body {
     text-decoration: none;
 }
 
+ .delDiv {
+            display: inline-block;
+            position: relative;
+        }
+.del{
+    float:right;
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    width: 12px;
+    height: 12px;
+    display:none;
+    color: red;
+}
+
+
 </style>
 </section>
 <section layout:fragment="main">
@@ -78,6 +94,7 @@ body {
 			style="line-height: 1.6em; margin-top: 3px"
 			href="javascript:location.replace(location.href);" title="刷新"><i
 			class="Hui-iconfont">&#xe68f;</i></a>
+			<a class="btn btn-primary radius r " style="line-height:1.6em;margin-top:3px;margin-right:3px" href="javascript:history.go(-1);" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
 	</nav>
 	<div class="page-container">
 		<div class="row cl mt-10">
@@ -152,11 +169,31 @@ body {
 											</button>
 										</div>
 										<div class="row ">
-									 		<div class="col-md-5 col-md-offset-1 label mt-5"
-									 		th:if="${labels} ne null" 
-									 		th:each="label,status2:${labels}"
-									 		 th:utext="${label.name}"
-									 		>提拉紧致</div>
+									 		<div class="delDiv mt-5 label col-md-5 col-md-offset-1" 
+									 		  th:if="${labels} ne null" th:each="label,status2:${labels}" >
+									 			<a   th:attr="data-id=${label.id}" href="javascript:void(0);" class="del delLabel">
+									 				<i class="Hui-iconfont">&#xe706;</i>
+												</a>
+									 			<div th:utext="${label.name}">-</div>
+									 		</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="text-c"  th:if="${one.categoryName} ne null and ${one.categoryName} ne ''"  >
+									<td style="width: 30%">品类：</td>
+									<td style="width: 70%">
+										<div >
+											<button  th:attr="data-id=${one.id}" type="button" th:if="${one.categoryName} eq null"  class="btn btn-default radius setCategory" >
+												<i class="Hui-iconfont">&#xe600;</i>设置品类
+											</button>
+										</div>
+										<div class="row ">
+									 		<div class="delDiv col-md-5 col-md-offset-1 label mt-5" >
+									 			<a   th:attr="data-id=${one.categoryId}" href="javascript:void(0);" class="del delCategory">
+									 				<i class="Hui-iconfont">&#xe706;</i>
+												</a>
+												<div th:utext="${one.categoryName}">-</div>
+									 		</div>
 										</div>
 									</td>
 								</tr>
@@ -171,26 +208,37 @@ body {
 						<div id="tab_demo" class="HuiTab">
 							<div class="tabBar clearfix">
 								<span>成分列表</span>
-								<span  th:if="${brand} ne null">品牌信息</span>
-								<span  th:if="${one.enterpriseId} ne null" >企业信息</span>
+								<span>品牌信息</span>
+								<span >企业信息</span>
 								<span>实际生产企业信息</span>
+								<!-- 
+									<span onclick="javascript:document.getElementById('iframe5').contentWindow.location.reload();">销售渠道</span>
+							 	-->
 							</div>
 							<div class="tabCon">
 							  	<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab1/'+${one.id}}" 
 							  	onload="this.height=this.contentWindow.document.body.scrollHeight"
 									style="width: 100%; "></iframe> 
 							</div>
-							<div class="tabCon" th:if="${brand} ne null">
-							 	<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab2/'+${brand.id}}"							
+							<div class="tabCon">
+							 	<iframe  th:if="${brand} ne null" scrolling="no" frameborder="0" th:src="@{'/product/tab2/'+${brand.id}}"							
 									style="width: 100%; "></iframe> 
+								<span   th:if="${brand} eq null" > 暂无关联品牌数据，
+									<a href="javascript:void(0)" class="setBrand2" th:attr="data-id=${one.id}">设置品牌&gt;&gt;</a>
+								</span>	
 							</div>
-							<div class="tabCon" th:if="${one.enterpriseId} ne null" >
-								<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab3/'+${one.enterpriseId}}"					
+							<div class="tabCon">
+								<iframe  th:if="${one.enterpriseId} ne null"  scrolling="no" frameborder="0" th:src="@{'/product/tab3/'+${one.enterpriseId}}"					
 									style="width: 100%; "></iframe> 
+								<span  th:if="${one.enterpriseId} eq null" > 暂无关联企业信息</span>	
 							</div>
 							<div class="tabCon">
 						 		<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab4/'+${one.id}}"						
 									style="width: 100%; "></iframe>  
+							</div>
+							<div class="tabCon">
+						 		<iframe id='iframe5' scrolling="no" frameborder="0" th:src="@{'/product/tab5/'+${one.id}}"						
+									style="width: 100%; " ></iframe>  
 							</div>
 						</div>
 					</div>
@@ -214,12 +262,14 @@ body {
 				<div  class='r'><input class="btn btn-default radius clearContrast" type="button" value="清除"/></div>
 			</div>
 		</div>
-		<div style="display:block" id="showMore2">3333333333</div>
+		<div style="display:block" id="showMore2"></div>
+		<div style="display:block" id="showMore3"></div>
 	</div>
 </section>
 <section layout:fragment="my">
-	<script type="text/javascript"
-		src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/common/formpage.js"></script>
+	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
 	<script type="text/javascript" src="/js/product/detail.js"></script>
 </section>
 </html>

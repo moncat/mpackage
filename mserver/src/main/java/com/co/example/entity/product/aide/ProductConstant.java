@@ -73,12 +73,13 @@ public class ProductConstant {
 	
 	
 	/**
-	 * 图片类型 1平面图 2立体图 3商标证，授权书  4其他未确定
+	 * 图片类型 1平面图 2立体图 3商标证，授权书  4其他未确定  5技术要求
 	 */
 	public static final Byte IMAGETYPE_PLANE = 1;
 	public static final Byte IMAGETYPE_CUBE = 2;
 	public static final Byte IMAGETYPE_BRAND = 3;
 	public static final Byte IMAGETYPE_OTHER = 4;
+	public static final Byte IMAGETYPE_TECHNICAL = 5;
 	
 	/**
 	 * 京东产品查询url
@@ -90,4 +91,25 @@ public class ProductConstant {
 	 */
 	public static final String TMALL_PRODUCT_SEARCH_URL = "https://list.tmall.com/search_product.htm?q=";
 	
+	//类型转变时，需要更新数据 TODO 抓取其他 进口非特殊json格式不同。
+	public static final String CFDA_FILE_PATH = "/home/file/cfda/domesticNonspecial/";
+	public static final String CFDA_OVER_FILE_PATH = "/home/file/cfda/domesticNonspecial/over/";
+//	public static final String CFDA_FILE_PATH = "d:/home/file/cfda/";
+//	public static final String CFDA_OVER_FILE_PATH = "d:/home/file/cfda/over/";
+	
+	public static final String CFDA_IN_PATH = "/home/file/cfda/importNonspecial/";
+	public static final String CFDA_OVER_IN_PATH = "/home/file/cfda/importNonspecial/over/";
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+

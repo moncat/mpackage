@@ -34,7 +34,7 @@ $(function() {
 	var listSize = $('.listSize').attr('data-size');
 	var remain = 5-parseInt(listSize);
 	for(var i =0 ; i<remain;i++){
-		$('.baseList1').append('<td class="addContrast" style="cursor: pointer;" >+添加对比商品</td>');
+		$('.baseList1').append('<td class="addContrast" style="cursor: pointer;" >+添加对比产品</td>');
 		$('.baseList2').append('<td>-</td>');
 		$('.addContrast').on('click',function(){
 			choice();
@@ -47,13 +47,41 @@ $(function() {
 	}
 	$('.showE').on('click',function(){
 		var id = $(this).attr('data-id');
-		l2('/product/tab3/'+id,'900px','500px');
+		l2('/product/tab3/'+id,'1051px','680px');
 	});
 	
 
 	
-	
-//	 <li class='item'>无序列表</li>
+	$('.del2').on('click',function(){
+		var id =$(this).attr('data-id');
+		var name = $(this).attr('data-text');
+		var that = $(this);
+		var oneObj = {'id':id,'name':name};
+		var jsonStr = hls("get", "contrast");
+		var index =-1;
+		if(jsonStr !=false){
+			var jsonArr = JSON.parse(jsonStr);
+			if(isArray(jsonArr) && jsonArr.length>0){
+				for(j = 0,len=jsonArr.length; j < len; j++) {
+					var one = jsonArr[j];				 
+					if(id ==one.id){
+						index = j;
+					}					 
+				}
+				if(index>-1){
+					jsonArr.splice(index,1);
+				}
+				//对比产品不重复		
+				if(jsonArr.length==0){
+					hls("remove", "contrast");
+				}else{
+					hls("set", "contrast", JSON.stringify(jsonArr));
+				}
+				contrastNow();
+			}
+			
+		}
+	});
 	
 });
 
@@ -107,18 +135,18 @@ function choice(){
 				if(jsonStr !=false){
 					var jsonArr = JSON.parse(jsonStr);
 					if(isArray(jsonArr) && jsonArr.length == 5){
-						layer.msg('商品对比最多添加5个',{icon:1,time:1000});			
+						layer.msg('产品对比最多添加5个',{icon:1,time:1000});			
 						return ;
 					}
 					if(isArray(jsonArr) && jsonArr.length>0){
 						for(j = 0,len=jsonArr.length; j < len; j++) {
 							var one = jsonArr[j];
 							if(id ==one.id){
-								layer.msg('该商品已添加对比',{icon:1,time:1000});			
+								layer.msg('该产品已添加对比',{icon:1,time:1000});			
 								return ;
 							}					 
 						}
-						//对比商品不重复
+						//对比产品不重复
 						jsonArr.push(oneObj);
 						hls("set", "contrast", JSON.stringify(jsonArr));		
 					}		
@@ -167,7 +195,7 @@ function choice(){
 				if(index>-1){
 					jsonArr.splice(index,1);
 				}
-				//对比商品不重复		
+				//对比产品不重复		
 				if(jsonArr.length==0){
 					hls("remove", "contrast");
 				}else{
@@ -206,8 +234,8 @@ function contrastNow(){
 			window.open(url,"_self");     
 		} 
 	}else{
-		layer.msg('请添加待对比的商品',{icon:1,time:1000});
-		
+		layer.msg('请添加待对比的产品',{icon:1,time:1000});
+		location.href='/contrast/detail/2';
 	}
 }
 

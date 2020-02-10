@@ -145,7 +145,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    
 	@Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/assets/**","/base/**","/css/**","/js/**","/img/**","/identifyCode","/lubanOrder/addDatas");
+        web.ignoring().antMatchers("/assets/**","/base/**","/css/**","/js/**","/img/**","/identifyCode","/twitter/getId");
         web.ignoring().antMatchers("/resources/**");
         web.ignoring().antMatchers("/webjars/**");
     }

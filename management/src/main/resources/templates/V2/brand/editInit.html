@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/v2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+    body {
+        background: #fff;
+    }
+    
+    .edit form {
+        width: 90%;
+        margin: 20px auto 0;
+    }
+    
+    p {
+        width: 100%;
+        padding: 10px;
+    }
+</style>
+</section>
+<body>
+	<section layout:fragment="main">
+     <div class="edit" >
+        <form id="curForm">
+			<input type="hidden" th:value="${one.id}" name="id"></input>
+             <div class="form-group">
+                <label >中文名：</label>
+                <input th:value="${one.name}" name="name" type="text" class="form-control" placeholder="请输中文名称" />
+            </div>
+            <div class="form-group">
+                <label >英文名：</label>
+                <input th:value="${one.nameEn}" name="nameEn" type="text" class="form-control" placeholder="请输入英文名称" />
+            </div>
+            <div class="form-group">
+                <label >创始人：</label>
+                <input th:value="${one.founder}" name="founder" type="text" class="form-control" placeholder="请输入创始人姓名" />
+            </div>
+            <div class="form-group">
+                <label >创世日期：</label>
+                <input th:value="${one.foundDate}" name="foundDate" type="text" class="form-control" placeholder="请输入日期" />
+            </div>
+            <div class="form-group">
+                <label >网址：</label>
+                <input th:value="${one.website}" name="website" type="text" class="form-control" placeholder="请输入网址" />
+            </div>
+            <div class="form-group">
+                <label >品牌故事：</label>
+                <textarea th:utext="${one.story}" name="story" class="form-control" rows="3" placeholder="请输入内容"></textarea>
+            </div>
+            <div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:10px;">
+                <button type="button" class="layui-btn layui-btn-primary cancle">关闭</button>
+                <button type='submit' class="layui-btn layui-btn-normal">编辑品牌</button>
+            </div>
+        </form>
+    </div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/v2/brand/edit.js"></script>
+	</section>
+</body>
+</html>

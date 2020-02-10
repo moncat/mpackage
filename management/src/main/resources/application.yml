@@ -1,5 +1,5 @@
 server:
-  port: 7002
+  port: 7000
   session-timeout: 1
   error:
     whitelabel.enabled: false
@@ -12,13 +12,14 @@ ueditor:
  readpath: ""     
 image:
  imageSavePath: "/home/images/"
-  
     
     
 spring:
   data:
     solr:
-      host: http://114.215.106.58:8085/solr/allData
-#       host: http://127.0.0.1:9080/solr/allData
-#      host: http://127.0.0.1:8080/solr/allData  http://114.215.106.58:8085/solr/
- 
+       host: http://60.208.77.163:8311/solr/allData   #外网
+#       host: http://172.16.43.201:8085/solr/allData  #内网
+#       host: http://172.16.1.251:7080/solr/allData   #251测试环境    /root/cfdaSolr
+#       host: http://127.0.0.1:9080/solr/allData   #本地测试
+#       60.208.77.163:8311   #172.16.1.251:8311  #172.16.43.201:8085   #内外网对应关系
+#       host: http://114.215.106.58:8085/solr/allData   #58的数据不再使用

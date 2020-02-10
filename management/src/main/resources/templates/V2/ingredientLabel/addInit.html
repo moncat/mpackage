@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/v2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+	    body {
+	        background: #fff;
+	    }
+	    
+	    .edit form {
+	        width: 90%;
+	        margin: 20px auto 0;
+	    }
+	    
+	    p {
+	        width: 100%;
+	        padding: 10px;
+	    }
+	</style>
+</section>
+<body>
+<section layout:fragment="main">
+   <div class="edit">
+       <form  id="curForm">
+           <div class="form-group">
+               <label >*选择标签分类：</label>
+			<select class="form-control" size="1"    placeholder="请选择分类"  name="classId" >
+			   <option th:each="oneLabelClass:${labelClassList}" th:value="${oneLabelClass.id}" th:text="${oneLabelClass.name}"></option>
+			</select>
+           </div>
+           <div class="form-group">
+               <label for="exampleInputEmail1">标签名称：</label>
+               <input type="text" class="form-control" placeholder="请输入名称" name="name"/>
+
+           </div>
+           <div class="form-group">
+               <label for="exampleInputPassword1">标签描述：</label>
+               <textarea name="description" class="form-control" rows="3" placeholder="请输入标签描述"></textarea>
+           </div>
+           <div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:10px;">
+               <button type="button" class="layui-btn layui-btn-primary cancle">关闭</button>
+               <button   class="layui-btn layui-btn-normal">添加标签</button>
+           </div>
+       </form>
+   </div>
+</section>
+<section  layout:fragment="my">
+		<script type="text/javascript" charset="utf-8" src="/js/v2/ingredientLabel/add.js?version=2"></script>
+</section>
+</body>
+</html>

@@ -42,7 +42,6 @@ public class DriverInitter {
 		InputStream in = null;
 		try {
 			in = new FileInputStream("D:/Workspaces2/package/mserver/src/main/resources/dirver-config.xml");
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,7 +49,6 @@ public class DriverInitter {
 		String xml = new String(bytes, "utf-8");
 		Elements drivers = Jsoup.parse(xml).select("driver");
 		in.close();
-
 		for (Element driver : drivers) {
 			String k = driver.getElementsByTag("name").first().ownText();
 			String v = driver.getElementsByTag("value").first().ownText();
@@ -59,6 +57,21 @@ public class DriverInitter {
 			}
 		}
 	}
+	
+	
+	public static void initIE() throws IOException {
+		System.setProperty("webdriver.ie.driver","D:/Workspaces2/package/mserver/seleunim-driver/IEDriverServer.exe");
+	}
+
+	public static void initChrome() throws IOException {
+		System.setProperty("webdriver.chrome.driver", "D:/Workspaces2/package/mserver/seleunim-driver/chromedriver.exe");
+	}
+	
+	public static void initFirefox() throws IOException {
+		System.setProperty("webdriver.gecko.driver", "D:/Workspaces2/package/mserver/seleunim-driver/geckodriver.exe");
+		System.setProperty("webdriver.firefox.bin", "C://Program Files//Mozilla Firefox//firefox.exe");
+	}
+	
 	
 	public static DesiredCapabilities SetProxy(String ipPort) {
 		String proxyIpAndPort= ipPort;

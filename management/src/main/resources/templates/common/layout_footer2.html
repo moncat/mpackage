@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<footer class="footer mt-10" th:fragment="footer">
+	<a id="showErr">.</a>
+		<!-- 
+		<div class="container">
+			<span way-data="appInfo.name">1</span>　版权所有 <br/>
+			Copyright ©<span way-data="appInfo.copyRight">2017</span> 
+			<span way-data="appInfo.url">1</span> All Rights Reserved<a id="showErr">.</a>.
+		</div>
+		<script th:inline="javascript">
+				$(function(){
+					$.post('/app/show4Json/1',function(data){
+						var appInfo=data.show4Json;
+						var d = new Date();
+						var year = d.getFullYear();
+						if(year != appInfo.copyRight){
+							appInfo.copyRight = appInfo.copyRight+"-"+year
+						}
+						way.set("appInfo", appInfo );
+					});
+				});
+		
+		</script>
+		 -->
+	</footer>
+	
+</html>
+

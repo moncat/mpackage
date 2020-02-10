@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,6 +66,7 @@ public class LabelController extends  BaseControllerHandler<TBrLabelQuery> {
 	public String list2( Model model,HttpSession session,PageReq pageReq,TBrLabelQuery query){
 		query.setDelFlg(Constant.NO);	 
 		query.setLabelClassJoinFlg(true);
+		pageReq.setSort(new Sort(Direction.DESC,"t.create_time"));
 		Page<TBrLabel> page = tBrLabelService.queryPageList(query, pageReq);
 		model.addAttribute(QUERY, query);
 		model.addAttribute(PAGE, page);

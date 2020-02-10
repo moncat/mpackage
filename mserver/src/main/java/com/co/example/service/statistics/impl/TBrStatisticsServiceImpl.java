@@ -26,6 +26,7 @@ import com.co.example.service.product.TBrIngredientService;
 import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductIngredientService;
 import com.co.example.service.product.TBrProductService;
+import com.co.example.service.solr.SolrService;
 import com.co.example.service.statistics.TBrStatisticsService;
 import com.co.example.service.user.TBrUserStatisticsMonthService;
 import com.co.example.service.user.TBrUserStatisticsService;
@@ -71,13 +72,17 @@ public class TBrStatisticsServiceImpl extends BaseServiceImpl<TBrStatistics, Lon
 
 	@Resource
 	TBrUserStatisticsMonthService usms;
+	
+	@Resource
+	SolrService solrService;
 
 	@Override
 	public void addData() {
 		TBrStatistics tBrStatistics = new TBrStatistics();
 
 		/** 产品数量 */
-		long moreData1 = tBrProductService.queryCount(null);
+//		long moreData1 = tBrProductService.queryCount(null);		
+		long moreData1 = solrService.queryCount();		
 		tBrStatistics.setMoreData1(parseNumber(moreData1));
 
 		/** 品牌数量 */

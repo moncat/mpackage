@@ -50,6 +50,7 @@ import com.co.example.service.product.TBrProductService;
 import com.co.example.service.product.TBrProductSpecService;
 import com.co.example.service.spec.TBrSpecKeyService;
 import com.co.example.service.spec.TBrSpecValueService;
+import com.co.example.utils.BaseDataUtil;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.entity.BaseEntity;
 import com.github.moncat.common.service.BaseServiceImpl;

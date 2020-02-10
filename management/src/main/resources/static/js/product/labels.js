@@ -15,7 +15,10 @@ $(function(){
 				html+='</div>' ;
 			}		 
 			$('.addList').html(html);	
-			
+			if(html!=''){
+				$('#tip1').hide();
+				$('#oper1').show();
+			}
 			$('.add').on('click',function(){
 				var id = $(this).attr('data-id');
 				var appFlg = true;
@@ -33,8 +36,16 @@ $(function(){
 					html+='<div class="r pr-10 c-999 " ><a class="del" data-id="'+id+'">删除</a></div>';
 					html+='</div>';
 					$('#choice').append(html);
+					if(html!=''){
+						$('#tip2').hide();
+						$('#oper2').show();
+					}
 					$('#choice').find('.del').on('click',function(){
 						$(this).parent().parent().remove();
+						if($('#choice').html()==''){
+							$('#tip2').show();
+							$('#oper2').hide();
+						}
 					});
 				}
 			});
@@ -52,12 +63,16 @@ $(function(){
 		$('.add').each(function(){
 			$(this).click();
 		});
+		$('#tip2').hide();
+		$('#oper2').show();
 	});
 	
 	
 	
 	$('.delAll').on('click',function(){	
 		$('#choice').empty();
+		$('#tip2').show();
+		$('#oper2').hide();
 	});
 	
 	

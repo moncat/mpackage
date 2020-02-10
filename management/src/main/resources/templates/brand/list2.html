@@ -5,6 +5,7 @@
 		<span class="c-gray en">&gt;</span> 品牌管理 
 		<span class="c-gray en">&gt;</span> 品牌列表 
 		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-primary radius r " style="line-height:1.6em;margin-top:3px;margin-right:3px" href="javascript:history.go(-1);" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
 	</nav>
 	<div class="page-container" >
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
@@ -29,9 +30,11 @@
 					</th>
 				</tr>
 				<tr class="text-c ">
+					<th><input type="checkbox" /></th>
 					<th>序号</th>
 					<th>名称</th>
 					<th>英文名</th>
+					<th>等级</th>
 					<th>起源</th>
 					<th>创始人</th>
 					<th>创始时间</th>
@@ -40,42 +43,90 @@
 				</tr>
 			</thead>
 			<tbody>
-				<section th:each="one,status:${page.content}" >
-					<tr  class="text-c">
-						<td th:text="${page.number*page.size+status.index+1}">1</td>
-						<td >
-							 <!-- th:href="@{'/product/tab2/'+${one.id}}" --> 
-							<a  class="btn-link showMore"  th:text="${one.name}"  th:attr="data-id=${one.id}"
-							 target='_self'>
-							</a>
-						</td>
-						<td th:text="${one.nameEn}"></td>
-						<td th:text="${one.originate}"></td>
-						<td th:text="${one.founder}"></td>
-						<td th:text="${one.foundDate}"></td>
-						<td class="td-status">					
-							<div class="switch size-S switchItem" th:attr="data-id=${one.id}" >
-							    <input  type="checkbox"  th:checked='${one.isChoice eq 1 ? "checked":"false"}' ></input>
-							</div>						
-						</td>
-						<td>
-							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
-								<i class="Hui-iconfont">&#xe6df;</i>编辑
-							</a> 
-							
-							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
-								<i class="Hui-iconfont">&#xe6e2;</i>删除
-							</a>							
-						</td>
-					</tr>					
-				</section>
+				<tr  class="text-c"  th:each="one,status:${page.content}" th:switch="${one.level}">
+					<td><input class="checkbox1" type="checkbox"  th:attr="data-id=${one.id}"/></td>
+					<td th:text="${page.number*page.size+status.index+1}">1</td>
+					<td >
+						 <!-- th:href="@{'/product/tab2/'+${one.id}}" --> 
+						<a  class="btn-link showMore"  th:text="${one.name}"  th:attr="data-id=${one.id}"
+						 target='_self'>
+						</a>
+					</td>
+					<td th:text="${one.nameEn}"></td>
+					<td  th:case="1">顶级品牌</td>
+					<td  th:case="2">一线品牌</td>
+					<td  th:case="3">二线品牌</td>
+					<td  th:case="4">三线品牌</td>
+					<td  th:case="5">四线品牌</td>
+					<td  th:case="6">其他品牌</td>
+					<td  th:case="*">-</td>
+					<td th:text="${one.originate}"></td>
+					<td th:text="${one.founder}"></td>
+					<td th:text="${one.foundDate}"></td>
+					<td class="td-status">					
+						<div class="switch size-S switchItem" th:attr="data-id=${one.id}" >
+						    <input  type="checkbox"  th:checked='${one.isChoice eq 1 ? "checked":"false"}' ></input>
+						</div>						
+					</td>
+					<td>
+						<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="编辑" class="ml-5 edit" >
+							<i class="Hui-iconfont">&#xe6df;</i>编辑
+						</a> 
+						
+						<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="删除" class="ml-5 delete" >
+							<i class="Hui-iconfont">&#xe6e2;</i>删除
+						</a>							
+						<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="指数分析" class="ml-5 index" >
+							<i class="Hui-iconfont">&#xe6df;</i>指数分析
+						</a>							
+					</td>
+				</tr>					
 			</tbody>
 		</table>
-		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+		<div class="cl pd-10 ">
+			<span class="l">
+				<select class="select setLevel" size="1" placeholder="设置品牌等级" >
+				   <option value="0">选择品牌</option>
+				   <option value="1">顶级品牌</option>
+				   <option value="2">一线品牌</option>
+				   <option value="3">二线品牌</option>
+				   <option value="4">三线品牌</option>
+				   <option value="5">四线品牌</option>
+				   <option value="6">其他品牌</option>
+				</select> 	
+			</span> 
+			<span class="l ml-10">
+				<a href="javascript:void(0);" class="btn btn-primary-outline radius setBrandLevel ">设置品牌等级</a>		
+				<a href="javascript:void(0);" class="btn btn-primary-outline radius setInventory ml-10">设置品牌清单</a>		
+			</span> 
+			<span class="r">
+				<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right: 20px" 	id="pageCont"></div>
+			</span>
+		</div>
+	</div>
+	<div id="openDiv" style="display:none" >
+		<div class="cl mt-10">
+			<label class="form-label col-xs-3 " >
+					选择清单：
+			</label>
+			<div class="formControls col-xs-9">				
+				<select class="select" size="1"  id="inventorys"  placeholder="请选择清单">				   
+				</select>			  
+			</div>
+		</div>					 
+		<div class="line mt-10 mb-10"></div>
 	</div>
 </section>
 <section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/common/formpage.js"></script>
 	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
 	<script type="text/javascript" src="/js/brand/list.js"></script>
+	<script id="inventorysTmp" type="text/x-jquery-tmpl">
+	  {{each(i,item) list}} 
+        <option value="${item.manifestId}" data-status="${item.status}" >${item.manifestName}</option> 		
+	  {{/each}}
+	</script>
 </section>
 </html>

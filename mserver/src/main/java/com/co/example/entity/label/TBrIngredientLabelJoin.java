@@ -1,6 +1,7 @@
 package com.co.example.entity.label;
 
 import com.github.moncat.common.entity.BaseEntity;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -17,4 +18,15 @@ public class TBrIngredientLabelJoin extends BaseEntity {
 
     /** 标签id */
     private Long labelId;
+
+	public TBrIngredientLabelJoin() {
+		super();
+	}
+
+	public TBrIngredientLabelJoin(Long ingredientId) {
+		super();
+		this.ingredientId = ingredientId;
+	}
+    
+    
 }

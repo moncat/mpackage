@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.co.example.sqlmaps.enterprise.TBrEnterprisePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.co.example.entity.enterprise.TBrEnterprisePermission">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="eid" jdbcType="BIGINT" property="eid" />
+    <result column="enterprise_name" jdbcType="VARCHAR" property="enterpriseName" />
+    <result column="permission_id" jdbcType="VARCHAR" property="permissionId" />
+    <result column="permission_project" jdbcType="VARCHAR" property="permissionProject" />
+    <result column="enterprise_local" jdbcType="VARCHAR" property="enterpriseLocal" />
+    <result column="producting_local" jdbcType="VARCHAR" property="productingLocal" />
+    <result column="credit_id" jdbcType="VARCHAR" property="creditId" />
+    <result column="person_legal" jdbcType="VARCHAR" property="personLegal" />
+    <result column="person_incharge" jdbcType="VARCHAR" property="personIncharge" />
+    <result column="person_quality" jdbcType="VARCHAR" property="personQuality" />
+    <result column="license_office" jdbcType="VARCHAR" property="licenseOffice" />
+    <result column="license_person" jdbcType="VARCHAR" property="licensePerson" />
+    <result column="supervision_office" jdbcType="VARCHAR" property="supervisionOffice" />
+    <result column="supervision_person" jdbcType="VARCHAR" property="supervisionPerson" />
+    <result column="end_date" jdbcType="VARCHAR" property="endDate" />
+    <result column="start_date" jdbcType="VARCHAR" property="startDate" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="hotline" jdbcType="VARCHAR" property="hotline" />
+    <result column="more_data1" jdbcType="VARCHAR" property="moreData1" />
+    <result column="more_data2" jdbcType="VARCHAR" property="moreData2" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_by" jdbcType="BIGINT" property="updateBy" />
+    <result column="del_flg" jdbcType="TINYINT" property="delFlg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, eid, enterprise_name, permission_id, permission_project, enterprise_local, producting_local, 
+    credit_id, person_legal, person_incharge, person_quality, license_office, license_person, 
+    supervision_office, supervision_person, end_date, start_date, status, hotline, more_data1, 
+    more_data2, item_order, create_time, create_by, update_time, update_by, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_enterprise_permission
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_br_enterprise_permission
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.co.example.entity.enterprise.TBrEnterprisePermission">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_enterprise_permission (id, eid, enterprise_name, 
+      permission_id, permission_project, enterprise_local, 
+      producting_local, credit_id, person_legal, 
+      person_incharge, person_quality, license_office, 
+      license_person, supervision_office, supervision_person, 
+      end_date, start_date, status, 
+      hotline, more_data1, more_data2, 
+      item_order, create_time, create_by, 
+      update_time, update_by, del_flg
+      )
+    values (#{id,jdbcType=BIGINT}, #{eid,jdbcType=BIGINT}, #{enterpriseName,jdbcType=VARCHAR}, 
+      #{permissionId,jdbcType=VARCHAR}, #{permissionProject,jdbcType=VARCHAR}, #{enterpriseLocal,jdbcType=VARCHAR}, 
+      #{productingLocal,jdbcType=VARCHAR}, #{creditId,jdbcType=VARCHAR}, #{personLegal,jdbcType=VARCHAR}, 
+      #{personIncharge,jdbcType=VARCHAR}, #{personQuality,jdbcType=VARCHAR}, #{licenseOffice,jdbcType=VARCHAR}, 
+      #{licensePerson,jdbcType=VARCHAR}, #{supervisionOffice,jdbcType=VARCHAR}, #{supervisionPerson,jdbcType=VARCHAR}, 
+      #{endDate,jdbcType=VARCHAR}, #{startDate,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{hotline,jdbcType=VARCHAR}, #{moreData1,jdbcType=VARCHAR}, #{moreData2,jdbcType=VARCHAR}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.enterprise.TBrEnterprisePermission">
+    update t_br_enterprise_permission
+    <set>
+      <if test="eid != null">
+        eid = #{eid,jdbcType=BIGINT},
+      </if>
+      <if test="enterpriseName != null">
+        enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionId != null">
+        permission_id = #{permissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionProject != null">
+        permission_project = #{permissionProject,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseLocal != null">
+        enterprise_local = #{enterpriseLocal,jdbcType=VARCHAR},
+      </if>
+      <if test="productingLocal != null">
+        producting_local = #{productingLocal,jdbcType=VARCHAR},
+      </if>
+      <if test="creditId != null">
+        credit_id = #{creditId,jdbcType=VARCHAR},
+      </if>
+      <if test="personLegal != null">
+        person_legal = #{personLegal,jdbcType=VARCHAR},
+      </if>
+      <if test="personIncharge != null">
+        person_incharge = #{personIncharge,jdbcType=VARCHAR},
+      </if>
+      <if test="personQuality != null">
+        person_quality = #{personQuality,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseOffice != null">
+        license_office = #{licenseOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="licensePerson != null">
+        license_person = #{licensePerson,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisionOffice != null">
+        supervision_office = #{supervisionOffice,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisionPerson != null">
+        supervision_person = #{supervisionPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        end_date = #{endDate,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="hotline != null">
+        hotline = #{hotline,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData1 != null">
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null">
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null">
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="delFlg != null">
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.enterprise.TBrEnterprisePermission">
+    update t_br_enterprise_permission
+    set eid = #{eid,jdbcType=BIGINT},
+      enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      permission_id = #{permissionId,jdbcType=VARCHAR},
+      permission_project = #{permissionProject,jdbcType=VARCHAR},
+      enterprise_local = #{enterpriseLocal,jdbcType=VARCHAR},
+      producting_local = #{productingLocal,jdbcType=VARCHAR},
+      credit_id = #{creditId,jdbcType=VARCHAR},
+      person_legal = #{personLegal,jdbcType=VARCHAR},
+      person_incharge = #{personIncharge,jdbcType=VARCHAR},
+      person_quality = #{personQuality,jdbcType=VARCHAR},
+      license_office = #{licenseOffice,jdbcType=VARCHAR},
+      license_person = #{licensePerson,jdbcType=VARCHAR},
+      supervision_office = #{supervisionOffice,jdbcType=VARCHAR},
+      supervision_person = #{supervisionPerson,jdbcType=VARCHAR},
+      end_date = #{endDate,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      hotline = #{hotline,jdbcType=VARCHAR},
+      more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise_permission t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause">
+    <where>
+      <if test="id != null">
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="eid != null">
+          and t.eid = #{eid,jdbcType=BIGINT}
+      </if>
+      <if test="enterpriseName != null">
+          and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+      </if>
+      <if test="permissionId != null">
+          and t.permission_id = #{permissionId,jdbcType=VARCHAR}
+      </if>
+      <if test="permissionProject != null">
+          and t.permission_project = #{permissionProject,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseLocal != null">
+          and t.enterprise_local = #{enterpriseLocal,jdbcType=VARCHAR}
+      </if>
+      <if test="productingLocal != null">
+          and t.producting_local = #{productingLocal,jdbcType=VARCHAR}
+      </if>
+      <if test="creditId != null">
+          and t.credit_id = #{creditId,jdbcType=VARCHAR}
+      </if>
+      <if test="personLegal != null">
+          and t.person_legal = #{personLegal,jdbcType=VARCHAR}
+      </if>
+      <if test="personIncharge != null">
+          and t.person_incharge = #{personIncharge,jdbcType=VARCHAR}
+      </if>
+      <if test="personQuality != null">
+          and t.person_quality = #{personQuality,jdbcType=VARCHAR}
+      </if>
+      <if test="licenseOffice != null">
+          and t.license_office = #{licenseOffice,jdbcType=VARCHAR}
+      </if>
+      <if test="licensePerson != null">
+          and t.license_person = #{licensePerson,jdbcType=VARCHAR}
+      </if>
+      <if test="supervisionOffice != null">
+          and t.supervision_office = #{supervisionOffice,jdbcType=VARCHAR}
+      </if>
+      <if test="supervisionPerson != null">
+          and t.supervision_person = #{supervisionPerson,jdbcType=VARCHAR}
+      </if>
+      <if test="endDate != null">
+          and t.end_date = #{endDate,jdbcType=VARCHAR}
+      </if>
+      <if test="startDate != null">
+          and t.start_date = #{startDate,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null">
+          and t.status = #{status,jdbcType=VARCHAR}
+      </if>
+      <if test="hotline != null">
+          and t.hotline = #{hotline,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData1 != null">
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null">
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null">
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null">
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null">
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null">
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null">
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="delFlg != null">
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null">
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select count(t.id) from t_br_enterprise_permission t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap">
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_enterprise_permission t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map">
+    delete from t_br_enterprise_permission where id in (
+    select t.id from (select * from t_br_enterprise_permission) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap extends="BaseResultMap" id="VoResultMap" type="com.co.example.entity.enterprise.aide.TBrEnterprisePermissionVo">
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List">
+    t.id, 
+    t.eid, 
+    t.enterprise_name, 
+    t.permission_id, 
+    t.permission_project, 
+    t.enterprise_local, 
+    t.producting_local, 
+    t.credit_id, 
+    t.person_legal, 
+    t.person_incharge, 
+    t.person_quality, 
+    t.license_office, 
+    t.license_person, 
+    t.supervision_office, 
+    t.supervision_person, 
+    t.end_date, 
+    t.start_date, 
+    t.status, 
+    t.hotline, 
+    t.more_data1, 
+    t.more_data2, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause">
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause">
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+  </mapper>

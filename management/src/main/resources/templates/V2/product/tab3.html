@@ -1,0 +1,214 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+		body {
+			background: #fff;
+		}
+		
+		.Company-info {
+			overflow: hidden;
+			width: 98%;
+			margin: 10px auto 0;
+		}
+		
+		.Company-info .Company-info-left,
+		.Company-info-right {
+			width: 49%;
+			float: left;
+		}
+		
+		.Company-info .Company-info-left {
+			width: 49%;
+			float: left;
+			margin-top: 10px;
+		}
+		
+		.Company-info-right {
+			margin-left: 10px;
+		}
+		
+		.Company-info .Company-info-left h3 {
+			font-weight: 600;
+			font-size: 16px;
+			margin-bottom: 14px;
+		}
+		
+		.Company-info .Company-info-left dl {
+			overflow: hidden;
+			margin: 2px 0;
+			padding: 0;
+			color: #666;
+			font-size: 15px;
+		}
+		
+		.Company-info .Company-info-left dt {
+			width: 110px;
+			overflow: hidden;
+			float: left;
+			text-align: right;
+			font-weight: normal;
+		}
+		
+		.Company-info .Company-info-left dd {
+			text-align: left;
+			padding-left: 10px;
+			overflow: hidden;
+		}
+		
+		.Company-info-left h4 {
+			height: 34px;
+			line-height: 34px;
+			background-color: #f2f2f2;
+			border: 1px solid #CCC;
+			color: #555;
+			padding-left: 10px;
+		}
+		
+		.Company-info-left h4 span {
+			color: #A4A4A4;
+		}
+		
+		.BrandStory {
+			line-height: 2.2;
+		}
+		
+		a {
+			color: #1E9FFF;
+		}
+	</style>
+</section>
+<section layout:fragment="main">
+	<div class="Company-info">
+			<div class="Company-info-left">
+				<h3 th:text="${one.enterpriseName}" >广州贝玲采生物科技有限公司</h3>
+				<div class="CompanyList">
+
+					<dl>
+						<dt>备案号：</dt>
+						<dd th:text="${one.applySn}"> 粤妆20160193</dd>
+					</dl>
+					<dl th:if="${base != null}" >
+						<dt >联系电话： </dt>
+						<dd th:text="${base.telePhone}">-</dd>
+					</dl>
+					<dl>
+						<dt>生产地址：</dt>
+						<dd th:text="${one.producingArea}">广州市白云区均禾街平沙村松园街46号A栋三楼</dd>
+					</dl>
+					<dl th:if="${base != null}">
+						<dt>网址：</dt>
+						<dd>
+							<a th:href="${base.website}"  th:text="${base.website}"> http://www.aghg.com.cn/</a>
+						</dd>
+					</dl>
+					<dl th:if="${base != null}">
+						<dt>简介：</dt>
+						<dd class="Company-profile-box">
+							<div class="content"  th:text="${base.intro}">
+								公司成立于2009年07月21日，主要经营范围为生物技术开发服务等。7月21主要经营主要经营范围为生物技术开发服务等。 要经营范围为生物技术开发服务等。7月21主要经营主要经营范围为生物技术开发服务等 要经营范围为生物技术开发服务等。7月21主要经营主要经营范围为生物技术开发服务等 要经营范围为生物技术开发服务等。7月21主要经营主要经营范围为生物技术开发服务等 要经营范围为生物技术开发服务等。7月21主要经营主要经营范围为生物技术开发服务等 要经营范围为生物技术开发服务等。7月21主要经营主要经营范围为生物技术开发服务等
+							</div>
+
+						</dd>
+					</dl>
+				</div>
+				<h4   th:if="${register != null}" >注册信息 &nbsp;<span>（数据来源于天眼查）</span></h4>
+				<div class="CompanyList"  th:if="${register != null}">
+
+					<dl>
+						<dt>法人：</dt>
+						<dd  th:text="${register.legalPerson}" >-</dd>
+					</dl>
+					<dl>
+						<dt>注册资本：</dt>
+						<dd th:text="${register.registerCapital}">300万</dd>
+					</dl>
+					<dl>
+						<dt>企业状态：</dt>
+						<dd th:text="${register.enterpriseStatus}">存续</dd>
+					</dl>
+					<dl>
+						<dt>工商注册号：</dt>
+						<dd th:text="${register.registerId}">440106000008493</dd>
+					</dl>
+					<dl>
+						<dt>组织机构代码：</dt>
+						<dd th:text="${register.orgId}">691531520</dd>
+					</dl>
+					<dl>
+						<dt>统一信用代码：</dt>
+						<dd th:text="${register.creditId}">91440113691531520M</dd>
+					</dl>
+					<dl>
+						<dt>企业类型：</dt>
+						<dd th:text="${register.enterpriseType}">有限责任公司(自然人投资或控股)</dd>
+					</dl>
+					<dl>
+						<dt>行业类型：</dt>
+						<dd th:text="${register.industryType}">科技推广和应用服务业</dd>
+					</dl>
+					<dl>
+						<dt>营业期限：</dt>
+						<dd th:text="${register.businessTerm}">2009-07-21至无固定期限</dd>
+					</dl>
+					<dl>
+						<dt>注册日期：</dt>
+						<dd th:if="${register.registerDate != null }" th:text="${#dates.format(register.registerDate, 'yyyy-MM-dd')}">2009-07-21</dd>
+					</dl>
+					<dl>
+						<dt>核准日期：</dt>
+						<dd th:if="${register.approveDate != null }" th:text="${#dates.format(register.approveDate, 'yyyy-MM-dd')}">2015-12-09</dd>
+					</dl>
+					<dl>
+						<dt>登记机关：</dt>
+						<dd th:text="${register.registerAuthority}"> 广州市番禺区工商行政管理局</dd>
+					</dl>
+					<dl>
+						<dt>注册地址：</dt>
+						<dd th:text="${register.registerAddress}"> 广州市番禺区石楼镇嵩山路64号（B栋厂房）3-4层</dd>
+					</dl>
+					<dl>
+						<dt>英文名称：</dt>
+						<dd th:text="${register.nameEn}">未公开</dd>
+					</dl>
+					<dl>
+						<dt>经营范围：</dt>
+						<dd>
+							<p class="Range" th:text="${register.businessScope}">
+								生物技术开发服务;化学工程研究服务;生物技术咨询、交流服务;化妆品及卫生用品批发;化妆品制造; (依法须经批准的项目，经相关部门批准后方可开展经营活动)
+							</p>
+						</dd>
+					</dl>
+				</div>
+
+			</div>
+
+			<!--右-->
+			<div class="Company-info-right">
+				<p>公司产品共：<span th:text="${page.totalElements}">-</span>条</p>
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>成分名称</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="text-c" th:each="item,status:${page.content}">
+							<td th:text="${page.number*page.size+status.index+1}">1</td>
+							<td>
+								<a class="btn-link" th:href="@{'/product/detail/'+${item.id}}" title="查看详情" target="_parent">
+									<span th:utext="${item.productName}"></span>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				 <div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+			</div>
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/product/tab3.js"></script>
+	<script type="text/javascript" src="/js/v2/common/form_page.js"></script>
+</section>
+</html>

@@ -42,8 +42,8 @@ public class DataTest19confirm {
 	 
 	public void getData() throws InterruptedException{
 		log.info("*************start****************");
-		 List<ConfirmVo>  queryConfirmData = tBrProductService.queryConfirmData(10,2);
-		System.out.println(queryConfirmData);
+//		 List<ConfirmVo>  queryConfirmData = tBrProductService.queryConfirmData(10,2);
+//		System.out.println(queryConfirmData);
 		log.info("*************end****************");
 	}
 	
@@ -52,8 +52,8 @@ public class DataTest19confirm {
 	 */
 	public void getData1()  {
 		log.info("*************start****************");
-		List<TBrIngredientCountVo> queryIngredientCount = tBrIngredientService.queryIngredientCount("2019-04-23");
-		System.out.println(queryIngredientCount);
+//		List<TBrIngredientCountVo> queryIngredientCount = tBrIngredientService.queryIngredientCount("2019-04-23");
+//		System.out.println(queryIngredientCount);
 		log.info("*************end****************");
 	}
 	
@@ -64,8 +64,8 @@ public class DataTest19confirm {
 	@Test
 	public void getData2()  {
 		log.info("*************start****************");
-		List<TBrEnterpriseCountVo> queryEnterpriseCount = tBrEnterpriseService.queryEnterpriseCount("2019-08-03");
-		System.out.println(queryEnterpriseCount);
+//		List<TBrEnterpriseCountVo> queryEnterpriseCount = tBrEnterpriseService.queryEnterpriseCount("2019-08-03");
+//		System.out.println(queryEnterpriseCount);
 		log.info("*************end******************");
 	}
 }

@@ -11,6 +11,7 @@
     <result column="found_date" property="foundDate" jdbcType="VARCHAR" />
     <result column="website" property="website" jdbcType="VARCHAR" />
     <result column="story" property="story" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="TINYINT" />
     <result column="is_choice" property="isChoice" jdbcType="TINYINT" />
     <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
@@ -22,8 +23,9 @@
     <result column="app_id" property="appId" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, name_en, img_url, founder, originate, found_date, website, story, is_choice, 
-    item_order, create_time, create_by, update_time, update_by, is_active, del_flg, app_id
+    id, name, name_en, img_url, founder, originate, found_date, website, story, level, 
+    is_choice, item_order, create_time, create_by, update_time, update_by, is_active, 
+    del_flg, app_id
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -42,17 +44,17 @@
     insert into t_br_brand (id, name, name_en, 
       img_url, founder, originate, 
       found_date, website, story, 
-      is_choice, item_order, create_time, 
-      create_by, update_time, update_by, 
-      is_active, del_flg, app_id
-      )
+      level, is_choice, item_order, 
+      create_time, create_by, update_time, 
+      update_by, is_active, del_flg, 
+      app_id)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, 
       #{imgUrl,jdbcType=VARCHAR}, #{founder,jdbcType=VARCHAR}, #{originate,jdbcType=VARCHAR}, 
       #{foundDate,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{story,jdbcType=VARCHAR}, 
-      #{isChoice,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
-      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, #{appId,jdbcType=TINYINT}
-      )
+      #{level,jdbcType=TINYINT}, #{isChoice,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT}, 
+      #{appId,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.brand.TBrBrand" >
     update t_br_brand
@@ -80,6 +82,9 @@
       </if>
       <if test="story != null" >
         story = #{story,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=TINYINT},
       </if>
       <if test="isChoice != null" >
         is_choice = #{isChoice,jdbcType=TINYINT},
@@ -121,6 +126,7 @@
       found_date = #{foundDate,jdbcType=VARCHAR},
       website = #{website,jdbcType=VARCHAR},
       story = #{story,jdbcType=VARCHAR},
+      level = #{level,jdbcType=TINYINT},
       is_choice = #{isChoice,jdbcType=TINYINT},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -168,7 +174,10 @@
       <if test="story != null" >
           and t.story = #{story,jdbcType=VARCHAR}
       </if>
-      <if test="isChoice != null" >
+      <if test="level != null" >
+          and t.level = #{level,jdbcType=TINYINT}
+      </if>
+      <if test="isChoice != null  and isChoice != 0" >
           and t.is_choice = #{isChoice,jdbcType=TINYINT}
       </if>
       <if test="itemOrder != null" >
@@ -246,6 +255,7 @@
     t.found_date, 
     t.website, 
     t.story, 
+    t.level, 
     t.is_choice, 
     t.item_order, 
     t.create_time, 
@@ -270,7 +280,9 @@
       <if test="productId !=null" >
           and pb.product_id = #{productId,jdbcType=BIGINT}
       </if>
-  
+      <if test="isChoice == 0" >
+       and  ( is_choice is null or  is_choice = 0)
+     </if> 
     <!-- <if test="queryBeanField != null" > -->
     <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
     <!-- </if> -->

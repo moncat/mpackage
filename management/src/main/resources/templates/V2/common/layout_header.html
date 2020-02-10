@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<!--头部-->
+	<div class="main-layout-header" th:fragment="header">
+		<div class="menu-btn" id="hideBtn">
+			<a href="javascript:;">
+				<span class="iconfont iconmenu"></span>
+			</a>
+		</div>
+		<ul class="layui-nav rightNav" lay-filter="rightNav" style="padding-right: 10px;">
+			<li class="layui-nav-item">
+				<a href="javascript:;" data-id='17'>对比</a>
+				<dl class="layui-nav-child" id="comparisonDiv">
+					<!-- 二级菜单 -->
+					<dd>
+						<a href="javascript:;" data-url="ProductComparison.html" data-id='2' data-text="产品对比"><span class="l-line"></span><span id="contrastProduct">产品对比(0)</span></a>
+					</dd>
+					<dd>
+						<a href="javascript:;" data-url="SupplierComparison.html" data-id='3' data-text="供应商对比"><span class="l-line"></span><span  id="contrastEnterprise">供应商对比(0)</span></a>
+					</dd>
+					<dd>
+						<a href="javascript:;" data-url="BrandComparison.html" data-id='4' data-text="品牌对比"><span class="l-line"></span><span id="contrastBrand">品牌对比(0)</span></a>
+					</dd>
+					<dd>
+						<a href="javascript:;" data-url="CompositionalComparison.html" data-id='5' data-text="成分对比"><span class="l-line"></span><span id="contrastIngredient">成分对比(0)</span></a>
+					</dd>
+				</dl>
+			</li>
+	
+			<li class="layui-nav-item">
+				<a href="javascript:;" data-url="admin-info.html" data-id='18' th:text="${admin.displayName}" >-</a>
+				<dl class="layui-nav-child">
+					<!-- 二级菜单 -->
+					<!-- 
+					<dd>
+						<a href="javascript:void(0);">修改密码</a>
+					</dd>
+					<dd>
+						<a href="javascript:void(0);">基本信息</a>
+					</dd>
+					 -->
+					<dd  id="changeOld" >
+						<a href="javascript:void(0);">回到旧版 </a>
+					</dd>
+					<dd>
+						<form th:action="@{/logout}" method="post" id="logoutForm">
+							<a href="javascript:document.getElementById('logoutForm').submit();">
+							 	<i class="icon-logout"></i> 退出登陆
+							</a>
+				        </form>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+</html>

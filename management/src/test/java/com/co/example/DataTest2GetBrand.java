@@ -1,12 +1,16 @@
 package com.co.example;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.nio.charset.Charset;
+import java.util.List;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
 
+import org.apache.commons.lang.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,9 +21,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.co.example.common.utils.HttpUtils;
+import com.co.example.entity.brand.TBrBrand;
+import com.co.example.entity.brand.TBrProductBrand;
+import com.co.example.entity.product.TBrProduct;
+import com.co.example.entity.product.aide.TBrProductQuery;
 import com.co.example.service.brand.TBrBrandService;
-import com.google.common.collect.Lists;
+import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.product.TBrProductService;
+import com.co.example.service.solr.SolrService;
+import com.co.example.utils.BaseDataUtil;
+import com.google.common.io.Files;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,7 +61,7 @@ public class DataTest2GetBrand {
 	public static String  BRAND_LIST_163LADY_URL = "http://cosmetic.lady.163.com/brand/";
 
 	
-	@Test
+//	@Test
 	public void test() throws InterruptedException {
 //		syncData(BRAND_LIST_PCLADY_URL,"gb2312",".sBrand li");
 //		syncData(BRAND_LIST_YOKA_URL,"utf-8","#fic_main1 dd");
@@ -98,10 +109,139 @@ public class DataTest2GetBrand {
 	}
 	
 	public static void main(String[] args) {
-		ArrayList<String> list = Lists.newArrayList();
-		
 	}
 	
 	
+	@Inject
+	TBrProductService tBrProductService;
+	
+	@Inject
+	TBrBrandService tBrBrandService;
+
+	@Inject
+	TBrProductBrandService tBrProductBrandService;
+	
+	@Inject
+	SolrService solrService;
+	
+	/**
+	 * 2019年11月21日,完善功能，优先级放后，先处理基础增量数据。
+	 * 从王永美抓取的产品品牌关联信息xls，补充数据库t_br_product_brand
+	 */
+	@Test
+	public void getPBFromFile(){
+		String bcName = "";
+		String beName = "";
+		String pName = "";
+		String sn = "";
+		Long pid = 0l;
+		Long bid = 0l;
+		TBrBrand tBrBrand;
+		int suc = 0;
+		List<TBrProduct> pList =  null;
+				String bcNameTmp = "";
+		String beNameTmp = "";
+		Long bidTmp = 0l;
+		TBrProductQuery  tmp =null;
+				
+		try {
+			List<String> readLines = Files.readLines(new File("D:\\Desktop\\t_br_brand_product.txt"), 
+					Charset.forName("gbk"));
+			log.info("size:"+readLines.size());
+			for (int i = 61325; i < readLines.size(); i++) {
+				String str = readLines.get(i);
+//				Thread.sleep(1000l);
+				String[] split = str.split(",");
+				try {
+					pName =  split[1];
+					sn =  split[2];
+					bcName = split[0];
+					beName =  split[3];
+				} catch (Exception e) {
+					log.info("字段长度不足");
+//					e.printStackTrace();
+				}
+				//根据名称查产品
+				if(StringUtils.isNotBlank(pName)){
+					TBrProductQuery query = new TBrProductQuery();
+					query.setProductNameLike(pName);
+					pList = tBrProductService.queryList(query);
+				}
+				//根据备案号查产品
+				if(pList.size() == 0 && StringUtils.isNotBlank(sn)){
+					TBrProductQuery query = new TBrProductQuery();
+					query.setApplySn(sn);
+					pList = tBrProductService.queryList(query);
+				}
+				//pid 多个      
+				if(pList.size() != 0){
+					//计算品牌id
+					log.info("查询到了"+pName);
+					if(bcName.equals(bcNameTmp) || beName.equals(beNameTmp)){
+						bid = bidTmp;
+					}
+					if(bid == 0 && StringUtils.isNotBlank(bcName)){
+						TBrBrand query = new TBrBrand();
+						query.setName(bcName);
+						List<TBrBrand> bList = tBrBrandService.queryList(query);
+						if(bList.size()>0){
+							tBrBrand = bList.get(0);
+							bid = tBrBrand.getId();
+							bcNameTmp = bcName;
+							bidTmp = bid;
+						}
+					}
+					if(bid == 0 && StringUtils.isNotBlank(beName)){
+						TBrBrand query = new TBrBrand();
+						query.setNameEn(beName);
+						List<TBrBrand> bList = tBrBrandService.queryList(query);
+						if(bList.size()>0){
+							tBrBrand = bList.get(0);
+							bid = tBrBrand.getId();
+						}
+					}
+					if(bid != 0){
+						log.info("查询到了品牌"+bcName+"("+beName+")"+"开始关联");
+						//查看是否关联，未关联则关联。
+						for(TBrProduct p :pList){
+							pid = p.getId();
+							TBrProductBrand tBrProductBrand = new TBrProductBrand();
+							tBrProductBrand.setBrandId(bid);
+							tBrProductBrand.setProductId(pid);
+							long queryCount = tBrProductBrandService.queryCount(tBrProductBrand);
+							
+							if(queryCount>0){
+								log.info("已经有关联关系，不必再进行关联。");
+							}else{
+								BaseDataUtil.setDefaultData(tBrProductBrand);
+								tBrProductBrandService.add(tBrProductBrand);
+								//做品牌冗余
+								tmp = new TBrProductQuery();
+								tmp.setId(pid);
+								tmp.setProductBrandId(bid);
+								tmp.setProductBrandName(bcName);
+								tBrProductService.updateByIdSelective(tmp);
+//								solrService.updateByIdSelective(pid+"", "brands", bcName);
+								log.info("关联成功"+suc++);	
+							}
+						}
+					}
+				}
+				bid = 0l;
+				pid = 0l;
+				log.info("已经匹配到i行="+i);
+			}
+		} catch (IOException e) {
+			log.info("getPBFromFile error!");
+			e.printStackTrace();
+		}
+	}
+	
 }
+
+
+
+
+
+
 

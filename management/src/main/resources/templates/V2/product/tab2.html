@@ -1,0 +1,140 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+<style type="text/css">
+		body {
+			background: #fff;
+		}
+		
+		.brand-info {
+			margin-top：10px;
+			width: 96%;
+			margin: 0 auto;
+		}
+		
+		.brand-info-left {
+			width: 49%;
+			float: left;
+		}
+		
+		.brand-info-left .pro-logo {
+			width: 120px;
+			height: 60px;
+			background: url(../assets/images/pro-logo.png);
+			background-size: cover;
+			border-radius: 4px;
+			border: 1px solid #f1f1f1;
+		}
+		
+		.brand-info .brand-info-left .layui-table tbody:last-child .content {
+			width: 90%;
+			margin: 0 auto;
+			line-height: 2.2;
+		}
+		
+		.brand-info .brand-info-left .layui-table tbody:last-child .content a {
+			text-decoration: none;
+			/*color: red;*/
+		}
+		
+		.brand-info .brand-info-left .layui-table tbody:last-child h3 {
+			font-size: 14px;
+		}
+		a{
+		   color: #1E9FFF;
+		}
+	</style>
+</section>
+<section layout:fragment="main">
+	<div class="brand-info">
+			<div class="brand-info-left">
+				<h4 style="font-size: 18px;font-weight: 600; color: #888; margin-left: 10px;" th:text="${one.name}">乔治·阿玛尼</h4>
+				<table class="layui-table">
+					<tbody>
+						<tr>
+							<th>Logo：</th>
+							<th>
+								<div th:if="${#strings.contains(one.imgUrl,'http')}">
+									<img class="mt-10" th:alt="${one.name}"
+										th:src="@{${one.imgUrl}}"  style="width: 125px;"/>
+								</div>
+								<div th:if="${not #strings.contains(one.imgUrl,'http')}">
+									<img class="mt-10" th:alt="${one.name}"
+										th:src="@{'/brand/'+${one.imgUrl}}" style="width: 125px;"/>
+								</div>
+							</th>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th>英文名： </th>
+							<th th:text="${one.nameEn}">aloe derma</th>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th>起源:</th>
+							<th th:text="${one.originate}" >意大利</th>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th>创始人:</th>
+							<th th:text="${one.founder}">乔治・阿玛尼</th>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th>创始时间:</th>
+							<th th:text="${one.foundDate}">1975年</th>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th>官网:</th>
+							<th>
+								<a th:text="${one.website}" th:href="${one.website}" target="_blank" >http://www.aghg.com.cn/</a>
+							</th>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<th colspan="2">
+								<h3>品牌故事:</h3>
+								<p class="BrandStory" style="margin-top: 4px;line-height: 1.5;" th:utext="${one.story}">
+									 氨基酸、矿物质同时芦荟中的多糖、单糖等活性成分能促进皮肤保湿，并能在肌肤表面形
+								</p>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="brand-info-right" style="width: 49%;float: right;">
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>成分名称</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item,status:${page.content}">
+							<td th:text="${page.number*page.size+status.index+1}" >1</td>
+							<td>
+								<a class="btn-link"
+									th:href="@{'/product/detail/'+${item.id}}" title="查看详情"
+									target="_parent"> 
+									<span th:utext="${item.productName}"></span>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				 <div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+			</div>
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/product/tab2.js"></script>
+	<script type="text/javascript" src="/js/v2/common/form_page.js"></script>
+</section>
+</html>

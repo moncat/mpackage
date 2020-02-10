@@ -8,7 +8,7 @@
                        	<span class='hide' id="eid"  th:utext="${one.id}"></span>
                            <div class="row cl f-14">
                            <div class="col-md-12">
-      					              <b class="f-16" th:text="${one.enterpriseName}"></b> 
+      					              <b class="f-16" th:text="${one.enterpriseName}"></b> <span th:if="${base} !=null"><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></span>
        			                     <div>备案号： <span th:text="${one.applySn}"></span></div>
        			                     <div>生产地址： <span th:text="${one.producingArea}"></span></div>
        			                     <div th:if="${base != null}" >
@@ -60,24 +60,26 @@
 								</tr>
 							</thead>
 							<tbody>
-								<section th:each="item,status:${page.content}" >
-									<tr class="text-c">
-										<td th:text="${page.number*page.size+status.index+1}">1</td>
-										<td>
-											<a class="btn-link" th:href="@{'/product/detail/'+${item.productId}}" title="查看详情" target="_parent">
-												<span th:utext="${item.productName}"></span>
-											</a>
-										</td>
-									</tr>					
-								</section>
+								<tr class="text-c" th:each="item,status:${page.content}">
+									<td th:text="${page.number*page.size+status.index+1}">1</td>
+									<td>
+										<a class="btn-link" th:href="@{'/product/detail/'+${item.id}}" title="查看详情" target="_parent">
+											<span th:utext="${item.productName}"></span>
+										</a>
+									</td>
+								</tr>					
 							</tbody>
 						</table>
 						<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
-                         <h5 th:if="${base} !=null"><a class="ml-10" th:href="${base.moreData1}" target="_blank" >更多信息>></a></h5>
 	                </div>
 	            </div>
 	        </div>
 	    </section>
 	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/common/formpage.js"></script>
+	<script type="text/javascript" src="/js/product/tab1.js"></script>
 </section>
 </html>

@@ -23,7 +23,7 @@ $(function(){
 	$('.label').on('click',function(){
 		var id = $(this).attr('data-id');	
 		//勾选推荐标签
-		l2('/product/label/'+id,'900px','500px');
+		l2('/product/label/'+id,'1051px','680px');
 		
 	});
 	
@@ -65,12 +65,12 @@ $(function(){
 	
 	//***********************
 	$('.add').on('click',function(){
-		lf2('/product/addInit','900px','500px');
+		lf2('/product/addInit','1051px','680px');
 	});
 	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
-		lf2('/product/editInit/'+id+'/0','900px','500px');
+		lf2('/product/editInit/'+id+'/0','1051px','680px');
 		event.stopPropagation(); 
 	});
 	

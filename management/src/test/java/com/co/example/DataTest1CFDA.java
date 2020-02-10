@@ -160,7 +160,7 @@ public class DataTest1CFDA {
 	}
 	
 	//实际企业表中的地址和产品表相匹配                                  over!!!!!!!!!!!!!!!!!!!!!!!!
-	@Test  
+//	@Test  
 	public void test6() {
 		TBrEnterprise tBrEnterprise  = null;
 		String producingArea = null;
@@ -188,5 +188,19 @@ public class DataTest1CFDA {
 	
 //		String text = HttpUtils.postData(ProductConstant.CFDA_INGREDIENT_URL, "processid="+"20170811142327xr9ot");
 //		System.out.println(text);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 

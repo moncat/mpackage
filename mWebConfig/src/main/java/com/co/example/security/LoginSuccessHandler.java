@@ -14,7 +14,9 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import com.co.example.constant.SessionConstant;
 import com.co.example.entity.admin.aide.AdminSession;
 import com.co.example.entity.admin.aide.TAdminVo;
+import com.co.example.entity.system.TSystemConfig;
 import com.co.example.service.admin.TAdminService;
+import com.co.example.service.system.TSystemConfigService;
 import com.co.example.utils.ClientUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +31,9 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 	
 	@Autowired
 	TAdminService  tAdminService;
+	
+	@Autowired
+	TSystemConfigService  tSystemConfigService;
 		
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
@@ -48,7 +53,17 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 		//管理员登录
 		log.info("******登录成功，执行session处理");
 		tAdminService.updateLogin(oldAdminSession,userDetails,ClientUtil.getIp(request));
-		session.setAttribute(SessionConstant.SESSION_ADMIN, oldAdminSession);		
+		session.setAttribute(SessionConstant.SESSION_ADMIN, oldAdminSession);
 		super.onAuthenticationSuccess(request, response, authentication);
 	}
 }
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,307 @@
+<html layout:decorator="/v2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/manifestAuth/list.css" />
+	<style>
+	</style>
+</section>
+<div class="wrapper" layout:fragment="main">
+	<div class="content_wrapper">
+		<!-- breadcrumb -->
+		<div class="container-fluid padding-zero">
+			<div class="page-heading">
+				<div class="row d-flex align-items-center">
+					<div class="col-md-6">
+						<div class="page-breadcrumb">
+							<h1>我的关注清单</h1>
+						</div>
+					</div>
+					<div class="col-md-6 justify-content-md-end d-md-flex">
+						<div class="breadcrumb_nav">
+							<ol class="breadcrumb">
+								<li>
+									<i class="fa fa-home"></i>
+									<a class="parent-item" href="#">Home</a>
+									<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">
+									我的关注清单
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- breadcrumb_End -->
+		<!--选项卡-->
+		<div class="container-fluid mylist-cars-box box-shadow ">
+			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+				<ul class="layui-tab-title">
+					<li class="layui-this">产品清单</li>
+					<li>品牌清单</li>
+					<li>供应商清单</li>
+					<li>成分清单</li>
+				</ul>
+				<div class="layui-tab-content">
+					<!--tab1-->
+					<div class="layui-tab-item layui-show">
+						<div class="cp-box">
+							<!--卡片-有数据-->
+							<div class="card"  th:each="one,status:${list}" th:if="${one.type eq 1}" th:attr="data-id=${one.id}">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-12">
+											<div class="float-right">
+												<span class="iconfont isTop icoStar icoStar_hot " th:if="${one.isTop eq 1 }"  >&#xe639;</span>
+												<span class="iconfont isTop icoStar " th:if="${one.isTop ne 1 }" >&#xe639;</span>
+												<div class="btn-group">
+													<div class="navBar">
+														<span style="cursor: pointer;" class="more">更多</span>
+														<span class="iconfont iconyoujiantou"></span>
+													</div>
+													<ul class="dropdown-menu text-center">
+														<li class="edit" th:attr="data-mid=${one.manifestId}" ><a href="javascript:void(0);" class="edit-box"><span class="iconfont iconbianji">&nbsp;&nbsp;</span>编辑</a>	</li>
+														<li class="share"><a th:hidden="${one.usingBy ne one.createBy }"  href="javascript:void(0);" class="share-box"><span class="iconfont icongongxiang">&nbsp;&nbsp;</span>共享</a></li>
+														<li class="delete"><a href="javascript:void(0);" class="delete-box"><span class="iconfont iconshanchu">&nbsp;&nbsp;</span>删除</a></li>
+													</ul>
+												</div>
+											</div>
+											<a class="text-success" target ="_self" th:href="@{'/manifestAuth/pList/'+${one.manifestId}}" >
+												<i class="iconfont icongongyingshang"></i>&nbsp;&nbsp;<span th:text="${one.manifestName}" >加载中…</span>
+											</a>
+										</div>
+										<div class="col-12 cars-box-margin">
+											<h4><span>创建人：</span><span th:text="${one.adminName}" ></span></h4>
+											<h4>创建时间：<span  th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}">-</span></h4>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} eq 4">							
+												<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+													<h5 th:text="${kvBean.name}" ></h5>
+													<span th:text="${kvBean.value}"></span> 
+												</div>												
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} ne 4">							
+												<div class="">
+													  <p th:if="${one.status} eq 2">加载中……</p>
+													  <p th:if="${one.status} eq 1">初始化……</p>
+												</div>												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--/卡片-有数据-->
+							<!--卡片-添加-->
+							<div class="card card-xz-box">
+								<div class="card-body">
+									<div class="card-xz">
+										<button class="layui-btn layui-btn-normal edit-box add"  type="button" th:attr="data-type=1" >新增产品清单</button>
+										<p>添加关注产品，系统自动分析产品数据</p>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+					<!--tab2-->
+					<div class="layui-tab-item ">
+						<div class="cp-box">
+							<!--卡片-有数据-->
+							<div class="card"  th:each="one,status:${list}" th:if="${one.type eq 2}" th:attr="data-id=${one.id}">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-12">
+											<div class="float-right">
+												<span class="iconfont isTop icoStar icoStar_hot " th:if="${one.isTop eq 1 }"  >&#xe639;</span>
+												<span class="iconfont isTop icoStar " th:if="${one.isTop ne 1 }" >&#xe639;</span>
+												<div class="btn-group">
+													<div class="navBar">
+														<span style="cursor: pointer;" class="more">更多</span>
+														<span class="iconfont iconyoujiantou"></span>
+													</div>
+													<ul class="dropdown-menu text-center">
+														<li class="edit" th:attr="data-mid=${one.manifestId}" ><a href="javascript:void(0);" class="edit-box"><span class="iconfont iconbianji">&nbsp;&nbsp;</span>编辑</a>	</li>
+														<li class="share"><a th:hidden="${one.usingBy ne one.createBy }"  href="javascript:void(0);" class="share-box"><span class="iconfont icongongxiang">&nbsp;&nbsp;</span>共享</a></li>
+														<li class="delete"><a href="javascript:void(0);" class="delete-box"><span class="iconfont iconshanchu">&nbsp;&nbsp;</span>删除</a></li>
+													</ul>
+												</div>
+											</div>
+											<a class="text-success" target ="_self" th:href="@{'/manifestAuth/bList/'+${one.manifestId}}" >
+												<i class="iconfont icongongyingshang"></i>&nbsp;&nbsp;<span th:text="${one.manifestName}" >加载中…</span>
+											</a>
+										</div>
+										<div class="col-12 cars-box-margin">
+											<h4><span>创建人：</span><span th:text="${one.adminName}" ></span></h4>
+											<h4>创建时间：<span  th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}">-</span></h4>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} eq 4">							
+												<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+													<h5 th:text="${kvBean.name}" ></h5>
+													<span th:text="${kvBean.value}"></span> 
+												</div>												
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} ne 4">							
+												<div class="">
+													  <p th:if="${one.status} eq 2">加载中……</p>
+													  <p th:if="${one.status} eq 1">初始化……</p>
+												</div>												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--/卡片-有数据-->
+							<!--卡片-添加-->
+							<div class="card card-xz-box">
+								<div class="card-body">
+									<div class="card-xz">
+										<button class="layui-btn layui-btn-normal edit-box add"  type="button" data-type="2" >新增品牌清单</button>
+										<p>添加关注产品，系统自动分析产品数据</p>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+					<!--tab3-->
+					<div class="layui-tab-item ">
+						<div class="cp-box">
+							<!--卡片-有数据-->
+							<div class="card"  th:each="one,status:${list}" th:if="${one.type eq 3}" th:attr="data-id=${one.id}">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-12">
+											<div class="float-right">
+												<span class="iconfont isTop icoStar icoStar_hot " th:if="${one.isTop eq 1 }"  >&#xe639;</span>
+												<span class="iconfont isTop icoStar " th:if="${one.isTop ne 1 }" >&#xe639;</span>
+												<div class="btn-group">
+													<div class="navBar">
+														<span style="cursor: pointer;" class="more">更多</span>
+														<span class="iconfont iconyoujiantou"></span>
+													</div>
+													<ul class="dropdown-menu text-center">
+														<li class="edit" th:attr="data-mid=${one.manifestId}" ><a href="javascript:void(0);" class="edit-box"><span class="iconfont iconbianji">&nbsp;&nbsp;</span>编辑</a>	</li>
+														<li class="share"><a th:hidden="${one.usingBy ne one.createBy }"  href="javascript:void(0);" class="share-box"><span class="iconfont icongongxiang">&nbsp;&nbsp;</span>共享</a></li>
+														<li class="delete"><a href="javascript:void(0);" class="delete-box"><span class="iconfont iconshanchu">&nbsp;&nbsp;</span>删除</a></li>
+													</ul>
+												</div>
+											</div>
+											<a class="text-success" target ="_self" th:href="@{'/manifestAuth/eList/'+${one.manifestId}}" >
+												<i class="iconfont icongongyingshang"></i>&nbsp;&nbsp;<span th:text="${one.manifestName}" >加载中…</span>
+											</a>
+										</div>
+										<div class="col-12 cars-box-margin">
+											<h4><span>创建人：</span><span th:text="${one.adminName}" ></span></h4>
+											<h4>创建时间：<span  th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}">-</span></h4>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} eq 4">							
+												<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+													<h5 th:text="${kvBean.name}" ></h5>
+													<span th:text="${kvBean.value}"></span> 
+												</div>												
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} ne 4">							
+												<div class="">
+													  <p th:if="${one.status} eq 2">加载中……</p>
+													  <p th:if="${one.status} eq 1">初始化……</p>
+												</div>												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--/卡片-有数据-->
+							<!--卡片-添加-->
+							<div class="card card-xz-box">
+								<div class="card-body">
+									<div class="card-xz">
+										<button class="layui-btn layui-btn-normal edit-box add"  type="button" data-type="3" >新增供应商清单</button>
+										<p>添加关注产品，系统自动分析产品数据</p>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+					<!--tab4-->
+					<div class="layui-tab-item ">
+						<div class="cp-box">
+							<!--卡片-有数据-->
+							<div class="card"  th:each="one,status:${list}" th:if="${one.type eq 4}" th:attr="data-id=${one.id}">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-12">
+											<div class="float-right">
+												<span class="iconfont isTop icoStar icoStar_hot " th:if="${one.isTop eq 1 }"  >&#xe639;</span>
+												<span class="iconfont isTop icoStar " th:if="${one.isTop ne 1 }" >&#xe639;</span>
+												<div class="btn-group">
+													<div class="navBar">
+														<span style="cursor: pointer;" class="more">更多</span>
+														<span class="iconfont iconyoujiantou"></span>
+													</div>
+													<ul class="dropdown-menu text-center">
+														<li class="edit" th:attr="data-mid=${one.manifestId}" ><a href="javascript:void(0);" class="edit-box"><span class="iconfont iconbianji">&nbsp;&nbsp;</span>编辑</a>	</li>
+														<li class="share"><a th:hidden="${one.usingBy ne one.createBy }"  href="javascript:void(0);" class="share-box"><span class="iconfont icongongxiang">&nbsp;&nbsp;</span>共享</a></li>
+														<li class="delete"><a href="javascript:void(0);" class="delete-box"><span class="iconfont iconshanchu">&nbsp;&nbsp;</span>删除</a></li>
+													</ul>
+												</div>
+											</div>
+											<a class="text-success" target ="_self" th:href="@{'/manifestAuth/iList/'+${one.manifestId}}" >
+												<i class="iconfont icongongyingshang"></i>&nbsp;&nbsp;<span th:text="${one.manifestName}" >加载中…</span>
+											</a>
+										</div>
+										<div class="col-12 cars-box-margin">
+											<h4><span>创建人：</span><span th:text="${one.adminName}" ></span></h4>
+											<h4>创建时间：<span  th:text="${#dates.format(one.createTime, 'yyyy/MM/dd')}">-</span></h4>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} eq 4">							
+												<div class="list_message" th:each="kvBean:${#objects.listNullSafe(one.resultJson,'')}">
+													<h5 th:text="${kvBean.name}" ></h5>
+													<span th:text="${kvBean.value}"></span> 
+												</div>												
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="list_message-box"  th:if="${one.status} ne 4">							
+												<div class="">
+													  <p th:if="${one.status} eq 2">加载中……</p>
+													  <p th:if="${one.status} eq 1">初始化……</p>
+												</div>												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--/卡片-有数据-->
+							<!--卡片-添加-->
+							<div class="card card-xz-box">
+								<div class="card-body">
+									<div class="card-xz">
+										<button class="layui-btn layui-btn-normal edit-box add"  type="button" data-type="4" >新增成分清单</button>
+										<p>添加关注产品，系统自动分析产品数据</p>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!--/选型卡-->
+	</div>
+
+</div>	
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/manifestAuth/list.js?version=5"></script>
+</section>
+</html>

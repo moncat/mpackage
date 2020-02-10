@@ -1,0 +1,173 @@
+<html  layout:decorator="/v2/common/layout_iframe" >
+<section layout:fragment="main">
+	<div class="wrapper">
+				<div class="content_wrapper">
+					<!-- breadcrumb -->
+					<div class="container-fluid padding-zero">
+						<div class="page-heading">
+							<div class="row d-flex align-items-center">
+								<div class="col-md-6">
+									<div class="page-breadcrumb">
+										<h1>企业列表</h1>
+									</div>
+								</div>
+								<div class="col-md-6 justify-content-md-end d-md-flex">
+									<div class="breadcrumb_nav">
+										<ol class="breadcrumb">
+											<li>
+												<i class="fa fa-home"></i>
+												<a class="parent-item" href="#">Home</a>
+												<i class="fa fa-angle-right"></i>
+											</li>
+											<li class="active">
+												企业列表
+											</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- breadcrumb_End -->
+					
+					<!-- 数据筛选 -->
+					<div class="container-fluid data-cars-box box-shadow">
+						<div class="datacars-title">数据筛选</div>
+						<div class="Brand_search_box">
+							<form class="form-inline" action="/enterprise/list2"  id="searchForm" >
+								<label>输入查询:</label>&nbsp;&nbsp;
+								<input th:value="${query.enterpriseNameLike}" name="enterpriseNameLike" class="form-control Pro_search" placeholder="请输入企业"/>&nbsp;&nbsp;
+								<label>省份地区：</label>&nbsp;
+								<select class="form-control" name="province" >&nbsp;&nbsp;
+									<option value="" >省份地区</option>
+									<option value="广东" th:selected ="${query.province} == 广东">广东</option>
+									<option value="上海" th:selected ="${query.province} == 上海">上海</option>
+									<option value="北京" th:selected ="${query.province} == 北京">北京</option>
+									<option value="浙江" th:selected ="${query.province} == 浙江">浙江</option>
+									<option value="山东" th:selected ="${query.province} == 山东">山东</option>
+									<option value="江苏" th:selected ="${query.province} == 江苏">江苏</option>
+									<option value="福建" th:selected ="${query.province} == 福建">福建</option>
+									<option value="四川" th:selected ="${query.province} == 四川">四川</option>
+									<option value="河南" th:selected ="${query.province} == 河南">河南</option>
+									<option value="湖南" th:selected ="${query.province} == 湖南">湖南</option>
+									<option value="辽宁" th:selected ="${query.province} == 辽宁">辽宁</option>
+									<option value="河北" th:selected ="${query.province} == 河北">河北</option>
+									<option value="天津" th:selected ="${query.province} == 天津">天津</option>
+									<option value="湖北" th:selected ="${query.province} == 湖北">湖北</option>
+									<option value="安徽" th:selected ="${query.province} == 安徽">安徽</option>
+									<option value="陕西" th:selected ="${query.province} == 陕西">陕西</option>
+									<option value="云南" th:selected ="${query.province} == 云南">云南</option>
+									<option value="广西" th:selected ="${query.province} == 广西">广西</option>
+									<option value="吉林" th:selected ="${query.province} == 吉林">吉林</option>
+									<option value="重庆" th:selected ="${query.province} == 重庆">重庆</option>
+									<option value="黑龙江" th:selected ="${query.province} == 黑龙江">黑龙江</option>
+									<option value="江西" th:selected ="${query.province} == 江西">江西</option>
+									<option value="新疆" th:selected ="${query.province} == 新疆">新疆</option>
+									<option value="山西" th:selected ="${query.province} == 山西">山西</option>
+									<option value="海南" th:selected ="${query.province} == 海南">海南</option>
+									<option value="贵州" th:selected ="${query.province} == 贵州">贵州</option>
+									<option value="内蒙古" th:selected ="${query.province} == 内蒙古">内蒙古</option>
+									<option value="甘肃" th:selected ="${query.province} == 甘肃">甘肃</option>
+									<option value="韩国" th:selected ="${query.province} == 韩国">韩国</option>
+									<option value="宁夏" th:selected ="${query.province} == 宁夏">宁夏</option>
+									<option value="西藏" th:selected ="${query.province} == 西藏">西藏</option>
+									<option value="青海" th:selected ="${query.province} == 青海">青海</option>
+									<option value="台湾" th:selected ="${query.province} == 台湾">台湾</option>
+									<option value="日本" th:selected ="${query.province} == 日本">日本</option>
+									<option value="香港" th:selected ="${query.province} == 香港">香港</option>
+								</select>&nbsp;&nbsp;
+								<label>企业类型：</label>&nbsp;
+								<select class="form-control" size="1" name="enterpriseType"  >&nbsp;&nbsp;
+								    <option value="1" th:selected ="${query.enterpriseType} == 1">企业/生产企业</option>
+								    <option value="2" th:selected ="${query.enterpriseType} == 2">生产企业</option>
+								    <option value="3" th:selected ="${query.enterpriseType} == 3">企业</option>
+								</select>&nbsp;&nbsp;
+								<button class="layui-btn layui-btn-normal" style="color: #fff;"><i class="iconfont iconfangdajing" style="color: #fff;"></i>&nbsp;查询</button>
+								<a class="layui-btn layui-btn-primary clear"><i class="iconfont iconzhongzhi" style="color: #333;"></i>&nbsp;重置</a>
+							</form>
+						</div>
+					</div>
+					<!-- /数据筛选 -->
+					<!-- 数据列表 -->
+					<div class="container-fluid data-cars-box box-shadow" style="padding-bottom: 10px;">
+						<div class="datacars-title data-list">
+							<div class="data-list-left float-left">数据列表</div>
+						</div>
+						<table class="layui-table">
+							<thead>
+								<tr>
+									<th><input type="checkbox"/></th>
+									<th>序号</th>
+									<th>企业名称</th>
+									<th>备案号</th>
+									<th>行业类型</th>
+									<th>企业状态</th>
+									<th>企业类型</th>
+									<th>常用设置</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>							
+								<tr th:each="one,status:${page.content}">
+									<td><input  class="checkbox1" type="checkbox"   th:attr="data-id=${one.id},data-text=${one.enterpriseName}"/></td>
+									<td th:text="${page.number*page.size+status.index+1}" >1024</td>
+									<td>
+										<a  class="showMore"  th:text="${one.enterpriseName}"  th:attr="data-id=${one.id}" target='_blank'></a>
+									</td>
+									<td th:text="${one.applySn}" >粤妆20160344</td>
+									<td th:text="${one.industryType}" >化学原料和化学制品制造业</td>
+									<td th:text="${one.enterpriseStatus}">续存</td>
+									<td th:if="${one.isBus==1 and one.isProduct !=1}">企业</td>
+									<td th:if="${one.isBus!=1 and one.isProduct==1}">生产企业</td>
+									<td th:if="${one.isBus==1 and one.isProduct==1}">企业/生产企业</td>
+									<td width="100"  >
+										<div class="layui-form switchItem"  >
+											<input type="checkbox" th:attr="data-id=${one.id}" lay-skin="switch"	lay-text="开启|关闭" class="layui-btn-lg "  th:checked='${one.isChoice eq 1 ? "checked":"false"}'/>					
+			                            </div> 
+									</td>
+									<td class="caozuo" width="350">
+										<div style="margin-top: 5px;">
+											<a th:attr="data-id=${one.id}" href="#" style="color: #1E9FFF;" class="index"><i class="iconfont iconzhishufenxi index"></i>&nbsp;指数分析</a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a  th:attr="data-id=${one.id}"  style="color: #1E9FFF;"  class="contrast"><b>+</b>&nbsp;对比</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="col-md-12 table-foot">
+							<div class="table-foot-left">
+							   <span class='selectAll' >&nbsp;全选</span>
+								<span class='selectOther' >&nbsp;反选</span>
+								<span class="setInventory">添加清单</span>
+							</div>
+							<div class="table-foot-right">
+								<div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+							</div>
+						</div>
+					</div>
+					<!-- 数据列表 -->
+				</div>
+			</div>
+		<div class="Float-win">
+			<span class="small-pro-box">清<br />单</span>
+
+			<div class="float-win-title">
+				<h3>企业清单</h3>
+				<span class="Num"></span>
+			</div>
+			<div class="list">
+				<ul id="inventorysEnterprise">
+				</ul>
+				<div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:10px; width: 90%; margin: 0 auto 10px;">
+					<button class="layui-btn layui-btn-primary layui-btn-sm  clearInventorys ">清空</button>
+					<button class="layui-btn layui-btn-normal layui-btn-sm Selection-attention-list  connInventorys">设置清单</button>
+				</div>
+			</div>
+		</div>
+	
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/common/form_page.js"></script>
+	<script type="text/javascript" src="/js/v2/enterprise/list.js?version=7"></script>
+</section>
+</html>

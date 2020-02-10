@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<section layout:fragment="myCss">
+<style type="text/css">
+.box{
+	border: 1px solid #ccc;
+	}
+
+</style>
+</section>
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<div class="mt-10 cl">
+			<div style="width:20%"  th:if="${one.imgUrl!=null}">
+				<div th:if="${#strings.contains(one.imgUrl,'http')}">
+					<img class="mt-10 l" th:alt="${one.name}"
+						th:slrc="@{${one.imgUrl}}"  style="width: 125px;"/>
+				</div>
+				<div th:if="${not #strings.contains(one.imgUrl,'http')}">
+					<img class="mt-10 l" th:alt="${one.name}"
+						th:src="@{'/brand/'+${one.imgUrl}}" style="width: 125px;"/>
+				</div>
+				
+			</div>
+			<div class="l" style="width:79%">
+				<div >
+					<input th:if="${one.level eq 1}" class="btn btn-danger radius size-MINI" type="button" value="顶级品牌" />
+					<input th:if="${one.level eq 2}" class="btn btn-danger radius size-MINI" type="button" value="一级品牌" />
+					<input th:if="${one.level eq 3}" class="btn btn-danger radius size-MINI" type="button" value="二级品牌" />
+					<input th:if="${one.level eq 4}" class="btn btn-danger radius size-MINI" type="button" value="三级品牌" />
+					<input th:if="${one.level eq 5}" class="btn btn-danger radius size-MINI" type="button" value="四级品牌" />
+					<input th:if="${one.level eq 6}" class="btn btn-danger radius size-MINI" type="button" value="其他品牌" />
+					<strong th:text="${one.name + '  '+ one.nameEn}">雅诗兰黛  Estee Lauder</strong>
+				</div>
+				<div class="cl mt-5 ml-30">
+					<div class=" l" style='width:25%'>
+						<div class="pt-10 pb-10 ml-20 box">
+							<div class="text-c">品类</div>						
+							<div class="text-c base1">加载中…</div>
+						</div>
+					</div>	
+					<div class=" l" style='width:25%'>
+						<div class="pt-10 pb-10 ml-20 box">
+							<div class="text-c">供应商</div>						
+							<div class="text-c base2">加载中…</div>
+						</div>
+					</div>	
+					<div class=" l" style='width:25%'>
+						<div class="pt-10 pb-10 ml-20 box">
+							<div class="text-c">备案产品数</div>						
+							<div class="text-c base3">加载中…</div>
+						</div>
+					</div>	
+					<div class=" l" style='width:25%'>
+						<div class="pt-10 pb-10 ml-20 box">
+							<div class="text-c">取消备案数</div>						
+							<div class="text-c base4">加载中…</div>
+						</div>
+					</div>	
+				</div>		
+			</div>
+		</div>	
+		<div id="tab_demo" class="HuiTab mt-10">
+			<div class="tabBar clearfix">
+				<span>品类分析</span>
+				<span id="tabBar2">供应商分析</span>
+				<span >备案产品</span>
+				<span>品牌介绍</span>
+			</div>
+			
+			<div class="tabCon">
+				<div class="cl mt-15">
+					<div class="l ml-5" style='width:45%'>
+						<div>关注品牌品类构成占比</div>
+						<div class="line"></div>
+						<div id='chart1' style='height: 300px;' ></div>
+					</div>
+					<div class="l ml-5" style='width:45%'>
+						<div>品类备案产品数</div>
+						<div class="line"></div>
+						<div id='process' style='height: 300px;' ></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="tabCon">
+				<div class="l ml-5" style='width:48%'>
+					<div>关注品牌供应商构成占比</div>
+					<div class="line"></div>
+					<div id='chart2' style='height: 600px;' ></div>
+				</div>
+				<div class="l ml-5 mb-10" style='width:50%'>
+					<div>关注品牌供应商分布图</div>
+					<div class="line"></div>
+					<div id='chart3' style='height: 600px;' ></div>
+				</div>
+				<table class="table table-border table-bordered table-bg table-hover">
+					<thead>
+						<tr>
+							<th colspan="10" scope="col">
+								供应商列表
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th>序号</th>
+							<th>供应商名称</th>
+							<th>备案号</th>
+							<th>有效期</th>
+							<th>发证日期</th>
+							<th>生产品类</th>
+							<th>产品数 ↓</th>
+							<th>产品数占比</th>
+						</tr>
+					</thead>
+					<tbody id="epolist">
+					</tbody>
+				</table>
+				<div id="epoPage"></div>
+			</div>
+			<div class="tabCon">
+				<table class="table table-border table-bordered table-bg table-hover">
+					<thead>
+						<tr>
+							<th colspan="10" scope="col">
+								品牌备案产品列表
+							</th>
+						</tr>
+						<tr class="text-c ">
+							<th>序号</th>
+							<th>产品名称</th>
+							<th>品类</th>
+							<th>实际生产企业</th>
+							<th>淘宝价格</th>
+							<th>全网月销量↓</th>
+							<th>全网月销售额</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="productList">
+					</tbody>
+				</table>
+				<div id="pPage"></div>
+			</div>
+			<div class="tabCon">
+				<div class="row cl mt-5 ml-20">
+					<div class="r" style='margin-right: 90px;' th:if="${one.imgUrl!=null}">
+						<div th:if="${#strings.contains(one.imgUrl,'http')}">
+							<img class="mt-10" th:alt="${one.name}"
+								th:src="@{${one.imgUrl}}"  style="width: 125px;"/>
+						</div>
+						<div th:if="${not #strings.contains(one.imgUrl,'http')}">
+							<img class="mt-10" th:alt="${one.name}"
+								th:src="@{'/brand/'+${one.imgUrl}}" style="width: 125px;"/>
+						</div>
+					</div>
+					<div  style="width:90%;" >
+						<h4>
+							 <b th:text="${one.name}"></b>
+						</h4>
+						<h5>
+							英文名： <span th:text="${one.nameEn}"></span>
+						</h5>
+						<h5>
+							起源： <span th:text="${one.originate}"></span>
+						</h5>
+						<h5>
+							创始人： <span th:text="${one.founder}"></span>
+						</h5>
+						<h5>
+							创始时间： <span th:text="${one.foundDate}"></span>
+						</h5>
+						<h5>
+							官网： <span th:text="${one.website}"></span>
+						</h5>
+						<h5>
+							品牌故事： <span th:utext="${one.story}"></span>
+						</h5>
+					</div>							
+				</div>
+			</div>			
+		</div>	
+	</div>
+</section>
+<section  layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/china.js"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="/js/common/formpage_post.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/js/brand/index.js?version=3"></script>
+	<script id="epolistTmp" type="text/x-jquery-tmpl">
+	  {{each(i,item) content}} 
+	<tr  class="text-c">
+	<td>${size*number+i+1}</td>
+	<td>${item.enterprise.enterpriseName}</td>
+		{{if item.permission == null}}
+			<td>${item.enterprise.applySn}</td>	
+   			<td>无数据</td>								
+   			<td>无数据</td>								
+		{{else}}
+			<td><a target="_blank" href="http://125.35.6.84:81/xk/itownet/portal/dzpz.jsp?id=${item.permission.moreData1}">${item.enterprise.applySn}</a></td>	
+			<td>${item.permission.endDate}</td>								
+			<td>${item.permission.startDate}</td>	
+		{{/if}}					
+							
+	<td>${item.catagoryNum}</td>								
+	<td>${item.productNum}</td>								
+	<td>${(item.curProductNum/item.productNum*100).toFixed(2)}%</td>								
+	</tr>		
+	  {{/each}}
+	</script>
+	<script id="productListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+  <tr  class="text-c">
+	<td>${size*number+i+1}</td>
+	<td>${item.productName}</td>
+	<td>${item.categoryName}</td>
+	<td>
+		{{each(j,enterpriseItem) enterpriseList}} 
+			${enterpriseItem.enterpriseName}
+  		{{/each}}
+	</td>									
+	<td>${item.taobaoSale}</td>								
+	<td>${item.productNum}</td>								
+	<td>${item.taobaoTurnover}</td>								
+	<td>								
+		<a  style="text-decoration:none" href="javascript:void(0);" data-id="${item.id}" title="商品链接" class="conn" >
+			<i class="Hui-iconfont">&#xe6f1;</i>商品链接
+		</a> 
+	</td>							
+  </tr>		
+{{/each}}
+	</script>
+
+</section>
+</body>
+</html>

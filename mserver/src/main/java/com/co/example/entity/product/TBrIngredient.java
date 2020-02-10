@@ -9,7 +9,17 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class TBrIngredient extends BaseEntity {
-    /** id */
+	
+    public TBrIngredient() {
+		super();
+	}
+
+	public TBrIngredient(Long id) {
+		super();
+		this.id = id;
+	}
+
+	/** id */
     private Long id;
 
     /** 成分名 */

@@ -1,0 +1,172 @@
+.layui-tab-content {
+	padding: 10px;
+	background: #fff;
+	margin-top: -14px;
+}
+
+.addclass {
+	display: inline-block;
+	width: 150px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-weight: normal;
+	cursor: pointer;
+	border: 1px solid #e4e4e4;
+}
+
+.addclass:hover {
+	border: 1px solid #1E9FFF;
+	color: #1E9FFF;
+}
+
+.numbers {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px 0;
+}
+
+.numbers .numbers_box {
+	width: 18%;
+	height: 90px;
+	border: 1px solid #d7d7d7;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	align-items: center;
+	min-width: 180px;
+}
+
+.numbers .numbers_box span:nth-child(1) {}
+
+.numbers .numbers_box span:nth-child(2) {
+	font-weight: 500;
+	font-size: 24px;
+}
+
+.numbers .numbers_box span:nth-child(1) b {
+	color: orange;
+}
+
+.Statistical-table-left,
+.Statistical-table-right {
+	width: 49%;
+	float: left;
+}
+
+.Statistical-table-right {
+	margin-left: 10px;
+}
+
+.Statistical-table-left h3,
+.Statistical-table-right h3 {
+	margin-left: 10px;
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+
+.Statistical-table-left .Statistical-table,
+.Statistical-table-right .Statistical-table {
+	height: 520px;
+	border: 1px solid #e4e4e4;
+	width: 98%;
+	margin: 0 auto;
+	min-width: 524px;
+	
+}
+.Index-analysis-title {
+	height: 50px;
+	border: 1px solid #f0f0f0;
+	color: #919191;
+	line-height: 50px;
+	padding-left: 20px;
+	margin: 10px auto 10px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.search-cars-box {
+	width: 98%;
+	margin: 0 auto;
+}
+
+.search-cars-box .tab-group span {
+	width: 80px;
+	display: inline-block;
+	cursor: pointer;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+}
+
+.search-cars-box .tab-group span.bs {
+	background: #1E9FFF;
+	;
+	color: #fff;
+}
+
+.search-cars-box .search-box input:nth-child(1) {
+	width: 40%;
+	border-right: none !important;
+	border: 1px solid #1E9FFF;
+}
+
+.Refresh {
+	display: inline-block;
+	width: 150px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-weight: normal;
+	cursor: pointer;
+	border: 1px solid #e4e4e4;
+}
+
+.Refresh:hover {
+	border: 1px solid #1E9FFF;
+	color: #1E9FFF;
+}
+
+a {
+	color: #1E9FFF;
+}
+
+.layui-tab-title {
+	height: 50px;
+	border: none;
+}
+
+.layui-tab-title li {
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+}
+
+.layui-this {
+	height: 50px;
+	border: none;
+}
+
+.layui-tab-title .layui-this:after {
+	height: 0;
+}
+.Statistical3{
+	height: 260px;
+}
+/*.layui-show{
+	display: block;
+}*/
+.map-box{
+	width: 98%;
+	height: 400px;
+	margin: 10px auto 10px;
+}
+.map{
+width: 100%; height: 400px;	
+}
+.chart {
+		 width:100%;
+		 height:520px;
+		 text-align: center;
+	}

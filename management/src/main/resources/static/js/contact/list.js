@@ -1,12 +1,12 @@
 $(function(){
 	
 	$('.add').on('click',function(){
-		lf2('/contact/addInit','900px','500px');
+		lf2('/contact/addInit','1051px','680px');
 	});
 	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
-		lf2('/contact/editInit/'+id+'/0','900px','500px');
+		lf2('/contact/editInit/'+id+'/0','1051px','680px');
 		event.stopPropagation(); 
 	});
 	

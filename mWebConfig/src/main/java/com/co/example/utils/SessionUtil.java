@@ -20,17 +20,30 @@ public class SessionUtil {
 		admin.setPassword(null);
 		return admin;
 	}
+	
 	//获得管理员Id
 	public static Long getAdminId(HttpSession session){
 		TAdmin tAdmin = getAdmin(session);
 		Long adminId = tAdmin.getId();
 		return adminId;
 	}
-	//获得管理员Id
+	
+	//获得是否登录
 	public static boolean  getIsLogin(HttpSession session){
 		AdminSession adminSession = getAdminSession(session);
 		boolean isLogin = adminSession.isLogin();
 		return isLogin;
+	}
+	
+	//获得版本
+	public static String getPageVersion(HttpSession session){
+		TAdmin tAdmin = getAdmin(session);
+		String pageVersion = tAdmin.getPageVersion();
+		if(pageVersion == null || pageVersion.equals("1")){
+			return "";
+		}else{
+			return "V"+pageVersion;
+		}
 	}
 	
 	//将管理员保存到session

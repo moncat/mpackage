@@ -16,23 +16,23 @@ $(function(){
 	
 	
 	$('.addClass').on('click',function(){
-		l2('/ingredientLabelClass/addInit','900px','500px');
+		l2('/ingredientLabelClass/addInit','1051px','680px');
 	});
 	
 	
 	$('.add').on('click',function(){
-		l2('/ingredientLabel/addInit','900px','500px');
+		l2('/ingredientLabel/addInit','1051px','680px');
 	});
 	
 	$('.show').on('click',function(){
 		var id = $(this).attr('data-id')
-		lf2('/ingredientLabel/show/'+id,'900px','500px');
+		lf2('/ingredientLabel/show/'+id,'1051px','680px');
 		event.stopPropagation(); 
 	});
 	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
-		l2('/ingredientLabel/editInit/'+id+'/0','900px','500px');
+		l2('/ingredientLabel/editInit/'+id+'/0','1051px','680px');
 		event.stopPropagation(); 
 	});
 	

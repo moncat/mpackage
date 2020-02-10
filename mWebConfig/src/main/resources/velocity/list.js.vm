@@ -1,18 +1,18 @@
 $(function(){
 	
 	$('.add').on('click',function(){
-		lf2('/$!{foo}/addInit','900px','500px');
+		l2('/$!{foo}/addInit','1051px','680px');
 	});
 	
 	$('.show').on('click',function(){
 		var id = $(this).attr('data-id')
-		lf2('/$!{foo}/show/'+id,'900px','500px');
+		l2('/$!{foo}/show/'+id,'1051px','680px');
 		event.stopPropagation(); 
 	});
 	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
-		lf2('/$!{foo}/editInit/'+id+'/0','900px','500px');
+		l2('/$!{foo}/editInit/'+id+'/0','1051px','680px');
 		event.stopPropagation(); 
 	});
 	

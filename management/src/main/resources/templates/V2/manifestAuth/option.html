@@ -1,0 +1,76 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<style type="text/css">
+			body {
+				background: #fff;
+			}
+			
+			.Selection-attention-box form {
+				width: 90%;
+				margin: 0 auto;
+			}
+			
+			.Selection-attention-box form .layui-btn-container {
+				height: 120px;
+				overflow-y: auto;
+			}
+			
+			.Selection-attention-box form .layui-btn-container button i {
+				font-size: 12px !important;
+				margin-left: 4px;
+			}
+			
+			.Selection-attention-box form .form-group .ts {
+				width: 70%;
+				text-align: left;
+				color: #999;
+				font-size: 12px;
+			}
+			
+			a {
+				color: #1E9FFF;
+			}
+		</style>
+</section>
+<section layout:fragment="main">
+	<div class="Selection-attention-box">
+			<form style="margin-top: 14px;">
+				<div class="form-group">
+					<label >*选择清单：</label>
+					<select class="form-control select" size="1">
+        				<option value="0" >-</option> 		
+        				<option th:each="item:${list}" th:value="${item.manifestId}"
+        				 th:text="${item.manifestName}"
+        				 th:attr="data-status=${item.status}" ></option> 		
+					</select>
+				</div>
+			<!-- 
+				<div class="form-group Selection-attention-group">
+					<div class="layui-btn-container">
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+						<button type="button" class="layui-btn layui-btn-normal  layui-btn-sm">面膜类清单</button>
+					</div>
+				</div>
+				 -->
+				<div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:24px;">
+					<span class="float-left ts">由于数据分析体量过大，系统会进行预处理分析，整个数据分析过程有可能会持续10-30分钟，请稍等在<a href="#">我的关注清单</a>中查看分析结果！</span>
+					<button type="button" class="layui-btn layui-btn-normal float-right start">立即分析</button>
+				</div>
+			</form>
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/manifestAuth/option.js?version=1"></script>
+</section>
+</html>

@@ -4,11 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
@@ -23,11 +23,30 @@ import com.co.example.dao.brand.TBrBrandDao;
 import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.brand.TBrProductBrand;
 import com.co.example.entity.brand.aide.TBrBrandQuery;
+import com.co.example.entity.brand.aide.TBrBrandVo;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.TBrProductQuery;
+import com.co.example.entity.product.aide.TBrProductVo;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
+import com.co.example.service.category.TBrCategoryService;
+import com.co.example.service.category.TBrProductCategoryService;
+import com.co.example.service.comment.TBrProductCommentStatisticsService;
+import com.co.example.service.enterprise.TBrEnterpriseBaseService;
+import com.co.example.service.enterprise.TBrEnterpriseRegisterService;
+import com.co.example.service.export.TBrExportService;
+import com.co.example.service.label.TBrLabelService;
+import com.co.example.service.label.TBrProductLabelService;
+import com.co.example.service.mall.TBrMallMonthService;
+import com.co.example.service.mall.TBrMallService;
+import com.co.example.service.product.TBrAimService;
+import com.co.example.service.product.TBrEnterpriseService;
+import com.co.example.service.product.TBrIngredientService;
+import com.co.example.service.product.TBrProductEnterpriseService;
+import com.co.example.service.product.TBrProductImageService;
 import com.co.example.service.product.TBrProductService;
+import com.co.example.service.product.TBrProductSpecService;
+import com.co.example.service.solr.SolrService;
 import com.github.moncat.common.dao.BaseDao;
 import com.github.moncat.common.entity.BaseEntity;
 import com.github.moncat.common.generator.id.NextId;
@@ -428,12 +447,57 @@ public class TBrBrandServiceImpl extends BaseServiceImpl<TBrBrand, Long> impleme
 		be.setDelFlg(Constant.NO);
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
+
+	@Override
+	public TBrBrandVo queryByProductId(Long id) {
+		TBrBrandQuery tBrBrandQuery = new TBrBrandQuery();
+		tBrBrandQuery.setJoinFlg(true);
+		tBrBrandQuery.setProductId(id);
+		List<TBrBrandVo> list = queryList(tBrBrandQuery);
+		if(list.size()>0){
+			return list.get(0);
+		}
+		return null;
+	}
+
+	// 全量    增量  TODO  2019年11月19日，暂时数据搁置 
+	@Override
+	public void addTBrEnterpriseBrandByBrand(TBrBrand brand) {
+		Long bid = brand.getId();
+		List<TBrProductVo> pvos = tBrProductService.queryProductVoListByBrandId(bid);
+		for (TBrProductVo tBrProductVo : pvos) {
+			Long productBrandId = tBrProductVo.getProductBrandId();
+			String productBrandName = tBrProductVo.getProductBrandName();
+			if(productBrandId == null){
+				TBrProduct tBrProduct4Update = new TBrProduct();
+				tBrProduct4Update.setId(tBrProductVo.getId());
+				tBrProduct4Update.setProductBrandId(productBrandId);
+				tBrProduct4Update.setProductBrandName(productBrandName);
+				tBrProductService.updateByIdSelective(tBrProduct4Update);
+			}
+		}
+//		TBrEnterprise tBrEnterprise = new TBrEnterprise();
+//		tBrEnterprise.setUpdateBy(1l);
+//		List<TBrEnterprise> queryList = tBrEnterpriseService.queryList(tBrEnterprise);
+//		tBrProductService.queryProductVoListByRealEnterpriseId(id)
+//		PageReq pageReq = new PagecReq(); 
+//		pageReq.set
+//		tBrProductEnterpriseService.queryList()
+		TBrBrand tBrBrand4Update = new TBrBrand();
+		tBrBrand4Update.setId(brand.getId());
+		tBrBrand4Update.setUpdateBy(2l);
+		updateByIdSelective(tBrBrand4Update);
+	}
 	
+
+	@Inject
+	TBrEnterpriseService tBrEnterpriseService;
+
+	@Inject
+	TBrProductEnterpriseService tBrProductEnterpriseService;
+
+
 }
-
-
-
-
 
 
 

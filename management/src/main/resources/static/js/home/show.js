@@ -25,6 +25,7 @@ $(function() {
 		if (days == undefined) {
 			days = 7;
 		}
+		$(this).parent().parent().find('input').val('');
 		initChart(tranNum2Date(days),'');
 	});
 
@@ -37,6 +38,7 @@ $(function() {
 		if (days == undefined) {
 			days = 7;
 		}
+		$(this).parent().parent().find('input').val('');
 		initIngredient(tranNum2Date(days),'');
 	});
 	
@@ -49,12 +51,66 @@ $(function() {
 		if (days == undefined) {
 			days = 7;
 		}
+		$(this).parent().parent().find('input').val('');
 		initEnterprise(tranNum2Date(days),'');
 	});
-
+	
+	$.post('/manifestAuth/index',function(data){
+		var list = data.list;		
+		$('#manifests').empty();
+		for(var i = 0; i<list.length;i++){
+			var type = list[i].type;
+			var title = '';
+			var listName = '';
+			if(type==1){
+				title = '产品';
+				listName = 'pList';
+			}else if(type==2){
+				title = '品牌';
+				listName = 'bList';
+			}else if(type==3){
+				title = '供应商';
+				listName = 'eList';
+			}else if(type==4){
+				title = '成分';
+				listName = 'iList';
+			}  			
+			var html = '';
+			html+='<div class="col-md-2 mt-5 c-white list_con">';
+			html+='<div class=" radius  cl list_bgc">';
+			html+='<div class="list_icon">';
+			html+='<i class="Hui-iconfont">&#xe627;</i>';
+			html+='<a target ="_self" href="/manifestAuth/'+listName+'/'+list[i].manifestId+'">'+list[i].manifestName+'</a>';
+			html+='</div>';
+			html+='<div class="list_btn">'+title+'清单</div>';
+			if(list[i].result !=null){
+				html+= getItem(list[i].result.jsondata);
+			}
+			html+='</div></div>';
+			$('#manifests').append(html);
+		}
+	})
+	
 });
 
 
+
+
+////////////
+function getItem(str){
+	var array = JSON.parse(str);
+	var html ='<div class="list_message_box">';
+	for (var i = 0; i < array.length; i++) {
+		html +='<div class="list_message">'																
+		html+='<h5>'+array[i].name+'</h5>'																
+		html+='<span>'+array[i].value+'</span>'																
+		html+='<div class="line">'																
+		html+='</div></div>';	
+	}
+	html+='</div>';	
+	return html;
+}
+///////////
 
 
 function initIngredientDate(){
@@ -63,6 +119,7 @@ function initIngredientDate(){
 	if(isNotBlank(idate1) && isNotBlank(idate2) ){
 		initIngredient(idate1,idate2)
 	}
+	$('#dateLimit2').find('span').removeClass('btn-primary').addClass('btn-default');
 }
 
 function initEnterpriseDate(){
@@ -71,6 +128,7 @@ function initEnterpriseDate(){
 	if(isNotBlank(edate1) && isNotBlank(edate2) ){
 		initEnterprise(edate1,edate2)
 	}
+	$('#dateLimit3').find('span').removeClass('btn-primary').addClass('btn-default');
 }
 
 
@@ -91,7 +149,7 @@ function initIngredient(date,end){
 			html+='	<div>'+parseInt(i+1)+"、"+ingredient[i].name+'</div>';
 			html+='	<div class="progress radius mt-5" style="width: 90%;display: inline-block;">';
 			html+='		<div class="progress-bar progress-bar-danger">';
-			html+='			<span class="sr-only" style="width:'+100*ingredient[i].num/10+'%"></span>';
+			html+='			<span class="sr-only" style="width:'+100*ingredient[i].num/ingredient[0].num+'%"></span>';
 			html+='		</div>';
 			html+='	</div>';
 			html+='<span class="ml-10">'+ingredient[i].num+'</span>';
@@ -99,10 +157,10 @@ function initIngredient(date,end){
 		}
 		if(moreFlg){
 			html+='<div class="line  mt-5 mb-10"></div>';	
-			html+='<div class=" text-c"><a class="btn btn-default moreBtn" href="/product/list3" target="_blank">查看更多</a></div>';	
+			html+='<div class=" text-c"><a class="btn btn-default moreBtn" href="/product/list3" target="_self">查看更多</a></div>';	
 		}
 		if(html==''){
-			html+='该时段暂无数据。';
+			html+='<img src="/img/welcome/NoData.png" width="400" />';
 		}		
 		$('.ingredient').empty();
 		$('.ingredient').append(html);
@@ -126,7 +184,7 @@ function initEnterprise(date,end){
 			html+='	<div>'+parseInt(i+1)+"、"+enterprise[i].enterpriseName+'</div>';
 			html+='	<div class="progress radius mt-5" style="width: 90%;display: inline-block;">';
 			html+='		<div class="progress-bar progress-bar-danger">';
-			html+='			<span class="sr-only" style="width:'+100*enterprise[i].num/10+'%"></span>';
+			html+='			<span class="sr-only" style="width:'+100*enterprise[i].num/enterprise[0].num+'%"></span>';
 			html+='		</div>';
 			html+='	</div>';
 			html+='<span class="ml-10">'+enterprise[i].num+'</span>';
@@ -134,10 +192,10 @@ function initEnterprise(date,end){
 		}
 		if(moreFlg){
 			html+='<div class="line  mt-5 mb-10"></div>';	
-			html+='<div class=" text-c"><a class="btn btn-default moreBtn" href="/product/list3" target="_blank">查看更多</a></div>';	
+			html+='<div class=" text-c"><a class="btn btn-default moreBtn" href="/product/list3" target="_self">查看更多</a></div>';	
 		}
 		if(html==''){
-			html+='该时段暂无数据。';
+			html+='<img src="/img/welcome/NoData.png" width="400" />';
 		}
 		$('.enterprise').empty();
 		$('.enterprise').append(html);
@@ -151,7 +209,10 @@ function initChartDate( ) {
 	if(isNotBlank(chartdate1) && isNotBlank(chartdate2) ){
 		initChart(chartdate1,chartdate2)
 	} 
+	$('#dateLimit1').find('span').removeClass('btn-primary').addClass('btn-default');
 }
+
+
 
 function initChart(start,end) {
 	// baidu echarts
@@ -161,7 +222,7 @@ function initChart(start,end) {
 		myChart.hideLoading();
 		myChart.setOption({
 			title : {
-				show : true,
+				show : false,
 				text : '备案&取消备案趋势图',
 				subtext : '备案&取消备案趋势日统计'
 			},
@@ -207,6 +268,9 @@ function initChart(start,end) {
 				data : data.cancelList
 			}, ]
 		});
+		$(window).resize(function() { //重置容器高宽
+	　		　myChart.resize();
+		});
 	});
 }	
 	
@@ -245,3 +309,15 @@ function intervalToday(str) {
 	var num = parseInt(Math.abs((startTime - endTime)) / (1000 * 60 * 60 * 24));
 	return num;
 }
+
+
+
+
+
+
+
+
+
+
+
+

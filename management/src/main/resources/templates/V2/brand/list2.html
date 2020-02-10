@@ -1,0 +1,179 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="main">
+	<div class="wrapper">
+		<!-- breadcrumb -->
+		<div class="container-fluid padding-zero">
+			<div class="page-heading">
+				<div class="row d-flex align-items-center">
+					<div class="col-md-6">
+						<div class="page-breadcrumb">
+							<h1>品牌列表</h1>
+						</div>
+					</div>
+					<div class="col-md-6 justify-content-md-end d-md-flex">
+						<div class="breadcrumb_nav">
+							<ol class="breadcrumb">
+								<li><i class="fa fa-home"></i> <a class="parent-item"
+									href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+								<li class="active">产品标签</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- breadcrumb_End -->
+		<!-- 数据筛选 -->
+		<div class="container-fluid data-cars-box box-shadow">
+			<div class="datacars-title">数据筛选</div>
+			<div class="Brand_search_box">
+				<form class="form-inline" action="/brand/list2"  id="searchForm">
+					<label>输入查询:</label>&nbsp;&nbsp; 
+					<input type="search" th:value="${query.nameLike}" name="nameLike" class="form-control Pro_search nameLike" placeholder="请输入品牌"/>&nbsp;&nbsp;
+					<label>品牌等级：</label>&nbsp; 
+					<select class="form-control" name ='level' >&nbsp;&nbsp;
+						<option value='1' th:selected="${query.level==1}" >顶级品牌</option>
+						<option value='2' th:selected="${query.level==2}" >一线品牌</option>
+						<option value='3' th:selected="${query.level==3}" >二线品牌</option>
+						<option value='4' th:selected="${query.level==4}" >三线品牌</option>
+						<option value='5' th:selected="${query.level==5}" >四线品牌</option>
+						<option value='6' th:selected="${query.level==6}" >其他品牌</option>
+					</select>
+					<!-- 
+					&nbsp;&nbsp; <label>SKU范围：</label>&nbsp;&nbsp;
+					 <select class="form-control">
+						<option>全部</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					 -->
+					&nbsp;&nbsp; 
+					   <a class="layui-btn layui-btn-normal" style="color: #fff;" onclick="document:searchForm.submit();" >
+						  <i class="iconfont iconfangdajing" style="color: #fff;" />&nbsp;查询
+					   </a>
+					   <a class="layui-btn layui-btn-primary clear"><i class="iconfont iconzhongzhi " style="color: #333;" />&nbsp;重置</a>
+				</form>
+			</div>
+		</div>
+		<!-- /数据筛选 -->
+		<!-- 数据列表 -->
+		<div class="container-fluid data-cars-box box-shadow"
+			style="padding-bottom: 10px;">
+			<div class="datacars-title data-list">
+				<div class="data-list-left float-left">数据列表</div>
+				<div class="data-list-right  float-right">
+					<!-- 
+					<span class="addBrandRating"><strong>+</strong>&nbsp;添加品牌等级</span>
+					 -->
+					<span class="add"><strong>+</strong>&nbsp;添加品牌</span>
+				</div>
+			</div>
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th><input type="checkbox"/></th>
+						<th>序号</th>
+						<th>品牌名称</th>
+						<th>品牌英文名</th>
+						<th>品牌等级</th>
+						<th>起源</th>
+						<th>创始人</th>
+						<th>创始时间</th>
+						<th>常用设置</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="one,status:${page.content}" th:switch="${one.level}">
+						<td><input  class="checkbox1"  type="checkbox"  th:attr="data-id=${one.id},data-text=${one.name}"/></td>
+						<td th:text="${page.number*page.size+status.index+1}">1</td>
+						<td >
+							<a  class="brand-name showMore"  th:text="${one.name}"  th:attr="data-id=${one.id}"  target='_self'>
+							</a>
+						</td>
+						<td th:text="${one.nameEn}"></td>
+						<td  th:case="1">顶级品牌</td>
+						<td  th:case="2">一线品牌</td>
+						<td  th:case="3">二线品牌</td>
+						<td  th:case="4">三线品牌</td>
+						<td  th:case="5">四线品牌</td>
+						<td  th:case="6">其他品牌</td>
+						<td  th:case="*">-</td>
+						<td th:text="${one.originate}"></td>
+						<td th:text="${one.founder}"></td>
+						<td th:text="${one.foundDate}"></td>
+						<td width="100" >					
+							 <div class="layui-form switchItem"  >
+								<input type="checkbox" th:attr="data-id=${one.id}" lay-skin="switch"	lay-text="开启|关闭" class="layui-btn-lg "  th:checked='${one.isChoice eq 1 ? "checked":"false"}'/>					
+                            </div>
+						</td>
+						<td class="caozuo" width="350">
+							<div style="margin-top: 5px;">
+								<a th:attr="data-id=${one.id}" href="#" style="color: #1E9FFF;" class="edit"><i
+									class="iconfont iconbianji1"></i>&nbsp;编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a th:attr="data-id=${one.id}" href="#" style="color: #1E9FFF;" class="delete"><i
+									class="iconfont iconshanchu"></i>&nbsp;删除</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a th:attr="data-id=${one.id}" href="#" style="color: #1E9FFF;" class="index"><i
+									class="iconfont iconzhishufenxi"></i>&nbsp;指数分析</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a th:attr="data-id=${one.id}" href="#" style="color: #1E9FFF;" class="contrast"><b>+</b>&nbsp;对比</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="col-md-12 table-foot">
+				<div class="table-foot-left">
+					<span class='selectAll' >&nbsp;全选</span>
+					<span class='selectOther' >&nbsp;反选</span>
+					<span class="add-list" style="border: none;">
+						<div class="dropup">
+							<div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="choiceLevel">设置品牌等级</span>
+							</div>
+							<ul class="dropdown-menu text-center setLevel" aria-labelledby="dropdownMenu2">
+								<li data-value='1' >顶级品牌</li>
+								<li data-value='2' >一线品牌</li>
+								<li data-value='3' >二线品牌</li>
+								<li data-value='4' >三线品牌</li>
+								<li data-value='5' >四线品牌</li>
+								<li data-value='6' >其他品牌</li>
+							</ul>
+						</div>
+					</span>
+					 <span class="setBrandLevel">设置品牌</span>
+					  <span class="setInventory">添加清单</span>
+				</div>
+				<div class="table-foot-right">
+					<div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+				</div>
+			</div>
+		</div>
+		<!-- 数据列表 -->
+	</div>
+	<div class="Float-win">
+		<span class="small-pro-box">清<br />单
+		</span>
+		<div class="float-win-title">
+			<h3>品牌清单</h3>
+			<span class="Num">0</span>
+		</div>
+		<div class="list">
+			<ul id="inventorysBrand">
+			</ul>
+			<div class="form-group"
+				style="text-align: right; border-top: 1px solid #e5e9ec; padding-top: 10px; width: 90%; margin: 0 auto 10px;">
+				<button class="layui-btn layui-btn-primary layui-btn-sm clearInventorys">清空</button>
+				<button
+					class="layui-btn layui-btn-normal layui-btn-sm Selection-attention-list connInventorys">设置清单</button>
+			</div>
+		</div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/brand/list.js?version=1"></script>
+	<script type="text/javascript" src="/js/v2/common/form_page.js?version=1"></script>
+</section>
+</html>

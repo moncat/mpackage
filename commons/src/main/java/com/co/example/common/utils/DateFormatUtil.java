@@ -19,6 +19,8 @@ public class DateFormatUtil {
 	
 	public static final DateFormat formartYearAndMonth = new SimpleDateFormat("yyyy-MM");
 	
+	public static final DateFormat formartYearMonth = new SimpleDateFormat("yyyyMM");
+	
 	public static final DateFormat formartTime = new SimpleDateFormat("HH:mm:ss");
 	
 	public static final DateFormat formartWeek = new SimpleDateFormat("E",Locale.CHINA);
@@ -95,5 +97,8 @@ public class DateFormatUtil {
 	
 	public static String getDateTime(){
 		return format(new Date(),formartDateTime);
+	}
+	public static String getYearMonth(Date date){
+		return format(date,formartYearMonth);
 	}
 }

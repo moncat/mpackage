@@ -1,0 +1,162 @@
+		body {
+			background: #fff;
+		}
+		
+		.main {
+			overflow: hidden;
+		}
+		
+		.main .left {
+			width: 170px;
+			height: 170px;
+			background: #e4e4e4;
+			border: 1px solid #E4E4E4;
+			float: left;
+			/*background: url(../assets/images/shui.jpg);*/
+			background-size: cover;
+		}
+		
+		.main .right {
+			overflow: hidden;
+			padding-left: 30px;
+			padding-top: 20px;
+		}
+		
+		.main .right header {
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 10px;
+		}
+		
+		.main .right header h3 {
+			font-size: 18px;
+			color: #424242;
+			font-weight: 600;
+			float: left;
+			margin-left: 20px;
+		}
+		
+		.main .right .numbers {
+			display: flex;
+			justify-content: space-around;
+			padding: 20px 0;
+		}
+		
+		.main .right .numbers .numbers_box {
+			width: 18%;
+			height: 90px;
+			border: 1px solid #d7d7d7;
+			display: flex;
+			justify-content: center;
+			flex-flow: column;
+			align-items: center;
+			min-width: 180px;
+		}
+		
+		.main .right .numbers .numbers_box span:nth-child(1) {}
+		
+		.main .right .numbers .numbers_box span:nth-child(2) {
+			margin-top: 10px;
+			font-weight: 600;
+		}
+		
+		.layui-tab-card {
+			box-shadow: none;
+		}
+		
+		.Statistical-table-left,
+		.Statistical-table-right {
+			width: 49%;
+			float: left;
+		}
+		
+		.Statistical-table-right {
+			margin-left: 10px;
+		}
+		
+		.Statistical-table-left h3,
+		.Statistical-table-right h3 {
+			margin-left: 10px;
+			font-size: 12px;
+			font-weight: 600;
+			margin-bottom: 16px;
+		}
+		
+		.Statistical-table-left .Statistical-table,
+		.Statistical-table-right .Statistical-table {
+			height: 520px;
+			border: 1px solid #e4e4e4;
+			width: 98%;
+			margin: 0 auto;
+		/*	background-image: url(../assets/images/1.png);*/
+			background-repeat: no-repeat;
+			background-position: center center;
+			min-width: 524px;
+		}
+		
+		.Statistical-table-right .Statistical-table {
+			/*background-image: url(../assets/images/2.png);*/
+		}
+		
+		.Index-analysis-title {
+			height: 50px;
+			border: 1px solid #f0f0f0;
+			color: #919191;
+			line-height: 50px;
+			padding-left: 20px;
+			margin: 10px auto 10px;
+			font-size: 14px;
+			font-weight: 600;
+		}
+		
+		a {
+			color: #1E9FFF;
+		}
+		
+		.Brand-int-top-left dt {
+			width: 110px;
+			overflow: hidden;
+			float: left;
+			text-align: right;
+			font-weight: normal;
+		}
+		
+		.Brand-int-top-left dd {
+			text-align: left;
+			padding-left: 10px;
+			overflow: hidden;
+		}
+		
+		.Brand-int-top-left,
+		.Brand-int-top-right {
+			float: left;
+			width: 49%;
+		}
+		
+		.Brand-int-top-left h3 {
+			padding-left: 64px;
+			color: #666;
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+		
+		.Brand-int-top-right {
+			text-align: center;
+		}
+		
+		.Brand-int-bottom {
+			width: 98%;
+			margin: 0 auto;
+			text-indent: 2em;
+			line-height: 2;
+		}
+		.zc {
+    height: 34px;
+    line-height: 34px;
+    background-color: #f2f2f2;
+    border: 1px solid #CCC;
+    color: #555;
+    padding-left: 10px;
+}
+

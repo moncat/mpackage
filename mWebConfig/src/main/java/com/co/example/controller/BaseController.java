@@ -97,8 +97,6 @@ public abstract class  BaseController<T extends BaseEntity> {
 	 * 或许还有更多的初始化数据
 	 */
 	abstract public void editInitExt(Model model,HttpSession session,HttpServletRequest request,HttpServletResponse response,T t,Long id);
-
-		
 	
 	
 	@SneakyThrows(Exception.class)

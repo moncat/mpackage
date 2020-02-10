@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<body>
+<section layout:fragment="main">
+
+	<div class="page-container" >
+		<form class="form form-horizontal" id="curForm">
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>菜单名：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" value="" placeholder="菜单名" name="name"/>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>菜单链接：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" value="" placeholder="菜单链接" name="url"/>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>排序：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="number" class="input-text" value="" placeholder="排序" name="itemOrder"/>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>图标：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					<input type="text" class="input-text" value="" placeholder="图标" name="icon"/>
+					<a class=" Hui-iconfont Hui-iconfont-help" target="_blank" href="/system/icon" ></a>
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>上级菜单：</label>
+				<div class="formControls col-xs-8 col-sm-9">
+					 <span class="select-box" style="width:150px;">
+						<select class="select" name="parentId" size="1">
+							<option  value="0" >根目录</option>
+							<option th:each="one : ${list}" th:text="${one.name}" th:value="${one.id}" ></option>
+						</select>
+					</span> 
+				</div>
+			</div>
+					
+			<div class="row cl">
+				<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+					<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+				</div>
+			</div>
+		</form>
+
+	</div>
+	</section>
+	<section  layout:fragment="my">
+		<script type="text/javascript" src="/js/system/add.js"></script>
+	</section>
+</body>
+</html>

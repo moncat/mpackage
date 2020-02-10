@@ -1,0 +1,170 @@
+	body {
+			background: #fff;
+		}
+		
+		.main .right {
+			overflow: hidden;
+			/*padding-top: 20px;*/
+			width: 98%;
+			margin: 0 auto;
+		}
+		
+		.main .right header {
+			overflow: hidden;
+			display: flex;
+			flex-flow: column;
+			/*padding: 20px 0px;*/
+		}
+		
+		.main .right header h3 {
+			font-size: 15px;
+			color: #424242;
+			font-weight: 600;
+			float: left;
+			/*margin-left: 20px;*/
+		}
+		
+		.main .right header h3,
+		.tags,
+		p {
+			margin: 6px 0;
+		}
+		
+		.main .right header .tags span {
+			padding: 0 8px;
+			background: #1E9FFF;
+			height: 24px;
+			line-height: 24px;
+			color: #fff;
+			border-radius: 2px;
+			margin: 0 10px;
+			display: inline-block;
+		}
+		
+		.main .right header .tags span:first-child {
+			margin-left: 0;
+		}
+		
+		.layui-tab-card {
+			box-shadow: none;
+		}
+		
+		.Statistical-table-left,
+		.Statistical-table-right {
+			width: 49%;
+			float: left;
+		}
+		
+		.Statistical-table-right {
+			margin-left: 10px;
+		}
+		
+		.Statistical-table-left h3,
+		.Statistical-table-right h3 {
+			margin-left: 10px;
+			font-size: 12px;
+			font-weight: 600;
+			margin-bottom: 16px;
+		}
+		
+		.Statistical-table-left .Statistical-table,
+		.Statistical-table-right .Statistical-table {
+			height: 520px;
+			border: 1px solid #e4e4e4;
+			width: 98%;
+			margin: 0 auto;
+			/*background-image: url(../assets/images/1.png);*/
+			background-repeat: no-repeat;
+			background-position: center center;
+			min-width: 524px;
+		}
+		
+		.Statistical-table-right .Statistical-table {
+			/*background-image: url(../assets/images/2.png);*/
+		}
+		
+		.Index-analysis-title {
+			height: 50px;
+			border: 1px solid #f0f0f0;
+			color: #919191;
+			line-height: 50px;
+			padding-left: 20px;
+			margin: 10px auto 10px;
+			font-size: 14px;
+			font-weight: 600;
+		}
+		
+		a {
+			color: #1E9FFF;
+		}
+		
+		.Brand-int-top-left dt {
+			width: 110px;
+			overflow: hidden;
+			float: left;
+			text-align: right;
+			font-weight: normal;
+		}
+		
+		.Brand-int-top-left dd {
+			text-align: left;
+			padding-left: 10px;
+			overflow: hidden;
+		}
+		
+		.Brand-int-top-left,
+		.Brand-int-top-right {
+			float: left;
+			width: 49%;
+		}
+		
+		.Brand-int-top-left h3 {
+			padding-left: 64px;
+			color: #666;
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+		
+		.Brand-int-top-right {
+			text-align: center;
+		}
+		
+		.Brand-int-bottom {
+			width: 98%;
+			margin: 0 auto;
+			text-indent: 2em;
+			line-height: 2;
+		}
+		
+		.zc {
+			height: 34px;
+			line-height: 34px;
+			background-color: #f2f2f2;
+			border: 1px solid #CCC;
+			color: #555;
+			padding-left: 10px;
+		}
+		.search-cars-box{
+			width: 98%;
+			margin: 0 auto;
+		}
+		.search-cars-box .tab-group span {
+			width: 80px;
+			display: inline-block;
+			cursor: pointer;
+			height: 34px;
+			line-height: 34px;
+			text-align: center;
+		}
+		
+		.search-cars-box .tab-group span.bs {
+			background: #1E9FFF;
+			;
+			color: #fff;
+		}
+		
+		.search-cars-box .search-box input:nth-child(1) {
+			width: 40%;
+			border-right: none !important;
+			border: 1px solid #1E9FFF;
+		}

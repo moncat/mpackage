@@ -1,0 +1,164 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/product/detail.css" />
+</section>
+<section layout:fragment="main">
+	<div class="wrapper">
+			<div class="content_wrapper">
+				<!-- breadcrumb -->
+				<div class="container-fluid padding-zero">
+					<div class="page-heading">
+						<div class="row d-flex align-items-center">
+							<div class="col-md-6">
+								<div class="page-breadcrumb">
+									<h1>产品详情</h1>
+								</div>
+							</div>
+							<div class="col-md-6 justify-content-md-end d-md-flex">
+								<div class="breadcrumb_nav">
+									<ol class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a class="parent-item" href="#">Home</a>
+											<i class="fa fa-angle-right"></i>
+										</li>
+										<li class="active">
+											产品详情
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- breadcrumb_End -->
+
+				<div class="container-fluid box-shadow Details">
+					<!--左-->
+					<div class="Details-left">
+						<div class="Details-left-title">
+							<div class="btn">
+								<span class='contrast' th:attr="data-id=${one.id}" ><i>+</i>对比</span>
+								<div th:style="'display:' + @{(${one.moreData2 eq null} ? 'none' : 'inline-block')} + ''" class='logout f-r'>
+									<h3>已注销</h3>
+								</div>
+							</div>
+						</div>
+						<h2 class="Proname">旁氏亮采净澈系列米粹润泽洁面乳</h2>
+						<table class="layui-table Details-table">
+							<tbody>
+								<tr>
+									<td>产品评分：</td>
+									<td>
+										<div class="prograded"><span th:utext="${productScore}"></span>分</div>
+									</td>
+								</tr>						
+								<tr>
+									<td>备案号：</td>
+									<td th:utext="${one.applySn}" >粤G妆网备字2017179708</td>
+								</tr>						
+								<tr>
+									<td>备案日期:</td>
+									<td  th:utext="${one.confirmDate}" >2017-12-20</td>
+								</tr>						
+								<tr>
+									<td>生产企业：</td>
+									<td th:utext="${one.enterpriseName}" ></td>
+								</tr>
+								<tr>
+									<td>实际生产企业：</td>
+									<td>
+										<span th:each="enterprise,status:${enterpriseList}" th:utext="${enterprise.enterpriseName}" >
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>成分分析：</td>
+									<td>
+										<ul class="ingredient">
+											<li>本产品含有香精:<span class="mt-10" th:text="${#lists.size(one.essenceList)}"></span>种(<span th:each="essence: ${one.essenceList}" th:text="${essence}+' '"></span>)</li>
+											<li>本产品含有防腐剂:<span class="mt-10" th:text="${#lists.size(one.corrosionList)}"></span>种(<span th:each="corrosion: ${one.corrosionList}" th:text="${corrosion}+' '"></span>)</li>
+											<li>本产品含有风险成分:<span class="mt-10" th:text="${#lists.size(one.riskList)}"></span>种(<span th:each="risk: ${one.riskList}" th:text="${risk}+' '"></span>)</li>
+											<li>本产品含有清洁成分:<span class="mt-10" th:text="${#lists.size(one.cleanList)}"></span>种(<span th:each="clean: ${one.cleanList}" th:text="${clean}+' '"></span>)</li>
+											<li>本产品含有表活成分:<span class="mt-10" th:text="${#lists.size(one.activeList)}"></span>种(<span th:each="active: ${one.activeList}" th:text="${active}+' '"></span>)</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>标签：</td>
+									<td><span th:attr="data-id=${one.id}"  class="setag-btn setLabel"><i>+</i>设置标签</span></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<div class="setag-group">
+											<span class="setag"  th:if="${labels} ne null" th:each="label,status2:${labels}"  >
+												<span th:utext="${label.name}"></span>
+												 <i th:attr="data-id=${label.id}" class="iconfont iconchahao1 delLabel"></i>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr> 
+									<td>分类：</td>
+									<td><span th:attr="data-id=${one.id}" class="setag-btn setCategory"><i>+</i>设置品类</span></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<div class="setag-group">
+											<span class="setag" th:if="${one.categoryId} ne null and ${one.categoryId} ne ''  and ${one.categoryId} ne '0'">
+												<span th:utext="${one.categoryName}" ></span>
+												 <i  th:attr="data-id=${one.categoryId}" class="iconfont iconchahao1 delCategory"></i>
+											</span>
+										</div>
+									</td> 
+								</tr> 
+							</tbody> 
+						</table>
+					</div>
+					<div class="Details-right">
+						<div class="layui-tab layui-tab-card">
+							<ul class="layui-tab-title">
+								<li class="layui-this">成分列表</li>
+								<li>品牌信息</li>
+								<li>企业信息</li>
+								<li>实际生产企业信息</li>
+							</ul>
+							<div class="layui-tab-content">
+								<div class="layui-tab-item layui-show">
+								  	<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab1/'+${one.id}}" 
+								  	onload="this.height=this.contentWindow.document.body.scrollHeight"
+										style="width: 100%; "></iframe> 
+								</div>
+								<div class="layui-tab-item">
+								 	<iframe  th:if="${brand} ne null" scrolling="no" frameborder="0" th:src="@{'/product/tab2/'+${brand.id}}"	
+								 	onload="this.height=this.contentWindow.document.body.scrollHeight"						
+										style="width: 100%; "></iframe> 
+									<span   th:if="${brand} eq null" > 暂无关联品牌数据，
+										<a href="javascript:void(0)" class="setBrand2" th:attr="data-id=${one.id}">设置品牌&gt;&gt;</a>
+									</span>	
+								</div>
+								<div class="layui-tab-item">
+									<iframe  th:if="${one.enterpriseId} ne null"  scrolling="no" frameborder="0" th:src="@{'/product/tab3/'+${one.enterpriseId}}"	
+									onload="this.height=this.contentWindow.document.body.scrollHeight"				
+										style="width: 100%; "></iframe> 
+									<span  th:if="${one.enterpriseId} eq null" > 暂无关联企业信息</span>	
+								</div>
+								<div class="layui-tab-item">
+							 		<iframe scrolling="no" frameborder="0" th:src="@{'/product/tab4/'+${one.id}}"	
+							 		onload="this.height=this.contentWindow.document.body.scrollHeight"					
+										style="width: 100%; "></iframe>  
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/product/detail.js?version=2"></script>
+</section>
+</html>

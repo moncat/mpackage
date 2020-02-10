@@ -2,7 +2,7 @@
 <html>
 	<section th:fragment="left">
 		<!-- 左侧导航树 -->
-		<aside class="Hui-aside">
+		<aside class="Hui-aside aside-bg">
 			 <div class="menu_dropdown bk_2" th:each="menu : ${list}">
 				 <dl >
 				   <dt > 
@@ -12,7 +12,7 @@
 				   </dt>
 				   <dd>
 					   <ul th:each="subMenu : ${menu.menus}" >
-					   		<li>
+					   		<li >
 						   		<a th:attr="data-href=${subMenu.url} , data-title=${subMenu.name}" href="javascript:void(0)" >
 							   		<i class="Hui-iconfont" th:utext="${subMenu.icon}"></i>
 							   		<span th:text="${subMenu.name}"></span>

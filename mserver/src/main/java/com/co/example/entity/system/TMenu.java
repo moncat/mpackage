@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
 @Data
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
@@ -26,6 +27,9 @@ public class TMenu extends BaseEntity {
     /** 字体图标 */
     private String icon;
 
+    /** 新版图标 */
+    private String iconV2;
+
     /** 层级 */
     private Integer level;
 
@@ -34,8 +38,4 @@ public class TMenu extends BaseEntity {
 
     /** 是否根节点 1是 0不是 */
     private Byte isRoot;
-
-
-
-
 }

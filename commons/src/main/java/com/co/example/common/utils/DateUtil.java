@@ -2,9 +2,13 @@ package com.co.example.common.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+
+import com.google.common.collect.Lists;
 
 public class DateUtil {
 	
@@ -104,7 +108,13 @@ public class DateUtil {
 //		System.out.println(df.format(date));
 		
 //		System.out.println(getDays(2));
-		System.out.println(getIntervalDays("2019-08-18","2019-08-21"));
+//		System.out.println(getIntervalDays("2019-08-18","2019-08-21"));
+//		System.out.println( getMonthOnYear());
+//		System.out.println( getMonthsOnYear());
+//		System.out.println( getMonthsOnYear(formartDateTime));
+		System.out.println(  getDateMonthsOnYear());
+		System.out.println("*************");
+		
 	}
 	
 	public static Date getDateByCalendar(){
@@ -151,7 +161,62 @@ public class DateUtil {
 	}
 	
 	
-	 
+	public static List<String>  getMonths(){
+		String months="一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"; 
+		Calendar calendar = Calendar.getInstance();
+		int m = calendar.get(Calendar.MONTH)+1;
+		List<String> list = Lists.newArrayList();
+		String[] split = months.split(",");
+		for (int i = m; i < 12; i++) {
+			String str = split[i];
+			list.add(str);			
+		}
+		for (int i =0; i < m; i++) {
+			String str = split[i];
+			list.add(str);			
+		}
+        return list; 
+	}
+	
+	public static String  getMonthOnYear(){
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.YEAR, -1);
+		calendar.add(Calendar.MONTH, 1);
+		return DateFormatUtil.getYearMonth(calendar.getTime());
+	}
+	
+	public static List<String>  getMonthsOnYear(){
+		return getMonthsOnYear(DateFormatUtil.formartYearMonth);
+	}
+	
+	public static List<String>  getMonthsOnYear(DateFormat dateFormat){
+		List<String> list = Lists.newArrayList();
+		String str = "";
+		for (int i =-11; i < 1; i++) {		
+			Calendar calendar = Calendar.getInstance();
+			calendar.add(Calendar.MONTH, i);
+			str = DateFormatUtil.format(calendar.getTime(),dateFormat);
+			list.add(str);			
+		}
+		return list;
+	}
+	
+	// 2019-09-01 00:00:00
+	public static List<Date>  getDateMonthsOnYear(){
+		List<Date> list = Lists.newArrayList();
+		for (int i =-12; i < 1; i++) {		
+			Calendar calendar = Calendar.getInstance();
+			calendar.add(Calendar.MONTH, i);
+			calendar.set(Calendar.DAY_OF_MONTH,1);
+			calendar.set(Calendar.HOUR_OF_DAY,0);
+			calendar.set(Calendar.MINUTE,0);
+			calendar.set(Calendar.SECOND,0);
+			list.add(calendar.getTime());			
+		}
+		return list;
+	}
+	
+
 	
 	
 }

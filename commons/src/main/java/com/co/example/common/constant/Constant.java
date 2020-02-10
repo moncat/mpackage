@@ -37,4 +37,10 @@ public class Constant {
 	
 	public static final String  EXPORT_BASE_READ_PATH = "http://114.215.106.58:7001/file/export/";
 	
+	
+	public static final Byte TASK_STATUS_WAITTING = 1;  //等待初始化数据
+	public static final Byte TASK_STATUS_TODO = 2;      //已经初始化数据，等待处理
+	public static final Byte TASK_STATUS_DOING = 3;     //数据处理中
+	public static final Byte TASK_STATUS_DONE = 4;      //数据处理完毕
+	
 }

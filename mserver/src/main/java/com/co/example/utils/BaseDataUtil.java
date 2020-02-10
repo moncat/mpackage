@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.co.example.common.constant.Constant;
 import com.github.moncat.common.entity.BaseEntity;
+import com.jcraft.jsch.Session;
 
 public class BaseDataUtil {
 	public static void setDefaultData(BaseEntity be) {
@@ -11,4 +12,7 @@ public class BaseDataUtil {
 		be.setDelFlg(Constant.NO);
 		be.setIsActive(Constant.STATUS_ACTIVE);
 	}
+	
+
+	 
 }

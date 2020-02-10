@@ -36,11 +36,27 @@ public class TBrProductSolr {
 	/**
 	 * 多个标签搜索 ,暂时去掉
 	 */
-    @Field
-    @Deprecated
-    private String labelNames;
-	
-     
+//    @Field
+//    @Deprecated
+//    private String labelNames;
+
+    /**
+     * 实际生产企业
+     */
+	@Field
+    private String peName;
+    /**
+     * 备案类型
+     */
+	@Field
+    private String applyType;
+    /**
+     * 状态 
+     */
+	@Field
+    private String confirmStatus;
+    
+    
     
     /**
      * 多种成分搜索

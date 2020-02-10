@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.co.example.sqlmaps.abc.TBrAbcMapper" >
+  <resultMap id="BaseResultMap" type="com.co.example.entity.abc.TBrAbc" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="product_alias" property="productAlias" jdbcType="VARCHAR" />
+    <result column="jd_price" property="jdPrice" jdbcType="DECIMAL" />
+    <result column="tmall_price" property="tmallPrice" jdbcType="DECIMAL" />
+    <result column="sales" property="sales" jdbcType="INTEGER" />
+    <result column="tmall_url" property="tmallUrl" jdbcType="VARCHAR" />
+    <result column="jd_url" property="jdUrl" jdbcType="VARCHAR" />
+    <result column="apply_type" property="applyType" jdbcType="VARCHAR" />
+    <result column="apply_sn" property="applySn" jdbcType="VARCHAR" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="BIGINT" />
+    <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <result column="enterprise_name_en" property="enterpriseNameEn" jdbcType="VARCHAR" />
+    <result column="producing_area" property="producingArea" jdbcType="VARCHAR" />
+    <result column="confirm_date" property="confirmDate" jdbcType="VARCHAR" />
+    <result column="is_off" property="isOff" jdbcType="VARCHAR" />
+    <result column="cfda_processid" property="cfdaProcessid" jdbcType="VARCHAR" />
+    <result column="cfda_new_processid" property="cfdaNewProcessid" jdbcType="VARCHAR" />
+    <result column="bevol_mid" property="bevolMid" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="source" property="source" jdbcType="TINYINT" />
+    <result column="category_id" property="categoryId" jdbcType="BIGINT" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    <result column="is_china" property="isChina" jdbcType="TINYINT" />
+    <result column="is_special" property="isSpecial" jdbcType="TINYINT" />
+    <result column="taobao_price" property="taobaoPrice" jdbcType="DECIMAL" />
+    <result column="taobao_sale" property="taobaoSale" jdbcType="INTEGER" />
+    <result column="taobao_turnover" property="taobaoTurnover" jdbcType="DECIMAL" />
+    <result column="i_score" property="iScore" jdbcType="DECIMAL" />
+    <result column="product_brand_id" property="productBrandId" jdbcType="BIGINT" />
+    <result column="product_brand_name" property="productBrandName" jdbcType="VARCHAR" />
+    <result column="more_data1" property="moreData1" jdbcType="VARCHAR" />
+    <result column="more_data2" property="moreData2" jdbcType="VARCHAR" />
+    <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, product_name, product_alias, jd_price, tmall_price, sales, tmall_url, jd_url, 
+    apply_type, apply_sn, enterprise_id, enterprise_name, enterprise_name_en, producing_area, 
+    confirm_date, is_off, cfda_processid, cfda_new_processid, bevol_mid, remark, source, 
+    category_id, category_name, is_china, is_special, taobao_price, taobao_sale, taobao_turnover, 
+    i_score, product_brand_id, product_brand_name, more_data1, more_data2, item_order, 
+    create_time, create_by, update_time, update_by, del_flg
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_br_abc
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_br_abc
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.co.example.entity.abc.TBrAbc" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_br_abc (id, product_name, product_alias, 
+      jd_price, tmall_price, sales, 
+      tmall_url, jd_url, apply_type, 
+      apply_sn, enterprise_id, enterprise_name, 
+      enterprise_name_en, producing_area, confirm_date, 
+      is_off, cfda_processid, cfda_new_processid, 
+      bevol_mid, remark, source, 
+      category_id, category_name, is_china, 
+      is_special, taobao_price, taobao_sale, 
+      taobao_turnover, i_score, product_brand_id, 
+      product_brand_name, more_data1, more_data2, 
+      item_order, create_time, create_by, 
+      update_time, update_by, del_flg
+      )
+    values (#{id,jdbcType=BIGINT}, #{productName,jdbcType=VARCHAR}, #{productAlias,jdbcType=VARCHAR}, 
+      #{jdPrice,jdbcType=DECIMAL}, #{tmallPrice,jdbcType=DECIMAL}, #{sales,jdbcType=INTEGER}, 
+      #{tmallUrl,jdbcType=VARCHAR}, #{jdUrl,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{applySn,jdbcType=VARCHAR}, #{enterpriseId,jdbcType=BIGINT}, #{enterpriseName,jdbcType=VARCHAR}, 
+      #{enterpriseNameEn,jdbcType=VARCHAR}, #{producingArea,jdbcType=VARCHAR}, #{confirmDate,jdbcType=VARCHAR}, 
+      #{isOff,jdbcType=VARCHAR}, #{cfdaProcessid,jdbcType=VARCHAR}, #{cfdaNewProcessid,jdbcType=VARCHAR}, 
+      #{bevolMid,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{source,jdbcType=TINYINT}, 
+      #{categoryId,jdbcType=BIGINT}, #{categoryName,jdbcType=VARCHAR}, #{isChina,jdbcType=TINYINT}, 
+      #{isSpecial,jdbcType=TINYINT}, #{taobaoPrice,jdbcType=DECIMAL}, #{taobaoSale,jdbcType=INTEGER}, 
+      #{taobaoTurnover,jdbcType=DECIMAL}, #{iScore,jdbcType=DECIMAL}, #{productBrandId,jdbcType=BIGINT}, 
+      #{productBrandName,jdbcType=VARCHAR}, #{moreData1,jdbcType=VARCHAR}, #{moreData2,jdbcType=VARCHAR}, 
+      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{delFlg,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.abc.TBrAbc" >
+    update t_br_abc
+    <set >
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productAlias != null" >
+        product_alias = #{productAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="jdPrice != null" >
+        jd_price = #{jdPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tmallPrice != null" >
+        tmall_price = #{tmallPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="sales != null" >
+        sales = #{sales,jdbcType=INTEGER},
+      </if>
+      <if test="tmallUrl != null" >
+        tmall_url = #{tmallUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="jdUrl != null" >
+        jd_url = #{jdUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null" >
+        apply_type = #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="applySn != null" >
+        apply_sn = #{applySn,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseId != null" >
+        enterprise_id = #{enterpriseId,jdbcType=BIGINT},
+      </if>
+      <if test="enterpriseName != null" >
+        enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseNameEn != null" >
+        enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="producingArea != null" >
+        producing_area = #{producingArea,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmDate != null" >
+        confirm_date = #{confirmDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isOff != null" >
+        is_off = #{isOff,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdaProcessid != null" >
+        cfda_processid = #{cfdaProcessid,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdaNewProcessid != null" >
+        cfda_new_processid = #{cfdaNewProcessid,jdbcType=VARCHAR},
+      </if>
+      <if test="bevolMid != null" >
+        bevol_mid = #{bevolMid,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null" >
+        source = #{source,jdbcType=TINYINT},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="categoryName != null" >
+        category_name = #{categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="isChina != null" >
+        is_china = #{isChina,jdbcType=TINYINT},
+      </if>
+      <if test="isSpecial != null" >
+        is_special = #{isSpecial,jdbcType=TINYINT},
+      </if>
+      <if test="taobaoPrice != null" >
+        taobao_price = #{taobaoPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="taobaoSale != null" >
+        taobao_sale = #{taobaoSale,jdbcType=INTEGER},
+      </if>
+      <if test="taobaoTurnover != null" >
+        taobao_turnover = #{taobaoTurnover,jdbcType=DECIMAL},
+      </if>
+      <if test="iScore != null" >
+        i_score = #{iScore,jdbcType=DECIMAL},
+      </if>
+      <if test="productBrandId != null" >
+        product_brand_id = #{productBrandId,jdbcType=BIGINT},
+      </if>
+      <if test="productBrandName != null" >
+        product_brand_name = #{productBrandName,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData1 != null" >
+        more_data1 = #{moreData1,jdbcType=VARCHAR},
+      </if>
+      <if test="moreData2 != null" >
+        more_data2 = #{moreData2,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null" >
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=BIGINT},
+      </if>
+      <if test="delFlg != null" >
+        del_flg = #{delFlg,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.co.example.entity.abc.TBrAbc" >
+    update t_br_abc
+    set product_name = #{productName,jdbcType=VARCHAR},
+      product_alias = #{productAlias,jdbcType=VARCHAR},
+      jd_price = #{jdPrice,jdbcType=DECIMAL},
+      tmall_price = #{tmallPrice,jdbcType=DECIMAL},
+      sales = #{sales,jdbcType=INTEGER},
+      tmall_url = #{tmallUrl,jdbcType=VARCHAR},
+      jd_url = #{jdUrl,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      apply_sn = #{applySn,jdbcType=VARCHAR},
+      enterprise_id = #{enterpriseId,jdbcType=BIGINT},
+      enterprise_name = #{enterpriseName,jdbcType=VARCHAR},
+      enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR},
+      producing_area = #{producingArea,jdbcType=VARCHAR},
+      confirm_date = #{confirmDate,jdbcType=VARCHAR},
+      is_off = #{isOff,jdbcType=VARCHAR},
+      cfda_processid = #{cfdaProcessid,jdbcType=VARCHAR},
+      cfda_new_processid = #{cfdaNewProcessid,jdbcType=VARCHAR},
+      bevol_mid = #{bevolMid,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      source = #{source,jdbcType=TINYINT},
+      category_id = #{categoryId,jdbcType=BIGINT},
+      category_name = #{categoryName,jdbcType=VARCHAR},
+      is_china = #{isChina,jdbcType=TINYINT},
+      is_special = #{isSpecial,jdbcType=TINYINT},
+      taobao_price = #{taobaoPrice,jdbcType=DECIMAL},
+      taobao_sale = #{taobaoSale,jdbcType=INTEGER},
+      taobao_turnover = #{taobaoTurnover,jdbcType=DECIMAL},
+      i_score = #{iScore,jdbcType=DECIMAL},
+      product_brand_id = #{productBrandId,jdbcType=BIGINT},
+      product_brand_name = #{productBrandName,jdbcType=VARCHAR},
+      more_data1 = #{moreData1,jdbcType=VARCHAR},
+      more_data2 = #{moreData2,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=BIGINT},
+      del_flg = #{delFlg,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectVoByPrimaryKey" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_abc t
+    <include refid="Table_Join_Clause" />
+    where t.id = #{id,jdbcType=BIGINT}
+  </select>
+  <sql id="Query_Where_Clause" >
+    <where >
+      <if test="id != null" >
+          and t.id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="productName != null" >
+          and t.product_name = #{productName,jdbcType=VARCHAR}
+      </if>
+      <if test="productAlias != null" >
+          and t.product_alias = #{productAlias,jdbcType=VARCHAR}
+      </if>
+      <if test="jdPrice != null" >
+          and t.jd_price = #{jdPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="tmallPrice != null" >
+          and t.tmall_price = #{tmallPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="sales != null" >
+          and t.sales = #{sales,jdbcType=INTEGER}
+      </if>
+      <if test="tmallUrl != null" >
+          and t.tmall_url = #{tmallUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="jdUrl != null" >
+          and t.jd_url = #{jdUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="applyType != null" >
+          and t.apply_type = #{applyType,jdbcType=VARCHAR}
+      </if>
+      <if test="applySn != null" >
+          and t.apply_sn = #{applySn,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseId != null" >
+          and t.enterprise_id = #{enterpriseId,jdbcType=BIGINT}
+      </if>
+      <if test="enterpriseName != null" >
+          and t.enterprise_name = #{enterpriseName,jdbcType=VARCHAR}
+      </if>
+      <if test="enterpriseNameEn != null" >
+          and t.enterprise_name_en = #{enterpriseNameEn,jdbcType=VARCHAR}
+      </if>
+      <if test="producingArea != null" >
+          and t.producing_area = #{producingArea,jdbcType=VARCHAR}
+      </if>
+      <if test="confirmDate != null" >
+          and t.confirm_date = #{confirmDate,jdbcType=VARCHAR}
+      </if>
+      <if test="isOff != null" >
+          and t.is_off = #{isOff,jdbcType=VARCHAR}
+      </if>
+      <if test="cfdaProcessid != null" >
+          and t.cfda_processid = #{cfdaProcessid,jdbcType=VARCHAR}
+      </if>
+      <if test="cfdaNewProcessid != null" >
+          and t.cfda_new_processid = #{cfdaNewProcessid,jdbcType=VARCHAR}
+      </if>
+      <if test="bevolMid != null" >
+          and t.bevol_mid = #{bevolMid,jdbcType=VARCHAR}
+      </if>
+      <if test="remark != null" >
+          and t.remark = #{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="source != null" >
+          and t.source = #{source,jdbcType=TINYINT}
+      </if>
+      <if test="categoryId != null" >
+          and t.category_id = #{categoryId,jdbcType=BIGINT}
+      </if>
+      <if test="categoryName != null" >
+          and t.category_name = #{categoryName,jdbcType=VARCHAR}
+      </if>
+      <if test="isChina != null" >
+          and t.is_china = #{isChina,jdbcType=TINYINT}
+      </if>
+      <if test="isSpecial != null" >
+          and t.is_special = #{isSpecial,jdbcType=TINYINT}
+      </if>
+      <if test="taobaoPrice != null" >
+          and t.taobao_price = #{taobaoPrice,jdbcType=DECIMAL}
+      </if>
+      <if test="taobaoSale != null" >
+          and t.taobao_sale = #{taobaoSale,jdbcType=INTEGER}
+      </if>
+      <if test="taobaoTurnover != null" >
+          and t.taobao_turnover = #{taobaoTurnover,jdbcType=DECIMAL}
+      </if>
+      <if test="iScore != null" >
+          and t.i_score = #{iScore,jdbcType=DECIMAL}
+      </if>
+      <if test="productBrandId != null" >
+          and t.product_brand_id = #{productBrandId,jdbcType=BIGINT}
+      </if>
+      <if test="productBrandName != null" >
+          and t.product_brand_name = #{productBrandName,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData1 != null" >
+          and t.more_data1 = #{moreData1,jdbcType=VARCHAR}
+      </if>
+      <if test="moreData2 != null" >
+          and t.more_data2 = #{moreData2,jdbcType=VARCHAR}
+      </if>
+      <if test="itemOrder != null" >
+          and t.item_order = #{itemOrder,jdbcType=INTEGER}
+      </if>
+      <if test="createTime != null" >
+          and t.create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createBy != null" >
+          and t.create_by = #{createBy,jdbcType=BIGINT}
+      </if>
+      <if test="updateTime != null" >
+          and t.update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateBy != null" >
+          and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="delFlg != null" >
+          and t.del_flg = #{delFlg,jdbcType=TINYINT}
+      </if>
+      <include refid="Vo_Where_Clause" />
+    </where>
+    <if test="sorting != null" >
+      order by ${sorting},t.id desc
+    </if>
+  </sql>
+  <select id="selectCount" parameterType="java.util.Map" resultType="java.lang.Long" >
+    select count(t.id) from t_br_abc t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <select id="select" parameterType="java.util.Map" resultMap="VoResultMap" >
+    select 
+    <include refid="Vo_Column_List" />
+    from t_br_abc t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from t_br_abc where id in (
+    select t.id from (select * from t_br_abc) t
+    <include refid="Table_Join_Clause" />
+    <include refid="Query_Where_Clause" />
+    )
+  </delete>
+  <!--  ************************expand your SQL below the line***********************  -->
+  <resultMap id="VoResultMap" type="com.co.example.entity.abc.aide.TBrAbcVo" extends="BaseResultMap" >
+    <!--  <association property="beanName" javaType="beanVoFullyQualifiedName">  -->
+    <!--  <result column="dbField" property="beanField" jdbcType="dbFieldStyle" /> -->
+    <!--  </association> -->
+  </resultMap>
+  <sql id="Vo_Column_List" >
+    t.id, 
+    t.product_name, 
+    t.product_alias, 
+    t.jd_price, 
+    t.tmall_price, 
+    t.sales, 
+    t.tmall_url, 
+    t.jd_url, 
+    t.apply_type, 
+    t.apply_sn, 
+    t.enterprise_id, 
+    t.enterprise_name, 
+    t.enterprise_name_en, 
+    t.producing_area, 
+    t.confirm_date, 
+    t.is_off, 
+    t.cfda_processid, 
+    t.cfda_new_processid, 
+    t.bevol_mid, 
+    t.remark, 
+    t.source, 
+    t.category_id, 
+    t.category_name, 
+    t.is_china, 
+    t.is_special, 
+    t.taobao_price, 
+    t.taobao_sale, 
+    t.taobao_turnover, 
+    t.i_score, 
+    t.product_brand_id, 
+    t.product_brand_name, 
+    t.more_data1, 
+    t.more_data2, 
+    t.item_order, 
+    t.create_time, 
+    t.create_by, 
+    t.update_time, 
+    t.update_by, 
+    t.del_flg
+     <!-- ,alias.field -->
+  </sql>
+  <sql id="Vo_Where_Clause" >
+    <!-- <if test="queryBeanField != null" > -->
+    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
+    <!-- </if> -->
+  </sql>
+  <sql id="Table_Join_Clause" >
+    <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
+  </sql>
+</mapper>

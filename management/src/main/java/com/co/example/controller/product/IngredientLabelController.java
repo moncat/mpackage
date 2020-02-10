@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -74,6 +76,7 @@ public class IngredientLabelController extends BaseControllerHandler<TBrIngredie
 	public Boolean listExt(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			PageReq pageReq, TBrIngredientLabelQuery query) {
 		query.setJoinClassFlg(true);
+		pageReq.setSort(new Sort(Direction.DESC,"t.create_time"));
 		return false;
 	}
 

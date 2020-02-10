@@ -2,6 +2,7 @@ package com.co.example.entity.product.aide;
 
 import java.util.List;
 
+import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.label.TBrProductLabel;
 import com.co.example.entity.product.TBrEnterprise;
 import com.co.example.entity.product.TBrIngredient;
@@ -60,7 +61,6 @@ public class TBrProductVo extends TBrProduct {
 	 */
 	private List<TBrProductLabel> labels;
 	
-	
 	/**
 	 * 品牌名称
 	 */
@@ -69,6 +69,12 @@ public class TBrProductVo extends TBrProduct {
 	/**
 	 * 生产企业列表
 	 */
-	private List<TBrEnterprise>  enterpriseList;
+	private List<TBrEnterpriseVo>  enterpriseList;
+	//生产企业列表，可能有多个数据
+	private String  realEnterpriseName;
+	private TBrBrand  tBrBrand;
 	
+	private Integer thisMonthSales;
+	private Integer lastMonthSales;
+	private Integer halfYearSales;
 }

@@ -1,5 +1,9 @@
 package com.co.example.entity.product.aide;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.co.example.entity.product.TBrIngredient;
 
 import lombok.Getter;
@@ -21,5 +25,12 @@ public class TBrIngredientQuery extends TBrIngredient {
 	
 	/** 标签ID */
 	private String labelId;
+	
+	
+	@DateTimeFormat(pattern="yyyy-MM")
+    private Date timeLmit1;
+	
+	@DateTimeFormat(pattern="yyyy-MM")
+	private Date timeLmit2;
 	
 }

@@ -1,0 +1,236 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/brand/index.css" />
+</section>
+<section layout:fragment="main">
+		<!--header-->
+		<div class="main">
+			<div class="left">
+				<div style="width:20%"  th:if="${one.imgUrl!=null}">
+					<div th:if="${#strings.contains(one.imgUrl,'http')}">
+						<img class="mt-10 l" th:alt="${one.name}"
+							th:slrc="@{${one.imgUrl}}"  style="width: 125px;"/>
+					</div>
+					<div th:if="${not #strings.contains(one.imgUrl,'http')}">
+						<img class="mt-10 l" th:alt="${one.name}"
+							th:src="@{'/brand/'+${one.imgUrl}}" style="width: 125px;"/>
+					</div>
+					
+				</div>
+			</div>
+			<div class="right">
+				<header>
+					<span th:if="${one.level eq 1}">顶级品牌</span>
+					<span th:if="${one.level eq 2}">一级品牌</span>
+					<span th:if="${one.level eq 3}">二级品牌</span>
+					<span th:if="${one.level eq 4}">三级品牌</span>
+					<span th:if="${one.level eq 5}">四级品牌</span>
+					<span th:if="${one.level eq 6}">其他品牌</span>
+					<h3 th:text="${one.name + '  '+ one.nameEn}" >-</h3>
+				</header>
+				<div class="numbers">
+					<div class="numbers_box">
+						<span>品类</span>
+						<span class="base1">-</span>
+					</div>
+					<div class="numbers_box">
+						<span>供应商</span>
+						<span class="base2">-</span>
+					</div>
+					<div class="numbers_box">
+						<span>备案产品数</span>
+						<span class="base3">-</span>
+					</div>
+					<div class="numbers_box">
+						<span>取消备案数</span>
+						<span class="base4">-</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--header-->
+		<!--body-->
+		<div class="layui-tab layui-tab-card">
+			<ul class="layui-tab-title">
+				<li data-id="0" class="layui-this">品类分析</li>
+				<li data-id="1">供应商分析</li>
+				<li data-id="2">备案产品</li>
+				<li data-id="3">品牌介绍</li>
+			</ul>
+			<div class="layui-tab-content">
+				<!--tab1-->
+				<div class="layui-tab-item layui-show clearfix">
+					<div style="width: 100%; overflow: hidden;">
+						<div class="Statistical-table-left clearfix">
+							<h3>关注品牌供应商构成占比</h3>
+							<div class="Statistical-table " id="chart1">
+							</div>
+						</div>
+						<div class="Statistical-table-right clearfix">
+							<h3>品类备案产品数</h3>
+							<div class="Statistical-table "  id='process'></div>
+						</div>
+					</div>
+				</div>
+				<!--/tab1-->
+				<!--/tab2-->
+				<div class="layui-tab-item clearfix">
+					<div style="width: 100%; overflow: hidden;">
+						<div class="Statistical-table-left clearfix">
+							<h3>关注品牌供应商构成占比</h3>
+							<div class="Statistical-table " id='chart2'>
+							</div>
+						</div>
+						<div class="Statistical-table-right clearfix">
+							<h3>关注品牌供应商分布图</h3>
+							<div class="Statistical-table"  id='chart3'></div>
+						</div>
+					</div>
+
+					<p class="Index-analysis-title"><span>品牌生成供应商排行榜</span></p>
+					<table class="layui-table">
+						<thead>
+							<tr>
+								<th>排行</th>
+								<th>供应商名称</th>
+								<th>备案号</th>
+								<th>有效期</th>
+								<th>发证日期</th>
+								<th>生产品类</th>
+								<th>产品数↓</th>
+								<th>产品数占比</th>
+							</tr>
+						</thead>
+						<tbody id="epolist">
+					</tbody>
+				</table>
+				<div id="epoPage"></div>
+
+				</div>
+				<!--/tab2-->
+				<!--tab3-->
+				<div class="layui-tab-item clearfix">
+					<p class="Index-analysis-title" style="margin-top:0;"><span>品牌生成供应商排行榜</span></p>
+					<table class="layui-table">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>产品名称</th>
+								<th>品类</th>
+								<th>实际生产企业</th>
+								<th>淘宝价格</th>
+								<th>全网月销量↓</th>
+								<th>全网月销售额</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="productList">
+						</tbody>
+					</table>
+					<div id="pPage"></div>
+				</div>
+				<!--/tab3-->
+				<!--tab4-->
+				<div class="layui-tab-item clearfix">
+					<div class="Brand-int-top clearfix">
+						<div class="Brand-int-top-left">
+							<h3 th:text="${one.name}">-</h3>
+							<dl>
+								<dt>英文名:</dt>
+								<dd th:text="${one.nameEn}">-</dd>
+							</dl>
+							<dl>
+								<dt>起源：</dt>
+								<dd th:text="${one.originate}">-</dd>
+							</dl>
+							<dl>
+								<dt>创始人：</dt>
+								<dd th:text="${one.founder}">-</dd>
+							</dl>
+							<dl>
+								<dt>创始时间：</dt>
+								<dd th:text="${one.foundDate}">-</dd>
+							</dl>
+							<dl>
+								<dt>官网</dt>
+								<dd th:text="${one.website}"></dd>
+							</dl>
+						</div>
+						<div class="Brand-int-top-right" th:if="${#strings.contains(one.imgUrl,'http')}">
+							<img class="mt-10" th:alt="${one.name}"
+								th:src="@{${one.imgUrl}}"  style="width: 125px;"/>
+						</div>
+						<div class="Brand-int-top-right" th:if="${not #strings.contains(one.imgUrl,'http')}">
+							<img class="mt-10" th:alt="${one.name}"
+								th:src="@{'/brand/'+${one.imgUrl}}" style="width: 125px;"/>
+						</div>
+					</div>
+					<div class="Brand-int-bottom">
+						<dl>
+							<dt>简介：</dt>
+							<dd>
+								<p class="p-jj"  th:utext="${one.story}">
+									-
+								</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!--/tab4-->
+			</div>
+		</div> 
+		<!--body-->
+		
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/v2/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/base/lib/echarts/4.3.0/china.js"></script>
+	<script type="text/javascript" src="/js/v2/common/form_page_post.js?version=1"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="/js/v2/manifestAuth/model.js?version=3"></script>
+	<script type="text/javascript" src="/js/v2/brand/index.js?version=4"></script>
+	<script id="epolistTmp" type="text/x-jquery-tmpl">
+	  {{each(i,item) content}} 
+	<tr>
+	<td>${size*number+i+1}</td>
+	<td>${item.enterprise.enterpriseName}</td>
+		{{if item.permission == null}}
+			<td>${item.enterprise.applySn}</td>	
+   			<td>无数据</td>								
+   			<td>无数据</td>								
+		{{else}}
+			<td><a target="_blank" href="http://125.35.6.84:81/xk/itownet/portal/dzpz.jsp?id=${item.permission.moreData1}">${item.enterprise.applySn}</a></td>	
+			<td>${item.permission.endDate}</td>								
+			<td>${item.permission.startDate}</td>	
+		{{/if}}					
+							
+	<td>${item.catagoryNum}</td>								
+	<td>${item.productNum}</td>								
+	<td>${(item.curProductNum/item.productNum*100).toFixed(2)}%</td>								
+	</tr>		
+	  {{/each}}
+	</script>
+	<script id="productListTmp" type="text/x-jquery-tmpl">
+{{each(i,item) content}} 
+  <tr>
+	<td>${size*number+i+1}</td>
+	<td>${item.productName}</td>
+	<td>${item.categoryName}</td>
+	<td>
+		{{each(j,enterpriseItem) enterpriseList}} 
+			${enterpriseItem.enterpriseName}
+  		{{/each}}
+	</td>									
+	<td>${item.taobaoSale}</td>								
+	<td>${item.productNum}</td>								
+	<td>${item.taobaoTurnover}</td>								
+	<td>								
+		<a   href="javascript:void(0);" data-id="${item.id}" title="商品链接" class="conn" >
+			商品链接
+		</a> 
+	</td>							
+  </tr>		
+{{/each}}
+	</script>
+</section>
+</html>

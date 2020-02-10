@@ -218,11 +218,17 @@
      <if test="nameLike != null">
           and t.name like concat('%',#{nameLike,jdbcType=VARCHAR},'%') 
       </if>
+     <if test="ingredientId != null">
+          and ilj.ingredient_id = #{ingredientId,jdbcType=VARCHAR}
+      </if>
   </sql>
   <sql id="Table_Join_Clause" >
     <!-- left join tableName tn on t.primaryKey=tn.foreignKey -->
     <if test="joinClassFlg" >
           left join t_br_ingredient_label_class ilc on ilc.id = t.class_id
+      </if>
+    <if test="joinIngredientFlg" >
+         left join t_br_ingredient_label_join ilj on t.id = ilj.label_id
       </if>
   </sql>
 </mapper>

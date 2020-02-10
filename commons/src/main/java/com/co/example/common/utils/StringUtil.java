@@ -28,6 +28,17 @@ public class StringUtil {
 		return flg;
 	}
 	
+	public static String trimStrAll(String str) {
+		if(StringUtils.isBlank(str)){
+			return null;
+		}else{
+			str =str.trim();
+		} 
+		return str;
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		System.out.println(isChinese("11qweqwe3w好342dew1"));
 	}

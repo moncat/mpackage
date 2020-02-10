@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- 头部，包含meta，公共css -->
+<head th:replace="V2/common/layout_head :: head"></head>
+<!-- 自定义css -->
+<section  layout:fragment="myCss">
+</section>
+<body>
+<!-- iframe右侧主页面 -->	
+<div layout:fragment="main">
+	这里是main.
+</div>
+<!-- 公共js -->
+<div th:replace="V2/common/layout_js :: js"></div>
+<!-- 自定义js -->
+<section  layout:fragment="my">
+</section>
+<!-- 页脚 -->
+<section th:replace="V2/common/layout_footer :: footer"></section>
+</body>
+</html>

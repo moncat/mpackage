@@ -1,30 +1,24 @@
-//post 方式 ，必须有如下html，     post不推荐
-// <div class="mt-10 text-r"  th:attr="data-totalPages=${page.totalPages},data-number=${page.number}" style="right:20px" id="pageCont"></div>
-
-laypage({
-  cont: 'pageCont',
-  pages: $('#pageCont').attr('data-totalPages'), //可以叫服务端把总页数放在某一个隐藏域，再获取。
-  curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
-	  var page = $('#pageCont').attr('data-number');
-	  if(page == undefined){
-    	  return 1;
-      }else{
-    	  page = parseInt(page)+1
-    	  return page;
-      }
-  }(), 
-  jump: function(e, first){ //触发分页后的回调
-    if(!first){ //一定要加此判断，否则初始时会无限刷新
-      var lh=location.href;
-      if(lh.indexOf("page=")>0){
-    		lh=lh.substring(0,lh.indexOf("page=")-1);    	  
-      }
-      $('#pageForm').append('<input type="hidden" id="curpage" name="page" value="'+e.curr+'">')
-      $('#pageForm').submit();
-    }
-  },
-  skip: true, //是否开启跳页
-  skin: '#ccc',
-  groups: 5 //连续显示分页数
-});
-
+//post方式：， 1post链接  2分页器div的id  3jquery-tmpl模板   4要放置的位置
+function ajaxPage(postUrl,paging,from,to,){
+	$('#'+paging).css({'float': 'right','margin-top': '20px','margin-right':'70px'});
+	$('#'+paging).parent().addClass('cl');
+	$.getJSON(postUrl+"?page=1&pageSize=15" , function(res){ //从第1页开始请求。返回的json格式可以任意定义
+		$('#'+paging).data('totalPages',res.page.totalPages);
+		var size = res.page.size;
+		laypage({
+			cont: paging, //容器。值支持id名、原生dom对象，jquery对象。
+			pages: $('#'+paging).data('totalPages'), //通过后台拿到的总页数
+			jump: function(e){ //触发分页后的回调
+				$.getJSON(postUrl+"?page="+e.curr+"&pageSize="+e.limit , function(res){
+					//渲染
+					$('#'+paging).data('totalPages',res.page.totalPages);
+					$('#'+to).html($('#'+from).tmpl(res.page));
+				});
+			},
+			limit:size,
+			skip: true, //是否开启跳页
+			skin: '#ccc',
+			groups: 5 //连续显示分页数
+		});
+	});
+}

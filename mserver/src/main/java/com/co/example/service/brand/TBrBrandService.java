@@ -5,6 +5,7 @@ import java.util.List;
 import org.jsoup.nodes.Element;
 
 import com.co.example.entity.brand.TBrBrand;
+import com.co.example.entity.brand.aide.TBrBrandVo;
 import com.github.moncat.common.service.BaseService;
 
 public interface TBrBrandService extends BaseService<TBrBrand, Long> {
@@ -65,6 +66,10 @@ public interface TBrBrandService extends BaseService<TBrBrand, Long> {
 	int addConnect2Product(TBrBrand tBrBrand);
 	
 	
+
+	TBrBrandVo queryByProductId(Long id);
+	
+	void addTBrEnterpriseBrandByBrand(TBrBrand brand);
 }
 
 

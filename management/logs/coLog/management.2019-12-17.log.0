@@ -1,0 +1,1036 @@
+2019-12-17 00:00:21.932 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中384329
+2019-12-17 00:00:58.962 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中379329
+2019-12-17 00:01:36.040 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中374329
+2019-12-17 00:02:13.028 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中369329
+2019-12-17 00:02:50.254 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中364329
+2019-12-17 00:03:27.831 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中359329
+2019-12-17 00:04:04.984 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中354329
+2019-12-17 00:04:42.523 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中349329
+2019-12-17 00:05:18.915 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中344329
+2019-12-17 00:05:55.837 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中339329
+2019-12-17 00:06:32.647 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中334329
+2019-12-17 00:07:08.606 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中329329
+2019-12-17 00:07:45.195 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中324329
+2019-12-17 00:08:21.320 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中319329
+2019-12-17 00:08:58.568 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中314329
+2019-12-17 00:09:34.593 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中309329
+2019-12-17 00:10:10.892 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中304329
+2019-12-17 00:10:47.008 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中299329
+2019-12-17 00:11:23.135 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中294329
+2019-12-17 00:12:00.210 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中289329
+2019-12-17 00:12:36.653 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中284329
+2019-12-17 00:13:13.692 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中279329
+2019-12-17 00:13:50.042 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中274329
+2019-12-17 00:14:26.421 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中269329
+2019-12-17 00:15:02.470 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中264329
+2019-12-17 00:15:38.174 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中259329
+2019-12-17 00:16:14.638 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中254329
+2019-12-17 00:16:52.206 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中249329
+2019-12-17 00:17:29.211 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中244329
+2019-12-17 00:18:05.565 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中239329
+2019-12-17 00:18:41.527 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中234329
+2019-12-17 00:19:16.961 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中229329
+2019-12-17 00:19:53.895 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中224329
+2019-12-17 00:20:29.340 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中219329
+2019-12-17 00:21:05.560 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中214329
+2019-12-17 00:21:41.680 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中209329
+2019-12-17 00:22:17.677 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中204329
+2019-12-17 00:22:53.727 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中199329
+2019-12-17 00:23:29.617 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中194329
+2019-12-17 00:24:05.253 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中189329
+2019-12-17 00:24:43.184 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中184329
+2019-12-17 00:25:21.117 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中179329
+2019-12-17 00:25:57.603 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中174329
+2019-12-17 00:26:33.043 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中169329
+2019-12-17 00:27:09.618 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中164329
+2019-12-17 00:27:45.854 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中159329
+2019-12-17 00:28:21.497 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中154329
+2019-12-17 00:28:58.020 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中149329
+2019-12-17 00:29:35.241 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中144329
+2019-12-17 00:30:11.189 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中139329
+2019-12-17 00:30:47.233 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中134329
+2019-12-17 00:31:24.228 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中129329
+2019-12-17 00:32:01.269 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中124329
+2019-12-17 00:32:36.729 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中119329
+2019-12-17 00:33:13.519 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中114329
+2019-12-17 00:33:50.548 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中109329
+2019-12-17 00:34:28.411 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中104329
+2019-12-17 00:35:04.832 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中99329
+2019-12-17 00:35:42.057 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中94329
+2019-12-17 00:36:19.928 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中89329
+2019-12-17 00:36:56.918 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中84329
+2019-12-17 00:37:34.368 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中79329
+2019-12-17 00:38:11.316 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中74329
+2019-12-17 00:38:47.721 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中69329
+2019-12-17 00:39:24.165 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中64329
+2019-12-17 00:40:01.634 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中59329
+2019-12-17 00:40:38.138 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中54329
+2019-12-17 00:41:14.700 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中49329
+2019-12-17 00:41:51.024 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中44329
+2019-12-17 00:42:27.054 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中39329
+2019-12-17 00:43:03.495 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中34329
+2019-12-17 00:43:40.570 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中29329
+2019-12-17 00:44:18.065 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中24329
+2019-12-17 00:44:55.285 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中19329
+2019-12-17 00:45:32.826 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中14329
+2019-12-17 00:46:11.200 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中9329
+2019-12-17 00:46:48.665 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中4329
+2019-12-17 00:47:22.232 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中-671
+2019-12-17 00:47:22.232 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步数据完毕
+2019-12-17 00:47:22.232 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addSolrData**************
+2019-12-17 00:47:22.284 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 00:47:22.290 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-17 00:47:22.290 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-17 00:47:22.292 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-17 09:12:29.991 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 13260 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 09:12:29.998 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 09:12:37.006 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 09:12:38.459 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 09:12:39.240 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 09:12:39.259 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 09:12:42.885 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 09:12:42.886 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 09:12:43.119 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 09:12:46.601 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 09:12:56.982 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 09:12:56.983 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 09:12:56.984 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 09:12:56.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 09:12:56.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 09:12:56.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 09:12:56.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 09:12:56.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 09:12:56.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 09:12:57.265 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@94195de, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f0655d5, org.springframework.security.web.header.HeaderWriterFilter@3a09a5bb, org.springframework.security.web.csrf.CsrfFilter@279e8762, org.springframework.security.web.authentication.logout.LogoutFilter@480cbd5d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6e3b51f2, org.springframework.security.web.session.ConcurrentSessionFilter@3d41f1c5, org.springframework.security.web.session.ConcurrentSessionFilter@74ec331a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@720231ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12ad46eb, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2000521b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35115dd4, org.springframework.security.web.session.SessionManagementFilter@5a25d5a7, org.springframework.security.web.access.ExceptionTranslationFilter@3fdb601e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33334b7e]
+2019-12-17 09:12:59.116 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 09:13:00.461 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 09:13:00.468 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 09:13:00.480 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 09:13:00.495 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 09:13:00.495 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 09:13:00.495 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 09:13:09.840 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 09:13:09.864 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 09:13:10.263 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 09:13:10.384 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 09:13:10.386 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 41.216 seconds (JVM running for 43.812)
+2019-12-17 09:13:34.515 [http-nio-7000-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 09:13:36.159 [http-nio-7000-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 09:13:36.236 [http-nio-7000-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 09:13:36.236 [http-nio-7000-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 09:13:36.236 [http-nio-7000-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 09:13:36.236 [http-nio-7000-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 09:13:36.271 [http-nio-7000-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 09:13:45.768 [http-nio-7000-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 09:13:45.768 [http-nio-7000-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 09:13:45.783 [http-nio-7000-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 09:30:08.397 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 09:30:08.413 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 0 subscriber(s).
+2019-12-17 09:30:08.413 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-17 09:30:08.415 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-17 09:30:08.432 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-12-17 09:30:08.432 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-12-17 09:30:09.818 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 13260 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 09:30:09.818 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 09:30:13.321 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 09:30:14.802 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 09:30:14.909 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 09:30:14.909 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 09:30:15.625 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 09:30:15.625 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 09:30:15.760 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 09:30:17.784 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 09:30:23.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 09:30:23.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 09:30:23.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 09:30:23.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 09:30:23.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 09:30:23.621 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 09:30:23.622 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 09:30:23.622 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 09:30:23.622 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 09:30:23.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21532b3c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c950b4c, org.springframework.security.web.header.HeaderWriterFilter@733124a7, org.springframework.security.web.csrf.CsrfFilter@10466f02, org.springframework.security.web.authentication.logout.LogoutFilter@7f591f38, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a737e6a, org.springframework.security.web.session.ConcurrentSessionFilter@639f91d1, org.springframework.security.web.session.ConcurrentSessionFilter@5e5a105a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@367b1a65, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@710f1983, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7625af8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@522e23e6, org.springframework.security.web.session.SessionManagementFilter@7dc74e9f, org.springframework.security.web.access.ExceptionTranslationFilter@1c31cd90, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a4918e7]
+2019-12-17 09:30:24.184 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 09:30:25.188 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 09:30:25.215 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 09:30:25.220 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 09:30:25.229 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 09:30:25.230 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 09:30:25.230 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 09:30:31.115 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 09:30:31.116 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 09:30:31.118 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 09:30:31.135 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 09:30:31.135 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 21.705 seconds (JVM running for 1084.551)
+2019-12-17 09:33:02.808 [http-nio-7000-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 09:33:03.109 [http-nio-7000-exec-4] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 09:33:03.113 [http-nio-7000-exec-4] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 09:33:03.113 [http-nio-7000-exec-4] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 09:33:03.113 [http-nio-7000-exec-4] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 09:33:03.113 [http-nio-7000-exec-4] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 09:33:03.114 [http-nio-7000-exec-4] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 09:33:11.439 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 09:33:11.439 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 09:33:11.441 [http-nio-7000-exec-3] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 09:39:15.547 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3505457264738304 result:0 Qtime:481
+2019-12-17 09:39:15.948 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:396
+2019-12-17 09:39:15.983 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3505457264394240 result:0 Qtime:1
+2019-12-17 09:39:16.324 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:337
+2019-12-17 09:39:16.401 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective Exception
+2019-12-17 09:39:16.442 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3512664500469760 result:0 Qtime:11
+2019-12-17 09:39:16.817 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:372
+2019-12-17 11:41:07.138 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 10640 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 11:41:07.352 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 11:41:15.842 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 11:41:17.042 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 11:41:18.555 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 11:41:18.575 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 11:41:22.006 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 11:41:22.007 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 11:41:22.276 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 11:41:25.829 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 11:41:39.617 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 11:41:39.618 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 11:41:39.620 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 11:41:39.624 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 11:41:39.624 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 11:41:39.624 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 11:41:39.624 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 11:41:39.624 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 11:41:39.624 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 11:41:40.167 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d648a58, org.springframework.security.web.context.SecurityContextPersistenceFilter@ee65d59, org.springframework.security.web.header.HeaderWriterFilter@7df86655, org.springframework.security.web.csrf.CsrfFilter@7227b235, org.springframework.security.web.authentication.logout.LogoutFilter@46bf81d9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6b54a4f2, org.springframework.security.web.session.ConcurrentSessionFilter@53d9ce32, org.springframework.security.web.session.ConcurrentSessionFilter@43ff3471, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37764b25, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6bd39a41, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@74e7068d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@658b7702, org.springframework.security.web.session.SessionManagementFilter@781c06d, org.springframework.security.web.access.ExceptionTranslationFilter@ec6eb78, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12ef70b1]
+2019-12-17 11:41:41.795 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 11:41:43.167 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 11:41:43.174 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 11:41:43.184 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 11:41:43.200 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 11:41:43.200 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 11:41:43.200 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 11:41:51.209 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 11:41:51.235 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 11:41:51.296 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 11:41:51.379 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 11:41:51.385 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 46.768 seconds (JVM running for 50.467)
+2019-12-17 11:42:08.732 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 11:42:10.340 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 11:42:10.422 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 11:42:10.422 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 11:42:10.422 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 11:42:10.422 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 11:42:10.428 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 11:42:19.482 [http-nio-7000-exec-6] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 11:42:19.483 [http-nio-7000-exec-6] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 11:42:19.519 [http-nio-7000-exec-6] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 11:42:42.474 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 11:42:42.474 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 11:42:42.475 [http-nio-7000-exec-2] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 14:52:38.575 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7160 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 14:52:38.623 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 14:52:45.616 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 14:52:47.111 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 14:52:47.737 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 14:52:47.747 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 14:52:50.807 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 14:52:50.809 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 14:52:51.046 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 14:52:54.945 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 14:53:05.992 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 14:53:05.993 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 14:53:06.223 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29f1ffe2, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c1e0e8a, org.springframework.security.web.header.HeaderWriterFilter@4b45018d, org.springframework.security.web.csrf.CsrfFilter@6bc97a67, org.springframework.security.web.authentication.logout.LogoutFilter@11adca64, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4647df16, org.springframework.security.web.session.ConcurrentSessionFilter@51363aa5, org.springframework.security.web.session.ConcurrentSessionFilter@5842b2e1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e59b99e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5126282d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5ffed955, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21e18f0, org.springframework.security.web.session.SessionManagementFilter@576ef63f, org.springframework.security.web.access.ExceptionTranslationFilter@79309548, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f59240c]
+2019-12-17 14:53:08.030 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 14:53:09.250 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 14:53:09.255 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 14:53:09.265 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 14:53:09.276 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 14:53:09.276 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 14:53:09.276 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 14:53:17.518 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 14:53:17.541 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 14:53:17.567 [restartedMain] ERROR org.apache.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler ["http-nio-7000"]
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:978)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:628)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:247)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:190)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.co.example.ManagerApplication.main(ManagerApplication.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2019-12-17 14:53:17.568 [restartedMain] ERROR org.apache.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-7000]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-7000]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:247)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:190)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.co.example.ManagerApplication.main(ManagerApplication.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1000)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:978)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:628)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	... 19 common frames omitted
+2019-12-17 14:53:17.582 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-7000"]
+2019-12-17 14:53:17.582 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service Tomcat
+2019-12-17 14:53:17.705 [restartedMain] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-12-17 14:53:17.707 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-7000"]
+2019-12-17 14:53:17.712 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-7000"]
+2019-12-17 14:53:17.725 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 7000 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 7000, or configure this application to listen on another port.
+
+2019-12-17 14:53:17.735 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 14:53:17.735 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 0 subscriber(s).
+2019-12-17 14:53:17.735 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-17 14:53:17.758 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-17 14:53:17.760 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-12-17 14:53:17.764 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-12-17 15:10:18.513 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 15:10:18.513 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 15:10:18.516 [http-nio-7000-exec-3] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 15:10:27.024 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 15:10:27.025 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 15:10:27.026 [http-nio-7000-exec-5] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 15:10:29.611 [http-nio-7000-exec-6] INFO  org.eclipse.jetty.util.log - Logging initialized @12568486ms to org.eclipse.jetty.util.log.Slf4jLog
+2019-12-17 15:10:38.175 [http-nio-7000-exec-9] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 15:10:38.175 [http-nio-7000-exec-9] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 15:10:38.176 [http-nio-7000-exec-9] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 15:10:50.766 [http-nio-7000-exec-5] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-7000-exec-5] Exception processing template "/V2/brand/list2": Error resolving template "/V2/brand/list2", template might not exist or might not be accessible by any of the configured Template Resolvers
+2019-12-17 15:10:50.772 [http-nio-7000-exec-5] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/V2/brand/list2", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/V2/brand/list2", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2019-12-17 17:22:28.955 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 456 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 17:22:28.966 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 17:22:34.697 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 17:22:35.936 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 17:22:36.520 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 17:22:36.526 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 17:22:38.813 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 17:22:38.815 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 17:22:39.009 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 17:22:42.281 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 17:22:51.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 17:22:51.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 17:22:51.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 17:22:51.987 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 17:22:51.988 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 17:22:51.990 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 17:22:51.990 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 17:22:51.990 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 17:22:51.990 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 17:22:52.221 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@267d44a2, org.springframework.security.web.context.SecurityContextPersistenceFilter@7799fb91, org.springframework.security.web.header.HeaderWriterFilter@426fe1d7, org.springframework.security.web.csrf.CsrfFilter@531edbd6, org.springframework.security.web.authentication.logout.LogoutFilter@5c5197db, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6656e0d3, org.springframework.security.web.session.ConcurrentSessionFilter@77fc78c6, org.springframework.security.web.session.ConcurrentSessionFilter@6556c1fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bb808d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5421b688, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1d48d081, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b487504, org.springframework.security.web.session.SessionManagementFilter@43a71345, org.springframework.security.web.access.ExceptionTranslationFilter@69473505, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f828193]
+2019-12-17 17:22:53.703 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 17:22:54.865 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 17:22:54.870 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 17:22:54.878 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 17:22:54.888 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 17:22:54.889 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 17:22:54.889 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 17:23:02.525 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:23:02.547 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:23:02.553 [restartedMain] ERROR org.apache.coyote.http11.Http11NioProtocol - Failed to start end point associated with ProtocolHandler ["http-nio-7000"]
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:978)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:628)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:247)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:190)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.co.example.ManagerApplication.main(ManagerApplication.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2019-12-17 17:23:02.558 [restartedMain] ERROR org.apache.catalina.core.StandardService - Failed to start connector [Connector[HTTP/1.1-7000]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-7000]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:247)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:190)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at com.co.example.ManagerApplication.main(ManagerApplication.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1000)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:978)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:628)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	... 19 common frames omitted
+2019-12-17 17:23:02.647 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:23:02.648 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service Tomcat
+2019-12-17 17:23:02.793 [restartedMain] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-12-17 17:23:02.794 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:23:02.795 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:23:02.814 [restartedMain] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 7000 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 7000, or configure this application to listen on another port.
+
+2019-12-17 17:23:02.819 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 17:23:02.819 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 0 subscriber(s).
+2019-12-17 17:23:02.819 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-17 17:23:02.839 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-17 17:23:02.841 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-12-17 17:23:02.842 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-12-17 17:23:33.982 [http-nio-7000-exec-6] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 17:23:33.982 [http-nio-7000-exec-6] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 17:23:33.984 [http-nio-7000-exec-6] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 17:23:53.399 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 17:23:53.399 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 17:23:53.406 [http-nio-7000-exec-2] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 17:27:07.171 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504043224809472 result:0 Qtime:2
+2019-12-17 17:27:07.845 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:665
+2019-12-17 17:27:26.949 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3511234366046208 result:0 Qtime:1
+2019-12-17 17:27:27.271 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:316
+2019-12-17 17:27:30.170 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3491440834805760 result:0 Qtime:23
+2019-12-17 17:27:30.623 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:420
+2019-12-17 17:27:30.679 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484252086730752 result:0 Qtime:12
+2019-12-17 17:27:31.041 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 17:27:31.135 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248132091904 result:0 Qtime:9
+2019-12-17 17:27:31.506 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:360
+2019-12-17 17:27:31.587 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248128552960 result:0 Qtime:6
+2019-12-17 17:27:31.979 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 17:27:32.078 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482884473815040 result:0 Qtime:3
+2019-12-17 17:27:32.441 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:359
+2019-12-17 17:27:32.490 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482871358373888 result:0 Qtime:10
+2019-12-17 17:27:32.851 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:351
+2019-12-17 17:27:32.890 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832057319424 result:0 Qtime:8
+2019-12-17 17:27:33.258 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 17:27:33.299 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832053190656 result:0 Qtime:10
+2019-12-17 17:27:33.642 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:338
+2019-12-17 17:27:33.693 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832049225728 result:0 Qtime:9
+2019-12-17 17:27:34.045 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:338
+2019-12-17 17:27:34.217 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482799144026112 result:0 Qtime:3
+2019-12-17 17:27:34.643 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:408
+2019-12-17 17:27:34.725 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482805109751808 result:0 Qtime:6
+2019-12-17 17:27:35.085 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 17:27:35.128 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464027567521792 result:0 Qtime:10
+2019-12-17 17:27:35.489 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:355
+2019-12-17 17:27:35.527 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464024107778048 result:0 Qtime:5
+2019-12-17 17:27:35.904 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 17:27:35.943 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464018284298240 result:0 Qtime:7
+2019-12-17 17:27:36.315 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:363
+2019-12-17 17:27:36.353 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017871863808 result:0 Qtime:2
+2019-12-17 17:27:36.721 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:364
+2019-12-17 17:27:36.774 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017068654592 result:0 Qtime:9
+2019-12-17 17:27:37.168 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:369
+2019-12-17 17:27:37.203 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464005065949184 result:0 Qtime:5
+2019-12-17 17:27:37.649 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:441
+2019-12-17 17:27:37.709 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464002496364544 result:0 Qtime:9
+2019-12-17 17:27:38.126 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:401
+2019-12-17 17:27:38.256 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482775644913664 result:0 Qtime:10
+2019-12-17 17:27:38.610 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:351
+2019-12-17 17:27:38.648 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482721566130176 result:0 Qtime:10
+2019-12-17 17:27:38.942 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:290
+2019-12-17 17:27:38.998 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482872840781824 result:0 Qtime:5
+2019-12-17 17:27:39.384 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:381
+2019-12-17 17:27:39.416 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686780243968 result:0 Qtime:4
+2019-12-17 17:27:39.784 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 17:27:39.816 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686775181312 result:0 Qtime:3
+2019-12-17 17:27:40.168 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:348
+2019-12-17 17:27:40.208 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696607842304 result:0 Qtime:5
+2019-12-17 17:27:40.561 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:346
+2019-12-17 17:27:40.600 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696601239552 result:0 Qtime:5
+2019-12-17 17:27:40.961 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 17:27:40.993 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696594997248 result:0 Qtime:7
+2019-12-17 17:27:41.361 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2019-12-17 17:27:59.733 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482695442939904 result:0 Qtime:1
+2019-12-17 17:28:00.100 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:361
+2019-12-17 17:28:17.628 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482694493503488 result:0 Qtime:24
+2019-12-17 17:28:17.990 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 17:28:20.920 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482641322459136 result:0 Qtime:22
+2019-12-17 17:28:21.274 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:347
+2019-12-17 17:32:54.894 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504043224809472 result:0 Qtime:2
+2019-12-17 17:32:55.257 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:360
+2019-12-17 17:32:59.362 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3511234366046208 result:0 Qtime:0
+2019-12-17 17:32:59.642 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:261
+2019-12-17 17:32:59.674 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3491440834805760 result:0 Qtime:3
+2019-12-17 17:32:59.976 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:297
+2019-12-17 17:33:00.007 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484252086730752 result:0 Qtime:2
+2019-12-17 17:33:00.318 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:306
+2019-12-17 17:33:00.358 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248132091904 result:0 Qtime:6
+2019-12-17 17:33:00.743 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:382
+2019-12-17 17:33:00.792 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248128552960 result:0 Qtime:9
+2019-12-17 17:33:01.144 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:347
+2019-12-17 17:33:01.184 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482884473815040 result:0 Qtime:9
+2019-12-17 17:33:01.546 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:359
+2019-12-17 17:33:01.576 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482871358373888 result:0 Qtime:5
+2019-12-17 17:33:02.007 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:424
+2019-12-17 17:33:02.052 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832057319424 result:0 Qtime:8
+2019-12-17 17:33:02.345 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:274
+2019-12-17 17:33:02.444 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832053190656 result:0 Qtime:6
+2019-12-17 17:33:02.829 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:360
+2019-12-17 17:33:02.861 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832049225728 result:0 Qtime:3
+2019-12-17 17:33:03.222 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:358
+2019-12-17 17:33:03.262 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482799144026112 result:0 Qtime:10
+2019-12-17 17:33:03.622 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 17:33:03.654 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482805109751808 result:0 Qtime:8
+2019-12-17 17:33:04.048 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:390
+2019-12-17 17:33:04.098 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464027567521792 result:0 Qtime:10
+2019-12-17 17:33:04.465 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:362
+2019-12-17 17:33:04.505 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464024107778048 result:0 Qtime:4
+2019-12-17 17:33:04.881 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2019-12-17 17:33:04.930 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464018284298240 result:0 Qtime:7
+2019-12-17 17:33:05.300 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:367
+2019-12-17 17:33:05.339 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017871863808 result:0 Qtime:9
+2019-12-17 17:33:05.785 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:442
+2019-12-17 17:33:05.824 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017068654592 result:0 Qtime:11
+2019-12-17 17:33:06.110 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:282
+2019-12-17 17:33:06.150 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464005065949184 result:0 Qtime:6
+2019-12-17 17:33:06.427 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:274
+2019-12-17 17:33:06.459 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464002496364544 result:0 Qtime:3
+2019-12-17 17:33:06.748 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:256
+2019-12-17 17:33:06.843 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482775644913664 result:0 Qtime:10
+2019-12-17 17:33:07.103 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:257
+2019-12-17 17:33:07.174 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482721566130176 result:0 Qtime:7
+2019-12-17 17:33:07.424 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:241
+2019-12-17 17:33:07.585 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482872840781824 result:0 Qtime:8
+2019-12-17 17:33:07.880 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:290
+2019-12-17 17:33:07.920 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686780243968 result:0 Qtime:5
+2019-12-17 17:33:08.288 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 17:33:08.339 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686775181312 result:0 Qtime:6
+2019-12-17 17:33:08.697 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:355
+2019-12-17 17:33:09.045 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696607842304 result:0 Qtime:8
+2019-12-17 17:33:09.441 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:392
+2019-12-17 17:33:09.479 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696601239552 result:0 Qtime:10
+2019-12-17 17:33:09.740 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:257
+2019-12-17 17:33:09.773 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696594997248 result:0 Qtime:5
+2019-12-17 17:33:10.032 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:256
+2019-12-17 17:33:10.097 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482695442939904 result:0 Qtime:5
+2019-12-17 17:33:10.395 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:282
+2019-12-17 17:33:10.448 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482694493503488 result:0 Qtime:10
+2019-12-17 17:33:10.749 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:299
+2019-12-17 17:33:10.815 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482641322459136 result:0 Qtime:5
+2019-12-17 17:33:11.125 [http-nio-7000-exec-3] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:306
+2019-12-17 17:37:38.794 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 6300 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 17:37:38.801 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 17:37:44.117 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 17:37:45.331 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 17:37:45.913 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 17:37:45.919 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 17:37:48.958 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 17:37:48.960 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 17:37:49.305 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 17:37:53.139 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 17:38:05.693 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 17:38:06.427 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3dd7e252, org.springframework.security.web.context.SecurityContextPersistenceFilter@72ca58c5, org.springframework.security.web.header.HeaderWriterFilter@615e6168, org.springframework.security.web.csrf.CsrfFilter@6fa4a51b, org.springframework.security.web.authentication.logout.LogoutFilter@14f435f9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4f38973e, org.springframework.security.web.session.ConcurrentSessionFilter@36dd13b1, org.springframework.security.web.session.ConcurrentSessionFilter@312bcda4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5bb7935e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c20d070, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2e5e59a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3cde37e3, org.springframework.security.web.session.SessionManagementFilter@7c0b0f8f, org.springframework.security.web.access.ExceptionTranslationFilter@1e8ed91, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@545d7a1e]
+2019-12-17 17:38:08.688 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 17:38:10.050 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 17:38:10.055 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 17:38:10.065 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 17:38:10.075 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 17:38:10.076 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 17:38:10.076 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 17:38:19.759 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:38:19.779 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 17:38:19.826 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 17:38:19.980 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 17:38:19.982 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 41.867 seconds (JVM running for 43.817)
+2019-12-17 17:39:09.335 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 17:39:10.915 [http-nio-7000-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 17:39:10.985 [http-nio-7000-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 17:39:10.986 [http-nio-7000-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 17:39:10.986 [http-nio-7000-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 17:39:10.986 [http-nio-7000-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 17:39:10.991 [http-nio-7000-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 17:39:15.917 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 17:39:15.917 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 17:39:15.926 [http-nio-7000-exec-5] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 17:41:19.968 [http-nio-7000-exec-7] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3509816990220288 result:0 Qtime:2
+2019-12-17 17:41:20.758 [http-nio-7000-exec-7] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:750
+2019-12-17 17:43:11.648 [http-nio-7000-exec-8] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339980559024128 result:0 Qtime:2
+2019-12-17 17:43:12.365 [http-nio-7000-exec-8] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:699
+2019-12-17 17:43:17.079 [http-nio-7000-exec-8] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3509816990220288 result:0 Qtime:28
+2019-12-17 17:43:17.389 [http-nio-7000-exec-8] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:299
+2019-12-17 18:04:25.340 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2370019551346688 result:0 Qtime:6
+2019-12-17 18:04:26.182 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:838
+2019-12-17 18:04:26.249 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2370019537698816 result:0 Qtime:11
+2019-12-17 18:04:26.655 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:401
+2019-12-17 18:04:26.728 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2370018075672576 result:0 Qtime:30
+2019-12-17 18:04:27.087 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:354
+2019-12-17 18:04:27.127 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2370018063433728 result:0 Qtime:0
+2019-12-17 18:04:27.445 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:314
+2019-12-17 18:04:27.494 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2370017993932800 result:0 Qtime:9
+2019-12-17 18:04:27.796 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:298
+2019-12-17 18:04:27.836 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2370015831785472 result:0 Qtime:4
+2019-12-17 18:04:28.174 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:333
+2019-12-17 18:04:28.236 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504042534420480 result:0 Qtime:7
+2019-12-17 18:04:28.605 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 18:04:28.645 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504042532454400 result:0 Qtime:9
+2019-12-17 18:04:29.023 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:374
+2019-12-17 18:04:29.062 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504042530701312 result:0 Qtime:4
+2019-12-17 18:04:29.432 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 18:04:29.480 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504042515218432 result:0 Qtime:9
+2019-12-17 18:04:29.790 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:308
+2019-12-17 18:04:29.830 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504042514857984 result:0 Qtime:6
+2019-12-17 18:04:30.260 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:427
+2019-12-17 18:04:30.306 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3492757486551040 result:0 Qtime:7
+2019-12-17 18:04:30.666 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 18:04:30.715 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339985474764800 result:0 Qtime:10
+2019-12-17 18:04:30.984 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:267
+2019-12-17 18:04:31.025 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339985468833792 result:0 Qtime:5
+2019-12-17 18:04:31.393 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2019-12-17 18:04:31.435 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339980789415936 result:0 Qtime:3
+2019-12-17 18:04:31.802 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:364
+2019-12-17 18:04:31.851 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339980585533440 result:0 Qtime:9
+2019-12-17 18:04:32.228 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:374
+2019-12-17 18:04:32.268 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339980580290560 result:0 Qtime:7
+2019-12-17 18:04:32.595 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:323
+2019-12-17 18:04:32.643 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339980574490624 result:0 Qtime:5
+2019-12-17 18:04:32.913 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:265
+2019-12-17 18:04:32.961 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:2339980568395776 result:0 Qtime:5
+2019-12-17 18:04:33.257 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:292
+2019-12-17 18:05:31.190 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504043224809472 result:0 Qtime:2
+2019-12-17 18:05:32.016 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:821
+2019-12-17 18:05:32.060 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3511234366046208 result:0 Qtime:9
+2019-12-17 18:05:32.420 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:05:32.469 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3491440834805760 result:0 Qtime:7
+2019-12-17 18:05:32.747 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:274
+2019-12-17 18:05:32.786 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484252086730752 result:0 Qtime:8
+2019-12-17 18:05:33.063 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:271
+2019-12-17 18:05:33.103 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248132091904 result:0 Qtime:9
+2019-12-17 18:05:33.422 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:315
+2019-12-17 18:05:33.462 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248128552960 result:0 Qtime:3
+2019-12-17 18:05:33.882 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:414
+2019-12-17 18:05:33.914 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482884473815040 result:0 Qtime:0
+2019-12-17 18:05:34.265 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:347
+2019-12-17 18:05:34.296 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482871358373888 result:0 Qtime:5
+2019-12-17 18:05:34.607 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:307
+2019-12-17 18:05:34.655 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832057319424 result:0 Qtime:3
+2019-12-17 18:05:34.974 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:317
+2019-12-17 18:05:35.014 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832053190656 result:0 Qtime:6
+2019-12-17 18:05:35.411 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:394
+2019-12-17 18:05:35.449 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832049225728 result:0 Qtime:10
+2019-12-17 18:05:35.801 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:349
+2019-12-17 18:05:35.841 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482799144026112 result:0 Qtime:8
+2019-12-17 18:05:36.202 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:05:36.233 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482805109751808 result:0 Qtime:3
+2019-12-17 18:05:36.596 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 18:05:36.635 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464027567521792 result:0 Qtime:4
+2019-12-17 18:05:36.995 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:05:37.027 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464024107778048 result:0 Qtime:3
+2019-12-17 18:05:37.413 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:383
+2019-12-17 18:05:37.452 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464018284298240 result:0 Qtime:7
+2019-12-17 18:05:37.805 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:348
+2019-12-17 18:05:37.853 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017871863808 result:0 Qtime:9
+2019-12-17 18:05:38.147 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:290
+2019-12-17 18:05:38.187 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017068654592 result:0 Qtime:4
+2019-12-17 18:05:38.486 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:291
+2019-12-17 18:05:38.529 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464005065949184 result:0 Qtime:9
+2019-12-17 18:05:38.958 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:427
+2019-12-17 18:05:38.996 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464002496364544 result:0 Qtime:9
+2019-12-17 18:05:39.357 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 18:05:39.397 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482775644913664 result:0 Qtime:2
+2019-12-17 18:05:39.758 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:358
+2019-12-17 18:05:39.839 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482721566130176 result:0 Qtime:51
+2019-12-17 18:05:40.200 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2019-12-17 18:05:40.240 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482872840781824 result:0 Qtime:7
+2019-12-17 18:05:40.600 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:05:40.640 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686780243968 result:0 Qtime:6
+2019-12-17 18:05:41.010 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 18:05:41.042 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686775181312 result:0 Qtime:5
+2019-12-17 18:05:41.303 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:257
+2019-12-17 18:05:41.334 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696607842304 result:0 Qtime:5
+2019-12-17 18:05:41.684 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:340
+2019-12-17 18:05:41.759 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696601239552 result:0 Qtime:11
+2019-12-17 18:05:42.122 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:358
+2019-12-17 18:05:42.170 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696594997248 result:0 Qtime:5
+2019-12-17 18:05:42.523 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:349
+2019-12-17 18:05:42.569 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482695442939904 result:0 Qtime:6
+2019-12-17 18:05:42.838 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:266
+2019-12-17 18:05:42.878 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482694493503488 result:0 Qtime:4
+2019-12-17 18:05:43.239 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:355
+2019-12-17 18:05:43.278 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482641322459136 result:0 Qtime:5
+2019-12-17 18:05:43.639 [http-nio-7000-exec-1] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:07:39.267 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 18:07:39.267 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 0 subscriber(s).
+2019-12-17 18:07:39.267 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-17 18:07:39.271 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-17 18:07:39.273 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-12-17 18:07:39.273 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2019-12-17 18:07:41.323 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 6300 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 18:07:41.323 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 18:07:44.329 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 18:07:45.355 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 18:07:45.466 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 18:07:45.467 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 18:07:45.879 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 18:07:45.879 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 18:07:45.906 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 18:07:47.691 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 18:07:53.053 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 18:07:53.053 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 18:07:53.053 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 18:07:53.054 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 18:07:53.054 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 18:07:53.054 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 18:07:53.054 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 18:07:53.054 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 18:07:53.054 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 18:07:53.124 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@601f7ce0, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ece55ea, org.springframework.security.web.header.HeaderWriterFilter@1f285bea, org.springframework.security.web.csrf.CsrfFilter@750eaa22, org.springframework.security.web.authentication.logout.LogoutFilter@6c560817, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@27b31cf0, org.springframework.security.web.session.ConcurrentSessionFilter@352f5b72, org.springframework.security.web.session.ConcurrentSessionFilter@3e975ae2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13e4a0d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68921fad, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5e8ad6d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a4485bb, org.springframework.security.web.session.SessionManagementFilter@3ec8b8a3, org.springframework.security.web.access.ExceptionTranslationFilter@47e6f9fb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c5326cf]
+2019-12-17 18:07:53.547 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 18:07:54.379 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 18:07:54.381 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 18:07:54.386 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 18:07:54.390 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 18:07:54.390 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 18:07:54.390 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 18:08:00.210 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 18:08:00.210 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 18:08:00.212 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 18:08:00.235 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 18:08:00.236 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 19.152 seconds (JVM running for 1824.042)
+2019-12-17 18:10:18.595 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 18:10:18.910 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 18:10:18.911 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 18:10:18.911 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 18:10:18.911 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 18:10:18.911 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 18:10:18.912 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 18:10:23.371 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 18:10:23.371 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 18:10:23.378 [http-nio-7000-exec-5] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 18:13:13.836 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 920 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 18:13:13.854 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 18:13:19.447 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 18:13:20.746 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 18:13:21.342 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 18:13:21.348 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 18:13:23.859 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 18:13:23.861 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 18:13:24.051 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 18:13:27.395 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 18:13:38.774 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 18:13:38.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 18:13:39.053 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@657282f3, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f69e6b5, org.springframework.security.web.header.HeaderWriterFilter@7cd3d6ab, org.springframework.security.web.csrf.CsrfFilter@2144b2e6, org.springframework.security.web.authentication.logout.LogoutFilter@2577b9b3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1df0ba3e, org.springframework.security.web.session.ConcurrentSessionFilter@7d4bf529, org.springframework.security.web.session.ConcurrentSessionFilter@5ecd7284, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a37f8e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@45557e0d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3a79bde9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73c9687, org.springframework.security.web.session.SessionManagementFilter@79c1a72a, org.springframework.security.web.access.ExceptionTranslationFilter@334d5c74, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@76f53429]
+2019-12-17 18:13:40.507 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 18:13:41.743 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 18:13:41.749 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 18:13:41.795 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 18:13:41.803 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 18:13:41.804 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 18:13:41.804 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 18:13:50.395 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 18:13:50.421 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 18:13:50.432 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 18:13:50.479 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 18:13:50.486 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 37.214 seconds (JVM running for 38.682)
+2019-12-17 18:14:13.858 [http-nio-7000-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 18:14:15.236 [http-nio-7000-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 18:14:15.302 [http-nio-7000-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 18:14:15.302 [http-nio-7000-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 18:14:15.303 [http-nio-7000-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 18:14:15.303 [http-nio-7000-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 18:14:15.308 [http-nio-7000-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 18:19:36.196 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 18:19:36.196 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 18:19:36.206 [http-nio-7000-exec-3] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 18:27:05.442 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 2356 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2019-12-17 18:27:05.485 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2019-12-17 18:27:10.841 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-17 18:27:12.163 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-17 18:27:12.821 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-17 18:27:12.828 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-17 18:27:15.297 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2019-12-17 18:27:15.298 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2019-12-17 18:27:15.504 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-17 18:27:18.865 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-17 18:27:30.695 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-17 18:27:30.696 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-17 18:27:30.700 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-17 18:27:30.965 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3571dc5d, org.springframework.security.web.context.SecurityContextPersistenceFilter@2d8d7562, org.springframework.security.web.header.HeaderWriterFilter@69001264, org.springframework.security.web.csrf.CsrfFilter@1ea8f0ac, org.springframework.security.web.authentication.logout.LogoutFilter@46f6f580, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6af98cd1, org.springframework.security.web.session.ConcurrentSessionFilter@13484126, org.springframework.security.web.session.ConcurrentSessionFilter@72318a24, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11b3478e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70363e04, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5c1b0e19, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4eb9f5f8, org.springframework.security.web.session.SessionManagementFilter@7e4ff000, org.springframework.security.web.access.ExceptionTranslationFilter@253250b8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7093321d]
+2019-12-17 18:27:32.454 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-17 18:27:33.586 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-12-17 18:27:33.592 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-12-17 18:27:33.603 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2019-12-17 18:27:33.615 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-17 18:27:33.615 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2019-12-17 18:27:33.615 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-17 18:27:41.935 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2019-12-17 18:27:41.958 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2019-12-17 18:27:41.971 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-12-17 18:27:42.028 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-17 18:27:42.034 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 37.143 seconds (JVM running for 38.666)
+2019-12-17 18:27:53.412 [http-nio-7000-exec-10] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-12-17 18:27:54.883 [http-nio-7000-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2019-12-17 18:27:54.956 [http-nio-7000-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2019-12-17 18:27:54.956 [http-nio-7000-exec-8] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2019-12-17 18:27:54.956 [http-nio-7000-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2019-12-17 18:27:54.956 [http-nio-7000-exec-8] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2019-12-17 18:27:54.961 [http-nio-7000-exec-8] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2019-12-17 18:27:59.966 [http-nio-7000-exec-6] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2019-12-17 18:27:59.967 [http-nio-7000-exec-6] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2019-12-17 18:27:59.980 [http-nio-7000-exec-6] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2019-12-17 18:28:33.177 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3504043224809472 result:0 Qtime:2
+2019-12-17 18:28:34.019 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:834
+2019-12-17 18:28:41.877 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3511234366046208 result:0 Qtime:1
+2019-12-17 18:28:42.253 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:371
+2019-12-17 18:28:42.284 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3491440834805760 result:0 Qtime:3
+2019-12-17 18:28:42.653 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:365
+2019-12-17 18:28:42.693 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484252086730752 result:0 Qtime:3
+2019-12-17 18:28:43.063 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2019-12-17 18:28:43.110 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248132091904 result:0 Qtime:10
+2019-12-17 18:28:43.473 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:358
+2019-12-17 18:28:43.529 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484248128552960 result:0 Qtime:11
+2019-12-17 18:28:43.858 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:326
+2019-12-17 18:28:43.904 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482884473815040 result:0 Qtime:5
+2019-12-17 18:28:44.156 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:248
+2019-12-17 18:28:44.187 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482871358373888 result:0 Qtime:0
+2019-12-17 18:28:44.450 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:258
+2019-12-17 18:28:44.490 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832057319424 result:0 Qtime:6
+2019-12-17 18:28:44.757 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:264
+2019-12-17 18:28:44.798 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832053190656 result:0 Qtime:3
+2019-12-17 18:28:45.133 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:332
+2019-12-17 18:28:45.165 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482832049225728 result:0 Qtime:4
+2019-12-17 18:28:45.425 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:248
+2019-12-17 18:28:45.465 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482799144026112 result:0 Qtime:7
+2019-12-17 18:28:45.734 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:265
+2019-12-17 18:28:45.766 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482805109751808 result:0 Qtime:5
+2019-12-17 18:28:46.110 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:340
+2019-12-17 18:28:46.141 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464027567521792 result:0 Qtime:4
+2019-12-17 18:28:46.512 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2019-12-17 18:28:46.550 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464024107778048 result:0 Qtime:3
+2019-12-17 18:28:46.905 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:348
+2019-12-17 18:28:46.968 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464018284298240 result:0 Qtime:5
+2019-12-17 18:28:47.236 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:265
+2019-12-17 18:28:47.276 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017871863808 result:0 Qtime:8
+2019-12-17 18:28:47.537 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:257
+2019-12-17 18:28:47.577 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464017068654592 result:0 Qtime:3
+2019-12-17 18:28:47.837 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:256
+2019-12-17 18:28:47.869 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464005065949184 result:0 Qtime:3
+2019-12-17 18:28:48.188 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:314
+2019-12-17 18:28:48.228 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3464002496364544 result:0 Qtime:10
+2019-12-17 18:28:48.540 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:307
+2019-12-17 18:28:48.580 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482775644913664 result:0 Qtime:7
+2019-12-17 18:28:48.940 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:28:49.005 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482721566130176 result:0 Qtime:3
+2019-12-17 18:28:49.299 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:290
+2019-12-17 18:28:49.331 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482872840781824 result:0 Qtime:6
+2019-12-17 18:28:49.635 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:300
+2019-12-17 18:28:49.698 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686780243968 result:0 Qtime:30
+2019-12-17 18:28:50.128 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:426
+2019-12-17 18:28:50.167 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482686775181312 result:0 Qtime:6
+2019-12-17 18:28:50.492 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:321
+2019-12-17 18:28:50.531 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696607842304 result:0 Qtime:5
+2019-12-17 18:28:50.809 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:275
+2019-12-17 18:28:50.912 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696601239552 result:0 Qtime:45
+2019-12-17 18:28:51.194 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:274
+2019-12-17 18:28:51.242 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482696594997248 result:0 Qtime:5
+2019-12-17 18:28:51.560 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:316
+2019-12-17 18:28:51.600 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482695442939904 result:0 Qtime:9
+2019-12-17 18:28:51.961 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:28:52.001 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482694493503488 result:0 Qtime:10
+2019-12-17 18:28:52.362 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2019-12-17 18:28:52.410 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482641322459136 result:0 Qtime:10
+2019-12-17 18:28:52.771 [http-nio-7000-exec-4] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html  layout:decorator="/common/layout_dialog">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/manifest/share.css" />
+</section>
+<body>
+<section layout:fragment="main">
+	<div class="page-container" >
+		<div class="Share_con">
+			<!--左-->
+			<div class="Share_con_left" id="shareList">
+				<!--title-->
+				<div class="Share_con_left_title">
+					<span>选择用户</span>
+				</div>
+				<!--搜索框-->
+				<form action="/manifestAuth/share">
+					<input type="search" placeholder="请输入用户名称" class="input-text radius size-L search"></input>
+					<i class="Hui-iconfont icon_search" id="searchBtn">&#xe709;</i>
+				</form>
+				<!--复选框-->						
+			</div>
+			<!--右-->
+			<div class="Share_con_right"  id="rightList">
+				<div class="Share_con_right_title">
+					<span class='already'></span>
+					<span class="empty">清空</span>
+				</div>
+			</div>
+
+		</div>
+		<div class="Share_btn">
+			<input class="btn btn-primary-outline radius cancel" type="button" value="取消"></input>
+			<input class="btn btn-primary radius ok" type="button" value="确定"></input>
+		</div>
+	</div>
+	</section>
+	<section  layout:fragment="my">
+			<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+			<script type="text/javascript"  charset="utf-8" src="/js/manifestAuth/share.js"></script>
+			<script id="shareListTmp" type="text/x-jquery-tmpl">
+			{{each(i,item) list}} 
+				<div class="skin-minimal">					
+					<div class="check-box">
+						{{if hasId(arr,item.id)}}							
+							<input type="checkbox" data-id="${item.id}" id="checkbox-${i+1}"  checked='checked' ></input>
+						{{else}}
+							<input type="checkbox" data-id="${item.id}" id="checkbox-${i+1}"></input>
+						{{/if}}
+						<label for="checkbox-${i+1}">${item.displayName}</label>
+					</div>
+				</div>				
+			{{/each}}
+			</script>
+	</section>
+</body>
+</html>

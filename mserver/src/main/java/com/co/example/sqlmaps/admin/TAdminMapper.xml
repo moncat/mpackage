@@ -11,6 +11,7 @@
     <result column="visit_count" jdbcType="SMALLINT" property="visitCount" />
     <result column="last_time" jdbcType="TIMESTAMP" property="lastTime" />
     <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="page_version" jdbcType="VARCHAR" property="pageVersion" />
     <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="create_by" jdbcType="BIGINT" property="createBy" />
@@ -21,7 +22,8 @@
   </resultMap>
   <sql id="Base_Column_List">
     id, login_name, display_name, password, email, mobile_phone, visit_count, last_time, 
-    last_ip, item_order, create_time, create_by, update_time, update_by, is_active, del_flg
+    last_ip, page_version, item_order, create_time, create_by, update_time, update_by, 
+    is_active, del_flg
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -40,15 +42,15 @@
     insert into t_admin (id, login_name, display_name, 
       password, email, mobile_phone, 
       visit_count, last_time, last_ip, 
-      item_order, create_time, create_by, 
-      update_time, update_by, is_active, 
-      del_flg)
+      page_version, item_order, create_time, 
+      create_by, update_time, update_by, 
+      is_active, del_flg)
     values (#{id,jdbcType=BIGINT}, #{loginName,jdbcType=VARCHAR}, #{displayName,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
       #{visitCount,jdbcType=SMALLINT}, #{lastTime,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR}, 
-      #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, #{isActive,jdbcType=TINYINT}, 
-      #{delFlg,jdbcType=TINYINT})
+      #{pageVersion,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.admin.TAdmin">
     update t_admin
@@ -76,6 +78,9 @@
       </if>
       <if test="lastIp != null">
         last_ip = #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="pageVersion != null">
+        page_version = #{pageVersion,jdbcType=VARCHAR},
       </if>
       <if test="itemOrder != null">
         item_order = #{itemOrder,jdbcType=INTEGER},
@@ -111,6 +116,7 @@
       visit_count = #{visitCount,jdbcType=SMALLINT},
       last_time = #{lastTime,jdbcType=TIMESTAMP},
       last_ip = #{lastIp,jdbcType=VARCHAR},
+      page_version = #{pageVersion,jdbcType=VARCHAR},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
@@ -155,6 +161,9 @@
       </if>
       <if test="lastIp != null">
           and t.last_ip = #{lastIp,jdbcType=VARCHAR}
+      </if>
+      <if test="pageVersion != null">
+          and t.page_version = #{pageVersion,jdbcType=VARCHAR}
       </if>
       <if test="itemOrder != null">
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
@@ -218,6 +227,7 @@
     t.visit_count, 
     t.last_time, 
     t.last_ip, 
+    t.page_version, 
     t.item_order, 
     t.create_time, 
     t.create_by, 
@@ -229,10 +239,10 @@
   		  ,tar.role_id
      </if>
   </sql>
-  <sql id="Vo_Where_Clause">
-    <!-- <if test="queryBeanField != null" > -->
-    <!-- and dbField = #{queryBeanField,jdbcType=dbFieldStyle} -->
-    <!-- </if> -->
+  <sql id="Vo_Where_Clause">   
+    <if test="nameLike != null">
+	   and t.display_name like concat('%',#{nameLike,jdbcType=VARCHAR},'%')
+	</if>
   </sql>
   <sql id="Table_Join_Clause">
     <if test="roleId !=null">
@@ -240,3 +250,4 @@
      </if>
   </sql>
 </mapper>
+    

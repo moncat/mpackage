@@ -180,7 +180,7 @@
       <if test="description != null" >
           and t.description = #{description,jdbcType=VARCHAR}
       </if>
-      <if test="isChoice != null" >
+      <if test="isChoice != null and isChoice !=0" >
           and t.is_choice = #{isChoice,jdbcType=TINYINT}
       </if>
       <if test="itemOrder != null" >
@@ -267,6 +267,16 @@
      <if test="labelId != null">
           and  ilj.label_id = #{labelId,jdbcType=BIGINT}
       </if>
+       <if test="isChoice == 0" >
+       and  (is_choice is null or is_choice = 0 )
+     </if> 
+     
+     <if test="timeLmit1 != null" >
+          and t.create_time &gt; #{timeLmit1,jdbcType=TIMESTAMP}
+      </if>
+      <if test="timeLmit2 != null" >
+          and t.create_time &lt; #{timeLmit2,jdbcType=TIMESTAMP}
+      </if>
   </sql>
   <sql id="Table_Join_Clause">
 	  <if test="joinFlg">
@@ -275,6 +285,7 @@
       <if test="labelId != null">
           LEFT JOIN t_br_ingredient_label_join ilj ON t.id = ilj.ingredient_id
       </if>
+      
   </sql>
   
     
@@ -298,6 +309,5 @@
 			confirm_date DESC	
 
   </select>
-  
   
 </mapper>

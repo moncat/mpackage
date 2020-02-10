@@ -1,0 +1,23 @@
+.aside-bg {
+			background-color: #1e1e27;
+		}
+		
+		.aside-bg .menu_dropdown dt {
+			border-bottom: none;
+			line-height: 42px;
+		}
+		.aside-bg .menu_dropdown dt:hover span{
+			color: #fff;
+		}
+		.aside-bg span {
+			color: #959598;
+		}
+		
+		.Hui-aside .menu_dropdown li a i {
+		    color: #959598;
+		}
+		
+		
+		.aside-bg span {
+			padding-left: 10px;
+		}

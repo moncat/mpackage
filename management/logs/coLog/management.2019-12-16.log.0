@@ -1,0 +1,962 @@
+2019-12-16 09:34:48.498 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 09:34:49.680 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 9460 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 09:34:49.681 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2019-12-16 09:34:54.841 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 09:34:55.634 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 09:34:56.354 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 09:34:56.371 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 09:35:04.976 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 09:35:07.976 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 09:35:07.977 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 09:35:08.132 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8ad182c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6b468710, org.springframework.security.web.header.HeaderWriterFilter@3ca9d3b2, org.springframework.security.web.csrf.CsrfFilter@4a977146, org.springframework.security.web.authentication.logout.LogoutFilter@10f384a2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@9863ed5, org.springframework.security.web.session.ConcurrentSessionFilter@7e84af34, org.springframework.security.web.session.ConcurrentSessionFilter@68fc1e7f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3da55998, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5542418c, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@28befd62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@218e186b, org.springframework.security.web.session.SessionManagementFilter@2af31aba, org.springframework.security.web.access.ExceptionTranslationFilter@489b7559, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fc84c92]
+2019-12-16 09:35:09.507 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 09:35:10.034 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:35:10.035 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 09:35:10.038 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 09:35:17.669 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 09:35:17.671 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 28.703 seconds (JVM running for 30.48)
+2019-12-16 09:35:18.156 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**delAll**************
+2019-12-16 09:35:19.676 [main] INFO  com.co.example.DataTest20SolrAllData - **************end**delAll*************
+2019-12-16 09:35:19.810 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:35:19.810 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 09:35:19.811 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 09:35:19.813 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 09:36:25.981 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 09:36:26.904 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 10040 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 09:36:26.904 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2019-12-16 09:36:31.291 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 09:36:32.107 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 09:36:32.796 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 09:36:32.801 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 09:36:41.282 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 09:36:44.790 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 09:36:45.030 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b55652a, org.springframework.security.web.context.SecurityContextPersistenceFilter@747b8f5c, org.springframework.security.web.header.HeaderWriterFilter@50177966, org.springframework.security.web.csrf.CsrfFilter@26c349fc, org.springframework.security.web.authentication.logout.LogoutFilter@17e7cc67, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@625430f8, org.springframework.security.web.session.ConcurrentSessionFilter@8c54f48, org.springframework.security.web.session.ConcurrentSessionFilter@7048d039, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23c24c0e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6db160b4, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3fb54673, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@119f02d2, org.springframework.security.web.session.SessionManagementFilter@1c63b39a, org.springframework.security.web.access.ExceptionTranslationFilter@62cbe18c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56d4481f]
+2019-12-16 09:36:46.678 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 09:36:47.642 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:36:47.643 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 09:36:47.643 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 09:36:55.355 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 09:36:55.360 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 29.052 seconds (JVM running for 30.598)
+2019-12-16 09:36:56.025 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addSolrData**************
+2019-12-16 09:37:00.912 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中-49
+2019-12-16 09:37:00.912 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步数据完毕
+2019-12-16 09:37:00.912 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addSolrData**************
+2019-12-16 09:37:00.936 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:37:00.963 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 09:37:00.963 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 09:37:00.975 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 09:41:25.265 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 09:41:26.039 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 10032 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 09:41:26.039 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 09:41:29.915 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 09:41:30.687 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 09:41:31.396 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 09:41:31.409 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 09:41:39.735 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 09:41:43.045 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 09:41:43.263 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4075c0d8, org.springframework.security.web.context.SecurityContextPersistenceFilter@119de68f, org.springframework.security.web.header.HeaderWriterFilter@5f0c45ae, org.springframework.security.web.csrf.CsrfFilter@6d58ed12, org.springframework.security.web.authentication.logout.LogoutFilter@f1e8753, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5014ccf9, org.springframework.security.web.session.ConcurrentSessionFilter@3670af2b, org.springframework.security.web.session.ConcurrentSessionFilter@2c2dfde3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c541b00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13c36d48, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@362109d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c8537e9, org.springframework.security.web.session.SessionManagementFilter@f1b006b, org.springframework.security.web.access.ExceptionTranslationFilter@5207747c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d8f65a1]
+2019-12-16 09:41:44.838 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 09:41:45.681 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:41:45.682 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 09:41:45.683 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 09:41:53.796 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 09:41:53.801 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 28.229 seconds (JVM running for 29.569)
+2019-12-16 09:41:53.861 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 09:41:54.050 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 09:41:54.074 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:41:54.075 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 09:41:54.075 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 09:41:54.081 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 09:42:30.283 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 09:42:31.682 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 1520 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 09:42:31.683 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 09:42:35.313 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 09:42:36.073 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 09:42:36.821 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 09:42:36.827 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 09:42:45.664 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 09:42:49.218 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 09:42:49.443 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4075c0d8, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a3e1b5d, org.springframework.security.web.header.HeaderWriterFilter@769d0ef2, org.springframework.security.web.csrf.CsrfFilter@3d94b49d, org.springframework.security.web.authentication.logout.LogoutFilter@1f26bd62, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5014ccf9, org.springframework.security.web.session.ConcurrentSessionFilter@3670af2b, org.springframework.security.web.session.ConcurrentSessionFilter@c53c04e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64abb917, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@529cd3ba, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@362109d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c8537e9, org.springframework.security.web.session.SessionManagementFilter@6da14f7f, org.springframework.security.web.access.ExceptionTranslationFilter@53c39950, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d8f65a1]
+2019-12-16 09:42:51.074 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 09:42:51.974 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:42:51.975 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 09:42:51.975 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 09:43:03.302 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 09:43:03.307 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 32.634 seconds (JVM running for 34.062)
+2019-12-16 09:43:03.369 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 09:43:03.518 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 09:43:03.535 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:43:03.536 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 09:43:03.536 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 09:43:03.539 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 09:43:38.695 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 09:43:39.473 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 7384 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 09:43:39.473 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 09:43:43.278 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 09:43:44.086 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 09:43:44.778 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 09:43:44.784 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 09:43:53.899 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 09:43:57.361 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 09:43:57.361 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 09:43:57.362 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 09:43:57.620 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23ba2c1e, org.springframework.security.web.context.SecurityContextPersistenceFilter@54632794, org.springframework.security.web.header.HeaderWriterFilter@2b26d289, org.springframework.security.web.csrf.CsrfFilter@7a14d8a4, org.springframework.security.web.authentication.logout.LogoutFilter@1efa258e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44872224, org.springframework.security.web.session.ConcurrentSessionFilter@5ed1bc4f, org.springframework.security.web.session.ConcurrentSessionFilter@526a1b51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@303a484e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@be56353, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@682fc714, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63b334fd, org.springframework.security.web.session.SessionManagementFilter@3a33d655, org.springframework.security.web.access.ExceptionTranslationFilter@4c3125ff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17db90a7]
+2019-12-16 09:43:59.431 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 09:44:00.298 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:44:00.298 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 09:44:00.298 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 09:44:07.932 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 09:44:07.936 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 28.931 seconds (JVM running for 30.311)
+2019-12-16 09:44:07.990 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 09:44:08.179 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 09:44:08.193 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 09:44:08.211 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 09:44:08.211 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 09:44:08.215 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 16:01:59.293 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 16:02:00.474 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 9424 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 16:02:00.474 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2019-12-16 16:02:04.945 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 16:02:06.506 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 16:02:07.276 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 16:02:07.284 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 16:02:15.268 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 16:02:18.201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 16:02:18.201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 16:02:18.201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 16:02:18.201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 16:02:18.201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 16:02:18.201 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 16:02:18.202 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 16:02:18.202 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 16:02:18.202 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 16:02:18.397 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5542418c, org.springframework.security.web.context.SecurityContextPersistenceFilter@3220833f, org.springframework.security.web.header.HeaderWriterFilter@68722de3, org.springframework.security.web.csrf.CsrfFilter@21f94fe3, org.springframework.security.web.authentication.logout.LogoutFilter@451cef67, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3da55998, org.springframework.security.web.session.ConcurrentSessionFilter@705eb026, org.springframework.security.web.session.ConcurrentSessionFilter@672f69f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c862522, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fe77a97, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@33197c2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8de4206, org.springframework.security.web.session.SessionManagementFilter@4529048e, org.springframework.security.web.access.ExceptionTranslationFilter@45b2d17b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b468710]
+2019-12-16 16:02:19.752 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 16:02:20.164 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 16:02:20.165 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 16:02:20.167 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 16:02:26.898 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 16:02:26.899 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 27.093 seconds (JVM running for 29.277)
+2019-12-16 16:02:27.059 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addSolrData**************
+2019-12-16 16:02:32.042 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中-49
+2019-12-16 16:02:32.042 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步数据完毕
+2019-12-16 16:02:32.042 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addSolrData**************
+2019-12-16 16:02:32.056 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 16:02:32.058 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 16:02:32.058 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 16:02:32.066 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 16:49:02.550 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 16:49:03.615 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 10928 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 16:49:03.615 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2019-12-16 16:49:07.751 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 16:49:08.519 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 16:49:10.600 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 16:49:10.606 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 16:49:20.169 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 16:49:23.823 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 16:49:23.824 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 16:49:24.033 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63b4a896, org.springframework.security.web.context.SecurityContextPersistenceFilter@31d64d0f, org.springframework.security.web.header.HeaderWriterFilter@39a8c08f, org.springframework.security.web.csrf.CsrfFilter@d20e900, org.springframework.security.web.authentication.logout.LogoutFilter@77d03738, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e40edb7, org.springframework.security.web.session.ConcurrentSessionFilter@3feeab43, org.springframework.security.web.session.ConcurrentSessionFilter@7725470b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47fb30ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@258ff54a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@282c0891, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6178ac9d, org.springframework.security.web.session.SessionManagementFilter@794b139b, org.springframework.security.web.access.ExceptionTranslationFilter@3803bc1a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b8e6981]
+2019-12-16 16:49:25.788 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 16:49:26.664 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 16:49:26.665 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 16:49:26.665 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 16:49:34.747 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 16:49:34.753 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 31.867 seconds (JVM running for 34.0)
+2019-12-16 16:49:34.837 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**delAll**************
+2019-12-16 16:49:36.134 [main] INFO  com.co.example.DataTest20SolrAllData - **************end**delAll*************
+2019-12-16 16:49:36.169 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 16:49:36.169 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 16:49:36.171 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 16:49:36.178 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:03:43.577 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:03:45.230 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 11308 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:03:45.231 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2019-12-16 17:03:48.349 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:03:49.119 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:03:50.251 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:03:50.256 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:03:59.382 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:04:03.027 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:04:03.263 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61799152, org.springframework.security.web.context.SecurityContextPersistenceFilter@9d4d221, org.springframework.security.web.header.HeaderWriterFilter@2b57dc2, org.springframework.security.web.csrf.CsrfFilter@4945cd1f, org.springframework.security.web.authentication.logout.LogoutFilter@1f612968, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@466f7259, org.springframework.security.web.session.ConcurrentSessionFilter@5c39da9e, org.springframework.security.web.session.ConcurrentSessionFilter@238cac6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3129792a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@619944a7, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@47c06b1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e38b953, org.springframework.security.web.session.SessionManagementFilter@67857a20, org.springframework.security.web.access.ExceptionTranslationFilter@7b3d3d3d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ab5954d]
+2019-12-16 17:04:04.848 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:04:05.731 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:04:05.731 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:04:05.731 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:04:13.737 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:04:13.739 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 29.714 seconds (JVM running for 31.787)
+2019-12-16 17:04:13.825 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addSolrData**************
+2019-12-16 17:04:15.482 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--需要同步1673028
+2019-12-16 17:05:29.295 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1668028
+2019-12-16 17:05:29.296 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步数据完毕
+2019-12-16 17:05:29.296 [main] INFO  com.co.example.DataTest20SolrAllData - *************end**addSolrData**************
+2019-12-16 17:05:29.357 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:05:29.357 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:05:29.358 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:05:29.367 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:17:27.679 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:17:28.658 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 12952 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:17:28.659 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:17:32.137 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:17:32.914 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:17:33.590 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:17:33.595 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:17:41.989 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:17:44.841 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:17:44.842 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:17:45.031 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c3ae369, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e015ac1, org.springframework.security.web.header.HeaderWriterFilter@21f94fe3, org.springframework.security.web.csrf.CsrfFilter@55c581e4, org.springframework.security.web.authentication.logout.LogoutFilter@458704ee, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2e51ede1, org.springframework.security.web.session.ConcurrentSessionFilter@496c6d94, org.springframework.security.web.session.ConcurrentSessionFilter@1d51b6a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@501b296a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38b7004d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@67730dab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@360d3f47, org.springframework.security.web.session.SessionManagementFilter@1174e173, org.springframework.security.web.access.ExceptionTranslationFilter@7fb1820d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d00e981]
+2019-12-16 17:17:46.312 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:17:46.762 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:17:46.762 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:17:46.762 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:17:53.302 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:17:53.307 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 25.372 seconds (JVM running for 26.546)
+2019-12-16 17:17:53.399 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:17:53.676 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:17:53.912 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:17:53.916 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:17:53.916 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:17:53.919 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:19:37.073 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:19:37.813 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 7836 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:19:37.814 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:19:41.181 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:19:41.937 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:19:42.413 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:19:42.418 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:19:49.755 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:19:52.495 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:19:52.643 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@451cef67, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a7bd9a8, org.springframework.security.web.header.HeaderWriterFilter@24888d8b, org.springframework.security.web.csrf.CsrfFilter@1ac71b87, org.springframework.security.web.authentication.logout.LogoutFilter@21f94fe3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d7d968c, org.springframework.security.web.session.ConcurrentSessionFilter@11fb1691, org.springframework.security.web.session.ConcurrentSessionFilter@42095996, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1832b0f6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fb1820d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5cea47a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f229c40, org.springframework.security.web.session.SessionManagementFilter@55c581e4, org.springframework.security.web.access.ExceptionTranslationFilter@1c09bb7a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64c37088]
+2019-12-16 17:19:53.807 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:19:54.235 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:19:54.235 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:19:54.235 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:20:00.827 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:20:00.828 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 23.533 seconds (JVM running for 24.633)
+2019-12-16 17:20:00.873 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:20:01.106 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:20:01.118 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:20:01.119 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:20:01.119 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:20:01.125 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:36:35.430 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:36:36.327 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 12780 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:36:36.328 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:36:39.898 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:36:40.582 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:36:41.143 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:36:41.147 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:36:48.266 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:36:51.159 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:36:51.159 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:36:51.160 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:36:51.315 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5542418c, org.springframework.security.web.context.SecurityContextPersistenceFilter@3220833f, org.springframework.security.web.header.HeaderWriterFilter@68722de3, org.springframework.security.web.csrf.CsrfFilter@21f94fe3, org.springframework.security.web.authentication.logout.LogoutFilter@451cef67, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3da55998, org.springframework.security.web.session.ConcurrentSessionFilter@705eb026, org.springframework.security.web.session.ConcurrentSessionFilter@672f69f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c862522, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fe77a97, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@33197c2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8de4206, org.springframework.security.web.session.SessionManagementFilter@4529048e, org.springframework.security.web.access.ExceptionTranslationFilter@45b2d17b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b468710]
+2019-12-16 17:36:52.463 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:36:52.860 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:36:52.860 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:36:52.860 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:36:59.319 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:36:59.323 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 23.577 seconds (JVM running for 24.763)
+2019-12-16 17:36:59.378 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:36:59.596 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:36:59.608 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:36:59.609 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:36:59.610 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:36:59.612 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:40:10.535 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:40:11.321 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 13004 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:40:11.321 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:40:19.626 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:40:20.519 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:40:21.144 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:40:21.154 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:40:29.088 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:40:32.053 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:40:32.054 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:40:32.206 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10f60e36, org.springframework.security.web.context.SecurityContextPersistenceFilter@68fc1e7f, org.springframework.security.web.header.HeaderWriterFilter@2f8b48c3, org.springframework.security.web.csrf.CsrfFilter@41dc34c8, org.springframework.security.web.authentication.logout.LogoutFilter@5542418c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a65c40, org.springframework.security.web.session.ConcurrentSessionFilter@8ad182c, org.springframework.security.web.session.ConcurrentSessionFilter@5dc7881d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@496e0f9d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b2fc2c0, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6406b84d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e84af34, org.springframework.security.web.session.SessionManagementFilter@682d8dad, org.springframework.security.web.access.ExceptionTranslationFilter@4028aab2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64de9fa4]
+2019-12-16 17:40:33.355 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:40:33.794 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:40:33.794 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:40:33.795 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:40:44.395 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:40:44.396 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 33.562 seconds (JVM running for 34.765)
+2019-12-16 17:40:44.516 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:40:44.977 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:40:44.990 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:40:44.993 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:40:44.994 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:40:44.999 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:43:10.740 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:43:11.637 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 11936 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:43:11.637 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:43:14.973 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:43:15.759 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:43:16.395 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:43:16.400 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:43:23.643 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:43:26.224 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:43:26.395 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e322108, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e27b77a, org.springframework.security.web.header.HeaderWriterFilter@a1e578f, org.springframework.security.web.csrf.CsrfFilter@2f69d246, org.springframework.security.web.authentication.logout.LogoutFilter@2e015ac1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@215404a1, org.springframework.security.web.session.ConcurrentSessionFilter@3f5e64c9, org.springframework.security.web.session.ConcurrentSessionFilter@5ee95d42, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21f94fe3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d51b6a8, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@41dc34c8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f847d9e, org.springframework.security.web.session.SessionManagementFilter@3f267e1b, org.springframework.security.web.access.ExceptionTranslationFilter@6693818c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11fb1691]
+2019-12-16 17:43:27.511 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:43:27.949 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:43:27.949 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:43:27.950 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:43:35.350 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:43:35.352 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 24.346 seconds (JVM running for 25.469)
+2019-12-16 17:43:35.396 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:43:35.665 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:43:35.708 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:43:35.709 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:43:35.710 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:43:35.712 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:46:23.767 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:46:24.696 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 2332 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:46:24.697 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:46:28.282 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:46:29.050 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:46:29.759 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:46:29.764 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:46:37.824 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:46:41.049 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:46:41.049 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:46:41.049 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:46:41.050 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:46:41.050 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:46:41.050 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:46:41.050 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:46:41.050 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:46:41.050 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:46:41.200 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1693d505, org.springframework.security.web.context.SecurityContextPersistenceFilter@4202276, org.springframework.security.web.header.HeaderWriterFilter@7c1c0892, org.springframework.security.web.csrf.CsrfFilter@42095996, org.springframework.security.web.authentication.logout.LogoutFilter@15afebcc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67730dab, org.springframework.security.web.session.ConcurrentSessionFilter@3d195d15, org.springframework.security.web.session.ConcurrentSessionFilter@2e015ac1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34588991, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@458704ee, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@496c6d94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17b387ef, org.springframework.security.web.session.SessionManagementFilter@1d51b6a8, org.springframework.security.web.access.ExceptionTranslationFilter@21f94fe3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12051d38]
+2019-12-16 17:46:42.447 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:46:42.937 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:46:42.941 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:46:42.941 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:46:50.071 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:46:50.072 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 26.043 seconds (JVM running for 27.254)
+2019-12-16 17:46:50.122 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:46:50.463 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:46:50.526 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:46:50.526 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:46:50.527 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:46:50.529 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:47:41.106 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:47:41.946 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 10676 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:47:41.946 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:47:45.428 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:47:46.210 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:47:46.824 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:47:46.833 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:47:54.134 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:47:57.001 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:47:57.001 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:47:57.001 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:47:57.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:47:57.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:47:57.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:47:57.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:47:57.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:47:57.002 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:47:57.157 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a65c40, org.springframework.security.web.context.SecurityContextPersistenceFilter@17b387ef, org.springframework.security.web.header.HeaderWriterFilter@28f3a218, org.springframework.security.web.csrf.CsrfFilter@64c37088, org.springframework.security.web.authentication.logout.LogoutFilter@3da55998, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4626f584, org.springframework.security.web.session.ConcurrentSessionFilter@4fc84c92, org.springframework.security.web.session.ConcurrentSessionFilter@360d3f47, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4028aab2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@496e0f9d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@64de9fa4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f7bd970, org.springframework.security.web.session.SessionManagementFilter@466cca41, org.springframework.security.web.access.ExceptionTranslationFilter@6265a548, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d6014a7]
+2019-12-16 17:47:58.311 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:47:58.729 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:47:58.731 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:47:58.732 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:48:05.163 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:48:05.164 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 23.774 seconds (JVM running for 24.926)
+2019-12-16 17:48:05.205 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:48:05.395 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:48:05.404 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:48:05.406 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:48:05.406 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:48:05.408 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:50:48.058 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:50:49.088 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 12196 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:50:49.088 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:50:52.697 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:50:53.450 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:50:54.102 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:50:54.107 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:51:01.463 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:51:04.287 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:51:04.445 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@496c6d94, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e755d5f, org.springframework.security.web.header.HeaderWriterFilter@52ab003b, org.springframework.security.web.csrf.CsrfFilter@29088be1, org.springframework.security.web.authentication.logout.LogoutFilter@45b2d17b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@12051d38, org.springframework.security.web.session.ConcurrentSessionFilter@360d3f47, org.springframework.security.web.session.ConcurrentSessionFilter@2b18b308, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4202276, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e25085, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@466cca41, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1693d505, org.springframework.security.web.session.SessionManagementFilter@7c1c0892, org.springframework.security.web.access.ExceptionTranslationFilter@7e27b77a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6265a548]
+2019-12-16 17:51:05.698 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:51:06.150 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:51:06.151 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:51:06.152 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:51:12.489 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:51:12.493 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 24.069 seconds (JVM running for 25.349)
+2019-12-16 17:51:12.542 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:51:12.788 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:51:12.798 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:51:12.801 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:51:12.801 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:51:12.804 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:53:26.499 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:53:27.482 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 12232 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:53:27.482 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:53:31.129 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:53:31.842 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:53:32.456 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:53:32.465 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:53:39.752 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:53:42.617 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:53:42.806 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ba623d1, org.springframework.security.web.context.SecurityContextPersistenceFilter@451cef67, org.springframework.security.web.header.HeaderWriterFilter@74b521c, org.springframework.security.web.csrf.CsrfFilter@501b296a, org.springframework.security.web.authentication.logout.LogoutFilter@1f847d9e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52a0bc48, org.springframework.security.web.session.ConcurrentSessionFilter@2d5435d4, org.springframework.security.web.session.ConcurrentSessionFilter@6fe77a97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f229c40, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@402c415e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@24fc9aa5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6dbdbb69, org.springframework.security.web.session.SessionManagementFilter@6aaf1ce8, org.springframework.security.web.access.ExceptionTranslationFilter@2eb9c7ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10f384a2]
+2019-12-16 17:53:43.954 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:53:44.359 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:53:44.359 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:53:44.359 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:53:50.900 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:53:50.901 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 24.044 seconds (JVM running for 25.422)
+2019-12-16 17:53:50.952 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:53:51.156 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:53:51.166 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:53:51.167 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:53:51.168 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:53:51.172 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:55:36.677 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:55:37.425 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 7136 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:55:37.425 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:55:40.959 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:55:41.777 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:55:42.408 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:55:42.417 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:55:49.823 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:55:52.618 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:55:52.619 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:55:52.770 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a977146, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ee95d42, org.springframework.security.web.header.HeaderWriterFilter@6693818c, org.springframework.security.web.csrf.CsrfFilter@2aa65672, org.springframework.security.web.authentication.logout.LogoutFilter@1d51b6a8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@451cef67, org.springframework.security.web.session.ConcurrentSessionFilter@41dc34c8, org.springframework.security.web.session.ConcurrentSessionFilter@3f267e1b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fb1820d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1174e173, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@215404a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@402c415e, org.springframework.security.web.session.SessionManagementFilter@726e29d, org.springframework.security.web.access.ExceptionTranslationFilter@5bfdc92b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5cea47a1]
+2019-12-16 17:55:53.889 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:55:54.298 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:55:54.298 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:55:54.298 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:56:00.696 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:56:00.697 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 23.763 seconds (JVM running for 24.941)
+2019-12-16 17:56:00.760 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:56:01.037 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:56:01.054 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:56:01.054 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:56:01.055 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:56:01.058 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:57:26.074 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:57:26.924 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 7384 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:57:26.925 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:57:30.317 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:57:31.030 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:57:31.715 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:57:31.720 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:57:39.259 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:57:42.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:57:42.086 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:57:42.242 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24e79a4d, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f26e775, org.springframework.security.web.header.HeaderWriterFilter@1fb61db4, org.springframework.security.web.csrf.CsrfFilter@1d51b6a8, org.springframework.security.web.authentication.logout.LogoutFilter@2d527346, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63c163e1, org.springframework.security.web.session.ConcurrentSessionFilter@5542418c, org.springframework.security.web.session.ConcurrentSessionFilter@74b521c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e5c245d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10df1f34, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5b2fc2c0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@705eb026, org.springframework.security.web.session.SessionManagementFilter@2eb9c7ad, org.springframework.security.web.access.ExceptionTranslationFilter@77aeba9b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@496e0f9d]
+2019-12-16 17:57:43.441 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 17:57:43.874 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:57:43.874 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 17:57:43.874 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 17:57:50.770 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 17:57:50.771 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 24.377 seconds (JVM running for 25.538)
+2019-12-16 17:57:50.819 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 17:57:51.068 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 17:57:51.078 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 17:57:51.083 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 17:57:51.083 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 17:57:51.086 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 17:59:43.318 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 17:59:44.069 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 12840 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 17:59:44.070 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 17:59:47.354 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 17:59:48.081 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 17:59:48.684 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 17:59:48.688 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 17:59:55.809 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 17:59:58.606 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 17:59:58.757 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7575f7e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@4028aab2, org.springframework.security.web.header.HeaderWriterFilter@466cca41, org.springframework.security.web.csrf.CsrfFilter@6f26e775, org.springframework.security.web.authentication.logout.LogoutFilter@1c97c3bb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62f73b0c, org.springframework.security.web.session.ConcurrentSessionFilter@4626f584, org.springframework.security.web.session.ConcurrentSessionFilter@3d195d15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ca9d3b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fd37997, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@46146832, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2396408a, org.springframework.security.web.session.SessionManagementFilter@496c6d94, org.springframework.security.web.access.ExceptionTranslationFilter@4e322108, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fc8163]
+2019-12-16 17:59:59.923 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 18:00:00.349 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 18:00:00.350 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 18:00:00.350 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 18:00:07.547 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 18:00:07.548 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 23.956 seconds (JVM running for 25.108)
+2019-12-16 18:00:07.595 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 18:00:07.818 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 18:00:07.874 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 18:00:07.874 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 18:00:07.874 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 18:00:07.881 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 18:04:51.950 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 18:04:52.786 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 12332 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 18:04:52.787 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 18:04:56.448 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 18:04:57.186 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 18:04:57.753 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 18:04:57.758 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 18:05:05.004 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 18:05:07.702 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 18:05:07.856 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fc8163, org.springframework.security.web.context.SecurityContextPersistenceFilter@6265a548, org.springframework.security.web.header.HeaderWriterFilter@391b03b, org.springframework.security.web.csrf.CsrfFilter@1d4e06bb, org.springframework.security.web.authentication.logout.LogoutFilter@2f8b48c3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1f24e33d, org.springframework.security.web.session.ConcurrentSessionFilter@6c26e588, org.springframework.security.web.session.ConcurrentSessionFilter@3f5e64c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12051d38, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@496c6d94, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@513bec8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62f73b0c, org.springframework.security.web.session.SessionManagementFilter@41dc34c8, org.springframework.security.web.access.ExceptionTranslationFilter@11fb1691, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23f539df]
+2019-12-16 18:05:09.047 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 18:05:09.465 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 18:05:09.465 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 18:05:09.466 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 18:05:16.746 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 18:05:16.747 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 24.577 seconds (JVM running for 25.941)
+2019-12-16 18:05:16.806 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 18:05:17.213 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 18:05:17.621 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 18:05:17.635 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 18:05:17.635 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 18:05:17.642 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 18:10:49.238 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest17Solr]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 18:10:50.018 [main] INFO  com.co.example.DataTest17Solr - Starting DataTest17Solr on SKY-20160518SVB with PID 11292 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 18:10:50.018 [main] INFO  com.co.example.DataTest17Solr - No active profile set, falling back to default profiles: default
+2019-12-16 18:10:53.630 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 18:10:54.363 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 18:10:55.581 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 18:10:55.601 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 18:11:03.352 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 18:11:06.085 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 18:11:06.227 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40ebb56, org.springframework.security.web.context.SecurityContextPersistenceFilter@74b521c, org.springframework.security.web.header.HeaderWriterFilter@37dc7661, org.springframework.security.web.csrf.CsrfFilter@72b6fa98, org.springframework.security.web.authentication.logout.LogoutFilter@10df1f34, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@99af41d, org.springframework.security.web.session.ConcurrentSessionFilter@5b2fc2c0, org.springframework.security.web.session.ConcurrentSessionFilter@2eb9c7ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6aaf1ce8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64c37088, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@63c163e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33197c2f, org.springframework.security.web.session.SessionManagementFilter@64d1f549, org.springframework.security.web.access.ExceptionTranslationFilter@1771d6a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c97c3bb]
+2019-12-16 18:11:07.353 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 18:11:07.777 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 18:11:07.777 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 18:11:07.777 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 18:11:14.330 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 18:11:14.332 [main] INFO  com.co.example.DataTest17Solr - Started DataTest17Solr in 24.809 seconds (JVM running for 26.0)
+2019-12-16 18:11:14.384 [main] INFO  com.co.example.DataTest17Solr - *************start****************
+2019-12-16 18:11:14.672 [main] INFO  com.co.example.DataTest17Solr - *************end****************
+2019-12-16 18:11:14.687 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 18:11:14.687 [Thread-5] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 0 subscriber(s).
+2019-12-16 18:11:14.688 [Thread-5] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2019-12-16 18:11:14.691 [Thread-5] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2019-12-16 21:17:14.225 [main] INFO  o.s.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.co.example.DataTest20SolrAllData]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-16 21:17:15.262 [main] INFO  com.co.example.DataTest20SolrAllData - Starting DataTest20SolrAllData on SKY-20160518SVB with PID 11864 (started by Administrator in D:\Workspaces2\package\management)
+2019-12-16 21:17:15.263 [main] INFO  com.co.example.DataTest20SolrAllData - No active profile set, falling back to default profiles: default
+2019-12-16 21:17:19.359 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2019-12-16 21:17:20.219 [main] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-16 21:17:21.438 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-16 21:17:21.463 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-16 21:17:30.694 [main] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/lubanOrder/addDatas'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2019-12-16 21:17:34.254 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2019-12-16 21:17:34.489 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@377b7798, org.springframework.security.web.context.SecurityContextPersistenceFilter@441798ce, org.springframework.security.web.header.HeaderWriterFilter@52d625bd, org.springframework.security.web.csrf.CsrfFilter@81f9b01, org.springframework.security.web.authentication.logout.LogoutFilter@4f9191c1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5f171392, org.springframework.security.web.session.ConcurrentSessionFilter@50177966, org.springframework.security.web.session.ConcurrentSessionFilter@34986491, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17c3e33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e752a2a, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@62cbe18c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2199e1a4, org.springframework.security.web.session.SessionManagementFilter@3bd7829b, org.springframework.security.web.access.ExceptionTranslationFilter@35fddea2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@329cef32]
+2019-12-16 21:17:36.131 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2019-12-16 21:17:37.035 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-16 21:17:37.035 [main] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:-1.errorChannel' has 1 subscriber(s).
+2019-12-16 21:17:37.036 [main] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2019-12-16 21:17:45.173 [main] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2019-12-16 21:17:45.177 [main] INFO  com.co.example.DataTest20SolrAllData - Started DataTest20SolrAllData in 30.578 seconds (JVM running for 32.504)
+2019-12-16 21:17:45.262 [main] INFO  com.co.example.DataTest20SolrAllData - *************start**addSolrData**************
+2019-12-16 21:17:47.159 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--需要同步1734329
+2019-12-16 21:18:57.974 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1729329
+2019-12-16 21:19:36.926 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1724329
+2019-12-16 21:20:12.761 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1719329
+2019-12-16 21:20:47.626 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1714329
+2019-12-16 21:21:22.999 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1709329
+2019-12-16 21:21:57.561 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1704329
+2019-12-16 21:22:33.209 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1699329
+2019-12-16 21:23:09.324 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1694329
+2019-12-16 21:23:45.211 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1689329
+2019-12-16 21:24:19.550 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1684329
+2019-12-16 21:24:56.016 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1679329
+2019-12-16 21:25:31.596 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1674329
+2019-12-16 21:26:07.211 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1669329
+2019-12-16 21:26:42.941 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1664329
+2019-12-16 21:27:17.735 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1659329
+2019-12-16 21:27:53.355 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1654329
+2019-12-16 21:28:27.884 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1649329
+2019-12-16 21:29:03.627 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1644329
+2019-12-16 21:29:38.706 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1639329
+2019-12-16 21:30:13.100 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1634329
+2019-12-16 21:30:48.080 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1629329
+2019-12-16 21:31:24.053 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1624329
+2019-12-16 21:31:59.970 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1619329
+2019-12-16 21:32:34.795 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1614329
+2019-12-16 21:33:10.674 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1609329
+2019-12-16 21:33:45.868 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1604329
+2019-12-16 21:34:20.922 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1599329
+2019-12-16 21:34:56.263 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1594329
+2019-12-16 21:35:30.774 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1589329
+2019-12-16 21:36:06.428 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1584329
+2019-12-16 21:36:41.519 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1579329
+2019-12-16 21:37:17.412 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1574329
+2019-12-16 21:37:52.363 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1569329
+2019-12-16 21:38:27.169 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1564329
+2019-12-16 21:39:02.180 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1559329
+2019-12-16 21:39:37.156 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1554329
+2019-12-16 21:40:13.973 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1549329
+2019-12-16 21:40:49.374 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1544329
+2019-12-16 21:41:23.928 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1539329
+2019-12-16 21:41:59.811 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1534329
+2019-12-16 21:42:35.018 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1529329
+2019-12-16 21:43:09.961 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1524329
+2019-12-16 21:43:44.693 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1519329
+2019-12-16 21:44:19.905 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1514329
+2019-12-16 21:44:54.787 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1509329
+2019-12-16 21:45:30.950 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1504329
+2019-12-16 21:46:06.923 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1499329
+2019-12-16 21:46:43.185 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1494329
+2019-12-16 21:47:18.287 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1489329
+2019-12-16 21:47:52.978 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1484329
+2019-12-16 21:48:28.683 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1479329
+2019-12-16 21:49:04.384 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1474329
+2019-12-16 21:49:39.246 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1469329
+2019-12-16 21:50:14.636 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1464329
+2019-12-16 21:50:49.740 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1459329
+2019-12-16 21:51:24.653 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1454329
+2019-12-16 21:51:59.668 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1449329
+2019-12-16 21:52:35.108 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1444329
+2019-12-16 21:53:09.430 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1439329
+2019-12-16 21:53:44.385 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1434329
+2019-12-16 21:54:19.490 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1429329
+2019-12-16 21:54:55.442 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1424329
+2019-12-16 21:55:29.704 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1419329
+2019-12-16 21:56:04.491 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1414329
+2019-12-16 21:56:39.094 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1409329
+2019-12-16 21:57:13.999 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1404329
+2019-12-16 21:57:49.971 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1399329
+2019-12-16 21:58:25.991 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1394329
+2019-12-16 21:59:00.720 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1389329
+2019-12-16 21:59:35.360 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1384329
+2019-12-16 22:00:10.180 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1379329
+2019-12-16 22:00:44.820 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1374329
+2019-12-16 22:01:19.072 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1369329
+2019-12-16 22:01:54.672 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1364329
+2019-12-16 22:02:29.431 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1359329
+2019-12-16 22:03:03.763 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1354329
+2019-12-16 22:03:38.908 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1349329
+2019-12-16 22:04:14.387 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1344329
+2019-12-16 22:04:49.816 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1339329
+2019-12-16 22:05:25.735 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1334329
+2019-12-16 22:06:00.704 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1329329
+2019-12-16 22:06:35.925 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1324329
+2019-12-16 22:07:10.355 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1319329
+2019-12-16 22:07:45.231 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1314329
+2019-12-16 22:08:20.456 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1309329
+2019-12-16 22:08:56.109 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1304329
+2019-12-16 22:09:32.414 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1299329
+2019-12-16 22:10:08.139 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1294329
+2019-12-16 22:10:44.164 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1289329
+2019-12-16 22:11:20.061 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1284329
+2019-12-16 22:11:55.983 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1279329
+2019-12-16 22:12:31.347 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1274329
+2019-12-16 22:13:05.568 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1269329
+2019-12-16 22:13:40.487 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1264329
+2019-12-16 22:14:15.274 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1259329
+2019-12-16 22:14:50.829 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1254329
+2019-12-16 22:15:26.419 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1249329
+2019-12-16 22:16:02.069 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1244329
+2019-12-16 22:16:37.950 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1239329
+2019-12-16 22:17:13.405 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1234329
+2019-12-16 22:17:48.586 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1229329
+2019-12-16 22:18:24.863 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1224329
+2019-12-16 22:18:59.677 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1219329
+2019-12-16 22:19:34.482 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1214329
+2019-12-16 22:20:09.796 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1209329
+2019-12-16 22:20:45.225 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1204329
+2019-12-16 22:21:21.911 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1199329
+2019-12-16 22:21:58.189 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1194329
+2019-12-16 22:22:33.318 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1189329
+2019-12-16 22:23:08.868 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1184329
+2019-12-16 22:23:45.714 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1179329
+2019-12-16 22:24:21.893 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1174329
+2019-12-16 22:24:57.753 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1169329
+2019-12-16 22:25:33.842 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1164329
+2019-12-16 22:26:10.326 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1159329
+2019-12-16 22:26:46.398 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1154329
+2019-12-16 22:27:22.946 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1149329
+2019-12-16 22:27:59.171 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1144329
+2019-12-16 22:28:35.106 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1139329
+2019-12-16 22:29:10.770 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1134329
+2019-12-16 22:29:48.878 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1129329
+2019-12-16 22:30:28.434 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1124329
+2019-12-16 22:31:13.444 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1119329
+2019-12-16 22:31:55.513 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1114329
+2019-12-16 22:32:36.159 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1109329
+2019-12-16 22:33:18.486 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1104329
+2019-12-16 22:33:57.722 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1099329
+2019-12-16 22:34:33.575 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1094329
+2019-12-16 22:35:09.420 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1089329
+2019-12-16 22:35:46.011 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1084329
+2019-12-16 22:36:21.608 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1079329
+2019-12-16 22:36:57.330 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1074329
+2019-12-16 22:37:33.536 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1069329
+2019-12-16 22:38:09.110 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1064329
+2019-12-16 22:38:44.384 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1059329
+2019-12-16 22:39:20.314 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1054329
+2019-12-16 22:39:55.620 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1049329
+2019-12-16 22:40:31.616 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1044329
+2019-12-16 22:41:06.814 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1039329
+2019-12-16 22:41:41.593 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1034329
+2019-12-16 22:42:16.768 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1029329
+2019-12-16 22:42:52.080 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1024329
+2019-12-16 22:43:28.086 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1019329
+2019-12-16 22:44:03.858 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1014329
+2019-12-16 22:44:40.096 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1009329
+2019-12-16 22:45:16.113 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中1004329
+2019-12-16 22:45:51.903 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中999329
+2019-12-16 22:46:28.068 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中994329
+2019-12-16 22:47:04.299 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中989329
+2019-12-16 22:47:39.233 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中984329
+2019-12-16 22:48:14.542 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中979329
+2019-12-16 22:48:50.212 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中974329
+2019-12-16 22:49:25.300 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中969329
+2019-12-16 22:50:00.442 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中964329
+2019-12-16 22:50:35.968 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中959329
+2019-12-16 22:51:12.384 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中954329
+2019-12-16 22:51:51.156 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中949329
+2019-12-16 22:52:29.026 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中944329
+2019-12-16 22:53:06.087 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中939329
+2019-12-16 22:53:43.561 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中934329
+2019-12-16 22:54:19.995 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中929329
+2019-12-16 22:54:56.319 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中924329
+2019-12-16 22:55:31.989 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中919329
+2019-12-16 22:56:08.039 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中914329
+2019-12-16 22:56:43.310 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中909329
+2019-12-16 22:57:18.958 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中904329
+2019-12-16 22:57:54.148 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中899329
+2019-12-16 22:58:30.079 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中894329
+2019-12-16 22:59:06.665 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中889329
+2019-12-16 22:59:43.180 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中884329
+2019-12-16 23:00:18.874 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中879329
+2019-12-16 23:00:55.721 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中874329
+2019-12-16 23:01:31.698 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中869329
+2019-12-16 23:02:07.625 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中864329
+2019-12-16 23:02:44.195 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中859329
+2019-12-16 23:03:20.215 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中854329
+2019-12-16 23:03:57.171 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中849329
+2019-12-16 23:04:33.054 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中844329
+2019-12-16 23:05:09.096 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中839329
+2019-12-16 23:05:45.360 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中834329
+2019-12-16 23:06:21.219 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中829329
+2019-12-16 23:06:57.579 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中824329
+2019-12-16 23:07:34.253 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中819329
+2019-12-16 23:08:10.764 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中814329
+2019-12-16 23:08:46.621 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中809329
+2019-12-16 23:09:23.523 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中804329
+2019-12-16 23:10:00.824 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中799329
+2019-12-16 23:10:37.030 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中794329
+2019-12-16 23:11:13.528 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中789329
+2019-12-16 23:11:49.560 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中784329
+2019-12-16 23:12:26.084 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中779329
+2019-12-16 23:13:02.987 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中774329
+2019-12-16 23:13:39.315 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中769329
+2019-12-16 23:14:15.447 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中764329
+2019-12-16 23:14:51.213 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中759329
+2019-12-16 23:15:27.316 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中754329
+2019-12-16 23:16:04.459 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中749329
+2019-12-16 23:16:40.850 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中744329
+2019-12-16 23:17:16.975 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中739329
+2019-12-16 23:17:52.547 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中734329
+2019-12-16 23:18:27.933 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中729329
+2019-12-16 23:19:03.556 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中724329
+2019-12-16 23:19:39.848 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中719329
+2019-12-16 23:20:15.402 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中714329
+2019-12-16 23:20:50.961 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中709329
+2019-12-16 23:21:27.251 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中704329
+2019-12-16 23:22:03.038 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中699329
+2019-12-16 23:22:38.964 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中694329
+2019-12-16 23:23:15.325 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中689329
+2019-12-16 23:23:51.240 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中684329
+2019-12-16 23:24:27.597 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中679329
+2019-12-16 23:25:03.858 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中674329
+2019-12-16 23:25:39.151 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中669329
+2019-12-16 23:26:20.159 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中664329
+2019-12-16 23:27:03.891 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中659329
+2019-12-16 23:27:39.385 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中654329
+2019-12-16 23:28:15.450 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中649329
+2019-12-16 23:28:51.504 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中644329
+2019-12-16 23:29:27.624 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中639329
+2019-12-16 23:30:03.752 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中634329
+2019-12-16 23:30:41.025 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中629329
+2019-12-16 23:31:16.811 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中624329
+2019-12-16 23:31:53.332 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中619329
+2019-12-16 23:32:29.249 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中614329
+2019-12-16 23:33:04.959 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中609329
+2019-12-16 23:33:40.498 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中604329
+2019-12-16 23:34:15.753 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中599329
+2019-12-16 23:34:52.062 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中594329
+2019-12-16 23:35:27.448 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中589329
+2019-12-16 23:36:03.124 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中584329
+2019-12-16 23:36:39.292 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中579329
+2019-12-16 23:37:15.726 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中574329
+2019-12-16 23:37:51.589 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中569329
+2019-12-16 23:38:27.717 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中564329
+2019-12-16 23:39:03.729 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中559329
+2019-12-16 23:39:40.008 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中554329
+2019-12-16 23:40:15.651 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中549329
+2019-12-16 23:40:51.585 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中544329
+2019-12-16 23:41:27.640 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中539329
+2019-12-16 23:42:03.375 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中534329
+2019-12-16 23:42:39.242 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中529329
+2019-12-16 23:43:14.417 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中524329
+2019-12-16 23:43:49.923 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中519329
+2019-12-16 23:44:25.805 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中514329
+2019-12-16 23:45:01.947 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中509329
+2019-12-16 23:45:37.840 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中504329
+2019-12-16 23:46:14.511 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中499329
+2019-12-16 23:46:49.844 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中494329
+2019-12-16 23:47:25.858 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中489329
+2019-12-16 23:48:02.694 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中484329
+2019-12-16 23:48:37.799 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中479329
+2019-12-16 23:49:14.115 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中474329
+2019-12-16 23:49:50.452 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中469329
+2019-12-16 23:50:27.368 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中464329
+2019-12-16 23:51:03.871 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中459329
+2019-12-16 23:51:39.872 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中454329
+2019-12-16 23:52:17.314 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中449329
+2019-12-16 23:52:53.407 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中444329
+2019-12-16 23:53:30.164 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中439329
+2019-12-16 23:54:09.414 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中434329
+2019-12-16 23:54:48.619 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中429329
+2019-12-16 23:55:28.336 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中424329
+2019-12-16 23:56:06.040 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中419329
+2019-12-16 23:56:43.430 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中414329
+2019-12-16 23:57:19.953 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中409329
+2019-12-16 23:57:57.640 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中404329
+2019-12-16 23:58:33.966 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中399329
+2019-12-16 23:59:10.317 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中394329
+2019-12-16 23:59:46.191 [main] INFO  com.co.example.DataTest20SolrAllData - solr全量数据--同步中389329

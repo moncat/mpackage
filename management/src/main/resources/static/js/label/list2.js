@@ -6,18 +6,18 @@ $(function(){
 	});
 	
 	$('.addClass').on('click',function(){
-		l2('/labelClass/addInit','900px','500px');
+		l2('/labelClass/addInit','1051px','680px');
 	});
 	
 	$('.add').on('click',function(){
-		l2('/label/addInit2','900px','500px');
+		l2('/label/addInit2','1051px','680px');
 	});
 	 
 	
 	
 	$('.edit').on('click',function(){
 		var id = $(this).attr('data-id')
-		l2('/label/editInit2/'+id+'/0','900px','500px');
+		l2('/label/editInit2/'+id+'/0','1051px','680px');
 		event.stopPropagation(); 
 	});
 	
@@ -52,7 +52,7 @@ $(function(){
 			td.text(data.num); 
 			td.css({'cursor':'pointer','color':'RGB(0, 102, 204)'});
 			td.on('click',function(){
-				location.href='/product/list3';
+				location.href='/product/list3?lIds='+id;
 			});
 		});
 	});

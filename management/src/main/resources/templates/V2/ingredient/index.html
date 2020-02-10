@@ -1,0 +1,85 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+<link rel="stylesheet" type="text/css" href="/css/v2/ingredient/index.css" />
+</section>
+<section layout:fragment="main">
+			<!--header-->
+		<div class="main">
+			<div class="right">
+				<header>
+					<h3  th:text="${one.name}">-</h3>
+					<div class="tags">
+						<span  th:each="item:${one.tBrAims}"   th:text="${item.name}" /> 
+						<span  th:text="'安全风险：'+${one.securityRisks}" /> 
+						<span  th:text="'活性成分：'+${one.activeIngredient eq 1? '有':'无'}" /> 
+						<span  th:text="'致痘风险：'+${one.blainRisk eq 1 ? '有':'无'}" />
+					</div>
+					<p class="cfjj">成分简介：<span th:utext="${one.description}" ></span></p>
+				</header>
+			</div>
+		</div>
+		<!--header-->
+		<!--body-->
+		<div style="width: 98%; overflow: hidden; margin: 20px auto 0">
+			<div class="Statistical-table-left clearfix">
+				<h3>关注成分新增备案趋势分析</h3>
+				<div class="Statistical-table "  id='chart1'>
+				</div>
+			</div>
+			<div class="Statistical-table-right clearfix">
+				<h3>成分累计备案产品数</h3>
+				<div class="Statistical-table "  id='chart2'></div>
+			</div>
+		</div>
+		<!--list-->
+		<p class="Index-analysis-title"><span>商品列表</span></p>
+		<!--表格-->
+		<div style="width: 98%; margin: 0 auto;">
+			<table class="layui-table">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>产品名称</th>
+					<th>品牌</th>
+					<th>品类</th>
+					<th>实际生产企业</th>
+					<th>淘宝价格</th>
+					<th>全网月销量</th>
+					<th>全网月销售额</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr  th:each="one,status:${page.content}" >	
+					<td th:text="${page.number*page.size+status.index+1}">1</td>
+					<td>
+					 	<a th:href="@{'/product/detail/'+${one.id}}"   target="_self">
+							<span th:utext="${one.productName}"></span>
+						</a>					
+					</td>
+					<td th:if="${one.tBrBrand} ne null" th:text="${one.tBrBrand.name}">品牌</td>
+					<td th:if="${one.tBrBrand} eq null" >-</td>
+					<td th:text="${one.categoryName}"></td>
+					<td th:each="enterpriseItem:${one.enterpriseList}"  th:text="${enterpriseItem.enterpriseName}"></td>
+					<td th:text="${one.taobaoPrice}"></td>								
+					<td th:text="${one.taobaoSale}"></td>								
+					<td th:text="${one.taobaoTurnover}"></td>	
+					<td>
+					 	<span  class="conn"  style="cursor:pointer"  onMouseOver="this.style.color='rgb(0, 102, 204)'"
+					 		onMouseOut="this.style.color='#000'" th:attr="data-id=${one.id}" >
+					 			产品链接
+						</span>		
+					</td>
+				</tr>
+			</tbody>	
+		</table>
+		<div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+	</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/v2/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/js/v2/common/form_page.js?version=1"></script>
+	<script type="text/javascript" src="/js/v2/manifestAuth/model.js?version=4"></script>
+	<script type="text/javascript" src="/js/v2/ingredient/index.js?version=6"></script>
+</section>
+</html>

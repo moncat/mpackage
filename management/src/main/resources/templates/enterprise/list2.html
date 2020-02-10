@@ -5,6 +5,7 @@
 		<span class="c-gray en">&gt;</span> 企业管理 
 		<span class="c-gray en">&gt;</span>  企业列表 
 		<a class="btn btn-success radius r btn-refresh" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+		<a class="btn btn-primary radius r " style="line-height:1.6em;margin-top:3px;margin-right:3px" href="javascript:history.go(-1);" title="返回" ><i class="Hui-iconfont">&#xe66b;</i></a>
 	</nav>
 	<div class="page-container" >
 		 <div class="cl pd-5 bg-1 bk-gray mt-10">
@@ -32,19 +33,22 @@
 					</th>
 				</tr>
 				<tr class="text-c ">
+					<th><input type="checkbox" /></th>	
 					<th>序号</th>
 					<th>企业名称</th>
 					<th>备案号</th>
 					<th>行业类型</th>
 					<th>企业状态</th>
-					<th>关联产品</th>
+					<!-- <th>关联产品</th> -->
 					<th>企业类型</th>
 					<th>常用设置</th>
+					<th>操作</th>
 				</tr>
 			</thead>
 			<tbody>
 				<section th:each="one,status:${page.content}" >
 					<tr  class="text-c">
+						<td><input  class="checkbox1"  type="checkbox"  th:attr="data-id=${one.id}" /></td>
 						<td th:text="${page.number*page.size+status.index+1}">1</td>
 						<td >
 						<!-- 
@@ -59,7 +63,7 @@
 						<td th:text="${one.applySn}"></td>
 						<td th:text="${one.industryType}"></td>
 						<td th:text="${one.enterpriseStatus}"></td>
-						<td th:attr="data-id=${one.id}" class="count"></td>
+						<!-- <td th:attr="data-id=${one.id}" class="count"></td> -->
 						<td th:if="${one.isBus==1 and one.isProduct !=1}">企业</td>
 						<td th:if="${one.isBus!=1 and one.isProduct==1}">生产企业</td>
 						<td th:if="${one.isBus==1 and one.isProduct==1}">企业/生产企业</td>					
@@ -68,16 +72,50 @@
 							    <input  type="checkbox"  th:checked='${one.isChoice eq 1 ? "checked":"false"}' ></input>
 							</div>						
 						</td>
+						<td>
+							<a th:attr="data-id=${one.id}"  style="text-decoration:none" href="javascript:void(0);" title="指数分析" class="ml-5 index" >
+								<i class="Hui-iconfont">&#xe6df;</i>指数分析
+							</a>	
+						</td>
 						
 					</tr>					
 				</section>
 			</tbody>
 		</table>
+		<div class="cl pd-10 ">
+			<span class="l"> 
+				<a href="javascript:void(0);" class="btn btn-primary-outline radius setInventory ">设置企业清单</a>
+			</span> 
+			<span class="r">
+				<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right: 20px" 	id="pageCont"></div>
+			</span>
+		</div>
+		
 		<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right:20px" id="pageCont"></div>
+	</div>
+	<div id="openDiv" style="display:none" >
+		<div class="cl mt-10">
+			<label class="form-label col-xs-3 " >
+					选择清单：
+			</label>
+			<div class="formControls col-xs-9">				
+				<select class="select" size="1"  id="inventorys"  placeholder="请选择清单">				   
+				</select>			  
+			</div>
+		</div>					 
+		<div class="line mt-10 mb-10"></div>
 	</div>
 </section>
 <section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript" src="/js/common/formpage.js"></script>
 	<script type="text/javascript" src="/base/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-	<script type="text/javascript" src="/js/enterprise/list.js"></script>
+	<script type="text/javascript" src="/base/lib/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="/js/enterprise/list.js?version=4"></script>
+	<script id="inventorysTmp" type="text/x-jquery-tmpl">
+	  {{each(i,item) list}} 
+        <option value="${item.manifestId}" >${item.manifestName}</option> 		
+	  {{/each}}
+	</script>
 </section>
 </html>

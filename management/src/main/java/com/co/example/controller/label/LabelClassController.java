@@ -44,4 +44,7 @@ public class LabelClassController extends BaseControllerHandler<TBrLabelClassQue
 		return true;
 	}
 
+	
+	
+	
 }

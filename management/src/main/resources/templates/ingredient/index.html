@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html layout:decorator="/common/layout_dialog">
+<body>
+	<section layout:fragment="main">
+		<div class="page-container">
+			<div>
+				<strong class='f-20' th:text="${one.name}">加载中…</strong>
+				<p class="mt-10">
+					<input  th:each="item:${one.tBrAims}"  class=" mr-10 btn btn-primary radius size-MINI" type="button" th:value="${item.name}" /> 
+					<input class=" mr-10 btn btn-primary radius size-MINI" type="button" th:value="'安全风险：'+${one.securityRisks}" /> 
+					<input class=" mr-10 btn btn-primary radius size-MINI" type="button" th:value="'活性成分：'+${one.activeIngredient eq 1? '有':'无'}" /> 
+					<input class=" mr-10 btn btn-primary radius size-MINI" type="button" th:value="'致痘风险：'+${one.blainRisk eq 1 ? '有':'无'}" /> 
+				</p>
+				<p style='background-color: rgb(45, 183, 245); color: #fff;'>
+					<span th:utext="${one.description}"></span>
+				</p>
+			</div>
+			<div id="tab_demo" class="HuiTab mt-10">
+				<div class="cl mt-15">
+					<div class="l ml-5" style='width: 45%'>
+						<div>关注成分新增备案趋势分析</div>
+						<div class="line"></div>
+						<div id='chart1' style='height: 300px;'></div>
+					</div>
+					<div class="l ml-5" style='width: 45%'>
+						<div>成分累计备案产品数</div>
+						<div class="line"></div>
+						<div id='chart2' style='height: 300px;'></div>
+					</div>
+				</div>
+			
+				<div class="panel panel-default mt-10">
+					<div class="panel-body">
+						<table class="table table-border table-bordered table-bg table-hover" style="background-color: #fff;"  >
+							<thead>
+								<tr>
+									<th colspan="12" scope="col">	
+										产品列表条数据						
+									</th>
+								</tr>
+								<tr class="text-c ">				 
+									<th>序号</th>
+									<th>产品名称</th>
+									<th>品牌</th>
+									<th>品类</th>
+									<th>实际生产企业</th>
+									<th>淘宝价格</th>
+									<th>全网月销量↓</th>
+									<th>全网月销售额</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="text-c" th:each="one,status:${page.content}" >	
+									<td th:text="${page.number*page.size+status.index+1}">1</td>
+									<td>
+									 	<a th:href="@{'/product/detail/'+${one.id}}"   target="_self">
+											<span th:utext="${one.productName}"></span>
+										</a>					
+									</td>
+									<td th:if="${one.tBrBrand} ne null" th:text="${one.tBrBrand.name}">品牌</td>
+									<td th:if="${one.tBrBrand} eq null" >-</td>
+									<td th:text="${one.categoryName}"></td>
+									<td th:each="enterpriseItem:${one.enterpriseList}"  th:text="${enterpriseItem.enterpriseName}"></td>
+									<td th:text="${one.taobaoPrice}"></td>								
+									<td th:text="${one.taobaoSale}"></td>								
+									<td th:text="${one.taobaoTurnover}"></td>	
+									<td>
+									 	<span  class="conn"  style="cursor:pointer"  onMouseOver="this.style.color='rgb(0, 102, 204)'"
+									 		onMouseOut="this.style.color='#000'" th:attr="data-id=${one.id}" >
+									 		<i class="Hui-iconfont">&#xe6f1;</i>产品链接
+										</span>		
+									</td>
+								</tr>					
+							</tbody>
+						</table>						
+						<div class="cl pd-10 ">
+							<span class="r">
+								<div class="mt-10 text-r" th:attr="data-totalPages=${page.totalPages}" style="right: 20px" 	id="pageCont"></div>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section layout:fragment="my">
+		<script type="text/javascript" src="/base/lib/echarts/4.3.0/echarts.min.js"></script>
+		<script type="text/javascript" src="/base/lib/laypage/1.2/laypage.js"></script>
+		<script type="text/javascript" src="/js/common/formpage.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/ingredient/index.js"></script>
+	</section>
+</body>
+</html>

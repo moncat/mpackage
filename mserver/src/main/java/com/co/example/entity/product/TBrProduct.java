@@ -10,7 +10,18 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
 public class TBrProduct extends BaseEntity {
-    /** id */
+	
+	
+    public TBrProduct(Long id) {
+		super();
+		this.id = id;
+	}
+
+	public TBrProduct() {
+		super();
+	}
+
+	/** id */
     private Long id;
 
     /** 产品名称 */
@@ -73,9 +84,39 @@ public class TBrProduct extends BaseEntity {
     /** 来源  1 药监局 ； 2美丽修行 */
     private Byte source;
 
+    /** 品类id */
+    private Long categoryId;
+
+    /** 品类名称 */
+    private String categoryName;
+
+    /** 是否国产 */
+    private Byte isChina;
+
+    /** 是否特殊 */
+    private Byte isSpecial;
+
+    /** 淘宝价格 */
+    private BigDecimal taobaoPrice;
+
+    /** 淘宝销量 */
+    private Integer taobaoSale;
+
+    /** 淘宝营业额 */
+    private BigDecimal taobaoTurnover;
+
+    /** 成分得分 */
+    private BigDecimal iScore;
+
+    /** 品牌id，新增用于数据冗余的字段 */
+    private Long productBrandId;
+
+    /** 品牌名称，新增用于数据冗余的字段 */
+    private String productBrandName;
+
     /** 用于冗余图片链接，来自京东第二张图片 */
     private String moreData1;
 
-    /** 1为已经备案注销    null为未注销  */
+    /** 1为已经备案注销    null为未注销 */
     private String moreData2;
 }

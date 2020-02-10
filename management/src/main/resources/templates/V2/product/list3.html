@@ -1,0 +1,310 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/product/list.css" />
+</section>
+<section layout:fragment="main">
+	<div class="wrapper">
+			<div class="content_wrapper">
+				<!-- breadcrumb -->
+				<div class="container-fluid padding-zero">
+					<div class="page-heading">
+						<div class="row d-flex align-items-center">
+							<div class="col-md-6">
+								<div class="page-breadcrumb">
+									<h1>产品列表</h1>
+								</div>
+							</div>
+							<div class="col-md-6 justify-content-md-end d-md-flex">
+								<div class="breadcrumb_nav">
+									<ol class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a class="parent-item" href="#">Home</a>
+											<i class="fa fa-angle-right"></i>
+										</li>
+										<li class="active">
+											产品列表
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- breadcrumb_End -->
+				<!-- 111搜索 -->
+				<div class="container-fluid search-cars-box box-shadow">
+					<div class="search-title">产品搜索</div>
+					<form action="/product/list3" id="productSearch">
+						<div class="search-cars">
+							<div class="col-md-12">
+									<input type='hidden'  id='lIds' name='lIds' th:value='${query.lIds}'/>					
+								 	<input type='hidden'  id='bIds' name='bIds' th:value='${query.bIds}'/>	
+								 	<input type='hidden'  id='iIds' name='iIds' th:value='${query.iIds}'/>	
+								 	<input type='hidden'  id='eIds' name='eIds' th:value='${query.eIds}'/>	
+								 	<input type='hidden'  id='peIds' name='peIds' th:value='${query.peIds}'/>	
+								 	<input type='hidden'  id='normalType' name='normalType' value='1' th:value='${query.normalType eq null? "1":query.normalType}'/>				
+									<input type="hidden"  id='startTime' name='startTime'  th:value='${query.startTime}' />
+									<input type="hidden"  id='endTime' name='endTime'  th:value='${query.endTime}'  />
+									
+									<div class="tab-group">
+										<span th:class="${query.normalType ==1 or query.normalType ==null}? 'bs':''"  data-id='1'>产品名称</span>
+										<span th:class="${query.normalType ==2 }? 'bs':''" data-id='2'>产品成分</span>
+										<span th:class="${query.normalType ==3 }? 'bs':''" data-id='3'>企业名称</span>
+										<span th:class="${query.normalType ==4 }? 'bs':''" data-id='4'>品牌名称</span>
+									</div>
+									<div class="form-group search-box" style="overflow: hidden;">
+										<input id="normal" name='normal' th:value='${query.normal}' type="text" class="form-control float-left"  placeholder="请输入要查询的内容"/>
+										<button id="search" class="layui-btn layui-btn-normal float-left Search_" style="color: #fff;"><i class="iconfont iconfangdajing" style="color: #fff;"></i>&nbsp;搜索 </button>
+										<a href="javascript:void(0)" class="ConditionSearch">条件搜索</a>
+										<a href="javascript:void(0)" id='clearAll'>重置搜索</a>
+										<a href="javascript:void(0)" id='export'>数据导出</a>
+										<span  style="display:none" id="exportTip">导出中,请到<a href="/export/list" target="_self" >导出列表</a>查看</span>	
+									</div>
+								<!--tab-->
+								<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+									<ul class="layui-tab-title" style="display: none;">
+										<li class="layui-this">高级搜索</li>
+										<li>关键词搜索</li>
+									</ul>
+									<div class="layui-tab-content ConditionSearch-con" style="display: none;">
+	
+										<div class="layui-tab-item layui-show">
+											<!--1-->
+											<div class="col-md-12 clearfix" style="margin-bottom: 12px;">
+												<div class="search-x">
+													<label style="float: left; margin-top: 10px;">选择日期：</label>
+													<input type="text" class="layui-input datetime1" placeholder="开始 到 结束" style="margin-left: 10px;width: 20%; float: left;"/> &nbsp;
+													<label>品牌：</label>
+													<select class="form-control brandSelect" name='brandFlg' style="display: inline-block;width: 20%;">
+														<option></option>
+														<option th:selected='${query.brandFlg eq 1}' value='1'>未关联</option>
+														<option th:selected='${query.brandFlg eq 2}' value='2' id="op1">已关联</option>
+													</select>
+													<label>品类：</label>
+													<select class="form-control categorySelect" name='categoryFlg'  style="display: inline-block;width: 20%;">
+														<option></option>
+														<option th:selected='${query.categoryFlg eq 1}' value='1'>未关联</option>
+														<option th:selected='${query.categoryFlg eq 2}' value='2' id="op2">已关联</option>
+													</select>
+												</div>
+											</div>
+											<!--企业名称-->
+											<div class="col-md-12 clearfix">
+												<div class="col-md-12 clearfix">
+	
+													<div class="screen">
+														<div class="screen-left float-left">
+															<span>（多选）企业名称：</span>													
+														</div>
+														<div class="screen-right float-right">
+															<div class="search-x">
+		                                                        <input type="search" placeholder="请输入用户名称" class="form-control beSearch"/>
+		                                                        <ul class="list_" style="width: 250px;">
+		                                                        </ul>
+		                                                    </div>
+															<span class="company-more">更多</span>
+															<span class="company-empty" data-input='eIds'>清空</span>
+														</div>
+													</div>
+												</div>
+												<!--2-->
+												<div class="col-md-12 company-list"  id='eeDiv'>
+													<span th:class='${#strings.contains(query.eIds,be.id)? "bs":""}' th:each="be:${bEnterpriseList}" th:attr="data-id=${be.id}" th:text="${be.enterpriseName}"></span>
+												</div>
+											</div>
+											<!--生产企业名称-->
+											<div class="col-md-12 clearfix">
+												<div class="col-md-12 clearfix">
+													<div class="screen">
+														<div class="screen-left float-left">
+															<span>（多选）生产企业名称：</span>													
+														</div>
+														<div class="screen-right float-right">
+															<div class="search-x">
+		                                                        <input type="search" placeholder="请输入用户名称" class="form-control peSearch"/>
+		                                                        <ul class="list_" style="width: 250px;">
+		                                                        </ul>
+		                                                    </div>
+															<span class="generate-more">更多</span>
+															<span class="generate-empty" data-input='peIds'>清空</span>
+														</div>
+													</div>
+												</div>
+												<!--2-->
+												<div class="col-md-12  generate-company-list" id='peDiv'>											
+							 						<span th:class='${#strings.contains(query.peIds,pe.id)? "bs":""}' th:each="pe:${pEnterpriseList}" th:attr="data-id=${pe.id}" th:text="${pe.enterpriseName}"></span>	
+												</div>
+											</div>
+											<!--品牌名称-->
+											<div class="col-md-12 clearfix">
+												<div class="col-md-12 clearfix">
+													<div class="screen">
+														<div class="screen-left float-left">
+															<span>（多选）品牌：</span>													
+														</div>
+														<div class="screen-right float-right">
+															<div class="search-x">
+		                                                        <input type="search" placeholder="请输入用户名称" class="form-control bSearch"/>
+		                                                        <ul class="list_">
+		                                                        </ul>
+		                                                    </div>
+															<span class="brand-more">更多</span>
+															<span class="brand-empty" data-input='bIds' >清空</span>
+														</div>
+													</div>
+												</div>
+												<!--2-->
+												<div class="col-md-12 brand-list" id='brandDiv'>
+							 						<span th:class='${#strings.contains(query.bIds,brand.id) ? "bs":""}' th:each="brand:${brandList}" th:attr="data-id=${brand.id}" th:text="${brand.name}"></span>	
+												</div>
+											</div>
+	
+											<div class="col-md-12 clearfix">
+												<div class="col-md-12 clearfix">
+													<div class="screen">
+														<div class="screen-left float-left">
+															<span>（多选）产品标签：</span>												
+														</div>
+														<div class="screen-right float-right">
+															<div class="search-x">
+		                                                        <input type="search" placeholder="请输入用户名称" class="form-control lSearch"/>
+		                                                        <ul class="list_">
+		                                                        </ul>
+		                                                    </div>
+															<span class="ProducTagMore">更多</span>
+															<span class="ProducTagEmpty" data-input='lIds'>清空</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12 ProducTag-list" id='labelDiv'>
+							 						<span th:class='${#strings.contains(query.lIds,label.id)? "bs":""}'   th:each="label:${labelList}" th:attr="data-id=${label.id}" th:text="${label.name}"></span>
+												</div>
+											</div>
+											<div class="col-md-12 clearfix">
+												<div class="col-md-12 clearfix">
+													<div class="screen">
+														<div class="screen-left float-left">
+															<span>（多选）产品成分：</span>												
+														</div>
+														<div class="screen-right float-right">
+															<div class="search-x">
+		                                                        <input type="search" placeholder="请输入用户名称" class="form-control iSearch"/>
+		                                                        <ul class="list_">
+		                                                        </ul>
+		                                                    </div>
+															<span class="ingredient-more">更多</span>
+															<span class="ingredient-empty" data-input='iIds' >清空</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12 ingredient-list" id='ingredientDiv'>
+							 						<span th:class='${#strings.contains(query.iIds,ii.id)? "bs":""}'  th:each="ii:${ingredientList}" th:attr="data-id=${ii.id}" th:text="${ii.name}"></span>	
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="container-fluid search-cars-box box-shadow clearfix SearchResulits" >
+					<div class="search-title"><span class="float-left">共搜索到&nbsp;<b class="number" th:text="${count}">0</b>&nbsp;条数据</span></div>
+					<!--表格-->
+					<table class="layui-table">
+						<thead>
+							<tr>
+								<th><input type="checkbox" name="" lay-skin="primary"/></th>
+								<th>序号</th>
+								<th>产品名称</th>
+								<th>品牌名称</th>
+								<th>生产企业</th>
+								<th>实际生产企业</th>
+								<th>备案编号</th>
+								<th>备案日期</th>
+								<th>备案类型</th>
+								<th>状态</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="text-c" th:each="one,status:${page.content}" >	
+								<td><input  class="checkbox1"  type="checkbox" lay-skin="primary" th:attr="data-id=${one.id},data-text=${one.productName}" /></td>			
+								<td th:text="${page.number*page.size+status.index+1}">1</td>
+								<td>
+								 	<a th:href="@{'/product/detail/'+${one.id}}"   target="_self">
+										<span th:utext="${one.productName}"></span>
+									</a>					
+								</td>
+								<td  th:text="${one.brands}"></td>
+								<td th:text="${one.enterpriseName}"></td>				
+								<td  th:text="${one.peName}"></td>				
+								<td th:text="${one.applySn}"></td>
+								<td th:text="${one.confirmDate}"></td>
+								<td th:if="${one.applyType eq '1'}">国产备案</td>
+								<td th:if="${one.applyType ne '1'}">进口备案</td>
+								<td th:if="${one.confirmStatus eq null}">未注销</td>
+								<td th:if="${one.confirmStatus ne null}">已注销</td>
+								<td>
+								 	<span  class="contrast" style="cursor:pointer"
+								 	onMouseOver="this.style.color='rgb(0, 102, 204)'"
+								 		onMouseOut="this.style.color='#000'"
+								 	th:attr="data-id=${one.id}"
+								 	 >对比
+									</span>					
+									<!--
+									 |
+								 	<span  class="setBrand2"  style="cursor:pointer"
+								 	onMouseOver="this.style.color='rgb(0, 102, 204)'"
+								 		onMouseOut="this.style.color='#000'"
+								 	th:attr="data-id=${one.id}" >设置品牌
+									</span>	
+									 -->
+								</td>
+							</tr>								
+						</tbody>
+					</table>
+					<div class="col-md-12 table-foot">
+						<div class="table-foot-left">
+							<span class='selectAll' >&nbsp;全选</span>
+							<span class='selectOther' >&nbsp;反选</span>
+							<span class="setLabel">设置标签</span>
+							<span class="setBrand">设置品牌</span>
+							<span class="setCategory">设置品类</span>
+							<span class="setInventory">添加清单</span>
+						</div>
+						<div class="table-foot-right">
+							  <div id="pageCont" class="customPages" th:attr="data-count=${page.totalElements},data-totalPages=${page.totalPages}" ></div>
+						</div>
+					</div>
+					<!--搜索结果-->
+				</div>
+			</div>
+		</div>	
+		<!--浮动窗口-->
+		<div class="Float-win">
+			<span class="small-pro-box">清<br />单</span>
+			<div class="float-win-title">
+				<h3>产品清单</h3>
+				<span class="Num"></span>
+			</div>
+			<div class="list">
+				<ul id='inventorysProduct'>
+				</ul>
+				<div class="form-group" style="text-align: right; border-top: 1px solid #e5e9ec; padding-top:10px; width: 90%; margin: 0 auto 10px;">
+					<button type="button" class="layui-btn layui-btn-primary layui-btn-sm clearInventorys">清空</button>
+					<button type="button" class="layui-btn layui-btn-normal layui-btn-sm Selection-attention-list connInventorys">设置清单</button>
+				</div>
+
+			</div>
+		</div>
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/common/form_page.js"></script>
+<script type="text/javascript" charset="utf-8" src="/base/v2/js/jquery.dcjqaccordion.2.7.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/v2/product/custom.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/v2/product/list3.js?version=17"></script>
+</section>
+</html>

@@ -2,7 +2,9 @@ package com.co.example.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,14 +45,16 @@ public class BaseInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		if(modelAndView !=null){
-			String viewName = modelAndView.getViewName();
-			if(viewName !=null){
-				if(!viewName.contains("login") && !viewName.contains("error") && !viewName.contains("logout")){
+			String viewName = modelAndView.getViewName().trim();
+			if(StringUtils.isNoneBlank(viewName)){
+				if(!viewName.contains("login") &&!viewName.contains("oper") &&!viewName.contains("register") && !viewName.contains("error") && !viewName.contains("logout")){
 					String pageVersion = SessionUtil.getPageVersion(request.getSession());
-					if(viewName.contains("redirect")){
-						modelAndView.setViewName("redirect:/"+pageVersion+viewName.substring(viewName.indexOf("/")));
-					}else{
-						modelAndView.setViewName("/"+pageVersion+"/"+viewName);
+					if(StringUtils.isNoneBlank(pageVersion)){
+						if(viewName.contains("redirect") && !viewName.endsWith("/")){
+							modelAndView.setViewName("redirect:/"+pageVersion+viewName.substring(viewName.indexOf("/")));
+						}else{
+							modelAndView.setViewName("/"+pageVersion+"/"+viewName);
+						}
 					}
 				}
 			}

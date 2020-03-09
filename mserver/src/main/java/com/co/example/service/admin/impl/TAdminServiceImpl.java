@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,8 @@ import com.co.example.entity.admin.aide.TAdminRoleQuery;
 import com.co.example.entity.admin.aide.TAdminVo;
 import com.co.example.entity.system.TRole;
 import com.co.example.entity.system.aide.TRoleQuery;
+import com.co.example.entity.user.TUser;
+import com.co.example.entity.user.aide.TUserQuery;
 import com.co.example.service.admin.TAdminActiveService;
 import com.co.example.service.admin.TAdminRoleService;
 import com.co.example.service.admin.TAdminService;
@@ -58,7 +61,11 @@ public class TAdminServiceImpl extends BaseServiceImpl<TAdmin, Long> implements 
 	@Override
 	public TAdmin queryByLoginName(String name) {
 		TAdminQuery query = new TAdminQuery();
-		query.setLoginName(name);
+		if(ValidateUtil.isMobile(name)){
+			query.setMobilePhone(name);
+		}else{
+			query.setLoginName(name);
+		}
 		TAdminVo admin = queryOne(query);
 		if(admin != null){
 			Long id = admin.getId();
@@ -118,7 +125,7 @@ public class TAdminServiceImpl extends BaseServiceImpl<TAdmin, Long> implements 
 	}
 
 	@Override
-	public Map<String, Object> addAdmin(TAdminQuery admin, TAdminActive tAdminActive, Long adminId) {
+	public Map<String, Object> addAdmin(TAdminQuery admin, TAdminActive tAdminActive, Long adminId111) {
 		Map<String,Object> mapResult = new HashMap<String,Object>();
 		if(queryByLoginName(admin.getLoginName()) != null){
 			mapResult.put("code",400);
@@ -145,7 +152,7 @@ public class TAdminServiceImpl extends BaseServiceImpl<TAdmin, Long> implements 
 			TAdminActive tAdminActiveTmp = new TAdminActive();
 			tAdminActiveTmp.setId(tAdminActive.getId());
 			tAdminActiveTmp.setIsUse(Constant.YES);
-			tAdminActiveTmp.setUsetime(new Date());	
+			tAdminActiveTmp.setUseTime(new Date());	
 			tAdminActiveService.updateByIdSelective(tAdminActiveTmp);
 		}
 		//添加角色
@@ -200,5 +207,20 @@ public class TAdminServiceImpl extends BaseServiceImpl<TAdmin, Long> implements 
 		mapResult.put("code",200);
 		mapResult.put("desc", "新增成功！");
 		return mapResult;
+	}
+
+	@Override
+	public Boolean updatePwd(String phoneNum, String password1, String password2) {
+		if(StringUtils.equals(password1, password2)){
+			TAdminQuery tAdminQuery = new TAdminQuery();
+			tAdminQuery.setMobilePhone(phoneNum);
+			TAdmin one = queryOne(tAdminQuery);
+			TAdmin tAdmin = new TAdmin();
+			tAdmin.setId(one.getId());
+			tAdmin.setPassword(MD5.encodeStr(password1));
+			updateByIdSelective(tAdmin);
+			return true;
+		}
+		return false;
 	}
 }

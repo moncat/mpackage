@@ -64,11 +64,11 @@ public class adminController {
 	}
 	
 
-	@RequestMapping(value="/center",method = { RequestMethod.GET,RequestMethod.POST})
-	public String center(Model model){
-		//用户中心
-		return "admin/center";
-	}
+//	@RequestMapping(value="/center",method = { RequestMethod.GET,RequestMethod.POST})
+//	public String center(Model model){
+//		//用户中心
+//		return "admin/center";
+//	}
 	
 	@RequestMapping(value="/addInit",method = { RequestMethod.GET,RequestMethod.POST})
 	public String addInit(Model model){
@@ -227,7 +227,6 @@ public class adminController {
 		}
 		return result;
 	}
-	
 	
 	
 }

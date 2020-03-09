@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,6 +25,7 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -283,6 +285,7 @@ public class BrandController extends BaseControllerHandler<TBrBrandQuery> {
 	}
 
 	// *******************2019年9月18日**************************/
+	@RolesAllowed({"sa","member"})
 	@RequestMapping(value = "/index/{id}", method = { RequestMethod.GET, RequestMethod.POST })
 	public String index(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response,
 			PageReq pageReq, @PathVariable Long id) {

@@ -48,11 +48,11 @@
 					<td th:text="${page.number*page.size+status.index+1}">1</td>
 					<td >
 						 <!-- th:href="@{'/product/tab2/'+${one.id}}" --> 
-						<a  class="btn-link showMore"  th:text="${one.name}"  th:attr="data-id=${one.id}"
+						<a  class="btn-link showMore"  th:utext="${one.name}"  th:attr="data-id=${one.id}"
 						 target='_self'>
 						</a>
 					</td>
-					<td th:text="${one.nameEn}"></td>
+					<td th:utext="${one.nameEn}"></td>
 					<td  th:case="1">顶级品牌</td>
 					<td  th:case="2">一线品牌</td>
 					<td  th:case="3">二线品牌</td>

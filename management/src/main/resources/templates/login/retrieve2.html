@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="V2/common/layout_head :: head">
+</head>
+<link rel="stylesheet" type="text/css" href="/css/login/animate.css" />
+<link rel="stylesheet" type="text/css" href="/css/login/login.css" />
+<body>
+	<!-- 通过手机找回密码 -->
+		<div class="login-box retrieve_con animated lightSpeedIn">
+			<!-- logo -->
+			<h3 class="logo-box">
+				<h4 class="cn_title" style="font-size: 16px;">通过手机找回密码</h4>
+			</h3>
+			<!-- /logo -->
+			<!-- 手机验证表单 -->
+			<form class="layui-form user_iput"  id="curForm" >
+				<div class="layui-form-item">
+					<i class="layui-icon user_input_ico">&#xe673;</i>
+					<input type="password" name="password1"  placeholder="请设置登陆密码" autocomplete="off" class="layui-input padding_left25"/>
+				</div>
+				<div class="layui-form-item user_iput">
+					<div class="layui-form-item">
+						<i class="layui-icon user_input_ico">&#xe673;</i>
+						<input type="password" name="password2"   placeholder="请再次输入密码" autocomplete="off" class="layui-input padding_left25"/>
+					</div>
+				</div>
+				<div class="layui-form-item m-login-btn">
+					<!-- <div style="float: left; color:red;"><span>密码为数字或字母或特殊字符或以上组合;长度为6 ～30</span></div> -->
+					<div class="layui-inline" style="width: 100%; margin-top: 20px;">
+						<button class="layui-btn layui-btn-normal submit" 
+						style="width: 100%; display: block;">完 成</button>
+					</div>
+				</div>
+			</form>
+			<!-- /新密码表单 -->
+		</div>
+		<!-- /通过手机找回密码 -->
+		
+		<!-- 底部的图 -->
+		<div class="bottom-img"></div>
+	<div th:replace="v2/common/layout_js :: js"></div>
+	<script type="text/javascript" src="/js/login/retrieve2.js?version=2"></script>
+</body>
+</html>

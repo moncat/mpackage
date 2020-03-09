@@ -1,0 +1,171 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/contrast/detail.css" />
+</section>
+<section layout:fragment="main">
+	<div class="wrapper">
+		<div class="content_wrapper">
+			<!-- breadcrumb -->
+			<div class="container-fluid padding-zero">
+				<div class="page-heading">
+					<div class="row d-flex align-items-center">
+						<div class="col-md-6">
+							<div class="page-breadcrumb">
+								<h1>产品对比</h1>
+							</div>
+						</div>
+						<div class="col-md-6 justify-content-md-end d-md-flex">
+							<div class="breadcrumb_nav">
+								<ol class="breadcrumb">
+									<li><i class="fa fa-home"></i> <a class="parent-item"
+										href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+									<li class="active">产品对比</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- breadcrumb_End -->
+			<!-- 1 -->
+			<div class="container-fluid box-shadow Pro_Com_box">
+				<div class="Pro_Com_title">备案产品对比</div>
+				<div class="Pro_Com_con">
+					<div class="Pro_Com_left">
+
+						<div class="table1 clearfix">
+
+							<div style="overflow: auto; height: 800px;" class="aaa">
+								<!--table1-->
+								<table class="layui-table">
+									<p class="Pro_Com_left-title">基本信息</p>
+
+									<tbody>
+										<tr id="name">
+											<td >产品名称</td>
+										</tr>
+										<tr id="price">
+											<td>产品价格</td>
+										</tr>
+										<tr id="catagory" >
+											<td>产品品类</td>
+										</tr>
+										<tr id="brand">
+											<td>产品品牌</td>
+										</tr>
+										<tr id="confirmDate">
+											<td>备案日期</td>
+										</tr>
+										<tr id="applySn">
+											<td>备案号</td>
+										</tr>
+										<tr  id="isChina">
+											<td>备案类型</td>
+										</tr>
+										<tr id="ename">
+											<td>企业名称</td>
+										</tr>
+										<tr id="pename" >
+											<td>实际生产企业</td>
+										</tr>
+									</tbody>
+								</table>
+								<!--/table1-->
+								<!--table2-->
+								<table class="layui-table">
+									<p class="Pro_Com_left-title">产品参数</p>
+									<tbody>
+										<tr id="iScore" >
+											<td>安全评分</td>
+										</tr>
+										<tr id="iCount">
+											<td>总成分</td>
+										</tr>
+										<tr id="essenceList">
+											<td>香精</td>
+										</tr>
+										<tr id="corrosionList">
+											<td>防腐剂</td>
+										</tr>
+										<tr id="riskList">
+											<td>风险成分</td>
+										</tr>
+										<tr id="cleanList">
+											<td>清洁成分</td>
+										</tr>
+										<tr id="activeList">
+											<td>表活成分</td>
+										</tr>
+									</tbody>
+								</table>
+								<!--/table2-->
+								<!--table3-->
+								<table class="layui-table">
+									<p class="Pro_Com_left-title">成分信息</p>
+									<tbody>
+										<tr id="iList">
+											<td>成分表</td>
+										</tr>
+									</tbody>
+								</table>
+								<!--/table3-->
+								<!--
+								<table class="layui-table">
+									<p class="Pro_Com_left-title">消费信息</p>
+									<tbody>
+										<tr>
+											<td>用户评分</td>
+											<td>
+												<div class="starts"></div>
+											</td>
+											 
+										</tr>
+										<tr>
+											<td>评价</td>
+											<td>
+												<p class="pj">
+													用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错用起来还不错
+												</p>
+											</td>
+										</tr>
+											<tr>
+												<td>销售趋势</td>
+												<td>
+													<div class="SalesTrend"></div>
+												</td>											
+											</tr>
+									</tbody>
+								</table>
+								-->
+							</div>
+						</div>
+
+					</div>
+					<!--2-->
+					<div class="Pro_Com_right">
+						<div class="form-group">
+							<label>产品对比选择</label> <input type="text" class="form-control"
+								placeholder="请输入内容"  id="search" />
+							<ul class="Pro_Com_right-ul" id="option" >
+								<!--
+								 <li>
+									<span>
+										<input type="checkbox" />
+									</span>
+									 <a href="ProductDetails.html">旁氏亮采净澈系列米粹润泽洁面乳</a>
+								</li>
+								 -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/js/v2/contrast/detailP.js?version=5"></script>
+</section>
+</html>

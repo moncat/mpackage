@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="V2/common/layout_head :: head">
+</head>
+<link rel="stylesheet" type="text/css" href="/css/login/animate.css" />
+<link rel="stylesheet" type="text/css" href="/css/login/login.css" />
+<body>
+	<!-- 忘记密码 -->
+	<div class="login-box reset_con animated flipInY">
+		<!-- logo -->
+		<h3 class="logo-box">
+			<h4 class="cn_title" style="font-size: 16px;">通过手机找回密码</h4>
+		</h3>
+		<!-- /logo -->
+		<!-- 手机验证表单 -->
+		<form class="layui-form" id="curForm"  >
+			<div class="layui-form-item user_iput">
+				<i class="iconfont user_input_ico">&#xe64f;</i>
+				 <input type="text" id="phoneNum"
+					name="phoneNum"  lay-verify="required" placeholder="请输入手机号"
+					autocomplete="off" class="layui-input padding_left25" />
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline" style="width: 78%;">
+					<input type="text" name="imgCode"  
+					placeholder="请输入图形验证码" autocomplete="off" class="layui-input"  />
+				 </div> 
+		         <div id="changeCode"  class="layui-inline" >
+		         	 <img id="imgIdentifyCode" th:src="@{/identifyCode}" src=""  style="width: 100px;height: 36px;"/>
+				 </div> 
+			</div>
+			<div class="layui-form-item m-login-btn">
+				<div class="layui-inline" style="width: 78%;">
+					<input type="text" name="vcode"   
+						placeholder="请输入短信验证码" autocomplete="off" class="layui-input" />
+				</div>
+				<div class="layui-inline">
+					<button type="button" class="layui-btn layui-btn-normal dxyzm" lay-filter="login"
+						style="width: 100%; display: block;">获取验证码</button>
+				</div>
+				<div class="layui-inline" style="width: 100%; margin-top: 20px;">
+						<button class="layui-btn layui-btn-normal submit" lay-filter="login" 
+						style="width: 100%; display: block;">下一步</button>
+				</div>
+			</div>
+		</form>
+		<!-- /手机验证表单 -->
+	</div>
+	<!-- /忘记密码 -->
+
+	<!-- 底部的图 -->
+	<div class="bottom-img"></div>
+	<div th:replace="v2/common/layout_js :: js"></div>
+	<script type="text/javascript" src="/js/login/retrieve1.js?version=1"></script>
+</body>
+</html>

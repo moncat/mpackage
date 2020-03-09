@@ -3,7 +3,6 @@ package com.co.example.controller.product;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
@@ -15,7 +14,6 @@ import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -27,7 +25,6 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.data.domain.Page;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,22 +41,14 @@ import com.co.example.controller.BaseControllerHandler;
 import com.co.example.entity.abc.TBrAaa;
 import com.co.example.entity.brand.TBrBrand;
 import com.co.example.entity.brand.TBrProductBrand;
-import com.co.example.entity.brand.aide.TBrBrandQuery;
 import com.co.example.entity.category.TBrCategory;
 import com.co.example.entity.category.TBrProductCategory;
-import com.co.example.entity.export.TBrExport;
 import com.co.example.entity.label.TBrLabel;
 import com.co.example.entity.label.TBrProductLabel;
-import com.co.example.entity.label.aide.TBrLabelQuery;
-import com.co.example.entity.product.TBrEnterprise;
-import com.co.example.entity.product.TBrIngredient;
 import com.co.example.entity.product.TBrProduct;
 import com.co.example.entity.product.aide.ProductConstant;
-import com.co.example.entity.product.aide.TBrEnterpriseQuery;
-import com.co.example.entity.product.aide.TBrIngredientQuery;
 import com.co.example.entity.product.aide.TBrLogQuery;
 import com.co.example.entity.product.aide.TBrProductQuery;
-import com.co.example.entity.product.aide.TBrProductSolr;
 import com.co.example.service.abc.TBrAaaService;
 import com.co.example.service.brand.TBrBrandService;
 import com.co.example.service.brand.TBrProductBrandService;
@@ -107,7 +96,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 
 	@Resource
 	SolrService solrService;
-	
+
 	@Resource
 	TBrAaaService tBrAaaService;
 
@@ -180,7 +169,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 
 	// @Test
 	// TODO 手动切换事件处理全量数据,读取python上传的文件
-//	 @Scheduled(cron = "0 00 19 * * ? ")
+	// @Scheduled(cron = "0 00 19 * * ? ")
 	public void getCFDAFromFile() throws InterruptedException {
 		log.info("***start schedule:" + new Date());
 		long startMs = System.currentTimeMillis();
@@ -238,10 +227,12 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	}
 
 	// @Test
-	@ResponseBody
-	@RequestMapping(value = "/getINFromFile", method = { RequestMethod.GET, RequestMethod.POST })
+	// @ResponseBody
+	// @RequestMapping(value = "/getINFromFile", method = { RequestMethod.GET,
+	// RequestMethod.POST })
+	// @Scheduled(cron = "0 00 21 * * ? ")
 	public int getINFromFile() throws InterruptedException {
-		log.info("***start schedule:" + new Date());
+		log.info("***start schedule 解析进口非特殊数据:" + new Date());
 		long startMs = System.currentTimeMillis();
 		// 查看是否有文件
 		File file = new File(ProductConstant.CFDA_IN_PATH);
@@ -459,8 +450,8 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	}
 
 	// 定时将产品数据索引进solr
-	// @Test
-//	 @Scheduled(cron = "0 35 16 * * ? ") // 每天23:00分执行一次
+	// @Scheduled(cron = "0 35 16 * * ? ") // 每天23:00分执行一次
+	@Test
 	public void addSolrData() {
 		log.info("*************start**addSolrData**************");
 		TBrProductQuery query = new TBrProductQuery();
@@ -468,16 +459,16 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		long queryCount = tBrProductService.queryCount(query);
 		log.info("solr全量数据--需要同步" + queryCount);
 		int pagesize = 1000;
-		PageReq pageReq ;
+		PageReq pageReq;
 		while (queryCount > 0) {
-			pageReq = new PageReq(0,pagesize);
+			pageReq = new PageReq(0, pagesize);
 			Page<TBrProduct> page = tBrProductService.queryPageList(query, pageReq);
 			for (TBrProduct tBrProduct : page) {
 				String productName = tBrProduct.getProductName();
 				if (StringUtils.isBlank(productName)) {
 					continue;
 				}
-				solrService.syncOne(tBrProduct,true,7l);
+				solrService.syncOne(tBrProduct, true, 7l);
 			}
 			queryCount -= pagesize;
 			log.info("solr全量数据--同步中" + queryCount);
@@ -709,31 +700,32 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 		operCategory(tBrProductList);
 	}
 
-	// TODO  全量时，设置品类id为0，
-//	@Test
+	// TODO 全量时，设置品类id为0，
+	// @Test
 	public void operCategory() {
-		
-		//查询全部的品类
+
+		// 查询全部的品类
 		TBrCategory tBrCategory = new TBrCategory();
 		tBrCategory.setLevel(2);
 		List<TBrCategory> cates = tBrCategoryService.queryList(tBrCategory);
-		
+
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		tBrProductQuery.setCategoryId(0l);
-//		long queryCount = tBrProductService.queryCount(tBrProductQuery);
-//		int pagesize = 1000;
-//		log.info("queryCount===" + queryCount);
-//		while (queryCount > 0) {
-//			PageReq pageReq = new PageReq();
-//			pageReq.setPageSize(pagesize);
-//			pageReq.setPage(0);
-//			Page<TBrProduct> page = tBrProductService.queryPageList(tBrProductQuery, pageReq);
-//			operCategory(page.getContent(),cates);
-//			queryCount = queryCount - 1000;
-//			log.info("queryCount===now===" + queryCount);
-//		}
+		// long queryCount = tBrProductService.queryCount(tBrProductQuery);
+		// int pagesize = 1000;
+		// log.info("queryCount===" + queryCount);
+		// while (queryCount > 0) {
+		// PageReq pageReq = new PageReq();
+		// pageReq.setPageSize(pagesize);
+		// pageReq.setPage(0);
+		// Page<TBrProduct> page =
+		// tBrProductService.queryPageList(tBrProductQuery, pageReq);
+		// operCategory(page.getContent(),cates);
+		// queryCount = queryCount - 1000;
+		// log.info("queryCount===now===" + queryCount);
+		// }
 		List<TBrProduct> list = tBrProductService.queryList(tBrProductQuery);
-		operCategory(list,cates);
+		operCategory(list, cates);
 
 	}
 
@@ -744,15 +736,14 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 	TBrCategory caTmp = null;
 	Boolean flg = false;
 
-	
 	private void operCategory(List<TBrProduct> tBrProductList) {
 		TBrCategory tBrCategory = new TBrCategory();
 		tBrCategory.setLevel(2);
 		List<TBrCategory> cates = tBrCategoryService.queryList(tBrCategory);
-		operCategory(tBrProductList,cates); 
+		operCategory(tBrProductList, cates);
 	}
-	
-	private void operCategory(List<TBrProduct> tBrProductList,List<TBrCategory> cates) {
+
+	private void operCategory(List<TBrProduct> tBrProductList, List<TBrCategory> cates) {
 		try {
 			int s = tBrProductList.size();
 			for (TBrProduct tBrProduct : tBrProductList) {
@@ -806,8 +797,8 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 					}
 
 				}
-				if(s%500==0){
-					log.info("ssss====" +s);
+				if (s % 500 == 0) {
+					log.info("ssss====" + s);
 				}
 				flg = false;
 			}
@@ -815,16 +806,16 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			e.printStackTrace();
 		}
 	}
-	
-//	@Test
-	public void searchSolr(){
+
+	// @Test
+	public void searchSolr() {
 		log.info("*************start**chechSolrData**************");
 		TBrProductQuery query = new TBrProductQuery();
-		query.setUpdateBy(7l);  // 8  7
+		query.setUpdateBy(7l); // 8 7
 		long queryCount = tBrProductService.queryCount(query);
 		log.info("solr全量数据--需要检查" + queryCount);
 		int pagesize = 50;
-		int cur =1;
+		int cur = 1;
 		TBrProduct up = null;
 		while (queryCount > 0) {
 			PageReq pageReq = new PageReq();
@@ -834,15 +825,15 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			List<TBrProduct> content = page.getContent();
 			HashSet<String> ids = Sets.newHashSet();
 			for (TBrProduct tBrProduct : content) {
-				ids.add(tBrProduct.getId()+"");
+				ids.add(tBrProduct.getId() + "");
 			}
 			HashSet<String> queryByIds = solrService.queryByIds(ids);
-			if(queryByIds !=null){
+			if (queryByIds != null) {
 				log.info("special Data");
 				for (String idstr : queryByIds) {
-					tBrProductService.updateStatus(Long.parseLong(idstr),9l); //没有被索引，更新为9
+					tBrProductService.updateStatus(Long.parseLong(idstr), 9l); // 没有被索引，更新为9
 				}
-			}else{
+			} else {
 				log.info("normal Data");
 				Collection<TBrProduct> newArrayList = Lists.newArrayList();
 				for (String idstr : ids) {
@@ -853,22 +844,22 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 				}
 				tBrProductService.updateInBatch(newArrayList);
 			}
-			queryCount-=pagesize;
+			queryCount -= pagesize;
 			cur++;
-			log.info("queryCountNow=="+queryCount+"cur=="+cur);
+			log.info("queryCountNow==" + queryCount + "cur==" + cur);
 		}
-		
+
 	}
-	
-//	@Test
-	public void searchFromId(){
+
+	// @Test
+	public void searchFromId() {
 		log.info("*************start**searchFromId**************");
 		TBrProductQuery query = new TBrProductQuery();
-		query.setUpdateBy(7l);  // 8  7
+		query.setUpdateBy(7l); // 8 7
 		long queryCount = tBrProductService.queryCount(query);
 		log.info("solr全量数据--需要检查" + queryCount);
 		int pagesize = 1000;
-		int cur =0;
+		int cur = 0;
 		while (queryCount > 0) {
 			PageReq pageReq = new PageReq();
 			pageReq.setPageSize(pagesize);
@@ -876,22 +867,21 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			List<TBrProduct> content = tBrProductService.queryPageList(query, pageReq).getContent();
 			for (TBrProduct tBrProduct : content) {
 				TBrAaa queryById = tBrAaaService.queryById(tBrProduct.getId());
-				if(queryById == null){
-					tBrProductService.updateStatus(tBrProduct.getId(),9l);
-				}else{
-					tBrProductService.updateStatus(tBrProduct.getId(),10l);
+				if (queryById == null) {
+					tBrProductService.updateStatus(tBrProduct.getId(), 9l);
+				} else {
+					tBrProductService.updateStatus(tBrProduct.getId(), 10l);
 				}
-			}			
-			queryCount-=pagesize;		
-			log.info("queryCountNow=="+queryCount+"cur=="+cur);
+			}
+			queryCount -= pagesize;
+			log.info("queryCountNow==" + queryCount + "cur==" + cur);
 		}
-		
-	}
-	
 
-//	@Test
-	public void exportSolr(){
-		String fileName = "export_" +  System.currentTimeMillis() + ".xlsx";
+	}
+
+	// @Test
+	public void exportSolr() {
+		String fileName = "export_" + System.currentTimeMillis() + ".xlsx";
 		String now = DateFormatUtil.formatDate(new Date());
 		String filePath = Constant.EXPORT_BASE_SAVE_PATH + now + "/" + fileName;
 		FileUtil.makeDirectory(filePath);
@@ -916,7 +906,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			list = solrService.querySolr3(query, pagesize * i, pagesize);
 			for (Long p : list) {
 				row = ee.addRow();
-				ee.addCell(row, 0, "'"+p);
+				ee.addCell(row, 0, "'" + p);
 			}
 			log.info("导出数据--外层循环" + i);
 		}
@@ -926,7 +916,7 @@ public class LogController extends BaseControllerHandler<TBrLogQuery> {
 			log.info("**产品数据导出异常**");
 		}
 		ee.dispose();
-		log.info("**产品数据导出完成**"+Constant.EXPORT_BASE_READ_PATH + now + "/" + fileName);
+		log.info("**产品数据导出完成**" + Constant.EXPORT_BASE_READ_PATH + now + "/" + fileName);
 	}
-	
+
 }

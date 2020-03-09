@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.co.example.common.constant.Constant;
+import com.co.example.common.utils.ValidateUtil;
 import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.aide.TAdminVo;
 import com.co.example.service.admin.TAdminService;
@@ -33,7 +34,8 @@ public class CustomUserDetailsService implements UserDetailsService {
         if(admin.getIsActive() == Constant.STATUS_NOT_ACTIVE){
         	throw new BadCredentialsException("该账户已被锁定，请联系管理员！");
         }
-        CustomUserDetails customUserDetails = new CustomUserDetails((TAdminVo) admin);
+        boolean flg = ValidateUtil.isMobile(userName);
+        CustomUserDetails customUserDetails = new CustomUserDetails((TAdminVo) admin,flg);
         return customUserDetails; 
     }
 

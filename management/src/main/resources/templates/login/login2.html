@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+
+ <head th:replace="/common/layout_head :: head"> 
+</head> 
+
+  <body>
+   <link rel="stylesheet" type="text/css" href="/css/login/login.css" /> 
+   <style type="text/css"> 
+		label.error {
+		 	position: absolute;
+		    right: 68px;
+		    top: 21px;
+		    color: #ef392b;
+		    font-size: 12px;
+		}
+		
+		body{ 
+		  	background-image: url(/img/login/bg.jpg);
+		    border-width: 0px;			 
+		    -ms-overflow-x: hidden;
+		    overflow-x: hidden;
+		    -ms-overflow-y: hidden;
+		    overflow-y: hidden;
+		    background-color: rgba(242, 242, 242, 1);
+		    background-position: center bottom;
+		    background-repeat: no-repeat;
+		    background-attachment: scroll;
+		    background-size: 1278px 559px;
+		  }		
+		  
+	</style> 
+    <div id="base" class="">
+      <form  id="curForm" th:action="@{/login}" method="post">
+      <div id="u2" class="ax_default" >
+        <div id="u2_state0" class="panel_state" >
+          <div id="u2_state0_content" class="panel_state_content">
+
+            <!-- 登录按纽 (矩形) -->
+            <button id="u3"   style="cursor: pointer;">
+              <div id="u3_div" class="" tabindex="0"></div>
+              <div id="u4" class="text">
+                <p><span>登录</span></p>
+              </div>
+            </button>
+        
+            <div th:if="${param.error}" id="u5" class="ax_default " >
+              <div id="u5_state0" class="panel_state" >
+                <div id="u5_state0_content" class="panel_state_content">                 
+                  <div id="u6" >
+                    <div id="u6_div" class=""></div>        
+                    <div id="u7" class="text">
+                      <p style="font-size:12px;">
+                       <span  class="Hui-iconfont">&#xe706;</span>
+                       <span th:text="${errMessage}" style="font-family:&#39;微软雅黑&#39;;font-weight:400;font-size:14px;">用户名或密码不正确</span>
+                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+            <div id="u12" >
+              <img id="u12_img" class="img " src="/img/login/foot.png"/>
+              <!-- Unnamed () -->
+              <div id="u13" class="text">
+                <p><span>Copyright © </span><a id="u14" class="link" title="点击打开www.cntrend.com" tabindex="0" style="cursor: pointer;"><span>www.cntrend.com</span></a><span>, All Rights Reserved.</span></p><p><span>国产化妆品备案数据分析平台</span></p>
+              </div>
+            </div>
+
+            <div id="u15" >              
+              <div id="u16" class="text">
+                <p style="font-size:32px;"><span style="font-family:&#39;微软雅黑 Bold&#39;, &#39;微软雅黑 Regular&#39;, &#39;微软雅黑&#39;;font-weight:700;">国产化妆品备案数据分析平台</span></p><p style="font-size:24px;"><span style="font-family:&#39;微软雅黑 Regular&#39;, &#39;微软雅黑&#39;;font-weight:410;">Domestic Cosmetics Record Data Analysis Platform</span></p><p style="font-size:24px;"><span style="font-family:&#39;微软雅黑 Regular&#39;, &#39;微软雅黑&#39;;font-weight:410;"><br/></span></p>
+              </div>
+            </div>
+            <div id="u17" class="ax_default image2">
+              <img id="u17_img" class="img " src="/img/login/logo.svg" />
+            </div>
+            <div id="u19" class="ax_default"   data-left="24" data-top="292" data-width="370" data-height="55">
+              <div id="u20" >
+                <img id="u20_img" class="img selected" src="/img/login/border.png"/>             
+              </div>
+              <div id="u22"  data-label="输入框">
+                <input id="username"   name="username" th:value="${username}" type="text" placeholder="账户" maxlength="20" tabindex="0"/>
+              </div>  
+              <div id="u25"  data-label="图标">               
+                <div id="u26" class="text">
+                  <p><span class="Hui-iconfont">&#xe705;</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div id="u27" class="ax_default" data-label="输入框" >
+              <div id="u28"  data-label="边框">
+                <img id="u28_img" class="img " src="/img/login/border.png"/>
+                <!-- Unnamed () -->
+                <div id="u29" class="text" >
+                  <p><span></span></p>
+                </div>
+              </div>
+              <!-- 输入框 (文本框) -->
+              <div id="u30"  data-label="输入框">
+                <input id="password"    name="password" type="password" placeholder="密码" maxlength="20" tabindex="0" style="color: rgb(204, 204, 204);"/>
+              </div>
+              <div id="u33"  data-label="图标">               
+                <div id="u34" class="text">
+                  <p><span class="Hui-iconfont">&#xe60e;</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+<div th:replace="common/layout_js :: js"></div> 
+<script type="text/javascript" src="/js/login/login.js"></script>
+  
+</body>
+</html>

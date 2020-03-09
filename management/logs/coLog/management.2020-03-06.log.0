@@ -1,0 +1,1217 @@
+2020-03-06 10:47:57.320 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 9112 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 10:47:57.333 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 10:48:03.859 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 10:48:05.197 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 10:48:06.001 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 10:48:06.023 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 10:48:08.896 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 10:48:08.898 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 10:48:09.144 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 10:48:12.839 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 10:48:29.842 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-03-06 10:48:29.843 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-03-06 10:48:30.119 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25c46e15, org.springframework.security.web.context.SecurityContextPersistenceFilter@79817328, org.springframework.security.web.header.HeaderWriterFilter@529e7491, org.springframework.security.web.csrf.CsrfFilter@59f4fd5c, org.springframework.security.web.authentication.logout.LogoutFilter@69c54f36, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d5a88ca, org.springframework.security.web.session.ConcurrentSessionFilter@6c11bebf, org.springframework.security.web.session.ConcurrentSessionFilter@7ca55f83, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6aa2c11, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11dbc43e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5ce009a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@661ed57d, org.springframework.security.web.session.SessionManagementFilter@3f341ad8, org.springframework.security.web.access.ExceptionTranslationFilter@1e76b99e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52556108]
+2020-03-06 10:48:32.484 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-03-06 10:48:33.777 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-03-06 10:48:33.784 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-03-06 10:48:33.793 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-03-06 10:48:33.805 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 10:48:33.806 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-03-06 10:48:33.806 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-03-06 10:48:43.458 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-03-06 10:48:43.487 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-03-06 10:48:43.517 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-03-06 10:48:44.042 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-03-06 10:48:44.044 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 47.54 seconds (JVM running for 50.019)
+2020-03-06 10:49:17.984 [http-nio-7000-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-03-06 10:49:20.017 [http-nio-7000-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-03-06 10:49:20.102 [http-nio-7000-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-03-06 10:49:20.102 [http-nio-7000-exec-1] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-03-06 10:49:20.102 [http-nio-7000-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-03-06 10:49:20.102 [http-nio-7000-exec-1] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-03-06 10:49:20.113 [http-nio-7000-exec-1] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-03-06 10:49:41.984 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 10:49:41.985 [http-nio-7000-exec-5] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 10:49:42.056 [http-nio-7000-exec-5] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 10:51:17.773 [http-nio-7000-exec-8] ERROR org.thymeleaf.templateparser.ErrorHandler - [THYMELEAF][http-nio-7000-exec-8] Fatal error during parsing
+org.xml.sax.SAXParseException: The element type "input" must be terminated by the matching end-tag "</input>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanEndElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 10:51:17.785 [http-nio-7000-exec-8] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-7000-exec-8] Exception processing template "/V2/admin/editPwdInit": Exception parsing document: template="/V2/admin/editPwdInit", line 26 - column 7
+2020-03-06 10:51:17.786 [http-nio-7000-exec-8] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="/V2/admin/editPwdInit", line 26 - column 7] with root cause
+org.xml.sax.SAXParseException: The element type "input" must be terminated by the matching end-tag "</input>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanEndElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 10:51:59.017 [http-nio-7000-exec-7] ERROR org.thymeleaf.templateparser.ErrorHandler - [THYMELEAF][http-nio-7000-exec-7] Fatal error during parsing
+org.xml.sax.SAXParseException: The value of attribute "src" associated with an element type "script" must not contain the '<' character.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 10:51:59.018 [http-nio-7000-exec-7] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-7000-exec-7] Exception processing template "/V2/admin/editPwdInit": Exception parsing document: template="/V2/admin/editPwdInit", line 43 - column 88
+2020-03-06 10:51:59.020 [http-nio-7000-exec-7] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="/V2/admin/editPwdInit", line 43 - column 88] with root cause
+org.xml.sax.SAXParseException: The value of attribute "src" associated with an element type "script" must not contain the '<' character.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 10:52:06.384 [http-nio-7000-exec-9] ERROR org.thymeleaf.templateparser.ErrorHandler - [THYMELEAF][http-nio-7000-exec-9] Fatal error during parsing
+org.xml.sax.SAXParseException: The value of attribute "src" associated with an element type "script" must not contain the '<' character.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 10:52:06.386 [http-nio-7000-exec-9] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-7000-exec-9] Exception processing template "/V2/admin/editPwdInit": Exception parsing document: template="/V2/admin/editPwdInit", line 43 - column 88
+2020-03-06 10:52:06.389 [http-nio-7000-exec-9] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="/V2/admin/editPwdInit", line 43 - column 88] with root cause
+org.xml.sax.SAXParseException: The value of attribute "src" associated with an element type "script" must not contain the '<' character.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134)
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116)
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 11:01:51.944 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 11:01:51.944 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 11:01:51.947 [http-nio-7000-exec-4] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 11:02:43.005 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 11:02:43.005 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 11:02:43.007 [http-nio-7000-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 11:08:55.636 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 11:08:55.636 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 0 subscriber(s).
+2020-03-06 11:08:55.637 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-03-06 11:08:55.637 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-03-06 11:08:55.655 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2020-03-06 11:08:55.655 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2020-03-06 11:08:57.740 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 9112 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 11:08:57.741 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 11:09:01.389 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 11:09:02.508 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 11:09:02.910 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 11:09:02.911 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 11:09:03.361 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 11:09:03.361 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 11:09:03.389 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 11:09:05.458 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 17:12:42.995 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 9212 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 17:12:43.026 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 17:12:48.879 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 17:12:50.210 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 17:12:50.821 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 17:12:50.828 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 17:12:53.349 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 17:12:53.350 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 17:12:53.557 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 17:12:56.924 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-03-06 17:13:06.514 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-03-06 17:13:06.785 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37ae0b2b, org.springframework.security.web.context.SecurityContextPersistenceFilter@7dd63625, org.springframework.security.web.header.HeaderWriterFilter@260b77fa, org.springframework.security.web.csrf.CsrfFilter@5f5188ba, org.springframework.security.web.authentication.logout.LogoutFilter@7226e676, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@204e0e01, org.springframework.security.web.session.ConcurrentSessionFilter@19ee5a94, org.springframework.security.web.session.ConcurrentSessionFilter@2b067785, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f3ac2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f28e91, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@cc4a336, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@498071ae, org.springframework.security.web.session.SessionManagementFilter@1197fda8, org.springframework.security.web.access.ExceptionTranslationFilter@64964212, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e53163]
+2020-03-06 17:13:08.203 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-03-06 17:13:09.390 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-03-06 17:13:09.395 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-03-06 17:13:09.405 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-03-06 17:13:09.420 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 17:13:09.421 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-03-06 17:13:09.421 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-03-06 17:13:17.150 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-03-06 17:13:17.172 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-03-06 17:13:17.185 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-03-06 17:13:17.236 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-03-06 17:13:17.238 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 34.84 seconds (JVM running for 35.982)
+2020-03-06 17:15:00.963 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-03-06 17:15:02.679 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-03-06 17:15:02.744 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-03-06 17:15:02.745 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-03-06 17:15:02.745 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-03-06 17:15:02.745 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-03-06 17:15:02.749 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-03-06 17:15:52.670 [http-nio-7000-exec-9] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:15:52.670 [http-nio-7000-exec-9] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:15:52.681 [http-nio-7000-exec-9] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:16:03.831 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:16:20.073 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:16:31.990 [http-nio-7000-exec-5] INFO  o.s.jdbc.support.SQLErrorCodesFactory - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2020-03-06 17:19:48.513 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 4764 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 17:19:48.521 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 17:19:54.790 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 17:19:56.036 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 17:19:56.655 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 17:19:56.661 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 17:19:59.048 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 17:19:59.050 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 17:19:59.270 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 17:20:02.843 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 17:20:14.418 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-03-06 17:20:14.419 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-03-06 17:20:14.420 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-06 17:20:14.422 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-06 17:20:14.422 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-03-06 17:20:14.422 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-03-06 17:20:14.423 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-03-06 17:20:14.423 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-03-06 17:20:14.423 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-03-06 17:20:14.676 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77b98430, org.springframework.security.web.context.SecurityContextPersistenceFilter@6efeb16, org.springframework.security.web.header.HeaderWriterFilter@459d5df1, org.springframework.security.web.csrf.CsrfFilter@5f779bc2, org.springframework.security.web.authentication.logout.LogoutFilter@1361ace7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6d1aeb20, org.springframework.security.web.session.ConcurrentSessionFilter@4dc0320c, org.springframework.security.web.session.ConcurrentSessionFilter@41212415, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@440868b0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2522f942, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@39477f5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46e5b288, org.springframework.security.web.session.SessionManagementFilter@4b5e2b59, org.springframework.security.web.access.ExceptionTranslationFilter@53b2c852, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6bd4bc8e]
+2020-03-06 17:20:16.228 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-03-06 17:20:17.530 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-03-06 17:20:17.536 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-03-06 17:20:17.548 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-03-06 17:20:17.562 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 17:20:17.563 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-03-06 17:20:17.563 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-03-06 17:20:26.060 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-03-06 17:20:26.086 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-03-06 17:20:26.103 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-03-06 17:20:26.172 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-03-06 17:20:26.174 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 38.323 seconds (JVM running for 39.572)
+2020-03-06 17:22:52.607 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-03-06 17:22:54.143 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-03-06 17:22:54.206 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-03-06 17:22:54.206 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-03-06 17:22:54.206 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-03-06 17:22:54.206 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-03-06 17:22:54.211 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-03-06 17:23:04.120 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:23:04.121 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:23:04.130 [http-nio-7000-exec-4] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:23:07.536 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:17.159 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:23:26.121 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:26.127 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:23:26.595 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:26.609 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:23:26.818 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:26.829 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:23:26.858 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:26.863 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:23:26.886 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:26.891 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:23:26.996 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:23:27.002 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:34:40.303 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:34:40.333 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:34:41.661 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:34:41.679 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:35:06.718 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:35:23.852 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:35:23.987 [http-nio-7000-exec-3] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-7000-exec-3] Exception processing template "/V2/contrast/detail": Error resolving template "/V2/contrast/detail", template might not exist or might not be accessible by any of the configured Template Resolvers
+2020-03-06 17:35:23.993 [http-nio-7000-exec-3] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/V2/contrast/detail", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "/V2/contrast/detail", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:246)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011)
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335)
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1282)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.co.example.security.MyFilterSecurityInterceptor.invoke(MyFilterSecurityInterceptor.java:57)
+	at com.co.example.security.MyFilterSecurityInterceptor.doFilter(MyFilterSecurityInterceptor.java:46)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-03-06 17:35:35.564 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:35:38.339 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:35:50.538 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:35:50.547 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:06.648 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:06.677 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:06.909 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:06.915 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:06.957 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:06.963 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:06.988 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:06.996 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.013 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.020 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.023 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.027 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.044 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.065 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.106 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.121 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.128 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.130 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.138 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.163 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.237 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.284 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.350 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.360 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.366 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.379 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.386 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.411 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.419 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:07.470 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.493 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:07.506 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:28.674 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:36:28.675 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:36:28.677 [http-nio-7000-exec-4] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:36:28.754 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:28.808 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:36:29.155 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:29.181 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:29.729 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:29.755 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:29.772 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:29.778 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:29.790 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:29.792 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:36:29.814 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:29.815 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:29.843 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:36:29.850 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:38:17.293 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:38:17.305 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:38:17.742 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:38:17.772 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:38:43.189 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:38:43.189 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:38:43.191 [http-nio-7000-exec-2] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:38:43.410 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:38:43.417 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:39:04.296 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:39:04.302 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:39:04.686 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:39:04.691 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:39:04.703 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:39:04.707 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:39:04.724 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:39:04.729 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:39:04.730 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:39:04.739 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:39:04.819 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:39:04.825 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:40:32.603 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 7212 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 17:40:32.633 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 17:40:41.689 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 17:40:43.125 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 17:40:43.733 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 17:40:43.739 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 17:40:46.965 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 17:40:46.966 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 17:40:47.173 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 17:40:50.836 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 17:41:07.668 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-03-06 17:41:07.669 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-03-06 17:41:07.672 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-06 17:41:07.673 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-06 17:41:07.673 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-03-06 17:41:07.673 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-03-06 17:41:07.673 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-03-06 17:41:07.673 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-03-06 17:41:07.673 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-03-06 17:41:07.948 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ac71646, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f1b48d3, org.springframework.security.web.header.HeaderWriterFilter@51bc9b44, org.springframework.security.web.csrf.CsrfFilter@44a8e0f1, org.springframework.security.web.authentication.logout.LogoutFilter@1a56834b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7a3ccbe5, org.springframework.security.web.session.ConcurrentSessionFilter@3a055b31, org.springframework.security.web.session.ConcurrentSessionFilter@74aa617, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69070a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74c5c7e2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@f0ec5d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26facc77, org.springframework.security.web.session.SessionManagementFilter@4cc18a8f, org.springframework.security.web.access.ExceptionTranslationFilter@667fe5fc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39c720b7]
+2020-03-06 17:41:09.488 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-03-06 17:41:10.750 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-03-06 17:41:10.757 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-03-06 17:41:10.767 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-03-06 17:41:10.778 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 17:41:10.779 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-03-06 17:41:10.779 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-03-06 17:41:20.358 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-03-06 17:41:20.384 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-03-06 17:41:20.398 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-03-06 17:41:20.470 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-03-06 17:41:20.473 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 49.003 seconds (JVM running for 50.681)
+2020-03-06 17:41:48.946 [http-nio-7000-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-03-06 17:41:50.542 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-03-06 17:41:50.626 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-03-06 17:41:50.626 [http-nio-7000-exec-3] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-03-06 17:41:50.626 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-03-06 17:41:50.626 [http-nio-7000-exec-3] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-03-06 17:41:50.636 [http-nio-7000-exec-3] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-03-06 17:42:24.612 [http-nio-7000-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:42:24.612 [http-nio-7000-exec-10] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:42:24.620 [http-nio-7000-exec-10] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:42:24.757 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:24.827 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:42:48.764 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:48.770 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:42:49.436 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:49.440 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:49.446 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:49.451 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:42:49.477 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:49.482 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:42:49.484 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:42:49.506 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:42:49.703 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:42:49.783 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:47:24.525 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:47:24.526 [http-nio-7000-exec-4] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:47:24.527 [http-nio-7000-exec-4] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:47:24.570 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:24.584 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:47:44.060 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***普通用户
+2020-03-06 17:47:53.356 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:53.364 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:47:53.781 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:53.794 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:47:53.845 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:53.855 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:53.857 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:47:53.867 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:47:53.878 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:53.884 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:47:53.885 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:47:53.891 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:05.831 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:05.842 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:06.252 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:06.257 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:06.563 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:06.570 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:06.580 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:06.589 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:06.593 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:06.596 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:06.599 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:06.600 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:06.605 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:06.610 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:29.759 [http-nio-7000-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 17:48:29.759 [http-nio-7000-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 17:48:29.760 [http-nio-7000-exec-8] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 17:48:29.796 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:29.802 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 17:48:48.213 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***普通用户
+2020-03-06 17:48:50.324 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:50.331 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:50.629 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:50.634 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:50.635 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:50.651 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:50.664 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:50.669 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:50.687 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:50.693 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:48:50.718 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:48:50.735 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***没有被踢出
+2020-03-06 17:49:13.250 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 17:49:13.258 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***已经被踢出
+2020-03-06 18:07:43.976 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 4964 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 18:07:44.153 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 18:07:49.965 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 18:07:51.274 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 18:07:51.907 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 18:07:51.913 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 18:07:54.181 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 18:07:54.183 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 18:07:54.403 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 18:07:57.873 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 18:08:08.771 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-03-06 18:08:08.772 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-03-06 18:08:08.775 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-06 18:08:08.776 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-06 18:08:08.776 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-03-06 18:08:08.776 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-03-06 18:08:08.776 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-03-06 18:08:08.776 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-03-06 18:08:08.776 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-03-06 18:08:09.009 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e00a1a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@e218176, org.springframework.security.web.header.HeaderWriterFilter@49b997fe, org.springframework.security.web.csrf.CsrfFilter@2564cf64, org.springframework.security.web.authentication.logout.LogoutFilter@1bd47ad4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7f9f1070, org.springframework.security.web.session.ConcurrentSessionFilter@699b3084, org.springframework.security.web.session.ConcurrentSessionFilter@58590da3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10e8be0a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c965cf7, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2335cc8b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d48098, org.springframework.security.web.session.SessionManagementFilter@1135a6f8, org.springframework.security.web.access.ExceptionTranslationFilter@5a96097d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f7651d8]
+2020-03-06 18:08:10.865 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-03-06 18:08:12.090 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-03-06 18:08:12.096 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-03-06 18:08:12.105 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-03-06 18:08:12.116 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 18:08:12.116 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-03-06 18:08:12.116 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-03-06 18:08:21.324 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-03-06 18:08:21.372 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-03-06 18:08:21.416 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-03-06 18:08:21.510 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-03-06 18:08:21.513 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 38.23 seconds (JVM running for 39.54)
+2020-03-06 18:08:38.908 [http-nio-7000-exec-9] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-03-06 18:08:40.352 [http-nio-7000-exec-9] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-03-06 18:08:40.431 [http-nio-7000-exec-9] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-03-06 18:08:40.431 [http-nio-7000-exec-9] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-03-06 18:08:40.431 [http-nio-7000-exec-9] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-03-06 18:08:40.432 [http-nio-7000-exec-9] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-03-06 18:08:40.437 [http-nio-7000-exec-9] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-03-06 18:08:47.158 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 18:08:47.192 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 18:08:47.224 [http-nio-7000-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 18:08:47.296 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:08:47.363 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 18:08:52.411 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:08:52.871 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:08:52.890 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:08:52.900 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:08:52.906 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:08:52.963 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:09.783 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:10.843 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:24.480 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 18:09:24.481 [http-nio-7000-exec-1] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 18:09:24.482 [http-nio-7000-exec-1] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 18:09:24.518 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:24.523 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 18:09:24.528 [http-nio-7000-exec-5] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***普通用户，踢出其他用户
+2020-03-06 18:09:24.812 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:25.079 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:25.136 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:25.152 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:25.186 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:25.197 [http-nio-7000-exec-2] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:35.641 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:36.342 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:42.387 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:09:42.390 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***已经被踢出
+2020-03-06 18:10:14.779 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:35.425 [http-nio-7000-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 18:10:35.425 [http-nio-7000-exec-8] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 18:10:35.429 [http-nio-7000-exec-8] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 18:10:35.467 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:35.474 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 18:10:35.479 [http-nio-7000-exec-3] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***普通用户，踢出其他用户
+2020-03-06 18:10:36.023 [http-nio-7000-exec-7] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:36.302 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:36.325 [http-nio-7000-exec-1] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:36.335 [http-nio-7000-exec-4] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:36.353 [http-nio-7000-exec-9] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:36.359 [http-nio-7000-exec-6] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:55.754 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***session不为空
+2020-03-06 18:10:55.758 [http-nio-7000-exec-10] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***已经被踢出
+2020-03-06 18:15:10.769 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 4412 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 18:15:10.891 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-03-06 18:15:16.578 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-03-06 18:15:18.066 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-03-06 18:15:18.659 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-03-06 18:15:18.664 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-03-06 18:15:20.957 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-03-06 18:15:20.959 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-03-06 18:15:21.176 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-06 18:15:24.477 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-03-06 18:15:34.317 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-03-06 18:15:34.317 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-03-06 18:15:34.317 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-03-06 18:15:34.318 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-03-06 18:15:34.321 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-03-06 18:15:34.321 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-03-06 18:15:34.322 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-03-06 18:15:34.322 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-03-06 18:15:34.322 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-03-06 18:15:34.566 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6441bcb5, org.springframework.security.web.context.SecurityContextPersistenceFilter@5da3e096, org.springframework.security.web.header.HeaderWriterFilter@abebae3, org.springframework.security.web.csrf.CsrfFilter@4f9fbebf, org.springframework.security.web.authentication.logout.LogoutFilter@573ba012, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ff88610, org.springframework.security.web.session.ConcurrentSessionFilter@4fa26e2b, org.springframework.security.web.session.ConcurrentSessionFilter@333aae89, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14157e98, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33bf1ab2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@78735f61, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b928af6, org.springframework.security.web.session.SessionManagementFilter@55a5a31e, org.springframework.security.web.access.ExceptionTranslationFilter@6c95a9ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68be9208]
+2020-03-06 18:15:36.075 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-03-06 18:15:37.345 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-03-06 18:15:37.351 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-03-06 18:15:37.365 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-03-06 18:15:37.377 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 18:15:37.378 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-03-06 18:15:37.378 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-03-06 18:15:46.226 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-03-06 18:15:46.249 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-03-06 18:15:46.262 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-03-06 18:15:46.325 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-03-06 18:15:46.346 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 36.267 seconds (JVM running for 37.525)
+2020-03-06 18:16:29.379 [http-nio-7000-exec-9] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-03-06 18:16:30.958 [http-nio-7000-exec-7] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-03-06 18:16:31.039 [http-nio-7000-exec-7] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-03-06 18:16:31.040 [http-nio-7000-exec-7] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-03-06 18:16:31.040 [http-nio-7000-exec-7] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-03-06 18:16:31.040 [http-nio-7000-exec-7] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-03-06 18:16:31.044 [http-nio-7000-exec-7] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-03-06 18:16:40.630 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-03-06 18:16:40.632 [http-nio-7000-exec-3] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-03-06 18:16:40.644 [http-nio-7000-exec-3] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-03-06 18:16:40.809 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***无此记录，添加
+2020-03-06 18:16:40.833 [http-nio-7000-exec-8] INFO  com.co.example.interceptor.SessionInterceptor - ***limit***普通用户，踢出其他用户
+2020-03-06 18:17:21.043 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-03-06 18:17:21.043 [Thread-8] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 0 subscriber(s).
+2020-03-06 18:17:21.044 [Thread-8] INFO  o.s.integration.endpoint.EventDrivenConsumer - stopped _org.springframework.integration.errorLogger
+2020-03-06 18:17:21.045 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-03-06 18:17:21.049 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2020-03-06 18:17:21.051 [Thread-8] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2020-03-06 18:17:22.116 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 4412 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-03-06 18:17:22.117 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default

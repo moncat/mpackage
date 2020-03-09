@@ -1,0 +1,44 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+</section>
+<section layout:fragment="main">
+<br/><br/><br/>
+	
+	<div sec:authorize="hasRole('ROLE_guest')">有ROLE_guest权限</div>
+	<div sec:authorize="hasRole('ROLE_test')">有ROLE_test权限</div>
+	<div sec:authorize="hasRole('ROLE_member')">有ROLE_member权限</div>	
+	<div sec:authorize="hasRole('ROLE_admin')">有ROLE_admin权限</div>	
+	<div sec:authorize="hasRole('ROLE_sa')">有ROLE_sa权限</div>	
+	
+	<div sec:authorize="hasRole('ROLE_guest') eq false">NO  ROLE_guest权限</div>
+	<div sec:authorize="hasRole('ROLE_test') eq false">NO  ROLE_test权限</div>
+	<div sec:authorize="hasRole('ROLE_member') eq false">NO  ROLE_member权限</div>	
+	<div sec:authorize="hasRole('ROLE_admin') eq false">NO  ROLE_admin权限</div>	
+	<div sec:authorize="hasRole('ROLE_sa') eq false">NO  ROLE_sa权限</div>	
+<br/><br/><br/>
+_____________________________
+<br/><br/><br/>
+目前了解到的有关SpringSecurity的标签属性有以下几个：
+<br/>
+1判断用户是否已经登陆认证，引号内的参数必须是isAuthenticated()。
+<div sec:authorize="isAuthenticated()">已登录</div>
+<br/>
+2获得当前用户的用户名，引号内的参数必须是name。
+<div sec:authentication="name"></div>
+<!-- 
+<div sec:authentication="principal"></div>
+<div sec:authentication="details"></div>
+ -->
+<br/>
+3判断当前用户是否拥有指定的权限。引号内的参数为权限的名称。 可以用作按钮权限限制
+<div sec:authorize="hasRole('ROLE_test')">有ROLE_test权限</div>
+
+<br/>
+4获得当前用户的全部角色，引号内的参数必须是principal.authorities。
+<div sec:authentication="principal.authorities"></div>
+
+
+</section>
+<section layout:fragment="my">
+</section>
+</html>

@@ -394,7 +394,11 @@
 		    <artifactId>spring-boot-starter-data-solr</artifactId>
 		</dependency> 
 		
- 
+		 <!--Spring Security和thymeleaf的整合依赖-->
+		<dependency>
+		 	 <groupId>org.thymeleaf.extras</groupId>
+		  	 <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+		</dependency>
 		
 	</dependencies>
   

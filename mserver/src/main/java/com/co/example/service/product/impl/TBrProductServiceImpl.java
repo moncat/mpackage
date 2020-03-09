@@ -1213,6 +1213,7 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 			String applySn = base.getString("passno");
 			String date = base.getString("passdate");
 			date = date.replace(" ", "");
+			date = formatData(date);
 			tBrProductQuery.setProductName(productName);
 			tBrProductQuery.setApplySn(applySn);
 			tBrProductQuery.setConfirmDate(date);
@@ -1391,10 +1392,10 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 	}
 
 	public static void main(String[] args) {
-		String filePath = "d:\\home/file\\cfda/2019-10-22\\info_12345.json";
-		String dateStr = filePath.replace("/", "$").replace("\\", "$");
-		dateStr = dateStr.substring(dateStr.lastIndexOf("$") - 10, dateStr.lastIndexOf("$"));
-		System.out.println(dateStr);
+//		String filePath = "d:\\home/file\\cfda/2019-10-22\\info_12345.json";
+//		String dateStr = filePath.replace("/", "$").replace("\\", "$");
+//		dateStr = dateStr.substring(dateStr.lastIndexOf("$") - 10, dateStr.lastIndexOf("$"));
+//		System.out.println(dateStr);
 		// String filePath = "/home/file/cfda/2019-10-22/info_12345.json";
 		// String processid =
 		// filePath.substring(filePath.lastIndexOf("cfda/")+5,filePath.lastIndexOf("/"));
@@ -1405,8 +1406,26 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		// } catch (IOException e) {
 		// e.printStackTrace();
 		// }
+		
+		System.out.println(formatData("2019年02月7日"));
 	}
 
+	
+	private static String formatData(String str) {
+		str = str.replace("年", "-").replace("月", "-").replace("日", "-");
+		String[] split = str.split("-");
+		String year=split[0];
+		String month=split[1];
+		String day=split[2];
+		if(month.length()==1){
+			month="0"+month;
+		}
+		if(day.length()==1){
+			day="0"+day;
+		}
+		return year+"-"+month+"-"+day;
+	}
+	
 	@Override
 	public Page<TBrProductVo> queryProductVoPageByBrandId(Long id, PageReq pageReq) {
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
@@ -1439,6 +1458,9 @@ public class TBrProductServiceImpl extends BaseServiceImpl<TBrProduct, Long> imp
 		return queryCount(productQuery);
 	}
 
+	
+	
+	
 	// public static void main(String[] args) {
 	// HashMap<String, String> params = Maps.newHashMap();
 	// params.put("on", "true");

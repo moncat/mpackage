@@ -1,0 +1,111 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/contrast/detail.css" />
+</section>
+<section layout:fragment="main">
+	
+		<div class="wrapper">
+				<div class="content_wrapper">
+					<!-- breadcrumb -->
+					<div class="container-fluid padding-zero">
+						<div class="page-heading">
+							<div class="row d-flex align-items-center">
+								<div class="col-md-6">
+									<div class="page-breadcrumb">
+										<h1>供应商对比</h1>
+									</div>
+								</div>
+								<div class="col-md-6 justify-content-md-end d-md-flex">
+									<div class="breadcrumb_nav">
+										<ol class="breadcrumb">
+											<li>
+												<i class="fa fa-home"></i>
+												<a class="parent-item" href="#">Home</a>
+												<i class="fa fa-angle-right"></i>
+											</li>
+											<li class="active">
+
+											</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- breadcrumb_End -->
+					<!-- 1 -->
+					<div class="container-fluid box-shadow Pro_Com_box">
+						<div class="Pro_Com_title">供应商对比</div>
+						<div class="Pro_Com_con">
+							<div class="Pro_Com_left">
+								<!--table1-->
+								<div class="table1 clearfix">
+									
+									<div style="overflow: auto;" class="aaa">
+										<table class="layui-table">
+										<p class="Pro_Com_left-title">基本信息</p>
+										<tbody>
+											<tr id="ename">
+												<td>供应商名称</td>
+											</tr>
+											<tr id="permissionId">
+												<td>生产许可证</td>
+											</tr>
+											<tr id="endDate">
+												<td>有效期至</td>
+											</tr>
+											<tr id="applySn">
+												<td>企业备案号</td>
+											</tr>
+											<tr id="type">
+												<td>行业类型</td>
+											</tr>
+											<tr id="permissionProject">
+												<td>许可项目</td>
+												
+												<!-- <td>
+													<p class="project"></p>
+												</td>
+												 -->
+											</tr>
+											<tr id="pnum">
+												<td>备案产品数</td>
+											</tr>
+											<tr id="inum">
+												<td>使用成分数</td>
+											</tr>
+											<tr id="bnum">
+												<td>服务品牌数</td>
+											</tr>
+											<tr id="catagory">
+												<td>产品类型分布</td>
+											</tr>
+										</tbody>
+									</table>
+									</div>
+								</div>
+								<!--table1-->
+
+							</div>
+							<!--2-->
+							<div class="Pro_Com_right">
+								<div class="form-group">
+									<label>供应商对比选择</label>
+									<input type="text" class="form-control" placeholder="请输入内容" id="search"/>
+									<ul class="Pro_Com_right-ul" id="option">
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+ 
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/v2/echarts/4.3.0/echarts.min.js"></script>
+	<script type="text/javascript" src="/js/v2/contrast/model.js?version=1"></script>
+	<script type="text/javascript" src="/js/v2/contrast/detailE.js?version=4"></script>
+</section>
+</html>

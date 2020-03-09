@@ -12,6 +12,9 @@
     <result column="last_time" jdbcType="TIMESTAMP" property="lastTime" />
     <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
     <result column="page_version" jdbcType="VARCHAR" property="pageVersion" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+    <result column="member_type" jdbcType="TINYINT" property="memberType" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="create_by" jdbcType="BIGINT" property="createBy" />
@@ -22,8 +25,8 @@
   </resultMap>
   <sql id="Base_Column_List">
     id, login_name, display_name, password, email, mobile_phone, visit_count, last_time, 
-    last_ip, page_version, item_order, create_time, create_by, update_time, update_by, 
-    is_active, del_flg
+    last_ip, page_version, head_img, member_type, end_time, item_order, create_time, 
+    create_by, update_time, update_by, is_active, del_flg
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -42,13 +45,15 @@
     insert into t_admin (id, login_name, display_name, 
       password, email, mobile_phone, 
       visit_count, last_time, last_ip, 
-      page_version, item_order, create_time, 
+      page_version, head_img, member_type, 
+      end_time, item_order, create_time, 
       create_by, update_time, update_by, 
       is_active, del_flg)
     values (#{id,jdbcType=BIGINT}, #{loginName,jdbcType=VARCHAR}, #{displayName,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
       #{visitCount,jdbcType=SMALLINT}, #{lastTime,jdbcType=TIMESTAMP}, #{lastIp,jdbcType=VARCHAR}, 
-      #{pageVersion,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{pageVersion,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{memberType,jdbcType=TINYINT}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
       #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
@@ -81,6 +86,15 @@
       </if>
       <if test="pageVersion != null">
         page_version = #{pageVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null">
+        head_img = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="memberType != null">
+        member_type = #{memberType,jdbcType=TINYINT},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="itemOrder != null">
         item_order = #{itemOrder,jdbcType=INTEGER},
@@ -117,6 +131,9 @@
       last_time = #{lastTime,jdbcType=TIMESTAMP},
       last_ip = #{lastIp,jdbcType=VARCHAR},
       page_version = #{pageVersion,jdbcType=VARCHAR},
+      head_img = #{headImg,jdbcType=VARCHAR},
+      member_type = #{memberType,jdbcType=TINYINT},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
@@ -164,6 +181,15 @@
       </if>
       <if test="pageVersion != null">
           and t.page_version = #{pageVersion,jdbcType=VARCHAR}
+      </if>
+      <if test="headImg != null">
+          and t.head_img = #{headImg,jdbcType=VARCHAR}
+      </if>
+      <if test="memberType != null">
+          and t.member_type = #{memberType,jdbcType=TINYINT}
+      </if>
+      <if test="endTime != null">
+          and t.end_time = #{endTime,jdbcType=TIMESTAMP}
       </if>
       <if test="itemOrder != null">
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
@@ -228,6 +254,9 @@
     t.last_time, 
     t.last_ip, 
     t.page_version, 
+    t.head_img, 
+    t.member_type, 
+    t.end_time, 
     t.item_order, 
     t.create_time, 
     t.create_by, 
@@ -250,4 +279,3 @@
      </if>
   </sql>
 </mapper>
-    

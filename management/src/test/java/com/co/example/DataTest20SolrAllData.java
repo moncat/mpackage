@@ -85,7 +85,7 @@ public class DataTest20SolrAllData {
 
 	@Inject
 	TBrBrandService tBrBrandService;
-	
+
 	@Inject
 	TBrLabelService tBrLabelService;
 
@@ -116,7 +116,7 @@ public class DataTest20SolrAllData {
 		log.info("*************end****************");
 	}
 
-	 @Test
+	@Test
 	public void updateByIdSelective() throws Exception {
 
 		log.info("*************start**updateByIdSelective**************");
@@ -124,17 +124,17 @@ public class DataTest20SolrAllData {
 		log.info("**************end**updateByIdSelective*************");
 	}
 
-	// @Test
+	@Test
 	public void updateProductByIdSelective() throws Exception {
 		log.info("*************start**updateByIdSelective**************");
 
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
-		tBrProductQuery.setIsChina(Constant.NO);
+		tBrProductQuery.setUpdateBy(9l);
 		List<TBrProduct> queryList = tBrProductService.queryList(tBrProductQuery);
 		Long id = 0l;
 		// 16489
 		String confirmDate = null;
-		for (int i = 189; i < queryList.size(); i++) {
+		for (int i = 0; i < queryList.size(); i++) {
 			TBrProduct tBrProduct = queryList.get(i);
 			id = tBrProduct.getId();
 			confirmDate = tBrProduct.getConfirmDate();
@@ -160,7 +160,7 @@ public class DataTest20SolrAllData {
 		log.info("**************end**delAll*************");
 	}
 
-//	@Test
+	// @Test
 	public void addSolrData() throws Exception {
 		log.info("*************start**addSolrData**************");
 		TBrProductQuery query = new TBrProductQuery();
@@ -179,14 +179,14 @@ public class DataTest20SolrAllData {
 			List<TBrProduct> content = page.getContent();
 			for (TBrProduct tBrProduct : content) {
 				TBrProductSolr tBrProductSolr = solrService.getSolrBean(tBrProduct);
-				//solr列表
+				// solr列表
 				tBrProductSolrList.add(tBrProductSolr);
-				//批量更新列表
+				// 批量更新列表
 				TBrProduct productTmp = new TBrProduct();
 				productTmp.setId(tBrProduct.getId());
 				productTmp.setUpdateBy(8l);
 				tBrProductTmpList.add(productTmp);
-				
+
 			}
 			solrService.syncProducts(tBrProductSolrList);
 			tBrProductService.updateInBatch(tBrProductTmpList);
@@ -198,29 +198,27 @@ public class DataTest20SolrAllData {
 		log.info("solr全量数据--同步数据完毕");
 		log.info("*************end**addSolrData**************");
 	}
-	
-	
-//	@Test
+
+	// @Test
 	public void addOneData() throws Exception {
 		Long id = 3511229152509952l;
 		log.info("*************start**addOne**************");
 		TBrProduct tBrProduct = tBrProductService.queryById(id);
-		Integer syncOne = solrService.syncOne(tBrProduct,true,10l);
-		if(syncOne==1){
+		Integer syncOne = solrService.syncOne(tBrProduct, true, 10l);
+		if (syncOne == 1) {
 			System.out.println(syncOne);
-		}else if(syncOne==2){
+		} else if (syncOne == 2) {
 			System.out.println(syncOne);
-		}else if(syncOne==3){
+		} else if (syncOne == 3) {
 			System.out.println(syncOne);
-		}else if(syncOne==4){
+		} else if (syncOne == 4) {
 			System.out.println(syncOne);
 		}
 		log.info("*************end**addOneData**************");
 	}
-	
-	
-	//正在使用
-//	@Test
+
+	// 正在使用
+	// @Test
 	public void addSolrData2() throws Exception {
 		log.info("*************start**addSolrData**************");
 		TBrProductQuery query = new TBrProductQuery();
@@ -235,9 +233,9 @@ public class DataTest20SolrAllData {
 			Page<TBrProduct> page = tBrProductService.queryPageList(query, pageReq);
 			List<TBrProduct> content = page.getContent();
 			for (TBrProduct tBrProduct : content) {
-				solrService.syncOne(tBrProduct,true,10l);
-//				Integer syncOne = solrService.syncOne(tBrProduct,true,10l);
-//				System.out.println("*****"+syncOne+"*****"+tBrProduct.getId());				
+				solrService.syncOne(tBrProduct, true, 10l);
+				// Integer syncOne = solrService.syncOne(tBrProduct,true,10l);
+				// System.out.println("*****"+syncOne+"*****"+tBrProduct.getId());
 			}
 			queryCount -= pagesize;
 			log.info("solr全量数据--同步中" + queryCount);
@@ -246,12 +244,11 @@ public class DataTest20SolrAllData {
 		log.info("*************end**addSolrData**************");
 	}
 
-	
-//	@Test
+	// @Test
 	public void queryCount() throws Exception {
 		log.info("*************start**queryCount**************");
 		Long queryCount = solrService.queryCount();
-		System.out.println("count=="+queryCount);
+		System.out.println("count==" + queryCount);
 		log.info("*************end**queryCount**************");
 	}
 

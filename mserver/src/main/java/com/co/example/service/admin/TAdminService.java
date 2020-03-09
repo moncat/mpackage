@@ -10,6 +10,8 @@ import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.TAdminActive;
 import com.co.example.entity.admin.aide.AdminSession;
 import com.co.example.entity.admin.aide.TAdminQuery;
+import com.co.example.entity.user.TUser;
+import com.co.example.entity.user.aide.UserSession;
 
 public interface TAdminService extends BaseService<TAdmin, Long> {
 	
@@ -23,5 +25,11 @@ public interface TAdminService extends BaseService<TAdmin, Long> {
 	Map<String, Object> addAdmin(TAdminQuery query, TAdminActive tAdminActive, Long adminId);
 
 	Map<String, Object> edit(TAdminQuery query, TAdminActive tAdminActive, Long adminId);
+	
+	Boolean updatePwd(String phoneNum, String password1, String password2);
+
+	
+
+	
 	
 }

@@ -26,6 +26,10 @@ public class TBrIngredientVo extends TBrIngredient {
 
     /** 产品数 */
     private Integer pnum;
+    /** 品牌数 */
+    private Integer bnum;
+    /** 企业数 */
+    private Integer eenum;
 
     /** 淘宝销量 */
     private Integer taobaoSale;

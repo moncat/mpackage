@@ -1,0 +1,132 @@
+2020-02-24 16:11:33.828 [restartedMain] INFO  com.co.example.ManagerApplication - Starting ManagerApplication on SKY-20160518SVB with PID 9316 (D:\Workspaces2\package\management\target\classes started by Administrator in D:\Workspaces2\package\management)
+2020-02-24 16:11:33.848 [restartedMain] INFO  com.co.example.ManagerApplication - No active profile set, falling back to default profiles: default
+2020-02-24 16:11:42.623 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.co.example]' package. Please check your configuration.
+2020-02-24 16:11:43.915 [restartedMain] INFO  o.s.integration.config.IntegrationRegistrar - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-02-24 16:11:44.600 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-02-24 16:11:44.641 [restartedMain] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-02-24 16:11:49.119 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service Tomcat
+2020-02-24 16:11:49.122 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2020-02-24 16:11:49.688 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-02-24 16:11:53.572 [localhost-startStop-1] WARN  c.co.example.security.MyFilterSecurityInterceptor - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+2020-02-24 16:12:09.560 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/assets/**'], []
+2020-02-24 16:12:09.561 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/base/**'], []
+2020-02-24 16:12:09.562 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/css/**'], []
+2020-02-24 16:12:09.565 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/js/**'], []
+2020-02-24 16:12:09.565 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/img/**'], []
+2020-02-24 16:12:09.565 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/identifyCode'], []
+2020-02-24 16:12:09.565 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/twitter/getId'], []
+2020-02-24 16:12:09.566 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-02-24 16:12:09.566 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/webjars/**'], []
+2020-02-24 16:12:09.821 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78799054, org.springframework.security.web.context.SecurityContextPersistenceFilter@75132833, org.springframework.security.web.header.HeaderWriterFilter@2916e5a9, org.springframework.security.web.csrf.CsrfFilter@5fdbae38, org.springframework.security.web.authentication.logout.LogoutFilter@5f0feef5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@74171e5c, org.springframework.security.web.session.ConcurrentSessionFilter@345094f9, org.springframework.security.web.session.ConcurrentSessionFilter@113ee4ec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@448b9718, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c49fd9, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@21631e55, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@463ef8ad, org.springframework.security.web.session.SessionManagementFilter@7775047d, org.springframework.security.web.access.ExceptionTranslationFilter@631ddf82, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3a8c79f4]
+2020-02-24 16:12:11.473 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2020-02-24 16:12:12.686 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-02-24 16:12:12.691 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-24 16:12:12.701 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-02-24 16:12:12.714 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-02-24 16:12:12.714 [restartedMain] INFO  o.s.integration.channel.PublishSubscribeChannel - Channel 'application:7000.errorChannel' has 1 subscriber(s).
+2020-02-24 16:12:12.715 [restartedMain] INFO  o.s.integration.endpoint.EventDrivenConsumer - started _org.springframework.integration.errorLogger
+2020-02-24 16:12:21.964 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-7000"]
+2020-02-24 16:12:21.988 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-7000"]
+2020-02-24 16:12:22.169 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-02-24 16:12:22.222 [restartedMain] INFO  com.co.example.MyRun.MyApplicationRunner - Run the following methods at server startup!!
+2020-02-24 16:12:22.224 [restartedMain] INFO  com.co.example.ManagerApplication - Started ManagerApplication in 49.809 seconds (JVM running for 52.857)
+2020-02-24 16:14:49.626 [http-nio-7000-exec-4] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-24 16:14:53.141 [http-nio-7000-exec-6] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] INITIALIZING TEMPLATE ENGINE
+2020-02-24 16:14:53.235 [http-nio-7000-exec-6] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] INITIALIZING TEMPLATE RESOLVER: org.thymeleaf.templateresolver.ClassLoaderTemplateResolver
+2020-02-24 16:14:53.236 [http-nio-7000-exec-6] INFO  o.t.templateresolver.AbstractTemplateResolver - [THYMELEAF] TEMPLATE RESOLVER INITIALIZED OK
+2020-02-24 16:14:53.236 [http-nio-7000-exec-6] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] INITIALIZING MESSAGE RESOLVER: org.thymeleaf.spring4.messageresolver.SpringMessageResolver
+2020-02-24 16:14:53.236 [http-nio-7000-exec-6] INFO  o.t.messageresolver.AbstractMessageResolver - [THYMELEAF] MESSAGE RESOLVER INITIALIZED OK
+2020-02-24 16:14:53.241 [http-nio-7000-exec-6] INFO  org.thymeleaf.TemplateEngine - [THYMELEAF] TEMPLATE ENGINE INITIALIZED
+2020-02-24 16:15:38.737 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ***oldAdminSession***AdminSession(admin=null, login=false, remembermeCheck=true, roles=null)
+2020-02-24 16:15:38.737 [http-nio-7000-exec-2] INFO  com.co.example.security.LoginSuccessHandler - ******登录成功，执行session处理
+2020-02-24 16:15:38.752 [http-nio-7000-exec-2] INFO  c.co.example.service.admin.impl.TAdminServiceImpl - ***开始更新
+2020-02-24 16:18:17.627 [Thread-15] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567994507264 fieldName:brands fieldValue:长龄轩 result:0 Qtime:1
+2020-02-24 16:18:18.407 [Thread-15] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:773
+2020-02-24 16:18:18.447 [Thread-15] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3555127604133888 fieldName:brands fieldValue:长龄轩 result:0 Qtime:3
+2020-02-24 16:18:18.817 [Thread-15] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2020-02-24 16:18:18.866 [Thread-15] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3521144781488128 fieldName:brands fieldValue:长龄轩 result:0 Qtime:3
+2020-02-24 16:18:19.169 [Thread-15] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:295
+2020-02-24 16:19:19.139 [Thread-16] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567983480832 fieldName:brands fieldValue:樊菲雪颜 result:0 Qtime:2
+2020-02-24 16:19:19.533 [Thread-16] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:391
+2020-02-24 16:19:19.572 [Thread-16] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567982579712 fieldName:brands fieldValue:樊菲雪颜 result:0 Qtime:8
+2020-02-24 16:19:19.825 [Thread-16] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:247
+2020-02-24 16:19:19.866 [Thread-16] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567981711360 fieldName:brands fieldValue:樊菲雪颜 result:0 Qtime:10
+2020-02-24 16:19:20.212 [Thread-16] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:339
+2020-02-24 16:22:48.736 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567606796288 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:1
+2020-02-24 16:22:49.149 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:409
+2020-02-24 16:22:49.195 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567606468608 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:10
+2020-02-24 16:22:49.558 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2020-02-24 16:22:49.613 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3614567606124544 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:10
+2020-02-24 16:22:49.982 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:363
+2020-02-24 16:22:50.022 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3608368285597696 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:3
+2020-02-24 16:22:50.374 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:348
+2020-02-24 16:22:50.464 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3608368261726208 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:44
+2020-02-24 16:22:50.783 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:314
+2020-02-24 16:22:50.848 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3608368037724160 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:31
+2020-02-24 16:22:51.210 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:358
+2020-02-24 16:22:51.277 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3559374142242816 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:22:51.561 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:279
+2020-02-24 16:22:51.611 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3559374133379072 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:2
+2020-02-24 16:22:51.949 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:333
+2020-02-24 16:22:51.992 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3555127840161792 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:10
+2020-02-24 16:22:52.362 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2020-02-24 16:22:52.418 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3555127735648256 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:22:52.889 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:467
+2020-02-24 16:22:52.936 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3546627218161664 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:7
+2020-02-24 16:22:53.197 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:257
+2020-02-24 16:22:53.236 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3543792069754880 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:8
+2020-02-24 16:22:53.488 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:249
+2020-02-24 16:22:53.536 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3543792054419456 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:22:53.839 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:299
+2020-02-24 16:22:53.887 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539549047357440 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:22:54.231 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:340
+2020-02-24 16:22:54.271 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539548936978432 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:9
+2020-02-24 16:22:54.632 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2020-02-24 16:22:54.680 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539548936454144 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:17
+2020-02-24 16:22:55.041 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2020-02-24 16:22:55.105 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539548934389760 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:9
+2020-02-24 16:22:55.466 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:356
+2020-02-24 16:22:55.564 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539548919365632 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:10
+2020-02-24 16:22:55.925 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2020-02-24 16:22:55.965 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539548913926144 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:22:56.427 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:457
+2020-02-24 16:22:56.465 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3539548682534912 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:9
+2020-02-24 16:22:56.835 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:366
+2020-02-24 16:22:56.884 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3523989170094080 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:7
+2020-02-24 16:22:57.194 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:306
+2020-02-24 16:22:57.243 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3523989086502912 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:3
+2020-02-24 16:22:57.561 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:315
+2020-02-24 16:22:57.593 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3523989074493440 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:2
+2020-02-24 16:22:58.003 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:408
+2020-02-24 16:22:58.043 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3523989072117760 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:3
+2020-02-24 16:22:58.421 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:374
+2020-02-24 16:22:58.461 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3523988544487424 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:3
+2020-02-24 16:22:58.804 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:341
+2020-02-24 16:22:58.862 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3521144473468928 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:5
+2020-02-24 16:22:59.223 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2020-02-24 16:22:59.261 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3521144289099776 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:3
+2020-02-24 16:22:59.589 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:324
+2020-02-24 16:22:59.637 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3515493140119552 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:5
+2020-02-24 16:22:59.991 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:352
+2020-02-24 16:23:00.029 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3515493100929024 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:7
+2020-02-24 16:23:00.390 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:357
+2020-02-24 16:23:00.430 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3515492974329856 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:9
+2020-02-24 16:23:00.766 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:333
+2020-02-24 16:23:00.805 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3515492310401024 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:4
+2020-02-24 16:23:01.100 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:291
+2020-02-24 16:23:01.139 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3514079062556672 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:23:01.400 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:257
+2020-02-24 16:23:01.440 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3502645230288896 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:6
+2020-02-24 16:23:01.692 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:249
+2020-02-24 16:23:01.732 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3491441734647808 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:5
+2020-02-24 16:23:02.010 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:274
+2020-02-24 16:23:02.057 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3491438265384960 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:7
+2020-02-24 16:23:02.429 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:368
+2020-02-24 16:23:02.466 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484286226333696 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:2
+2020-02-24 16:23:02.737 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:267
+2020-02-24 16:23:02.794 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3484286073864192 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:20
+2020-02-24 16:23:03.114 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:317
+2020-02-24 16:23:03.152 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482809484525568 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:5
+2020-02-24 16:23:03.437 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:282
+2020-02-24 16:23:03.478 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - updateByIdSelective doc id:3482809479495680 fieldName:brands fieldValue:妆乖乖 result:0 Qtime:7
+2020-02-24 16:23:03.771 [Thread-17] INFO  com.co.example.service.solr.impl.SolrServiceImpl - commit updateByIdSelective doc to index result:0 Qtime:291

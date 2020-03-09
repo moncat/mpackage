@@ -18,4 +18,7 @@ public class TBrBrandVo extends TBrBrand {
 
     /** 产品备案数 */
     private Integer pnum;
+    
+    /** 成分数 */
+    private Integer inum;
 }

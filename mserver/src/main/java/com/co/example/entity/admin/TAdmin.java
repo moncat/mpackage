@@ -39,4 +39,13 @@ public class TAdmin extends BaseEntity {
 
     /** 页面版本 */
     private String pageVersion;
+
+    /** 头像图像链接 */
+    private String headImg;
+
+    /** 会员类型   0管理员   1普通注册用户   2付费会员 */
+    private Byte memberType;
+
+    /** 会员到期时间 */
+    private Date endTime;
 }

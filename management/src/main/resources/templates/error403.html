@@ -5,7 +5,7 @@
 		<span class="va-m">/(ㄒoㄒ)/~~403</span>
 		<span th:text="${status}"></span>
 	</p>
-	<p class="error-description">对不起，您没有访问权限，请联系管理员。</p>
+	<p class="error-description">对不起，您没有访问权限，请升级会员。</p>
 	<div class="error-info" th:hidden="${param.show eq null}">
 	    timestamp:<span th:if="${timestamp ne null}" th:text="${#dates.format(timestamp, 'yyyy-MM-dd HH:mm:ss')}"/>
 		status:<span th:text="${status}"/>

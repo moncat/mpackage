@@ -127,7 +127,7 @@ public class LoginController {
 	
 	
 	@RequestMapping(value="/retrieve1",method = { RequestMethod.GET})
-	public String sendCode(Model model,HttpSession session){
+	public String retrieve1(Model model,HttpSession session){
 		return "login/retrieve1";
 	}
 	

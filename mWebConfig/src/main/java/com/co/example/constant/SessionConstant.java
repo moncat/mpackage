@@ -9,4 +9,6 @@ public class SessionConstant {
 	public static final String SESSION_BACK_URL = "backurl";
 	
 	public static final Boolean SESSION_V2 = false;
+
+	public static final String SESSION_LOSE = "lose";
 }

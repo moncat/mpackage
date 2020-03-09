@@ -6,24 +6,23 @@
     <result column="type" property="type" jdbcType="INTEGER" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="user_ip" property="userIp" jdbcType="VARCHAR" />
+    <result column="admin_ip" property="adminIp" jdbcType="VARCHAR" />
     <result column="vcode" property="vcode" jdbcType="VARCHAR" />
     <result column="is_use" property="isUse" jdbcType="TINYINT" />
-    <result column="is_send" property="isSend" jdbcType="TINYINT" />
-    <result column="usetime" property="usetime" jdbcType="TIMESTAMP" />
+    <result column="use_time" property="useTime" jdbcType="TIMESTAMP" />
     <result column="expire_time" property="expireTime" jdbcType="TIMESTAMP" />
     <result column="url" property="url" jdbcType="VARCHAR" />
-    <result column="status" property="status" jdbcType="TINYINT" />
     <result column="item_order" property="itemOrder" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_by" property="createBy" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="BIGINT" />
+    <result column="is_active" property="isActive" jdbcType="TINYINT" />
     <result column="del_flg" property="delFlg" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, type, email, phone, user_ip, vcode, is_use, is_send, usetime, expire_time, url, 
-    status, item_order, create_time, create_by, update_time, update_by, del_flg
+    id, type, email, phone, admin_ip, vcode, is_use, use_time, expire_time, url, item_order, 
+    create_time, create_by, update_time, update_by, is_active, del_flg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -35,21 +34,22 @@
     delete from t_admin_active
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.co.example.entity.admin.TAdminActive" >
-    insert into t_admin_active (id, type, 
-      email, phone, user_ip, 
-      vcode, is_use, is_send, 
-      usetime, expire_time, url, 
-      status, item_order, create_time, 
+  <insert id="insert" parameterType="com.co.example.entity.admin.TAdminActive" keyColumn="id" keyProperty="id" >
+    <selectKey keyProperty="id" resultType="java.lang.Long" order="BEFORE" >
+      SELECT ${@com.github.moncat.common.generator.id.NextId@getId()}
+    </selectKey>
+    insert into t_admin_active (id, type, email, 
+      phone, admin_ip, vcode, 
+      is_use, use_time, expire_time, 
+      url, item_order, create_time, 
       create_by, update_time, update_by, 
-      del_flg)
-    values (${@com.github.moncat.common.generator.id.NextId@getId()}, #{type,jdbcType=INTEGER}, 
-      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{userIp,jdbcType=VARCHAR}, 
-      #{vcode,jdbcType=VARCHAR}, #{isUse,jdbcType=TINYINT}, #{isSend,jdbcType=TINYINT}, 
-      #{usetime,jdbcType=TIMESTAMP}, #{expireTime,jdbcType=TIMESTAMP}, #{url,jdbcType=VARCHAR}, 
-      #{status,jdbcType=TINYINT}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      is_active, del_flg)
+    values (#{id,jdbcType=BIGINT}, #{type,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{adminIp,jdbcType=VARCHAR}, #{vcode,jdbcType=VARCHAR}, 
+      #{isUse,jdbcType=TINYINT}, #{useTime,jdbcType=TIMESTAMP}, #{expireTime,jdbcType=TIMESTAMP}, 
+      #{url,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=BIGINT}, 
-      #{delFlg,jdbcType=TINYINT})
+      #{isActive,jdbcType=TINYINT}, #{delFlg,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.co.example.entity.admin.TAdminActive" >
     update t_admin_active
@@ -63,8 +63,8 @@
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="userIp != null" >
-        user_ip = #{userIp,jdbcType=VARCHAR},
+      <if test="adminIp != null" >
+        admin_ip = #{adminIp,jdbcType=VARCHAR},
       </if>
       <if test="vcode != null" >
         vcode = #{vcode,jdbcType=VARCHAR},
@@ -72,20 +72,14 @@
       <if test="isUse != null" >
         is_use = #{isUse,jdbcType=TINYINT},
       </if>
-      <if test="isSend != null" >
-        is_send = #{isSend,jdbcType=TINYINT},
-      </if>
-      <if test="usetime != null" >
-        usetime = #{usetime,jdbcType=TIMESTAMP},
+      <if test="useTime != null" >
+        use_time = #{useTime,jdbcType=TIMESTAMP},
       </if>
       <if test="expireTime != null" >
         expire_time = #{expireTime,jdbcType=TIMESTAMP},
       </if>
       <if test="url != null" >
         url = #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null" >
-        status = #{status,jdbcType=TINYINT},
       </if>
       <if test="itemOrder != null" >
         item_order = #{itemOrder,jdbcType=INTEGER},
@@ -102,6 +96,9 @@
       <if test="updateBy != null" >
         update_by = #{updateBy,jdbcType=BIGINT},
       </if>
+      <if test="isActive != null" >
+        is_active = #{isActive,jdbcType=TINYINT},
+      </if>
       <if test="delFlg != null" >
         del_flg = #{delFlg,jdbcType=TINYINT},
       </if>
@@ -113,19 +110,18 @@
     set type = #{type,jdbcType=INTEGER},
       email = #{email,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      user_ip = #{userIp,jdbcType=VARCHAR},
+      admin_ip = #{adminIp,jdbcType=VARCHAR},
       vcode = #{vcode,jdbcType=VARCHAR},
       is_use = #{isUse,jdbcType=TINYINT},
-      is_send = #{isSend,jdbcType=TINYINT},
-      usetime = #{usetime,jdbcType=TIMESTAMP},
+      use_time = #{useTime,jdbcType=TIMESTAMP},
       expire_time = #{expireTime,jdbcType=TIMESTAMP},
       url = #{url,jdbcType=VARCHAR},
-      status = #{status,jdbcType=TINYINT},
       item_order = #{itemOrder,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       create_by = #{createBy,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       update_by = #{updateBy,jdbcType=BIGINT},
+      is_active = #{isActive,jdbcType=TINYINT},
       del_flg = #{delFlg,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -150,8 +146,8 @@
       <if test="phone != null" >
           and t.phone = #{phone,jdbcType=VARCHAR}
       </if>
-      <if test="userIp != null" >
-          and t.user_ip = #{userIp,jdbcType=VARCHAR}
+      <if test="adminIp != null" >
+          and t.admin_ip = #{adminIp,jdbcType=VARCHAR}
       </if>
       <if test="vcode != null" >
           and t.vcode = #{vcode,jdbcType=VARCHAR}
@@ -159,20 +155,14 @@
       <if test="isUse != null" >
           and t.is_use = #{isUse,jdbcType=TINYINT}
       </if>
-      <if test="isSend != null" >
-          and t.is_send = #{isSend,jdbcType=TINYINT}
-      </if>
-      <if test="usetime != null" >
-          and t.usetime = #{usetime,jdbcType=TIMESTAMP}
+      <if test="useTime != null" >
+          and t.use_time = #{useTime,jdbcType=TIMESTAMP}
       </if>
       <if test="expireTime != null" >
           and t.expire_time = #{expireTime,jdbcType=TIMESTAMP}
       </if>
       <if test="url != null" >
           and t.url = #{url,jdbcType=VARCHAR}
-      </if>
-      <if test="status != null" >
-          and t.status = #{status,jdbcType=TINYINT}
       </if>
       <if test="itemOrder != null" >
           and t.item_order = #{itemOrder,jdbcType=INTEGER}
@@ -188,6 +178,9 @@
       </if>
       <if test="updateBy != null" >
           and t.update_by = #{updateBy,jdbcType=BIGINT}
+      </if>
+      <if test="isActive != null" >
+          and t.is_active = #{isActive,jdbcType=TINYINT}
       </if>
       <if test="delFlg != null" >
           and t.del_flg = #{delFlg,jdbcType=TINYINT}
@@ -228,19 +221,18 @@
     t.type, 
     t.email, 
     t.phone, 
-    t.user_ip, 
+    t.admin_ip, 
     t.vcode, 
     t.is_use, 
-    t.is_send, 
-    t.usetime, 
+    t.use_time, 
     t.expire_time, 
     t.url, 
-    t.status, 
     t.item_order, 
     t.create_time, 
     t.create_by, 
     t.update_time, 
     t.update_by, 
+    t.is_active, 
     t.del_flg
      <!-- ,alias.field -->
   </sql>

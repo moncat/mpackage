@@ -677,7 +677,7 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		tBrEnterpriseQuery.setJoinFlg(true);
 		List<TBrEnterprise> enterpriseList = tBrEnterpriseService.queryList(tBrEnterpriseQuery);
 		if (enterpriseList.size() > 0) {
-			TBrEnterprise tBrEnterprise = enterpriseList.get(enterpriseList.size()-1);
+			TBrEnterprise tBrEnterprise = enterpriseList.get(enterpriseList.size() - 1);
 			model.addAttribute(ONE, tBrEnterprise);
 
 			TBrEnterpriseBaseQuery tBrEnterpriseBaseQuery = new TBrEnterpriseBaseQuery();
@@ -802,65 +802,67 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 	@ResponseBody
 	@RequestMapping(value = "/setBrand", method = { RequestMethod.GET, RequestMethod.POST })
 	public Map<String, Object> setBrand(Model model, String pids, @RequestParam(value = "bids[]") Long[] bids) {
-		Map<String, Object> result = result();
-		try {
-			String[] productIds = pids.split(",");
-			for (int j = 0; j < bids.length; j++) {
-				Long brandId = bids[j];
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				String[] productIds = pids.split(",");
+				Long brandId = bids[0];
 				for (int i = 0; i < productIds.length; i++) {
-					Long productId = Long.parseLong(productIds[i]);
-				// 此处的bids逻辑暂未修改，但一般bids列表数值只有一个，一个产品只有一个品牌，可以去除循环
-					TBrProductBrand tBrProductBrand = new TBrProductBrand();
-					tBrProductBrand.setProductId(productId);
-					long queryCount = tBrProductBrandService.queryCount(tBrProductBrand);
-					if (queryCount == 0) {
-						// 新增
-						tBrProductBrand.setBrandId(brandId);
-						tBrProductBrand.setCreateTime(new Date());
-						tBrProductBrand.setDelFlg(Constant.NO);
-						tBrProductBrandService.add(tBrProductBrand);
-					} else if(queryCount>1){
-						//处理历史数据问题
-						List<TBrProductBrand> queryList = tBrProductBrandService.queryList(tBrProductBrand);
-						for (int k = 0; k < queryList.size(); k++) {
-							TBrProductBrand tmp = queryList.get(k);
-							if(tmp != null){
-								Long delId = tmp.getId();
-								if(delId!=null){
-									tBrProductBrandService.deleteById(delId);
+					try {
+						Long productId = Long.parseLong(productIds[i]);
+						TBrProductBrand tBrProductBrand = new TBrProductBrand();
+						tBrProductBrand.setProductId(productId);
+						long queryCount = tBrProductBrandService.queryCount(tBrProductBrand);
+						if (queryCount == 0) {
+							// 新增
+							tBrProductBrand.setBrandId(brandId);
+							tBrProductBrand.setCreateTime(new Date());
+							tBrProductBrand.setDelFlg(Constant.NO);
+							tBrProductBrandService.add(tBrProductBrand);
+						} else if (queryCount > 1) {
+							// 处理历史数据问题
+							List<TBrProductBrand> queryList = tBrProductBrandService.queryList(tBrProductBrand);
+							for (int k = 0; k < queryList.size(); k++) {
+								TBrProductBrand tmp = queryList.get(k);
+								if (tmp != null) {
+									Long delId = tmp.getId();
+									if (delId != null) {
+										tBrProductBrandService.deleteById(delId);
+									}
 								}
 							}
+							tBrProductBrand.setBrandId(brandId);
+							tBrProductBrand.setCreateTime(new Date());
+							tBrProductBrand.setDelFlg(Constant.NO);
+							tBrProductBrandService.add(tBrProductBrand);
+							log.info("有产品关联多个品牌，需要处理历史数据。");
+						} else {
+							// 更新
+							TBrProductBrand one = tBrProductBrandService.queryOne(tBrProductBrand);
+							if (!brandId.equals(one.getBrandId())) {
+								TBrProductBrand pb4up = new TBrProductBrand();
+								pb4up.setBrandId(brandId);
+								pb4up.setId(one.getId());
+								tBrProductBrandService.updateByIdSelective(pb4up);
+							}
 						}
-						tBrProductBrand.setBrandId(brandId);
-						tBrProductBrand.setCreateTime(new Date());
-						tBrProductBrand.setDelFlg(Constant.NO);
-						tBrProductBrandService.add(tBrProductBrand);
-						log.info("有产品关联多个品牌，需要处理历史数据。");
-					}else{
-						// 更新
-						TBrProductBrand one = tBrProductBrandService.queryOne(tBrProductBrand);
-						if(!brandId.equals(one.getBrandId())){
-							TBrProductBrand pb4up = new TBrProductBrand();
-							pb4up.setBrandId(brandId);
-							pb4up.setId(one.getId());
-							tBrProductBrandService.updateByIdSelective(pb4up);
-						}
+						// 在产品表做冗余数据
+						TBrProduct p4up = new TBrProduct();
+						p4up.setId(productId);
+						p4up.setProductBrandId(brandId);
+						TBrBrand tBrBrand = tBrBrandService.queryById(brandId);
+						p4up.setProductBrandName(tBrBrand.getName());
+						tBrProductService.updateByIdSelective(p4up);
+						// 更新到solr
+						solrService.updateByIdSelective(productId + "", "brands", tBrBrand.getName());
+					} catch (Exception e) {
+						continue;
 					}
-					// 在产品表做冗余数据
-					TBrProduct p4up = new TBrProduct();
-					p4up.setId(productId);
-					p4up.setProductBrandId(brandId);
-					TBrBrand tBrBrand = tBrBrandService.queryById(brandId);
-					p4up.setProductBrandName(tBrBrand.getName());
-					tBrProductService.updateByIdSelective(p4up);
-					//更新到solr
-					solrService.updateByIdSelective(productId+"", "brands", tBrBrand.getName());
 				}
-				
 			}
-		} catch (Exception e) {
-			result.put("info", "关联失败！");
-		}
+		}).start();
+
+		Map<String, Object> result = result();
 		result.put("info", "关联完成！");
 		return result;
 	}
@@ -915,40 +917,40 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		int pageSize = pageReq.getPageSize();
 		TBrProductSolr tBrProductSolr = null;
 		List<TBrEnterpriseVo> ees = null;
-		
+
 		Boolean changeFlg = false;
-//		if(StringUtils.isNotBlank(normal) && normalType !=2){
-//			changeFlg = true;
-//		}else
-		if(null != query.getBrandFlg()){
+		// if(StringUtils.isNotBlank(normal) && normalType !=2){
+		// changeFlg = true;
+		// }else
+		if (null != query.getBrandFlg()) {
 			changeFlg = true;
-		}else if(null != query.getCategoryFlg()){
+		} else if (null != query.getCategoryFlg()) {
 			changeFlg = true;
 		}
-		if(changeFlg){
+		if (changeFlg) {
 			TBrProductQuery qq = new TBrProductQuery();
 			qq.setBrandFlg(query.getBrandFlg());
 			qq.setCategoryFlg(query.getCategoryFlg());
-			if(normalType ==1){
-				if(normals.length>1){
+			if (normalType == 1) {
+				if (normals.length > 1) {
 					qq.setProductNamesLike(normalList);
-				}else{
+				} else {
 					qq.setProductNameLike(normal);
 				}
-			}else if(normalType ==3){
-				if(normals.length>1){
+			} else if (normalType == 3) {
+				if (normals.length > 1) {
 					qq.setEnterpriseNamesLike(normalList);
-				}else{
+				} else {
 					qq.setEnterpriseNameLike(normal);
 				}
-			}else if(normalType ==4){
-				if(normals.length>1){
+			} else if (normalType == 4) {
+				if (normals.length > 1) {
 					qq.setProductBrandNamesLike(normalList);
-				}else{
+				} else {
 					qq.setProductBrandNameLike(normal);
 				}
-			} 
-			pageReq.setSort(new Sort(Direction.DESC,"t.confirm_date"));
+			}
+			pageReq.setSort(new Sort(Direction.DESC, "t.confirm_date"));
 			Page<TBrProduct> sqlPageList = tBrProductService.queryPageList(qq, pageReq);
 			count = tBrProductService.queryCount(qq);
 			List<TBrProductSolr> solrList = Lists.newArrayList();
@@ -956,35 +958,33 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 				tBrProductSolr = new TBrProductSolr();
 				BeanUtils.copyProperties(tBrProduct, tBrProductSolr);
 				tBrProductSolr.setBrands(tBrProduct.getProductBrandName());
-				tBrProductSolr.setApplyType(tBrProduct.getIsChina()+"");
+				tBrProductSolr.setApplyType(tBrProduct.getIsChina() + "");
 				tBrProductSolr.setConfirmStatus(tBrProduct.getMoreData2());
 				ees = tBrEnterpriseService.queryEnterpriseListByProductId(tBrProduct.getId());
 				tBrProductSolr.setPeName(esListToString(ees));
 				solrList.add(tBrProductSolr);
 			}
-			page = new PageImpl<TBrProductSolr>((List<TBrProductSolr>) solrList, pageReq,count);			
-		}else{
+			page = new PageImpl<TBrProductSolr>((List<TBrProductSolr>) solrList, pageReq, count);
+		} else {
 			Map<String, Object> map = solrService.querySolr2(query, pageSize * pageReq.getPageNumber(), pageSize);
 			count = Long.parseLong(map.get("count").toString());
-			page = new PageImpl<TBrProductSolr>((List<TBrProductSolr>) map.get("list"), pageReq,count);
+			page = new PageImpl<TBrProductSolr>((List<TBrProductSolr>) map.get("list"), pageReq, count);
 		}
 		model.addAttribute("count", count);
 		model.addAttribute(QUERY, query);
 		model.addAttribute(PAGE, page);
 		return "product/list3";
 	}
-	
-	
-	
+
 	public String esListToString(List<TBrEnterpriseVo> list) {
-        StringBuilder sb = new StringBuilder();
-        for (TBrEnterpriseVo ees : list) {
-            if (ees != null ) {
-                sb.append(" ").append(ees.getEnterpriseName());
-            }
-        }
-        return sb.toString();
-    }
+		StringBuilder sb = new StringBuilder();
+		for (TBrEnterpriseVo ees : list) {
+			if (ees != null) {
+				sb.append(" ").append(ees.getEnterpriseName());
+			}
+		}
+		return sb.toString();
+	}
 
 	// solr 查询
 	@ResponseBody
@@ -1257,23 +1257,21 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		tBrProductCategoryService.deleteProductCategory(productId, categoryId);
 		return result;
 	}
-	
-	
-	//不使用，数据同步到solr，再查询，以便品牌查询。
+
+	// 不使用，数据同步到solr，再查询，以便品牌查询。
 	@Deprecated
 	@ResponseBody
-	@RequestMapping(value = "/getBrandbyProduct", method = { RequestMethod.POST ,RequestMethod.GET})
+	@RequestMapping(value = "/getBrandbyProduct", method = { RequestMethod.POST, RequestMethod.GET })
 	public Map<String, Object> getBrandbyProduct(Model model, HttpSession session, Long productId) {
 		Map<String, Object> result = result();
 		TBrBrandVo brand = tBrBrandService.queryByProductId(productId);
 		result.put("brand", brand);
 		return result;
 	}
-	
-	
+
 	@ResponseBody
-	@RequestMapping(value = "/count", method = { RequestMethod.POST ,RequestMethod.GET})
-	public Map<String, Object> count(Model model, HttpSession session ) {
+	@RequestMapping(value = "/count", method = { RequestMethod.POST, RequestMethod.GET })
+	public Map<String, Object> count(Model model, HttpSession session) {
 		Map<String, Object> result = result();
 		TBrProductQuery tBrProductQuery = new TBrProductQuery();
 		tBrProductQuery.setBrandFlg(2);
@@ -1285,7 +1283,5 @@ public class ProductController extends BaseControllerHandler<TBrProductQuery> {
 		result.put("categoryNum", categoryNum);
 		return result;
 	}
-	
-	
-	
+
 }

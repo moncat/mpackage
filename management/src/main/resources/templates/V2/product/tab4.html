@@ -1,10 +1,11 @@
-<html  layout:decorator="v2/common/layout_iframe" >
+<html  layout:decorator="V2/common/layout_iframe" >
 <section layout:fragment="myCss">
 	<link rel="stylesheet" type="text/css" href="/css/v2/product/detail.css" />
 </section>
 <section layout:fragment="main">
-	<div class="Company-info">
-		<div class="Company-info-left">
+	<div class="Company-info" th:if="${one == null}">暂无关联实际生产企业信息 </div>
+	<div class="Company-info" th:if="${one != null}">
+		<div class="Company-info-left" >
 			<h3 th:text="${one.enterpriseName}" >广州贝玲采生物科技有限公司</h3>
 			<div class="CompanyList">
 

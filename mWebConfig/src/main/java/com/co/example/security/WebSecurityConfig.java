@@ -66,10 +66,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //          .addFilter(new MultipartFilter())
 	      .addFilterAt(new ConcurrentSessionFilter(sessionRegistry,sessionInformationExpiredStrategy()),ConcurrentSessionFilter.class)
 //	      .addFilterBefore(new MultipartFilter(), ConcurrentSessionFilter.class)
-		  
 //			应用配置        
 //        .apply(configurer)
-				
 //                .authenticationProvider(customAuthenticationProvider())
 //                .build()
 //                .cors()
@@ -92,6 +90,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .x509() //认证方式
                 .authorizeRequests()
 //                .antMatchers("/").permitAll()
+                .antMatchers("/oper/**").permitAll()
+                .antMatchers("/register/**").permitAll()
                 //其他地址的访问均需验证权限
                 .anyRequest().authenticated()     
                 .and()               
@@ -103,14 +103,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureUrl("/login?error=true")
                 .permitAll()
                 .authenticationDetailsSource(authenticationDetailsSource)
-                
                 //session              
                 .and()
 				.sessionManagement()
-				.sessionAuthenticationErrorUrl("/login")
-                .invalidSessionUrl("/login")
+				.sessionAuthenticationErrorUrl("/login?lose=1")
+                .invalidSessionUrl("/login?lose=2")
                 .maximumSessions(1)
-                .expiredUrl("/login")
+                .expiredUrl("/login?lose=3")
                 .maxSessionsPreventsLogin(true)
                 .and()
                 .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
@@ -130,7 +129,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .addLogoutHandler(logoutHandler)
                 .deleteCookies(CookieConstant.COOKIE_ADMIN_KEY)
                 .deleteCookies(CookieConstant.COOKIE_REMEMBER_ME)
-                .logoutSuccessUrl("/login")
+                .logoutSuccessUrl("/login?lose=4")
                 .permitAll()
                 //成功退出后的操作
 //                .logoutSuccessHandler(logoutSuccessHandler())
@@ -138,8 +137,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .and().csrf().requireCsrfProtectionMatcher(new CsrfSecurityRequestMatcher())
                 ;
-        
-		
     }
     
    

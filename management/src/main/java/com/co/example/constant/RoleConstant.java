@@ -26,4 +26,11 @@ public class RoleConstant {
 	};
 	
 	
+	/**
+	 * 此处为三个固定角色，数据库中不可删除
+	 */
+//	public static final String ROLE_SA = "role_sa";
+//	public static final String ROLE_MEMBER = "role_member";
+//	public static final String ROLE_GUEST = "role_guest";
+//	
 }

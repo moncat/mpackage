@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
@@ -11,17 +13,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.co.example.common.utils.MD5;
 import com.co.example.constant.HttpStatusCode;
+import com.co.example.constant.SessionConstant;
 import com.co.example.entity.admin.TAdmin;
 import com.co.example.entity.admin.TAdminActive;
 import com.co.example.entity.admin.aide.AdminSession;
+import com.co.example.entity.admin.aide.TAdminQuery;
 import com.co.example.service.admin.TAdminActiveService;
 import com.co.example.service.admin.TAdminLoginService;
 import com.co.example.service.admin.TAdminService;
+import com.co.example.utils.ClientUtil;
 import com.co.example.utils.SessionUtil;
+import com.google.common.collect.Maps;
 
 @Controller
 public class LoginController {
@@ -49,6 +56,12 @@ public class LoginController {
 		}
 		String username = (String) session.getAttribute("username");
 		Exception e = (Exception) session.getAttribute("SPRING_SECURITY_LAST_EXCEPTION");
+		
+		Object flo =  session.getAttribute("flo");
+		if(flo != null){
+			model.addAttribute("errMessage", "您的账号已在其他地方，当前账号已被迫下线。");
+//			session.removeAttribute("flo");
+		}
 		String errMessage = "";
 		if (e != null) {
 			errMessage = e.getMessage();
@@ -159,70 +172,5 @@ public class LoginController {
 	// return "redirect:/login";
 	// }
 
-	@RequestMapping(value = "/findPwd", method = { RequestMethod.GET })
-	public String findPwd() {
-		return "findPwd";
-	}
 
-	// 保存新密码
-	@ResponseBody
-	@RequestMapping(value = "/saveAdminPwd", method = { RequestMethod.GET, RequestMethod.POST })
-	public Map<String, Object> saveAdminPwd(Model model, HttpSession session, TAdmin admin, String verifycode,
-			Integer step) {
-		// 手机号邮箱都应支持注册，但目前只支持邮箱
-		Map<String, Object> mapResult = new HashMap<String, Object>();
-		TAdminActive tAdminActive = null;
-		if (step == 1) {
-			mapResult.put("step", 2);
-			final int CODE_ERROR_IDENTITY = 401;
-			if (StringUtils.isBlank(verifycode) || verifycode.length() != 6) {
-				mapResult.put("code", CODE_ERROR_IDENTITY);
-				mapResult.put("desc", "验证码错误!");
-				return mapResult;
-			} else {
-				tAdminActive = tAdminActiveService.queryLastByEmail(admin.getLoginName());
-				if (tAdminActive == null) {
-					mapResult.put("code", CODE_ERROR_IDENTITY);
-					mapResult.put("desc", "验证码错误!");
-					return mapResult;
-				} else {
-					if (tAdminActive.getVcode().equals(verifycode)) {
-						// 判断是否过期 目前三十分钟过期
-						if (System.currentTimeMillis() - tAdminActive.getCreateTime().getTime() > 30 * 60 * 1000) {
-							// 验证码过期
-							mapResult.put("code", CODE_ERROR_IDENTITY);
-							mapResult.put("desc", "验证码过期!");
-							return mapResult;
-						}
-					} else {
-						mapResult.put("code", CODE_ERROR_IDENTITY);
-						mapResult.put("desc", "验证码错误!");
-						return mapResult;
-					}
-				}
-			}
-			;
-			TAdmin adminTmp = tAdminService.queryByLoginName(admin.getLoginName());
-			if (adminTmp != null) {
-				mapResult.put("code", HttpStatusCode.CODE_SUCCESS);
-				mapResult.put("adminId", adminTmp.getId());
-				return mapResult;
-			} else {
-				mapResult.put("code", HttpStatusCode.CODE_ERROR);
-				mapResult.put("desc", "管理员名错误。");
-				return mapResult;
-			}
-		}
-		if (step == 2) {
-			mapResult.put("step", 3);
-			String passwordMd5 = MD5.encodeStr(admin.getPassword());
-			admin.setPassword(passwordMd5);
-			tAdminService.updateByIdSelective(admin);
-		}
-		if (step == 3) {
-			mapResult.put("step", 3);
-		}
-		mapResult.put("code", HttpStatusCode.CODE_SUCCESS);
-		return mapResult;
-	}
 }

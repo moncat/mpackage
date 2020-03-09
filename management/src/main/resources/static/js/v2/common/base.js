@@ -280,9 +280,11 @@ function removeArray(arr, val) {
 	     break;
 	    }
    }
+//   arrList.splice(jQuery.inArray(val,arr),1);
 }
+
 function operNull(str) {
-	if(str == "null"){
+	if(str == "null" || str == null){
 		return "-";
 	}
 	return str;

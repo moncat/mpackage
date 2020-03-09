@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -80,5 +82,14 @@ public class SmsUtil {
 		}
 
 	}
+	
+	public static String singleSend(String apikey, String text, String mobile) {
+	    Map<String, String> params = new HashMap<String, String>();
+	    params.put("apikey", apikey);
+	    params.put("text", text);
+	    params.put("mobile", mobile);
+	    return HttpUtils.postData("https://sms.yunpian.com/v2/sms/single_send.json", params);
+	}
+	
 
 }

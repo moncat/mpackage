@@ -36,5 +36,8 @@ public class TBrEnterpriseVo extends TBrEnterprise {
     /** 产品数 */
     private Integer pnum;
     
+    /** 成分数 */
+    private Integer inum;
+    
     private TBrEnterprisePermission permission;
 }

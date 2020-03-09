@@ -1,0 +1,149 @@
+<html layout:decorator="V2/common/layout_iframe">
+<section layout:fragment="myCss">
+	<link rel="stylesheet" type="text/css" href="/css/v2/center/center.css" />
+</section>
+<section layout:fragment="main">
+<div class="wrapper">
+			<div class="content_wrapper">
+				<!-- breadcrumb -->
+				<div class="container-fluid padding-zero">
+					<div class="page-heading">
+						<div class="row d-flex align-items-center">
+							<div class="col-md-6">
+								<div class="page-breadcrumb">
+									<h1>个人中心</h1>
+								</div>
+							</div>
+							<div class="col-md-6 justify-content-md-end d-md-flex">
+								<div class="breadcrumb_nav">
+									<ol class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a class="parent-item" href="#">Home</a>
+											<i class="fa fa-angle-right"></i>
+										</li>
+										<li class="active">
+											个人中心
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- breadcrumb_End -->
+				<!-- 用户信息 -->
+				<div class="per_cen-box box-shadow">
+					<p class="per_cen_tit"><span>个人信息</span></p>
+					<div class="per_info">
+						<dl>
+							<dt>ID:</dt>
+							<dd>
+								<div>
+									<span id="oneId" th:text="${one.id}"></span>
+									<span class="user_btn">免费版</span>
+								</div>
+								<p style="font-size: 12px;color: #999;">您当前账户状态为免费版用户，仅能使用少部分功能，建议您升级会员版，体验更好用户体验</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>会员到期时间:</dt>
+							<dd>
+								<div  th:if="${one.endTime ne null}"  th:text="${#dates.format(one.endTime, 'yyyy-MM-dd HH:mm:ss')}" ></div>
+								<div  th:if="${one.endTime eq null}"  >无限期</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>登录账号:</dt>
+							<dd>
+								<div th:text="${one.mobilePhone}"></div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>登录名：</dt>
+							<dd>
+								<div th:text="${one.loginName}"></div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>显示名：</dt>
+							<dd>
+								<div th:text="${one.displayName}"></div>
+							</dd>
+						</dl>
+						<dl>
+							<dt>头像：</dt>
+							<dd>
+								<img   style="border-radius: 50%;width: 4rem;height: 4rem;"
+								 th:src="@{${(one.headImg ==null || one.headImg =='' )? '/img/center/tx.png': one.headImg} }" 
+								src="/img/center/tx.png" alt="头像" id="headImage"/>
+								<p style="font-size: 12px;color: #999;">支持jpg, png格式，图片大小不超过5M，建议上传正方形图片</p>
+					            <input type="file" name="file" id="file" hidden="hidden"  accept="image/jpg,image/jpeg,image/png" />
+								<input type="hidden" th:value="${one.headImg}" name="headImg" id="image"/>
+								
+							</dd>
+						</dl>
+						<dl>
+							<dt>登录密码：</dt>
+							<dd>
+								<div><span>**********</span><span class="password_btn">修改密码</span></div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- /用户信息 -->
+				<!-- 购买记录 -->
+				<div class="per_cen-box box-shadow">
+					<p class="per_cen_tit"><span>购买记录</span></p>
+					<div class="buy_table">
+						<table class="layui-table">
+							<thead>
+								<tr>
+									<th>订单号</th>
+									<th>订单时间</th>
+									<th>产品名称</th>
+									<th>支付金额</th>
+									<th>购买时长</th>
+									<th>支付状态</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  th:each="item,status:${list}">
+									<td th:text="${item.id}" ></td>
+									<td th:text="${#dates.format(item.createTime, 'yyyy-MM-dd HH:mm:ss')}"  ></td>
+									<td>趋势美业大数据高级版</td>
+									<td th:if="${item.isDiscount==1}" th:text="${item.moneyDiscount}">打折</td>
+									<td th:if="${item.isDiscount!=1}" th:text="${item.money}">不打折</td>
+									<td th:text="${item.duration}">12个月</td>
+									<td th:text="${item.isPay eq 1 ? '已支付':'未支付'}" ></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- 购买记录 -->
+				<!-- 索要发票 -->
+				<div class="per_cen-box box-shadow">
+					<p class="per_cen_tit"><span>索要发票</span></p>
+					<ul class="order_ins">
+						<li>1.开票金额不得低于99元。</li>
+						<li>2.发票基于订单开具，金额为实际支付金额。（多个订单可合并开票，单个订单不可拆分开票）。</li>
+						<li>3.提交开票申请后，将在7个工作日内为您寄出，默认顺丰快递，邮费到付（开票金额满500元免邮费）。</li>
+						<li>4.可选开具电子普通发票，电子发票与纸质发票具备同等法律效力，可报销入账。</li>
+					</ul>
+					
+				</div>
+				<!-- 索要发票 -->
+			</div>
+		</div>
+		<!-- 反馈 -->
+		<!-- 
+		<div class="feed_back"><i class="layui-icon" style="font-size: 40px;">&#xe611;</i></div>
+		 -->
+</section>
+<section layout:fragment="my">
+	<script type="text/javascript" src="/base/lib/upload/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/js/v2/center/center.js?version=4"></script>
+</section>
+</html>

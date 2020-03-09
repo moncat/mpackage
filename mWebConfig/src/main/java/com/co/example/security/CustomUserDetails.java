@@ -16,7 +16,7 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	public CustomUserDetails(TAdminVo admin) {
+	public CustomUserDetails(TAdminVo admin ,Boolean phoneFlg) {
 		if (admin != null){
 			this.setId(admin.getId());
 			this.setLoginName(admin.getLoginName());
@@ -36,6 +36,7 @@ public class CustomUserDetails extends TAdminVo implements UserDetails {
 			this.setDelFlg(admin.getDelFlg());
 			this.setRoles(admin.getRoles());
 			this.setPageVersion(admin.getPageVersion());
+			this.setMemberType(admin.getMemberType());
 			
 		}
 	}

@@ -55,7 +55,7 @@
 		<!-- date 工具类 -->
 		<joda-time.version>2.9.9</joda-time.version>
 		<!-- office 操作 -->
-		<poi.version>3.13</poi.version>
+		<poi.version>5.2.1</poi.version>
 		<!-- 二维码 -->
 		<zxing.version>3.0.0</zxing.version>
 		<!-- uuid -->

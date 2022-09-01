@@ -61,7 +61,7 @@
 		<!-- uuid -->
 	    <uuid-version>3.1.4</uuid-version>
 		<!--  html解析器 -->
-		<jsoup-version>1.9.2</jsoup-version>
+		<jsoup-version>1.15.3</jsoup-version>
 		<htmlparser-version>1.4</htmlparser-version>
 		<!--  java读写csv -->      
 		<opencsv-version>2.3</opencsv-version>
